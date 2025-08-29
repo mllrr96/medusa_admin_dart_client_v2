@@ -1,0 +1,46 @@
+version: "3"
+
+tasks:
+  get:
+    desc: Get dart dependencies
+    summary: |
+      Get dart dependencies
+    cmds:
+      - dart pub get
+
+  gen:
+    desc: Generate dart files
+    summary: |
+      Run codegen
+    cmds:
+      - dart run build_runner build -d
+
+  upgrade:
+    desc: Upgrade flutter dependencies
+    summary: |
+      Run codegen
+    cmds:
+      - dart pub upgrade --major-versions
+
+  gen:clean:
+    desc: Generate dart files
+    summary: |
+      Run codegen
+    cmds:
+      - flutter clean
+      - dart pub get
+      - dart run build_runner build -d
+
+  gen:watch:
+    desc: Generate dart files
+    summary: |
+      Watch codegen
+    cmds:
+      - dart run build_runner watch -d
+
+  fix:
+    desc: Apply dart fix
+    summary: |
+      Apply dart fix
+    cmds:
+      - dart fix --apply
