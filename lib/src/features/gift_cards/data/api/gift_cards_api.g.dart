@@ -18,20 +18,43 @@ class _GiftCardsApi implements GiftCardsApi {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<List<GiftCard>> retrieveAll({
-    Map<String, dynamic>? queryParameters,
-  }) async {
+  Future<GiftCard> retrieve(String id) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    queryParameters.addAll(queryParameters ?? <String, dynamic>{});
-    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<GiftCard>(
+      Options(method: 'GET', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            '/gift-cards/${id}',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late GiftCard _value;
+    try {
+      _value = GiftCard.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<List<GiftCard>> list() async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _options = _setStreamType<List<GiftCard>>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/admin/gift-cards',
+            '/gift-cards',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -51,16 +74,16 @@ class _GiftCardsApi implements GiftCardsApi {
   }
 
   @override
-  Future<GiftCard> retrieve(String id) async {
+  Future<GiftCard> create(GiftCard giftCard) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
+    final _data = giftCard;
     final _options = _setStreamType<GiftCard>(
-      Options(method: 'GET', headers: _headers, extra: _extra)
+      Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/admin/gift-cards/${id}',
+            '/gift-cards',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -78,45 +101,16 @@ class _GiftCardsApi implements GiftCardsApi {
   }
 
   @override
-  Future<GiftCard> create(Map<String, dynamic> body) async {
+  Future<GiftCard> update(String id, GiftCard giftCard) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(body);
+    final _data = giftCard;
     final _options = _setStreamType<GiftCard>(
-      Options(method: 'POST', headers: _headers, extra: _extra)
+      Options(method: 'PUT', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/admin/gift-cards',
-            queryParameters: queryParameters,
-            data: _data,
-          )
-          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
-    );
-    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late GiftCard _value;
-    try {
-      _value = GiftCard.fromJson(_result.data!);
-    } on Object catch (e, s) {
-      errorLogger?.logError(e, s, _options);
-      rethrow;
-    }
-    return _value;
-  }
-
-  @override
-  Future<GiftCard> update(String id, Map<String, dynamic> body) async {
-    final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(body);
-    final _options = _setStreamType<GiftCard>(
-      Options(method: 'POST', headers: _headers, extra: _extra)
-          .compose(
-            _dio.options,
-            '/admin/gift-cards/${id}',
+            '/gift-cards/${id}',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -143,7 +137,7 @@ class _GiftCardsApi implements GiftCardsApi {
       Options(method: 'DELETE', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/admin/gift-cards/${id}',
+            '/gift-cards/${id}',
             queryParameters: queryParameters,
             data: _data,
           )

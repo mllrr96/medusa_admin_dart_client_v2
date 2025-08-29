@@ -9,29 +9,39 @@ part of 'notification.dart';
 _Notification _$NotificationFromJson(Map<String, dynamic> json) =>
     _Notification(
       id: json['id'] as String,
-      eventName: json['eventName'] as String,
-      resourceType: json['resourceType'] as String,
-      resourceId: json['resourceId'] as String,
-      customerId: json['customerId'] as String,
-      to: json['to'] as String,
-      providerId: json['providerId'] as String,
-      createdAt: DateTime.parse(json['createdAt'] as String),
-      updatedAt: DateTime.parse(json['updatedAt'] as String),
-      deletedAt: json['deletedAt'] == null
+      eventName: json['event_name'] as String,
+      resourceType: json['resource_type'] as String,
+      resourceId: json['resource_id'] as String,
+      customerId: json['customer_id'] as String?,
+      customer: json['customer'] == null
           ? null
-          : DateTime.parse(json['deletedAt'] as String),
+          : Customer.fromJson(json['customer'] as Map<String, dynamic>),
+      to: json['to'] as String,
+      data: json['data'] as Map<String, dynamic>?,
+      parentId: json['parent_id'] as String?,
+      parent: json['parent'] == null
+          ? null
+          : Notification.fromJson(json['parent'] as Map<String, dynamic>),
+      createdAt: DateTime.parse(json['created_at'] as String),
+      updatedAt: DateTime.parse(json['updated_at'] as String),
+      deletedAt: json['deleted_at'] == null
+          ? null
+          : DateTime.parse(json['deleted_at'] as String),
     );
 
 Map<String, dynamic> _$NotificationToJson(_Notification instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'eventName': instance.eventName,
-      'resourceType': instance.resourceType,
-      'resourceId': instance.resourceId,
-      'customerId': instance.customerId,
+      'event_name': instance.eventName,
+      'resource_type': instance.resourceType,
+      'resource_id': instance.resourceId,
+      'customer_id': instance.customerId,
+      'customer': instance.customer,
       'to': instance.to,
-      'providerId': instance.providerId,
-      'createdAt': instance.createdAt.toIso8601String(),
-      'updatedAt': instance.updatedAt.toIso8601String(),
-      'deletedAt': instance.deletedAt?.toIso8601String(),
+      'data': instance.data,
+      'parent_id': instance.parentId,
+      'parent': instance.parent,
+      'created_at': instance.createdAt.toIso8601String(),
+      'updated_at': instance.updatedAt.toIso8601String(),
+      'deleted_at': instance.deletedAt?.toIso8601String(),
     };

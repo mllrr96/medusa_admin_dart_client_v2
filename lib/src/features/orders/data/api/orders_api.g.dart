@@ -18,20 +18,43 @@ class _OrdersApi implements OrdersApi {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<List<Order>> retrieveAll({
-    Map<String, dynamic>? queryParameters,
-  }) async {
+  Future<Order> retrieve(String id) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    queryParameters.addAll(queryParameters ?? <String, dynamic>{});
-    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<Order>(
+      Options(method: 'GET', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            '/orders/${id}',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late Order _value;
+    try {
+      _value = Order.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<List<Order>> list() async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _options = _setStreamType<List<Order>>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/admin/orders',
+            '/orders',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -51,16 +74,16 @@ class _OrdersApi implements OrdersApi {
   }
 
   @override
-  Future<Order> retrieve(String id) async {
+  Future<Order> create(Order order) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
+    final _data = order;
     final _options = _setStreamType<Order>(
-      Options(method: 'GET', headers: _headers, extra: _extra)
+      Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/admin/orders/${id}',
+            '/orders',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -78,17 +101,16 @@ class _OrdersApi implements OrdersApi {
   }
 
   @override
-  Future<Order> update(String id, Map<String, dynamic> body) async {
+  Future<Order> update(String id, Order order) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(body);
+    final _data = order;
     final _options = _setStreamType<Order>(
-      Options(method: 'POST', headers: _headers, extra: _extra)
+      Options(method: 'PUT', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/admin/orders/${id}',
+            '/orders/${id}',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -103,6 +125,25 @@ class _OrdersApi implements OrdersApi {
       rethrow;
     }
     return _value;
+  }
+
+  @override
+  Future<void> delete(String id) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<void>(
+      Options(method: 'DELETE', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            '/orders/${id}',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    await _dio.fetch<void>(_options);
   }
 
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {

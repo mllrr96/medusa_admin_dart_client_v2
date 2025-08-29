@@ -1,16 +1,49 @@
-import '../api/notifications_api.dart';
-import '../models/notification.dart';
+
+import 'package:medusa_admin_dart_client/src/features/notifications/data/models/notification.dart';
+import 'package:medusa_admin_dart_client/src/features/notifications/data/api/notifications_api.dart';
 
 class NotificationsRepository {
-  NotificationsRepository(this._notificationsApi);
-
   final NotificationsApi _notificationsApi;
 
-  Future<List<Notification>> retrieveAll({Map<String, dynamic>? queryParameters}) {
-    return _notificationsApi.retrieveAll(queryParameters: queryParameters);
+  NotificationsRepository(this._notificationsApi);
+
+  Future<Notification> retrieve(String id) async {
+    try {
+      return await _notificationsApi.retrieve(id);
+    } catch (e) {
+      rethrow;
+    }
   }
 
-  Future<Notification> retrieve(String id) {
-    return _notificationsApi.retrieve(id);
+  Future<List<Notification>> list() async {
+    try {
+      return await _notificationsApi.list();
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  Future<Notification> create(Notification notification) async {
+    try {
+      return await _notificationsApi.create(notification);
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  Future<Notification> update(String id, Notification notification) async {
+    try {
+      return await _notificationsApi.update(id, notification);
+    } catch (e) {
+      rethrow;
+    }
+  }
+
+  Future<void> delete(String id) async {
+    try {
+      await _notificationsApi.delete(id);
+    } catch (e) {
+      rethrow;
+    }
   }
 }

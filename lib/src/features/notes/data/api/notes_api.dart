@@ -1,7 +1,7 @@
 
-import 'package:dio/dio.dart';
+import 'package:medusa_admin_dart_client/src/features/notes/data/models/note.dart';
 import 'package:retrofit/retrofit.dart';
-import '../models/note.dart';
+import 'package:dio/dio.dart';
 
 part 'notes_api.g.dart';
 
@@ -9,18 +9,18 @@ part 'notes_api.g.dart';
 abstract class NotesApi {
   factory NotesApi(Dio dio, {String baseUrl}) = _NotesApi;
 
-  @GET('/admin/notes')
-  Future<List<Note>> retrieveAll({@Queries() Map<String, dynamic>? queryParameters});
-
-  @GET('/admin/notes/{id}')
+  @GET('/notes/{id}')
   Future<Note> retrieve(@Path('id') String id);
 
-  @POST('/admin/notes')
-  Future<Note> create(@Body() Map<String, dynamic> body);
+  @GET('/notes')
+  Future<List<Note>> list();
 
-  @POST('/admin/notes/{id}')
-  Future<Note> update(@Path('id') String id, @Body() Map<String, dynamic> body);
+  @POST('/notes')
+  Future<Note> create(@Body() Note note);
 
-  @DELETE('/admin/notes/{id}')
+  @PUT('/notes/{id}')
+  Future<Note> update(@Path('id') String id, @Body() Note note);
+
+  @DELETE('/notes/{id}')
   Future<void> delete(@Path('id') String id);
 }

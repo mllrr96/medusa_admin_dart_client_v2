@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Notification {
 
- String get id; String get eventName; String get resourceType; String get resourceId; String get customerId; String get to; String get providerId; DateTime get createdAt; DateTime get updatedAt; DateTime? get deletedAt;
+ String get id;@JsonKey(name: 'event_name') String get eventName;@JsonKey(name: 'resource_type') String get resourceType;@JsonKey(name: 'resource_id') String get resourceId;@JsonKey(name: 'customer_id') String? get customerId; Customer? get customer; String get to; Map<String, dynamic>? get data;@JsonKey(name: 'parent_id') String? get parentId; Notification? get parent;@JsonKey(name: 'created_at') DateTime get createdAt;@JsonKey(name: 'updated_at') DateTime get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt;
 /// Create a copy of Notification
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $NotificationCopyWith<Notification> get copyWith => _$NotificationCopyWithImpl<N
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Notification&&(identical(other.id, id) || other.id == id)&&(identical(other.eventName, eventName) || other.eventName == eventName)&&(identical(other.resourceType, resourceType) || other.resourceType == resourceType)&&(identical(other.resourceId, resourceId) || other.resourceId == resourceId)&&(identical(other.customerId, customerId) || other.customerId == customerId)&&(identical(other.to, to) || other.to == to)&&(identical(other.providerId, providerId) || other.providerId == providerId)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.deletedAt, deletedAt) || other.deletedAt == deletedAt));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Notification&&(identical(other.id, id) || other.id == id)&&(identical(other.eventName, eventName) || other.eventName == eventName)&&(identical(other.resourceType, resourceType) || other.resourceType == resourceType)&&(identical(other.resourceId, resourceId) || other.resourceId == resourceId)&&(identical(other.customerId, customerId) || other.customerId == customerId)&&(identical(other.customer, customer) || other.customer == customer)&&(identical(other.to, to) || other.to == to)&&const DeepCollectionEquality().equals(other.data, data)&&(identical(other.parentId, parentId) || other.parentId == parentId)&&(identical(other.parent, parent) || other.parent == parent)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.deletedAt, deletedAt) || other.deletedAt == deletedAt));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,eventName,resourceType,resourceId,customerId,to,providerId,createdAt,updatedAt,deletedAt);
+int get hashCode => Object.hash(runtimeType,id,eventName,resourceType,resourceId,customerId,customer,to,const DeepCollectionEquality().hash(data),parentId,parent,createdAt,updatedAt,deletedAt);
 
 @override
 String toString() {
-  return 'Notification(id: $id, eventName: $eventName, resourceType: $resourceType, resourceId: $resourceId, customerId: $customerId, to: $to, providerId: $providerId, createdAt: $createdAt, updatedAt: $updatedAt, deletedAt: $deletedAt)';
+  return 'Notification(id: $id, eventName: $eventName, resourceType: $resourceType, resourceId: $resourceId, customerId: $customerId, customer: $customer, to: $to, data: $data, parentId: $parentId, parent: $parent, createdAt: $createdAt, updatedAt: $updatedAt, deletedAt: $deletedAt)';
 }
 
 
@@ -48,11 +48,11 @@ abstract mixin class $NotificationCopyWith<$Res>  {
   factory $NotificationCopyWith(Notification value, $Res Function(Notification) _then) = _$NotificationCopyWithImpl;
 @useResult
 $Res call({
- String id, String eventName, String resourceType, String resourceId, String customerId, String to, String providerId, DateTime createdAt, DateTime updatedAt, DateTime? deletedAt
+ String id,@JsonKey(name: 'event_name') String eventName,@JsonKey(name: 'resource_type') String resourceType,@JsonKey(name: 'resource_id') String resourceId,@JsonKey(name: 'customer_id') String? customerId, Customer? customer, String to, Map<String, dynamic>? data,@JsonKey(name: 'parent_id') String? parentId, Notification? parent,@JsonKey(name: 'created_at') DateTime createdAt,@JsonKey(name: 'updated_at') DateTime updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
 });
 
 
-
+$CustomerCopyWith<$Res>? get customer;$NotificationCopyWith<$Res>? get parent;
 
 }
 /// @nodoc
@@ -65,22 +65,49 @@ class _$NotificationCopyWithImpl<$Res>
 
 /// Create a copy of Notification
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? eventName = null,Object? resourceType = null,Object? resourceId = null,Object? customerId = null,Object? to = null,Object? providerId = null,Object? createdAt = null,Object? updatedAt = null,Object? deletedAt = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? eventName = null,Object? resourceType = null,Object? resourceId = null,Object? customerId = freezed,Object? customer = freezed,Object? to = null,Object? data = freezed,Object? parentId = freezed,Object? parent = freezed,Object? createdAt = null,Object? updatedAt = null,Object? deletedAt = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,eventName: null == eventName ? _self.eventName : eventName // ignore: cast_nullable_to_non_nullable
 as String,resourceType: null == resourceType ? _self.resourceType : resourceType // ignore: cast_nullable_to_non_nullable
 as String,resourceId: null == resourceId ? _self.resourceId : resourceId // ignore: cast_nullable_to_non_nullable
-as String,customerId: null == customerId ? _self.customerId : customerId // ignore: cast_nullable_to_non_nullable
-as String,to: null == to ? _self.to : to // ignore: cast_nullable_to_non_nullable
-as String,providerId: null == providerId ? _self.providerId : providerId // ignore: cast_nullable_to_non_nullable
-as String,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as String,customerId: freezed == customerId ? _self.customerId : customerId // ignore: cast_nullable_to_non_nullable
+as String?,customer: freezed == customer ? _self.customer : customer // ignore: cast_nullable_to_non_nullable
+as Customer?,to: null == to ? _self.to : to // ignore: cast_nullable_to_non_nullable
+as String,data: freezed == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>?,parentId: freezed == parentId ? _self.parentId : parentId // ignore: cast_nullable_to_non_nullable
+as String?,parent: freezed == parent ? _self.parent : parent // ignore: cast_nullable_to_non_nullable
+as Notification?,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
 as DateTime,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,
   ));
 }
+/// Create a copy of Notification
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$CustomerCopyWith<$Res>? get customer {
+    if (_self.customer == null) {
+    return null;
+  }
 
+  return $CustomerCopyWith<$Res>(_self.customer!, (value) {
+    return _then(_self.copyWith(customer: value));
+  });
+}/// Create a copy of Notification
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$NotificationCopyWith<$Res>? get parent {
+    if (_self.parent == null) {
+    return null;
+  }
+
+  return $NotificationCopyWith<$Res>(_self.parent!, (value) {
+    return _then(_self.copyWith(parent: value));
+  });
+}
 }
 
 
@@ -162,10 +189,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String eventName,  String resourceType,  String resourceId,  String customerId,  String to,  String providerId,  DateTime createdAt,  DateTime updatedAt,  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'event_name')  String eventName, @JsonKey(name: 'resource_type')  String resourceType, @JsonKey(name: 'resource_id')  String resourceId, @JsonKey(name: 'customer_id')  String? customerId,  Customer? customer,  String to,  Map<String, dynamic>? data, @JsonKey(name: 'parent_id')  String? parentId,  Notification? parent, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'updated_at')  DateTime updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Notification() when $default != null:
-return $default(_that.id,_that.eventName,_that.resourceType,_that.resourceId,_that.customerId,_that.to,_that.providerId,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
+return $default(_that.id,_that.eventName,_that.resourceType,_that.resourceId,_that.customerId,_that.customer,_that.to,_that.data,_that.parentId,_that.parent,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
   return orElse();
 
 }
@@ -183,10 +210,10 @@ return $default(_that.id,_that.eventName,_that.resourceType,_that.resourceId,_th
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String eventName,  String resourceType,  String resourceId,  String customerId,  String to,  String providerId,  DateTime createdAt,  DateTime updatedAt,  DateTime? deletedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'event_name')  String eventName, @JsonKey(name: 'resource_type')  String resourceType, @JsonKey(name: 'resource_id')  String resourceId, @JsonKey(name: 'customer_id')  String? customerId,  Customer? customer,  String to,  Map<String, dynamic>? data, @JsonKey(name: 'parent_id')  String? parentId,  Notification? parent, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'updated_at')  DateTime updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)  $default,) {final _that = this;
 switch (_that) {
 case _Notification():
-return $default(_that.id,_that.eventName,_that.resourceType,_that.resourceId,_that.customerId,_that.to,_that.providerId,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
+return $default(_that.id,_that.eventName,_that.resourceType,_that.resourceId,_that.customerId,_that.customer,_that.to,_that.data,_that.parentId,_that.parent,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -203,10 +230,10 @@ return $default(_that.id,_that.eventName,_that.resourceType,_that.resourceId,_th
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String eventName,  String resourceType,  String resourceId,  String customerId,  String to,  String providerId,  DateTime createdAt,  DateTime updatedAt,  DateTime? deletedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'event_name')  String eventName, @JsonKey(name: 'resource_type')  String resourceType, @JsonKey(name: 'resource_id')  String resourceId, @JsonKey(name: 'customer_id')  String? customerId,  Customer? customer,  String to,  Map<String, dynamic>? data, @JsonKey(name: 'parent_id')  String? parentId,  Notification? parent, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'updated_at')  DateTime updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _Notification() when $default != null:
-return $default(_that.id,_that.eventName,_that.resourceType,_that.resourceId,_that.customerId,_that.to,_that.providerId,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
+return $default(_that.id,_that.eventName,_that.resourceType,_that.resourceId,_that.customerId,_that.customer,_that.to,_that.data,_that.parentId,_that.parent,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
   return null;
 
 }
@@ -218,19 +245,30 @@ return $default(_that.id,_that.eventName,_that.resourceType,_that.resourceId,_th
 @JsonSerializable()
 
 class _Notification implements Notification {
-  const _Notification({required this.id, required this.eventName, required this.resourceType, required this.resourceId, required this.customerId, required this.to, required this.providerId, required this.createdAt, required this.updatedAt, this.deletedAt});
+  const _Notification({required this.id, @JsonKey(name: 'event_name') required this.eventName, @JsonKey(name: 'resource_type') required this.resourceType, @JsonKey(name: 'resource_id') required this.resourceId, @JsonKey(name: 'customer_id') this.customerId, this.customer, required this.to, final  Map<String, dynamic>? data, @JsonKey(name: 'parent_id') this.parentId, this.parent, @JsonKey(name: 'created_at') required this.createdAt, @JsonKey(name: 'updated_at') required this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt}): _data = data;
   factory _Notification.fromJson(Map<String, dynamic> json) => _$NotificationFromJson(json);
 
 @override final  String id;
-@override final  String eventName;
-@override final  String resourceType;
-@override final  String resourceId;
-@override final  String customerId;
+@override@JsonKey(name: 'event_name') final  String eventName;
+@override@JsonKey(name: 'resource_type') final  String resourceType;
+@override@JsonKey(name: 'resource_id') final  String resourceId;
+@override@JsonKey(name: 'customer_id') final  String? customerId;
+@override final  Customer? customer;
 @override final  String to;
-@override final  String providerId;
-@override final  DateTime createdAt;
-@override final  DateTime updatedAt;
-@override final  DateTime? deletedAt;
+ final  Map<String, dynamic>? _data;
+@override Map<String, dynamic>? get data {
+  final value = _data;
+  if (value == null) return null;
+  if (_data is EqualUnmodifiableMapView) return _data;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableMapView(value);
+}
+
+@override@JsonKey(name: 'parent_id') final  String? parentId;
+@override final  Notification? parent;
+@override@JsonKey(name: 'created_at') final  DateTime createdAt;
+@override@JsonKey(name: 'updated_at') final  DateTime updatedAt;
+@override@JsonKey(name: 'deleted_at') final  DateTime? deletedAt;
 
 /// Create a copy of Notification
 /// with the given fields replaced by the non-null parameter values.
@@ -245,16 +283,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Notification&&(identical(other.id, id) || other.id == id)&&(identical(other.eventName, eventName) || other.eventName == eventName)&&(identical(other.resourceType, resourceType) || other.resourceType == resourceType)&&(identical(other.resourceId, resourceId) || other.resourceId == resourceId)&&(identical(other.customerId, customerId) || other.customerId == customerId)&&(identical(other.to, to) || other.to == to)&&(identical(other.providerId, providerId) || other.providerId == providerId)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.deletedAt, deletedAt) || other.deletedAt == deletedAt));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Notification&&(identical(other.id, id) || other.id == id)&&(identical(other.eventName, eventName) || other.eventName == eventName)&&(identical(other.resourceType, resourceType) || other.resourceType == resourceType)&&(identical(other.resourceId, resourceId) || other.resourceId == resourceId)&&(identical(other.customerId, customerId) || other.customerId == customerId)&&(identical(other.customer, customer) || other.customer == customer)&&(identical(other.to, to) || other.to == to)&&const DeepCollectionEquality().equals(other._data, _data)&&(identical(other.parentId, parentId) || other.parentId == parentId)&&(identical(other.parent, parent) || other.parent == parent)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.deletedAt, deletedAt) || other.deletedAt == deletedAt));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,eventName,resourceType,resourceId,customerId,to,providerId,createdAt,updatedAt,deletedAt);
+int get hashCode => Object.hash(runtimeType,id,eventName,resourceType,resourceId,customerId,customer,to,const DeepCollectionEquality().hash(_data),parentId,parent,createdAt,updatedAt,deletedAt);
 
 @override
 String toString() {
-  return 'Notification(id: $id, eventName: $eventName, resourceType: $resourceType, resourceId: $resourceId, customerId: $customerId, to: $to, providerId: $providerId, createdAt: $createdAt, updatedAt: $updatedAt, deletedAt: $deletedAt)';
+  return 'Notification(id: $id, eventName: $eventName, resourceType: $resourceType, resourceId: $resourceId, customerId: $customerId, customer: $customer, to: $to, data: $data, parentId: $parentId, parent: $parent, createdAt: $createdAt, updatedAt: $updatedAt, deletedAt: $deletedAt)';
 }
 
 
@@ -265,11 +303,11 @@ abstract mixin class _$NotificationCopyWith<$Res> implements $NotificationCopyWi
   factory _$NotificationCopyWith(_Notification value, $Res Function(_Notification) _then) = __$NotificationCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String eventName, String resourceType, String resourceId, String customerId, String to, String providerId, DateTime createdAt, DateTime updatedAt, DateTime? deletedAt
+ String id,@JsonKey(name: 'event_name') String eventName,@JsonKey(name: 'resource_type') String resourceType,@JsonKey(name: 'resource_id') String resourceId,@JsonKey(name: 'customer_id') String? customerId, Customer? customer, String to, Map<String, dynamic>? data,@JsonKey(name: 'parent_id') String? parentId, Notification? parent,@JsonKey(name: 'created_at') DateTime createdAt,@JsonKey(name: 'updated_at') DateTime updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
 });
 
 
-
+@override $CustomerCopyWith<$Res>? get customer;@override $NotificationCopyWith<$Res>? get parent;
 
 }
 /// @nodoc
@@ -282,23 +320,50 @@ class __$NotificationCopyWithImpl<$Res>
 
 /// Create a copy of Notification
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? eventName = null,Object? resourceType = null,Object? resourceId = null,Object? customerId = null,Object? to = null,Object? providerId = null,Object? createdAt = null,Object? updatedAt = null,Object? deletedAt = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? eventName = null,Object? resourceType = null,Object? resourceId = null,Object? customerId = freezed,Object? customer = freezed,Object? to = null,Object? data = freezed,Object? parentId = freezed,Object? parent = freezed,Object? createdAt = null,Object? updatedAt = null,Object? deletedAt = freezed,}) {
   return _then(_Notification(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,eventName: null == eventName ? _self.eventName : eventName // ignore: cast_nullable_to_non_nullable
 as String,resourceType: null == resourceType ? _self.resourceType : resourceType // ignore: cast_nullable_to_non_nullable
 as String,resourceId: null == resourceId ? _self.resourceId : resourceId // ignore: cast_nullable_to_non_nullable
-as String,customerId: null == customerId ? _self.customerId : customerId // ignore: cast_nullable_to_non_nullable
-as String,to: null == to ? _self.to : to // ignore: cast_nullable_to_non_nullable
-as String,providerId: null == providerId ? _self.providerId : providerId // ignore: cast_nullable_to_non_nullable
-as String,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as String,customerId: freezed == customerId ? _self.customerId : customerId // ignore: cast_nullable_to_non_nullable
+as String?,customer: freezed == customer ? _self.customer : customer // ignore: cast_nullable_to_non_nullable
+as Customer?,to: null == to ? _self.to : to // ignore: cast_nullable_to_non_nullable
+as String,data: freezed == data ? _self._data : data // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>?,parentId: freezed == parentId ? _self.parentId : parentId // ignore: cast_nullable_to_non_nullable
+as String?,parent: freezed == parent ? _self.parent : parent // ignore: cast_nullable_to_non_nullable
+as Notification?,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
 as DateTime,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,
   ));
 }
 
+/// Create a copy of Notification
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$CustomerCopyWith<$Res>? get customer {
+    if (_self.customer == null) {
+    return null;
+  }
 
+  return $CustomerCopyWith<$Res>(_self.customer!, (value) {
+    return _then(_self.copyWith(customer: value));
+  });
+}/// Create a copy of Notification
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$NotificationCopyWith<$Res>? get parent {
+    if (_self.parent == null) {
+    return null;
+  }
+
+  return $NotificationCopyWith<$Res>(_self.parent!, (value) {
+    return _then(_self.copyWith(parent: value));
+  });
+}
 }
 
 // dart format on

@@ -1,5 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+import '../../../customers/data/models/customer.dart';
+
+
 part 'notification.freezed.dart';
 part 'notification.g.dart';
 
@@ -7,16 +10,20 @@ part 'notification.g.dart';
 abstract class Notification with _$Notification {
   const factory Notification({
     required String id,
-    required String eventName,
-    required String resourceType,
-    required String resourceId,
-    required String customerId,
+    @JsonKey(name: 'event_name') required String eventName,
+    @JsonKey(name: 'resource_type') required String resourceType,
+    @JsonKey(name: 'resource_id') required String resourceId,
+    @JsonKey(name: 'customer_id') String? customerId,
+    Customer? customer,
     required String to,
-    required String providerId,
-    required DateTime createdAt,
-    required DateTime updatedAt,
-    DateTime? deletedAt,
+    Map<String, dynamic>? data,
+    @JsonKey(name: 'parent_id') String? parentId,
+    Notification? parent,
+    @JsonKey(name: 'created_at') required DateTime createdAt,
+    @JsonKey(name: 'updated_at') required DateTime updatedAt,
+    @JsonKey(name: 'deleted_at') DateTime? deletedAt,
   }) = _Notification;
 
-  factory Notification.fromJson(Map<String, dynamic> json) => _$NotificationFromJson(json);
+  factory Notification.fromJson(Map<String, dynamic> json) =>
+      _$NotificationFromJson(json);
 }

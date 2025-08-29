@@ -43,10 +43,9 @@ We are currently migrating the Medusa Admin Dart client from its current v1 API 
 
 ### Project Restructuring
 
--   Moved existing v1 code to `lib/v1`.
--   Created a new `lib/v2` directory with a feature-based structure:
-    -   `lib/v2/src/core`: Contains core components like API client setup and dependency injection.
-    -   `lib/v2/src/features`: Contains subdirectories for each major feature, each with its own `data` (models, API interfaces, repositories) and `presentation` (placeholder for UI-related code) layers.
+-   Created a new `lib` directory with a feature-based structure:
+    -   `lib/src/core`: Contains core components like API client setup and dependency injection.
+    -   `lib/src/features`: Contains subdirectories for each major feature, each with its own `data` (models, API interfaces, repositories) and `presentation` (placeholder for UI-related code) layers.
 
 ### Dependency Management
 
@@ -61,7 +60,7 @@ We are currently migrating the Medusa Admin Dart client from its current v1 API 
 ### Core Setup
 
 -   Created `medusa_admin_v2.dart` as the new main entry point for the v2 client.
--   Set up `di.dart` in `lib/v2/src/core/di` for dependency injection using `get_it`.
+-   Set up `di.dart` in `lib/src/core/di` for dependency injection using `get_it`.
 
 ### Feature Migration
 

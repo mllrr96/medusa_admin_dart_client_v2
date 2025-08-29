@@ -1,29 +1,50 @@
 
-import '../api/gift_cards_api.dart';
-import '../models/gift_card.dart';
+
+import 'package:medusa_admin_dart_client/src/features/gift_cards/data/api/gift_cards_api.dart';
+import 'package:medusa_admin_dart_client/src/features/gift_cards/data/models/gift_card.dart';
 
 class GiftCardsRepository {
-  GiftCardsRepository(this._giftCardsApi);
-
   final GiftCardsApi _giftCardsApi;
 
-  Future<List<GiftCard>> retrieveAll({Map<String, dynamic>? queryParameters}) {
-    return _giftCardsApi.retrieveAll(queryParameters: queryParameters);
+  GiftCardsRepository(this._giftCardsApi);
+
+  Future<GiftCard> retrieve(String id) async {
+    try {
+      return await _giftCardsApi.retrieve(id);
+    } catch (e) {
+      rethrow;
+    }
   }
 
-  Future<GiftCard> retrieve(String id) {
-    return _giftCardsApi.retrieve(id);
+  Future<List<GiftCard>> list() async {
+    try {
+      return await _giftCardsApi.list();
+    } catch (e) {
+      rethrow;
+    }
   }
 
-  Future<GiftCard> create(Map<String, dynamic> body) {
-    return _giftCardsApi.create(body);
+  Future<GiftCard> create(GiftCard giftCard) async {
+    try {
+      return await _giftCardsApi.create(giftCard);
+    } catch (e) {
+      rethrow;
+    }
   }
 
-  Future<GiftCard> update(String id, Map<String, dynamic> body) {
-    return _giftCardsApi.update(id, body);
+  Future<GiftCard> update(String id, GiftCard giftCard) async {
+    try {
+      return await _giftCardsApi.update(id, giftCard);
+    } catch (e) {
+      rethrow;
+    }
   }
 
-  Future<void> delete(String id) {
-    return _giftCardsApi.delete(id);
+  Future<void> delete(String id) async {
+    try {
+      await _giftCardsApi.delete(id);
+    } catch (e) {
+      rethrow;
+    }
   }
 }

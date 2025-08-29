@@ -8,22 +8,28 @@ part of 'note.dart';
 
 _Note _$NoteFromJson(Map<String, dynamic> json) => _Note(
   id: json['id'] as String,
-  resourceType: json['resourceType'] as String,
-  resourceId: json['resourceId'] as String,
+  resourceType: json['resource_type'] as String,
+  resourceId: json['resource_id'] as String,
   value: json['value'] as String,
-  createdAt: DateTime.parse(json['createdAt'] as String),
-  updatedAt: DateTime.parse(json['updatedAt'] as String),
-  deletedAt: json['deletedAt'] == null
+  authorId: json['author_id'] as String?,
+  author: json['author'] == null
       ? null
-      : DateTime.parse(json['deletedAt'] as String),
+      : User.fromJson(json['author'] as Map<String, dynamic>),
+  createdAt: DateTime.parse(json['created_at'] as String),
+  updatedAt: DateTime.parse(json['updated_at'] as String),
+  deletedAt: json['deleted_at'] == null
+      ? null
+      : DateTime.parse(json['deleted_at'] as String),
 );
 
 Map<String, dynamic> _$NoteToJson(_Note instance) => <String, dynamic>{
   'id': instance.id,
-  'resourceType': instance.resourceType,
-  'resourceId': instance.resourceId,
+  'resource_type': instance.resourceType,
+  'resource_id': instance.resourceId,
   'value': instance.value,
-  'createdAt': instance.createdAt.toIso8601String(),
-  'updatedAt': instance.updatedAt.toIso8601String(),
-  'deletedAt': instance.deletedAt?.toIso8601String(),
+  'author_id': instance.authorId,
+  'author': instance.author,
+  'created_at': instance.createdAt.toIso8601String(),
+  'updated_at': instance.updatedAt.toIso8601String(),
+  'deleted_at': instance.deletedAt?.toIso8601String(),
 };

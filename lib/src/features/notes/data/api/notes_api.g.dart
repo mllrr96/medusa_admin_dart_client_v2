@@ -18,20 +18,43 @@ class _NotesApi implements NotesApi {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<List<Note>> retrieveAll({
-    Map<String, dynamic>? queryParameters,
-  }) async {
+  Future<Note> retrieve(String id) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    queryParameters.addAll(queryParameters ?? <String, dynamic>{});
-    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<Note>(
+      Options(method: 'GET', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            '/notes/${id}',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late Note _value;
+    try {
+      _value = Note.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<List<Note>> list() async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _options = _setStreamType<List<Note>>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/admin/notes',
+            '/notes',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -51,16 +74,16 @@ class _NotesApi implements NotesApi {
   }
 
   @override
-  Future<Note> retrieve(String id) async {
+  Future<Note> create(Note note) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
+    final _data = note;
     final _options = _setStreamType<Note>(
-      Options(method: 'GET', headers: _headers, extra: _extra)
+      Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/admin/notes/${id}',
+            '/notes',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -78,45 +101,16 @@ class _NotesApi implements NotesApi {
   }
 
   @override
-  Future<Note> create(Map<String, dynamic> body) async {
+  Future<Note> update(String id, Note note) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(body);
+    final _data = note;
     final _options = _setStreamType<Note>(
-      Options(method: 'POST', headers: _headers, extra: _extra)
+      Options(method: 'PUT', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/admin/notes',
-            queryParameters: queryParameters,
-            data: _data,
-          )
-          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
-    );
-    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late Note _value;
-    try {
-      _value = Note.fromJson(_result.data!);
-    } on Object catch (e, s) {
-      errorLogger?.logError(e, s, _options);
-      rethrow;
-    }
-    return _value;
-  }
-
-  @override
-  Future<Note> update(String id, Map<String, dynamic> body) async {
-    final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(body);
-    final _options = _setStreamType<Note>(
-      Options(method: 'POST', headers: _headers, extra: _extra)
-          .compose(
-            _dio.options,
-            '/admin/notes/${id}',
+            '/notes/${id}',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -143,7 +137,7 @@ class _NotesApi implements NotesApi {
       Options(method: 'DELETE', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/admin/notes/${id}',
+            '/notes/${id}',
             queryParameters: queryParameters,
             data: _data,
           )
