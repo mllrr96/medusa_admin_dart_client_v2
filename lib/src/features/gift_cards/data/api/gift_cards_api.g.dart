@@ -18,39 +18,16 @@ class _GiftCardsApi implements GiftCardsApi {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<GiftCard> retrieve(String id) async {
+  Future<AdminGiftCardsListResponse> retrieveAll({
+    Map<String, dynamic>? queryParameters,
+  }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(queryParameters ?? <String, dynamic>{});
+    queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<GiftCard>(
-      Options(method: 'GET', headers: _headers, extra: _extra)
-          .compose(
-            _dio.options,
-            '/gift-cards/${id}',
-            queryParameters: queryParameters,
-            data: _data,
-          )
-          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
-    );
-    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late GiftCard _value;
-    try {
-      _value = GiftCard.fromJson(_result.data!);
-    } on Object catch (e, s) {
-      errorLogger?.logError(e, s, _options);
-      rethrow;
-    }
-    return _value;
-  }
-
-  @override
-  Future<List<GiftCard>> list() async {
-    final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<List<GiftCard>>(
+    final _options = _setStreamType<AdminGiftCardsListResponse>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -60,12 +37,10 @@ class _GiftCardsApi implements GiftCardsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<List<dynamic>>(_options);
-    late List<GiftCard> _value;
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late AdminGiftCardsListResponse _value;
     try {
-      _value = _result.data!
-          .map((dynamic i) => GiftCard.fromJson(i as Map<String, dynamic>))
-          .toList();
+      _value = AdminGiftCardsListResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -74,12 +49,17 @@ class _GiftCardsApi implements GiftCardsApi {
   }
 
   @override
-  Future<GiftCard> create(GiftCard giftCard) async {
+  Future<AdminGiftCardResponse> create(
+    AdminCreateGiftCardRequest payload, {
+    Map<String, dynamic>? queryParameters,
+  }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(queryParameters ?? <String, dynamic>{});
+    queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    final _data = giftCard;
-    final _options = _setStreamType<GiftCard>(
+    final _data = payload;
+    final _options = _setStreamType<AdminGiftCardResponse>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -90,9 +70,9 @@ class _GiftCardsApi implements GiftCardsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late GiftCard _value;
+    late AdminGiftCardResponse _value;
     try {
-      _value = GiftCard.fromJson(_result.data!);
+      _value = AdminGiftCardResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -101,13 +81,18 @@ class _GiftCardsApi implements GiftCardsApi {
   }
 
   @override
-  Future<GiftCard> update(String id, GiftCard giftCard) async {
+  Future<AdminGiftCardResponse> retrieve({
+    required String id,
+    Map<String, dynamic>? queryParameters,
+  }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(queryParameters ?? <String, dynamic>{});
+    queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    final _data = giftCard;
-    final _options = _setStreamType<GiftCard>(
-      Options(method: 'PUT', headers: _headers, extra: _extra)
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<AdminGiftCardResponse>(
+      Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
             '/gift-cards/${id}',
@@ -117,9 +102,9 @@ class _GiftCardsApi implements GiftCardsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late GiftCard _value;
+    late AdminGiftCardResponse _value;
     try {
-      _value = GiftCard.fromJson(_result.data!);
+      _value = AdminGiftCardResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -128,9 +113,47 @@ class _GiftCardsApi implements GiftCardsApi {
   }
 
   @override
-  Future<void> delete(String id) async {
+  Future<AdminGiftCardResponse> update({
+    required String id,
+    required AdminUpdateGiftCardRequest payload,
+    Map<String, dynamic>? queryParameters,
+  }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(queryParameters ?? <String, dynamic>{});
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    final _data = payload;
+    final _options = _setStreamType<AdminGiftCardResponse>(
+      Options(method: 'POST', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            '/gift-cards/${id}',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late AdminGiftCardResponse _value;
+    try {
+      _value = AdminGiftCardResponse.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<void> delete({
+    required String id,
+    Map<String, dynamic>? queryParameters,
+  }) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(queryParameters ?? <String, dynamic>{});
+    queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _options = _setStreamType<void>(

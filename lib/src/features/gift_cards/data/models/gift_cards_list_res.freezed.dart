@@ -13,22 +13,22 @@ part of 'gift_cards_list_res.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-mixin _$GiftCardsListRes {
+mixin _$AdminGiftCardsListResponse {
 
- List<GiftCard> get giftCards; int get count; int get offset; int get limit;
-/// Create a copy of GiftCardsListRes
+ List<AdminGiftCard> get giftCards; int get count; int get offset; int get limit;
+/// Create a copy of AdminGiftCardsListResponse
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$GiftCardsListResCopyWith<GiftCardsListRes> get copyWith => _$GiftCardsListResCopyWithImpl<GiftCardsListRes>(this as GiftCardsListRes, _$identity);
+$AdminGiftCardsListResponseCopyWith<AdminGiftCardsListResponse> get copyWith => _$AdminGiftCardsListResponseCopyWithImpl<AdminGiftCardsListResponse>(this as AdminGiftCardsListResponse, _$identity);
 
-  /// Serializes this GiftCardsListRes to a JSON map.
+  /// Serializes this AdminGiftCardsListResponse to a JSON map.
   Map<String, dynamic> toJson();
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GiftCardsListRes&&const DeepCollectionEquality().equals(other.giftCards, giftCards)&&(identical(other.count, count) || other.count == count)&&(identical(other.offset, offset) || other.offset == offset)&&(identical(other.limit, limit) || other.limit == limit));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AdminGiftCardsListResponse&&const DeepCollectionEquality().equals(other.giftCards, giftCards)&&(identical(other.count, count) || other.count == count)&&(identical(other.offset, offset) || other.offset == offset)&&(identical(other.limit, limit) || other.limit == limit));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -37,18 +37,18 @@ int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(
 
 @override
 String toString() {
-  return 'GiftCardsListRes(giftCards: $giftCards, count: $count, offset: $offset, limit: $limit)';
+  return 'AdminGiftCardsListResponse(giftCards: $giftCards, count: $count, offset: $offset, limit: $limit)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $GiftCardsListResCopyWith<$Res>  {
-  factory $GiftCardsListResCopyWith(GiftCardsListRes value, $Res Function(GiftCardsListRes) _then) = _$GiftCardsListResCopyWithImpl;
+abstract mixin class $AdminGiftCardsListResponseCopyWith<$Res>  {
+  factory $AdminGiftCardsListResponseCopyWith(AdminGiftCardsListResponse value, $Res Function(AdminGiftCardsListResponse) _then) = _$AdminGiftCardsListResponseCopyWithImpl;
 @useResult
 $Res call({
- List<GiftCard> giftCards, int count, int offset, int limit
+ List<AdminGiftCard> giftCards, int count, int offset, int limit
 });
 
 
@@ -56,19 +56,19 @@ $Res call({
 
 }
 /// @nodoc
-class _$GiftCardsListResCopyWithImpl<$Res>
-    implements $GiftCardsListResCopyWith<$Res> {
-  _$GiftCardsListResCopyWithImpl(this._self, this._then);
+class _$AdminGiftCardsListResponseCopyWithImpl<$Res>
+    implements $AdminGiftCardsListResponseCopyWith<$Res> {
+  _$AdminGiftCardsListResponseCopyWithImpl(this._self, this._then);
 
-  final GiftCardsListRes _self;
-  final $Res Function(GiftCardsListRes) _then;
+  final AdminGiftCardsListResponse _self;
+  final $Res Function(AdminGiftCardsListResponse) _then;
 
-/// Create a copy of GiftCardsListRes
+/// Create a copy of AdminGiftCardsListResponse
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? giftCards = null,Object? count = null,Object? offset = null,Object? limit = null,}) {
   return _then(_self.copyWith(
 giftCards: null == giftCards ? _self.giftCards : giftCards // ignore: cast_nullable_to_non_nullable
-as List<GiftCard>,count: null == count ? _self.count : count // ignore: cast_nullable_to_non_nullable
+as List<AdminGiftCard>,count: null == count ? _self.count : count // ignore: cast_nullable_to_non_nullable
 as int,offset: null == offset ? _self.offset : offset // ignore: cast_nullable_to_non_nullable
 as int,limit: null == limit ? _self.limit : limit // ignore: cast_nullable_to_non_nullable
 as int,
@@ -78,8 +78,8 @@ as int,
 }
 
 
-/// Adds pattern-matching-related methods to [GiftCardsListRes].
-extension GiftCardsListResPatterns on GiftCardsListRes {
+/// Adds pattern-matching-related methods to [AdminGiftCardsListResponse].
+extension AdminGiftCardsListResponsePatterns on AdminGiftCardsListResponse {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -92,10 +92,10 @@ extension GiftCardsListResPatterns on GiftCardsListRes {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _GiftCardsListRes value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AdminGiftCardsListResponse value)?  $default,{required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _GiftCardsListRes() when $default != null:
+case _AdminGiftCardsListResponse() when $default != null:
 return $default(_that);case _:
   return orElse();
 
@@ -114,10 +114,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _GiftCardsListRes value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AdminGiftCardsListResponse value)  $default,){
 final _that = this;
 switch (_that) {
-case _GiftCardsListRes():
+case _AdminGiftCardsListResponse():
 return $default(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -135,10 +135,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _GiftCardsListRes value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AdminGiftCardsListResponse value)?  $default,){
 final _that = this;
 switch (_that) {
-case _GiftCardsListRes() when $default != null:
+case _AdminGiftCardsListResponse() when $default != null:
 return $default(_that);case _:
   return null;
 
@@ -156,9 +156,9 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<GiftCard> giftCards,  int count,  int offset,  int limit)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<AdminGiftCard> giftCards,  int count,  int offset,  int limit)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _GiftCardsListRes() when $default != null:
+case _AdminGiftCardsListResponse() when $default != null:
 return $default(_that.giftCards,_that.count,_that.offset,_that.limit);case _:
   return orElse();
 
@@ -177,9 +177,9 @@ return $default(_that.giftCards,_that.count,_that.offset,_that.limit);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<GiftCard> giftCards,  int count,  int offset,  int limit)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<AdminGiftCard> giftCards,  int count,  int offset,  int limit)  $default,) {final _that = this;
 switch (_that) {
-case _GiftCardsListRes():
+case _AdminGiftCardsListResponse():
 return $default(_that.giftCards,_that.count,_that.offset,_that.limit);case _:
   throw StateError('Unexpected subclass');
 
@@ -197,9 +197,9 @@ return $default(_that.giftCards,_that.count,_that.offset,_that.limit);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<GiftCard> giftCards,  int count,  int offset,  int limit)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<AdminGiftCard> giftCards,  int count,  int offset,  int limit)?  $default,) {final _that = this;
 switch (_that) {
-case _GiftCardsListRes() when $default != null:
+case _AdminGiftCardsListResponse() when $default != null:
 return $default(_that.giftCards,_that.count,_that.offset,_that.limit);case _:
   return null;
 
@@ -211,12 +211,12 @@ return $default(_that.giftCards,_that.count,_that.offset,_that.limit);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _GiftCardsListRes implements GiftCardsListRes {
-  const _GiftCardsListRes({required final  List<GiftCard> giftCards, required this.count, required this.offset, required this.limit}): _giftCards = giftCards;
-  factory _GiftCardsListRes.fromJson(Map<String, dynamic> json) => _$GiftCardsListResFromJson(json);
+class _AdminGiftCardsListResponse implements AdminGiftCardsListResponse {
+  const _AdminGiftCardsListResponse({required final  List<AdminGiftCard> giftCards, required this.count, required this.offset, required this.limit}): _giftCards = giftCards;
+  factory _AdminGiftCardsListResponse.fromJson(Map<String, dynamic> json) => _$AdminGiftCardsListResponseFromJson(json);
 
- final  List<GiftCard> _giftCards;
-@override List<GiftCard> get giftCards {
+ final  List<AdminGiftCard> _giftCards;
+@override List<AdminGiftCard> get giftCards {
   if (_giftCards is EqualUnmodifiableListView) return _giftCards;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_giftCards);
@@ -226,20 +226,20 @@ class _GiftCardsListRes implements GiftCardsListRes {
 @override final  int offset;
 @override final  int limit;
 
-/// Create a copy of GiftCardsListRes
+/// Create a copy of AdminGiftCardsListResponse
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$GiftCardsListResCopyWith<_GiftCardsListRes> get copyWith => __$GiftCardsListResCopyWithImpl<_GiftCardsListRes>(this, _$identity);
+_$AdminGiftCardsListResponseCopyWith<_AdminGiftCardsListResponse> get copyWith => __$AdminGiftCardsListResponseCopyWithImpl<_AdminGiftCardsListResponse>(this, _$identity);
 
 @override
 Map<String, dynamic> toJson() {
-  return _$GiftCardsListResToJson(this, );
+  return _$AdminGiftCardsListResponseToJson(this, );
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GiftCardsListRes&&const DeepCollectionEquality().equals(other._giftCards, _giftCards)&&(identical(other.count, count) || other.count == count)&&(identical(other.offset, offset) || other.offset == offset)&&(identical(other.limit, limit) || other.limit == limit));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AdminGiftCardsListResponse&&const DeepCollectionEquality().equals(other._giftCards, _giftCards)&&(identical(other.count, count) || other.count == count)&&(identical(other.offset, offset) || other.offset == offset)&&(identical(other.limit, limit) || other.limit == limit));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -248,18 +248,18 @@ int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(
 
 @override
 String toString() {
-  return 'GiftCardsListRes(giftCards: $giftCards, count: $count, offset: $offset, limit: $limit)';
+  return 'AdminGiftCardsListResponse(giftCards: $giftCards, count: $count, offset: $offset, limit: $limit)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$GiftCardsListResCopyWith<$Res> implements $GiftCardsListResCopyWith<$Res> {
-  factory _$GiftCardsListResCopyWith(_GiftCardsListRes value, $Res Function(_GiftCardsListRes) _then) = __$GiftCardsListResCopyWithImpl;
+abstract mixin class _$AdminGiftCardsListResponseCopyWith<$Res> implements $AdminGiftCardsListResponseCopyWith<$Res> {
+  factory _$AdminGiftCardsListResponseCopyWith(_AdminGiftCardsListResponse value, $Res Function(_AdminGiftCardsListResponse) _then) = __$AdminGiftCardsListResponseCopyWithImpl;
 @override @useResult
 $Res call({
- List<GiftCard> giftCards, int count, int offset, int limit
+ List<AdminGiftCard> giftCards, int count, int offset, int limit
 });
 
 
@@ -267,19 +267,19 @@ $Res call({
 
 }
 /// @nodoc
-class __$GiftCardsListResCopyWithImpl<$Res>
-    implements _$GiftCardsListResCopyWith<$Res> {
-  __$GiftCardsListResCopyWithImpl(this._self, this._then);
+class __$AdminGiftCardsListResponseCopyWithImpl<$Res>
+    implements _$AdminGiftCardsListResponseCopyWith<$Res> {
+  __$AdminGiftCardsListResponseCopyWithImpl(this._self, this._then);
 
-  final _GiftCardsListRes _self;
-  final $Res Function(_GiftCardsListRes) _then;
+  final _AdminGiftCardsListResponse _self;
+  final $Res Function(_AdminGiftCardsListResponse) _then;
 
-/// Create a copy of GiftCardsListRes
+/// Create a copy of AdminGiftCardsListResponse
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? giftCards = null,Object? count = null,Object? offset = null,Object? limit = null,}) {
-  return _then(_GiftCardsListRes(
+  return _then(_AdminGiftCardsListResponse(
 giftCards: null == giftCards ? _self._giftCards : giftCards // ignore: cast_nullable_to_non_nullable
-as List<GiftCard>,count: null == count ? _self.count : count // ignore: cast_nullable_to_non_nullable
+as List<AdminGiftCard>,count: null == count ? _self.count : count // ignore: cast_nullable_to_non_nullable
 as int,offset: null == offset ? _self.offset : offset // ignore: cast_nullable_to_non_nullable
 as int,limit: null == limit ? _self.limit : limit // ignore: cast_nullable_to_non_nullable
 as int,

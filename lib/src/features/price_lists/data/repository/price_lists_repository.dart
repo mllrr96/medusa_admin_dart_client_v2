@@ -1,29 +1,39 @@
-
 import '../api/price_lists_api.dart';
-import '../models/price_list.dart';
+import '../models/price_lists_models.dart';
 
 class PriceListsRepository {
-  PriceListsRepository(this._priceListsApi);
-
   final PriceListsApi _priceListsApi;
 
-  Future<List<PriceList>> retrieveAll({Map<String, dynamic>? queryParameters}) {
+  PriceListsRepository(this._priceListsApi);
+
+  Future<AdminPriceListsListRes> retrieveAll({Map<String, dynamic>? queryParameters}) async {
     return _priceListsApi.retrieveAll(queryParameters: queryParameters);
   }
 
-  Future<PriceList> retrieve(String id) {
-    return _priceListsApi.retrieve(id);
-  }
-
-  Future<PriceList> create(Map<String, dynamic> body) {
+  Future<AdminPriceListsRes> create(AdminCreatePriceListReq body) async {
     return _priceListsApi.create(body);
   }
 
-  Future<PriceList> update(String id, Map<String, dynamic> body) {
+  Future<AdminPriceListsRes> retrieve(String id, {Map<String, dynamic>? queryParameters}) async {
+    return _priceListsApi.retrieve(id, queryParameters: queryParameters);
+  }
+
+  Future<AdminPriceListsRes> update(String id, AdminUpdatePriceListReq body) async {
     return _priceListsApi.update(id, body);
   }
 
-  Future<void> delete(String id) {
+  Future<AdminPriceListsDeleteRes> delete(String id) async {
     return _priceListsApi.delete(id);
+  }
+
+  Future<AdminPriceListsRes> managePrices(String id, AdminPriceListsManagePricesReq body) async {
+    return _priceListsApi.managePrices(id, body);
+  }
+
+  Future<AdminPriceListsRes> removeProducts(
+    String id,
+    AdminPriceListRemoveProductsReq body,
+  ) async {
+    return _priceListsApi.removeProducts(id, body);
   }
 }

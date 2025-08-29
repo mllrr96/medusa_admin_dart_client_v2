@@ -14,4 +14,8 @@ class CurrenciesRepository {
   Future<Currency> retrieve(String code) {
     return _currenciesApi.retrieve(code);
   }
+
+  Future<Currency> update(String code, Map<String, dynamic> body) {
+    return _currenciesApi.update(code, body);
+  }
 }

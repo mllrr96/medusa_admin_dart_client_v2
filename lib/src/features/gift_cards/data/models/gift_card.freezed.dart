@@ -13,81 +13,101 @@ part of 'gift_card.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-mixin _$GiftCard {
+mixin _$AdminGiftCard {
 
- String get id; String get code; int get value; int get balance;@JsonKey(name: 'region_id') String get regionId;@JsonKey(name: 'order_id') String? get orderId;@JsonKey(name: 'is_disabled') bool get isDisabled;@JsonKey(name: 'ends_at') DateTime? get endsAt;@JsonKey(name: 'created_at') DateTime get createdAt;@JsonKey(name: 'updated_at') DateTime get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt; Map<String, dynamic>? get metadata;
-/// Create a copy of GiftCard
+ String get id; String get code; String get status; int get value; String get currencyCode; String get customerId; Customer get customer; String get referenceId; String get note; String get reference; DateTime get expiresAt; DateTime get createdAt; DateTime get updatedAt; LineItem get lineItem;
+/// Create a copy of AdminGiftCard
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$GiftCardCopyWith<GiftCard> get copyWith => _$GiftCardCopyWithImpl<GiftCard>(this as GiftCard, _$identity);
+$AdminGiftCardCopyWith<AdminGiftCard> get copyWith => _$AdminGiftCardCopyWithImpl<AdminGiftCard>(this as AdminGiftCard, _$identity);
 
-  /// Serializes this GiftCard to a JSON map.
+  /// Serializes this AdminGiftCard to a JSON map.
   Map<String, dynamic> toJson();
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is GiftCard&&(identical(other.id, id) || other.id == id)&&(identical(other.code, code) || other.code == code)&&(identical(other.value, value) || other.value == value)&&(identical(other.balance, balance) || other.balance == balance)&&(identical(other.regionId, regionId) || other.regionId == regionId)&&(identical(other.orderId, orderId) || other.orderId == orderId)&&(identical(other.isDisabled, isDisabled) || other.isDisabled == isDisabled)&&(identical(other.endsAt, endsAt) || other.endsAt == endsAt)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.deletedAt, deletedAt) || other.deletedAt == deletedAt)&&const DeepCollectionEquality().equals(other.metadata, metadata));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AdminGiftCard&&(identical(other.id, id) || other.id == id)&&(identical(other.code, code) || other.code == code)&&(identical(other.status, status) || other.status == status)&&(identical(other.value, value) || other.value == value)&&(identical(other.currencyCode, currencyCode) || other.currencyCode == currencyCode)&&(identical(other.customerId, customerId) || other.customerId == customerId)&&(identical(other.customer, customer) || other.customer == customer)&&(identical(other.referenceId, referenceId) || other.referenceId == referenceId)&&(identical(other.note, note) || other.note == note)&&(identical(other.reference, reference) || other.reference == reference)&&(identical(other.expiresAt, expiresAt) || other.expiresAt == expiresAt)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.lineItem, lineItem) || other.lineItem == lineItem));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,code,value,balance,regionId,orderId,isDisabled,endsAt,createdAt,updatedAt,deletedAt,const DeepCollectionEquality().hash(metadata));
+int get hashCode => Object.hash(runtimeType,id,code,status,value,currencyCode,customerId,customer,referenceId,note,reference,expiresAt,createdAt,updatedAt,lineItem);
 
 @override
 String toString() {
-  return 'GiftCard(id: $id, code: $code, value: $value, balance: $balance, regionId: $regionId, orderId: $orderId, isDisabled: $isDisabled, endsAt: $endsAt, createdAt: $createdAt, updatedAt: $updatedAt, deletedAt: $deletedAt, metadata: $metadata)';
+  return 'AdminGiftCard(id: $id, code: $code, status: $status, value: $value, currencyCode: $currencyCode, customerId: $customerId, customer: $customer, referenceId: $referenceId, note: $note, reference: $reference, expiresAt: $expiresAt, createdAt: $createdAt, updatedAt: $updatedAt, lineItem: $lineItem)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $GiftCardCopyWith<$Res>  {
-  factory $GiftCardCopyWith(GiftCard value, $Res Function(GiftCard) _then) = _$GiftCardCopyWithImpl;
+abstract mixin class $AdminGiftCardCopyWith<$Res>  {
+  factory $AdminGiftCardCopyWith(AdminGiftCard value, $Res Function(AdminGiftCard) _then) = _$AdminGiftCardCopyWithImpl;
 @useResult
 $Res call({
- String id, String code, int value, int balance,@JsonKey(name: 'region_id') String regionId,@JsonKey(name: 'order_id') String? orderId,@JsonKey(name: 'is_disabled') bool isDisabled,@JsonKey(name: 'ends_at') DateTime? endsAt,@JsonKey(name: 'created_at') DateTime createdAt,@JsonKey(name: 'updated_at') DateTime updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
+ String id, String code, String status, int value, String currencyCode, String customerId, Customer customer, String referenceId, String note, String reference, DateTime expiresAt, DateTime createdAt, DateTime updatedAt, LineItem lineItem
 });
 
 
-
+$CustomerCopyWith<$Res> get customer;$LineItemCopyWith<$Res> get lineItem;
 
 }
 /// @nodoc
-class _$GiftCardCopyWithImpl<$Res>
-    implements $GiftCardCopyWith<$Res> {
-  _$GiftCardCopyWithImpl(this._self, this._then);
+class _$AdminGiftCardCopyWithImpl<$Res>
+    implements $AdminGiftCardCopyWith<$Res> {
+  _$AdminGiftCardCopyWithImpl(this._self, this._then);
 
-  final GiftCard _self;
-  final $Res Function(GiftCard) _then;
+  final AdminGiftCard _self;
+  final $Res Function(AdminGiftCard) _then;
 
-/// Create a copy of GiftCard
+/// Create a copy of AdminGiftCard
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? code = null,Object? value = null,Object? balance = null,Object? regionId = null,Object? orderId = freezed,Object? isDisabled = null,Object? endsAt = freezed,Object? createdAt = null,Object? updatedAt = null,Object? deletedAt = freezed,Object? metadata = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? code = null,Object? status = null,Object? value = null,Object? currencyCode = null,Object? customerId = null,Object? customer = null,Object? referenceId = null,Object? note = null,Object? reference = null,Object? expiresAt = null,Object? createdAt = null,Object? updatedAt = null,Object? lineItem = null,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,code: null == code ? _self.code : code // ignore: cast_nullable_to_non_nullable
+as String,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as String,value: null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
-as int,balance: null == balance ? _self.balance : balance // ignore: cast_nullable_to_non_nullable
-as int,regionId: null == regionId ? _self.regionId : regionId // ignore: cast_nullable_to_non_nullable
-as String,orderId: freezed == orderId ? _self.orderId : orderId // ignore: cast_nullable_to_non_nullable
-as String?,isDisabled: null == isDisabled ? _self.isDisabled : isDisabled // ignore: cast_nullable_to_non_nullable
-as bool,endsAt: freezed == endsAt ? _self.endsAt : endsAt // ignore: cast_nullable_to_non_nullable
-as DateTime?,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as int,currencyCode: null == currencyCode ? _self.currencyCode : currencyCode // ignore: cast_nullable_to_non_nullable
+as String,customerId: null == customerId ? _self.customerId : customerId // ignore: cast_nullable_to_non_nullable
+as String,customer: null == customer ? _self.customer : customer // ignore: cast_nullable_to_non_nullable
+as Customer,referenceId: null == referenceId ? _self.referenceId : referenceId // ignore: cast_nullable_to_non_nullable
+as String,note: null == note ? _self.note : note // ignore: cast_nullable_to_non_nullable
+as String,reference: null == reference ? _self.reference : reference // ignore: cast_nullable_to_non_nullable
+as String,expiresAt: null == expiresAt ? _self.expiresAt : expiresAt // ignore: cast_nullable_to_non_nullable
+as DateTime,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
-as DateTime?,metadata: freezed == metadata ? _self.metadata : metadata // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
+as DateTime,lineItem: null == lineItem ? _self.lineItem : lineItem // ignore: cast_nullable_to_non_nullable
+as LineItem,
   ));
 }
-
+/// Create a copy of AdminGiftCard
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$CustomerCopyWith<$Res> get customer {
+  
+  return $CustomerCopyWith<$Res>(_self.customer, (value) {
+    return _then(_self.copyWith(customer: value));
+  });
+}/// Create a copy of AdminGiftCard
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$LineItemCopyWith<$Res> get lineItem {
+  
+  return $LineItemCopyWith<$Res>(_self.lineItem, (value) {
+    return _then(_self.copyWith(lineItem: value));
+  });
+}
 }
 
 
-/// Adds pattern-matching-related methods to [GiftCard].
-extension GiftCardPatterns on GiftCard {
+/// Adds pattern-matching-related methods to [AdminGiftCard].
+extension AdminGiftCardPatterns on AdminGiftCard {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -100,10 +120,10 @@ extension GiftCardPatterns on GiftCard {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _GiftCard value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AdminGiftCard value)?  $default,{required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _GiftCard() when $default != null:
+case _AdminGiftCard() when $default != null:
 return $default(_that);case _:
   return orElse();
 
@@ -122,10 +142,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _GiftCard value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AdminGiftCard value)  $default,){
 final _that = this;
 switch (_that) {
-case _GiftCard():
+case _AdminGiftCard():
 return $default(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -143,10 +163,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _GiftCard value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AdminGiftCard value)?  $default,){
 final _that = this;
 switch (_that) {
-case _GiftCard() when $default != null:
+case _AdminGiftCard() when $default != null:
 return $default(_that);case _:
   return null;
 
@@ -164,10 +184,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String code,  int value,  int balance, @JsonKey(name: 'region_id')  String regionId, @JsonKey(name: 'order_id')  String? orderId, @JsonKey(name: 'is_disabled')  bool isDisabled, @JsonKey(name: 'ends_at')  DateTime? endsAt, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'updated_at')  DateTime updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String code,  String status,  int value,  String currencyCode,  String customerId,  Customer customer,  String referenceId,  String note,  String reference,  DateTime expiresAt,  DateTime createdAt,  DateTime updatedAt,  LineItem lineItem)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _GiftCard() when $default != null:
-return $default(_that.id,_that.code,_that.value,_that.balance,_that.regionId,_that.orderId,_that.isDisabled,_that.endsAt,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
+case _AdminGiftCard() when $default != null:
+return $default(_that.id,_that.code,_that.status,_that.value,_that.currencyCode,_that.customerId,_that.customer,_that.referenceId,_that.note,_that.reference,_that.expiresAt,_that.createdAt,_that.updatedAt,_that.lineItem);case _:
   return orElse();
 
 }
@@ -185,10 +205,10 @@ return $default(_that.id,_that.code,_that.value,_that.balance,_that.regionId,_th
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String code,  int value,  int balance, @JsonKey(name: 'region_id')  String regionId, @JsonKey(name: 'order_id')  String? orderId, @JsonKey(name: 'is_disabled')  bool isDisabled, @JsonKey(name: 'ends_at')  DateTime? endsAt, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'updated_at')  DateTime updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String code,  String status,  int value,  String currencyCode,  String customerId,  Customer customer,  String referenceId,  String note,  String reference,  DateTime expiresAt,  DateTime createdAt,  DateTime updatedAt,  LineItem lineItem)  $default,) {final _that = this;
 switch (_that) {
-case _GiftCard():
-return $default(_that.id,_that.code,_that.value,_that.balance,_that.regionId,_that.orderId,_that.isDisabled,_that.endsAt,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
+case _AdminGiftCard():
+return $default(_that.id,_that.code,_that.status,_that.value,_that.currencyCode,_that.customerId,_that.customer,_that.referenceId,_that.note,_that.reference,_that.expiresAt,_that.createdAt,_that.updatedAt,_that.lineItem);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -205,10 +225,10 @@ return $default(_that.id,_that.code,_that.value,_that.balance,_that.regionId,_th
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String code,  int value,  int balance, @JsonKey(name: 'region_id')  String regionId, @JsonKey(name: 'order_id')  String? orderId, @JsonKey(name: 'is_disabled')  bool isDisabled, @JsonKey(name: 'ends_at')  DateTime? endsAt, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'updated_at')  DateTime updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String code,  String status,  int value,  String currencyCode,  String customerId,  Customer customer,  String referenceId,  String note,  String reference,  DateTime expiresAt,  DateTime createdAt,  DateTime updatedAt,  LineItem lineItem)?  $default,) {final _that = this;
 switch (_that) {
-case _GiftCard() when $default != null:
-return $default(_that.id,_that.code,_that.value,_that.balance,_that.regionId,_that.orderId,_that.isDisabled,_that.endsAt,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
+case _AdminGiftCard() when $default != null:
+return $default(_that.id,_that.code,_that.status,_that.value,_that.currencyCode,_that.customerId,_that.customer,_that.referenceId,_that.note,_that.reference,_that.expiresAt,_that.createdAt,_that.updatedAt,_that.lineItem);case _:
   return null;
 
 }
@@ -219,100 +239,114 @@ return $default(_that.id,_that.code,_that.value,_that.balance,_that.regionId,_th
 /// @nodoc
 @JsonSerializable()
 
-class _GiftCard implements GiftCard {
-  const _GiftCard({required this.id, required this.code, required this.value, required this.balance, @JsonKey(name: 'region_id') required this.regionId, @JsonKey(name: 'order_id') this.orderId, @JsonKey(name: 'is_disabled') required this.isDisabled, @JsonKey(name: 'ends_at') this.endsAt, @JsonKey(name: 'created_at') required this.createdAt, @JsonKey(name: 'updated_at') required this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt, final  Map<String, dynamic>? metadata}): _metadata = metadata;
-  factory _GiftCard.fromJson(Map<String, dynamic> json) => _$GiftCardFromJson(json);
+class _AdminGiftCard implements AdminGiftCard {
+  const _AdminGiftCard({required this.id, required this.code, required this.status, required this.value, required this.currencyCode, required this.customerId, required this.customer, required this.referenceId, required this.note, required this.reference, required this.expiresAt, required this.createdAt, required this.updatedAt, required this.lineItem});
+  factory _AdminGiftCard.fromJson(Map<String, dynamic> json) => _$AdminGiftCardFromJson(json);
 
 @override final  String id;
 @override final  String code;
+@override final  String status;
 @override final  int value;
-@override final  int balance;
-@override@JsonKey(name: 'region_id') final  String regionId;
-@override@JsonKey(name: 'order_id') final  String? orderId;
-@override@JsonKey(name: 'is_disabled') final  bool isDisabled;
-@override@JsonKey(name: 'ends_at') final  DateTime? endsAt;
-@override@JsonKey(name: 'created_at') final  DateTime createdAt;
-@override@JsonKey(name: 'updated_at') final  DateTime updatedAt;
-@override@JsonKey(name: 'deleted_at') final  DateTime? deletedAt;
- final  Map<String, dynamic>? _metadata;
-@override Map<String, dynamic>? get metadata {
-  final value = _metadata;
-  if (value == null) return null;
-  if (_metadata is EqualUnmodifiableMapView) return _metadata;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
-}
+@override final  String currencyCode;
+@override final  String customerId;
+@override final  Customer customer;
+@override final  String referenceId;
+@override final  String note;
+@override final  String reference;
+@override final  DateTime expiresAt;
+@override final  DateTime createdAt;
+@override final  DateTime updatedAt;
+@override final  LineItem lineItem;
 
-
-/// Create a copy of GiftCard
+/// Create a copy of AdminGiftCard
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$GiftCardCopyWith<_GiftCard> get copyWith => __$GiftCardCopyWithImpl<_GiftCard>(this, _$identity);
+_$AdminGiftCardCopyWith<_AdminGiftCard> get copyWith => __$AdminGiftCardCopyWithImpl<_AdminGiftCard>(this, _$identity);
 
 @override
 Map<String, dynamic> toJson() {
-  return _$GiftCardToJson(this, );
+  return _$AdminGiftCardToJson(this, );
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GiftCard&&(identical(other.id, id) || other.id == id)&&(identical(other.code, code) || other.code == code)&&(identical(other.value, value) || other.value == value)&&(identical(other.balance, balance) || other.balance == balance)&&(identical(other.regionId, regionId) || other.regionId == regionId)&&(identical(other.orderId, orderId) || other.orderId == orderId)&&(identical(other.isDisabled, isDisabled) || other.isDisabled == isDisabled)&&(identical(other.endsAt, endsAt) || other.endsAt == endsAt)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.deletedAt, deletedAt) || other.deletedAt == deletedAt)&&const DeepCollectionEquality().equals(other._metadata, _metadata));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AdminGiftCard&&(identical(other.id, id) || other.id == id)&&(identical(other.code, code) || other.code == code)&&(identical(other.status, status) || other.status == status)&&(identical(other.value, value) || other.value == value)&&(identical(other.currencyCode, currencyCode) || other.currencyCode == currencyCode)&&(identical(other.customerId, customerId) || other.customerId == customerId)&&(identical(other.customer, customer) || other.customer == customer)&&(identical(other.referenceId, referenceId) || other.referenceId == referenceId)&&(identical(other.note, note) || other.note == note)&&(identical(other.reference, reference) || other.reference == reference)&&(identical(other.expiresAt, expiresAt) || other.expiresAt == expiresAt)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.lineItem, lineItem) || other.lineItem == lineItem));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,code,value,balance,regionId,orderId,isDisabled,endsAt,createdAt,updatedAt,deletedAt,const DeepCollectionEquality().hash(_metadata));
+int get hashCode => Object.hash(runtimeType,id,code,status,value,currencyCode,customerId,customer,referenceId,note,reference,expiresAt,createdAt,updatedAt,lineItem);
 
 @override
 String toString() {
-  return 'GiftCard(id: $id, code: $code, value: $value, balance: $balance, regionId: $regionId, orderId: $orderId, isDisabled: $isDisabled, endsAt: $endsAt, createdAt: $createdAt, updatedAt: $updatedAt, deletedAt: $deletedAt, metadata: $metadata)';
+  return 'AdminGiftCard(id: $id, code: $code, status: $status, value: $value, currencyCode: $currencyCode, customerId: $customerId, customer: $customer, referenceId: $referenceId, note: $note, reference: $reference, expiresAt: $expiresAt, createdAt: $createdAt, updatedAt: $updatedAt, lineItem: $lineItem)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$GiftCardCopyWith<$Res> implements $GiftCardCopyWith<$Res> {
-  factory _$GiftCardCopyWith(_GiftCard value, $Res Function(_GiftCard) _then) = __$GiftCardCopyWithImpl;
+abstract mixin class _$AdminGiftCardCopyWith<$Res> implements $AdminGiftCardCopyWith<$Res> {
+  factory _$AdminGiftCardCopyWith(_AdminGiftCard value, $Res Function(_AdminGiftCard) _then) = __$AdminGiftCardCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String code, int value, int balance,@JsonKey(name: 'region_id') String regionId,@JsonKey(name: 'order_id') String? orderId,@JsonKey(name: 'is_disabled') bool isDisabled,@JsonKey(name: 'ends_at') DateTime? endsAt,@JsonKey(name: 'created_at') DateTime createdAt,@JsonKey(name: 'updated_at') DateTime updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
+ String id, String code, String status, int value, String currencyCode, String customerId, Customer customer, String referenceId, String note, String reference, DateTime expiresAt, DateTime createdAt, DateTime updatedAt, LineItem lineItem
 });
 
 
-
+@override $CustomerCopyWith<$Res> get customer;@override $LineItemCopyWith<$Res> get lineItem;
 
 }
 /// @nodoc
-class __$GiftCardCopyWithImpl<$Res>
-    implements _$GiftCardCopyWith<$Res> {
-  __$GiftCardCopyWithImpl(this._self, this._then);
+class __$AdminGiftCardCopyWithImpl<$Res>
+    implements _$AdminGiftCardCopyWith<$Res> {
+  __$AdminGiftCardCopyWithImpl(this._self, this._then);
 
-  final _GiftCard _self;
-  final $Res Function(_GiftCard) _then;
+  final _AdminGiftCard _self;
+  final $Res Function(_AdminGiftCard) _then;
 
-/// Create a copy of GiftCard
+/// Create a copy of AdminGiftCard
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? code = null,Object? value = null,Object? balance = null,Object? regionId = null,Object? orderId = freezed,Object? isDisabled = null,Object? endsAt = freezed,Object? createdAt = null,Object? updatedAt = null,Object? deletedAt = freezed,Object? metadata = freezed,}) {
-  return _then(_GiftCard(
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? code = null,Object? status = null,Object? value = null,Object? currencyCode = null,Object? customerId = null,Object? customer = null,Object? referenceId = null,Object? note = null,Object? reference = null,Object? expiresAt = null,Object? createdAt = null,Object? updatedAt = null,Object? lineItem = null,}) {
+  return _then(_AdminGiftCard(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,code: null == code ? _self.code : code // ignore: cast_nullable_to_non_nullable
+as String,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as String,value: null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
-as int,balance: null == balance ? _self.balance : balance // ignore: cast_nullable_to_non_nullable
-as int,regionId: null == regionId ? _self.regionId : regionId // ignore: cast_nullable_to_non_nullable
-as String,orderId: freezed == orderId ? _self.orderId : orderId // ignore: cast_nullable_to_non_nullable
-as String?,isDisabled: null == isDisabled ? _self.isDisabled : isDisabled // ignore: cast_nullable_to_non_nullable
-as bool,endsAt: freezed == endsAt ? _self.endsAt : endsAt // ignore: cast_nullable_to_non_nullable
-as DateTime?,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as int,currencyCode: null == currencyCode ? _self.currencyCode : currencyCode // ignore: cast_nullable_to_non_nullable
+as String,customerId: null == customerId ? _self.customerId : customerId // ignore: cast_nullable_to_non_nullable
+as String,customer: null == customer ? _self.customer : customer // ignore: cast_nullable_to_non_nullable
+as Customer,referenceId: null == referenceId ? _self.referenceId : referenceId // ignore: cast_nullable_to_non_nullable
+as String,note: null == note ? _self.note : note // ignore: cast_nullable_to_non_nullable
+as String,reference: null == reference ? _self.reference : reference // ignore: cast_nullable_to_non_nullable
+as String,expiresAt: null == expiresAt ? _self.expiresAt : expiresAt // ignore: cast_nullable_to_non_nullable
+as DateTime,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
-as DateTime?,metadata: freezed == metadata ? _self._metadata : metadata // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
+as DateTime,lineItem: null == lineItem ? _self.lineItem : lineItem // ignore: cast_nullable_to_non_nullable
+as LineItem,
   ));
 }
 
-
+/// Create a copy of AdminGiftCard
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$CustomerCopyWith<$Res> get customer {
+  
+  return $CustomerCopyWith<$Res>(_self.customer, (value) {
+    return _then(_self.copyWith(customer: value));
+  });
+}/// Create a copy of AdminGiftCard
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$LineItemCopyWith<$Res> get lineItem {
+  
+  return $LineItemCopyWith<$Res>(_self.lineItem, (value) {
+    return _then(_self.copyWith(lineItem: value));
+  });
+}
 }
 
 // dart format on

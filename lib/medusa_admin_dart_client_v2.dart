@@ -21,6 +21,9 @@ import 'package:medusa_admin_dart_client/src/features/regions/data/repository/re
 import 'package:medusa_admin_dart_client/src/features/customers/data/repository/customers_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/orders/data/repository/orders_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/products/data/repository/products_repository.dart';
+import 'package:medusa_admin_dart_client/src/features/return_reasons/data/repository/return_reasons_repository.dart';
+import 'package:medusa_admin_dart_client/src/features/swaps/data/repository/swaps_repository.dart';
+import 'package:medusa_admin_dart_client/src/features/api_keys/data/repository/api_keys_repository.dart';
 
 class MedusaAdminV2 {
   MedusaAdminV2._() {
@@ -53,4 +56,7 @@ class MedusaAdminV2 {
   NotificationsRepository get notifications => getIt<NotificationsRepository>();
   ReturnsRepository get returns => getIt<ReturnsRepository>();
   SalesChannelsRepository get salesChannels => getIt<SalesChannelsRepository>();
+  SwapsRepository get swaps => getIt<SwapsRepository>();
+  ApiKeysRepository get apiKeys => getIt<ApiKeysRepository>();
+  ReturnReasonsRepository get returnReasons => getIt<ReturnReasonsRepository>();
 }

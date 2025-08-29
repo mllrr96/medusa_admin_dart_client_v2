@@ -26,4 +26,12 @@ class CollectionsRepository {
   Future<void> delete(String id) {
     return _collectionsApi.delete(id);
   }
+
+  Future<ProductCollection> addProducts(String id, List<String> productIds) {
+    return _collectionsApi.addProducts(id, {'products': productIds});
+  }
+
+  Future<ProductCollection> removeProducts(String id, List<String> productIds) {
+    return _collectionsApi.removeProducts(id, {'products': productIds});
+  }
 }

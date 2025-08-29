@@ -2,7 +2,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:medusa_admin_dart_client/src/core/models/payment.dart';
 import 'package:medusa_admin_dart_client/src/core/models/region.dart';
 import 'package:medusa_admin_dart_client/src/features/gift_cards/data/models/gift_card.dart';
-
 import 'address.dart';
 import 'customer.dart';
 import 'discount.dart';
@@ -36,7 +35,7 @@ abstract class Cart with _$Cart {
     @JsonKey(name: 'shipping_methods') List<ShippingMethod>? shippingMethods,
     @JsonKey(name: 'items') List<LineItem>? items,
     @JsonKey(name: 'discounts') List<Discount>? discounts,
-    @JsonKey(name: 'gift_cards') List<GiftCard>? giftCards,
+    @JsonKey(name: 'gift_cards') List<AdminGiftCard>? giftCards,
     @JsonKey(name: 'tax_rate') num? taxRate,
     @JsonKey(name: 'created_at') DateTime? createdAt,
     @JsonKey(name: 'updated_at') DateTime? updatedAt,

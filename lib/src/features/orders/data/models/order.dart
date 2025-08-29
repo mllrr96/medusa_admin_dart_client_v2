@@ -42,7 +42,7 @@ abstract class Order with _$Order {
     List<Return>? returns,
     List<Swap>? swaps,
     List<Discount>? discounts,
-    List<GiftCard>? giftCards,
+    List<AdminGiftCard>? giftCards,
     List<ShippingMethod>? shippingMethods,
     @JsonKey(name: 'tax_rate') num? taxRate,
     required int subtotal,

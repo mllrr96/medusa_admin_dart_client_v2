@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ReturnReason {
 
- String get id; String get label; String? get description; DateTime get createdAt; DateTime get updatedAt; DateTime? get deletedAt;
+ String get id; String get value; String get label; String? get description;@JsonKey(name: 'parent_return_reason_id') String? get parentReturnReasonId; ReturnReason? get parentReturnReason;@JsonKey(name: 'return_reason_children') List<ReturnReason>? get returnReasonChildren; DateTime get createdAt; DateTime get updatedAt; DateTime? get deletedAt;
 /// Create a copy of ReturnReason
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $ReturnReasonCopyWith<ReturnReason> get copyWith => _$ReturnReasonCopyWithImpl<R
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ReturnReason&&(identical(other.id, id) || other.id == id)&&(identical(other.label, label) || other.label == label)&&(identical(other.description, description) || other.description == description)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.deletedAt, deletedAt) || other.deletedAt == deletedAt));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ReturnReason&&(identical(other.id, id) || other.id == id)&&(identical(other.value, value) || other.value == value)&&(identical(other.label, label) || other.label == label)&&(identical(other.description, description) || other.description == description)&&(identical(other.parentReturnReasonId, parentReturnReasonId) || other.parentReturnReasonId == parentReturnReasonId)&&(identical(other.parentReturnReason, parentReturnReason) || other.parentReturnReason == parentReturnReason)&&const DeepCollectionEquality().equals(other.returnReasonChildren, returnReasonChildren)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.deletedAt, deletedAt) || other.deletedAt == deletedAt));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,label,description,createdAt,updatedAt,deletedAt);
+int get hashCode => Object.hash(runtimeType,id,value,label,description,parentReturnReasonId,parentReturnReason,const DeepCollectionEquality().hash(returnReasonChildren),createdAt,updatedAt,deletedAt);
 
 @override
 String toString() {
-  return 'ReturnReason(id: $id, label: $label, description: $description, createdAt: $createdAt, updatedAt: $updatedAt, deletedAt: $deletedAt)';
+  return 'ReturnReason(id: $id, value: $value, label: $label, description: $description, parentReturnReasonId: $parentReturnReasonId, parentReturnReason: $parentReturnReason, returnReasonChildren: $returnReasonChildren, createdAt: $createdAt, updatedAt: $updatedAt, deletedAt: $deletedAt)';
 }
 
 
@@ -48,11 +48,11 @@ abstract mixin class $ReturnReasonCopyWith<$Res>  {
   factory $ReturnReasonCopyWith(ReturnReason value, $Res Function(ReturnReason) _then) = _$ReturnReasonCopyWithImpl;
 @useResult
 $Res call({
- String id, String label, String? description, DateTime createdAt, DateTime updatedAt, DateTime? deletedAt
+ String id, String value, String label, String? description,@JsonKey(name: 'parent_return_reason_id') String? parentReturnReasonId, ReturnReason? parentReturnReason,@JsonKey(name: 'return_reason_children') List<ReturnReason>? returnReasonChildren, DateTime createdAt, DateTime updatedAt, DateTime? deletedAt
 });
 
 
-
+$ReturnReasonCopyWith<$Res>? get parentReturnReason;
 
 }
 /// @nodoc
@@ -65,18 +65,34 @@ class _$ReturnReasonCopyWithImpl<$Res>
 
 /// Create a copy of ReturnReason
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? label = null,Object? description = freezed,Object? createdAt = null,Object? updatedAt = null,Object? deletedAt = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? value = null,Object? label = null,Object? description = freezed,Object? parentReturnReasonId = freezed,Object? parentReturnReason = freezed,Object? returnReasonChildren = freezed,Object? createdAt = null,Object? updatedAt = null,Object? deletedAt = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,value: null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
 as String,label: null == label ? _self.label : label // ignore: cast_nullable_to_non_nullable
 as String,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
-as String?,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as String?,parentReturnReasonId: freezed == parentReturnReasonId ? _self.parentReturnReasonId : parentReturnReasonId // ignore: cast_nullable_to_non_nullable
+as String?,parentReturnReason: freezed == parentReturnReason ? _self.parentReturnReason : parentReturnReason // ignore: cast_nullable_to_non_nullable
+as ReturnReason?,returnReasonChildren: freezed == returnReasonChildren ? _self.returnReasonChildren : returnReasonChildren // ignore: cast_nullable_to_non_nullable
+as List<ReturnReason>?,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
 as DateTime,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,
   ));
 }
+/// Create a copy of ReturnReason
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$ReturnReasonCopyWith<$Res>? get parentReturnReason {
+    if (_self.parentReturnReason == null) {
+    return null;
+  }
 
+  return $ReturnReasonCopyWith<$Res>(_self.parentReturnReason!, (value) {
+    return _then(_self.copyWith(parentReturnReason: value));
+  });
+}
 }
 
 
@@ -158,10 +174,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String label,  String? description,  DateTime createdAt,  DateTime updatedAt,  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String value,  String label,  String? description, @JsonKey(name: 'parent_return_reason_id')  String? parentReturnReasonId,  ReturnReason? parentReturnReason, @JsonKey(name: 'return_reason_children')  List<ReturnReason>? returnReasonChildren,  DateTime createdAt,  DateTime updatedAt,  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ReturnReason() when $default != null:
-return $default(_that.id,_that.label,_that.description,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
+return $default(_that.id,_that.value,_that.label,_that.description,_that.parentReturnReasonId,_that.parentReturnReason,_that.returnReasonChildren,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
   return orElse();
 
 }
@@ -179,10 +195,10 @@ return $default(_that.id,_that.label,_that.description,_that.createdAt,_that.upd
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String label,  String? description,  DateTime createdAt,  DateTime updatedAt,  DateTime? deletedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String value,  String label,  String? description, @JsonKey(name: 'parent_return_reason_id')  String? parentReturnReasonId,  ReturnReason? parentReturnReason, @JsonKey(name: 'return_reason_children')  List<ReturnReason>? returnReasonChildren,  DateTime createdAt,  DateTime updatedAt,  DateTime? deletedAt)  $default,) {final _that = this;
 switch (_that) {
 case _ReturnReason():
-return $default(_that.id,_that.label,_that.description,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
+return $default(_that.id,_that.value,_that.label,_that.description,_that.parentReturnReasonId,_that.parentReturnReason,_that.returnReasonChildren,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -199,10 +215,10 @@ return $default(_that.id,_that.label,_that.description,_that.createdAt,_that.upd
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String label,  String? description,  DateTime createdAt,  DateTime updatedAt,  DateTime? deletedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String value,  String label,  String? description, @JsonKey(name: 'parent_return_reason_id')  String? parentReturnReasonId,  ReturnReason? parentReturnReason, @JsonKey(name: 'return_reason_children')  List<ReturnReason>? returnReasonChildren,  DateTime createdAt,  DateTime updatedAt,  DateTime? deletedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _ReturnReason() when $default != null:
-return $default(_that.id,_that.label,_that.description,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
+return $default(_that.id,_that.value,_that.label,_that.description,_that.parentReturnReasonId,_that.parentReturnReason,_that.returnReasonChildren,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
   return null;
 
 }
@@ -214,12 +230,24 @@ return $default(_that.id,_that.label,_that.description,_that.createdAt,_that.upd
 @JsonSerializable()
 
 class _ReturnReason implements ReturnReason {
-  const _ReturnReason({required this.id, required this.label, this.description, required this.createdAt, required this.updatedAt, this.deletedAt});
+  const _ReturnReason({required this.id, required this.value, required this.label, this.description, @JsonKey(name: 'parent_return_reason_id') this.parentReturnReasonId, this.parentReturnReason, @JsonKey(name: 'return_reason_children') final  List<ReturnReason>? returnReasonChildren, required this.createdAt, required this.updatedAt, this.deletedAt}): _returnReasonChildren = returnReasonChildren;
   factory _ReturnReason.fromJson(Map<String, dynamic> json) => _$ReturnReasonFromJson(json);
 
 @override final  String id;
+@override final  String value;
 @override final  String label;
 @override final  String? description;
+@override@JsonKey(name: 'parent_return_reason_id') final  String? parentReturnReasonId;
+@override final  ReturnReason? parentReturnReason;
+ final  List<ReturnReason>? _returnReasonChildren;
+@override@JsonKey(name: 'return_reason_children') List<ReturnReason>? get returnReasonChildren {
+  final value = _returnReasonChildren;
+  if (value == null) return null;
+  if (_returnReasonChildren is EqualUnmodifiableListView) return _returnReasonChildren;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(value);
+}
+
 @override final  DateTime createdAt;
 @override final  DateTime updatedAt;
 @override final  DateTime? deletedAt;
@@ -237,16 +265,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ReturnReason&&(identical(other.id, id) || other.id == id)&&(identical(other.label, label) || other.label == label)&&(identical(other.description, description) || other.description == description)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.deletedAt, deletedAt) || other.deletedAt == deletedAt));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ReturnReason&&(identical(other.id, id) || other.id == id)&&(identical(other.value, value) || other.value == value)&&(identical(other.label, label) || other.label == label)&&(identical(other.description, description) || other.description == description)&&(identical(other.parentReturnReasonId, parentReturnReasonId) || other.parentReturnReasonId == parentReturnReasonId)&&(identical(other.parentReturnReason, parentReturnReason) || other.parentReturnReason == parentReturnReason)&&const DeepCollectionEquality().equals(other._returnReasonChildren, _returnReasonChildren)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.deletedAt, deletedAt) || other.deletedAt == deletedAt));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,label,description,createdAt,updatedAt,deletedAt);
+int get hashCode => Object.hash(runtimeType,id,value,label,description,parentReturnReasonId,parentReturnReason,const DeepCollectionEquality().hash(_returnReasonChildren),createdAt,updatedAt,deletedAt);
 
 @override
 String toString() {
-  return 'ReturnReason(id: $id, label: $label, description: $description, createdAt: $createdAt, updatedAt: $updatedAt, deletedAt: $deletedAt)';
+  return 'ReturnReason(id: $id, value: $value, label: $label, description: $description, parentReturnReasonId: $parentReturnReasonId, parentReturnReason: $parentReturnReason, returnReasonChildren: $returnReasonChildren, createdAt: $createdAt, updatedAt: $updatedAt, deletedAt: $deletedAt)';
 }
 
 
@@ -257,11 +285,11 @@ abstract mixin class _$ReturnReasonCopyWith<$Res> implements $ReturnReasonCopyWi
   factory _$ReturnReasonCopyWith(_ReturnReason value, $Res Function(_ReturnReason) _then) = __$ReturnReasonCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String label, String? description, DateTime createdAt, DateTime updatedAt, DateTime? deletedAt
+ String id, String value, String label, String? description,@JsonKey(name: 'parent_return_reason_id') String? parentReturnReasonId, ReturnReason? parentReturnReason,@JsonKey(name: 'return_reason_children') List<ReturnReason>? returnReasonChildren, DateTime createdAt, DateTime updatedAt, DateTime? deletedAt
 });
 
 
-
+@override $ReturnReasonCopyWith<$Res>? get parentReturnReason;
 
 }
 /// @nodoc
@@ -274,19 +302,35 @@ class __$ReturnReasonCopyWithImpl<$Res>
 
 /// Create a copy of ReturnReason
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? label = null,Object? description = freezed,Object? createdAt = null,Object? updatedAt = null,Object? deletedAt = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? value = null,Object? label = null,Object? description = freezed,Object? parentReturnReasonId = freezed,Object? parentReturnReason = freezed,Object? returnReasonChildren = freezed,Object? createdAt = null,Object? updatedAt = null,Object? deletedAt = freezed,}) {
   return _then(_ReturnReason(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,value: null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
 as String,label: null == label ? _self.label : label // ignore: cast_nullable_to_non_nullable
 as String,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
-as String?,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as String?,parentReturnReasonId: freezed == parentReturnReasonId ? _self.parentReturnReasonId : parentReturnReasonId // ignore: cast_nullable_to_non_nullable
+as String?,parentReturnReason: freezed == parentReturnReason ? _self.parentReturnReason : parentReturnReason // ignore: cast_nullable_to_non_nullable
+as ReturnReason?,returnReasonChildren: freezed == returnReasonChildren ? _self._returnReasonChildren : returnReasonChildren // ignore: cast_nullable_to_non_nullable
+as List<ReturnReason>?,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
 as DateTime,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,
   ));
 }
 
+/// Create a copy of ReturnReason
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$ReturnReasonCopyWith<$Res>? get parentReturnReason {
+    if (_self.parentReturnReason == null) {
+    return null;
+  }
 
+  return $ReturnReasonCopyWith<$Res>(_self.parentReturnReason!, (value) {
+    return _then(_self.copyWith(parentReturnReason: value));
+  });
+}
 }
 
 // dart format on

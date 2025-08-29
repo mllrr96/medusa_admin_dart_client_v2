@@ -1,7 +1,9 @@
 
 import 'package:dio/dio.dart';
+
 import 'package:retrofit/retrofit.dart';
-import '../models/price_list.dart';
+
+import '../models/price_lists_models.dart';
 
 part 'price_lists_api.g.dart';
 
@@ -10,17 +12,39 @@ abstract class PriceListsApi {
   factory PriceListsApi(Dio dio, {String baseUrl}) = _PriceListsApi;
 
   @GET('/admin/price-lists')
-  Future<List<PriceList>> retrieveAll({@Queries() Map<String, dynamic>? queryParameters});
-
-  @GET('/admin/price-lists/{id}')
-  Future<PriceList> retrieve(@Path('id') String id);
+  Future<AdminPriceListsListRes> retrieveAll({
+    @Queries() Map<String, dynamic>? queryParameters,
+  });
 
   @POST('/admin/price-lists')
-  Future<PriceList> create(@Body() Map<String, dynamic> body);
+  Future<AdminPriceListsRes> create(
+    @Body() AdminCreatePriceListReq body,
+  );
+
+  @GET('/admin/price-lists/{id}')
+  Future<AdminPriceListsRes> retrieve(
+    @Path('id') String id, {
+    @Queries() Map<String, dynamic>? queryParameters,
+  });
 
   @POST('/admin/price-lists/{id}')
-  Future<PriceList> update(@Path('id') String id, @Body() Map<String, dynamic> body);
+  Future<AdminPriceListsRes> update(
+    @Path('id') String id,
+    @Body() AdminUpdatePriceListReq body,
+  );
 
   @DELETE('/admin/price-lists/{id}')
-  Future<void> delete(@Path('id') String id);
+  Future<AdminPriceListsDeleteRes> delete(@Path('id') String id);
+
+  @POST('/admin/price-lists/{id}/prices/batch')
+  Future<AdminPriceListsRes> managePrices(
+    @Path('id') String id,
+    @Body() AdminPriceListsManagePricesReq body,
+  );
+
+  @POST('/admin/price-lists/{id}/products')
+  Future<AdminPriceListsRes> removeProducts(
+    @Path('id') String id,
+    @Body() AdminPriceListRemoveProductsReq body,
+  );
 }

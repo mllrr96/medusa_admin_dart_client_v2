@@ -1,25 +1,24 @@
-
-import '../api/discounts_api.dart';
-import '../models/discount.dart';
+import 'package:medusa_admin_dart_client/src/features/discounts/data/api/discounts_api.dart';
+import 'package:medusa_admin_dart_client/src/features/discounts/data/models/discounts_models.dart';
 
 class DiscountsRepository {
   DiscountsRepository(this._discountsApi);
 
   final DiscountsApi _discountsApi;
 
-  Future<List<Discount>> retrieveAll({Map<String, dynamic>? queryParameters}) {
+  Future<AdminDiscountsListRes> retrieveAll({Map<String, dynamic>? queryParameters}) {
     return _discountsApi.retrieveAll(queryParameters: queryParameters);
   }
 
-  Future<Discount> retrieve(String id) {
+  Future<AdminDiscountsRes> retrieve(String id) {
     return _discountsApi.retrieve(id);
   }
 
-  Future<Discount> create(Map<String, dynamic> body) {
+  Future<AdminDiscountsRes> create(AdminPostDiscountsReq body) {
     return _discountsApi.create(body);
   }
 
-  Future<Discount> update(String id, Map<String, dynamic> body) {
+  Future<AdminDiscountsRes> update(String id, AdminPostDiscountsDiscountReq body) {
     return _discountsApi.update(id, body);
   }
 

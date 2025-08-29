@@ -52,7 +52,7 @@ _Order _$OrderFromJson(Map<String, dynamic> json) => _Order(
       ?.map((e) => Discount.fromJson(e as Map<String, dynamic>))
       .toList(),
   giftCards: (json['giftCards'] as List<dynamic>?)
-      ?.map((e) => GiftCard.fromJson(e as Map<String, dynamic>))
+      ?.map((e) => AdminGiftCard.fromJson(e as Map<String, dynamic>))
       .toList(),
   shippingMethods: (json['shippingMethods'] as List<dynamic>?)
       ?.map((e) => ShippingMethod.fromJson(e as Map<String, dynamic>))

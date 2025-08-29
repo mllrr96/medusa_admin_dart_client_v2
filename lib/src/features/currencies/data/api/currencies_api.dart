@@ -14,4 +14,7 @@ abstract class CurrenciesApi {
 
   @GET('/admin/currencies/{code}')
   Future<Currency> retrieve(@Path('code') String code);
+
+  @PUT('/admin/currencies/{code}')
+  Future<Currency> update(@Path('code') String code, @Body() Map<String, dynamic> body);
 }

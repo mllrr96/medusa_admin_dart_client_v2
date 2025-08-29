@@ -15,7 +15,7 @@ abstract class NotesApi {
   @GET('/notes')
   Future<List<Note>> list();
 
-  @POST('/notes')
+  @POST('/admin/notes')
   Future<Note> create(@Body() Note note);
 
   @PUT('/notes/{id}')

@@ -1,5 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
+import 'package:medusa_admin_dart_client/src/features/api_keys/data/api/api_keys_api.dart';
+import 'package:medusa_admin_dart_client/src/features/api_keys/data/repository/api_keys_repository.dart';
 import '../../features/auth/data/api/auth_api.dart';
 import '../../features/auth/data/repository/auth_repository.dart';
 import '../../features/products/data/api/products_api.dart';
@@ -46,6 +48,10 @@ import '../../features/sales_channels/data/api/sales_channels_api.dart';
 import '../../features/sales_channels/data/repository/sales_channels_repository.dart';
 import '../../features/swaps/data/api/swaps_api.dart';
 import '../../features/swaps/data/repository/swaps_repository.dart';
+import '../../features/return_reasons/data/api/return_reasons_api.dart';
+import '../../features/return_reasons/data/repository/return_reasons_repository.dart';
+import '../../features/campaigns/data/api/campaigns_api.dart';
+import '../../features/campaigns/data/repository/campaigns_repository.dart';
 
 final getIt = GetIt.instance;
 
@@ -166,4 +172,19 @@ void configureDependencies() {
   getIt.registerLazySingleton<SwapsApi>(() => SwapsApi(getIt<Dio>()));
   getIt.registerLazySingleton<SwapsRepository>(
       () => SwapsRepository(getIt<SwapsApi>()));
+
+  // Api Keys
+  getIt.registerLazySingleton<ApiKeysApi>(() => ApiKeysApi(getIt<Dio>()));
+  getIt.registerLazySingleton<ApiKeysRepository>(
+      () => ApiKeysRepository(getIt<ApiKeysApi>()));
+
+  // Campaigns
+  getIt.registerLazySingleton<CampaignsApi>(() => CampaignsApi(getIt<Dio>()));
+  getIt.registerLazySingleton<CampaignsRepository>(
+      () => CampaignsRepository(getIt<CampaignsApi>()));
+
+  // Return Reasons
+  getIt.registerLazySingleton<ReturnReasonsApi>(() => ReturnReasonsApi(getIt<Dio>()));
+  getIt.registerLazySingleton<ReturnReasonsRepository>(
+      () => ReturnReasonsRepository(getIt<ReturnReasonsApi>()));
 }

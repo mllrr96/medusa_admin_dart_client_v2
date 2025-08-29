@@ -26,4 +26,12 @@ class CustomerGroupsRepository {
   Future<void> delete(String id) {
     return _customerGroupsApi.delete(id);
   }
+
+  Future<CustomerGroup> addCustomers(String id, List<String> customerIds) {
+    return _customerGroupsApi.addCustomers(id, {'customer_ids': customerIds});
+  }
+
+  Future<CustomerGroup> removeCustomers(String id, List<String> customerIds) {
+    return _customerGroupsApi.removeCustomers(id, {'customer_ids': customerIds});
+  }
 }

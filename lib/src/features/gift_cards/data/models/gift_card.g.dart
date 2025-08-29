@@ -6,36 +6,38 @@ part of 'gift_card.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_GiftCard _$GiftCardFromJson(Map<String, dynamic> json) => _GiftCard(
-  id: json['id'] as String,
-  code: json['code'] as String,
-  value: (json['value'] as num).toInt(),
-  balance: (json['balance'] as num).toInt(),
-  regionId: json['region_id'] as String,
-  orderId: json['order_id'] as String?,
-  isDisabled: json['is_disabled'] as bool,
-  endsAt: json['ends_at'] == null
-      ? null
-      : DateTime.parse(json['ends_at'] as String),
-  createdAt: DateTime.parse(json['created_at'] as String),
-  updatedAt: DateTime.parse(json['updated_at'] as String),
-  deletedAt: json['deleted_at'] == null
-      ? null
-      : DateTime.parse(json['deleted_at'] as String),
-  metadata: json['metadata'] as Map<String, dynamic>?,
-);
+_AdminGiftCard _$AdminGiftCardFromJson(Map<String, dynamic> json) =>
+    _AdminGiftCard(
+      id: json['id'] as String,
+      code: json['code'] as String,
+      status: json['status'] as String,
+      value: (json['value'] as num).toInt(),
+      currencyCode: json['currencyCode'] as String,
+      customerId: json['customerId'] as String,
+      customer: Customer.fromJson(json['customer'] as Map<String, dynamic>),
+      referenceId: json['referenceId'] as String,
+      note: json['note'] as String,
+      reference: json['reference'] as String,
+      expiresAt: DateTime.parse(json['expiresAt'] as String),
+      createdAt: DateTime.parse(json['createdAt'] as String),
+      updatedAt: DateTime.parse(json['updatedAt'] as String),
+      lineItem: LineItem.fromJson(json['lineItem'] as Map<String, dynamic>),
+    );
 
-Map<String, dynamic> _$GiftCardToJson(_GiftCard instance) => <String, dynamic>{
-  'id': instance.id,
-  'code': instance.code,
-  'value': instance.value,
-  'balance': instance.balance,
-  'region_id': instance.regionId,
-  'order_id': instance.orderId,
-  'is_disabled': instance.isDisabled,
-  'ends_at': instance.endsAt?.toIso8601String(),
-  'created_at': instance.createdAt.toIso8601String(),
-  'updated_at': instance.updatedAt.toIso8601String(),
-  'deleted_at': instance.deletedAt?.toIso8601String(),
-  'metadata': instance.metadata,
-};
+Map<String, dynamic> _$AdminGiftCardToJson(_AdminGiftCard instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'code': instance.code,
+      'status': instance.status,
+      'value': instance.value,
+      'currencyCode': instance.currencyCode,
+      'customerId': instance.customerId,
+      'customer': instance.customer,
+      'referenceId': instance.referenceId,
+      'note': instance.note,
+      'reference': instance.reference,
+      'expiresAt': instance.expiresAt.toIso8601String(),
+      'createdAt': instance.createdAt.toIso8601String(),
+      'updatedAt': instance.updatedAt.toIso8601String(),
+      'lineItem': instance.lineItem,
+    };

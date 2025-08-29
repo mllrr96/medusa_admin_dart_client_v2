@@ -13,42 +13,42 @@ part of 'price_list.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-mixin _$PriceList {
+mixin _$AdminPriceList {
 
- String get id; String get name; String get description; String get type; DateTime get createdAt; DateTime get updatedAt; DateTime? get deletedAt;
-/// Create a copy of PriceList
+ String get id; String get title; String get description; Map<String, dynamic> get rules; String get startsAt; String get endsAt; String get status; String get type; List<AdminPrice> get prices; DateTime get createdAt; DateTime get updatedAt; DateTime get deletedAt;
+/// Create a copy of AdminPriceList
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$PriceListCopyWith<PriceList> get copyWith => _$PriceListCopyWithImpl<PriceList>(this as PriceList, _$identity);
+$AdminPriceListCopyWith<AdminPriceList> get copyWith => _$AdminPriceListCopyWithImpl<AdminPriceList>(this as AdminPriceList, _$identity);
 
-  /// Serializes this PriceList to a JSON map.
+  /// Serializes this AdminPriceList to a JSON map.
   Map<String, dynamic> toJson();
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is PriceList&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.description, description) || other.description == description)&&(identical(other.type, type) || other.type == type)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.deletedAt, deletedAt) || other.deletedAt == deletedAt));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AdminPriceList&&(identical(other.id, id) || other.id == id)&&(identical(other.title, title) || other.title == title)&&(identical(other.description, description) || other.description == description)&&const DeepCollectionEquality().equals(other.rules, rules)&&(identical(other.startsAt, startsAt) || other.startsAt == startsAt)&&(identical(other.endsAt, endsAt) || other.endsAt == endsAt)&&(identical(other.status, status) || other.status == status)&&(identical(other.type, type) || other.type == type)&&const DeepCollectionEquality().equals(other.prices, prices)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.deletedAt, deletedAt) || other.deletedAt == deletedAt));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,description,type,createdAt,updatedAt,deletedAt);
+int get hashCode => Object.hash(runtimeType,id,title,description,const DeepCollectionEquality().hash(rules),startsAt,endsAt,status,type,const DeepCollectionEquality().hash(prices),createdAt,updatedAt,deletedAt);
 
 @override
 String toString() {
-  return 'PriceList(id: $id, name: $name, description: $description, type: $type, createdAt: $createdAt, updatedAt: $updatedAt, deletedAt: $deletedAt)';
+  return 'AdminPriceList(id: $id, title: $title, description: $description, rules: $rules, startsAt: $startsAt, endsAt: $endsAt, status: $status, type: $type, prices: $prices, createdAt: $createdAt, updatedAt: $updatedAt, deletedAt: $deletedAt)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $PriceListCopyWith<$Res>  {
-  factory $PriceListCopyWith(PriceList value, $Res Function(PriceList) _then) = _$PriceListCopyWithImpl;
+abstract mixin class $AdminPriceListCopyWith<$Res>  {
+  factory $AdminPriceListCopyWith(AdminPriceList value, $Res Function(AdminPriceList) _then) = _$AdminPriceListCopyWithImpl;
 @useResult
 $Res call({
- String id, String name, String description, String type, DateTime createdAt, DateTime updatedAt, DateTime? deletedAt
+ String id, String title, String description, Map<String, dynamic> rules, String startsAt, String endsAt, String status, String type, List<AdminPrice> prices, DateTime createdAt, DateTime updatedAt, DateTime deletedAt
 });
 
 
@@ -56,33 +56,38 @@ $Res call({
 
 }
 /// @nodoc
-class _$PriceListCopyWithImpl<$Res>
-    implements $PriceListCopyWith<$Res> {
-  _$PriceListCopyWithImpl(this._self, this._then);
+class _$AdminPriceListCopyWithImpl<$Res>
+    implements $AdminPriceListCopyWith<$Res> {
+  _$AdminPriceListCopyWithImpl(this._self, this._then);
 
-  final PriceList _self;
-  final $Res Function(PriceList) _then;
+  final AdminPriceList _self;
+  final $Res Function(AdminPriceList) _then;
 
-/// Create a copy of PriceList
+/// Create a copy of AdminPriceList
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? description = null,Object? type = null,Object? createdAt = null,Object? updatedAt = null,Object? deletedAt = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? title = null,Object? description = null,Object? rules = null,Object? startsAt = null,Object? endsAt = null,Object? status = null,Object? type = null,Object? prices = null,Object? createdAt = null,Object? updatedAt = null,Object? deletedAt = null,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
 as String,description: null == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
+as String,rules: null == rules ? _self.rules : rules // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>,startsAt: null == startsAt ? _self.startsAt : startsAt // ignore: cast_nullable_to_non_nullable
+as String,endsAt: null == endsAt ? _self.endsAt : endsAt // ignore: cast_nullable_to_non_nullable
+as String,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as String,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
-as String,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as String,prices: null == prices ? _self.prices : prices // ignore: cast_nullable_to_non_nullable
+as List<AdminPrice>,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
-as DateTime?,
+as DateTime,deletedAt: null == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
+as DateTime,
   ));
 }
 
 }
 
 
-/// Adds pattern-matching-related methods to [PriceList].
-extension PriceListPatterns on PriceList {
+/// Adds pattern-matching-related methods to [AdminPriceList].
+extension AdminPriceListPatterns on AdminPriceList {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -95,10 +100,10 @@ extension PriceListPatterns on PriceList {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _PriceList value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AdminPriceList value)?  $default,{required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _PriceList() when $default != null:
+case _AdminPriceList() when $default != null:
 return $default(_that);case _:
   return orElse();
 
@@ -117,10 +122,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _PriceList value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AdminPriceList value)  $default,){
 final _that = this;
 switch (_that) {
-case _PriceList():
+case _AdminPriceList():
 return $default(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -138,10 +143,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _PriceList value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AdminPriceList value)?  $default,){
 final _that = this;
 switch (_that) {
-case _PriceList() when $default != null:
+case _AdminPriceList() when $default != null:
 return $default(_that);case _:
   return null;
 
@@ -159,10 +164,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  String description,  String type,  DateTime createdAt,  DateTime updatedAt,  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String title,  String description,  Map<String, dynamic> rules,  String startsAt,  String endsAt,  String status,  String type,  List<AdminPrice> prices,  DateTime createdAt,  DateTime updatedAt,  DateTime deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _PriceList() when $default != null:
-return $default(_that.id,_that.name,_that.description,_that.type,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
+case _AdminPriceList() when $default != null:
+return $default(_that.id,_that.title,_that.description,_that.rules,_that.startsAt,_that.endsAt,_that.status,_that.type,_that.prices,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
   return orElse();
 
 }
@@ -180,10 +185,10 @@ return $default(_that.id,_that.name,_that.description,_that.type,_that.createdAt
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  String description,  String type,  DateTime createdAt,  DateTime updatedAt,  DateTime? deletedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String title,  String description,  Map<String, dynamic> rules,  String startsAt,  String endsAt,  String status,  String type,  List<AdminPrice> prices,  DateTime createdAt,  DateTime updatedAt,  DateTime deletedAt)  $default,) {final _that = this;
 switch (_that) {
-case _PriceList():
-return $default(_that.id,_that.name,_that.description,_that.type,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
+case _AdminPriceList():
+return $default(_that.id,_that.title,_that.description,_that.rules,_that.startsAt,_that.endsAt,_that.status,_that.type,_that.prices,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -200,10 +205,10 @@ return $default(_that.id,_that.name,_that.description,_that.type,_that.createdAt
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  String description,  String type,  DateTime createdAt,  DateTime updatedAt,  DateTime? deletedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String title,  String description,  Map<String, dynamic> rules,  String startsAt,  String endsAt,  String status,  String type,  List<AdminPrice> prices,  DateTime createdAt,  DateTime updatedAt,  DateTime deletedAt)?  $default,) {final _that = this;
 switch (_that) {
-case _PriceList() when $default != null:
-return $default(_that.id,_that.name,_that.description,_that.type,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
+case _AdminPriceList() when $default != null:
+return $default(_that.id,_that.title,_that.description,_that.rules,_that.startsAt,_that.endsAt,_that.status,_that.type,_that.prices,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
   return null;
 
 }
@@ -214,52 +219,69 @@ return $default(_that.id,_that.name,_that.description,_that.type,_that.createdAt
 /// @nodoc
 @JsonSerializable()
 
-class _PriceList implements PriceList {
-  const _PriceList({required this.id, required this.name, required this.description, required this.type, required this.createdAt, required this.updatedAt, this.deletedAt});
-  factory _PriceList.fromJson(Map<String, dynamic> json) => _$PriceListFromJson(json);
+class _AdminPriceList implements AdminPriceList {
+  const _AdminPriceList({required this.id, required this.title, required this.description, required final  Map<String, dynamic> rules, required this.startsAt, required this.endsAt, required this.status, required this.type, required final  List<AdminPrice> prices, required this.createdAt, required this.updatedAt, required this.deletedAt}): _rules = rules,_prices = prices;
+  factory _AdminPriceList.fromJson(Map<String, dynamic> json) => _$AdminPriceListFromJson(json);
 
 @override final  String id;
-@override final  String name;
+@override final  String title;
 @override final  String description;
+ final  Map<String, dynamic> _rules;
+@override Map<String, dynamic> get rules {
+  if (_rules is EqualUnmodifiableMapView) return _rules;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableMapView(_rules);
+}
+
+@override final  String startsAt;
+@override final  String endsAt;
+@override final  String status;
 @override final  String type;
+ final  List<AdminPrice> _prices;
+@override List<AdminPrice> get prices {
+  if (_prices is EqualUnmodifiableListView) return _prices;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_prices);
+}
+
 @override final  DateTime createdAt;
 @override final  DateTime updatedAt;
-@override final  DateTime? deletedAt;
+@override final  DateTime deletedAt;
 
-/// Create a copy of PriceList
+/// Create a copy of AdminPriceList
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$PriceListCopyWith<_PriceList> get copyWith => __$PriceListCopyWithImpl<_PriceList>(this, _$identity);
+_$AdminPriceListCopyWith<_AdminPriceList> get copyWith => __$AdminPriceListCopyWithImpl<_AdminPriceList>(this, _$identity);
 
 @override
 Map<String, dynamic> toJson() {
-  return _$PriceListToJson(this, );
+  return _$AdminPriceListToJson(this, );
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PriceList&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.description, description) || other.description == description)&&(identical(other.type, type) || other.type == type)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.deletedAt, deletedAt) || other.deletedAt == deletedAt));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AdminPriceList&&(identical(other.id, id) || other.id == id)&&(identical(other.title, title) || other.title == title)&&(identical(other.description, description) || other.description == description)&&const DeepCollectionEquality().equals(other._rules, _rules)&&(identical(other.startsAt, startsAt) || other.startsAt == startsAt)&&(identical(other.endsAt, endsAt) || other.endsAt == endsAt)&&(identical(other.status, status) || other.status == status)&&(identical(other.type, type) || other.type == type)&&const DeepCollectionEquality().equals(other._prices, _prices)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.deletedAt, deletedAt) || other.deletedAt == deletedAt));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,description,type,createdAt,updatedAt,deletedAt);
+int get hashCode => Object.hash(runtimeType,id,title,description,const DeepCollectionEquality().hash(_rules),startsAt,endsAt,status,type,const DeepCollectionEquality().hash(_prices),createdAt,updatedAt,deletedAt);
 
 @override
 String toString() {
-  return 'PriceList(id: $id, name: $name, description: $description, type: $type, createdAt: $createdAt, updatedAt: $updatedAt, deletedAt: $deletedAt)';
+  return 'AdminPriceList(id: $id, title: $title, description: $description, rules: $rules, startsAt: $startsAt, endsAt: $endsAt, status: $status, type: $type, prices: $prices, createdAt: $createdAt, updatedAt: $updatedAt, deletedAt: $deletedAt)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$PriceListCopyWith<$Res> implements $PriceListCopyWith<$Res> {
-  factory _$PriceListCopyWith(_PriceList value, $Res Function(_PriceList) _then) = __$PriceListCopyWithImpl;
+abstract mixin class _$AdminPriceListCopyWith<$Res> implements $AdminPriceListCopyWith<$Res> {
+  factory _$AdminPriceListCopyWith(_AdminPriceList value, $Res Function(_AdminPriceList) _then) = __$AdminPriceListCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String name, String description, String type, DateTime createdAt, DateTime updatedAt, DateTime? deletedAt
+ String id, String title, String description, Map<String, dynamic> rules, String startsAt, String endsAt, String status, String type, List<AdminPrice> prices, DateTime createdAt, DateTime updatedAt, DateTime deletedAt
 });
 
 
@@ -267,25 +289,30 @@ $Res call({
 
 }
 /// @nodoc
-class __$PriceListCopyWithImpl<$Res>
-    implements _$PriceListCopyWith<$Res> {
-  __$PriceListCopyWithImpl(this._self, this._then);
+class __$AdminPriceListCopyWithImpl<$Res>
+    implements _$AdminPriceListCopyWith<$Res> {
+  __$AdminPriceListCopyWithImpl(this._self, this._then);
 
-  final _PriceList _self;
-  final $Res Function(_PriceList) _then;
+  final _AdminPriceList _self;
+  final $Res Function(_AdminPriceList) _then;
 
-/// Create a copy of PriceList
+/// Create a copy of AdminPriceList
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? description = null,Object? type = null,Object? createdAt = null,Object? updatedAt = null,Object? deletedAt = freezed,}) {
-  return _then(_PriceList(
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? title = null,Object? description = null,Object? rules = null,Object? startsAt = null,Object? endsAt = null,Object? status = null,Object? type = null,Object? prices = null,Object? createdAt = null,Object? updatedAt = null,Object? deletedAt = null,}) {
+  return _then(_AdminPriceList(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
 as String,description: null == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
+as String,rules: null == rules ? _self._rules : rules // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>,startsAt: null == startsAt ? _self.startsAt : startsAt // ignore: cast_nullable_to_non_nullable
+as String,endsAt: null == endsAt ? _self.endsAt : endsAt // ignore: cast_nullable_to_non_nullable
+as String,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as String,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
-as String,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as String,prices: null == prices ? _self._prices : prices // ignore: cast_nullable_to_non_nullable
+as List<AdminPrice>,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
-as DateTime?,
+as DateTime,deletedAt: null == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
+as DateTime,
   ));
 }
 

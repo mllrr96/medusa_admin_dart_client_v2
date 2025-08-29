@@ -96,3 +96,15 @@ Each of the following features has been migrated to the new v2 structure, includ
 -   `returns`
 -   `sales_channels`
 -   `swaps`
+
+## Verified Features (against new openapi.yaml)
+
+- `discounts`
+- `gift_cards`
+- `price_lists`
+- `auth`
+
+## Development Rules
+
+- When creating a class with the `@freezed` annotation, it must be declared as `abstract`.
+- For any query parameters, add a `Map<String, dynamic>? queryParameters` to the method signature and pass it to the API call.

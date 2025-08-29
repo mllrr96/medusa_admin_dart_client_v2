@@ -23,4 +23,10 @@ abstract class CollectionsApi {
 
   @DELETE('/admin/collections/{id}')
   Future<void> delete(@Path('id') String id);
+
+  @POST('/admin/collections/{id}/products')
+  Future<ProductCollection> addProducts(@Path('id') String id, @Body() Map<String, dynamic> body);
+
+  @DELETE('/admin/collections/{id}/products')
+  Future<ProductCollection> removeProducts(@Path('id') String id, @Body() Map<String, dynamic> body);
 }

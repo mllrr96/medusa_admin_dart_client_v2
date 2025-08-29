@@ -23,4 +23,10 @@ abstract class CustomerGroupsApi {
 
   @DELETE('/admin/customer-groups/{id}')
   Future<void> delete(@Path('id') String id);
+
+  @POST('/admin/customer-groups/{id}/customers')
+  Future<CustomerGroup> addCustomers(@Path('id') String id, @Body() Map<String, dynamic> body);
+
+  @DELETE('/admin/customer-groups/{id}/customers')
+  Future<CustomerGroup> removeCustomers(@Path('id') String id, @Body() Map<String, dynamic> body);
 }
