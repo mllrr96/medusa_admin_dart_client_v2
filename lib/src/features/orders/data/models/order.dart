@@ -7,7 +7,6 @@ import 'package:medusa_admin_dart_client/src/core/models/payment.dart';
 import 'package:medusa_admin_dart_client/src/core/models/shipping_method.dart';
 import 'package:medusa_admin_dart_client/src/features/gift_cards/data/models/gift_card.dart';
 
-
 import '../../../customers/data/models/customer.dart';
 import '../../../discounts/data/models/discount.dart';
 import '../../../regions/data/models/region.dart';
@@ -15,6 +14,7 @@ import '../../../returns/data/models/return.dart';
 import '../../../swaps/data/models/swap.dart';
 
 part 'order.freezed.dart';
+
 part 'order.g.dart';
 
 @freezed
