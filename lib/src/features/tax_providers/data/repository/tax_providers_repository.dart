@@ -1,5 +1,5 @@
-import '../api/tax_providers_api.dart';
-import '../models/tax_providers_list_res.dart';
+import 'package:medusa_admin_dart_client/medusa_admin_dart_client_v2.dart';
+import 'package:medusa_admin_dart_client/src/features/tax_providers/data/api/tax_providers_api.dart';
 
 class TaxProvidersRepository {
   TaxProvidersRepository(this._taxProvidersApi);

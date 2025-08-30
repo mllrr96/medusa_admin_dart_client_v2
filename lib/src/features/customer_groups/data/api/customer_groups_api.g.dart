@@ -18,7 +18,7 @@ class _CustomerGroupsApi implements CustomerGroupsApi {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<List<CustomerGroup>> retrieveAll({
+  Future<CustomerGroupsListRes> list({
     Map<String, dynamic>? queryParameters,
   }) async {
     final _extra = <String, dynamic>{};
@@ -27,7 +27,7 @@ class _CustomerGroupsApi implements CustomerGroupsApi {
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<List<CustomerGroup>>(
+    final _options = _setStreamType<CustomerGroupsListRes>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -37,12 +37,10 @@ class _CustomerGroupsApi implements CustomerGroupsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<List<dynamic>>(_options);
-    late List<CustomerGroup> _value;
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late CustomerGroupsListRes _value;
     try {
-      _value = _result.data!
-          .map((dynamic i) => CustomerGroup.fromJson(i as Map<String, dynamic>))
-          .toList();
+      _value = CustomerGroupsListRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -51,12 +49,12 @@ class _CustomerGroupsApi implements CustomerGroupsApi {
   }
 
   @override
-  Future<CustomerGroup> retrieve(String id) async {
+  Future<CustomerGroupsRes> retrieve(String id) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<CustomerGroup>(
+    final _options = _setStreamType<CustomerGroupsRes>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -67,9 +65,9 @@ class _CustomerGroupsApi implements CustomerGroupsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late CustomerGroup _value;
+    late CustomerGroupsRes _value;
     try {
-      _value = CustomerGroup.fromJson(_result.data!);
+      _value = CustomerGroupsRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -78,13 +76,12 @@ class _CustomerGroupsApi implements CustomerGroupsApi {
   }
 
   @override
-  Future<CustomerGroup> create(Map<String, dynamic> body) async {
+  Future<CustomerGroupsRes> create(CreateCustomerGroupReq body) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(body);
-    final _options = _setStreamType<CustomerGroup>(
+    final _data = body;
+    final _options = _setStreamType<CustomerGroupsRes>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -95,9 +92,9 @@ class _CustomerGroupsApi implements CustomerGroupsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late CustomerGroup _value;
+    late CustomerGroupsRes _value;
     try {
-      _value = CustomerGroup.fromJson(_result.data!);
+      _value = CustomerGroupsRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -106,13 +103,13 @@ class _CustomerGroupsApi implements CustomerGroupsApi {
   }
 
   @override
-  Future<CustomerGroup> update(String id, Map<String, dynamic> body) async {
+  Future<CustomerGroupsRes> update(String id, Map<String, dynamic> body) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(body);
-    final _options = _setStreamType<CustomerGroup>(
+    final _options = _setStreamType<CustomerGroupsRes>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -123,9 +120,9 @@ class _CustomerGroupsApi implements CustomerGroupsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late CustomerGroup _value;
+    late CustomerGroupsRes _value;
     try {
-      _value = CustomerGroup.fromJson(_result.data!);
+      _value = CustomerGroupsRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -134,12 +131,12 @@ class _CustomerGroupsApi implements CustomerGroupsApi {
   }
 
   @override
-  Future<void> delete(String id) async {
+  Future<CustomerGroupsDeleteRes> delete(String id) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<void>(
+    final _options = _setStreamType<CustomerGroupsDeleteRes>(
       Options(method: 'DELETE', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -149,33 +146,10 @@ class _CustomerGroupsApi implements CustomerGroupsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    await _dio.fetch<void>(_options);
-  }
-
-  @override
-  Future<CustomerGroup> addCustomers(
-    String id,
-    Map<String, dynamic> body,
-  ) async {
-    final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(body);
-    final _options = _setStreamType<CustomerGroup>(
-      Options(method: 'POST', headers: _headers, extra: _extra)
-          .compose(
-            _dio.options,
-            '/admin/customer-groups/${id}/customers',
-            queryParameters: queryParameters,
-            data: _data,
-          )
-          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
-    );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late CustomerGroup _value;
+    late CustomerGroupsDeleteRes _value;
     try {
-      _value = CustomerGroup.fromJson(_result.data!);
+      _value = CustomerGroupsDeleteRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -184,29 +158,58 @@ class _CustomerGroupsApi implements CustomerGroupsApi {
   }
 
   @override
-  Future<CustomerGroup> removeCustomers(
+  Future<CustomerGroupsRes> addCustomers(
     String id,
-    Map<String, dynamic> body,
+    AddCustomersToGroupReq body,
   ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(body);
-    final _options = _setStreamType<CustomerGroup>(
-      Options(method: 'DELETE', headers: _headers, extra: _extra)
+    final _data = body;
+    final _options = _setStreamType<CustomerGroupsRes>(
+      Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/admin/customer-groups/${id}/customers',
+            '/admin/customer-groups/${id}/customers/batch',
             queryParameters: queryParameters,
             data: _data,
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late CustomerGroup _value;
+    late CustomerGroupsRes _value;
     try {
-      _value = CustomerGroup.fromJson(_result.data!);
+      _value = CustomerGroupsRes.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<CustomerGroupsRes> removeCustomers(
+    String id,
+    AddCustomersToGroupReq body,
+  ) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = body;
+    final _options = _setStreamType<CustomerGroupsRes>(
+      Options(method: 'DELETE', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            '/admin/customer-groups/${id}/customers/batch',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late CustomerGroupsRes _value;
+    try {
+      _value = CustomerGroupsRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
