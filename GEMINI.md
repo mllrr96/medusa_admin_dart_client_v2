@@ -103,8 +103,15 @@ Each of the following features has been migrated to the new v2 structure, includ
 - `gift_cards`
 - `price_lists`
 - `auth`
+- `users`
+- `orders`
+
+## Development Process
+
+We are using the `summery` text files as the source of truth and comparing it to what we have in the generated code. Once a feature is verified, we add it to the verified list.
 
 ## Development Rules
 
 - When creating a class with the `@freezed` annotation, it must be declared as `abstract`.
 - For any query parameters, add a `Map<String, dynamic>? queryParameters` to the method signature and pass it to the API call.
+- **NEVER** add `Admin` to a class name. All classes should be named normally, without the `Admin` prefix.

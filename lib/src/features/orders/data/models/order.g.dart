@@ -8,118 +8,124 @@ part of 'order.dart';
 
 _Order _$OrderFromJson(Map<String, dynamic> json) => _Order(
   id: json['id'] as String,
-  status: json['status'] as String,
-  displayId: (json['display_id'] as num).toInt(),
-  cartId: json['cart_id'] as String?,
-  cart: json['cart'] == null
-      ? null
-      : Cart.fromJson(json['cart'] as Map<String, dynamic>),
-  customerId: json['customer_id'] as String,
-  customer: json['customer'] == null
-      ? null
-      : Customer.fromJson(json['customer'] as Map<String, dynamic>),
-  email: json['email'] as String,
+  version: (json['version'] as num).toInt(),
   regionId: json['region_id'] as String,
+  customerId: json['customer_id'] as String,
+  salesChannelId: json['sales_channel_id'] as String,
+  email: json['email'] as String,
+  currencyCode: json['currency_code'] as String,
+  displayId: (json['display_id'] as num?)?.toInt(),
+  items: (json['items'] as List<dynamic>)
+      .map((e) => AdminOrderLineItem.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  shippingMethods: (json['shipping_methods'] as List<dynamic>)
+      .map((e) => AdminOrderShippingMethod.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  paymentStatus: json['payment_status'] as String,
+  fulfillmentStatus: json['fulfillment_status'] as String,
+  transactions: json['transactions'] as List<dynamic>?,
+  summary: BaseOrderSummary.fromJson(json['summary'] as Map<String, dynamic>),
+  metadata: json['metadata'] as Map<String, dynamic>?,
+  createdAt: DateTime.parse(json['created_at'] as String),
+  updatedAt: DateTime.parse(json['updated_at'] as String),
+  originalItemTotal: json['original_item_total'] as num,
+  originalItemSubtotal: json['original_item_subtotal'] as num,
+  originalItemTaxTotal: json['original_item_tax_total'] as num,
+  itemTotal: json['item_total'] as num,
+  itemSubtotal: json['item_subtotal'] as num,
+  itemTaxTotal: json['item_tax_total'] as num,
+  originalTotal: json['original_total'] as num,
+  originalSubtotal: json['original_subtotal'] as num,
+  originalTaxTotal: json['original_tax_total'] as num,
+  total: json['total'] as num,
+  subtotal: json['subtotal'] as num,
+  taxTotal: json['tax_total'] as num,
+  discountTotal: json['discount_total'] as num,
+  discountTaxTotal: json['discount_tax_total'] as num,
+  giftCardTotal: json['gift_card_total'] as num,
+  giftCardTaxTotal: json['gift_card_tax_total'] as num,
+  shippingTotal: json['shipping_total'] as num,
+  shippingSubtotal: json['shipping_subtotal'] as num,
+  shippingTaxTotal: json['shipping_tax_total'] as num,
+  originalShippingTotal: json['original_shipping_total'] as num,
+  originalShippingSubtotal: json['original_shipping_subtotal'] as num,
+  originalShippingTaxTotal: json['original_shipping_tax_total'] as num,
+  status: json['status'] as String,
   region: json['region'] == null
       ? null
       : Region.fromJson(json['region'] as Map<String, dynamic>),
-  currencyCode: json['currency_code'] as String,
-  shippingAddressId: json['shipping_address_id'] as String?,
-  shippingAddress: json['shippingAddress'] == null
-      ? null
-      : Address.fromJson(json['shippingAddress'] as Map<String, dynamic>),
-  billingAddressId: json['billing_address_id'] as String?,
-  billingAddress: json['billingAddress'] == null
-      ? null
-      : Address.fromJson(json['billingAddress'] as Map<String, dynamic>),
-  noNotification: json['no_notification'] as bool?,
-  items: (json['items'] as List<dynamic>?)
-      ?.map((e) => LineItem.fromJson(e as Map<String, dynamic>))
+  creditLines: (json['credit_lines'] as List<dynamic>?)
+      ?.map((e) => OrderCreditLine.fromJson(e as Map<String, dynamic>))
       .toList(),
-  payments: (json['payments'] as List<dynamic>?)
-      ?.map((e) => Payment.fromJson(e as Map<String, dynamic>))
+  creditLineTotal: json['credit_line_total'] as num,
+  paymentCollections: (json['payment_collections'] as List<dynamic>?)
+      ?.map((e) => AdminPaymentCollection.fromJson(e as Map<String, dynamic>))
       .toList(),
   fulfillments: (json['fulfillments'] as List<dynamic>?)
-      ?.map((e) => Fulfillment.fromJson(e as Map<String, dynamic>))
+      ?.map((e) => AdminOrderFulfillment.fromJson(e as Map<String, dynamic>))
       .toList(),
-  returns: (json['returns'] as List<dynamic>?)
-      ?.map((e) => Return.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  swaps: (json['swaps'] as List<dynamic>?)
-      ?.map((e) => Swap.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  discounts: (json['discounts'] as List<dynamic>?)
-      ?.map((e) => Discount.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  giftCards: (json['giftCards'] as List<dynamic>?)
-      ?.map((e) => AdminGiftCard.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  shippingMethods: (json['shippingMethods'] as List<dynamic>?)
-      ?.map((e) => ShippingMethod.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  taxRate: json['tax_rate'] as num?,
-  subtotal: (json['subtotal'] as num).toInt(),
-  shippingTotal: (json['shipping_total'] as num).toInt(),
-  taxTotal: (json['tax_total'] as num).toInt(),
-  discountTotal: (json['discount_total'] as num).toInt(),
-  giftCardTotal: (json['gift_card_total'] as num).toInt(),
-  giftCardTaxTotal: (json['gift_card_tax_total'] as num).toInt(),
-  total: (json['total'] as num).toInt(),
-  paidTotal: (json['paid_total'] as num).toInt(),
-  refundableTotal: (json['refundable_total'] as num).toInt(),
-  refundedTotal: (json['refunded_total'] as num).toInt(),
-  pastDue: json['past_due'] as bool?,
-  canceledAt: json['canceled_at'] == null
+  salesChannel: json['sales_channel'] == null
       ? null
-      : DateTime.parse(json['canceled_at'] as String),
-  createdAt: DateTime.parse(json['created_at'] as String),
-  updatedAt: DateTime.parse(json['updated_at'] as String),
-  deletedAt: json['deleted_at'] == null
+      : SalesChannel.fromJson(json['sales_channel'] as Map<String, dynamic>),
+  customer: json['customer'] == null
       ? null
-      : DateTime.parse(json['deleted_at'] as String),
-  metadata: json['metadata'] as Map<String, dynamic>?,
+      : Customer.fromJson(json['customer'] as Map<String, dynamic>),
+  shippingAddress: json['shipping_address'] == null
+      ? null
+      : Address.fromJson(json['shipping_address'] as Map<String, dynamic>),
+  billingAddress: json['billing_address'] == null
+      ? null
+      : Address.fromJson(json['billing_address'] as Map<String, dynamic>),
 );
 
 Map<String, dynamic> _$OrderToJson(_Order instance) => <String, dynamic>{
   'id': instance.id,
-  'status': instance.status,
-  'display_id': instance.displayId,
-  'cart_id': instance.cartId,
-  'cart': instance.cart,
-  'customer_id': instance.customerId,
-  'customer': instance.customer,
-  'email': instance.email,
+  'version': instance.version,
   'region_id': instance.regionId,
-  'region': instance.region,
+  'customer_id': instance.customerId,
+  'sales_channel_id': instance.salesChannelId,
+  'email': instance.email,
   'currency_code': instance.currencyCode,
-  'shipping_address_id': instance.shippingAddressId,
-  'shippingAddress': instance.shippingAddress,
-  'billing_address_id': instance.billingAddressId,
-  'billingAddress': instance.billingAddress,
-  'no_notification': instance.noNotification,
+  'display_id': instance.displayId,
   'items': instance.items,
-  'payments': instance.payments,
-  'fulfillments': instance.fulfillments,
-  'returns': instance.returns,
-  'swaps': instance.swaps,
-  'discounts': instance.discounts,
-  'giftCards': instance.giftCards,
-  'shippingMethods': instance.shippingMethods,
-  'tax_rate': instance.taxRate,
-  'subtotal': instance.subtotal,
-  'shipping_total': instance.shippingTotal,
-  'tax_total': instance.taxTotal,
-  'discount_total': instance.discountTotal,
-  'gift_card_total': instance.giftCardTotal,
-  'gift_card_tax_total': instance.giftCardTaxTotal,
-  'total': instance.total,
-  'paid_total': instance.paidTotal,
-  'refundable_total': instance.refundableTotal,
-  'refunded_total': instance.refundedTotal,
-  'past_due': instance.pastDue,
-  'canceled_at': instance.canceledAt?.toIso8601String(),
+  'shipping_methods': instance.shippingMethods,
+  'payment_status': instance.paymentStatus,
+  'fulfillment_status': instance.fulfillmentStatus,
+  'transactions': instance.transactions,
+  'summary': instance.summary,
+  'metadata': instance.metadata,
   'created_at': instance.createdAt.toIso8601String(),
   'updated_at': instance.updatedAt.toIso8601String(),
-  'deleted_at': instance.deletedAt?.toIso8601String(),
-  'metadata': instance.metadata,
+  'original_item_total': instance.originalItemTotal,
+  'original_item_subtotal': instance.originalItemSubtotal,
+  'original_item_tax_total': instance.originalItemTaxTotal,
+  'item_total': instance.itemTotal,
+  'item_subtotal': instance.itemSubtotal,
+  'item_tax_total': instance.itemTaxTotal,
+  'original_total': instance.originalTotal,
+  'original_subtotal': instance.originalSubtotal,
+  'original_tax_total': instance.originalTaxTotal,
+  'total': instance.total,
+  'subtotal': instance.subtotal,
+  'tax_total': instance.taxTotal,
+  'discount_total': instance.discountTotal,
+  'discount_tax_total': instance.discountTaxTotal,
+  'gift_card_total': instance.giftCardTotal,
+  'gift_card_tax_total': instance.giftCardTaxTotal,
+  'shipping_total': instance.shippingTotal,
+  'shipping_subtotal': instance.shippingSubtotal,
+  'shipping_tax_total': instance.shippingTaxTotal,
+  'original_shipping_total': instance.originalShippingTotal,
+  'original_shipping_subtotal': instance.originalShippingSubtotal,
+  'original_shipping_tax_total': instance.originalShippingTaxTotal,
+  'status': instance.status,
+  'region': instance.region,
+  'credit_lines': instance.creditLines,
+  'credit_line_total': instance.creditLineTotal,
+  'payment_collections': instance.paymentCollections,
+  'fulfillments': instance.fulfillments,
+  'sales_channel': instance.salesChannel,
+  'customer': instance.customer,
+  'shipping_address': instance.shippingAddress,
+  'billing_address': instance.billingAddress,
 };

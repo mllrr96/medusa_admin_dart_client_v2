@@ -1,66 +1,78 @@
+
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:medusa_admin_dart_client/src/core/models/address.dart';
-import 'package:medusa_admin_dart_client/src/core/models/cart.dart';
-import 'package:medusa_admin_dart_client/src/core/models/fulfillment.dart';
-import 'package:medusa_admin_dart_client/src/core/models/line_item.dart';
-import 'package:medusa_admin_dart_client/src/core/models/payment.dart';
-import 'package:medusa_admin_dart_client/src/core/models/shipping_method.dart';
-import 'package:medusa_admin_dart_client/src/features/gift_cards/data/models/gift_card.dart';
-
-import '../../../customers/data/models/customer.dart';
-import '../../../discounts/data/models/discount.dart';
-import '../../../regions/data/models/region.dart';
-import '../../../returns/data/models/return.dart';
-import '../../../swaps/data/models/swap.dart';
+import 'package:medusa_admin_dart_client/src/core/models/admin_order_fulfillment.dart';
+import 'package:medusa_admin_dart_client/src/core/models/admin_order_line_item.dart';
+import 'package:medusa_admin_dart_client/src/core/models/admin_order_shipping_method.dart';
+import 'package:medusa_admin_dart_client/src/core/models/admin_payment_collection.dart';
+import 'package:medusa_admin_dart_client/src/core/models/base_order_summary.dart';
+import 'package:medusa_admin_dart_client/src/core/models/customer.dart';
+import 'package:medusa_admin_dart_client/src/core/models/order_credit_line.dart';
+import 'package:medusa_admin_dart_client/src/core/models/region.dart';
+import 'package:medusa_admin_dart_client/src/core/models/sales_channel.dart';
 
 part 'order.freezed.dart';
-
 part 'order.g.dart';
 
 @freezed
 abstract class Order with _$Order {
-  const factory Order({
+    const factory Order({
     required String id,
-    required String status,
-    @JsonKey(name: 'display_id') required int displayId,
-    @JsonKey(name: 'cart_id') String? cartId,
-    Cart? cart,
-    @JsonKey(name: 'customer_id') required String customerId,
-    Customer? customer,
-    required String email,
+    required int version,
     @JsonKey(name: 'region_id') required String regionId,
-    Region? region,
+    @JsonKey(name: 'customer_id') required String customerId,
+    @JsonKey(name: 'sales_channel_id') required String salesChannelId,
+    required String email,
     @JsonKey(name: 'currency_code') required String currencyCode,
-    @JsonKey(name: 'shipping_address_id') String? shippingAddressId,
-    Address? shippingAddress,
-    @JsonKey(name: 'billing_address_id') String? billingAddressId,
-    Address? billingAddress,
-    @JsonKey(name: 'no_notification') bool? noNotification,
-    List<LineItem>? items,
-    List<Payment>? payments,
-    List<Fulfillment>? fulfillments,
-    List<Return>? returns,
-    List<Swap>? swaps,
-    List<Discount>? discounts,
-    List<AdminGiftCard>? giftCards,
-    List<ShippingMethod>? shippingMethods,
-    @JsonKey(name: 'tax_rate') num? taxRate,
-    required int subtotal,
-    @JsonKey(name: 'shipping_total') required int shippingTotal,
-    @JsonKey(name: 'tax_total') required int taxTotal,
-    @JsonKey(name: 'discount_total') required int discountTotal,
-    @JsonKey(name: 'gift_card_total') required int giftCardTotal,
-    @JsonKey(name: 'gift_card_tax_total') required int giftCardTaxTotal,
-    required int total,
-    @JsonKey(name: 'paid_total') required int paidTotal,
-    @JsonKey(name: 'refundable_total') required int refundableTotal,
-    @JsonKey(name: 'refunded_total') required int refundedTotal,
-    @JsonKey(name: 'past_due') bool? pastDue,
-    @JsonKey(name: 'canceled_at') DateTime? canceledAt,
+    @JsonKey(name: 'display_id') int? displayId,
+    required List<AdminOrderLineItem> items,
+    @JsonKey(name: 'shipping_methods')
+    required List<AdminOrderShippingMethod> shippingMethods,
+    @JsonKey(name: 'payment_status') required String paymentStatus,
+    @JsonKey(name: 'fulfillment_status') required String fulfillmentStatus,
+    List<dynamic>? transactions,
+    required BaseOrderSummary summary,
+    Map<String, dynamic>? metadata,
     @JsonKey(name: 'created_at') required DateTime createdAt,
     @JsonKey(name: 'updated_at') required DateTime updatedAt,
-    @JsonKey(name: 'deleted_at') DateTime? deletedAt,
-    Map<String, dynamic>? metadata,
+    @JsonKey(name: 'original_item_total') required num originalItemTotal,
+    @JsonKey(name: 'original_item_subtotal')
+    required num originalItemSubtotal,
+    @JsonKey(name: 'original_item_tax_total')
+    required num originalItemTaxTotal,
+    @JsonKey(name: 'item_total') required num itemTotal,
+    @JsonKey(name: 'item_subtotal') required num itemSubtotal,
+    @JsonKey(name: 'item_tax_total') required num itemTaxTotal,
+    @JsonKey(name: 'original_total') required num originalTotal,
+    @JsonKey(name: 'original_subtotal') required num originalSubtotal,
+    @JsonKey(name: 'original_tax_total') required num originalTaxTotal,
+    required num total,
+    required num subtotal,
+    @JsonKey(name: 'tax_total') required num taxTotal,
+    @JsonKey(name: 'discount_total') required num discountTotal,
+    @JsonKey(name: 'discount_tax_total') required num discountTaxTotal,
+    @JsonKey(name: 'gift_card_total') required num giftCardTotal,
+    @JsonKey(name: 'gift_card_tax_total') required num giftCardTaxTotal,
+    @JsonKey(name: 'shipping_total') required num shippingTotal,
+    @JsonKey(name: 'shipping_subtotal') required num shippingSubtotal,
+    @JsonKey(name: 'shipping_tax_total') required num shippingTaxTotal,
+    @JsonKey(name: 'original_shipping_total')
+    required num originalShippingTotal,
+    @JsonKey(name: 'original_shipping_subtotal')
+    required num originalShippingSubtotal,
+    @JsonKey(name: 'original_shipping_tax_total')
+    required num originalShippingTaxTotal,
+    required String status,
+    Region? region,
+    @JsonKey(name: 'credit_lines') List<OrderCreditLine>? creditLines,
+    @JsonKey(name: 'credit_line_total') required num creditLineTotal,
+    @JsonKey(name: 'payment_collections')
+    List<AdminPaymentCollection>? paymentCollections,
+    List<AdminOrderFulfillment>? fulfillments,
+    @JsonKey(name: 'sales_channel') SalesChannel? salesChannel,
+    Customer? customer,
+    @JsonKey(name: 'shipping_address') Address? shippingAddress,
+    @JsonKey(name: 'billing_address') Address? billingAddress,
   }) = _Order;
 
   factory Order.fromJson(Map<String, dynamic> json) => _$OrderFromJson(json);

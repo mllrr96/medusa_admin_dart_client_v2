@@ -1,0 +1,108 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'admin_order_line_item.dart';
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+_AdminOrderLineItem _$AdminOrderLineItemFromJson(Map<String, dynamic> json) =>
+    _AdminOrderLineItem(
+      id: json['id'] as String,
+      title: json['title'] as String,
+      subtitle: json['subtitle'] as String,
+      thumbnail: json['thumbnail'] as String,
+      variant: json['variant'] == null
+          ? null
+          : ProductVariant.fromJson(json['variant'] as Map<String, dynamic>),
+      variant_id: json['variant_id'] as String,
+      product: json['product'] == null
+          ? null
+          : Product.fromJson(json['product'] as Map<String, dynamic>),
+      product_id: json['product_id'] as String,
+      product_title: json['product_title'] as String,
+      product_description: json['product_description'] as String,
+      product_subtitle: json['product_subtitle'] as String,
+      product_type: json['product_type'] as String,
+      product_collection: json['product_collection'] as String,
+      product_handle: json['product_handle'] as String,
+      variant_sku: json['variant_sku'] as String,
+      variant_barcode: json['variant_barcode'] as String,
+      variant_title: json['variant_title'] as String,
+      variant_option_values:
+          json['variant_option_values'] as Map<String, dynamic>,
+      requires_shipping: json['requires_shipping'] as bool,
+      is_discountable: json['is_discountable'] as bool,
+      is_tax_inclusive: json['is_tax_inclusive'] as bool,
+      compare_at_unit_price: json['compare_at_unit_price'] as num?,
+      unit_price: json['unit_price'] as num,
+      quantity: json['quantity'] as num,
+      tax_lines: json['tax_lines'] as List<dynamic>?,
+      adjustments: json['adjustments'] as List<dynamic>?,
+      detail: json['detail'],
+      created_at: json['created_at'] as String,
+      updated_at: json['updated_at'] as String,
+      metadata: json['metadata'] as Map<String, dynamic>,
+      original_total: json['original_total'] as num,
+      original_subtotal: json['original_subtotal'] as num,
+      original_tax_total: json['original_tax_total'] as num,
+      item_total: json['item_total'] as num,
+      item_subtotal: json['item_subtotal'] as num,
+      item_tax_total: json['item_tax_total'] as num,
+      total: json['total'] as num,
+      subtotal: json['subtotal'] as num,
+      tax_total: json['tax_total'] as num,
+      discount_total: json['discount_total'] as num,
+      discount_tax_total: json['discount_tax_total'] as num,
+      refundable_total: json['refundable_total'] as num,
+      refundable_total_per_unit: json['refundable_total_per_unit'] as num,
+      product_type_id: json['product_type_id'] as String,
+    );
+
+Map<String, dynamic> _$AdminOrderLineItemToJson(_AdminOrderLineItem instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'title': instance.title,
+      'subtitle': instance.subtitle,
+      'thumbnail': instance.thumbnail,
+      'variant': instance.variant,
+      'variant_id': instance.variant_id,
+      'product': instance.product,
+      'product_id': instance.product_id,
+      'product_title': instance.product_title,
+      'product_description': instance.product_description,
+      'product_subtitle': instance.product_subtitle,
+      'product_type': instance.product_type,
+      'product_collection': instance.product_collection,
+      'product_handle': instance.product_handle,
+      'variant_sku': instance.variant_sku,
+      'variant_barcode': instance.variant_barcode,
+      'variant_title': instance.variant_title,
+      'variant_option_values': instance.variant_option_values,
+      'requires_shipping': instance.requires_shipping,
+      'is_discountable': instance.is_discountable,
+      'is_tax_inclusive': instance.is_tax_inclusive,
+      'compare_at_unit_price': instance.compare_at_unit_price,
+      'unit_price': instance.unit_price,
+      'quantity': instance.quantity,
+      'tax_lines': instance.tax_lines,
+      'adjustments': instance.adjustments,
+      'detail': instance.detail,
+      'created_at': instance.created_at,
+      'updated_at': instance.updated_at,
+      'metadata': instance.metadata,
+      'original_total': instance.original_total,
+      'original_subtotal': instance.original_subtotal,
+      'original_tax_total': instance.original_tax_total,
+      'item_total': instance.item_total,
+      'item_subtotal': instance.item_subtotal,
+      'item_tax_total': instance.item_tax_total,
+      'total': instance.total,
+      'subtotal': instance.subtotal,
+      'tax_total': instance.tax_total,
+      'discount_total': instance.discount_total,
+      'discount_tax_total': instance.discount_tax_total,
+      'refundable_total': instance.refundable_total,
+      'refundable_total_per_unit': instance.refundable_total_per_unit,
+      'product_type_id': instance.product_type_id,
+    };

@@ -1,5 +1,8 @@
 
-import 'package:medusa_admin_dart_client/src/features/orders/data/models/order.dart';
+
+import 'package:medusa_admin_dart_client/src/features/orders/data/models/order_res.dart';
+import 'package:medusa_admin_dart_client/src/features/orders/data/models/orders_list_res.dart';
+import 'package:medusa_admin_dart_client/src/features/orders/data/models/post_orders_order_req.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:dio/dio.dart';
 
@@ -9,18 +12,21 @@ part 'orders_api.g.dart';
 abstract class OrdersApi {
   factory OrdersApi(Dio dio, {String baseUrl}) = _OrdersApi;
 
-  @GET('/orders/{id}')
-  Future<Order> retrieve(@Path('id') String id);
+  @GET('/admin/orders/{id}')
+  Future<OrderRes> retrieve(
+    @Path('id') String id, {
+    @Queries() Map<String, dynamic>? queryParameters,
+  });
 
-  @GET('/orders')
-  Future<List<Order>> list();
+  @GET('/admin/orders')
+  Future<OrdersListRes> list({
+    @Queries() Map<String, dynamic>? queryParameters,
+  });
 
-  @POST('/orders')
-  Future<Order> create(@Body() Order order);
-
-  @PUT('/orders/{id}')
-  Future<Order> update(@Path('id') String id, @Body() Order order);
-
-  @DELETE('/orders/{id}')
-  Future<void> delete(@Path('id') String id);
+  @POST('/admin/orders/{id}')
+  Future<OrderRes> update(
+    @Path('id') String id,
+    @Body() PostOrdersOrderReq body, {
+    @Queries() Map<String, dynamic>? queryParameters,
+  });
 }

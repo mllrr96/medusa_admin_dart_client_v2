@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$AuthAdminSessionResponse {
 
- User get user;
+ AdminUser get user;
 /// Create a copy of AuthAdminSessionResponse
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,11 +48,11 @@ abstract mixin class $AuthAdminSessionResponseCopyWith<$Res>  {
   factory $AuthAdminSessionResponseCopyWith(AuthAdminSessionResponse value, $Res Function(AuthAdminSessionResponse) _then) = _$AuthAdminSessionResponseCopyWithImpl;
 @useResult
 $Res call({
- User user
+ AdminUser user
 });
 
 
-$UserCopyWith<$Res> get user;
+$AdminUserCopyWith<$Res> get user;
 
 }
 /// @nodoc
@@ -68,16 +68,16 @@ class _$AuthAdminSessionResponseCopyWithImpl<$Res>
 @pragma('vm:prefer-inline') @override $Res call({Object? user = null,}) {
   return _then(_self.copyWith(
 user: null == user ? _self.user : user // ignore: cast_nullable_to_non_nullable
-as User,
+as AdminUser,
   ));
 }
 /// Create a copy of AuthAdminSessionResponse
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$UserCopyWith<$Res> get user {
+$AdminUserCopyWith<$Res> get user {
   
-  return $UserCopyWith<$Res>(_self.user, (value) {
+  return $AdminUserCopyWith<$Res>(_self.user, (value) {
     return _then(_self.copyWith(user: value));
   });
 }
@@ -162,7 +162,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( User user)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( AdminUser user)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _AuthAdminSessionResponse() when $default != null:
 return $default(_that.user);case _:
@@ -183,7 +183,7 @@ return $default(_that.user);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( User user)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( AdminUser user)  $default,) {final _that = this;
 switch (_that) {
 case _AuthAdminSessionResponse():
 return $default(_that.user);case _:
@@ -203,7 +203,7 @@ return $default(_that.user);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( User user)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( AdminUser user)?  $default,) {final _that = this;
 switch (_that) {
 case _AuthAdminSessionResponse() when $default != null:
 return $default(_that.user);case _:
@@ -221,7 +221,7 @@ class _AuthAdminSessionResponse implements AuthAdminSessionResponse {
   const _AuthAdminSessionResponse({required this.user});
   factory _AuthAdminSessionResponse.fromJson(Map<String, dynamic> json) => _$AuthAdminSessionResponseFromJson(json);
 
-@override final  User user;
+@override final  AdminUser user;
 
 /// Create a copy of AuthAdminSessionResponse
 /// with the given fields replaced by the non-null parameter values.
@@ -256,11 +256,11 @@ abstract mixin class _$AuthAdminSessionResponseCopyWith<$Res> implements $AuthAd
   factory _$AuthAdminSessionResponseCopyWith(_AuthAdminSessionResponse value, $Res Function(_AuthAdminSessionResponse) _then) = __$AuthAdminSessionResponseCopyWithImpl;
 @override @useResult
 $Res call({
- User user
+ AdminUser user
 });
 
 
-@override $UserCopyWith<$Res> get user;
+@override $AdminUserCopyWith<$Res> get user;
 
 }
 /// @nodoc
@@ -276,7 +276,7 @@ class __$AuthAdminSessionResponseCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? user = null,}) {
   return _then(_AuthAdminSessionResponse(
 user: null == user ? _self.user : user // ignore: cast_nullable_to_non_nullable
-as User,
+as AdminUser,
   ));
 }
 
@@ -284,9 +284,9 @@ as User,
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$UserCopyWith<$Res> get user {
+$AdminUserCopyWith<$Res> get user {
   
-  return $UserCopyWith<$Res>(_self.user, (value) {
+  return $AdminUserCopyWith<$Res>(_self.user, (value) {
     return _then(_self.copyWith(user: value));
   });
 }

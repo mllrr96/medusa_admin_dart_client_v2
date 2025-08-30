@@ -18,25 +18,30 @@ class _OrdersApi implements OrdersApi {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<Order> retrieve(String id) async {
+  Future<OrderRes> retrieve(
+    String id, {
+    Map<String, dynamic>? queryParameters,
+  }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(queryParameters ?? <String, dynamic>{});
+    queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<Order>(
+    final _options = _setStreamType<OrderRes>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/orders/${id}',
+            '/admin/orders/${id}',
             queryParameters: queryParameters,
             data: _data,
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late Order _value;
+    late OrderRes _value;
     try {
-      _value = Order.fromJson(_result.data!);
+      _value = OrderRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -45,27 +50,27 @@ class _OrdersApi implements OrdersApi {
   }
 
   @override
-  Future<List<Order>> list() async {
+  Future<OrdersListRes> list({Map<String, dynamic>? queryParameters}) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(queryParameters ?? <String, dynamic>{});
+    queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<List<Order>>(
+    final _options = _setStreamType<OrdersListRes>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/orders',
+            '/admin/orders',
             queryParameters: queryParameters,
             data: _data,
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<List<dynamic>>(_options);
-    late List<Order> _value;
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late OrdersListRes _value;
     try {
-      _value = _result.data!
-          .map((dynamic i) => Order.fromJson(i as Map<String, dynamic>))
-          .toList();
+      _value = OrdersListRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -74,76 +79,36 @@ class _OrdersApi implements OrdersApi {
   }
 
   @override
-  Future<Order> create(Order order) async {
+  Future<OrderRes> update(
+    String id,
+    PostOrdersOrderReq body, {
+    Map<String, dynamic>? queryParameters,
+  }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(queryParameters ?? <String, dynamic>{});
+    queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    final _data = order;
-    final _options = _setStreamType<Order>(
+    final _data = body;
+    final _options = _setStreamType<OrderRes>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/orders',
+            '/admin/orders/${id}',
             queryParameters: queryParameters,
             data: _data,
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late Order _value;
+    late OrderRes _value;
     try {
-      _value = Order.fromJson(_result.data!);
+      _value = OrderRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
     }
     return _value;
-  }
-
-  @override
-  Future<Order> update(String id, Order order) async {
-    final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
-    final _data = order;
-    final _options = _setStreamType<Order>(
-      Options(method: 'PUT', headers: _headers, extra: _extra)
-          .compose(
-            _dio.options,
-            '/orders/${id}',
-            queryParameters: queryParameters,
-            data: _data,
-          )
-          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
-    );
-    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late Order _value;
-    try {
-      _value = Order.fromJson(_result.data!);
-    } on Object catch (e, s) {
-      errorLogger?.logError(e, s, _options);
-      rethrow;
-    }
-    return _value;
-  }
-
-  @override
-  Future<void> delete(String id) async {
-    final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<void>(
-      Options(method: 'DELETE', headers: _headers, extra: _extra)
-          .compose(
-            _dio.options,
-            '/orders/${id}',
-            queryParameters: queryParameters,
-            data: _data,
-          )
-          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
-    );
-    await _dio.fetch<void>(_options);
   }
 
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {

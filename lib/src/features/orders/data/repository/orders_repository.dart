@@ -1,48 +1,34 @@
 
 
 import 'package:medusa_admin_dart_client/src/features/orders/data/api/orders_api.dart';
-import 'package:medusa_admin_dart_client/src/features/orders/data/models/order.dart';
+import 'package:medusa_admin_dart_client/src/features/orders/data/models/order_res.dart';
+import 'package:medusa_admin_dart_client/src/features/orders/data/models/orders_list_res.dart';
+import 'package:medusa_admin_dart_client/src/features/orders/data/models/post_orders_order_req.dart';
 
 class OrdersRepository {
   final OrdersApi _ordersApi;
 
   OrdersRepository(this._ordersApi);
 
-  Future<Order> retrieve(String id) async {
+  Future<OrderRes> retrieve(String id, {Map<String, dynamic>? queryParameters}) async {
     try {
-      return await _ordersApi.retrieve(id);
+      return await _ordersApi.retrieve(id, queryParameters: queryParameters);
     } catch (e) {
       rethrow;
     }
   }
 
-  Future<List<Order>> list() async {
+  Future<OrdersListRes> list({Map<String, dynamic>? queryParameters}) async {
     try {
-      return await _ordersApi.list();
+      return await _ordersApi.list(queryParameters: queryParameters);
     } catch (e) {
       rethrow;
     }
   }
 
-  Future<Order> create(Order order) async {
+  Future<OrderRes> update(String id, PostOrdersOrderReq payload, {Map<String, dynamic>? queryParameters}) async {
     try {
-      return await _ordersApi.create(order);
-    } catch (e) {
-      rethrow;
-    }
-  }
-
-  Future<Order> update(String id, Order order) async {
-    try {
-      return await _ordersApi.update(id, order);
-    } catch (e) {
-      rethrow;
-    }
-  }
-
-  Future<void> delete(String id) async {
-    try {
-      await _ordersApi.delete(id);
+      return await _ordersApi.update(id, payload, queryParameters: queryParameters);
     } catch (e) {
       rethrow;
     }
