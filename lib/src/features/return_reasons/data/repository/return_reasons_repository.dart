@@ -1,5 +1,5 @@
-import '../api/return_reasons_api.dart';
-import '../models/return_reason.dart';
+import 'package:medusa_admin_dart_client/medusa_admin_dart_client_v2.dart';
+import 'package:medusa_admin_dart_client/src/features/return_reasons/data/api/return_reasons_api.dart';
 
 class ReturnReasonsRepository {
   ReturnReasonsRepository(this._returnReasonsApi);

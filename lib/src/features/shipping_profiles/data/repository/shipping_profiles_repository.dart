@@ -1,5 +1,5 @@
-import '../api/shipping_profiles_api.dart';
-import '../models/shipping_profile.dart';
+import 'package:medusa_admin_dart_client/medusa_admin_dart_client_v2.dart';
+import 'package:medusa_admin_dart_client/src/features/shipping_profiles/data/api/shipping_profiles_api.dart';
 
 class ShippingProfilesRepository {
   ShippingProfilesRepository(this._shippingProfilesApi);

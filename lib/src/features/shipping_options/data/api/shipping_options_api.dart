@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
+import 'package:medusa_admin_dart_client/medusa_admin_dart_client_v2.dart';
 import 'package:retrofit/retrofit.dart';
-import '../models/shipping_option.dart';
 
 part 'shipping_options_api.g.dart';
 

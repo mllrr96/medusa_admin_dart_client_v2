@@ -1,5 +1,5 @@
-import '../api/products_api.dart';
-import '../models/product.dart';
+import 'package:medusa_admin_dart_client/medusa_admin_dart_client_v2.dart';
+import 'package:medusa_admin_dart_client/src/features/products/data/api/products_api.dart';
 
 class ProductsRepository {
   ProductsRepository(this._productsApi);

@@ -1,6 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-
-import '../../../customers/data/models/customer.dart';
+import 'package:medusa_admin_dart_client/medusa_admin_dart_client_v2.dart';
 
 part 'notification.freezed.dart';
 part 'notification.g.dart';

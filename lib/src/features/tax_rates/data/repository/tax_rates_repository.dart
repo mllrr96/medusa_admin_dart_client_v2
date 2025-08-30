@@ -1,5 +1,5 @@
-import '../api/tax_rates_api.dart';
-import '../models/tax_rate.dart';
+import 'package:medusa_admin_dart_client/medusa_admin_dart_client_v2.dart';
+import 'package:medusa_admin_dart_client/src/features/tax_rates/data/api/tax_rates_api.dart';
 
 class TaxRatesRepository {
   TaxRatesRepository(this._taxRatesApi);

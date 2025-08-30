@@ -1,5 +1,5 @@
-import '../api/regions_api.dart';
-import '../models/region.dart';
+import 'package:medusa_admin_dart_client/medusa_admin_dart_client_v2.dart';
+import 'package:medusa_admin_dart_client/src/features/regions/data/api/regions_api.dart';
 
 class RegionsRepository {
   RegionsRepository(this._regionsApi);

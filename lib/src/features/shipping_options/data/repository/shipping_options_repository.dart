@@ -1,5 +1,5 @@
-import '../api/shipping_options_api.dart';
-import '../models/shipping_option.dart';
+import 'package:medusa_admin_dart_client/medusa_admin_dart_client_v2.dart';
+import 'package:medusa_admin_dart_client/src/features/shipping_options/data/api/shipping_options_api.dart';
 
 class ShippingOptionsRepository {
   ShippingOptionsRepository(this._shippingOptionsApi);

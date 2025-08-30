@@ -1,6 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-
-import '../../../users/data/models/user.dart';
+import 'package:medusa_admin_dart_client/medusa_admin_dart_client_v2.dart';
 
 part 'auth_models.freezed.dart';
 part 'auth_models.g.dart';

@@ -1,5 +1,5 @@
-import '../api/swaps_api.dart';
-import '../models/swap.dart';
+import 'package:medusa_admin_dart_client/medusa_admin_dart_client_v2.dart';
+import 'package:medusa_admin_dart_client/src/features/swaps/data/api/swaps_api.dart';
 
 class SwapsRepository {
   SwapsRepository(this._swapsApi);

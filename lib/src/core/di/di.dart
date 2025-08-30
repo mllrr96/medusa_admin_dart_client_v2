@@ -55,9 +55,9 @@ import '../../features/campaigns/data/repository/campaigns_repository.dart';
 
 final getIt = GetIt.instance;
 
-void configureDependencies() {
+void configureDependencies({String? baseUrl}) {
   // Dio
-  getIt.registerLazySingleton<Dio>(() => Dio());
+  getIt.registerLazySingleton<Dio>(() => Dio(BaseOptions(baseUrl: baseUrl ?? '')));
 
   // Auth
   getIt.registerLazySingleton<AuthApi>(() => AuthApi(getIt<Dio>()));

@@ -1,5 +1,5 @@
-import '../api/collections_api.dart';
-import '../models/collection.dart';
+import 'package:medusa_admin_dart_client/medusa_admin_dart_client_v2.dart';
+import 'package:medusa_admin_dart_client/src/features/collections/data/api/collections_api.dart';
 
 class CollectionsRepository {
   CollectionsRepository(this._collectionsApi);

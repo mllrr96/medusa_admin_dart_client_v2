@@ -1,5 +1,6 @@
-import '../api/customers_api.dart';
-import '../models/customer.dart';
+import 'package:medusa_admin_dart_client/medusa_admin_dart_client_v2.dart';
+import 'package:medusa_admin_dart_client/src/features/customers/data/api/customers_api.dart';
+
 
 class CustomersRepository {
   CustomersRepository(this._customersApi);

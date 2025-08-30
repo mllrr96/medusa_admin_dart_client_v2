@@ -1,8 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-
-import 'package:medusa_admin_dart_client/src/core/models/discount_rule.dart';
-
-import 'discount.dart';
+import 'package:medusa_admin_dart_client/medusa_admin_dart_client_v2.dart';
 
 part 'discounts_models.freezed.dart';
 part 'discounts_models.g.dart';

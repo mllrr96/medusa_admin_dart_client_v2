@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
+import 'package:medusa_admin_dart_client/medusa_admin_dart_client_v2.dart';
 import 'package:retrofit/retrofit.dart';
-import '../models/swap.dart';
 
 part 'swaps_api.g.dart';
 

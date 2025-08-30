@@ -1,5 +1,6 @@
-import '../api/sales_channels_api.dart';
-import '../models/sales_channel.dart';
+
+import 'package:medusa_admin_dart_client/medusa_admin_dart_client_v2.dart';
+import 'package:medusa_admin_dart_client/src/features/sales_channels/data/api/sales_channels_api.dart';
 
 class SalesChannelsRepository {
   SalesChannelsRepository(this._salesChannelsApi);
