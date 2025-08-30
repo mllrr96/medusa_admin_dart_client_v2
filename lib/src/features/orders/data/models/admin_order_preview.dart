@@ -1,5 +1,10 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:medusa_admin_dart_client/src/core/models/admin_order_address.dart';
 import 'package:medusa_admin_dart_client/src/core/models/admin_order_change.dart';
+import 'package:medusa_admin_dart_client/src/core/models/admin_order_fulfillment.dart';
+import 'package:medusa_admin_dart_client/src/core/models/admin_payment_collection.dart';
+import 'package:medusa_admin_dart_client/src/core/models/base_order_summary.dart';
+import 'package:medusa_admin_dart_client/src/core/models/order_line_item.dart';
 
 part 'admin_order_preview.freezed.dart';
 part 'admin_order_preview.g.dart';
@@ -10,8 +15,8 @@ abstract class AdminOrderPreview with _$AdminOrderPreview {
     required int returnRequestedTotal,
     required AdminOrderChange orderChange,
     // TODO: Add items and shipping_methods
-    // required List<AdminOrderLineItem> items,
-    // required List<AdminOrderShippingMethod> shippingMethods,
+    // required List<OrderShippingMethod> shippingMethods,
+    required List<OrderLineItem> items,
     required String currencyCode,
     required int version,
     required String id,
@@ -20,15 +25,15 @@ abstract class AdminOrderPreview with _$AdminOrderPreview {
     required String salesChannelId,
     required String email,
     int? displayId,
-    // TODO: Add shipping_address and billing_address
-    // required AdminOrderAddress shippingAddress,
-    // required AdminOrderAddress billingAddress,
-    // required List<AdminPaymentCollection> paymentCollections,
+    required AdminOrderAddress shippingAddress,
+    required AdminOrderAddress billingAddress,
+    required List<AdminPaymentCollection> paymentCollections,
     required String paymentStatus,
-    // required List<AdminOrderFulfillment> fulfillments,
+    required List<AdminOrderFulfillment> fulfillments,
     required String fulfillmentStatus,
+    // TODO: Add shipping_address and billing_address
     // required List<BaseOrderTransaction> transactions,
-    // required BaseOrderSummary summary,
+    required BaseOrderSummary summary,
     Map<String, dynamic>? metadata,
     required DateTime createdAt,
     required DateTime updatedAt,

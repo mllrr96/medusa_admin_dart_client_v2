@@ -1,7 +1,8 @@
 
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
-import '../models/currency.dart';
+import '../models/currencies_list_res.dart';
+import '../models/currency_res.dart';
 
 part 'currencies_api.g.dart';
 
@@ -10,11 +11,8 @@ abstract class CurrenciesApi {
   factory CurrenciesApi(Dio dio, {String baseUrl}) = _CurrenciesApi;
 
   @GET('/admin/currencies')
-  Future<List<Currency>> retrieveAll({@Queries() Map<String, dynamic>? queryParameters});
+  Future<CurrenciesListRes> list({@Queries() Map<String, dynamic>? queryParameters});
 
   @GET('/admin/currencies/{code}')
-  Future<Currency> retrieve(@Path('code') String code);
-
-  @PUT('/admin/currencies/{code}')
-  Future<Currency> update(@Path('code') String code, @Body() Map<String, dynamic> body);
+  Future<CurrencyRes> retrieve(@Path('code') String code);
 }

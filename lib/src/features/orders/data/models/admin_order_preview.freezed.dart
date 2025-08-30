@@ -16,16 +16,10 @@ T _$identity<T>(T value) => value;
 mixin _$AdminOrderPreview {
 
  int get returnRequestedTotal; AdminOrderChange get orderChange;// TODO: Add items and shipping_methods
-// required List<AdminOrderLineItem> items,
-// required List<AdminOrderShippingMethod> shippingMethods,
- String get currencyCode; int get version; String get id; String get regionId; String get customerId; String get salesChannelId; String get email; int? get displayId;// TODO: Add shipping_address and billing_address
-// required AdminOrderAddress shippingAddress,
-// required AdminOrderAddress billingAddress,
-// required List<AdminPaymentCollection> paymentCollections,
- String get paymentStatus;// required List<AdminOrderFulfillment> fulfillments,
- String get fulfillmentStatus;// required List<BaseOrderTransaction> transactions,
-// required BaseOrderSummary summary,
- Map<String, dynamic>? get metadata; DateTime get createdAt; DateTime get updatedAt; int get originalItemTotal; int get originalItemSubtotal; int get originalItemTaxTotal; int get itemTotal; int get itemSubtotal; int get itemTaxTotal; int get originalTotal; int get originalSubtotal; int get originalTaxTotal; int get total; int get subtotal; int get taxTotal; int get discountTotal; int get discountTaxTotal; int get giftCardTotal; int get giftCardTaxTotal; int get shippingTotal; int get shippingSubtotal; int get shippingTaxTotal; int get originalShippingTotal; int get originalShippingSubtotal; int get originalShippingTaxTotal;// required Customer customer,
+// required List<OrderShippingMethod> shippingMethods,
+ List<OrderLineItem> get items; String get currencyCode; int get version; String get id; String get regionId; String get customerId; String get salesChannelId; String get email; int? get displayId; AdminOrderAddress get shippingAddress; AdminOrderAddress get billingAddress; List<AdminPaymentCollection> get paymentCollections; String get paymentStatus; List<AdminOrderFulfillment> get fulfillments; String get fulfillmentStatus;// TODO: Add shipping_address and billing_address
+// required List<BaseOrderTransaction> transactions,
+ BaseOrderSummary get summary; Map<String, dynamic>? get metadata; DateTime get createdAt; DateTime get updatedAt; int get originalItemTotal; int get originalItemSubtotal; int get originalItemTaxTotal; int get itemTotal; int get itemSubtotal; int get itemTaxTotal; int get originalTotal; int get originalSubtotal; int get originalTaxTotal; int get total; int get subtotal; int get taxTotal; int get discountTotal; int get discountTaxTotal; int get giftCardTotal; int get giftCardTaxTotal; int get shippingTotal; int get shippingSubtotal; int get shippingTaxTotal; int get originalShippingTotal; int get originalShippingSubtotal; int get originalShippingTaxTotal;// required Customer customer,
 // required AdminSalesChannel salesChannel,
  String get status;// required Region region,
 // required List<OrderCreditLine> creditLines,
@@ -42,16 +36,16 @@ $AdminOrderPreviewCopyWith<AdminOrderPreview> get copyWith => _$AdminOrderPrevie
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AdminOrderPreview&&(identical(other.returnRequestedTotal, returnRequestedTotal) || other.returnRequestedTotal == returnRequestedTotal)&&(identical(other.orderChange, orderChange) || other.orderChange == orderChange)&&(identical(other.currencyCode, currencyCode) || other.currencyCode == currencyCode)&&(identical(other.version, version) || other.version == version)&&(identical(other.id, id) || other.id == id)&&(identical(other.regionId, regionId) || other.regionId == regionId)&&(identical(other.customerId, customerId) || other.customerId == customerId)&&(identical(other.salesChannelId, salesChannelId) || other.salesChannelId == salesChannelId)&&(identical(other.email, email) || other.email == email)&&(identical(other.displayId, displayId) || other.displayId == displayId)&&(identical(other.paymentStatus, paymentStatus) || other.paymentStatus == paymentStatus)&&(identical(other.fulfillmentStatus, fulfillmentStatus) || other.fulfillmentStatus == fulfillmentStatus)&&const DeepCollectionEquality().equals(other.metadata, metadata)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.originalItemTotal, originalItemTotal) || other.originalItemTotal == originalItemTotal)&&(identical(other.originalItemSubtotal, originalItemSubtotal) || other.originalItemSubtotal == originalItemSubtotal)&&(identical(other.originalItemTaxTotal, originalItemTaxTotal) || other.originalItemTaxTotal == originalItemTaxTotal)&&(identical(other.itemTotal, itemTotal) || other.itemTotal == itemTotal)&&(identical(other.itemSubtotal, itemSubtotal) || other.itemSubtotal == itemSubtotal)&&(identical(other.itemTaxTotal, itemTaxTotal) || other.itemTaxTotal == itemTaxTotal)&&(identical(other.originalTotal, originalTotal) || other.originalTotal == originalTotal)&&(identical(other.originalSubtotal, originalSubtotal) || other.originalSubtotal == originalSubtotal)&&(identical(other.originalTaxTotal, originalTaxTotal) || other.originalTaxTotal == originalTaxTotal)&&(identical(other.total, total) || other.total == total)&&(identical(other.subtotal, subtotal) || other.subtotal == subtotal)&&(identical(other.taxTotal, taxTotal) || other.taxTotal == taxTotal)&&(identical(other.discountTotal, discountTotal) || other.discountTotal == discountTotal)&&(identical(other.discountTaxTotal, discountTaxTotal) || other.discountTaxTotal == discountTaxTotal)&&(identical(other.giftCardTotal, giftCardTotal) || other.giftCardTotal == giftCardTotal)&&(identical(other.giftCardTaxTotal, giftCardTaxTotal) || other.giftCardTaxTotal == giftCardTaxTotal)&&(identical(other.shippingTotal, shippingTotal) || other.shippingTotal == shippingTotal)&&(identical(other.shippingSubtotal, shippingSubtotal) || other.shippingSubtotal == shippingSubtotal)&&(identical(other.shippingTaxTotal, shippingTaxTotal) || other.shippingTaxTotal == shippingTaxTotal)&&(identical(other.originalShippingTotal, originalShippingTotal) || other.originalShippingTotal == originalShippingTotal)&&(identical(other.originalShippingSubtotal, originalShippingSubtotal) || other.originalShippingSubtotal == originalShippingSubtotal)&&(identical(other.originalShippingTaxTotal, originalShippingTaxTotal) || other.originalShippingTaxTotal == originalShippingTaxTotal)&&(identical(other.status, status) || other.status == status)&&(identical(other.creditLineTotal, creditLineTotal) || other.creditLineTotal == creditLineTotal));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AdminOrderPreview&&(identical(other.returnRequestedTotal, returnRequestedTotal) || other.returnRequestedTotal == returnRequestedTotal)&&(identical(other.orderChange, orderChange) || other.orderChange == orderChange)&&const DeepCollectionEquality().equals(other.items, items)&&(identical(other.currencyCode, currencyCode) || other.currencyCode == currencyCode)&&(identical(other.version, version) || other.version == version)&&(identical(other.id, id) || other.id == id)&&(identical(other.regionId, regionId) || other.regionId == regionId)&&(identical(other.customerId, customerId) || other.customerId == customerId)&&(identical(other.salesChannelId, salesChannelId) || other.salesChannelId == salesChannelId)&&(identical(other.email, email) || other.email == email)&&(identical(other.displayId, displayId) || other.displayId == displayId)&&(identical(other.shippingAddress, shippingAddress) || other.shippingAddress == shippingAddress)&&(identical(other.billingAddress, billingAddress) || other.billingAddress == billingAddress)&&const DeepCollectionEquality().equals(other.paymentCollections, paymentCollections)&&(identical(other.paymentStatus, paymentStatus) || other.paymentStatus == paymentStatus)&&const DeepCollectionEquality().equals(other.fulfillments, fulfillments)&&(identical(other.fulfillmentStatus, fulfillmentStatus) || other.fulfillmentStatus == fulfillmentStatus)&&(identical(other.summary, summary) || other.summary == summary)&&const DeepCollectionEquality().equals(other.metadata, metadata)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.originalItemTotal, originalItemTotal) || other.originalItemTotal == originalItemTotal)&&(identical(other.originalItemSubtotal, originalItemSubtotal) || other.originalItemSubtotal == originalItemSubtotal)&&(identical(other.originalItemTaxTotal, originalItemTaxTotal) || other.originalItemTaxTotal == originalItemTaxTotal)&&(identical(other.itemTotal, itemTotal) || other.itemTotal == itemTotal)&&(identical(other.itemSubtotal, itemSubtotal) || other.itemSubtotal == itemSubtotal)&&(identical(other.itemTaxTotal, itemTaxTotal) || other.itemTaxTotal == itemTaxTotal)&&(identical(other.originalTotal, originalTotal) || other.originalTotal == originalTotal)&&(identical(other.originalSubtotal, originalSubtotal) || other.originalSubtotal == originalSubtotal)&&(identical(other.originalTaxTotal, originalTaxTotal) || other.originalTaxTotal == originalTaxTotal)&&(identical(other.total, total) || other.total == total)&&(identical(other.subtotal, subtotal) || other.subtotal == subtotal)&&(identical(other.taxTotal, taxTotal) || other.taxTotal == taxTotal)&&(identical(other.discountTotal, discountTotal) || other.discountTotal == discountTotal)&&(identical(other.discountTaxTotal, discountTaxTotal) || other.discountTaxTotal == discountTaxTotal)&&(identical(other.giftCardTotal, giftCardTotal) || other.giftCardTotal == giftCardTotal)&&(identical(other.giftCardTaxTotal, giftCardTaxTotal) || other.giftCardTaxTotal == giftCardTaxTotal)&&(identical(other.shippingTotal, shippingTotal) || other.shippingTotal == shippingTotal)&&(identical(other.shippingSubtotal, shippingSubtotal) || other.shippingSubtotal == shippingSubtotal)&&(identical(other.shippingTaxTotal, shippingTaxTotal) || other.shippingTaxTotal == shippingTaxTotal)&&(identical(other.originalShippingTotal, originalShippingTotal) || other.originalShippingTotal == originalShippingTotal)&&(identical(other.originalShippingSubtotal, originalShippingSubtotal) || other.originalShippingSubtotal == originalShippingSubtotal)&&(identical(other.originalShippingTaxTotal, originalShippingTaxTotal) || other.originalShippingTaxTotal == originalShippingTaxTotal)&&(identical(other.status, status) || other.status == status)&&(identical(other.creditLineTotal, creditLineTotal) || other.creditLineTotal == creditLineTotal));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,returnRequestedTotal,orderChange,currencyCode,version,id,regionId,customerId,salesChannelId,email,displayId,paymentStatus,fulfillmentStatus,const DeepCollectionEquality().hash(metadata),createdAt,updatedAt,originalItemTotal,originalItemSubtotal,originalItemTaxTotal,itemTotal,itemSubtotal,itemTaxTotal,originalTotal,originalSubtotal,originalTaxTotal,total,subtotal,taxTotal,discountTotal,discountTaxTotal,giftCardTotal,giftCardTaxTotal,shippingTotal,shippingSubtotal,shippingTaxTotal,originalShippingTotal,originalShippingSubtotal,originalShippingTaxTotal,status,creditLineTotal]);
+int get hashCode => Object.hashAll([runtimeType,returnRequestedTotal,orderChange,const DeepCollectionEquality().hash(items),currencyCode,version,id,regionId,customerId,salesChannelId,email,displayId,shippingAddress,billingAddress,const DeepCollectionEquality().hash(paymentCollections),paymentStatus,const DeepCollectionEquality().hash(fulfillments),fulfillmentStatus,summary,const DeepCollectionEquality().hash(metadata),createdAt,updatedAt,originalItemTotal,originalItemSubtotal,originalItemTaxTotal,itemTotal,itemSubtotal,itemTaxTotal,originalTotal,originalSubtotal,originalTaxTotal,total,subtotal,taxTotal,discountTotal,discountTaxTotal,giftCardTotal,giftCardTaxTotal,shippingTotal,shippingSubtotal,shippingTaxTotal,originalShippingTotal,originalShippingSubtotal,originalShippingTaxTotal,status,creditLineTotal]);
 
 @override
 String toString() {
-  return 'AdminOrderPreview(returnRequestedTotal: $returnRequestedTotal, orderChange: $orderChange, currencyCode: $currencyCode, version: $version, id: $id, regionId: $regionId, customerId: $customerId, salesChannelId: $salesChannelId, email: $email, displayId: $displayId, paymentStatus: $paymentStatus, fulfillmentStatus: $fulfillmentStatus, metadata: $metadata, createdAt: $createdAt, updatedAt: $updatedAt, originalItemTotal: $originalItemTotal, originalItemSubtotal: $originalItemSubtotal, originalItemTaxTotal: $originalItemTaxTotal, itemTotal: $itemTotal, itemSubtotal: $itemSubtotal, itemTaxTotal: $itemTaxTotal, originalTotal: $originalTotal, originalSubtotal: $originalSubtotal, originalTaxTotal: $originalTaxTotal, total: $total, subtotal: $subtotal, taxTotal: $taxTotal, discountTotal: $discountTotal, discountTaxTotal: $discountTaxTotal, giftCardTotal: $giftCardTotal, giftCardTaxTotal: $giftCardTaxTotal, shippingTotal: $shippingTotal, shippingSubtotal: $shippingSubtotal, shippingTaxTotal: $shippingTaxTotal, originalShippingTotal: $originalShippingTotal, originalShippingSubtotal: $originalShippingSubtotal, originalShippingTaxTotal: $originalShippingTaxTotal, status: $status, creditLineTotal: $creditLineTotal)';
+  return 'AdminOrderPreview(returnRequestedTotal: $returnRequestedTotal, orderChange: $orderChange, items: $items, currencyCode: $currencyCode, version: $version, id: $id, regionId: $regionId, customerId: $customerId, salesChannelId: $salesChannelId, email: $email, displayId: $displayId, shippingAddress: $shippingAddress, billingAddress: $billingAddress, paymentCollections: $paymentCollections, paymentStatus: $paymentStatus, fulfillments: $fulfillments, fulfillmentStatus: $fulfillmentStatus, summary: $summary, metadata: $metadata, createdAt: $createdAt, updatedAt: $updatedAt, originalItemTotal: $originalItemTotal, originalItemSubtotal: $originalItemSubtotal, originalItemTaxTotal: $originalItemTaxTotal, itemTotal: $itemTotal, itemSubtotal: $itemSubtotal, itemTaxTotal: $itemTaxTotal, originalTotal: $originalTotal, originalSubtotal: $originalSubtotal, originalTaxTotal: $originalTaxTotal, total: $total, subtotal: $subtotal, taxTotal: $taxTotal, discountTotal: $discountTotal, discountTaxTotal: $discountTaxTotal, giftCardTotal: $giftCardTotal, giftCardTaxTotal: $giftCardTaxTotal, shippingTotal: $shippingTotal, shippingSubtotal: $shippingSubtotal, shippingTaxTotal: $shippingTaxTotal, originalShippingTotal: $originalShippingTotal, originalShippingSubtotal: $originalShippingSubtotal, originalShippingTaxTotal: $originalShippingTaxTotal, status: $status, creditLineTotal: $creditLineTotal)';
 }
 
 
@@ -62,11 +56,11 @@ abstract mixin class $AdminOrderPreviewCopyWith<$Res>  {
   factory $AdminOrderPreviewCopyWith(AdminOrderPreview value, $Res Function(AdminOrderPreview) _then) = _$AdminOrderPreviewCopyWithImpl;
 @useResult
 $Res call({
- int returnRequestedTotal, AdminOrderChange orderChange, String currencyCode, int version, String id, String regionId, String customerId, String salesChannelId, String email, int? displayId, String paymentStatus, String fulfillmentStatus, Map<String, dynamic>? metadata, DateTime createdAt, DateTime updatedAt, int originalItemTotal, int originalItemSubtotal, int originalItemTaxTotal, int itemTotal, int itemSubtotal, int itemTaxTotal, int originalTotal, int originalSubtotal, int originalTaxTotal, int total, int subtotal, int taxTotal, int discountTotal, int discountTaxTotal, int giftCardTotal, int giftCardTaxTotal, int shippingTotal, int shippingSubtotal, int shippingTaxTotal, int originalShippingTotal, int originalShippingSubtotal, int originalShippingTaxTotal, String status, int creditLineTotal
+ int returnRequestedTotal, AdminOrderChange orderChange, List<OrderLineItem> items, String currencyCode, int version, String id, String regionId, String customerId, String salesChannelId, String email, int? displayId, AdminOrderAddress shippingAddress, AdminOrderAddress billingAddress, List<AdminPaymentCollection> paymentCollections, String paymentStatus, List<AdminOrderFulfillment> fulfillments, String fulfillmentStatus, BaseOrderSummary summary, Map<String, dynamic>? metadata, DateTime createdAt, DateTime updatedAt, int originalItemTotal, int originalItemSubtotal, int originalItemTaxTotal, int itemTotal, int itemSubtotal, int itemTaxTotal, int originalTotal, int originalSubtotal, int originalTaxTotal, int total, int subtotal, int taxTotal, int discountTotal, int discountTaxTotal, int giftCardTotal, int giftCardTaxTotal, int shippingTotal, int shippingSubtotal, int shippingTaxTotal, int originalShippingTotal, int originalShippingSubtotal, int originalShippingTaxTotal, String status, int creditLineTotal
 });
 
 
-$AdminOrderChangeCopyWith<$Res> get orderChange;
+$AdminOrderChangeCopyWith<$Res> get orderChange;$AdminOrderAddressCopyWith<$Res> get shippingAddress;$AdminOrderAddressCopyWith<$Res> get billingAddress;$BaseOrderSummaryCopyWith<$Res> get summary;
 
 }
 /// @nodoc
@@ -79,11 +73,12 @@ class _$AdminOrderPreviewCopyWithImpl<$Res>
 
 /// Create a copy of AdminOrderPreview
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? returnRequestedTotal = null,Object? orderChange = null,Object? currencyCode = null,Object? version = null,Object? id = null,Object? regionId = null,Object? customerId = null,Object? salesChannelId = null,Object? email = null,Object? displayId = freezed,Object? paymentStatus = null,Object? fulfillmentStatus = null,Object? metadata = freezed,Object? createdAt = null,Object? updatedAt = null,Object? originalItemTotal = null,Object? originalItemSubtotal = null,Object? originalItemTaxTotal = null,Object? itemTotal = null,Object? itemSubtotal = null,Object? itemTaxTotal = null,Object? originalTotal = null,Object? originalSubtotal = null,Object? originalTaxTotal = null,Object? total = null,Object? subtotal = null,Object? taxTotal = null,Object? discountTotal = null,Object? discountTaxTotal = null,Object? giftCardTotal = null,Object? giftCardTaxTotal = null,Object? shippingTotal = null,Object? shippingSubtotal = null,Object? shippingTaxTotal = null,Object? originalShippingTotal = null,Object? originalShippingSubtotal = null,Object? originalShippingTaxTotal = null,Object? status = null,Object? creditLineTotal = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? returnRequestedTotal = null,Object? orderChange = null,Object? items = null,Object? currencyCode = null,Object? version = null,Object? id = null,Object? regionId = null,Object? customerId = null,Object? salesChannelId = null,Object? email = null,Object? displayId = freezed,Object? shippingAddress = null,Object? billingAddress = null,Object? paymentCollections = null,Object? paymentStatus = null,Object? fulfillments = null,Object? fulfillmentStatus = null,Object? summary = null,Object? metadata = freezed,Object? createdAt = null,Object? updatedAt = null,Object? originalItemTotal = null,Object? originalItemSubtotal = null,Object? originalItemTaxTotal = null,Object? itemTotal = null,Object? itemSubtotal = null,Object? itemTaxTotal = null,Object? originalTotal = null,Object? originalSubtotal = null,Object? originalTaxTotal = null,Object? total = null,Object? subtotal = null,Object? taxTotal = null,Object? discountTotal = null,Object? discountTaxTotal = null,Object? giftCardTotal = null,Object? giftCardTaxTotal = null,Object? shippingTotal = null,Object? shippingSubtotal = null,Object? shippingTaxTotal = null,Object? originalShippingTotal = null,Object? originalShippingSubtotal = null,Object? originalShippingTaxTotal = null,Object? status = null,Object? creditLineTotal = null,}) {
   return _then(_self.copyWith(
 returnRequestedTotal: null == returnRequestedTotal ? _self.returnRequestedTotal : returnRequestedTotal // ignore: cast_nullable_to_non_nullable
 as int,orderChange: null == orderChange ? _self.orderChange : orderChange // ignore: cast_nullable_to_non_nullable
-as AdminOrderChange,currencyCode: null == currencyCode ? _self.currencyCode : currencyCode // ignore: cast_nullable_to_non_nullable
+as AdminOrderChange,items: null == items ? _self.items : items // ignore: cast_nullable_to_non_nullable
+as List<OrderLineItem>,currencyCode: null == currencyCode ? _self.currencyCode : currencyCode // ignore: cast_nullable_to_non_nullable
 as String,version: null == version ? _self.version : version // ignore: cast_nullable_to_non_nullable
 as int,id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,regionId: null == regionId ? _self.regionId : regionId // ignore: cast_nullable_to_non_nullable
@@ -91,9 +86,14 @@ as String,customerId: null == customerId ? _self.customerId : customerId // igno
 as String,salesChannelId: null == salesChannelId ? _self.salesChannelId : salesChannelId // ignore: cast_nullable_to_non_nullable
 as String,email: null == email ? _self.email : email // ignore: cast_nullable_to_non_nullable
 as String,displayId: freezed == displayId ? _self.displayId : displayId // ignore: cast_nullable_to_non_nullable
-as int?,paymentStatus: null == paymentStatus ? _self.paymentStatus : paymentStatus // ignore: cast_nullable_to_non_nullable
-as String,fulfillmentStatus: null == fulfillmentStatus ? _self.fulfillmentStatus : fulfillmentStatus // ignore: cast_nullable_to_non_nullable
-as String,metadata: freezed == metadata ? _self.metadata : metadata // ignore: cast_nullable_to_non_nullable
+as int?,shippingAddress: null == shippingAddress ? _self.shippingAddress : shippingAddress // ignore: cast_nullable_to_non_nullable
+as AdminOrderAddress,billingAddress: null == billingAddress ? _self.billingAddress : billingAddress // ignore: cast_nullable_to_non_nullable
+as AdminOrderAddress,paymentCollections: null == paymentCollections ? _self.paymentCollections : paymentCollections // ignore: cast_nullable_to_non_nullable
+as List<AdminPaymentCollection>,paymentStatus: null == paymentStatus ? _self.paymentStatus : paymentStatus // ignore: cast_nullable_to_non_nullable
+as String,fulfillments: null == fulfillments ? _self.fulfillments : fulfillments // ignore: cast_nullable_to_non_nullable
+as List<AdminOrderFulfillment>,fulfillmentStatus: null == fulfillmentStatus ? _self.fulfillmentStatus : fulfillmentStatus // ignore: cast_nullable_to_non_nullable
+as String,summary: null == summary ? _self.summary : summary // ignore: cast_nullable_to_non_nullable
+as BaseOrderSummary,metadata: freezed == metadata ? _self.metadata : metadata // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
 as DateTime,originalItemTotal: null == originalItemTotal ? _self.originalItemTotal : originalItemTotal // ignore: cast_nullable_to_non_nullable
@@ -131,6 +131,33 @@ $AdminOrderChangeCopyWith<$Res> get orderChange {
   
   return $AdminOrderChangeCopyWith<$Res>(_self.orderChange, (value) {
     return _then(_self.copyWith(orderChange: value));
+  });
+}/// Create a copy of AdminOrderPreview
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AdminOrderAddressCopyWith<$Res> get shippingAddress {
+  
+  return $AdminOrderAddressCopyWith<$Res>(_self.shippingAddress, (value) {
+    return _then(_self.copyWith(shippingAddress: value));
+  });
+}/// Create a copy of AdminOrderPreview
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AdminOrderAddressCopyWith<$Res> get billingAddress {
+  
+  return $AdminOrderAddressCopyWith<$Res>(_self.billingAddress, (value) {
+    return _then(_self.copyWith(billingAddress: value));
+  });
+}/// Create a copy of AdminOrderPreview
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$BaseOrderSummaryCopyWith<$Res> get summary {
+  
+  return $BaseOrderSummaryCopyWith<$Res>(_self.summary, (value) {
+    return _then(_self.copyWith(summary: value));
   });
 }
 }
@@ -214,10 +241,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int returnRequestedTotal,  AdminOrderChange orderChange,  String currencyCode,  int version,  String id,  String regionId,  String customerId,  String salesChannelId,  String email,  int? displayId,  String paymentStatus,  String fulfillmentStatus,  Map<String, dynamic>? metadata,  DateTime createdAt,  DateTime updatedAt,  int originalItemTotal,  int originalItemSubtotal,  int originalItemTaxTotal,  int itemTotal,  int itemSubtotal,  int itemTaxTotal,  int originalTotal,  int originalSubtotal,  int originalTaxTotal,  int total,  int subtotal,  int taxTotal,  int discountTotal,  int discountTaxTotal,  int giftCardTotal,  int giftCardTaxTotal,  int shippingTotal,  int shippingSubtotal,  int shippingTaxTotal,  int originalShippingTotal,  int originalShippingSubtotal,  int originalShippingTaxTotal,  String status,  int creditLineTotal)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int returnRequestedTotal,  AdminOrderChange orderChange,  List<OrderLineItem> items,  String currencyCode,  int version,  String id,  String regionId,  String customerId,  String salesChannelId,  String email,  int? displayId,  AdminOrderAddress shippingAddress,  AdminOrderAddress billingAddress,  List<AdminPaymentCollection> paymentCollections,  String paymentStatus,  List<AdminOrderFulfillment> fulfillments,  String fulfillmentStatus,  BaseOrderSummary summary,  Map<String, dynamic>? metadata,  DateTime createdAt,  DateTime updatedAt,  int originalItemTotal,  int originalItemSubtotal,  int originalItemTaxTotal,  int itemTotal,  int itemSubtotal,  int itemTaxTotal,  int originalTotal,  int originalSubtotal,  int originalTaxTotal,  int total,  int subtotal,  int taxTotal,  int discountTotal,  int discountTaxTotal,  int giftCardTotal,  int giftCardTaxTotal,  int shippingTotal,  int shippingSubtotal,  int shippingTaxTotal,  int originalShippingTotal,  int originalShippingSubtotal,  int originalShippingTaxTotal,  String status,  int creditLineTotal)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _AdminOrderPreview() when $default != null:
-return $default(_that.returnRequestedTotal,_that.orderChange,_that.currencyCode,_that.version,_that.id,_that.regionId,_that.customerId,_that.salesChannelId,_that.email,_that.displayId,_that.paymentStatus,_that.fulfillmentStatus,_that.metadata,_that.createdAt,_that.updatedAt,_that.originalItemTotal,_that.originalItemSubtotal,_that.originalItemTaxTotal,_that.itemTotal,_that.itemSubtotal,_that.itemTaxTotal,_that.originalTotal,_that.originalSubtotal,_that.originalTaxTotal,_that.total,_that.subtotal,_that.taxTotal,_that.discountTotal,_that.discountTaxTotal,_that.giftCardTotal,_that.giftCardTaxTotal,_that.shippingTotal,_that.shippingSubtotal,_that.shippingTaxTotal,_that.originalShippingTotal,_that.originalShippingSubtotal,_that.originalShippingTaxTotal,_that.status,_that.creditLineTotal);case _:
+return $default(_that.returnRequestedTotal,_that.orderChange,_that.items,_that.currencyCode,_that.version,_that.id,_that.regionId,_that.customerId,_that.salesChannelId,_that.email,_that.displayId,_that.shippingAddress,_that.billingAddress,_that.paymentCollections,_that.paymentStatus,_that.fulfillments,_that.fulfillmentStatus,_that.summary,_that.metadata,_that.createdAt,_that.updatedAt,_that.originalItemTotal,_that.originalItemSubtotal,_that.originalItemTaxTotal,_that.itemTotal,_that.itemSubtotal,_that.itemTaxTotal,_that.originalTotal,_that.originalSubtotal,_that.originalTaxTotal,_that.total,_that.subtotal,_that.taxTotal,_that.discountTotal,_that.discountTaxTotal,_that.giftCardTotal,_that.giftCardTaxTotal,_that.shippingTotal,_that.shippingSubtotal,_that.shippingTaxTotal,_that.originalShippingTotal,_that.originalShippingSubtotal,_that.originalShippingTaxTotal,_that.status,_that.creditLineTotal);case _:
   return orElse();
 
 }
@@ -235,10 +262,10 @@ return $default(_that.returnRequestedTotal,_that.orderChange,_that.currencyCode,
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int returnRequestedTotal,  AdminOrderChange orderChange,  String currencyCode,  int version,  String id,  String regionId,  String customerId,  String salesChannelId,  String email,  int? displayId,  String paymentStatus,  String fulfillmentStatus,  Map<String, dynamic>? metadata,  DateTime createdAt,  DateTime updatedAt,  int originalItemTotal,  int originalItemSubtotal,  int originalItemTaxTotal,  int itemTotal,  int itemSubtotal,  int itemTaxTotal,  int originalTotal,  int originalSubtotal,  int originalTaxTotal,  int total,  int subtotal,  int taxTotal,  int discountTotal,  int discountTaxTotal,  int giftCardTotal,  int giftCardTaxTotal,  int shippingTotal,  int shippingSubtotal,  int shippingTaxTotal,  int originalShippingTotal,  int originalShippingSubtotal,  int originalShippingTaxTotal,  String status,  int creditLineTotal)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int returnRequestedTotal,  AdminOrderChange orderChange,  List<OrderLineItem> items,  String currencyCode,  int version,  String id,  String regionId,  String customerId,  String salesChannelId,  String email,  int? displayId,  AdminOrderAddress shippingAddress,  AdminOrderAddress billingAddress,  List<AdminPaymentCollection> paymentCollections,  String paymentStatus,  List<AdminOrderFulfillment> fulfillments,  String fulfillmentStatus,  BaseOrderSummary summary,  Map<String, dynamic>? metadata,  DateTime createdAt,  DateTime updatedAt,  int originalItemTotal,  int originalItemSubtotal,  int originalItemTaxTotal,  int itemTotal,  int itemSubtotal,  int itemTaxTotal,  int originalTotal,  int originalSubtotal,  int originalTaxTotal,  int total,  int subtotal,  int taxTotal,  int discountTotal,  int discountTaxTotal,  int giftCardTotal,  int giftCardTaxTotal,  int shippingTotal,  int shippingSubtotal,  int shippingTaxTotal,  int originalShippingTotal,  int originalShippingSubtotal,  int originalShippingTaxTotal,  String status,  int creditLineTotal)  $default,) {final _that = this;
 switch (_that) {
 case _AdminOrderPreview():
-return $default(_that.returnRequestedTotal,_that.orderChange,_that.currencyCode,_that.version,_that.id,_that.regionId,_that.customerId,_that.salesChannelId,_that.email,_that.displayId,_that.paymentStatus,_that.fulfillmentStatus,_that.metadata,_that.createdAt,_that.updatedAt,_that.originalItemTotal,_that.originalItemSubtotal,_that.originalItemTaxTotal,_that.itemTotal,_that.itemSubtotal,_that.itemTaxTotal,_that.originalTotal,_that.originalSubtotal,_that.originalTaxTotal,_that.total,_that.subtotal,_that.taxTotal,_that.discountTotal,_that.discountTaxTotal,_that.giftCardTotal,_that.giftCardTaxTotal,_that.shippingTotal,_that.shippingSubtotal,_that.shippingTaxTotal,_that.originalShippingTotal,_that.originalShippingSubtotal,_that.originalShippingTaxTotal,_that.status,_that.creditLineTotal);case _:
+return $default(_that.returnRequestedTotal,_that.orderChange,_that.items,_that.currencyCode,_that.version,_that.id,_that.regionId,_that.customerId,_that.salesChannelId,_that.email,_that.displayId,_that.shippingAddress,_that.billingAddress,_that.paymentCollections,_that.paymentStatus,_that.fulfillments,_that.fulfillmentStatus,_that.summary,_that.metadata,_that.createdAt,_that.updatedAt,_that.originalItemTotal,_that.originalItemSubtotal,_that.originalItemTaxTotal,_that.itemTotal,_that.itemSubtotal,_that.itemTaxTotal,_that.originalTotal,_that.originalSubtotal,_that.originalTaxTotal,_that.total,_that.subtotal,_that.taxTotal,_that.discountTotal,_that.discountTaxTotal,_that.giftCardTotal,_that.giftCardTaxTotal,_that.shippingTotal,_that.shippingSubtotal,_that.shippingTaxTotal,_that.originalShippingTotal,_that.originalShippingSubtotal,_that.originalShippingTaxTotal,_that.status,_that.creditLineTotal);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -255,10 +282,10 @@ return $default(_that.returnRequestedTotal,_that.orderChange,_that.currencyCode,
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int returnRequestedTotal,  AdminOrderChange orderChange,  String currencyCode,  int version,  String id,  String regionId,  String customerId,  String salesChannelId,  String email,  int? displayId,  String paymentStatus,  String fulfillmentStatus,  Map<String, dynamic>? metadata,  DateTime createdAt,  DateTime updatedAt,  int originalItemTotal,  int originalItemSubtotal,  int originalItemTaxTotal,  int itemTotal,  int itemSubtotal,  int itemTaxTotal,  int originalTotal,  int originalSubtotal,  int originalTaxTotal,  int total,  int subtotal,  int taxTotal,  int discountTotal,  int discountTaxTotal,  int giftCardTotal,  int giftCardTaxTotal,  int shippingTotal,  int shippingSubtotal,  int shippingTaxTotal,  int originalShippingTotal,  int originalShippingSubtotal,  int originalShippingTaxTotal,  String status,  int creditLineTotal)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int returnRequestedTotal,  AdminOrderChange orderChange,  List<OrderLineItem> items,  String currencyCode,  int version,  String id,  String regionId,  String customerId,  String salesChannelId,  String email,  int? displayId,  AdminOrderAddress shippingAddress,  AdminOrderAddress billingAddress,  List<AdminPaymentCollection> paymentCollections,  String paymentStatus,  List<AdminOrderFulfillment> fulfillments,  String fulfillmentStatus,  BaseOrderSummary summary,  Map<String, dynamic>? metadata,  DateTime createdAt,  DateTime updatedAt,  int originalItemTotal,  int originalItemSubtotal,  int originalItemTaxTotal,  int itemTotal,  int itemSubtotal,  int itemTaxTotal,  int originalTotal,  int originalSubtotal,  int originalTaxTotal,  int total,  int subtotal,  int taxTotal,  int discountTotal,  int discountTaxTotal,  int giftCardTotal,  int giftCardTaxTotal,  int shippingTotal,  int shippingSubtotal,  int shippingTaxTotal,  int originalShippingTotal,  int originalShippingSubtotal,  int originalShippingTaxTotal,  String status,  int creditLineTotal)?  $default,) {final _that = this;
 switch (_that) {
 case _AdminOrderPreview() when $default != null:
-return $default(_that.returnRequestedTotal,_that.orderChange,_that.currencyCode,_that.version,_that.id,_that.regionId,_that.customerId,_that.salesChannelId,_that.email,_that.displayId,_that.paymentStatus,_that.fulfillmentStatus,_that.metadata,_that.createdAt,_that.updatedAt,_that.originalItemTotal,_that.originalItemSubtotal,_that.originalItemTaxTotal,_that.itemTotal,_that.itemSubtotal,_that.itemTaxTotal,_that.originalTotal,_that.originalSubtotal,_that.originalTaxTotal,_that.total,_that.subtotal,_that.taxTotal,_that.discountTotal,_that.discountTaxTotal,_that.giftCardTotal,_that.giftCardTaxTotal,_that.shippingTotal,_that.shippingSubtotal,_that.shippingTaxTotal,_that.originalShippingTotal,_that.originalShippingSubtotal,_that.originalShippingTaxTotal,_that.status,_that.creditLineTotal);case _:
+return $default(_that.returnRequestedTotal,_that.orderChange,_that.items,_that.currencyCode,_that.version,_that.id,_that.regionId,_that.customerId,_that.salesChannelId,_that.email,_that.displayId,_that.shippingAddress,_that.billingAddress,_that.paymentCollections,_that.paymentStatus,_that.fulfillments,_that.fulfillmentStatus,_that.summary,_that.metadata,_that.createdAt,_that.updatedAt,_that.originalItemTotal,_that.originalItemSubtotal,_that.originalItemTaxTotal,_that.itemTotal,_that.itemSubtotal,_that.itemTaxTotal,_that.originalTotal,_that.originalSubtotal,_that.originalTaxTotal,_that.total,_that.subtotal,_that.taxTotal,_that.discountTotal,_that.discountTaxTotal,_that.giftCardTotal,_that.giftCardTaxTotal,_that.shippingTotal,_that.shippingSubtotal,_that.shippingTaxTotal,_that.originalShippingTotal,_that.originalShippingSubtotal,_that.originalShippingTaxTotal,_that.status,_that.creditLineTotal);case _:
   return null;
 
 }
@@ -270,14 +297,22 @@ return $default(_that.returnRequestedTotal,_that.orderChange,_that.currencyCode,
 @JsonSerializable()
 
 class _AdminOrderPreview implements AdminOrderPreview {
-  const _AdminOrderPreview({required this.returnRequestedTotal, required this.orderChange, required this.currencyCode, required this.version, required this.id, required this.regionId, required this.customerId, required this.salesChannelId, required this.email, this.displayId, required this.paymentStatus, required this.fulfillmentStatus, final  Map<String, dynamic>? metadata, required this.createdAt, required this.updatedAt, required this.originalItemTotal, required this.originalItemSubtotal, required this.originalItemTaxTotal, required this.itemTotal, required this.itemSubtotal, required this.itemTaxTotal, required this.originalTotal, required this.originalSubtotal, required this.originalTaxTotal, required this.total, required this.subtotal, required this.taxTotal, required this.discountTotal, required this.discountTaxTotal, required this.giftCardTotal, required this.giftCardTaxTotal, required this.shippingTotal, required this.shippingSubtotal, required this.shippingTaxTotal, required this.originalShippingTotal, required this.originalShippingSubtotal, required this.originalShippingTaxTotal, required this.status, required this.creditLineTotal}): _metadata = metadata;
+  const _AdminOrderPreview({required this.returnRequestedTotal, required this.orderChange, required final  List<OrderLineItem> items, required this.currencyCode, required this.version, required this.id, required this.regionId, required this.customerId, required this.salesChannelId, required this.email, this.displayId, required this.shippingAddress, required this.billingAddress, required final  List<AdminPaymentCollection> paymentCollections, required this.paymentStatus, required final  List<AdminOrderFulfillment> fulfillments, required this.fulfillmentStatus, required this.summary, final  Map<String, dynamic>? metadata, required this.createdAt, required this.updatedAt, required this.originalItemTotal, required this.originalItemSubtotal, required this.originalItemTaxTotal, required this.itemTotal, required this.itemSubtotal, required this.itemTaxTotal, required this.originalTotal, required this.originalSubtotal, required this.originalTaxTotal, required this.total, required this.subtotal, required this.taxTotal, required this.discountTotal, required this.discountTaxTotal, required this.giftCardTotal, required this.giftCardTaxTotal, required this.shippingTotal, required this.shippingSubtotal, required this.shippingTaxTotal, required this.originalShippingTotal, required this.originalShippingSubtotal, required this.originalShippingTaxTotal, required this.status, required this.creditLineTotal}): _items = items,_paymentCollections = paymentCollections,_fulfillments = fulfillments,_metadata = metadata;
   factory _AdminOrderPreview.fromJson(Map<String, dynamic> json) => _$AdminOrderPreviewFromJson(json);
 
 @override final  int returnRequestedTotal;
 @override final  AdminOrderChange orderChange;
 // TODO: Add items and shipping_methods
-// required List<AdminOrderLineItem> items,
-// required List<AdminOrderShippingMethod> shippingMethods,
+// required List<OrderShippingMethod> shippingMethods,
+ final  List<OrderLineItem> _items;
+// TODO: Add items and shipping_methods
+// required List<OrderShippingMethod> shippingMethods,
+@override List<OrderLineItem> get items {
+  if (_items is EqualUnmodifiableListView) return _items;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_items);
+}
+
 @override final  String currencyCode;
 @override final  int version;
 @override final  String id;
@@ -286,18 +321,28 @@ class _AdminOrderPreview implements AdminOrderPreview {
 @override final  String salesChannelId;
 @override final  String email;
 @override final  int? displayId;
-// TODO: Add shipping_address and billing_address
-// required AdminOrderAddress shippingAddress,
-// required AdminOrderAddress billingAddress,
-// required List<AdminPaymentCollection> paymentCollections,
+@override final  AdminOrderAddress shippingAddress;
+@override final  AdminOrderAddress billingAddress;
+ final  List<AdminPaymentCollection> _paymentCollections;
+@override List<AdminPaymentCollection> get paymentCollections {
+  if (_paymentCollections is EqualUnmodifiableListView) return _paymentCollections;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_paymentCollections);
+}
+
 @override final  String paymentStatus;
-// required List<AdminOrderFulfillment> fulfillments,
+ final  List<AdminOrderFulfillment> _fulfillments;
+@override List<AdminOrderFulfillment> get fulfillments {
+  if (_fulfillments is EqualUnmodifiableListView) return _fulfillments;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(_fulfillments);
+}
+
 @override final  String fulfillmentStatus;
+// TODO: Add shipping_address and billing_address
 // required List<BaseOrderTransaction> transactions,
-// required BaseOrderSummary summary,
+@override final  BaseOrderSummary summary;
  final  Map<String, dynamic>? _metadata;
-// required List<BaseOrderTransaction> transactions,
-// required BaseOrderSummary summary,
 @override Map<String, dynamic>? get metadata {
   final value = _metadata;
   if (value == null) return null;
@@ -350,16 +395,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AdminOrderPreview&&(identical(other.returnRequestedTotal, returnRequestedTotal) || other.returnRequestedTotal == returnRequestedTotal)&&(identical(other.orderChange, orderChange) || other.orderChange == orderChange)&&(identical(other.currencyCode, currencyCode) || other.currencyCode == currencyCode)&&(identical(other.version, version) || other.version == version)&&(identical(other.id, id) || other.id == id)&&(identical(other.regionId, regionId) || other.regionId == regionId)&&(identical(other.customerId, customerId) || other.customerId == customerId)&&(identical(other.salesChannelId, salesChannelId) || other.salesChannelId == salesChannelId)&&(identical(other.email, email) || other.email == email)&&(identical(other.displayId, displayId) || other.displayId == displayId)&&(identical(other.paymentStatus, paymentStatus) || other.paymentStatus == paymentStatus)&&(identical(other.fulfillmentStatus, fulfillmentStatus) || other.fulfillmentStatus == fulfillmentStatus)&&const DeepCollectionEquality().equals(other._metadata, _metadata)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.originalItemTotal, originalItemTotal) || other.originalItemTotal == originalItemTotal)&&(identical(other.originalItemSubtotal, originalItemSubtotal) || other.originalItemSubtotal == originalItemSubtotal)&&(identical(other.originalItemTaxTotal, originalItemTaxTotal) || other.originalItemTaxTotal == originalItemTaxTotal)&&(identical(other.itemTotal, itemTotal) || other.itemTotal == itemTotal)&&(identical(other.itemSubtotal, itemSubtotal) || other.itemSubtotal == itemSubtotal)&&(identical(other.itemTaxTotal, itemTaxTotal) || other.itemTaxTotal == itemTaxTotal)&&(identical(other.originalTotal, originalTotal) || other.originalTotal == originalTotal)&&(identical(other.originalSubtotal, originalSubtotal) || other.originalSubtotal == originalSubtotal)&&(identical(other.originalTaxTotal, originalTaxTotal) || other.originalTaxTotal == originalTaxTotal)&&(identical(other.total, total) || other.total == total)&&(identical(other.subtotal, subtotal) || other.subtotal == subtotal)&&(identical(other.taxTotal, taxTotal) || other.taxTotal == taxTotal)&&(identical(other.discountTotal, discountTotal) || other.discountTotal == discountTotal)&&(identical(other.discountTaxTotal, discountTaxTotal) || other.discountTaxTotal == discountTaxTotal)&&(identical(other.giftCardTotal, giftCardTotal) || other.giftCardTotal == giftCardTotal)&&(identical(other.giftCardTaxTotal, giftCardTaxTotal) || other.giftCardTaxTotal == giftCardTaxTotal)&&(identical(other.shippingTotal, shippingTotal) || other.shippingTotal == shippingTotal)&&(identical(other.shippingSubtotal, shippingSubtotal) || other.shippingSubtotal == shippingSubtotal)&&(identical(other.shippingTaxTotal, shippingTaxTotal) || other.shippingTaxTotal == shippingTaxTotal)&&(identical(other.originalShippingTotal, originalShippingTotal) || other.originalShippingTotal == originalShippingTotal)&&(identical(other.originalShippingSubtotal, originalShippingSubtotal) || other.originalShippingSubtotal == originalShippingSubtotal)&&(identical(other.originalShippingTaxTotal, originalShippingTaxTotal) || other.originalShippingTaxTotal == originalShippingTaxTotal)&&(identical(other.status, status) || other.status == status)&&(identical(other.creditLineTotal, creditLineTotal) || other.creditLineTotal == creditLineTotal));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AdminOrderPreview&&(identical(other.returnRequestedTotal, returnRequestedTotal) || other.returnRequestedTotal == returnRequestedTotal)&&(identical(other.orderChange, orderChange) || other.orderChange == orderChange)&&const DeepCollectionEquality().equals(other._items, _items)&&(identical(other.currencyCode, currencyCode) || other.currencyCode == currencyCode)&&(identical(other.version, version) || other.version == version)&&(identical(other.id, id) || other.id == id)&&(identical(other.regionId, regionId) || other.regionId == regionId)&&(identical(other.customerId, customerId) || other.customerId == customerId)&&(identical(other.salesChannelId, salesChannelId) || other.salesChannelId == salesChannelId)&&(identical(other.email, email) || other.email == email)&&(identical(other.displayId, displayId) || other.displayId == displayId)&&(identical(other.shippingAddress, shippingAddress) || other.shippingAddress == shippingAddress)&&(identical(other.billingAddress, billingAddress) || other.billingAddress == billingAddress)&&const DeepCollectionEquality().equals(other._paymentCollections, _paymentCollections)&&(identical(other.paymentStatus, paymentStatus) || other.paymentStatus == paymentStatus)&&const DeepCollectionEquality().equals(other._fulfillments, _fulfillments)&&(identical(other.fulfillmentStatus, fulfillmentStatus) || other.fulfillmentStatus == fulfillmentStatus)&&(identical(other.summary, summary) || other.summary == summary)&&const DeepCollectionEquality().equals(other._metadata, _metadata)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.originalItemTotal, originalItemTotal) || other.originalItemTotal == originalItemTotal)&&(identical(other.originalItemSubtotal, originalItemSubtotal) || other.originalItemSubtotal == originalItemSubtotal)&&(identical(other.originalItemTaxTotal, originalItemTaxTotal) || other.originalItemTaxTotal == originalItemTaxTotal)&&(identical(other.itemTotal, itemTotal) || other.itemTotal == itemTotal)&&(identical(other.itemSubtotal, itemSubtotal) || other.itemSubtotal == itemSubtotal)&&(identical(other.itemTaxTotal, itemTaxTotal) || other.itemTaxTotal == itemTaxTotal)&&(identical(other.originalTotal, originalTotal) || other.originalTotal == originalTotal)&&(identical(other.originalSubtotal, originalSubtotal) || other.originalSubtotal == originalSubtotal)&&(identical(other.originalTaxTotal, originalTaxTotal) || other.originalTaxTotal == originalTaxTotal)&&(identical(other.total, total) || other.total == total)&&(identical(other.subtotal, subtotal) || other.subtotal == subtotal)&&(identical(other.taxTotal, taxTotal) || other.taxTotal == taxTotal)&&(identical(other.discountTotal, discountTotal) || other.discountTotal == discountTotal)&&(identical(other.discountTaxTotal, discountTaxTotal) || other.discountTaxTotal == discountTaxTotal)&&(identical(other.giftCardTotal, giftCardTotal) || other.giftCardTotal == giftCardTotal)&&(identical(other.giftCardTaxTotal, giftCardTaxTotal) || other.giftCardTaxTotal == giftCardTaxTotal)&&(identical(other.shippingTotal, shippingTotal) || other.shippingTotal == shippingTotal)&&(identical(other.shippingSubtotal, shippingSubtotal) || other.shippingSubtotal == shippingSubtotal)&&(identical(other.shippingTaxTotal, shippingTaxTotal) || other.shippingTaxTotal == shippingTaxTotal)&&(identical(other.originalShippingTotal, originalShippingTotal) || other.originalShippingTotal == originalShippingTotal)&&(identical(other.originalShippingSubtotal, originalShippingSubtotal) || other.originalShippingSubtotal == originalShippingSubtotal)&&(identical(other.originalShippingTaxTotal, originalShippingTaxTotal) || other.originalShippingTaxTotal == originalShippingTaxTotal)&&(identical(other.status, status) || other.status == status)&&(identical(other.creditLineTotal, creditLineTotal) || other.creditLineTotal == creditLineTotal));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,returnRequestedTotal,orderChange,currencyCode,version,id,regionId,customerId,salesChannelId,email,displayId,paymentStatus,fulfillmentStatus,const DeepCollectionEquality().hash(_metadata),createdAt,updatedAt,originalItemTotal,originalItemSubtotal,originalItemTaxTotal,itemTotal,itemSubtotal,itemTaxTotal,originalTotal,originalSubtotal,originalTaxTotal,total,subtotal,taxTotal,discountTotal,discountTaxTotal,giftCardTotal,giftCardTaxTotal,shippingTotal,shippingSubtotal,shippingTaxTotal,originalShippingTotal,originalShippingSubtotal,originalShippingTaxTotal,status,creditLineTotal]);
+int get hashCode => Object.hashAll([runtimeType,returnRequestedTotal,orderChange,const DeepCollectionEquality().hash(_items),currencyCode,version,id,regionId,customerId,salesChannelId,email,displayId,shippingAddress,billingAddress,const DeepCollectionEquality().hash(_paymentCollections),paymentStatus,const DeepCollectionEquality().hash(_fulfillments),fulfillmentStatus,summary,const DeepCollectionEquality().hash(_metadata),createdAt,updatedAt,originalItemTotal,originalItemSubtotal,originalItemTaxTotal,itemTotal,itemSubtotal,itemTaxTotal,originalTotal,originalSubtotal,originalTaxTotal,total,subtotal,taxTotal,discountTotal,discountTaxTotal,giftCardTotal,giftCardTaxTotal,shippingTotal,shippingSubtotal,shippingTaxTotal,originalShippingTotal,originalShippingSubtotal,originalShippingTaxTotal,status,creditLineTotal]);
 
 @override
 String toString() {
-  return 'AdminOrderPreview(returnRequestedTotal: $returnRequestedTotal, orderChange: $orderChange, currencyCode: $currencyCode, version: $version, id: $id, regionId: $regionId, customerId: $customerId, salesChannelId: $salesChannelId, email: $email, displayId: $displayId, paymentStatus: $paymentStatus, fulfillmentStatus: $fulfillmentStatus, metadata: $metadata, createdAt: $createdAt, updatedAt: $updatedAt, originalItemTotal: $originalItemTotal, originalItemSubtotal: $originalItemSubtotal, originalItemTaxTotal: $originalItemTaxTotal, itemTotal: $itemTotal, itemSubtotal: $itemSubtotal, itemTaxTotal: $itemTaxTotal, originalTotal: $originalTotal, originalSubtotal: $originalSubtotal, originalTaxTotal: $originalTaxTotal, total: $total, subtotal: $subtotal, taxTotal: $taxTotal, discountTotal: $discountTotal, discountTaxTotal: $discountTaxTotal, giftCardTotal: $giftCardTotal, giftCardTaxTotal: $giftCardTaxTotal, shippingTotal: $shippingTotal, shippingSubtotal: $shippingSubtotal, shippingTaxTotal: $shippingTaxTotal, originalShippingTotal: $originalShippingTotal, originalShippingSubtotal: $originalShippingSubtotal, originalShippingTaxTotal: $originalShippingTaxTotal, status: $status, creditLineTotal: $creditLineTotal)';
+  return 'AdminOrderPreview(returnRequestedTotal: $returnRequestedTotal, orderChange: $orderChange, items: $items, currencyCode: $currencyCode, version: $version, id: $id, regionId: $regionId, customerId: $customerId, salesChannelId: $salesChannelId, email: $email, displayId: $displayId, shippingAddress: $shippingAddress, billingAddress: $billingAddress, paymentCollections: $paymentCollections, paymentStatus: $paymentStatus, fulfillments: $fulfillments, fulfillmentStatus: $fulfillmentStatus, summary: $summary, metadata: $metadata, createdAt: $createdAt, updatedAt: $updatedAt, originalItemTotal: $originalItemTotal, originalItemSubtotal: $originalItemSubtotal, originalItemTaxTotal: $originalItemTaxTotal, itemTotal: $itemTotal, itemSubtotal: $itemSubtotal, itemTaxTotal: $itemTaxTotal, originalTotal: $originalTotal, originalSubtotal: $originalSubtotal, originalTaxTotal: $originalTaxTotal, total: $total, subtotal: $subtotal, taxTotal: $taxTotal, discountTotal: $discountTotal, discountTaxTotal: $discountTaxTotal, giftCardTotal: $giftCardTotal, giftCardTaxTotal: $giftCardTaxTotal, shippingTotal: $shippingTotal, shippingSubtotal: $shippingSubtotal, shippingTaxTotal: $shippingTaxTotal, originalShippingTotal: $originalShippingTotal, originalShippingSubtotal: $originalShippingSubtotal, originalShippingTaxTotal: $originalShippingTaxTotal, status: $status, creditLineTotal: $creditLineTotal)';
 }
 
 
@@ -370,11 +415,11 @@ abstract mixin class _$AdminOrderPreviewCopyWith<$Res> implements $AdminOrderPre
   factory _$AdminOrderPreviewCopyWith(_AdminOrderPreview value, $Res Function(_AdminOrderPreview) _then) = __$AdminOrderPreviewCopyWithImpl;
 @override @useResult
 $Res call({
- int returnRequestedTotal, AdminOrderChange orderChange, String currencyCode, int version, String id, String regionId, String customerId, String salesChannelId, String email, int? displayId, String paymentStatus, String fulfillmentStatus, Map<String, dynamic>? metadata, DateTime createdAt, DateTime updatedAt, int originalItemTotal, int originalItemSubtotal, int originalItemTaxTotal, int itemTotal, int itemSubtotal, int itemTaxTotal, int originalTotal, int originalSubtotal, int originalTaxTotal, int total, int subtotal, int taxTotal, int discountTotal, int discountTaxTotal, int giftCardTotal, int giftCardTaxTotal, int shippingTotal, int shippingSubtotal, int shippingTaxTotal, int originalShippingTotal, int originalShippingSubtotal, int originalShippingTaxTotal, String status, int creditLineTotal
+ int returnRequestedTotal, AdminOrderChange orderChange, List<OrderLineItem> items, String currencyCode, int version, String id, String regionId, String customerId, String salesChannelId, String email, int? displayId, AdminOrderAddress shippingAddress, AdminOrderAddress billingAddress, List<AdminPaymentCollection> paymentCollections, String paymentStatus, List<AdminOrderFulfillment> fulfillments, String fulfillmentStatus, BaseOrderSummary summary, Map<String, dynamic>? metadata, DateTime createdAt, DateTime updatedAt, int originalItemTotal, int originalItemSubtotal, int originalItemTaxTotal, int itemTotal, int itemSubtotal, int itemTaxTotal, int originalTotal, int originalSubtotal, int originalTaxTotal, int total, int subtotal, int taxTotal, int discountTotal, int discountTaxTotal, int giftCardTotal, int giftCardTaxTotal, int shippingTotal, int shippingSubtotal, int shippingTaxTotal, int originalShippingTotal, int originalShippingSubtotal, int originalShippingTaxTotal, String status, int creditLineTotal
 });
 
 
-@override $AdminOrderChangeCopyWith<$Res> get orderChange;
+@override $AdminOrderChangeCopyWith<$Res> get orderChange;@override $AdminOrderAddressCopyWith<$Res> get shippingAddress;@override $AdminOrderAddressCopyWith<$Res> get billingAddress;@override $BaseOrderSummaryCopyWith<$Res> get summary;
 
 }
 /// @nodoc
@@ -387,11 +432,12 @@ class __$AdminOrderPreviewCopyWithImpl<$Res>
 
 /// Create a copy of AdminOrderPreview
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? returnRequestedTotal = null,Object? orderChange = null,Object? currencyCode = null,Object? version = null,Object? id = null,Object? regionId = null,Object? customerId = null,Object? salesChannelId = null,Object? email = null,Object? displayId = freezed,Object? paymentStatus = null,Object? fulfillmentStatus = null,Object? metadata = freezed,Object? createdAt = null,Object? updatedAt = null,Object? originalItemTotal = null,Object? originalItemSubtotal = null,Object? originalItemTaxTotal = null,Object? itemTotal = null,Object? itemSubtotal = null,Object? itemTaxTotal = null,Object? originalTotal = null,Object? originalSubtotal = null,Object? originalTaxTotal = null,Object? total = null,Object? subtotal = null,Object? taxTotal = null,Object? discountTotal = null,Object? discountTaxTotal = null,Object? giftCardTotal = null,Object? giftCardTaxTotal = null,Object? shippingTotal = null,Object? shippingSubtotal = null,Object? shippingTaxTotal = null,Object? originalShippingTotal = null,Object? originalShippingSubtotal = null,Object? originalShippingTaxTotal = null,Object? status = null,Object? creditLineTotal = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? returnRequestedTotal = null,Object? orderChange = null,Object? items = null,Object? currencyCode = null,Object? version = null,Object? id = null,Object? regionId = null,Object? customerId = null,Object? salesChannelId = null,Object? email = null,Object? displayId = freezed,Object? shippingAddress = null,Object? billingAddress = null,Object? paymentCollections = null,Object? paymentStatus = null,Object? fulfillments = null,Object? fulfillmentStatus = null,Object? summary = null,Object? metadata = freezed,Object? createdAt = null,Object? updatedAt = null,Object? originalItemTotal = null,Object? originalItemSubtotal = null,Object? originalItemTaxTotal = null,Object? itemTotal = null,Object? itemSubtotal = null,Object? itemTaxTotal = null,Object? originalTotal = null,Object? originalSubtotal = null,Object? originalTaxTotal = null,Object? total = null,Object? subtotal = null,Object? taxTotal = null,Object? discountTotal = null,Object? discountTaxTotal = null,Object? giftCardTotal = null,Object? giftCardTaxTotal = null,Object? shippingTotal = null,Object? shippingSubtotal = null,Object? shippingTaxTotal = null,Object? originalShippingTotal = null,Object? originalShippingSubtotal = null,Object? originalShippingTaxTotal = null,Object? status = null,Object? creditLineTotal = null,}) {
   return _then(_AdminOrderPreview(
 returnRequestedTotal: null == returnRequestedTotal ? _self.returnRequestedTotal : returnRequestedTotal // ignore: cast_nullable_to_non_nullable
 as int,orderChange: null == orderChange ? _self.orderChange : orderChange // ignore: cast_nullable_to_non_nullable
-as AdminOrderChange,currencyCode: null == currencyCode ? _self.currencyCode : currencyCode // ignore: cast_nullable_to_non_nullable
+as AdminOrderChange,items: null == items ? _self._items : items // ignore: cast_nullable_to_non_nullable
+as List<OrderLineItem>,currencyCode: null == currencyCode ? _self.currencyCode : currencyCode // ignore: cast_nullable_to_non_nullable
 as String,version: null == version ? _self.version : version // ignore: cast_nullable_to_non_nullable
 as int,id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,regionId: null == regionId ? _self.regionId : regionId // ignore: cast_nullable_to_non_nullable
@@ -399,9 +445,14 @@ as String,customerId: null == customerId ? _self.customerId : customerId // igno
 as String,salesChannelId: null == salesChannelId ? _self.salesChannelId : salesChannelId // ignore: cast_nullable_to_non_nullable
 as String,email: null == email ? _self.email : email // ignore: cast_nullable_to_non_nullable
 as String,displayId: freezed == displayId ? _self.displayId : displayId // ignore: cast_nullable_to_non_nullable
-as int?,paymentStatus: null == paymentStatus ? _self.paymentStatus : paymentStatus // ignore: cast_nullable_to_non_nullable
-as String,fulfillmentStatus: null == fulfillmentStatus ? _self.fulfillmentStatus : fulfillmentStatus // ignore: cast_nullable_to_non_nullable
-as String,metadata: freezed == metadata ? _self._metadata : metadata // ignore: cast_nullable_to_non_nullable
+as int?,shippingAddress: null == shippingAddress ? _self.shippingAddress : shippingAddress // ignore: cast_nullable_to_non_nullable
+as AdminOrderAddress,billingAddress: null == billingAddress ? _self.billingAddress : billingAddress // ignore: cast_nullable_to_non_nullable
+as AdminOrderAddress,paymentCollections: null == paymentCollections ? _self._paymentCollections : paymentCollections // ignore: cast_nullable_to_non_nullable
+as List<AdminPaymentCollection>,paymentStatus: null == paymentStatus ? _self.paymentStatus : paymentStatus // ignore: cast_nullable_to_non_nullable
+as String,fulfillments: null == fulfillments ? _self._fulfillments : fulfillments // ignore: cast_nullable_to_non_nullable
+as List<AdminOrderFulfillment>,fulfillmentStatus: null == fulfillmentStatus ? _self.fulfillmentStatus : fulfillmentStatus // ignore: cast_nullable_to_non_nullable
+as String,summary: null == summary ? _self.summary : summary // ignore: cast_nullable_to_non_nullable
+as BaseOrderSummary,metadata: freezed == metadata ? _self._metadata : metadata // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
 as DateTime,originalItemTotal: null == originalItemTotal ? _self.originalItemTotal : originalItemTotal // ignore: cast_nullable_to_non_nullable
@@ -440,6 +491,33 @@ $AdminOrderChangeCopyWith<$Res> get orderChange {
   
   return $AdminOrderChangeCopyWith<$Res>(_self.orderChange, (value) {
     return _then(_self.copyWith(orderChange: value));
+  });
+}/// Create a copy of AdminOrderPreview
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AdminOrderAddressCopyWith<$Res> get shippingAddress {
+  
+  return $AdminOrderAddressCopyWith<$Res>(_self.shippingAddress, (value) {
+    return _then(_self.copyWith(shippingAddress: value));
+  });
+}/// Create a copy of AdminOrderPreview
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AdminOrderAddressCopyWith<$Res> get billingAddress {
+  
+  return $AdminOrderAddressCopyWith<$Res>(_self.billingAddress, (value) {
+    return _then(_self.copyWith(billingAddress: value));
+  });
+}/// Create a copy of AdminOrderPreview
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$BaseOrderSummaryCopyWith<$Res> get summary {
+  
+  return $BaseOrderSummaryCopyWith<$Res>(_self.summary, (value) {
+    return _then(_self.copyWith(summary: value));
   });
 }
 }

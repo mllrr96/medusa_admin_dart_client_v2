@@ -13,6 +13,9 @@ _AdminOrderPreview _$AdminOrderPreviewFromJson(
   orderChange: AdminOrderChange.fromJson(
     json['orderChange'] as Map<String, dynamic>,
   ),
+  items: (json['items'] as List<dynamic>)
+      .map((e) => OrderLineItem.fromJson(e as Map<String, dynamic>))
+      .toList(),
   currencyCode: json['currencyCode'] as String,
   version: (json['version'] as num).toInt(),
   id: json['id'] as String,
@@ -21,8 +24,21 @@ _AdminOrderPreview _$AdminOrderPreviewFromJson(
   salesChannelId: json['salesChannelId'] as String,
   email: json['email'] as String,
   displayId: (json['displayId'] as num?)?.toInt(),
+  shippingAddress: AdminOrderAddress.fromJson(
+    json['shippingAddress'] as Map<String, dynamic>,
+  ),
+  billingAddress: AdminOrderAddress.fromJson(
+    json['billingAddress'] as Map<String, dynamic>,
+  ),
+  paymentCollections: (json['paymentCollections'] as List<dynamic>)
+      .map((e) => AdminPaymentCollection.fromJson(e as Map<String, dynamic>))
+      .toList(),
   paymentStatus: json['paymentStatus'] as String,
+  fulfillments: (json['fulfillments'] as List<dynamic>)
+      .map((e) => AdminOrderFulfillment.fromJson(e as Map<String, dynamic>))
+      .toList(),
   fulfillmentStatus: json['fulfillmentStatus'] as String,
+  summary: BaseOrderSummary.fromJson(json['summary'] as Map<String, dynamic>),
   metadata: json['metadata'] as Map<String, dynamic>?,
   createdAt: DateTime.parse(json['createdAt'] as String),
   updatedAt: DateTime.parse(json['updatedAt'] as String),
@@ -56,6 +72,7 @@ Map<String, dynamic> _$AdminOrderPreviewToJson(_AdminOrderPreview instance) =>
     <String, dynamic>{
       'returnRequestedTotal': instance.returnRequestedTotal,
       'orderChange': instance.orderChange,
+      'items': instance.items,
       'currencyCode': instance.currencyCode,
       'version': instance.version,
       'id': instance.id,
@@ -64,8 +81,13 @@ Map<String, dynamic> _$AdminOrderPreviewToJson(_AdminOrderPreview instance) =>
       'salesChannelId': instance.salesChannelId,
       'email': instance.email,
       'displayId': instance.displayId,
+      'shippingAddress': instance.shippingAddress,
+      'billingAddress': instance.billingAddress,
+      'paymentCollections': instance.paymentCollections,
       'paymentStatus': instance.paymentStatus,
+      'fulfillments': instance.fulfillments,
       'fulfillmentStatus': instance.fulfillmentStatus,
+      'summary': instance.summary,
       'metadata': instance.metadata,
       'createdAt': instance.createdAt.toIso8601String(),
       'updatedAt': instance.updatedAt.toIso8601String(),

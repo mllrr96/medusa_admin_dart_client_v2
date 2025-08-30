@@ -1,21 +1,20 @@
 
-import '../api/currencies_api.dart';
-import '../models/currency.dart';
+import 'package:medusa_admin_dart_client/src/features/currencies/data/api/currencies_api.dart';
+import 'package:medusa_admin_dart_client/src/features/currencies/data/models/currencies_list_res.dart';
+import 'package:medusa_admin_dart_client/src/features/currencies/data/models/currency_res.dart';
 
 class CurrenciesRepository {
   CurrenciesRepository(this._currenciesApi);
 
   final CurrenciesApi _currenciesApi;
 
-  Future<List<Currency>> retrieveAll({Map<String, dynamic>? queryParameters}) {
-    return _currenciesApi.retrieveAll(queryParameters: queryParameters);
+  Future<CurrenciesListRes> list({
+    Map<String, dynamic>? queryParameters,
+  }) {
+    return _currenciesApi.list(queryParameters: queryParameters);
   }
 
-  Future<Currency> retrieve(String code) {
+  Future<CurrencyRes> retrieve(String code) {
     return _currenciesApi.retrieve(code);
-  }
-
-  Future<Currency> update(String code, Map<String, dynamic> body) {
-    return _currenciesApi.update(code, body);
   }
 }

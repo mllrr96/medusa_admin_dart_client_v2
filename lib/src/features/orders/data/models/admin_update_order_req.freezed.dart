@@ -16,9 +16,7 @@ T _$identity<T>(T value) => value;
 mixin _$AdminUpdateOrderRequest {
 
  String? get email;// TODO: Add shipping_address and billing_address
-// required Address shippingAddress,
-// required Address billingAddress,
- Map<String, dynamic>? get metadata;
+ Address get shippingAddress; Address get billingAddress; Map<String, dynamic>? get metadata;
 /// Create a copy of AdminUpdateOrderRequest
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -31,16 +29,16 @@ $AdminUpdateOrderRequestCopyWith<AdminUpdateOrderRequest> get copyWith => _$Admi
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AdminUpdateOrderRequest&&(identical(other.email, email) || other.email == email)&&const DeepCollectionEquality().equals(other.metadata, metadata));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AdminUpdateOrderRequest&&(identical(other.email, email) || other.email == email)&&(identical(other.shippingAddress, shippingAddress) || other.shippingAddress == shippingAddress)&&(identical(other.billingAddress, billingAddress) || other.billingAddress == billingAddress)&&const DeepCollectionEquality().equals(other.metadata, metadata));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,email,const DeepCollectionEquality().hash(metadata));
+int get hashCode => Object.hash(runtimeType,email,shippingAddress,billingAddress,const DeepCollectionEquality().hash(metadata));
 
 @override
 String toString() {
-  return 'AdminUpdateOrderRequest(email: $email, metadata: $metadata)';
+  return 'AdminUpdateOrderRequest(email: $email, shippingAddress: $shippingAddress, billingAddress: $billingAddress, metadata: $metadata)';
 }
 
 
@@ -51,11 +49,11 @@ abstract mixin class $AdminUpdateOrderRequestCopyWith<$Res>  {
   factory $AdminUpdateOrderRequestCopyWith(AdminUpdateOrderRequest value, $Res Function(AdminUpdateOrderRequest) _then) = _$AdminUpdateOrderRequestCopyWithImpl;
 @useResult
 $Res call({
- String? email, Map<String, dynamic>? metadata
+ String? email, Address shippingAddress, Address billingAddress, Map<String, dynamic>? metadata
 });
 
 
-
+$AddressCopyWith<$Res> get shippingAddress;$AddressCopyWith<$Res> get billingAddress;
 
 }
 /// @nodoc
@@ -68,14 +66,34 @@ class _$AdminUpdateOrderRequestCopyWithImpl<$Res>
 
 /// Create a copy of AdminUpdateOrderRequest
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? email = freezed,Object? metadata = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? email = freezed,Object? shippingAddress = null,Object? billingAddress = null,Object? metadata = freezed,}) {
   return _then(_self.copyWith(
 email: freezed == email ? _self.email : email // ignore: cast_nullable_to_non_nullable
-as String?,metadata: freezed == metadata ? _self.metadata : metadata // ignore: cast_nullable_to_non_nullable
+as String?,shippingAddress: null == shippingAddress ? _self.shippingAddress : shippingAddress // ignore: cast_nullable_to_non_nullable
+as Address,billingAddress: null == billingAddress ? _self.billingAddress : billingAddress // ignore: cast_nullable_to_non_nullable
+as Address,metadata: freezed == metadata ? _self.metadata : metadata // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,
   ));
 }
-
+/// Create a copy of AdminUpdateOrderRequest
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AddressCopyWith<$Res> get shippingAddress {
+  
+  return $AddressCopyWith<$Res>(_self.shippingAddress, (value) {
+    return _then(_self.copyWith(shippingAddress: value));
+  });
+}/// Create a copy of AdminUpdateOrderRequest
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AddressCopyWith<$Res> get billingAddress {
+  
+  return $AddressCopyWith<$Res>(_self.billingAddress, (value) {
+    return _then(_self.copyWith(billingAddress: value));
+  });
+}
 }
 
 
@@ -157,10 +175,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? email,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? email,  Address shippingAddress,  Address billingAddress,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _AdminUpdateOrderRequest() when $default != null:
-return $default(_that.email,_that.metadata);case _:
+return $default(_that.email,_that.shippingAddress,_that.billingAddress,_that.metadata);case _:
   return orElse();
 
 }
@@ -178,10 +196,10 @@ return $default(_that.email,_that.metadata);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? email,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? email,  Address shippingAddress,  Address billingAddress,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
 switch (_that) {
 case _AdminUpdateOrderRequest():
-return $default(_that.email,_that.metadata);case _:
+return $default(_that.email,_that.shippingAddress,_that.billingAddress,_that.metadata);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -198,10 +216,10 @@ return $default(_that.email,_that.metadata);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? email,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? email,  Address shippingAddress,  Address billingAddress,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
 switch (_that) {
 case _AdminUpdateOrderRequest() when $default != null:
-return $default(_that.email,_that.metadata);case _:
+return $default(_that.email,_that.shippingAddress,_that.billingAddress,_that.metadata);case _:
   return null;
 
 }
@@ -213,17 +231,14 @@ return $default(_that.email,_that.metadata);case _:
 @JsonSerializable()
 
 class _AdminUpdateOrderRequest implements AdminUpdateOrderRequest {
-  const _AdminUpdateOrderRequest({this.email, final  Map<String, dynamic>? metadata}): _metadata = metadata;
+  const _AdminUpdateOrderRequest({this.email, required this.shippingAddress, required this.billingAddress, final  Map<String, dynamic>? metadata}): _metadata = metadata;
   factory _AdminUpdateOrderRequest.fromJson(Map<String, dynamic> json) => _$AdminUpdateOrderRequestFromJson(json);
 
 @override final  String? email;
 // TODO: Add shipping_address and billing_address
-// required Address shippingAddress,
-// required Address billingAddress,
+@override final  Address shippingAddress;
+@override final  Address billingAddress;
  final  Map<String, dynamic>? _metadata;
-// TODO: Add shipping_address and billing_address
-// required Address shippingAddress,
-// required Address billingAddress,
 @override Map<String, dynamic>? get metadata {
   final value = _metadata;
   if (value == null) return null;
@@ -246,16 +261,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AdminUpdateOrderRequest&&(identical(other.email, email) || other.email == email)&&const DeepCollectionEquality().equals(other._metadata, _metadata));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AdminUpdateOrderRequest&&(identical(other.email, email) || other.email == email)&&(identical(other.shippingAddress, shippingAddress) || other.shippingAddress == shippingAddress)&&(identical(other.billingAddress, billingAddress) || other.billingAddress == billingAddress)&&const DeepCollectionEquality().equals(other._metadata, _metadata));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,email,const DeepCollectionEquality().hash(_metadata));
+int get hashCode => Object.hash(runtimeType,email,shippingAddress,billingAddress,const DeepCollectionEquality().hash(_metadata));
 
 @override
 String toString() {
-  return 'AdminUpdateOrderRequest(email: $email, metadata: $metadata)';
+  return 'AdminUpdateOrderRequest(email: $email, shippingAddress: $shippingAddress, billingAddress: $billingAddress, metadata: $metadata)';
 }
 
 
@@ -266,11 +281,11 @@ abstract mixin class _$AdminUpdateOrderRequestCopyWith<$Res> implements $AdminUp
   factory _$AdminUpdateOrderRequestCopyWith(_AdminUpdateOrderRequest value, $Res Function(_AdminUpdateOrderRequest) _then) = __$AdminUpdateOrderRequestCopyWithImpl;
 @override @useResult
 $Res call({
- String? email, Map<String, dynamic>? metadata
+ String? email, Address shippingAddress, Address billingAddress, Map<String, dynamic>? metadata
 });
 
 
-
+@override $AddressCopyWith<$Res> get shippingAddress;@override $AddressCopyWith<$Res> get billingAddress;
 
 }
 /// @nodoc
@@ -283,15 +298,35 @@ class __$AdminUpdateOrderRequestCopyWithImpl<$Res>
 
 /// Create a copy of AdminUpdateOrderRequest
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? email = freezed,Object? metadata = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? email = freezed,Object? shippingAddress = null,Object? billingAddress = null,Object? metadata = freezed,}) {
   return _then(_AdminUpdateOrderRequest(
 email: freezed == email ? _self.email : email // ignore: cast_nullable_to_non_nullable
-as String?,metadata: freezed == metadata ? _self._metadata : metadata // ignore: cast_nullable_to_non_nullable
+as String?,shippingAddress: null == shippingAddress ? _self.shippingAddress : shippingAddress // ignore: cast_nullable_to_non_nullable
+as Address,billingAddress: null == billingAddress ? _self.billingAddress : billingAddress // ignore: cast_nullable_to_non_nullable
+as Address,metadata: freezed == metadata ? _self._metadata : metadata // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,
   ));
 }
 
-
+/// Create a copy of AdminUpdateOrderRequest
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AddressCopyWith<$Res> get shippingAddress {
+  
+  return $AddressCopyWith<$Res>(_self.shippingAddress, (value) {
+    return _then(_self.copyWith(shippingAddress: value));
+  });
+}/// Create a copy of AdminUpdateOrderRequest
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$AddressCopyWith<$Res> get billingAddress {
+  
+  return $AddressCopyWith<$Res>(_self.billingAddress, (value) {
+    return _then(_self.copyWith(billingAddress: value));
+  });
+}
 }
 
 // dart format on

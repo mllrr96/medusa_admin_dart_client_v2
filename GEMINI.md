@@ -106,6 +106,8 @@ Each of the following features has been migrated to the new v2 structure, includ
 - `users`
 - `orders`
 - `api_keys`
+- `campaigns`
+- `currencies`
 
 ## Development Process
 

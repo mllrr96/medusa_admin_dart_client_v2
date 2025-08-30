@@ -15,13 +15,11 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$AdminOrderChange {
 
- String get id; int get version; String? get changeType; String get orderId; String get returnId; String get exchangeId; String get claimId;// TODO: Add order, return_order, exchange, claim, actions
-// required AdminOrder order,
-// required AdminReturn returnOrder,
-// required AdminExchange exchange,
-// required AdminClaim claim,
-// required List<AdminOrderChangeAction> actions,
- String get status; String get requestedBy; DateTime get requestedAt; String get confirmedBy; DateTime get confirmedAt; String get declinedBy; String get declinedReason; Map<String, dynamic> get metadata; DateTime get declinedAt; String get canceledBy; DateTime get canceledAt; DateTime get createdAt; DateTime get updatedAt;
+ String get id; int get version; String? get changeType; String get orderId; String get returnId; String get exchangeId; String get claimId; Return get returnOrder;// TODO: Add order, return_order, exchange, claim, actions
+// required Exchange exchange,
+// required Claim claim,
+// required List<OrderChangeAction> actions,
+ Order get order; String get status; String get requestedBy; DateTime get requestedAt; String get confirmedBy; DateTime get confirmedAt; String get declinedBy; String get declinedReason; Map<String, dynamic> get metadata; DateTime get declinedAt; String get canceledBy; DateTime get canceledAt; DateTime get createdAt; DateTime get updatedAt;
 /// Create a copy of AdminOrderChange
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -34,16 +32,16 @@ $AdminOrderChangeCopyWith<AdminOrderChange> get copyWith => _$AdminOrderChangeCo
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AdminOrderChange&&(identical(other.id, id) || other.id == id)&&(identical(other.version, version) || other.version == version)&&(identical(other.changeType, changeType) || other.changeType == changeType)&&(identical(other.orderId, orderId) || other.orderId == orderId)&&(identical(other.returnId, returnId) || other.returnId == returnId)&&(identical(other.exchangeId, exchangeId) || other.exchangeId == exchangeId)&&(identical(other.claimId, claimId) || other.claimId == claimId)&&(identical(other.status, status) || other.status == status)&&(identical(other.requestedBy, requestedBy) || other.requestedBy == requestedBy)&&(identical(other.requestedAt, requestedAt) || other.requestedAt == requestedAt)&&(identical(other.confirmedBy, confirmedBy) || other.confirmedBy == confirmedBy)&&(identical(other.confirmedAt, confirmedAt) || other.confirmedAt == confirmedAt)&&(identical(other.declinedBy, declinedBy) || other.declinedBy == declinedBy)&&(identical(other.declinedReason, declinedReason) || other.declinedReason == declinedReason)&&const DeepCollectionEquality().equals(other.metadata, metadata)&&(identical(other.declinedAt, declinedAt) || other.declinedAt == declinedAt)&&(identical(other.canceledBy, canceledBy) || other.canceledBy == canceledBy)&&(identical(other.canceledAt, canceledAt) || other.canceledAt == canceledAt)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is AdminOrderChange&&(identical(other.id, id) || other.id == id)&&(identical(other.version, version) || other.version == version)&&(identical(other.changeType, changeType) || other.changeType == changeType)&&(identical(other.orderId, orderId) || other.orderId == orderId)&&(identical(other.returnId, returnId) || other.returnId == returnId)&&(identical(other.exchangeId, exchangeId) || other.exchangeId == exchangeId)&&(identical(other.claimId, claimId) || other.claimId == claimId)&&(identical(other.returnOrder, returnOrder) || other.returnOrder == returnOrder)&&(identical(other.order, order) || other.order == order)&&(identical(other.status, status) || other.status == status)&&(identical(other.requestedBy, requestedBy) || other.requestedBy == requestedBy)&&(identical(other.requestedAt, requestedAt) || other.requestedAt == requestedAt)&&(identical(other.confirmedBy, confirmedBy) || other.confirmedBy == confirmedBy)&&(identical(other.confirmedAt, confirmedAt) || other.confirmedAt == confirmedAt)&&(identical(other.declinedBy, declinedBy) || other.declinedBy == declinedBy)&&(identical(other.declinedReason, declinedReason) || other.declinedReason == declinedReason)&&const DeepCollectionEquality().equals(other.metadata, metadata)&&(identical(other.declinedAt, declinedAt) || other.declinedAt == declinedAt)&&(identical(other.canceledBy, canceledBy) || other.canceledBy == canceledBy)&&(identical(other.canceledAt, canceledAt) || other.canceledAt == canceledAt)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,version,changeType,orderId,returnId,exchangeId,claimId,status,requestedBy,requestedAt,confirmedBy,confirmedAt,declinedBy,declinedReason,const DeepCollectionEquality().hash(metadata),declinedAt,canceledBy,canceledAt,createdAt,updatedAt]);
+int get hashCode => Object.hashAll([runtimeType,id,version,changeType,orderId,returnId,exchangeId,claimId,returnOrder,order,status,requestedBy,requestedAt,confirmedBy,confirmedAt,declinedBy,declinedReason,const DeepCollectionEquality().hash(metadata),declinedAt,canceledBy,canceledAt,createdAt,updatedAt]);
 
 @override
 String toString() {
-  return 'AdminOrderChange(id: $id, version: $version, changeType: $changeType, orderId: $orderId, returnId: $returnId, exchangeId: $exchangeId, claimId: $claimId, status: $status, requestedBy: $requestedBy, requestedAt: $requestedAt, confirmedBy: $confirmedBy, confirmedAt: $confirmedAt, declinedBy: $declinedBy, declinedReason: $declinedReason, metadata: $metadata, declinedAt: $declinedAt, canceledBy: $canceledBy, canceledAt: $canceledAt, createdAt: $createdAt, updatedAt: $updatedAt)';
+  return 'AdminOrderChange(id: $id, version: $version, changeType: $changeType, orderId: $orderId, returnId: $returnId, exchangeId: $exchangeId, claimId: $claimId, returnOrder: $returnOrder, order: $order, status: $status, requestedBy: $requestedBy, requestedAt: $requestedAt, confirmedBy: $confirmedBy, confirmedAt: $confirmedAt, declinedBy: $declinedBy, declinedReason: $declinedReason, metadata: $metadata, declinedAt: $declinedAt, canceledBy: $canceledBy, canceledAt: $canceledAt, createdAt: $createdAt, updatedAt: $updatedAt)';
 }
 
 
@@ -54,11 +52,11 @@ abstract mixin class $AdminOrderChangeCopyWith<$Res>  {
   factory $AdminOrderChangeCopyWith(AdminOrderChange value, $Res Function(AdminOrderChange) _then) = _$AdminOrderChangeCopyWithImpl;
 @useResult
 $Res call({
- String id, int version, String? changeType, String orderId, String returnId, String exchangeId, String claimId, String status, String requestedBy, DateTime requestedAt, String confirmedBy, DateTime confirmedAt, String declinedBy, String declinedReason, Map<String, dynamic> metadata, DateTime declinedAt, String canceledBy, DateTime canceledAt, DateTime createdAt, DateTime updatedAt
+ String id, int version, String? changeType, String orderId, String returnId, String exchangeId, String claimId, Return returnOrder, Order order, String status, String requestedBy, DateTime requestedAt, String confirmedBy, DateTime confirmedAt, String declinedBy, String declinedReason, Map<String, dynamic> metadata, DateTime declinedAt, String canceledBy, DateTime canceledAt, DateTime createdAt, DateTime updatedAt
 });
 
 
-
+$ReturnCopyWith<$Res> get returnOrder;$OrderCopyWith<$Res> get order;
 
 }
 /// @nodoc
@@ -71,7 +69,7 @@ class _$AdminOrderChangeCopyWithImpl<$Res>
 
 /// Create a copy of AdminOrderChange
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? version = null,Object? changeType = freezed,Object? orderId = null,Object? returnId = null,Object? exchangeId = null,Object? claimId = null,Object? status = null,Object? requestedBy = null,Object? requestedAt = null,Object? confirmedBy = null,Object? confirmedAt = null,Object? declinedBy = null,Object? declinedReason = null,Object? metadata = null,Object? declinedAt = null,Object? canceledBy = null,Object? canceledAt = null,Object? createdAt = null,Object? updatedAt = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? version = null,Object? changeType = freezed,Object? orderId = null,Object? returnId = null,Object? exchangeId = null,Object? claimId = null,Object? returnOrder = null,Object? order = null,Object? status = null,Object? requestedBy = null,Object? requestedAt = null,Object? confirmedBy = null,Object? confirmedAt = null,Object? declinedBy = null,Object? declinedReason = null,Object? metadata = null,Object? declinedAt = null,Object? canceledBy = null,Object? canceledAt = null,Object? createdAt = null,Object? updatedAt = null,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,version: null == version ? _self.version : version // ignore: cast_nullable_to_non_nullable
@@ -80,7 +78,9 @@ as String?,orderId: null == orderId ? _self.orderId : orderId // ignore: cast_nu
 as String,returnId: null == returnId ? _self.returnId : returnId // ignore: cast_nullable_to_non_nullable
 as String,exchangeId: null == exchangeId ? _self.exchangeId : exchangeId // ignore: cast_nullable_to_non_nullable
 as String,claimId: null == claimId ? _self.claimId : claimId // ignore: cast_nullable_to_non_nullable
-as String,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
+as String,returnOrder: null == returnOrder ? _self.returnOrder : returnOrder // ignore: cast_nullable_to_non_nullable
+as Return,order: null == order ? _self.order : order // ignore: cast_nullable_to_non_nullable
+as Order,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as String,requestedBy: null == requestedBy ? _self.requestedBy : requestedBy // ignore: cast_nullable_to_non_nullable
 as String,requestedAt: null == requestedAt ? _self.requestedAt : requestedAt // ignore: cast_nullable_to_non_nullable
 as DateTime,confirmedBy: null == confirmedBy ? _self.confirmedBy : confirmedBy // ignore: cast_nullable_to_non_nullable
@@ -96,7 +96,25 @@ as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore
 as DateTime,
   ));
 }
-
+/// Create a copy of AdminOrderChange
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$ReturnCopyWith<$Res> get returnOrder {
+  
+  return $ReturnCopyWith<$Res>(_self.returnOrder, (value) {
+    return _then(_self.copyWith(returnOrder: value));
+  });
+}/// Create a copy of AdminOrderChange
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$OrderCopyWith<$Res> get order {
+  
+  return $OrderCopyWith<$Res>(_self.order, (value) {
+    return _then(_self.copyWith(order: value));
+  });
+}
 }
 
 
@@ -178,10 +196,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  int version,  String? changeType,  String orderId,  String returnId,  String exchangeId,  String claimId,  String status,  String requestedBy,  DateTime requestedAt,  String confirmedBy,  DateTime confirmedAt,  String declinedBy,  String declinedReason,  Map<String, dynamic> metadata,  DateTime declinedAt,  String canceledBy,  DateTime canceledAt,  DateTime createdAt,  DateTime updatedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  int version,  String? changeType,  String orderId,  String returnId,  String exchangeId,  String claimId,  Return returnOrder,  Order order,  String status,  String requestedBy,  DateTime requestedAt,  String confirmedBy,  DateTime confirmedAt,  String declinedBy,  String declinedReason,  Map<String, dynamic> metadata,  DateTime declinedAt,  String canceledBy,  DateTime canceledAt,  DateTime createdAt,  DateTime updatedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _AdminOrderChange() when $default != null:
-return $default(_that.id,_that.version,_that.changeType,_that.orderId,_that.returnId,_that.exchangeId,_that.claimId,_that.status,_that.requestedBy,_that.requestedAt,_that.confirmedBy,_that.confirmedAt,_that.declinedBy,_that.declinedReason,_that.metadata,_that.declinedAt,_that.canceledBy,_that.canceledAt,_that.createdAt,_that.updatedAt);case _:
+return $default(_that.id,_that.version,_that.changeType,_that.orderId,_that.returnId,_that.exchangeId,_that.claimId,_that.returnOrder,_that.order,_that.status,_that.requestedBy,_that.requestedAt,_that.confirmedBy,_that.confirmedAt,_that.declinedBy,_that.declinedReason,_that.metadata,_that.declinedAt,_that.canceledBy,_that.canceledAt,_that.createdAt,_that.updatedAt);case _:
   return orElse();
 
 }
@@ -199,10 +217,10 @@ return $default(_that.id,_that.version,_that.changeType,_that.orderId,_that.retu
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  int version,  String? changeType,  String orderId,  String returnId,  String exchangeId,  String claimId,  String status,  String requestedBy,  DateTime requestedAt,  String confirmedBy,  DateTime confirmedAt,  String declinedBy,  String declinedReason,  Map<String, dynamic> metadata,  DateTime declinedAt,  String canceledBy,  DateTime canceledAt,  DateTime createdAt,  DateTime updatedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  int version,  String? changeType,  String orderId,  String returnId,  String exchangeId,  String claimId,  Return returnOrder,  Order order,  String status,  String requestedBy,  DateTime requestedAt,  String confirmedBy,  DateTime confirmedAt,  String declinedBy,  String declinedReason,  Map<String, dynamic> metadata,  DateTime declinedAt,  String canceledBy,  DateTime canceledAt,  DateTime createdAt,  DateTime updatedAt)  $default,) {final _that = this;
 switch (_that) {
 case _AdminOrderChange():
-return $default(_that.id,_that.version,_that.changeType,_that.orderId,_that.returnId,_that.exchangeId,_that.claimId,_that.status,_that.requestedBy,_that.requestedAt,_that.confirmedBy,_that.confirmedAt,_that.declinedBy,_that.declinedReason,_that.metadata,_that.declinedAt,_that.canceledBy,_that.canceledAt,_that.createdAt,_that.updatedAt);case _:
+return $default(_that.id,_that.version,_that.changeType,_that.orderId,_that.returnId,_that.exchangeId,_that.claimId,_that.returnOrder,_that.order,_that.status,_that.requestedBy,_that.requestedAt,_that.confirmedBy,_that.confirmedAt,_that.declinedBy,_that.declinedReason,_that.metadata,_that.declinedAt,_that.canceledBy,_that.canceledAt,_that.createdAt,_that.updatedAt);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -219,10 +237,10 @@ return $default(_that.id,_that.version,_that.changeType,_that.orderId,_that.retu
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  int version,  String? changeType,  String orderId,  String returnId,  String exchangeId,  String claimId,  String status,  String requestedBy,  DateTime requestedAt,  String confirmedBy,  DateTime confirmedAt,  String declinedBy,  String declinedReason,  Map<String, dynamic> metadata,  DateTime declinedAt,  String canceledBy,  DateTime canceledAt,  DateTime createdAt,  DateTime updatedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  int version,  String? changeType,  String orderId,  String returnId,  String exchangeId,  String claimId,  Return returnOrder,  Order order,  String status,  String requestedBy,  DateTime requestedAt,  String confirmedBy,  DateTime confirmedAt,  String declinedBy,  String declinedReason,  Map<String, dynamic> metadata,  DateTime declinedAt,  String canceledBy,  DateTime canceledAt,  DateTime createdAt,  DateTime updatedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _AdminOrderChange() when $default != null:
-return $default(_that.id,_that.version,_that.changeType,_that.orderId,_that.returnId,_that.exchangeId,_that.claimId,_that.status,_that.requestedBy,_that.requestedAt,_that.confirmedBy,_that.confirmedAt,_that.declinedBy,_that.declinedReason,_that.metadata,_that.declinedAt,_that.canceledBy,_that.canceledAt,_that.createdAt,_that.updatedAt);case _:
+return $default(_that.id,_that.version,_that.changeType,_that.orderId,_that.returnId,_that.exchangeId,_that.claimId,_that.returnOrder,_that.order,_that.status,_that.requestedBy,_that.requestedAt,_that.confirmedBy,_that.confirmedAt,_that.declinedBy,_that.declinedReason,_that.metadata,_that.declinedAt,_that.canceledBy,_that.canceledAt,_that.createdAt,_that.updatedAt);case _:
   return null;
 
 }
@@ -234,7 +252,7 @@ return $default(_that.id,_that.version,_that.changeType,_that.orderId,_that.retu
 @JsonSerializable()
 
 class _AdminOrderChange implements AdminOrderChange {
-  const _AdminOrderChange({required this.id, required this.version, this.changeType, required this.orderId, required this.returnId, required this.exchangeId, required this.claimId, required this.status, required this.requestedBy, required this.requestedAt, required this.confirmedBy, required this.confirmedAt, required this.declinedBy, required this.declinedReason, required final  Map<String, dynamic> metadata, required this.declinedAt, required this.canceledBy, required this.canceledAt, required this.createdAt, required this.updatedAt}): _metadata = metadata;
+  const _AdminOrderChange({required this.id, required this.version, this.changeType, required this.orderId, required this.returnId, required this.exchangeId, required this.claimId, required this.returnOrder, required this.order, required this.status, required this.requestedBy, required this.requestedAt, required this.confirmedBy, required this.confirmedAt, required this.declinedBy, required this.declinedReason, required final  Map<String, dynamic> metadata, required this.declinedAt, required this.canceledBy, required this.canceledAt, required this.createdAt, required this.updatedAt}): _metadata = metadata;
   factory _AdminOrderChange.fromJson(Map<String, dynamic> json) => _$AdminOrderChangeFromJson(json);
 
 @override final  String id;
@@ -244,12 +262,12 @@ class _AdminOrderChange implements AdminOrderChange {
 @override final  String returnId;
 @override final  String exchangeId;
 @override final  String claimId;
+@override final  Return returnOrder;
 // TODO: Add order, return_order, exchange, claim, actions
-// required AdminOrder order,
-// required AdminReturn returnOrder,
-// required AdminExchange exchange,
-// required AdminClaim claim,
-// required List<AdminOrderChangeAction> actions,
+// required Exchange exchange,
+// required Claim claim,
+// required List<OrderChangeAction> actions,
+@override final  Order order;
 @override final  String status;
 @override final  String requestedBy;
 @override final  DateTime requestedAt;
@@ -283,16 +301,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AdminOrderChange&&(identical(other.id, id) || other.id == id)&&(identical(other.version, version) || other.version == version)&&(identical(other.changeType, changeType) || other.changeType == changeType)&&(identical(other.orderId, orderId) || other.orderId == orderId)&&(identical(other.returnId, returnId) || other.returnId == returnId)&&(identical(other.exchangeId, exchangeId) || other.exchangeId == exchangeId)&&(identical(other.claimId, claimId) || other.claimId == claimId)&&(identical(other.status, status) || other.status == status)&&(identical(other.requestedBy, requestedBy) || other.requestedBy == requestedBy)&&(identical(other.requestedAt, requestedAt) || other.requestedAt == requestedAt)&&(identical(other.confirmedBy, confirmedBy) || other.confirmedBy == confirmedBy)&&(identical(other.confirmedAt, confirmedAt) || other.confirmedAt == confirmedAt)&&(identical(other.declinedBy, declinedBy) || other.declinedBy == declinedBy)&&(identical(other.declinedReason, declinedReason) || other.declinedReason == declinedReason)&&const DeepCollectionEquality().equals(other._metadata, _metadata)&&(identical(other.declinedAt, declinedAt) || other.declinedAt == declinedAt)&&(identical(other.canceledBy, canceledBy) || other.canceledBy == canceledBy)&&(identical(other.canceledAt, canceledAt) || other.canceledAt == canceledAt)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AdminOrderChange&&(identical(other.id, id) || other.id == id)&&(identical(other.version, version) || other.version == version)&&(identical(other.changeType, changeType) || other.changeType == changeType)&&(identical(other.orderId, orderId) || other.orderId == orderId)&&(identical(other.returnId, returnId) || other.returnId == returnId)&&(identical(other.exchangeId, exchangeId) || other.exchangeId == exchangeId)&&(identical(other.claimId, claimId) || other.claimId == claimId)&&(identical(other.returnOrder, returnOrder) || other.returnOrder == returnOrder)&&(identical(other.order, order) || other.order == order)&&(identical(other.status, status) || other.status == status)&&(identical(other.requestedBy, requestedBy) || other.requestedBy == requestedBy)&&(identical(other.requestedAt, requestedAt) || other.requestedAt == requestedAt)&&(identical(other.confirmedBy, confirmedBy) || other.confirmedBy == confirmedBy)&&(identical(other.confirmedAt, confirmedAt) || other.confirmedAt == confirmedAt)&&(identical(other.declinedBy, declinedBy) || other.declinedBy == declinedBy)&&(identical(other.declinedReason, declinedReason) || other.declinedReason == declinedReason)&&const DeepCollectionEquality().equals(other._metadata, _metadata)&&(identical(other.declinedAt, declinedAt) || other.declinedAt == declinedAt)&&(identical(other.canceledBy, canceledBy) || other.canceledBy == canceledBy)&&(identical(other.canceledAt, canceledAt) || other.canceledAt == canceledAt)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,version,changeType,orderId,returnId,exchangeId,claimId,status,requestedBy,requestedAt,confirmedBy,confirmedAt,declinedBy,declinedReason,const DeepCollectionEquality().hash(_metadata),declinedAt,canceledBy,canceledAt,createdAt,updatedAt]);
+int get hashCode => Object.hashAll([runtimeType,id,version,changeType,orderId,returnId,exchangeId,claimId,returnOrder,order,status,requestedBy,requestedAt,confirmedBy,confirmedAt,declinedBy,declinedReason,const DeepCollectionEquality().hash(_metadata),declinedAt,canceledBy,canceledAt,createdAt,updatedAt]);
 
 @override
 String toString() {
-  return 'AdminOrderChange(id: $id, version: $version, changeType: $changeType, orderId: $orderId, returnId: $returnId, exchangeId: $exchangeId, claimId: $claimId, status: $status, requestedBy: $requestedBy, requestedAt: $requestedAt, confirmedBy: $confirmedBy, confirmedAt: $confirmedAt, declinedBy: $declinedBy, declinedReason: $declinedReason, metadata: $metadata, declinedAt: $declinedAt, canceledBy: $canceledBy, canceledAt: $canceledAt, createdAt: $createdAt, updatedAt: $updatedAt)';
+  return 'AdminOrderChange(id: $id, version: $version, changeType: $changeType, orderId: $orderId, returnId: $returnId, exchangeId: $exchangeId, claimId: $claimId, returnOrder: $returnOrder, order: $order, status: $status, requestedBy: $requestedBy, requestedAt: $requestedAt, confirmedBy: $confirmedBy, confirmedAt: $confirmedAt, declinedBy: $declinedBy, declinedReason: $declinedReason, metadata: $metadata, declinedAt: $declinedAt, canceledBy: $canceledBy, canceledAt: $canceledAt, createdAt: $createdAt, updatedAt: $updatedAt)';
 }
 
 
@@ -303,11 +321,11 @@ abstract mixin class _$AdminOrderChangeCopyWith<$Res> implements $AdminOrderChan
   factory _$AdminOrderChangeCopyWith(_AdminOrderChange value, $Res Function(_AdminOrderChange) _then) = __$AdminOrderChangeCopyWithImpl;
 @override @useResult
 $Res call({
- String id, int version, String? changeType, String orderId, String returnId, String exchangeId, String claimId, String status, String requestedBy, DateTime requestedAt, String confirmedBy, DateTime confirmedAt, String declinedBy, String declinedReason, Map<String, dynamic> metadata, DateTime declinedAt, String canceledBy, DateTime canceledAt, DateTime createdAt, DateTime updatedAt
+ String id, int version, String? changeType, String orderId, String returnId, String exchangeId, String claimId, Return returnOrder, Order order, String status, String requestedBy, DateTime requestedAt, String confirmedBy, DateTime confirmedAt, String declinedBy, String declinedReason, Map<String, dynamic> metadata, DateTime declinedAt, String canceledBy, DateTime canceledAt, DateTime createdAt, DateTime updatedAt
 });
 
 
-
+@override $ReturnCopyWith<$Res> get returnOrder;@override $OrderCopyWith<$Res> get order;
 
 }
 /// @nodoc
@@ -320,7 +338,7 @@ class __$AdminOrderChangeCopyWithImpl<$Res>
 
 /// Create a copy of AdminOrderChange
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? version = null,Object? changeType = freezed,Object? orderId = null,Object? returnId = null,Object? exchangeId = null,Object? claimId = null,Object? status = null,Object? requestedBy = null,Object? requestedAt = null,Object? confirmedBy = null,Object? confirmedAt = null,Object? declinedBy = null,Object? declinedReason = null,Object? metadata = null,Object? declinedAt = null,Object? canceledBy = null,Object? canceledAt = null,Object? createdAt = null,Object? updatedAt = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? version = null,Object? changeType = freezed,Object? orderId = null,Object? returnId = null,Object? exchangeId = null,Object? claimId = null,Object? returnOrder = null,Object? order = null,Object? status = null,Object? requestedBy = null,Object? requestedAt = null,Object? confirmedBy = null,Object? confirmedAt = null,Object? declinedBy = null,Object? declinedReason = null,Object? metadata = null,Object? declinedAt = null,Object? canceledBy = null,Object? canceledAt = null,Object? createdAt = null,Object? updatedAt = null,}) {
   return _then(_AdminOrderChange(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,version: null == version ? _self.version : version // ignore: cast_nullable_to_non_nullable
@@ -329,7 +347,9 @@ as String?,orderId: null == orderId ? _self.orderId : orderId // ignore: cast_nu
 as String,returnId: null == returnId ? _self.returnId : returnId // ignore: cast_nullable_to_non_nullable
 as String,exchangeId: null == exchangeId ? _self.exchangeId : exchangeId // ignore: cast_nullable_to_non_nullable
 as String,claimId: null == claimId ? _self.claimId : claimId // ignore: cast_nullable_to_non_nullable
-as String,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
+as String,returnOrder: null == returnOrder ? _self.returnOrder : returnOrder // ignore: cast_nullable_to_non_nullable
+as Return,order: null == order ? _self.order : order // ignore: cast_nullable_to_non_nullable
+as Order,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as String,requestedBy: null == requestedBy ? _self.requestedBy : requestedBy // ignore: cast_nullable_to_non_nullable
 as String,requestedAt: null == requestedAt ? _self.requestedAt : requestedAt // ignore: cast_nullable_to_non_nullable
 as DateTime,confirmedBy: null == confirmedBy ? _self.confirmedBy : confirmedBy // ignore: cast_nullable_to_non_nullable
@@ -346,7 +366,25 @@ as DateTime,
   ));
 }
 
-
+/// Create a copy of AdminOrderChange
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$ReturnCopyWith<$Res> get returnOrder {
+  
+  return $ReturnCopyWith<$Res>(_self.returnOrder, (value) {
+    return _then(_self.copyWith(returnOrder: value));
+  });
+}/// Create a copy of AdminOrderChange
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$OrderCopyWith<$Res> get order {
+  
+  return $OrderCopyWith<$Res>(_self.order, (value) {
+    return _then(_self.copyWith(order: value));
+  });
+}
 }
 
 // dart format on

@@ -2,12 +2,12 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:medusa_admin_dart_client/src/core/models/address.dart';
 import 'package:medusa_admin_dart_client/src/core/models/admin_order_fulfillment.dart';
-import 'package:medusa_admin_dart_client/src/core/models/admin_order_line_item.dart';
 import 'package:medusa_admin_dart_client/src/core/models/admin_order_shipping_method.dart';
 import 'package:medusa_admin_dart_client/src/core/models/admin_payment_collection.dart';
 import 'package:medusa_admin_dart_client/src/core/models/base_order_summary.dart';
 import 'package:medusa_admin_dart_client/src/core/models/customer.dart';
 import 'package:medusa_admin_dart_client/src/core/models/order_credit_line.dart';
+import 'package:medusa_admin_dart_client/src/core/models/order_line_item.dart';
 import 'package:medusa_admin_dart_client/src/core/models/region.dart';
 import 'package:medusa_admin_dart_client/src/core/models/sales_channel.dart';
 
@@ -25,7 +25,7 @@ abstract class Order with _$Order {
     required String email,
     @JsonKey(name: 'currency_code') required String currencyCode,
     @JsonKey(name: 'display_id') int? displayId,
-    required List<AdminOrderLineItem> items,
+    required List<OrderLineItem> items,
     @JsonKey(name: 'shipping_methods')
     required List<AdminOrderShippingMethod> shippingMethods,
     @JsonKey(name: 'payment_status') required String paymentStatus,

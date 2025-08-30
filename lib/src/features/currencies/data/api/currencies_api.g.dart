@@ -18,7 +18,7 @@ class _CurrenciesApi implements CurrenciesApi {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<List<Currency>> retrieveAll({
+  Future<CurrenciesListRes> list({
     Map<String, dynamic>? queryParameters,
   }) async {
     final _extra = <String, dynamic>{};
@@ -27,7 +27,7 @@ class _CurrenciesApi implements CurrenciesApi {
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<List<Currency>>(
+    final _options = _setStreamType<CurrenciesListRes>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -37,12 +37,10 @@ class _CurrenciesApi implements CurrenciesApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<List<dynamic>>(_options);
-    late List<Currency> _value;
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late CurrenciesListRes _value;
     try {
-      _value = _result.data!
-          .map((dynamic i) => Currency.fromJson(i as Map<String, dynamic>))
-          .toList();
+      _value = CurrenciesListRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -51,12 +49,12 @@ class _CurrenciesApi implements CurrenciesApi {
   }
 
   @override
-  Future<Currency> retrieve(String code) async {
+  Future<CurrencyRes> retrieve(String code) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<Currency>(
+    final _options = _setStreamType<CurrencyRes>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -67,37 +65,9 @@ class _CurrenciesApi implements CurrenciesApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late Currency _value;
+    late CurrencyRes _value;
     try {
-      _value = Currency.fromJson(_result.data!);
-    } on Object catch (e, s) {
-      errorLogger?.logError(e, s, _options);
-      rethrow;
-    }
-    return _value;
-  }
-
-  @override
-  Future<Currency> update(String code, Map<String, dynamic> body) async {
-    final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(body);
-    final _options = _setStreamType<Currency>(
-      Options(method: 'PUT', headers: _headers, extra: _extra)
-          .compose(
-            _dio.options,
-            '/admin/currencies/${code}',
-            queryParameters: queryParameters,
-            data: _data,
-          )
-          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
-    );
-    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late Currency _value;
-    try {
-      _value = Currency.fromJson(_result.data!);
+      _value = CurrencyRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

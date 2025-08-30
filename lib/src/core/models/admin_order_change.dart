@@ -1,4 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:medusa_admin_dart_client/src/core/models/return.dart';
+import 'package:medusa_admin_dart_client/src/features/orders/data/models/order.dart';
 
 part 'admin_order_change.freezed.dart';
 part 'admin_order_change.g.dart';
@@ -13,12 +15,12 @@ abstract class AdminOrderChange with _$AdminOrderChange {
     required String returnId,
     required String exchangeId,
     required String claimId,
+    required Return returnOrder,
     // TODO: Add order, return_order, exchange, claim, actions
-    // required AdminOrder order,
-    // required AdminReturn returnOrder,
-    // required AdminExchange exchange,
-    // required AdminClaim claim,
-    // required List<AdminOrderChangeAction> actions,
+    // required Exchange exchange,
+    // required Claim claim,
+    // required List<OrderChangeAction> actions,
+    required Order order,
     required String status,
     required String requestedBy,
     required DateTime requestedAt,

@@ -16,7 +16,7 @@ _Order _$OrderFromJson(Map<String, dynamic> json) => _Order(
   currencyCode: json['currency_code'] as String,
   displayId: (json['display_id'] as num?)?.toInt(),
   items: (json['items'] as List<dynamic>)
-      .map((e) => AdminOrderLineItem.fromJson(e as Map<String, dynamic>))
+      .map((e) => OrderLineItem.fromJson(e as Map<String, dynamic>))
       .toList(),
   shippingMethods: (json['shipping_methods'] as List<dynamic>)
       .map((e) => AdminOrderShippingMethod.fromJson(e as Map<String, dynamic>))
