@@ -13,22 +13,22 @@ part of 'discounts_models.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-mixin _$AdminDiscountsListRes {
+mixin _$DiscountsListRes {
 
  List<Discount> get discounts; int get count; int get offset; int get limit;
-/// Create a copy of AdminDiscountsListRes
+/// Create a copy of DiscountsListRes
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$AdminDiscountsListResCopyWith<AdminDiscountsListRes> get copyWith => _$AdminDiscountsListResCopyWithImpl<AdminDiscountsListRes>(this as AdminDiscountsListRes, _$identity);
+$DiscountsListResCopyWith<DiscountsListRes> get copyWith => _$DiscountsListResCopyWithImpl<DiscountsListRes>(this as DiscountsListRes, _$identity);
 
-  /// Serializes this AdminDiscountsListRes to a JSON map.
+  /// Serializes this DiscountsListRes to a JSON map.
   Map<String, dynamic> toJson();
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AdminDiscountsListRes&&const DeepCollectionEquality().equals(other.discounts, discounts)&&(identical(other.count, count) || other.count == count)&&(identical(other.offset, offset) || other.offset == offset)&&(identical(other.limit, limit) || other.limit == limit));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DiscountsListRes&&const DeepCollectionEquality().equals(other.discounts, discounts)&&(identical(other.count, count) || other.count == count)&&(identical(other.offset, offset) || other.offset == offset)&&(identical(other.limit, limit) || other.limit == limit));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -37,15 +37,15 @@ int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(
 
 @override
 String toString() {
-  return 'AdminDiscountsListRes(discounts: $discounts, count: $count, offset: $offset, limit: $limit)';
+  return 'DiscountsListRes(discounts: $discounts, count: $count, offset: $offset, limit: $limit)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $AdminDiscountsListResCopyWith<$Res>  {
-  factory $AdminDiscountsListResCopyWith(AdminDiscountsListRes value, $Res Function(AdminDiscountsListRes) _then) = _$AdminDiscountsListResCopyWithImpl;
+abstract mixin class $DiscountsListResCopyWith<$Res>  {
+  factory $DiscountsListResCopyWith(DiscountsListRes value, $Res Function(DiscountsListRes) _then) = _$DiscountsListResCopyWithImpl;
 @useResult
 $Res call({
  List<Discount> discounts, int count, int offset, int limit
@@ -56,14 +56,14 @@ $Res call({
 
 }
 /// @nodoc
-class _$AdminDiscountsListResCopyWithImpl<$Res>
-    implements $AdminDiscountsListResCopyWith<$Res> {
-  _$AdminDiscountsListResCopyWithImpl(this._self, this._then);
+class _$DiscountsListResCopyWithImpl<$Res>
+    implements $DiscountsListResCopyWith<$Res> {
+  _$DiscountsListResCopyWithImpl(this._self, this._then);
 
-  final AdminDiscountsListRes _self;
-  final $Res Function(AdminDiscountsListRes) _then;
+  final DiscountsListRes _self;
+  final $Res Function(DiscountsListRes) _then;
 
-/// Create a copy of AdminDiscountsListRes
+/// Create a copy of DiscountsListRes
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? discounts = null,Object? count = null,Object? offset = null,Object? limit = null,}) {
   return _then(_self.copyWith(
@@ -78,8 +78,8 @@ as int,
 }
 
 
-/// Adds pattern-matching-related methods to [AdminDiscountsListRes].
-extension AdminDiscountsListResPatterns on AdminDiscountsListRes {
+/// Adds pattern-matching-related methods to [DiscountsListRes].
+extension DiscountsListResPatterns on DiscountsListRes {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -92,10 +92,10 @@ extension AdminDiscountsListResPatterns on AdminDiscountsListRes {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AdminDiscountsListRes value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _DiscountsListRes value)?  $default,{required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _AdminDiscountsListRes() when $default != null:
+case _DiscountsListRes() when $default != null:
 return $default(_that);case _:
   return orElse();
 
@@ -114,10 +114,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AdminDiscountsListRes value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _DiscountsListRes value)  $default,){
 final _that = this;
 switch (_that) {
-case _AdminDiscountsListRes():
+case _DiscountsListRes():
 return $default(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -135,10 +135,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AdminDiscountsListRes value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _DiscountsListRes value)?  $default,){
 final _that = this;
 switch (_that) {
-case _AdminDiscountsListRes() when $default != null:
+case _DiscountsListRes() when $default != null:
 return $default(_that);case _:
   return null;
 
@@ -158,7 +158,7 @@ return $default(_that);case _:
 
 @optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<Discount> discounts,  int count,  int offset,  int limit)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _AdminDiscountsListRes() when $default != null:
+case _DiscountsListRes() when $default != null:
 return $default(_that.discounts,_that.count,_that.offset,_that.limit);case _:
   return orElse();
 
@@ -179,7 +179,7 @@ return $default(_that.discounts,_that.count,_that.offset,_that.limit);case _:
 
 @optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<Discount> discounts,  int count,  int offset,  int limit)  $default,) {final _that = this;
 switch (_that) {
-case _AdminDiscountsListRes():
+case _DiscountsListRes():
 return $default(_that.discounts,_that.count,_that.offset,_that.limit);case _:
   throw StateError('Unexpected subclass');
 
@@ -199,7 +199,7 @@ return $default(_that.discounts,_that.count,_that.offset,_that.limit);case _:
 
 @optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<Discount> discounts,  int count,  int offset,  int limit)?  $default,) {final _that = this;
 switch (_that) {
-case _AdminDiscountsListRes() when $default != null:
+case _DiscountsListRes() when $default != null:
 return $default(_that.discounts,_that.count,_that.offset,_that.limit);case _:
   return null;
 
@@ -211,9 +211,9 @@ return $default(_that.discounts,_that.count,_that.offset,_that.limit);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _AdminDiscountsListRes implements AdminDiscountsListRes {
-  const _AdminDiscountsListRes({required final  List<Discount> discounts, required this.count, required this.offset, required this.limit}): _discounts = discounts;
-  factory _AdminDiscountsListRes.fromJson(Map<String, dynamic> json) => _$AdminDiscountsListResFromJson(json);
+class _DiscountsListRes implements DiscountsListRes {
+  const _DiscountsListRes({required final  List<Discount> discounts, required this.count, required this.offset, required this.limit}): _discounts = discounts;
+  factory _DiscountsListRes.fromJson(Map<String, dynamic> json) => _$DiscountsListResFromJson(json);
 
  final  List<Discount> _discounts;
 @override List<Discount> get discounts {
@@ -226,20 +226,20 @@ class _AdminDiscountsListRes implements AdminDiscountsListRes {
 @override final  int offset;
 @override final  int limit;
 
-/// Create a copy of AdminDiscountsListRes
+/// Create a copy of DiscountsListRes
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$AdminDiscountsListResCopyWith<_AdminDiscountsListRes> get copyWith => __$AdminDiscountsListResCopyWithImpl<_AdminDiscountsListRes>(this, _$identity);
+_$DiscountsListResCopyWith<_DiscountsListRes> get copyWith => __$DiscountsListResCopyWithImpl<_DiscountsListRes>(this, _$identity);
 
 @override
 Map<String, dynamic> toJson() {
-  return _$AdminDiscountsListResToJson(this, );
+  return _$DiscountsListResToJson(this, );
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AdminDiscountsListRes&&const DeepCollectionEquality().equals(other._discounts, _discounts)&&(identical(other.count, count) || other.count == count)&&(identical(other.offset, offset) || other.offset == offset)&&(identical(other.limit, limit) || other.limit == limit));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _DiscountsListRes&&const DeepCollectionEquality().equals(other._discounts, _discounts)&&(identical(other.count, count) || other.count == count)&&(identical(other.offset, offset) || other.offset == offset)&&(identical(other.limit, limit) || other.limit == limit));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -248,15 +248,15 @@ int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(
 
 @override
 String toString() {
-  return 'AdminDiscountsListRes(discounts: $discounts, count: $count, offset: $offset, limit: $limit)';
+  return 'DiscountsListRes(discounts: $discounts, count: $count, offset: $offset, limit: $limit)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$AdminDiscountsListResCopyWith<$Res> implements $AdminDiscountsListResCopyWith<$Res> {
-  factory _$AdminDiscountsListResCopyWith(_AdminDiscountsListRes value, $Res Function(_AdminDiscountsListRes) _then) = __$AdminDiscountsListResCopyWithImpl;
+abstract mixin class _$DiscountsListResCopyWith<$Res> implements $DiscountsListResCopyWith<$Res> {
+  factory _$DiscountsListResCopyWith(_DiscountsListRes value, $Res Function(_DiscountsListRes) _then) = __$DiscountsListResCopyWithImpl;
 @override @useResult
 $Res call({
  List<Discount> discounts, int count, int offset, int limit
@@ -267,17 +267,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$AdminDiscountsListResCopyWithImpl<$Res>
-    implements _$AdminDiscountsListResCopyWith<$Res> {
-  __$AdminDiscountsListResCopyWithImpl(this._self, this._then);
+class __$DiscountsListResCopyWithImpl<$Res>
+    implements _$DiscountsListResCopyWith<$Res> {
+  __$DiscountsListResCopyWithImpl(this._self, this._then);
 
-  final _AdminDiscountsListRes _self;
-  final $Res Function(_AdminDiscountsListRes) _then;
+  final _DiscountsListRes _self;
+  final $Res Function(_DiscountsListRes) _then;
 
-/// Create a copy of AdminDiscountsListRes
+/// Create a copy of DiscountsListRes
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? discounts = null,Object? count = null,Object? offset = null,Object? limit = null,}) {
-  return _then(_AdminDiscountsListRes(
+  return _then(_DiscountsListRes(
 discounts: null == discounts ? _self._discounts : discounts // ignore: cast_nullable_to_non_nullable
 as List<Discount>,count: null == count ? _self.count : count // ignore: cast_nullable_to_non_nullable
 as int,offset: null == offset ? _self.offset : offset // ignore: cast_nullable_to_non_nullable
@@ -291,22 +291,22 @@ as int,
 
 
 /// @nodoc
-mixin _$AdminDiscountsRes {
+mixin _$DiscountsRes {
 
  Discount get discount;
-/// Create a copy of AdminDiscountsRes
+/// Create a copy of DiscountsRes
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$AdminDiscountsResCopyWith<AdminDiscountsRes> get copyWith => _$AdminDiscountsResCopyWithImpl<AdminDiscountsRes>(this as AdminDiscountsRes, _$identity);
+$DiscountsResCopyWith<DiscountsRes> get copyWith => _$DiscountsResCopyWithImpl<DiscountsRes>(this as DiscountsRes, _$identity);
 
-  /// Serializes this AdminDiscountsRes to a JSON map.
+  /// Serializes this DiscountsRes to a JSON map.
   Map<String, dynamic> toJson();
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AdminDiscountsRes&&(identical(other.discount, discount) || other.discount == discount));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DiscountsRes&&(identical(other.discount, discount) || other.discount == discount));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -315,15 +315,15 @@ int get hashCode => Object.hash(runtimeType,discount);
 
 @override
 String toString() {
-  return 'AdminDiscountsRes(discount: $discount)';
+  return 'DiscountsRes(discount: $discount)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $AdminDiscountsResCopyWith<$Res>  {
-  factory $AdminDiscountsResCopyWith(AdminDiscountsRes value, $Res Function(AdminDiscountsRes) _then) = _$AdminDiscountsResCopyWithImpl;
+abstract mixin class $DiscountsResCopyWith<$Res>  {
+  factory $DiscountsResCopyWith(DiscountsRes value, $Res Function(DiscountsRes) _then) = _$DiscountsResCopyWithImpl;
 @useResult
 $Res call({
  Discount discount
@@ -334,14 +334,14 @@ $DiscountCopyWith<$Res> get discount;
 
 }
 /// @nodoc
-class _$AdminDiscountsResCopyWithImpl<$Res>
-    implements $AdminDiscountsResCopyWith<$Res> {
-  _$AdminDiscountsResCopyWithImpl(this._self, this._then);
+class _$DiscountsResCopyWithImpl<$Res>
+    implements $DiscountsResCopyWith<$Res> {
+  _$DiscountsResCopyWithImpl(this._self, this._then);
 
-  final AdminDiscountsRes _self;
-  final $Res Function(AdminDiscountsRes) _then;
+  final DiscountsRes _self;
+  final $Res Function(DiscountsRes) _then;
 
-/// Create a copy of AdminDiscountsRes
+/// Create a copy of DiscountsRes
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? discount = null,}) {
   return _then(_self.copyWith(
@@ -349,7 +349,7 @@ discount: null == discount ? _self.discount : discount // ignore: cast_nullable_
 as Discount,
   ));
 }
-/// Create a copy of AdminDiscountsRes
+/// Create a copy of DiscountsRes
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
@@ -362,8 +362,8 @@ $DiscountCopyWith<$Res> get discount {
 }
 
 
-/// Adds pattern-matching-related methods to [AdminDiscountsRes].
-extension AdminDiscountsResPatterns on AdminDiscountsRes {
+/// Adds pattern-matching-related methods to [DiscountsRes].
+extension DiscountsResPatterns on DiscountsRes {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -376,10 +376,10 @@ extension AdminDiscountsResPatterns on AdminDiscountsRes {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AdminDiscountsRes value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _DiscountsRes value)?  $default,{required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _AdminDiscountsRes() when $default != null:
+case _DiscountsRes() when $default != null:
 return $default(_that);case _:
   return orElse();
 
@@ -398,10 +398,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AdminDiscountsRes value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _DiscountsRes value)  $default,){
 final _that = this;
 switch (_that) {
-case _AdminDiscountsRes():
+case _DiscountsRes():
 return $default(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -419,10 +419,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AdminDiscountsRes value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _DiscountsRes value)?  $default,){
 final _that = this;
 switch (_that) {
-case _AdminDiscountsRes() when $default != null:
+case _DiscountsRes() when $default != null:
 return $default(_that);case _:
   return null;
 
@@ -442,7 +442,7 @@ return $default(_that);case _:
 
 @optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( Discount discount)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _AdminDiscountsRes() when $default != null:
+case _DiscountsRes() when $default != null:
 return $default(_that.discount);case _:
   return orElse();
 
@@ -463,7 +463,7 @@ return $default(_that.discount);case _:
 
 @optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( Discount discount)  $default,) {final _that = this;
 switch (_that) {
-case _AdminDiscountsRes():
+case _DiscountsRes():
 return $default(_that.discount);case _:
   throw StateError('Unexpected subclass');
 
@@ -483,7 +483,7 @@ return $default(_that.discount);case _:
 
 @optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( Discount discount)?  $default,) {final _that = this;
 switch (_that) {
-case _AdminDiscountsRes() when $default != null:
+case _DiscountsRes() when $default != null:
 return $default(_that.discount);case _:
   return null;
 
@@ -495,26 +495,26 @@ return $default(_that.discount);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _AdminDiscountsRes implements AdminDiscountsRes {
-  const _AdminDiscountsRes({required this.discount});
-  factory _AdminDiscountsRes.fromJson(Map<String, dynamic> json) => _$AdminDiscountsResFromJson(json);
+class _DiscountsRes implements DiscountsRes {
+  const _DiscountsRes({required this.discount});
+  factory _DiscountsRes.fromJson(Map<String, dynamic> json) => _$DiscountsResFromJson(json);
 
 @override final  Discount discount;
 
-/// Create a copy of AdminDiscountsRes
+/// Create a copy of DiscountsRes
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$AdminDiscountsResCopyWith<_AdminDiscountsRes> get copyWith => __$AdminDiscountsResCopyWithImpl<_AdminDiscountsRes>(this, _$identity);
+_$DiscountsResCopyWith<_DiscountsRes> get copyWith => __$DiscountsResCopyWithImpl<_DiscountsRes>(this, _$identity);
 
 @override
 Map<String, dynamic> toJson() {
-  return _$AdminDiscountsResToJson(this, );
+  return _$DiscountsResToJson(this, );
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AdminDiscountsRes&&(identical(other.discount, discount) || other.discount == discount));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _DiscountsRes&&(identical(other.discount, discount) || other.discount == discount));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -523,15 +523,15 @@ int get hashCode => Object.hash(runtimeType,discount);
 
 @override
 String toString() {
-  return 'AdminDiscountsRes(discount: $discount)';
+  return 'DiscountsRes(discount: $discount)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$AdminDiscountsResCopyWith<$Res> implements $AdminDiscountsResCopyWith<$Res> {
-  factory _$AdminDiscountsResCopyWith(_AdminDiscountsRes value, $Res Function(_AdminDiscountsRes) _then) = __$AdminDiscountsResCopyWithImpl;
+abstract mixin class _$DiscountsResCopyWith<$Res> implements $DiscountsResCopyWith<$Res> {
+  factory _$DiscountsResCopyWith(_DiscountsRes value, $Res Function(_DiscountsRes) _then) = __$DiscountsResCopyWithImpl;
 @override @useResult
 $Res call({
  Discount discount
@@ -542,23 +542,23 @@ $Res call({
 
 }
 /// @nodoc
-class __$AdminDiscountsResCopyWithImpl<$Res>
-    implements _$AdminDiscountsResCopyWith<$Res> {
-  __$AdminDiscountsResCopyWithImpl(this._self, this._then);
+class __$DiscountsResCopyWithImpl<$Res>
+    implements _$DiscountsResCopyWith<$Res> {
+  __$DiscountsResCopyWithImpl(this._self, this._then);
 
-  final _AdminDiscountsRes _self;
-  final $Res Function(_AdminDiscountsRes) _then;
+  final _DiscountsRes _self;
+  final $Res Function(_DiscountsRes) _then;
 
-/// Create a copy of AdminDiscountsRes
+/// Create a copy of DiscountsRes
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? discount = null,}) {
-  return _then(_AdminDiscountsRes(
+  return _then(_DiscountsRes(
 discount: null == discount ? _self.discount : discount // ignore: cast_nullable_to_non_nullable
 as Discount,
   ));
 }
 
-/// Create a copy of AdminDiscountsRes
+/// Create a copy of DiscountsRes
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
@@ -572,22 +572,22 @@ $DiscountCopyWith<$Res> get discount {
 
 
 /// @nodoc
-mixin _$AdminPostDiscountsReq {
+mixin _$PostDiscountsReq {
 
  String get code; bool get isDynamic; DiscountRule get rule; bool get isDisabled; String? get startsAt; String? get endsAt; String? get validDuration; List<String>? get regions; int? get usageLimit; Map<String, dynamic>? get metadata;
-/// Create a copy of AdminPostDiscountsReq
+/// Create a copy of PostDiscountsReq
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$AdminPostDiscountsReqCopyWith<AdminPostDiscountsReq> get copyWith => _$AdminPostDiscountsReqCopyWithImpl<AdminPostDiscountsReq>(this as AdminPostDiscountsReq, _$identity);
+$PostDiscountsReqCopyWith<PostDiscountsReq> get copyWith => _$PostDiscountsReqCopyWithImpl<PostDiscountsReq>(this as PostDiscountsReq, _$identity);
 
-  /// Serializes this AdminPostDiscountsReq to a JSON map.
+  /// Serializes this PostDiscountsReq to a JSON map.
   Map<String, dynamic> toJson();
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AdminPostDiscountsReq&&(identical(other.code, code) || other.code == code)&&(identical(other.isDynamic, isDynamic) || other.isDynamic == isDynamic)&&(identical(other.rule, rule) || other.rule == rule)&&(identical(other.isDisabled, isDisabled) || other.isDisabled == isDisabled)&&(identical(other.startsAt, startsAt) || other.startsAt == startsAt)&&(identical(other.endsAt, endsAt) || other.endsAt == endsAt)&&(identical(other.validDuration, validDuration) || other.validDuration == validDuration)&&const DeepCollectionEquality().equals(other.regions, regions)&&(identical(other.usageLimit, usageLimit) || other.usageLimit == usageLimit)&&const DeepCollectionEquality().equals(other.metadata, metadata));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PostDiscountsReq&&(identical(other.code, code) || other.code == code)&&(identical(other.isDynamic, isDynamic) || other.isDynamic == isDynamic)&&(identical(other.rule, rule) || other.rule == rule)&&(identical(other.isDisabled, isDisabled) || other.isDisabled == isDisabled)&&(identical(other.startsAt, startsAt) || other.startsAt == startsAt)&&(identical(other.endsAt, endsAt) || other.endsAt == endsAt)&&(identical(other.validDuration, validDuration) || other.validDuration == validDuration)&&const DeepCollectionEquality().equals(other.regions, regions)&&(identical(other.usageLimit, usageLimit) || other.usageLimit == usageLimit)&&const DeepCollectionEquality().equals(other.metadata, metadata));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -596,15 +596,15 @@ int get hashCode => Object.hash(runtimeType,code,isDynamic,rule,isDisabled,start
 
 @override
 String toString() {
-  return 'AdminPostDiscountsReq(code: $code, isDynamic: $isDynamic, rule: $rule, isDisabled: $isDisabled, startsAt: $startsAt, endsAt: $endsAt, validDuration: $validDuration, regions: $regions, usageLimit: $usageLimit, metadata: $metadata)';
+  return 'PostDiscountsReq(code: $code, isDynamic: $isDynamic, rule: $rule, isDisabled: $isDisabled, startsAt: $startsAt, endsAt: $endsAt, validDuration: $validDuration, regions: $regions, usageLimit: $usageLimit, metadata: $metadata)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $AdminPostDiscountsReqCopyWith<$Res>  {
-  factory $AdminPostDiscountsReqCopyWith(AdminPostDiscountsReq value, $Res Function(AdminPostDiscountsReq) _then) = _$AdminPostDiscountsReqCopyWithImpl;
+abstract mixin class $PostDiscountsReqCopyWith<$Res>  {
+  factory $PostDiscountsReqCopyWith(PostDiscountsReq value, $Res Function(PostDiscountsReq) _then) = _$PostDiscountsReqCopyWithImpl;
 @useResult
 $Res call({
  String code, bool isDynamic, DiscountRule rule, bool isDisabled, String? startsAt, String? endsAt, String? validDuration, List<String>? regions, int? usageLimit, Map<String, dynamic>? metadata
@@ -615,14 +615,14 @@ $DiscountRuleCopyWith<$Res> get rule;
 
 }
 /// @nodoc
-class _$AdminPostDiscountsReqCopyWithImpl<$Res>
-    implements $AdminPostDiscountsReqCopyWith<$Res> {
-  _$AdminPostDiscountsReqCopyWithImpl(this._self, this._then);
+class _$PostDiscountsReqCopyWithImpl<$Res>
+    implements $PostDiscountsReqCopyWith<$Res> {
+  _$PostDiscountsReqCopyWithImpl(this._self, this._then);
 
-  final AdminPostDiscountsReq _self;
-  final $Res Function(AdminPostDiscountsReq) _then;
+  final PostDiscountsReq _self;
+  final $Res Function(PostDiscountsReq) _then;
 
-/// Create a copy of AdminPostDiscountsReq
+/// Create a copy of PostDiscountsReq
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? code = null,Object? isDynamic = null,Object? rule = null,Object? isDisabled = null,Object? startsAt = freezed,Object? endsAt = freezed,Object? validDuration = freezed,Object? regions = freezed,Object? usageLimit = freezed,Object? metadata = freezed,}) {
   return _then(_self.copyWith(
@@ -639,7 +639,7 @@ as int?,metadata: freezed == metadata ? _self.metadata : metadata // ignore: cas
 as Map<String, dynamic>?,
   ));
 }
-/// Create a copy of AdminPostDiscountsReq
+/// Create a copy of PostDiscountsReq
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
@@ -652,8 +652,8 @@ $DiscountRuleCopyWith<$Res> get rule {
 }
 
 
-/// Adds pattern-matching-related methods to [AdminPostDiscountsReq].
-extension AdminPostDiscountsReqPatterns on AdminPostDiscountsReq {
+/// Adds pattern-matching-related methods to [PostDiscountsReq].
+extension PostDiscountsReqPatterns on PostDiscountsReq {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -666,10 +666,10 @@ extension AdminPostDiscountsReqPatterns on AdminPostDiscountsReq {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AdminPostDiscountsReq value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _PostDiscountsReq value)?  $default,{required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _AdminPostDiscountsReq() when $default != null:
+case _PostDiscountsReq() when $default != null:
 return $default(_that);case _:
   return orElse();
 
@@ -688,10 +688,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AdminPostDiscountsReq value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _PostDiscountsReq value)  $default,){
 final _that = this;
 switch (_that) {
-case _AdminPostDiscountsReq():
+case _PostDiscountsReq():
 return $default(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -709,10 +709,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AdminPostDiscountsReq value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _PostDiscountsReq value)?  $default,){
 final _that = this;
 switch (_that) {
-case _AdminPostDiscountsReq() when $default != null:
+case _PostDiscountsReq() when $default != null:
 return $default(_that);case _:
   return null;
 
@@ -732,7 +732,7 @@ return $default(_that);case _:
 
 @optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String code,  bool isDynamic,  DiscountRule rule,  bool isDisabled,  String? startsAt,  String? endsAt,  String? validDuration,  List<String>? regions,  int? usageLimit,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _AdminPostDiscountsReq() when $default != null:
+case _PostDiscountsReq() when $default != null:
 return $default(_that.code,_that.isDynamic,_that.rule,_that.isDisabled,_that.startsAt,_that.endsAt,_that.validDuration,_that.regions,_that.usageLimit,_that.metadata);case _:
   return orElse();
 
@@ -753,7 +753,7 @@ return $default(_that.code,_that.isDynamic,_that.rule,_that.isDisabled,_that.sta
 
 @optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String code,  bool isDynamic,  DiscountRule rule,  bool isDisabled,  String? startsAt,  String? endsAt,  String? validDuration,  List<String>? regions,  int? usageLimit,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
 switch (_that) {
-case _AdminPostDiscountsReq():
+case _PostDiscountsReq():
 return $default(_that.code,_that.isDynamic,_that.rule,_that.isDisabled,_that.startsAt,_that.endsAt,_that.validDuration,_that.regions,_that.usageLimit,_that.metadata);case _:
   throw StateError('Unexpected subclass');
 
@@ -773,7 +773,7 @@ return $default(_that.code,_that.isDynamic,_that.rule,_that.isDisabled,_that.sta
 
 @optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String code,  bool isDynamic,  DiscountRule rule,  bool isDisabled,  String? startsAt,  String? endsAt,  String? validDuration,  List<String>? regions,  int? usageLimit,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
 switch (_that) {
-case _AdminPostDiscountsReq() when $default != null:
+case _PostDiscountsReq() when $default != null:
 return $default(_that.code,_that.isDynamic,_that.rule,_that.isDisabled,_that.startsAt,_that.endsAt,_that.validDuration,_that.regions,_that.usageLimit,_that.metadata);case _:
   return null;
 
@@ -785,9 +785,9 @@ return $default(_that.code,_that.isDynamic,_that.rule,_that.isDisabled,_that.sta
 /// @nodoc
 @JsonSerializable()
 
-class _AdminPostDiscountsReq implements AdminPostDiscountsReq {
-  const _AdminPostDiscountsReq({required this.code, required this.isDynamic, required this.rule, required this.isDisabled, this.startsAt, this.endsAt, this.validDuration, final  List<String>? regions, this.usageLimit, final  Map<String, dynamic>? metadata}): _regions = regions,_metadata = metadata;
-  factory _AdminPostDiscountsReq.fromJson(Map<String, dynamic> json) => _$AdminPostDiscountsReqFromJson(json);
+class _PostDiscountsReq implements PostDiscountsReq {
+  const _PostDiscountsReq({required this.code, required this.isDynamic, required this.rule, required this.isDisabled, this.startsAt, this.endsAt, this.validDuration, final  List<String>? regions, this.usageLimit, final  Map<String, dynamic>? metadata}): _regions = regions,_metadata = metadata;
+  factory _PostDiscountsReq.fromJson(Map<String, dynamic> json) => _$PostDiscountsReqFromJson(json);
 
 @override final  String code;
 @override final  bool isDynamic;
@@ -816,20 +816,20 @@ class _AdminPostDiscountsReq implements AdminPostDiscountsReq {
 }
 
 
-/// Create a copy of AdminPostDiscountsReq
+/// Create a copy of PostDiscountsReq
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$AdminPostDiscountsReqCopyWith<_AdminPostDiscountsReq> get copyWith => __$AdminPostDiscountsReqCopyWithImpl<_AdminPostDiscountsReq>(this, _$identity);
+_$PostDiscountsReqCopyWith<_PostDiscountsReq> get copyWith => __$PostDiscountsReqCopyWithImpl<_PostDiscountsReq>(this, _$identity);
 
 @override
 Map<String, dynamic> toJson() {
-  return _$AdminPostDiscountsReqToJson(this, );
+  return _$PostDiscountsReqToJson(this, );
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AdminPostDiscountsReq&&(identical(other.code, code) || other.code == code)&&(identical(other.isDynamic, isDynamic) || other.isDynamic == isDynamic)&&(identical(other.rule, rule) || other.rule == rule)&&(identical(other.isDisabled, isDisabled) || other.isDisabled == isDisabled)&&(identical(other.startsAt, startsAt) || other.startsAt == startsAt)&&(identical(other.endsAt, endsAt) || other.endsAt == endsAt)&&(identical(other.validDuration, validDuration) || other.validDuration == validDuration)&&const DeepCollectionEquality().equals(other._regions, _regions)&&(identical(other.usageLimit, usageLimit) || other.usageLimit == usageLimit)&&const DeepCollectionEquality().equals(other._metadata, _metadata));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PostDiscountsReq&&(identical(other.code, code) || other.code == code)&&(identical(other.isDynamic, isDynamic) || other.isDynamic == isDynamic)&&(identical(other.rule, rule) || other.rule == rule)&&(identical(other.isDisabled, isDisabled) || other.isDisabled == isDisabled)&&(identical(other.startsAt, startsAt) || other.startsAt == startsAt)&&(identical(other.endsAt, endsAt) || other.endsAt == endsAt)&&(identical(other.validDuration, validDuration) || other.validDuration == validDuration)&&const DeepCollectionEquality().equals(other._regions, _regions)&&(identical(other.usageLimit, usageLimit) || other.usageLimit == usageLimit)&&const DeepCollectionEquality().equals(other._metadata, _metadata));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -838,15 +838,15 @@ int get hashCode => Object.hash(runtimeType,code,isDynamic,rule,isDisabled,start
 
 @override
 String toString() {
-  return 'AdminPostDiscountsReq(code: $code, isDynamic: $isDynamic, rule: $rule, isDisabled: $isDisabled, startsAt: $startsAt, endsAt: $endsAt, validDuration: $validDuration, regions: $regions, usageLimit: $usageLimit, metadata: $metadata)';
+  return 'PostDiscountsReq(code: $code, isDynamic: $isDynamic, rule: $rule, isDisabled: $isDisabled, startsAt: $startsAt, endsAt: $endsAt, validDuration: $validDuration, regions: $regions, usageLimit: $usageLimit, metadata: $metadata)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$AdminPostDiscountsReqCopyWith<$Res> implements $AdminPostDiscountsReqCopyWith<$Res> {
-  factory _$AdminPostDiscountsReqCopyWith(_AdminPostDiscountsReq value, $Res Function(_AdminPostDiscountsReq) _then) = __$AdminPostDiscountsReqCopyWithImpl;
+abstract mixin class _$PostDiscountsReqCopyWith<$Res> implements $PostDiscountsReqCopyWith<$Res> {
+  factory _$PostDiscountsReqCopyWith(_PostDiscountsReq value, $Res Function(_PostDiscountsReq) _then) = __$PostDiscountsReqCopyWithImpl;
 @override @useResult
 $Res call({
  String code, bool isDynamic, DiscountRule rule, bool isDisabled, String? startsAt, String? endsAt, String? validDuration, List<String>? regions, int? usageLimit, Map<String, dynamic>? metadata
@@ -857,17 +857,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$AdminPostDiscountsReqCopyWithImpl<$Res>
-    implements _$AdminPostDiscountsReqCopyWith<$Res> {
-  __$AdminPostDiscountsReqCopyWithImpl(this._self, this._then);
+class __$PostDiscountsReqCopyWithImpl<$Res>
+    implements _$PostDiscountsReqCopyWith<$Res> {
+  __$PostDiscountsReqCopyWithImpl(this._self, this._then);
 
-  final _AdminPostDiscountsReq _self;
-  final $Res Function(_AdminPostDiscountsReq) _then;
+  final _PostDiscountsReq _self;
+  final $Res Function(_PostDiscountsReq) _then;
 
-/// Create a copy of AdminPostDiscountsReq
+/// Create a copy of PostDiscountsReq
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? code = null,Object? isDynamic = null,Object? rule = null,Object? isDisabled = null,Object? startsAt = freezed,Object? endsAt = freezed,Object? validDuration = freezed,Object? regions = freezed,Object? usageLimit = freezed,Object? metadata = freezed,}) {
-  return _then(_AdminPostDiscountsReq(
+  return _then(_PostDiscountsReq(
 code: null == code ? _self.code : code // ignore: cast_nullable_to_non_nullable
 as String,isDynamic: null == isDynamic ? _self.isDynamic : isDynamic // ignore: cast_nullable_to_non_nullable
 as bool,rule: null == rule ? _self.rule : rule // ignore: cast_nullable_to_non_nullable
@@ -882,7 +882,7 @@ as Map<String, dynamic>?,
   ));
 }
 
-/// Create a copy of AdminPostDiscountsReq
+/// Create a copy of PostDiscountsReq
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
@@ -896,22 +896,22 @@ $DiscountRuleCopyWith<$Res> get rule {
 
 
 /// @nodoc
-mixin _$AdminPostDiscountsDiscountReq {
+mixin _$PostDiscountsDiscountReq {
 
  String? get code; DiscountRule? get rule; bool? get isDisabled; String? get startsAt; String? get endsAt; String? get validDuration; List<String>? get regions; int? get usageLimit; Map<String, dynamic>? get metadata;
-/// Create a copy of AdminPostDiscountsDiscountReq
+/// Create a copy of PostDiscountsDiscountReq
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$AdminPostDiscountsDiscountReqCopyWith<AdminPostDiscountsDiscountReq> get copyWith => _$AdminPostDiscountsDiscountReqCopyWithImpl<AdminPostDiscountsDiscountReq>(this as AdminPostDiscountsDiscountReq, _$identity);
+$PostDiscountsDiscountReqCopyWith<PostDiscountsDiscountReq> get copyWith => _$PostDiscountsDiscountReqCopyWithImpl<PostDiscountsDiscountReq>(this as PostDiscountsDiscountReq, _$identity);
 
-  /// Serializes this AdminPostDiscountsDiscountReq to a JSON map.
+  /// Serializes this PostDiscountsDiscountReq to a JSON map.
   Map<String, dynamic> toJson();
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AdminPostDiscountsDiscountReq&&(identical(other.code, code) || other.code == code)&&(identical(other.rule, rule) || other.rule == rule)&&(identical(other.isDisabled, isDisabled) || other.isDisabled == isDisabled)&&(identical(other.startsAt, startsAt) || other.startsAt == startsAt)&&(identical(other.endsAt, endsAt) || other.endsAt == endsAt)&&(identical(other.validDuration, validDuration) || other.validDuration == validDuration)&&const DeepCollectionEquality().equals(other.regions, regions)&&(identical(other.usageLimit, usageLimit) || other.usageLimit == usageLimit)&&const DeepCollectionEquality().equals(other.metadata, metadata));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PostDiscountsDiscountReq&&(identical(other.code, code) || other.code == code)&&(identical(other.rule, rule) || other.rule == rule)&&(identical(other.isDisabled, isDisabled) || other.isDisabled == isDisabled)&&(identical(other.startsAt, startsAt) || other.startsAt == startsAt)&&(identical(other.endsAt, endsAt) || other.endsAt == endsAt)&&(identical(other.validDuration, validDuration) || other.validDuration == validDuration)&&const DeepCollectionEquality().equals(other.regions, regions)&&(identical(other.usageLimit, usageLimit) || other.usageLimit == usageLimit)&&const DeepCollectionEquality().equals(other.metadata, metadata));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -920,15 +920,15 @@ int get hashCode => Object.hash(runtimeType,code,rule,isDisabled,startsAt,endsAt
 
 @override
 String toString() {
-  return 'AdminPostDiscountsDiscountReq(code: $code, rule: $rule, isDisabled: $isDisabled, startsAt: $startsAt, endsAt: $endsAt, validDuration: $validDuration, regions: $regions, usageLimit: $usageLimit, metadata: $metadata)';
+  return 'PostDiscountsDiscountReq(code: $code, rule: $rule, isDisabled: $isDisabled, startsAt: $startsAt, endsAt: $endsAt, validDuration: $validDuration, regions: $regions, usageLimit: $usageLimit, metadata: $metadata)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $AdminPostDiscountsDiscountReqCopyWith<$Res>  {
-  factory $AdminPostDiscountsDiscountReqCopyWith(AdminPostDiscountsDiscountReq value, $Res Function(AdminPostDiscountsDiscountReq) _then) = _$AdminPostDiscountsDiscountReqCopyWithImpl;
+abstract mixin class $PostDiscountsDiscountReqCopyWith<$Res>  {
+  factory $PostDiscountsDiscountReqCopyWith(PostDiscountsDiscountReq value, $Res Function(PostDiscountsDiscountReq) _then) = _$PostDiscountsDiscountReqCopyWithImpl;
 @useResult
 $Res call({
  String? code, DiscountRule? rule, bool? isDisabled, String? startsAt, String? endsAt, String? validDuration, List<String>? regions, int? usageLimit, Map<String, dynamic>? metadata
@@ -939,14 +939,14 @@ $DiscountRuleCopyWith<$Res>? get rule;
 
 }
 /// @nodoc
-class _$AdminPostDiscountsDiscountReqCopyWithImpl<$Res>
-    implements $AdminPostDiscountsDiscountReqCopyWith<$Res> {
-  _$AdminPostDiscountsDiscountReqCopyWithImpl(this._self, this._then);
+class _$PostDiscountsDiscountReqCopyWithImpl<$Res>
+    implements $PostDiscountsDiscountReqCopyWith<$Res> {
+  _$PostDiscountsDiscountReqCopyWithImpl(this._self, this._then);
 
-  final AdminPostDiscountsDiscountReq _self;
-  final $Res Function(AdminPostDiscountsDiscountReq) _then;
+  final PostDiscountsDiscountReq _self;
+  final $Res Function(PostDiscountsDiscountReq) _then;
 
-/// Create a copy of AdminPostDiscountsDiscountReq
+/// Create a copy of PostDiscountsDiscountReq
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? code = freezed,Object? rule = freezed,Object? isDisabled = freezed,Object? startsAt = freezed,Object? endsAt = freezed,Object? validDuration = freezed,Object? regions = freezed,Object? usageLimit = freezed,Object? metadata = freezed,}) {
   return _then(_self.copyWith(
@@ -962,7 +962,7 @@ as int?,metadata: freezed == metadata ? _self.metadata : metadata // ignore: cas
 as Map<String, dynamic>?,
   ));
 }
-/// Create a copy of AdminPostDiscountsDiscountReq
+/// Create a copy of PostDiscountsDiscountReq
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
@@ -978,8 +978,8 @@ $DiscountRuleCopyWith<$Res>? get rule {
 }
 
 
-/// Adds pattern-matching-related methods to [AdminPostDiscountsDiscountReq].
-extension AdminPostDiscountsDiscountReqPatterns on AdminPostDiscountsDiscountReq {
+/// Adds pattern-matching-related methods to [PostDiscountsDiscountReq].
+extension PostDiscountsDiscountReqPatterns on PostDiscountsDiscountReq {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -992,10 +992,10 @@ extension AdminPostDiscountsDiscountReqPatterns on AdminPostDiscountsDiscountReq
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AdminPostDiscountsDiscountReq value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _PostDiscountsDiscountReq value)?  $default,{required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _AdminPostDiscountsDiscountReq() when $default != null:
+case _PostDiscountsDiscountReq() when $default != null:
 return $default(_that);case _:
   return orElse();
 
@@ -1014,10 +1014,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AdminPostDiscountsDiscountReq value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _PostDiscountsDiscountReq value)  $default,){
 final _that = this;
 switch (_that) {
-case _AdminPostDiscountsDiscountReq():
+case _PostDiscountsDiscountReq():
 return $default(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -1035,10 +1035,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AdminPostDiscountsDiscountReq value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _PostDiscountsDiscountReq value)?  $default,){
 final _that = this;
 switch (_that) {
-case _AdminPostDiscountsDiscountReq() when $default != null:
+case _PostDiscountsDiscountReq() when $default != null:
 return $default(_that);case _:
   return null;
 
@@ -1058,7 +1058,7 @@ return $default(_that);case _:
 
 @optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? code,  DiscountRule? rule,  bool? isDisabled,  String? startsAt,  String? endsAt,  String? validDuration,  List<String>? regions,  int? usageLimit,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _AdminPostDiscountsDiscountReq() when $default != null:
+case _PostDiscountsDiscountReq() when $default != null:
 return $default(_that.code,_that.rule,_that.isDisabled,_that.startsAt,_that.endsAt,_that.validDuration,_that.regions,_that.usageLimit,_that.metadata);case _:
   return orElse();
 
@@ -1079,7 +1079,7 @@ return $default(_that.code,_that.rule,_that.isDisabled,_that.startsAt,_that.ends
 
 @optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? code,  DiscountRule? rule,  bool? isDisabled,  String? startsAt,  String? endsAt,  String? validDuration,  List<String>? regions,  int? usageLimit,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
 switch (_that) {
-case _AdminPostDiscountsDiscountReq():
+case _PostDiscountsDiscountReq():
 return $default(_that.code,_that.rule,_that.isDisabled,_that.startsAt,_that.endsAt,_that.validDuration,_that.regions,_that.usageLimit,_that.metadata);case _:
   throw StateError('Unexpected subclass');
 
@@ -1099,7 +1099,7 @@ return $default(_that.code,_that.rule,_that.isDisabled,_that.startsAt,_that.ends
 
 @optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? code,  DiscountRule? rule,  bool? isDisabled,  String? startsAt,  String? endsAt,  String? validDuration,  List<String>? regions,  int? usageLimit,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
 switch (_that) {
-case _AdminPostDiscountsDiscountReq() when $default != null:
+case _PostDiscountsDiscountReq() when $default != null:
 return $default(_that.code,_that.rule,_that.isDisabled,_that.startsAt,_that.endsAt,_that.validDuration,_that.regions,_that.usageLimit,_that.metadata);case _:
   return null;
 
@@ -1111,9 +1111,9 @@ return $default(_that.code,_that.rule,_that.isDisabled,_that.startsAt,_that.ends
 /// @nodoc
 @JsonSerializable()
 
-class _AdminPostDiscountsDiscountReq implements AdminPostDiscountsDiscountReq {
-  const _AdminPostDiscountsDiscountReq({this.code, this.rule, this.isDisabled, this.startsAt, this.endsAt, this.validDuration, final  List<String>? regions, this.usageLimit, final  Map<String, dynamic>? metadata}): _regions = regions,_metadata = metadata;
-  factory _AdminPostDiscountsDiscountReq.fromJson(Map<String, dynamic> json) => _$AdminPostDiscountsDiscountReqFromJson(json);
+class _PostDiscountsDiscountReq implements PostDiscountsDiscountReq {
+  const _PostDiscountsDiscountReq({this.code, this.rule, this.isDisabled, this.startsAt, this.endsAt, this.validDuration, final  List<String>? regions, this.usageLimit, final  Map<String, dynamic>? metadata}): _regions = regions,_metadata = metadata;
+  factory _PostDiscountsDiscountReq.fromJson(Map<String, dynamic> json) => _$PostDiscountsDiscountReqFromJson(json);
 
 @override final  String? code;
 @override final  DiscountRule? rule;
@@ -1141,20 +1141,20 @@ class _AdminPostDiscountsDiscountReq implements AdminPostDiscountsDiscountReq {
 }
 
 
-/// Create a copy of AdminPostDiscountsDiscountReq
+/// Create a copy of PostDiscountsDiscountReq
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$AdminPostDiscountsDiscountReqCopyWith<_AdminPostDiscountsDiscountReq> get copyWith => __$AdminPostDiscountsDiscountReqCopyWithImpl<_AdminPostDiscountsDiscountReq>(this, _$identity);
+_$PostDiscountsDiscountReqCopyWith<_PostDiscountsDiscountReq> get copyWith => __$PostDiscountsDiscountReqCopyWithImpl<_PostDiscountsDiscountReq>(this, _$identity);
 
 @override
 Map<String, dynamic> toJson() {
-  return _$AdminPostDiscountsDiscountReqToJson(this, );
+  return _$PostDiscountsDiscountReqToJson(this, );
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AdminPostDiscountsDiscountReq&&(identical(other.code, code) || other.code == code)&&(identical(other.rule, rule) || other.rule == rule)&&(identical(other.isDisabled, isDisabled) || other.isDisabled == isDisabled)&&(identical(other.startsAt, startsAt) || other.startsAt == startsAt)&&(identical(other.endsAt, endsAt) || other.endsAt == endsAt)&&(identical(other.validDuration, validDuration) || other.validDuration == validDuration)&&const DeepCollectionEquality().equals(other._regions, _regions)&&(identical(other.usageLimit, usageLimit) || other.usageLimit == usageLimit)&&const DeepCollectionEquality().equals(other._metadata, _metadata));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PostDiscountsDiscountReq&&(identical(other.code, code) || other.code == code)&&(identical(other.rule, rule) || other.rule == rule)&&(identical(other.isDisabled, isDisabled) || other.isDisabled == isDisabled)&&(identical(other.startsAt, startsAt) || other.startsAt == startsAt)&&(identical(other.endsAt, endsAt) || other.endsAt == endsAt)&&(identical(other.validDuration, validDuration) || other.validDuration == validDuration)&&const DeepCollectionEquality().equals(other._regions, _regions)&&(identical(other.usageLimit, usageLimit) || other.usageLimit == usageLimit)&&const DeepCollectionEquality().equals(other._metadata, _metadata));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -1163,15 +1163,15 @@ int get hashCode => Object.hash(runtimeType,code,rule,isDisabled,startsAt,endsAt
 
 @override
 String toString() {
-  return 'AdminPostDiscountsDiscountReq(code: $code, rule: $rule, isDisabled: $isDisabled, startsAt: $startsAt, endsAt: $endsAt, validDuration: $validDuration, regions: $regions, usageLimit: $usageLimit, metadata: $metadata)';
+  return 'PostDiscountsDiscountReq(code: $code, rule: $rule, isDisabled: $isDisabled, startsAt: $startsAt, endsAt: $endsAt, validDuration: $validDuration, regions: $regions, usageLimit: $usageLimit, metadata: $metadata)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$AdminPostDiscountsDiscountReqCopyWith<$Res> implements $AdminPostDiscountsDiscountReqCopyWith<$Res> {
-  factory _$AdminPostDiscountsDiscountReqCopyWith(_AdminPostDiscountsDiscountReq value, $Res Function(_AdminPostDiscountsDiscountReq) _then) = __$AdminPostDiscountsDiscountReqCopyWithImpl;
+abstract mixin class _$PostDiscountsDiscountReqCopyWith<$Res> implements $PostDiscountsDiscountReqCopyWith<$Res> {
+  factory _$PostDiscountsDiscountReqCopyWith(_PostDiscountsDiscountReq value, $Res Function(_PostDiscountsDiscountReq) _then) = __$PostDiscountsDiscountReqCopyWithImpl;
 @override @useResult
 $Res call({
  String? code, DiscountRule? rule, bool? isDisabled, String? startsAt, String? endsAt, String? validDuration, List<String>? regions, int? usageLimit, Map<String, dynamic>? metadata
@@ -1182,17 +1182,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$AdminPostDiscountsDiscountReqCopyWithImpl<$Res>
-    implements _$AdminPostDiscountsDiscountReqCopyWith<$Res> {
-  __$AdminPostDiscountsDiscountReqCopyWithImpl(this._self, this._then);
+class __$PostDiscountsDiscountReqCopyWithImpl<$Res>
+    implements _$PostDiscountsDiscountReqCopyWith<$Res> {
+  __$PostDiscountsDiscountReqCopyWithImpl(this._self, this._then);
 
-  final _AdminPostDiscountsDiscountReq _self;
-  final $Res Function(_AdminPostDiscountsDiscountReq) _then;
+  final _PostDiscountsDiscountReq _self;
+  final $Res Function(_PostDiscountsDiscountReq) _then;
 
-/// Create a copy of AdminPostDiscountsDiscountReq
+/// Create a copy of PostDiscountsDiscountReq
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? code = freezed,Object? rule = freezed,Object? isDisabled = freezed,Object? startsAt = freezed,Object? endsAt = freezed,Object? validDuration = freezed,Object? regions = freezed,Object? usageLimit = freezed,Object? metadata = freezed,}) {
-  return _then(_AdminPostDiscountsDiscountReq(
+  return _then(_PostDiscountsDiscountReq(
 code: freezed == code ? _self.code : code // ignore: cast_nullable_to_non_nullable
 as String?,rule: freezed == rule ? _self.rule : rule // ignore: cast_nullable_to_non_nullable
 as DiscountRule?,isDisabled: freezed == isDisabled ? _self.isDisabled : isDisabled // ignore: cast_nullable_to_non_nullable
@@ -1206,7 +1206,7 @@ as Map<String, dynamic>?,
   ));
 }
 
-/// Create a copy of AdminPostDiscountsDiscountReq
+/// Create a copy of PostDiscountsDiscountReq
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
@@ -1223,22 +1223,22 @@ $DiscountRuleCopyWith<$Res>? get rule {
 
 
 /// @nodoc
-mixin _$AdminDiscountsDeleteRes {
+mixin _$DiscountsDeleteRes {
 
  String get id; String get object; bool get deleted;
-/// Create a copy of AdminDiscountsDeleteRes
+/// Create a copy of DiscountsDeleteRes
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$AdminDiscountsDeleteResCopyWith<AdminDiscountsDeleteRes> get copyWith => _$AdminDiscountsDeleteResCopyWithImpl<AdminDiscountsDeleteRes>(this as AdminDiscountsDeleteRes, _$identity);
+$DiscountsDeleteResCopyWith<DiscountsDeleteRes> get copyWith => _$DiscountsDeleteResCopyWithImpl<DiscountsDeleteRes>(this as DiscountsDeleteRes, _$identity);
 
-  /// Serializes this AdminDiscountsDeleteRes to a JSON map.
+  /// Serializes this DiscountsDeleteRes to a JSON map.
   Map<String, dynamic> toJson();
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AdminDiscountsDeleteRes&&(identical(other.id, id) || other.id == id)&&(identical(other.object, object) || other.object == object)&&(identical(other.deleted, deleted) || other.deleted == deleted));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DiscountsDeleteRes&&(identical(other.id, id) || other.id == id)&&(identical(other.object, object) || other.object == object)&&(identical(other.deleted, deleted) || other.deleted == deleted));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -1247,15 +1247,15 @@ int get hashCode => Object.hash(runtimeType,id,object,deleted);
 
 @override
 String toString() {
-  return 'AdminDiscountsDeleteRes(id: $id, object: $object, deleted: $deleted)';
+  return 'DiscountsDeleteRes(id: $id, object: $object, deleted: $deleted)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $AdminDiscountsDeleteResCopyWith<$Res>  {
-  factory $AdminDiscountsDeleteResCopyWith(AdminDiscountsDeleteRes value, $Res Function(AdminDiscountsDeleteRes) _then) = _$AdminDiscountsDeleteResCopyWithImpl;
+abstract mixin class $DiscountsDeleteResCopyWith<$Res>  {
+  factory $DiscountsDeleteResCopyWith(DiscountsDeleteRes value, $Res Function(DiscountsDeleteRes) _then) = _$DiscountsDeleteResCopyWithImpl;
 @useResult
 $Res call({
  String id, String object, bool deleted
@@ -1266,14 +1266,14 @@ $Res call({
 
 }
 /// @nodoc
-class _$AdminDiscountsDeleteResCopyWithImpl<$Res>
-    implements $AdminDiscountsDeleteResCopyWith<$Res> {
-  _$AdminDiscountsDeleteResCopyWithImpl(this._self, this._then);
+class _$DiscountsDeleteResCopyWithImpl<$Res>
+    implements $DiscountsDeleteResCopyWith<$Res> {
+  _$DiscountsDeleteResCopyWithImpl(this._self, this._then);
 
-  final AdminDiscountsDeleteRes _self;
-  final $Res Function(AdminDiscountsDeleteRes) _then;
+  final DiscountsDeleteRes _self;
+  final $Res Function(DiscountsDeleteRes) _then;
 
-/// Create a copy of AdminDiscountsDeleteRes
+/// Create a copy of DiscountsDeleteRes
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? object = null,Object? deleted = null,}) {
   return _then(_self.copyWith(
@@ -1287,8 +1287,8 @@ as bool,
 }
 
 
-/// Adds pattern-matching-related methods to [AdminDiscountsDeleteRes].
-extension AdminDiscountsDeleteResPatterns on AdminDiscountsDeleteRes {
+/// Adds pattern-matching-related methods to [DiscountsDeleteRes].
+extension DiscountsDeleteResPatterns on DiscountsDeleteRes {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -1301,10 +1301,10 @@ extension AdminDiscountsDeleteResPatterns on AdminDiscountsDeleteRes {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AdminDiscountsDeleteRes value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _DiscountsDeleteRes value)?  $default,{required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _AdminDiscountsDeleteRes() when $default != null:
+case _DiscountsDeleteRes() when $default != null:
 return $default(_that);case _:
   return orElse();
 
@@ -1323,10 +1323,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AdminDiscountsDeleteRes value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _DiscountsDeleteRes value)  $default,){
 final _that = this;
 switch (_that) {
-case _AdminDiscountsDeleteRes():
+case _DiscountsDeleteRes():
 return $default(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -1344,10 +1344,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AdminDiscountsDeleteRes value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _DiscountsDeleteRes value)?  $default,){
 final _that = this;
 switch (_that) {
-case _AdminDiscountsDeleteRes() when $default != null:
+case _DiscountsDeleteRes() when $default != null:
 return $default(_that);case _:
   return null;
 
@@ -1367,7 +1367,7 @@ return $default(_that);case _:
 
 @optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String object,  bool deleted)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _AdminDiscountsDeleteRes() when $default != null:
+case _DiscountsDeleteRes() when $default != null:
 return $default(_that.id,_that.object,_that.deleted);case _:
   return orElse();
 
@@ -1388,7 +1388,7 @@ return $default(_that.id,_that.object,_that.deleted);case _:
 
 @optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String object,  bool deleted)  $default,) {final _that = this;
 switch (_that) {
-case _AdminDiscountsDeleteRes():
+case _DiscountsDeleteRes():
 return $default(_that.id,_that.object,_that.deleted);case _:
   throw StateError('Unexpected subclass');
 
@@ -1408,7 +1408,7 @@ return $default(_that.id,_that.object,_that.deleted);case _:
 
 @optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String object,  bool deleted)?  $default,) {final _that = this;
 switch (_that) {
-case _AdminDiscountsDeleteRes() when $default != null:
+case _DiscountsDeleteRes() when $default != null:
 return $default(_that.id,_that.object,_that.deleted);case _:
   return null;
 
@@ -1420,28 +1420,28 @@ return $default(_that.id,_that.object,_that.deleted);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _AdminDiscountsDeleteRes implements AdminDiscountsDeleteRes {
-  const _AdminDiscountsDeleteRes({required this.id, required this.object, required this.deleted});
-  factory _AdminDiscountsDeleteRes.fromJson(Map<String, dynamic> json) => _$AdminDiscountsDeleteResFromJson(json);
+class _DiscountsDeleteRes implements DiscountsDeleteRes {
+  const _DiscountsDeleteRes({required this.id, required this.object, required this.deleted});
+  factory _DiscountsDeleteRes.fromJson(Map<String, dynamic> json) => _$DiscountsDeleteResFromJson(json);
 
 @override final  String id;
 @override final  String object;
 @override final  bool deleted;
 
-/// Create a copy of AdminDiscountsDeleteRes
+/// Create a copy of DiscountsDeleteRes
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$AdminDiscountsDeleteResCopyWith<_AdminDiscountsDeleteRes> get copyWith => __$AdminDiscountsDeleteResCopyWithImpl<_AdminDiscountsDeleteRes>(this, _$identity);
+_$DiscountsDeleteResCopyWith<_DiscountsDeleteRes> get copyWith => __$DiscountsDeleteResCopyWithImpl<_DiscountsDeleteRes>(this, _$identity);
 
 @override
 Map<String, dynamic> toJson() {
-  return _$AdminDiscountsDeleteResToJson(this, );
+  return _$DiscountsDeleteResToJson(this, );
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AdminDiscountsDeleteRes&&(identical(other.id, id) || other.id == id)&&(identical(other.object, object) || other.object == object)&&(identical(other.deleted, deleted) || other.deleted == deleted));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _DiscountsDeleteRes&&(identical(other.id, id) || other.id == id)&&(identical(other.object, object) || other.object == object)&&(identical(other.deleted, deleted) || other.deleted == deleted));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -1450,15 +1450,15 @@ int get hashCode => Object.hash(runtimeType,id,object,deleted);
 
 @override
 String toString() {
-  return 'AdminDiscountsDeleteRes(id: $id, object: $object, deleted: $deleted)';
+  return 'DiscountsDeleteRes(id: $id, object: $object, deleted: $deleted)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$AdminDiscountsDeleteResCopyWith<$Res> implements $AdminDiscountsDeleteResCopyWith<$Res> {
-  factory _$AdminDiscountsDeleteResCopyWith(_AdminDiscountsDeleteRes value, $Res Function(_AdminDiscountsDeleteRes) _then) = __$AdminDiscountsDeleteResCopyWithImpl;
+abstract mixin class _$DiscountsDeleteResCopyWith<$Res> implements $DiscountsDeleteResCopyWith<$Res> {
+  factory _$DiscountsDeleteResCopyWith(_DiscountsDeleteRes value, $Res Function(_DiscountsDeleteRes) _then) = __$DiscountsDeleteResCopyWithImpl;
 @override @useResult
 $Res call({
  String id, String object, bool deleted
@@ -1469,17 +1469,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$AdminDiscountsDeleteResCopyWithImpl<$Res>
-    implements _$AdminDiscountsDeleteResCopyWith<$Res> {
-  __$AdminDiscountsDeleteResCopyWithImpl(this._self, this._then);
+class __$DiscountsDeleteResCopyWithImpl<$Res>
+    implements _$DiscountsDeleteResCopyWith<$Res> {
+  __$DiscountsDeleteResCopyWithImpl(this._self, this._then);
 
-  final _AdminDiscountsDeleteRes _self;
-  final $Res Function(_AdminDiscountsDeleteRes) _then;
+  final _DiscountsDeleteRes _self;
+  final $Res Function(_DiscountsDeleteRes) _then;
 
-/// Create a copy of AdminDiscountsDeleteRes
+/// Create a copy of DiscountsDeleteRes
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? object = null,Object? deleted = null,}) {
-  return _then(_AdminDiscountsDeleteRes(
+  return _then(_DiscountsDeleteRes(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,object: null == object ? _self.object : object // ignore: cast_nullable_to_non_nullable
 as String,deleted: null == deleted ? _self.deleted : deleted // ignore: cast_nullable_to_non_nullable
@@ -1492,22 +1492,22 @@ as bool,
 
 
 /// @nodoc
-mixin _$AdminPostDiscountsDiscountConditions {
+mixin _$PostDiscountsDiscountConditions {
 
  String get operator; List<String>? get products; List<String>? get productTypes; List<String>? get productCollections; List<String>? get productTags; List<String>? get customerGroups;
-/// Create a copy of AdminPostDiscountsDiscountConditions
+/// Create a copy of PostDiscountsDiscountConditions
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$AdminPostDiscountsDiscountConditionsCopyWith<AdminPostDiscountsDiscountConditions> get copyWith => _$AdminPostDiscountsDiscountConditionsCopyWithImpl<AdminPostDiscountsDiscountConditions>(this as AdminPostDiscountsDiscountConditions, _$identity);
+$PostDiscountsDiscountConditionsCopyWith<PostDiscountsDiscountConditions> get copyWith => _$PostDiscountsDiscountConditionsCopyWithImpl<PostDiscountsDiscountConditions>(this as PostDiscountsDiscountConditions, _$identity);
 
-  /// Serializes this AdminPostDiscountsDiscountConditions to a JSON map.
+  /// Serializes this PostDiscountsDiscountConditions to a JSON map.
   Map<String, dynamic> toJson();
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AdminPostDiscountsDiscountConditions&&(identical(other.operator, operator) || other.operator == operator)&&const DeepCollectionEquality().equals(other.products, products)&&const DeepCollectionEquality().equals(other.productTypes, productTypes)&&const DeepCollectionEquality().equals(other.productCollections, productCollections)&&const DeepCollectionEquality().equals(other.productTags, productTags)&&const DeepCollectionEquality().equals(other.customerGroups, customerGroups));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PostDiscountsDiscountConditions&&(identical(other.operator, operator) || other.operator == operator)&&const DeepCollectionEquality().equals(other.products, products)&&const DeepCollectionEquality().equals(other.productTypes, productTypes)&&const DeepCollectionEquality().equals(other.productCollections, productCollections)&&const DeepCollectionEquality().equals(other.productTags, productTags)&&const DeepCollectionEquality().equals(other.customerGroups, customerGroups));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -1516,15 +1516,15 @@ int get hashCode => Object.hash(runtimeType,operator,const DeepCollectionEqualit
 
 @override
 String toString() {
-  return 'AdminPostDiscountsDiscountConditions(operator: $operator, products: $products, productTypes: $productTypes, productCollections: $productCollections, productTags: $productTags, customerGroups: $customerGroups)';
+  return 'PostDiscountsDiscountConditions(operator: $operator, products: $products, productTypes: $productTypes, productCollections: $productCollections, productTags: $productTags, customerGroups: $customerGroups)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $AdminPostDiscountsDiscountConditionsCopyWith<$Res>  {
-  factory $AdminPostDiscountsDiscountConditionsCopyWith(AdminPostDiscountsDiscountConditions value, $Res Function(AdminPostDiscountsDiscountConditions) _then) = _$AdminPostDiscountsDiscountConditionsCopyWithImpl;
+abstract mixin class $PostDiscountsDiscountConditionsCopyWith<$Res>  {
+  factory $PostDiscountsDiscountConditionsCopyWith(PostDiscountsDiscountConditions value, $Res Function(PostDiscountsDiscountConditions) _then) = _$PostDiscountsDiscountConditionsCopyWithImpl;
 @useResult
 $Res call({
  String operator, List<String>? products, List<String>? productTypes, List<String>? productCollections, List<String>? productTags, List<String>? customerGroups
@@ -1535,14 +1535,14 @@ $Res call({
 
 }
 /// @nodoc
-class _$AdminPostDiscountsDiscountConditionsCopyWithImpl<$Res>
-    implements $AdminPostDiscountsDiscountConditionsCopyWith<$Res> {
-  _$AdminPostDiscountsDiscountConditionsCopyWithImpl(this._self, this._then);
+class _$PostDiscountsDiscountConditionsCopyWithImpl<$Res>
+    implements $PostDiscountsDiscountConditionsCopyWith<$Res> {
+  _$PostDiscountsDiscountConditionsCopyWithImpl(this._self, this._then);
 
-  final AdminPostDiscountsDiscountConditions _self;
-  final $Res Function(AdminPostDiscountsDiscountConditions) _then;
+  final PostDiscountsDiscountConditions _self;
+  final $Res Function(PostDiscountsDiscountConditions) _then;
 
-/// Create a copy of AdminPostDiscountsDiscountConditions
+/// Create a copy of PostDiscountsDiscountConditions
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? operator = null,Object? products = freezed,Object? productTypes = freezed,Object? productCollections = freezed,Object? productTags = freezed,Object? customerGroups = freezed,}) {
   return _then(_self.copyWith(
@@ -1559,8 +1559,8 @@ as List<String>?,
 }
 
 
-/// Adds pattern-matching-related methods to [AdminPostDiscountsDiscountConditions].
-extension AdminPostDiscountsDiscountConditionsPatterns on AdminPostDiscountsDiscountConditions {
+/// Adds pattern-matching-related methods to [PostDiscountsDiscountConditions].
+extension PostDiscountsDiscountConditionsPatterns on PostDiscountsDiscountConditions {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -1573,10 +1573,10 @@ extension AdminPostDiscountsDiscountConditionsPatterns on AdminPostDiscountsDisc
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AdminPostDiscountsDiscountConditions value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _PostDiscountsDiscountConditions value)?  $default,{required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _AdminPostDiscountsDiscountConditions() when $default != null:
+case _PostDiscountsDiscountConditions() when $default != null:
 return $default(_that);case _:
   return orElse();
 
@@ -1595,10 +1595,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AdminPostDiscountsDiscountConditions value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _PostDiscountsDiscountConditions value)  $default,){
 final _that = this;
 switch (_that) {
-case _AdminPostDiscountsDiscountConditions():
+case _PostDiscountsDiscountConditions():
 return $default(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -1616,10 +1616,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AdminPostDiscountsDiscountConditions value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _PostDiscountsDiscountConditions value)?  $default,){
 final _that = this;
 switch (_that) {
-case _AdminPostDiscountsDiscountConditions() when $default != null:
+case _PostDiscountsDiscountConditions() when $default != null:
 return $default(_that);case _:
   return null;
 
@@ -1639,7 +1639,7 @@ return $default(_that);case _:
 
 @optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String operator,  List<String>? products,  List<String>? productTypes,  List<String>? productCollections,  List<String>? productTags,  List<String>? customerGroups)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _AdminPostDiscountsDiscountConditions() when $default != null:
+case _PostDiscountsDiscountConditions() when $default != null:
 return $default(_that.operator,_that.products,_that.productTypes,_that.productCollections,_that.productTags,_that.customerGroups);case _:
   return orElse();
 
@@ -1660,7 +1660,7 @@ return $default(_that.operator,_that.products,_that.productTypes,_that.productCo
 
 @optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String operator,  List<String>? products,  List<String>? productTypes,  List<String>? productCollections,  List<String>? productTags,  List<String>? customerGroups)  $default,) {final _that = this;
 switch (_that) {
-case _AdminPostDiscountsDiscountConditions():
+case _PostDiscountsDiscountConditions():
 return $default(_that.operator,_that.products,_that.productTypes,_that.productCollections,_that.productTags,_that.customerGroups);case _:
   throw StateError('Unexpected subclass');
 
@@ -1680,7 +1680,7 @@ return $default(_that.operator,_that.products,_that.productTypes,_that.productCo
 
 @optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String operator,  List<String>? products,  List<String>? productTypes,  List<String>? productCollections,  List<String>? productTags,  List<String>? customerGroups)?  $default,) {final _that = this;
 switch (_that) {
-case _AdminPostDiscountsDiscountConditions() when $default != null:
+case _PostDiscountsDiscountConditions() when $default != null:
 return $default(_that.operator,_that.products,_that.productTypes,_that.productCollections,_that.productTags,_that.customerGroups);case _:
   return null;
 
@@ -1692,9 +1692,9 @@ return $default(_that.operator,_that.products,_that.productTypes,_that.productCo
 /// @nodoc
 @JsonSerializable()
 
-class _AdminPostDiscountsDiscountConditions implements AdminPostDiscountsDiscountConditions {
-  const _AdminPostDiscountsDiscountConditions({required this.operator, final  List<String>? products, final  List<String>? productTypes, final  List<String>? productCollections, final  List<String>? productTags, final  List<String>? customerGroups}): _products = products,_productTypes = productTypes,_productCollections = productCollections,_productTags = productTags,_customerGroups = customerGroups;
-  factory _AdminPostDiscountsDiscountConditions.fromJson(Map<String, dynamic> json) => _$AdminPostDiscountsDiscountConditionsFromJson(json);
+class _PostDiscountsDiscountConditions implements PostDiscountsDiscountConditions {
+  const _PostDiscountsDiscountConditions({required this.operator, final  List<String>? products, final  List<String>? productTypes, final  List<String>? productCollections, final  List<String>? productTags, final  List<String>? customerGroups}): _products = products,_productTypes = productTypes,_productCollections = productCollections,_productTags = productTags,_customerGroups = customerGroups;
+  factory _PostDiscountsDiscountConditions.fromJson(Map<String, dynamic> json) => _$PostDiscountsDiscountConditionsFromJson(json);
 
 @override final  String operator;
  final  List<String>? _products;
@@ -1743,20 +1743,20 @@ class _AdminPostDiscountsDiscountConditions implements AdminPostDiscountsDiscoun
 }
 
 
-/// Create a copy of AdminPostDiscountsDiscountConditions
+/// Create a copy of PostDiscountsDiscountConditions
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$AdminPostDiscountsDiscountConditionsCopyWith<_AdminPostDiscountsDiscountConditions> get copyWith => __$AdminPostDiscountsDiscountConditionsCopyWithImpl<_AdminPostDiscountsDiscountConditions>(this, _$identity);
+_$PostDiscountsDiscountConditionsCopyWith<_PostDiscountsDiscountConditions> get copyWith => __$PostDiscountsDiscountConditionsCopyWithImpl<_PostDiscountsDiscountConditions>(this, _$identity);
 
 @override
 Map<String, dynamic> toJson() {
-  return _$AdminPostDiscountsDiscountConditionsToJson(this, );
+  return _$PostDiscountsDiscountConditionsToJson(this, );
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AdminPostDiscountsDiscountConditions&&(identical(other.operator, operator) || other.operator == operator)&&const DeepCollectionEquality().equals(other._products, _products)&&const DeepCollectionEquality().equals(other._productTypes, _productTypes)&&const DeepCollectionEquality().equals(other._productCollections, _productCollections)&&const DeepCollectionEquality().equals(other._productTags, _productTags)&&const DeepCollectionEquality().equals(other._customerGroups, _customerGroups));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PostDiscountsDiscountConditions&&(identical(other.operator, operator) || other.operator == operator)&&const DeepCollectionEquality().equals(other._products, _products)&&const DeepCollectionEquality().equals(other._productTypes, _productTypes)&&const DeepCollectionEquality().equals(other._productCollections, _productCollections)&&const DeepCollectionEquality().equals(other._productTags, _productTags)&&const DeepCollectionEquality().equals(other._customerGroups, _customerGroups));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -1765,15 +1765,15 @@ int get hashCode => Object.hash(runtimeType,operator,const DeepCollectionEqualit
 
 @override
 String toString() {
-  return 'AdminPostDiscountsDiscountConditions(operator: $operator, products: $products, productTypes: $productTypes, productCollections: $productCollections, productTags: $productTags, customerGroups: $customerGroups)';
+  return 'PostDiscountsDiscountConditions(operator: $operator, products: $products, productTypes: $productTypes, productCollections: $productCollections, productTags: $productTags, customerGroups: $customerGroups)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$AdminPostDiscountsDiscountConditionsCopyWith<$Res> implements $AdminPostDiscountsDiscountConditionsCopyWith<$Res> {
-  factory _$AdminPostDiscountsDiscountConditionsCopyWith(_AdminPostDiscountsDiscountConditions value, $Res Function(_AdminPostDiscountsDiscountConditions) _then) = __$AdminPostDiscountsDiscountConditionsCopyWithImpl;
+abstract mixin class _$PostDiscountsDiscountConditionsCopyWith<$Res> implements $PostDiscountsDiscountConditionsCopyWith<$Res> {
+  factory _$PostDiscountsDiscountConditionsCopyWith(_PostDiscountsDiscountConditions value, $Res Function(_PostDiscountsDiscountConditions) _then) = __$PostDiscountsDiscountConditionsCopyWithImpl;
 @override @useResult
 $Res call({
  String operator, List<String>? products, List<String>? productTypes, List<String>? productCollections, List<String>? productTags, List<String>? customerGroups
@@ -1784,17 +1784,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$AdminPostDiscountsDiscountConditionsCopyWithImpl<$Res>
-    implements _$AdminPostDiscountsDiscountConditionsCopyWith<$Res> {
-  __$AdminPostDiscountsDiscountConditionsCopyWithImpl(this._self, this._then);
+class __$PostDiscountsDiscountConditionsCopyWithImpl<$Res>
+    implements _$PostDiscountsDiscountConditionsCopyWith<$Res> {
+  __$PostDiscountsDiscountConditionsCopyWithImpl(this._self, this._then);
 
-  final _AdminPostDiscountsDiscountConditions _self;
-  final $Res Function(_AdminPostDiscountsDiscountConditions) _then;
+  final _PostDiscountsDiscountConditions _self;
+  final $Res Function(_PostDiscountsDiscountConditions) _then;
 
-/// Create a copy of AdminPostDiscountsDiscountConditions
+/// Create a copy of PostDiscountsDiscountConditions
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? operator = null,Object? products = freezed,Object? productTypes = freezed,Object? productCollections = freezed,Object? productTags = freezed,Object? customerGroups = freezed,}) {
-  return _then(_AdminPostDiscountsDiscountConditions(
+  return _then(_PostDiscountsDiscountConditions(
 operator: null == operator ? _self.operator : operator // ignore: cast_nullable_to_non_nullable
 as String,products: freezed == products ? _self._products : products // ignore: cast_nullable_to_non_nullable
 as List<String>?,productTypes: freezed == productTypes ? _self._productTypes : productTypes // ignore: cast_nullable_to_non_nullable
@@ -1810,22 +1810,22 @@ as List<String>?,
 
 
 /// @nodoc
-mixin _$AdminPostDiscountsDiscountDynamicCodesReq {
+mixin _$PostDiscountsDiscountDynamicCodesReq {
 
  String get code; int? get usageLimit; Map<String, dynamic>? get metadata;
-/// Create a copy of AdminPostDiscountsDiscountDynamicCodesReq
+/// Create a copy of PostDiscountsDiscountDynamicCodesReq
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$AdminPostDiscountsDiscountDynamicCodesReqCopyWith<AdminPostDiscountsDiscountDynamicCodesReq> get copyWith => _$AdminPostDiscountsDiscountDynamicCodesReqCopyWithImpl<AdminPostDiscountsDiscountDynamicCodesReq>(this as AdminPostDiscountsDiscountDynamicCodesReq, _$identity);
+$PostDiscountsDiscountDynamicCodesReqCopyWith<PostDiscountsDiscountDynamicCodesReq> get copyWith => _$PostDiscountsDiscountDynamicCodesReqCopyWithImpl<PostDiscountsDiscountDynamicCodesReq>(this as PostDiscountsDiscountDynamicCodesReq, _$identity);
 
-  /// Serializes this AdminPostDiscountsDiscountDynamicCodesReq to a JSON map.
+  /// Serializes this PostDiscountsDiscountDynamicCodesReq to a JSON map.
   Map<String, dynamic> toJson();
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AdminPostDiscountsDiscountDynamicCodesReq&&(identical(other.code, code) || other.code == code)&&(identical(other.usageLimit, usageLimit) || other.usageLimit == usageLimit)&&const DeepCollectionEquality().equals(other.metadata, metadata));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PostDiscountsDiscountDynamicCodesReq&&(identical(other.code, code) || other.code == code)&&(identical(other.usageLimit, usageLimit) || other.usageLimit == usageLimit)&&const DeepCollectionEquality().equals(other.metadata, metadata));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -1834,15 +1834,15 @@ int get hashCode => Object.hash(runtimeType,code,usageLimit,const DeepCollection
 
 @override
 String toString() {
-  return 'AdminPostDiscountsDiscountDynamicCodesReq(code: $code, usageLimit: $usageLimit, metadata: $metadata)';
+  return 'PostDiscountsDiscountDynamicCodesReq(code: $code, usageLimit: $usageLimit, metadata: $metadata)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $AdminPostDiscountsDiscountDynamicCodesReqCopyWith<$Res>  {
-  factory $AdminPostDiscountsDiscountDynamicCodesReqCopyWith(AdminPostDiscountsDiscountDynamicCodesReq value, $Res Function(AdminPostDiscountsDiscountDynamicCodesReq) _then) = _$AdminPostDiscountsDiscountDynamicCodesReqCopyWithImpl;
+abstract mixin class $PostDiscountsDiscountDynamicCodesReqCopyWith<$Res>  {
+  factory $PostDiscountsDiscountDynamicCodesReqCopyWith(PostDiscountsDiscountDynamicCodesReq value, $Res Function(PostDiscountsDiscountDynamicCodesReq) _then) = _$PostDiscountsDiscountDynamicCodesReqCopyWithImpl;
 @useResult
 $Res call({
  String code, int? usageLimit, Map<String, dynamic>? metadata
@@ -1853,14 +1853,14 @@ $Res call({
 
 }
 /// @nodoc
-class _$AdminPostDiscountsDiscountDynamicCodesReqCopyWithImpl<$Res>
-    implements $AdminPostDiscountsDiscountDynamicCodesReqCopyWith<$Res> {
-  _$AdminPostDiscountsDiscountDynamicCodesReqCopyWithImpl(this._self, this._then);
+class _$PostDiscountsDiscountDynamicCodesReqCopyWithImpl<$Res>
+    implements $PostDiscountsDiscountDynamicCodesReqCopyWith<$Res> {
+  _$PostDiscountsDiscountDynamicCodesReqCopyWithImpl(this._self, this._then);
 
-  final AdminPostDiscountsDiscountDynamicCodesReq _self;
-  final $Res Function(AdminPostDiscountsDiscountDynamicCodesReq) _then;
+  final PostDiscountsDiscountDynamicCodesReq _self;
+  final $Res Function(PostDiscountsDiscountDynamicCodesReq) _then;
 
-/// Create a copy of AdminPostDiscountsDiscountDynamicCodesReq
+/// Create a copy of PostDiscountsDiscountDynamicCodesReq
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? code = null,Object? usageLimit = freezed,Object? metadata = freezed,}) {
   return _then(_self.copyWith(
@@ -1874,8 +1874,8 @@ as Map<String, dynamic>?,
 }
 
 
-/// Adds pattern-matching-related methods to [AdminPostDiscountsDiscountDynamicCodesReq].
-extension AdminPostDiscountsDiscountDynamicCodesReqPatterns on AdminPostDiscountsDiscountDynamicCodesReq {
+/// Adds pattern-matching-related methods to [PostDiscountsDiscountDynamicCodesReq].
+extension PostDiscountsDiscountDynamicCodesReqPatterns on PostDiscountsDiscountDynamicCodesReq {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -1888,10 +1888,10 @@ extension AdminPostDiscountsDiscountDynamicCodesReqPatterns on AdminPostDiscount
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AdminPostDiscountsDiscountDynamicCodesReq value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _PostDiscountsDiscountDynamicCodesReq value)?  $default,{required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _AdminPostDiscountsDiscountDynamicCodesReq() when $default != null:
+case _PostDiscountsDiscountDynamicCodesReq() when $default != null:
 return $default(_that);case _:
   return orElse();
 
@@ -1910,10 +1910,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AdminPostDiscountsDiscountDynamicCodesReq value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _PostDiscountsDiscountDynamicCodesReq value)  $default,){
 final _that = this;
 switch (_that) {
-case _AdminPostDiscountsDiscountDynamicCodesReq():
+case _PostDiscountsDiscountDynamicCodesReq():
 return $default(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -1931,10 +1931,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AdminPostDiscountsDiscountDynamicCodesReq value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _PostDiscountsDiscountDynamicCodesReq value)?  $default,){
 final _that = this;
 switch (_that) {
-case _AdminPostDiscountsDiscountDynamicCodesReq() when $default != null:
+case _PostDiscountsDiscountDynamicCodesReq() when $default != null:
 return $default(_that);case _:
   return null;
 
@@ -1954,7 +1954,7 @@ return $default(_that);case _:
 
 @optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String code,  int? usageLimit,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _AdminPostDiscountsDiscountDynamicCodesReq() when $default != null:
+case _PostDiscountsDiscountDynamicCodesReq() when $default != null:
 return $default(_that.code,_that.usageLimit,_that.metadata);case _:
   return orElse();
 
@@ -1975,7 +1975,7 @@ return $default(_that.code,_that.usageLimit,_that.metadata);case _:
 
 @optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String code,  int? usageLimit,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
 switch (_that) {
-case _AdminPostDiscountsDiscountDynamicCodesReq():
+case _PostDiscountsDiscountDynamicCodesReq():
 return $default(_that.code,_that.usageLimit,_that.metadata);case _:
   throw StateError('Unexpected subclass');
 
@@ -1995,7 +1995,7 @@ return $default(_that.code,_that.usageLimit,_that.metadata);case _:
 
 @optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String code,  int? usageLimit,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
 switch (_that) {
-case _AdminPostDiscountsDiscountDynamicCodesReq() when $default != null:
+case _PostDiscountsDiscountDynamicCodesReq() when $default != null:
 return $default(_that.code,_that.usageLimit,_that.metadata);case _:
   return null;
 
@@ -2007,9 +2007,9 @@ return $default(_that.code,_that.usageLimit,_that.metadata);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _AdminPostDiscountsDiscountDynamicCodesReq implements AdminPostDiscountsDiscountDynamicCodesReq {
-  const _AdminPostDiscountsDiscountDynamicCodesReq({required this.code, this.usageLimit, final  Map<String, dynamic>? metadata}): _metadata = metadata;
-  factory _AdminPostDiscountsDiscountDynamicCodesReq.fromJson(Map<String, dynamic> json) => _$AdminPostDiscountsDiscountDynamicCodesReqFromJson(json);
+class _PostDiscountsDiscountDynamicCodesReq implements PostDiscountsDiscountDynamicCodesReq {
+  const _PostDiscountsDiscountDynamicCodesReq({required this.code, this.usageLimit, final  Map<String, dynamic>? metadata}): _metadata = metadata;
+  factory _PostDiscountsDiscountDynamicCodesReq.fromJson(Map<String, dynamic> json) => _$PostDiscountsDiscountDynamicCodesReqFromJson(json);
 
 @override final  String code;
 @override final  int? usageLimit;
@@ -2023,20 +2023,20 @@ class _AdminPostDiscountsDiscountDynamicCodesReq implements AdminPostDiscountsDi
 }
 
 
-/// Create a copy of AdminPostDiscountsDiscountDynamicCodesReq
+/// Create a copy of PostDiscountsDiscountDynamicCodesReq
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$AdminPostDiscountsDiscountDynamicCodesReqCopyWith<_AdminPostDiscountsDiscountDynamicCodesReq> get copyWith => __$AdminPostDiscountsDiscountDynamicCodesReqCopyWithImpl<_AdminPostDiscountsDiscountDynamicCodesReq>(this, _$identity);
+_$PostDiscountsDiscountDynamicCodesReqCopyWith<_PostDiscountsDiscountDynamicCodesReq> get copyWith => __$PostDiscountsDiscountDynamicCodesReqCopyWithImpl<_PostDiscountsDiscountDynamicCodesReq>(this, _$identity);
 
 @override
 Map<String, dynamic> toJson() {
-  return _$AdminPostDiscountsDiscountDynamicCodesReqToJson(this, );
+  return _$PostDiscountsDiscountDynamicCodesReqToJson(this, );
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AdminPostDiscountsDiscountDynamicCodesReq&&(identical(other.code, code) || other.code == code)&&(identical(other.usageLimit, usageLimit) || other.usageLimit == usageLimit)&&const DeepCollectionEquality().equals(other._metadata, _metadata));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PostDiscountsDiscountDynamicCodesReq&&(identical(other.code, code) || other.code == code)&&(identical(other.usageLimit, usageLimit) || other.usageLimit == usageLimit)&&const DeepCollectionEquality().equals(other._metadata, _metadata));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -2045,15 +2045,15 @@ int get hashCode => Object.hash(runtimeType,code,usageLimit,const DeepCollection
 
 @override
 String toString() {
-  return 'AdminPostDiscountsDiscountDynamicCodesReq(code: $code, usageLimit: $usageLimit, metadata: $metadata)';
+  return 'PostDiscountsDiscountDynamicCodesReq(code: $code, usageLimit: $usageLimit, metadata: $metadata)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$AdminPostDiscountsDiscountDynamicCodesReqCopyWith<$Res> implements $AdminPostDiscountsDiscountDynamicCodesReqCopyWith<$Res> {
-  factory _$AdminPostDiscountsDiscountDynamicCodesReqCopyWith(_AdminPostDiscountsDiscountDynamicCodesReq value, $Res Function(_AdminPostDiscountsDiscountDynamicCodesReq) _then) = __$AdminPostDiscountsDiscountDynamicCodesReqCopyWithImpl;
+abstract mixin class _$PostDiscountsDiscountDynamicCodesReqCopyWith<$Res> implements $PostDiscountsDiscountDynamicCodesReqCopyWith<$Res> {
+  factory _$PostDiscountsDiscountDynamicCodesReqCopyWith(_PostDiscountsDiscountDynamicCodesReq value, $Res Function(_PostDiscountsDiscountDynamicCodesReq) _then) = __$PostDiscountsDiscountDynamicCodesReqCopyWithImpl;
 @override @useResult
 $Res call({
  String code, int? usageLimit, Map<String, dynamic>? metadata
@@ -2064,17 +2064,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$AdminPostDiscountsDiscountDynamicCodesReqCopyWithImpl<$Res>
-    implements _$AdminPostDiscountsDiscountDynamicCodesReqCopyWith<$Res> {
-  __$AdminPostDiscountsDiscountDynamicCodesReqCopyWithImpl(this._self, this._then);
+class __$PostDiscountsDiscountDynamicCodesReqCopyWithImpl<$Res>
+    implements _$PostDiscountsDiscountDynamicCodesReqCopyWith<$Res> {
+  __$PostDiscountsDiscountDynamicCodesReqCopyWithImpl(this._self, this._then);
 
-  final _AdminPostDiscountsDiscountDynamicCodesReq _self;
-  final $Res Function(_AdminPostDiscountsDiscountDynamicCodesReq) _then;
+  final _PostDiscountsDiscountDynamicCodesReq _self;
+  final $Res Function(_PostDiscountsDiscountDynamicCodesReq) _then;
 
-/// Create a copy of AdminPostDiscountsDiscountDynamicCodesReq
+/// Create a copy of PostDiscountsDiscountDynamicCodesReq
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? code = null,Object? usageLimit = freezed,Object? metadata = freezed,}) {
-  return _then(_AdminPostDiscountsDiscountDynamicCodesReq(
+  return _then(_PostDiscountsDiscountDynamicCodesReq(
 code: null == code ? _self.code : code // ignore: cast_nullable_to_non_nullable
 as String,usageLimit: freezed == usageLimit ? _self.usageLimit : usageLimit // ignore: cast_nullable_to_non_nullable
 as int?,metadata: freezed == metadata ? _self._metadata : metadata // ignore: cast_nullable_to_non_nullable

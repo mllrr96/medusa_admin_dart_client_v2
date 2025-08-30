@@ -6,14 +6,15 @@ part 'gift_cards_list_res.freezed.dart';
 part 'gift_cards_list_res.g.dart';
 
 @freezed
-abstract class AdminGiftCardsListResponse with _$AdminGiftCardsListResponse {
-  const factory AdminGiftCardsListResponse({
-    required List<AdminGiftCard> giftCards,
+abstract class GiftCardsListResponse with _$GiftCardsListResponse {
+  const factory GiftCardsListResponse({
+
+    required List<GiftCard> giftCards,
     required int count,
     required int offset,
     required int limit,
-  }) = _AdminGiftCardsListResponse;
+  }) = _GiftCardsListResponse;
 
-  factory AdminGiftCardsListResponse.fromJson(Map<String, dynamic> json) =>
-      _$AdminGiftCardsListResponseFromJson(json);
+  factory GiftCardsListResponse.fromJson(Map<String, dynamic> json) =>
+      _$GiftCardsListResponseFromJson(json);
 }

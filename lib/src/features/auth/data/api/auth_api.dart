@@ -13,7 +13,7 @@ abstract class AuthApi {
   Future<AuthAdminSessionResponse> login();
 
   @DELETE('/admin/auth/session')
-  Future<AdminDeleteSessionRes> logout();
+  Future<DeleteSessionRes> logout();
 
   @POST('/admin/auth/token/refresh')
   Future<AuthResponse> refreshToken();

@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$AuthAdminSessionResponse {
 
- AdminUser get user;
+ User get user;
 /// Create a copy of AuthAdminSessionResponse
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,11 +48,11 @@ abstract mixin class $AuthAdminSessionResponseCopyWith<$Res>  {
   factory $AuthAdminSessionResponseCopyWith(AuthAdminSessionResponse value, $Res Function(AuthAdminSessionResponse) _then) = _$AuthAdminSessionResponseCopyWithImpl;
 @useResult
 $Res call({
- AdminUser user
+ User user
 });
 
 
-$AdminUserCopyWith<$Res> get user;
+$UserCopyWith<$Res> get user;
 
 }
 /// @nodoc
@@ -68,16 +68,16 @@ class _$AuthAdminSessionResponseCopyWithImpl<$Res>
 @pragma('vm:prefer-inline') @override $Res call({Object? user = null,}) {
   return _then(_self.copyWith(
 user: null == user ? _self.user : user // ignore: cast_nullable_to_non_nullable
-as AdminUser,
+as User,
   ));
 }
 /// Create a copy of AuthAdminSessionResponse
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$AdminUserCopyWith<$Res> get user {
+$UserCopyWith<$Res> get user {
   
-  return $AdminUserCopyWith<$Res>(_self.user, (value) {
+  return $UserCopyWith<$Res>(_self.user, (value) {
     return _then(_self.copyWith(user: value));
   });
 }
@@ -162,7 +162,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( AdminUser user)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( User user)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _AuthAdminSessionResponse() when $default != null:
 return $default(_that.user);case _:
@@ -183,7 +183,7 @@ return $default(_that.user);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( AdminUser user)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( User user)  $default,) {final _that = this;
 switch (_that) {
 case _AuthAdminSessionResponse():
 return $default(_that.user);case _:
@@ -203,7 +203,7 @@ return $default(_that.user);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( AdminUser user)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( User user)?  $default,) {final _that = this;
 switch (_that) {
 case _AuthAdminSessionResponse() when $default != null:
 return $default(_that.user);case _:
@@ -221,7 +221,7 @@ class _AuthAdminSessionResponse implements AuthAdminSessionResponse {
   const _AuthAdminSessionResponse({required this.user});
   factory _AuthAdminSessionResponse.fromJson(Map<String, dynamic> json) => _$AuthAdminSessionResponseFromJson(json);
 
-@override final  AdminUser user;
+@override final  User user;
 
 /// Create a copy of AuthAdminSessionResponse
 /// with the given fields replaced by the non-null parameter values.
@@ -256,11 +256,11 @@ abstract mixin class _$AuthAdminSessionResponseCopyWith<$Res> implements $AuthAd
   factory _$AuthAdminSessionResponseCopyWith(_AuthAdminSessionResponse value, $Res Function(_AuthAdminSessionResponse) _then) = __$AuthAdminSessionResponseCopyWithImpl;
 @override @useResult
 $Res call({
- AdminUser user
+ User user
 });
 
 
-@override $AdminUserCopyWith<$Res> get user;
+@override $UserCopyWith<$Res> get user;
 
 }
 /// @nodoc
@@ -276,7 +276,7 @@ class __$AuthAdminSessionResponseCopyWithImpl<$Res>
 @override @pragma('vm:prefer-inline') $Res call({Object? user = null,}) {
   return _then(_AuthAdminSessionResponse(
 user: null == user ? _self.user : user // ignore: cast_nullable_to_non_nullable
-as AdminUser,
+as User,
   ));
 }
 
@@ -284,9 +284,9 @@ as AdminUser,
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$AdminUserCopyWith<$Res> get user {
+$UserCopyWith<$Res> get user {
   
-  return $AdminUserCopyWith<$Res>(_self.user, (value) {
+  return $UserCopyWith<$Res>(_self.user, (value) {
     return _then(_self.copyWith(user: value));
   });
 }
@@ -294,22 +294,22 @@ $AdminUserCopyWith<$Res> get user {
 
 
 /// @nodoc
-mixin _$AdminDeleteSessionRes {
+mixin _$DeleteSessionRes {
 
  bool get success;
-/// Create a copy of AdminDeleteSessionRes
+/// Create a copy of DeleteSessionRes
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$AdminDeleteSessionResCopyWith<AdminDeleteSessionRes> get copyWith => _$AdminDeleteSessionResCopyWithImpl<AdminDeleteSessionRes>(this as AdminDeleteSessionRes, _$identity);
+$DeleteSessionResCopyWith<DeleteSessionRes> get copyWith => _$DeleteSessionResCopyWithImpl<DeleteSessionRes>(this as DeleteSessionRes, _$identity);
 
-  /// Serializes this AdminDeleteSessionRes to a JSON map.
+  /// Serializes this DeleteSessionRes to a JSON map.
   Map<String, dynamic> toJson();
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AdminDeleteSessionRes&&(identical(other.success, success) || other.success == success));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DeleteSessionRes&&(identical(other.success, success) || other.success == success));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -318,15 +318,15 @@ int get hashCode => Object.hash(runtimeType,success);
 
 @override
 String toString() {
-  return 'AdminDeleteSessionRes(success: $success)';
+  return 'DeleteSessionRes(success: $success)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $AdminDeleteSessionResCopyWith<$Res>  {
-  factory $AdminDeleteSessionResCopyWith(AdminDeleteSessionRes value, $Res Function(AdminDeleteSessionRes) _then) = _$AdminDeleteSessionResCopyWithImpl;
+abstract mixin class $DeleteSessionResCopyWith<$Res>  {
+  factory $DeleteSessionResCopyWith(DeleteSessionRes value, $Res Function(DeleteSessionRes) _then) = _$DeleteSessionResCopyWithImpl;
 @useResult
 $Res call({
  bool success
@@ -337,14 +337,14 @@ $Res call({
 
 }
 /// @nodoc
-class _$AdminDeleteSessionResCopyWithImpl<$Res>
-    implements $AdminDeleteSessionResCopyWith<$Res> {
-  _$AdminDeleteSessionResCopyWithImpl(this._self, this._then);
+class _$DeleteSessionResCopyWithImpl<$Res>
+    implements $DeleteSessionResCopyWith<$Res> {
+  _$DeleteSessionResCopyWithImpl(this._self, this._then);
 
-  final AdminDeleteSessionRes _self;
-  final $Res Function(AdminDeleteSessionRes) _then;
+  final DeleteSessionRes _self;
+  final $Res Function(DeleteSessionRes) _then;
 
-/// Create a copy of AdminDeleteSessionRes
+/// Create a copy of DeleteSessionRes
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? success = null,}) {
   return _then(_self.copyWith(
@@ -356,8 +356,8 @@ as bool,
 }
 
 
-/// Adds pattern-matching-related methods to [AdminDeleteSessionRes].
-extension AdminDeleteSessionResPatterns on AdminDeleteSessionRes {
+/// Adds pattern-matching-related methods to [DeleteSessionRes].
+extension DeleteSessionResPatterns on DeleteSessionRes {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -370,10 +370,10 @@ extension AdminDeleteSessionResPatterns on AdminDeleteSessionRes {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AdminDeleteSessionRes value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _DeleteSessionRes value)?  $default,{required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _AdminDeleteSessionRes() when $default != null:
+case _DeleteSessionRes() when $default != null:
 return $default(_that);case _:
   return orElse();
 
@@ -392,10 +392,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AdminDeleteSessionRes value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _DeleteSessionRes value)  $default,){
 final _that = this;
 switch (_that) {
-case _AdminDeleteSessionRes():
+case _DeleteSessionRes():
 return $default(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -413,10 +413,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AdminDeleteSessionRes value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _DeleteSessionRes value)?  $default,){
 final _that = this;
 switch (_that) {
-case _AdminDeleteSessionRes() when $default != null:
+case _DeleteSessionRes() when $default != null:
 return $default(_that);case _:
   return null;
 
@@ -436,7 +436,7 @@ return $default(_that);case _:
 
 @optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( bool success)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _AdminDeleteSessionRes() when $default != null:
+case _DeleteSessionRes() when $default != null:
 return $default(_that.success);case _:
   return orElse();
 
@@ -457,7 +457,7 @@ return $default(_that.success);case _:
 
 @optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( bool success)  $default,) {final _that = this;
 switch (_that) {
-case _AdminDeleteSessionRes():
+case _DeleteSessionRes():
 return $default(_that.success);case _:
   throw StateError('Unexpected subclass');
 
@@ -477,7 +477,7 @@ return $default(_that.success);case _:
 
 @optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( bool success)?  $default,) {final _that = this;
 switch (_that) {
-case _AdminDeleteSessionRes() when $default != null:
+case _DeleteSessionRes() when $default != null:
 return $default(_that.success);case _:
   return null;
 
@@ -489,26 +489,26 @@ return $default(_that.success);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _AdminDeleteSessionRes implements AdminDeleteSessionRes {
-  const _AdminDeleteSessionRes({required this.success});
-  factory _AdminDeleteSessionRes.fromJson(Map<String, dynamic> json) => _$AdminDeleteSessionResFromJson(json);
+class _DeleteSessionRes implements DeleteSessionRes {
+  const _DeleteSessionRes({required this.success});
+  factory _DeleteSessionRes.fromJson(Map<String, dynamic> json) => _$DeleteSessionResFromJson(json);
 
 @override final  bool success;
 
-/// Create a copy of AdminDeleteSessionRes
+/// Create a copy of DeleteSessionRes
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$AdminDeleteSessionResCopyWith<_AdminDeleteSessionRes> get copyWith => __$AdminDeleteSessionResCopyWithImpl<_AdminDeleteSessionRes>(this, _$identity);
+_$DeleteSessionResCopyWith<_DeleteSessionRes> get copyWith => __$DeleteSessionResCopyWithImpl<_DeleteSessionRes>(this, _$identity);
 
 @override
 Map<String, dynamic> toJson() {
-  return _$AdminDeleteSessionResToJson(this, );
+  return _$DeleteSessionResToJson(this, );
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AdminDeleteSessionRes&&(identical(other.success, success) || other.success == success));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _DeleteSessionRes&&(identical(other.success, success) || other.success == success));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -517,15 +517,15 @@ int get hashCode => Object.hash(runtimeType,success);
 
 @override
 String toString() {
-  return 'AdminDeleteSessionRes(success: $success)';
+  return 'DeleteSessionRes(success: $success)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$AdminDeleteSessionResCopyWith<$Res> implements $AdminDeleteSessionResCopyWith<$Res> {
-  factory _$AdminDeleteSessionResCopyWith(_AdminDeleteSessionRes value, $Res Function(_AdminDeleteSessionRes) _then) = __$AdminDeleteSessionResCopyWithImpl;
+abstract mixin class _$DeleteSessionResCopyWith<$Res> implements $DeleteSessionResCopyWith<$Res> {
+  factory _$DeleteSessionResCopyWith(_DeleteSessionRes value, $Res Function(_DeleteSessionRes) _then) = __$DeleteSessionResCopyWithImpl;
 @override @useResult
 $Res call({
  bool success
@@ -536,17 +536,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$AdminDeleteSessionResCopyWithImpl<$Res>
-    implements _$AdminDeleteSessionResCopyWith<$Res> {
-  __$AdminDeleteSessionResCopyWithImpl(this._self, this._then);
+class __$DeleteSessionResCopyWithImpl<$Res>
+    implements _$DeleteSessionResCopyWith<$Res> {
+  __$DeleteSessionResCopyWithImpl(this._self, this._then);
 
-  final _AdminDeleteSessionRes _self;
-  final $Res Function(_AdminDeleteSessionRes) _then;
+  final _DeleteSessionRes _self;
+  final $Res Function(_DeleteSessionRes) _then;
 
-/// Create a copy of AdminDeleteSessionRes
+/// Create a copy of DeleteSessionRes
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? success = null,}) {
-  return _then(_AdminDeleteSessionRes(
+  return _then(_DeleteSessionRes(
 success: null == success ? _self.success : success // ignore: cast_nullable_to_non_nullable
 as bool,
   ));

@@ -13,22 +13,22 @@ part of 'gift_card_res.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-mixin _$AdminGiftCardResponse {
+mixin _$GiftCardResponse {
 
- AdminGiftCard get giftCard;
-/// Create a copy of AdminGiftCardResponse
+ GiftCard get giftCard;
+/// Create a copy of GiftCardResponse
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$AdminGiftCardResponseCopyWith<AdminGiftCardResponse> get copyWith => _$AdminGiftCardResponseCopyWithImpl<AdminGiftCardResponse>(this as AdminGiftCardResponse, _$identity);
+$GiftCardResponseCopyWith<GiftCardResponse> get copyWith => _$GiftCardResponseCopyWithImpl<GiftCardResponse>(this as GiftCardResponse, _$identity);
 
-  /// Serializes this AdminGiftCardResponse to a JSON map.
+  /// Serializes this GiftCardResponse to a JSON map.
   Map<String, dynamic> toJson();
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AdminGiftCardResponse&&(identical(other.giftCard, giftCard) || other.giftCard == giftCard));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GiftCardResponse&&(identical(other.giftCard, giftCard) || other.giftCard == giftCard));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -37,55 +37,55 @@ int get hashCode => Object.hash(runtimeType,giftCard);
 
 @override
 String toString() {
-  return 'AdminGiftCardResponse(giftCard: $giftCard)';
+  return 'GiftCardResponse(giftCard: $giftCard)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $AdminGiftCardResponseCopyWith<$Res>  {
-  factory $AdminGiftCardResponseCopyWith(AdminGiftCardResponse value, $Res Function(AdminGiftCardResponse) _then) = _$AdminGiftCardResponseCopyWithImpl;
+abstract mixin class $GiftCardResponseCopyWith<$Res>  {
+  factory $GiftCardResponseCopyWith(GiftCardResponse value, $Res Function(GiftCardResponse) _then) = _$GiftCardResponseCopyWithImpl;
 @useResult
 $Res call({
- AdminGiftCard giftCard
+ GiftCard giftCard
 });
 
 
-$AdminGiftCardCopyWith<$Res> get giftCard;
+$GiftCardCopyWith<$Res> get giftCard;
 
 }
 /// @nodoc
-class _$AdminGiftCardResponseCopyWithImpl<$Res>
-    implements $AdminGiftCardResponseCopyWith<$Res> {
-  _$AdminGiftCardResponseCopyWithImpl(this._self, this._then);
+class _$GiftCardResponseCopyWithImpl<$Res>
+    implements $GiftCardResponseCopyWith<$Res> {
+  _$GiftCardResponseCopyWithImpl(this._self, this._then);
 
-  final AdminGiftCardResponse _self;
-  final $Res Function(AdminGiftCardResponse) _then;
+  final GiftCardResponse _self;
+  final $Res Function(GiftCardResponse) _then;
 
-/// Create a copy of AdminGiftCardResponse
+/// Create a copy of GiftCardResponse
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? giftCard = null,}) {
   return _then(_self.copyWith(
 giftCard: null == giftCard ? _self.giftCard : giftCard // ignore: cast_nullable_to_non_nullable
-as AdminGiftCard,
+as GiftCard,
   ));
 }
-/// Create a copy of AdminGiftCardResponse
+/// Create a copy of GiftCardResponse
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$AdminGiftCardCopyWith<$Res> get giftCard {
+$GiftCardCopyWith<$Res> get giftCard {
   
-  return $AdminGiftCardCopyWith<$Res>(_self.giftCard, (value) {
+  return $GiftCardCopyWith<$Res>(_self.giftCard, (value) {
     return _then(_self.copyWith(giftCard: value));
   });
 }
 }
 
 
-/// Adds pattern-matching-related methods to [AdminGiftCardResponse].
-extension AdminGiftCardResponsePatterns on AdminGiftCardResponse {
+/// Adds pattern-matching-related methods to [GiftCardResponse].
+extension GiftCardResponsePatterns on GiftCardResponse {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -98,10 +98,10 @@ extension AdminGiftCardResponsePatterns on AdminGiftCardResponse {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AdminGiftCardResponse value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _GiftCardResponse value)?  $default,{required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _AdminGiftCardResponse() when $default != null:
+case _GiftCardResponse() when $default != null:
 return $default(_that);case _:
   return orElse();
 
@@ -120,10 +120,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AdminGiftCardResponse value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _GiftCardResponse value)  $default,){
 final _that = this;
 switch (_that) {
-case _AdminGiftCardResponse():
+case _GiftCardResponse():
 return $default(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -141,10 +141,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AdminGiftCardResponse value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _GiftCardResponse value)?  $default,){
 final _that = this;
 switch (_that) {
-case _AdminGiftCardResponse() when $default != null:
+case _GiftCardResponse() when $default != null:
 return $default(_that);case _:
   return null;
 
@@ -162,9 +162,9 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( AdminGiftCard giftCard)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( GiftCard giftCard)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _AdminGiftCardResponse() when $default != null:
+case _GiftCardResponse() when $default != null:
 return $default(_that.giftCard);case _:
   return orElse();
 
@@ -183,9 +183,9 @@ return $default(_that.giftCard);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( AdminGiftCard giftCard)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( GiftCard giftCard)  $default,) {final _that = this;
 switch (_that) {
-case _AdminGiftCardResponse():
+case _GiftCardResponse():
 return $default(_that.giftCard);case _:
   throw StateError('Unexpected subclass');
 
@@ -203,9 +203,9 @@ return $default(_that.giftCard);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( AdminGiftCard giftCard)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( GiftCard giftCard)?  $default,) {final _that = this;
 switch (_that) {
-case _AdminGiftCardResponse() when $default != null:
+case _GiftCardResponse() when $default != null:
 return $default(_that.giftCard);case _:
   return null;
 
@@ -217,26 +217,26 @@ return $default(_that.giftCard);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _AdminGiftCardResponse implements AdminGiftCardResponse {
-  const _AdminGiftCardResponse({required this.giftCard});
-  factory _AdminGiftCardResponse.fromJson(Map<String, dynamic> json) => _$AdminGiftCardResponseFromJson(json);
+class _GiftCardResponse implements GiftCardResponse {
+  const _GiftCardResponse({required this.giftCard});
+  factory _GiftCardResponse.fromJson(Map<String, dynamic> json) => _$GiftCardResponseFromJson(json);
 
-@override final  AdminGiftCard giftCard;
+@override final  GiftCard giftCard;
 
-/// Create a copy of AdminGiftCardResponse
+/// Create a copy of GiftCardResponse
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$AdminGiftCardResponseCopyWith<_AdminGiftCardResponse> get copyWith => __$AdminGiftCardResponseCopyWithImpl<_AdminGiftCardResponse>(this, _$identity);
+_$GiftCardResponseCopyWith<_GiftCardResponse> get copyWith => __$GiftCardResponseCopyWithImpl<_GiftCardResponse>(this, _$identity);
 
 @override
 Map<String, dynamic> toJson() {
-  return _$AdminGiftCardResponseToJson(this, );
+  return _$GiftCardResponseToJson(this, );
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AdminGiftCardResponse&&(identical(other.giftCard, giftCard) || other.giftCard == giftCard));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GiftCardResponse&&(identical(other.giftCard, giftCard) || other.giftCard == giftCard));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -245,48 +245,48 @@ int get hashCode => Object.hash(runtimeType,giftCard);
 
 @override
 String toString() {
-  return 'AdminGiftCardResponse(giftCard: $giftCard)';
+  return 'GiftCardResponse(giftCard: $giftCard)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$AdminGiftCardResponseCopyWith<$Res> implements $AdminGiftCardResponseCopyWith<$Res> {
-  factory _$AdminGiftCardResponseCopyWith(_AdminGiftCardResponse value, $Res Function(_AdminGiftCardResponse) _then) = __$AdminGiftCardResponseCopyWithImpl;
+abstract mixin class _$GiftCardResponseCopyWith<$Res> implements $GiftCardResponseCopyWith<$Res> {
+  factory _$GiftCardResponseCopyWith(_GiftCardResponse value, $Res Function(_GiftCardResponse) _then) = __$GiftCardResponseCopyWithImpl;
 @override @useResult
 $Res call({
- AdminGiftCard giftCard
+ GiftCard giftCard
 });
 
 
-@override $AdminGiftCardCopyWith<$Res> get giftCard;
+@override $GiftCardCopyWith<$Res> get giftCard;
 
 }
 /// @nodoc
-class __$AdminGiftCardResponseCopyWithImpl<$Res>
-    implements _$AdminGiftCardResponseCopyWith<$Res> {
-  __$AdminGiftCardResponseCopyWithImpl(this._self, this._then);
+class __$GiftCardResponseCopyWithImpl<$Res>
+    implements _$GiftCardResponseCopyWith<$Res> {
+  __$GiftCardResponseCopyWithImpl(this._self, this._then);
 
-  final _AdminGiftCardResponse _self;
-  final $Res Function(_AdminGiftCardResponse) _then;
+  final _GiftCardResponse _self;
+  final $Res Function(_GiftCardResponse) _then;
 
-/// Create a copy of AdminGiftCardResponse
+/// Create a copy of GiftCardResponse
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? giftCard = null,}) {
-  return _then(_AdminGiftCardResponse(
+  return _then(_GiftCardResponse(
 giftCard: null == giftCard ? _self.giftCard : giftCard // ignore: cast_nullable_to_non_nullable
-as AdminGiftCard,
+as GiftCard,
   ));
 }
 
-/// Create a copy of AdminGiftCardResponse
+/// Create a copy of GiftCardResponse
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$AdminGiftCardCopyWith<$Res> get giftCard {
+$GiftCardCopyWith<$Res> get giftCard {
   
-  return $AdminGiftCardCopyWith<$Res>(_self.giftCard, (value) {
+  return $GiftCardCopyWith<$Res>(_self.giftCard, (value) {
     return _then(_self.copyWith(giftCard: value));
   });
 }

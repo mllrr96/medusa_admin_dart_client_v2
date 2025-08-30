@@ -48,7 +48,7 @@ _Cart _$CartFromJson(Map<String, dynamic> json) => _Cart(
       ?.map((e) => Discount.fromJson(e as Map<String, dynamic>))
       .toList(),
   giftCards: (json['gift_cards'] as List<dynamic>?)
-      ?.map((e) => AdminGiftCard.fromJson(e as Map<String, dynamic>))
+      ?.map((e) => GiftCard.fromJson(e as Map<String, dynamic>))
       .toList(),
   taxRate: json['tax_rate'] as num?,
   createdAt: json['created_at'] == null

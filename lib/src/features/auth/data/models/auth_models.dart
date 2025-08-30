@@ -8,7 +8,7 @@ part 'auth_models.g.dart';
 @freezed
 abstract class AuthAdminSessionResponse with _$AuthAdminSessionResponse {
   const factory AuthAdminSessionResponse({
-    required AdminUser user,
+    required User user,
   }) = _AuthAdminSessionResponse;
 
   factory AuthAdminSessionResponse.fromJson(Map<String, dynamic> json) =>
@@ -16,13 +16,13 @@ abstract class AuthAdminSessionResponse with _$AuthAdminSessionResponse {
 }
 
 @freezed
-abstract class AdminDeleteSessionRes with _$AdminDeleteSessionRes {
-  const factory AdminDeleteSessionRes({
+abstract class DeleteSessionRes with _$DeleteSessionRes {
+  const factory DeleteSessionRes({
     required bool success,
-  }) = _AdminDeleteSessionRes;
+  }) = _DeleteSessionRes;
 
-  factory AdminDeleteSessionRes.fromJson(Map<String, dynamic> json) =>
-      _$AdminDeleteSessionResFromJson(json);
+  factory DeleteSessionRes.fromJson(Map<String, dynamic> json) =>
+      _$DeleteSessionResFromJson(json);
 }
 
 @freezed

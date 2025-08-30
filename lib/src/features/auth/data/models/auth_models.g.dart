@@ -9,20 +9,18 @@ part of 'auth_models.dart';
 _AuthAdminSessionResponse _$AuthAdminSessionResponseFromJson(
   Map<String, dynamic> json,
 ) => _AuthAdminSessionResponse(
-  user: AdminUser.fromJson(json['user'] as Map<String, dynamic>),
+  user: User.fromJson(json['user'] as Map<String, dynamic>),
 );
 
 Map<String, dynamic> _$AuthAdminSessionResponseToJson(
   _AuthAdminSessionResponse instance,
 ) => <String, dynamic>{'user': instance.user};
 
-_AdminDeleteSessionRes _$AdminDeleteSessionResFromJson(
-  Map<String, dynamic> json,
-) => _AdminDeleteSessionRes(success: json['success'] as bool);
+_DeleteSessionRes _$DeleteSessionResFromJson(Map<String, dynamic> json) =>
+    _DeleteSessionRes(success: json['success'] as bool);
 
-Map<String, dynamic> _$AdminDeleteSessionResToJson(
-  _AdminDeleteSessionRes instance,
-) => <String, dynamic>{'success': instance.success};
+Map<String, dynamic> _$DeleteSessionResToJson(_DeleteSessionRes instance) =>
+    <String, dynamic>{'success': instance.success};
 
 _AuthResponse _$AuthResponseFromJson(Map<String, dynamic> json) =>
     _AuthResponse(token: json['token'] as String);

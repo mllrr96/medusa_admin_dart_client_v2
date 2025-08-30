@@ -45,12 +45,12 @@ class _AuthApi implements AuthApi {
   }
 
   @override
-  Future<AdminDeleteSessionRes> logout() async {
+  Future<DeleteSessionRes> logout() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<AdminDeleteSessionRes>(
+    final _options = _setStreamType<DeleteSessionRes>(
       Options(method: 'DELETE', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -61,9 +61,9 @@ class _AuthApi implements AuthApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminDeleteSessionRes _value;
+    late DeleteSessionRes _value;
     try {
-      _value = AdminDeleteSessionRes.fromJson(_result.data!);
+      _value = DeleteSessionRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

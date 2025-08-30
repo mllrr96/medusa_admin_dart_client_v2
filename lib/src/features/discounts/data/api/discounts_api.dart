@@ -9,70 +9,70 @@ abstract class DiscountsApi {
   factory DiscountsApi(Dio dio, {String baseUrl}) = _DiscountsApi;
 
   @GET('/admin/discounts')
-  Future<AdminDiscountsListRes> retrieveAll({
+  Future<DiscountsListRes> retrieveAll({
     @Queries() Map<String, dynamic>? queryParameters,
   });
 
   @POST('/admin/discounts')
-  Future<AdminDiscountsRes> create(@Body() AdminPostDiscountsReq body);
+  Future<DiscountsRes> create(@Body() PostDiscountsReq body);
 
   @GET('/admin/discounts/{id}')
-  Future<AdminDiscountsRes> retrieve(
+  Future<DiscountsRes> retrieve(
     @Path('id') String id, {
     @Queries() Map<String, dynamic>? queryParameters,
   });
 
   @POST('/admin/discounts/{id}')
-  Future<AdminDiscountsRes> update(
+  Future<DiscountsRes> update(
     @Path('id') String id,
-    @Body() AdminPostDiscountsDiscountReq body,
+    @Body() PostDiscountsDiscountReq body,
   );
 
   @DELETE('/admin/discounts/{id}')
-  Future<AdminDiscountsDeleteRes> delete(@Path('id') String id);
+  Future<DiscountsDeleteRes> delete(@Path('id') String id);
 
   @POST('/admin/discounts/{id}/conditions')
-  Future<AdminDiscountsRes> addCondition(
+  Future<DiscountsRes> addCondition(
     @Path('id') String id,
-    @Body() AdminPostDiscountsDiscountConditions body,
+    @Body() PostDiscountsDiscountConditions body,
   );
 
   @DELETE('/admin/discounts/{id}/conditions/{condition_id}')
-  Future<AdminDiscountsDeleteRes> removeCondition(
+  Future<DiscountsDeleteRes> removeCondition(
     @Path('id') String id,
     @Path('condition_id') String conditionId,
   );
 
   @GET('/admin/discounts/{id}/conditions/{condition_id}')
-  Future<AdminDiscountsRes> getCondition(
+  Future<DiscountsRes> getCondition(
     @Path('id') String id,
     @Path('condition_id') String conditionId,
   );
 
   @POST('/admin/discounts/{id}/dynamic-codes')
-  Future<AdminDiscountsRes> createDynamicCode(
+  Future<DiscountsRes> createDynamicCode(
     @Path('id') String id,
-    @Body() AdminPostDiscountsDiscountDynamicCodesReq body,
+    @Body() PostDiscountsDiscountDynamicCodesReq body,
   );
 
   @DELETE('/admin/discounts/{id}/dynamic-codes/{code}')
-  Future<AdminDiscountsDeleteRes> deleteDynamicCode(
+  Future<DiscountsDeleteRes> deleteDynamicCode(
     @Path('id') String id,
     @Path('code') String code,
   );
 
   @POST('/admin/discounts/{id}/regions/{region_id}')
-  Future<AdminDiscountsRes> addRegion(
+  Future<DiscountsRes> addRegion(
     @Path('id') String id,
     @Path('region_id') String regionId,
   );
 
   @DELETE('/admin/discounts/{id}/regions/{region_id}')
-  Future<AdminDiscountsDeleteRes> removeRegion(
+  Future<DiscountsDeleteRes> removeRegion(
     @Path('id') String id,
     @Path('region_id') String regionId,
   );
 
   @GET('/admin/discounts/code/{code}')
-  Future<AdminDiscountsRes> retrieveByCode(@Path('code') String code);
+  Future<DiscountsRes> retrieveByCode(@Path('code') String code);
 }

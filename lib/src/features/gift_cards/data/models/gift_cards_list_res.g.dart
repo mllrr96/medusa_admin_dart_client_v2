@@ -6,19 +6,19 @@ part of 'gift_cards_list_res.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_AdminGiftCardsListResponse _$AdminGiftCardsListResponseFromJson(
+_GiftCardsListResponse _$GiftCardsListResponseFromJson(
   Map<String, dynamic> json,
-) => _AdminGiftCardsListResponse(
+) => _GiftCardsListResponse(
   giftCards: (json['giftCards'] as List<dynamic>)
-      .map((e) => AdminGiftCard.fromJson(e as Map<String, dynamic>))
+      .map((e) => GiftCard.fromJson(e as Map<String, dynamic>))
       .toList(),
   count: (json['count'] as num).toInt(),
   offset: (json['offset'] as num).toInt(),
   limit: (json['limit'] as num).toInt(),
 );
 
-Map<String, dynamic> _$AdminGiftCardsListResponseToJson(
-  _AdminGiftCardsListResponse instance,
+Map<String, dynamic> _$GiftCardsListResponseToJson(
+  _GiftCardsListResponse instance,
 ) => <String, dynamic>{
   'giftCards': instance.giftCards,
   'count': instance.count,

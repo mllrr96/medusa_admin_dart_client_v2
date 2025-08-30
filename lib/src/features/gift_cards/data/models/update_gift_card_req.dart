@@ -4,14 +4,14 @@ part 'update_gift_card_req.freezed.dart';
 part 'update_gift_card_req.g.dart';
 
 @freezed
-abstract class AdminUpdateGiftCardRequest with _$AdminUpdateGiftCardRequest {
-  const factory AdminUpdateGiftCardRequest({
+abstract class UpdateGiftCardRequest with _$UpdateGiftCardRequest {
+  const factory UpdateGiftCardRequest({
     bool? isDisabled,
     int? balance,
     String? regionId,
     Map<String, dynamic>? metadata,
   }) = _AdminUpdateGiftCardRequest;
 
-  factory AdminUpdateGiftCardRequest.fromJson(Map<String, dynamic> json) =>
-      _$AdminUpdateGiftCardRequestFromJson(json);
+  factory UpdateGiftCardRequest.fromJson(Map<String, dynamic> json) =>
+      _$UpdateGiftCardRequestFromJson(json);
 }

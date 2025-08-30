@@ -1,24 +1,26 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'price.freezed.dart';
+
 part 'price.g.dart';
 
 @freezed
-abstract class AdminPrice with _$AdminPrice {
-  const factory AdminPrice({
-    required String id,
-    required String title,
-    required String currencyCode,
-    required int amount,
-    required Map<String, dynamic> rawAmount,
-    required int minQuantity,
-    required int maxQuantity,
-    required String priceSetId,
-    required DateTime createdAt,
-    required DateTime updatedAt,
-    required DateTime deletedAt,
-  }) = _AdminPrice;
+abstract class Price with _$Price {
+  const factory Price({
+    String? id,
+    String? title,
+    @JsonKey(name: 'currency_code')
+    String? currencyCode,
+    int? amount,
+    @JsonKey(name: 'raw_amount')
+    Map<String, dynamic>? rawAmount,
+    @JsonKey(name: 'min_quantity') int? minQuantity,
+    @JsonKey(name: 'max_quantity') int? maxQuantity,
+    @JsonKey(name: 'price_set_id') String? priceSetId,
+    @JsonKey(name: 'created_at') DateTime? createdAt,
+    @JsonKey(name: 'updated_at') DateTime? updatedAt,
+    @JsonKey(name: 'deleted_at') DateTime? deletedAt,
+  }) = _Price;
 
-  factory AdminPrice.fromJson(Map<String, dynamic> json) =>
-      _$AdminPriceFromJson(json);
+  factory Price.fromJson(Map<String, dynamic> json) => _$PriceFromJson(json);
 }

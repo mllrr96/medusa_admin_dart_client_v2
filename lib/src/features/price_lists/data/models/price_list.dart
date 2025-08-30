@@ -5,8 +5,8 @@ part 'price_list.freezed.dart';
 part 'price_list.g.dart';
 
 @freezed
-abstract class AdminPriceList with _$AdminPriceList {
-  const factory AdminPriceList({
+abstract class PriceList with _$PriceList {
+  const factory PriceList({
     required String id,
     required String title,
     required String description,
@@ -15,12 +15,12 @@ abstract class AdminPriceList with _$AdminPriceList {
     required String endsAt,
     required String status,
     required String type,
-    required List<AdminPrice> prices,
+    required List<Price> prices,
     required DateTime createdAt,
     required DateTime updatedAt,
     required DateTime deletedAt,
-  }) = _AdminPriceList;
+  }) = _PriceList;
 
-  factory AdminPriceList.fromJson(Map<String, dynamic> json) =>
-      _$AdminPriceListFromJson(json);
+  factory PriceList.fromJson(Map<String, dynamic> json) =>
+      _$PriceListFromJson(json);
 }

@@ -10,7 +10,7 @@ class AuthRepository {
     return _authApi.login();
   }
 
-  Future<AdminDeleteSessionRes> logout() {
+  Future<DeleteSessionRes> logout() {
     return _authApi.logout();
   }
 

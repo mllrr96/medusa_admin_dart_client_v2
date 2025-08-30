@@ -34,7 +34,7 @@ abstract class Cart with _$Cart {
     @JsonKey(name: 'shipping_methods') List<ShippingMethod>? shippingMethods,
     @JsonKey(name: 'items') List<LineItem>? items,
     @JsonKey(name: 'discounts') List<Discount>? discounts,
-    @JsonKey(name: 'gift_cards') List<AdminGiftCard>? giftCards,
+    @JsonKey(name: 'gift_cards') List<GiftCard>? giftCards,
     @JsonKey(name: 'tax_rate') num? taxRate,
     @JsonKey(name: 'created_at') DateTime? createdAt,
     @JsonKey(name: 'updated_at') DateTime? updatedAt,

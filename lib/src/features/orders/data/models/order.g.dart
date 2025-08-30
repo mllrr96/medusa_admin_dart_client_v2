@@ -19,7 +19,7 @@ _Order _$OrderFromJson(Map<String, dynamic> json) => _Order(
       .map((e) => OrderLineItem.fromJson(e as Map<String, dynamic>))
       .toList(),
   shippingMethods: (json['shipping_methods'] as List<dynamic>)
-      .map((e) => AdminOrderShippingMethod.fromJson(e as Map<String, dynamic>))
+      .map((e) => OrderShippingMethod.fromJson(e as Map<String, dynamic>))
       .toList(),
   paymentStatus: json['payment_status'] as String,
   fulfillmentStatus: json['fulfillment_status'] as String,
@@ -59,10 +59,10 @@ _Order _$OrderFromJson(Map<String, dynamic> json) => _Order(
       .toList(),
   creditLineTotal: json['credit_line_total'] as num,
   paymentCollections: (json['payment_collections'] as List<dynamic>?)
-      ?.map((e) => AdminPaymentCollection.fromJson(e as Map<String, dynamic>))
+      ?.map((e) => PaymentCollection.fromJson(e as Map<String, dynamic>))
       .toList(),
   fulfillments: (json['fulfillments'] as List<dynamic>?)
-      ?.map((e) => AdminOrderFulfillment.fromJson(e as Map<String, dynamic>))
+      ?.map((e) => OrderFulfillment.fromJson(e as Map<String, dynamic>))
       .toList(),
   salesChannel: json['sales_channel'] == null
       ? null

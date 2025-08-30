@@ -18,7 +18,7 @@ class _PriceListsApi implements PriceListsApi {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<AdminPriceListsListRes> retrieveAll({
+  Future<PriceListsListRes> retrieveAll({
     Map<String, dynamic>? queryParameters,
   }) async {
     final _extra = <String, dynamic>{};
@@ -27,7 +27,7 @@ class _PriceListsApi implements PriceListsApi {
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<AdminPriceListsListRes>(
+    final _options = _setStreamType<PriceListsListRes>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -38,9 +38,9 @@ class _PriceListsApi implements PriceListsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminPriceListsListRes _value;
+    late PriceListsListRes _value;
     try {
-      _value = AdminPriceListsListRes.fromJson(_result.data!);
+      _value = PriceListsListRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -49,12 +49,12 @@ class _PriceListsApi implements PriceListsApi {
   }
 
   @override
-  Future<AdminPriceListsRes> create(AdminCreatePriceListReq body) async {
+  Future<PriceListsRes> create(CreatePriceListReq body) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = body;
-    final _options = _setStreamType<AdminPriceListsRes>(
+    final _options = _setStreamType<PriceListsRes>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -65,9 +65,9 @@ class _PriceListsApi implements PriceListsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminPriceListsRes _value;
+    late PriceListsRes _value;
     try {
-      _value = AdminPriceListsRes.fromJson(_result.data!);
+      _value = PriceListsRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -76,7 +76,7 @@ class _PriceListsApi implements PriceListsApi {
   }
 
   @override
-  Future<AdminPriceListsRes> retrieve(
+  Future<PriceListsRes> retrieve(
     String id, {
     Map<String, dynamic>? queryParameters,
   }) async {
@@ -86,7 +86,7 @@ class _PriceListsApi implements PriceListsApi {
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<AdminPriceListsRes>(
+    final _options = _setStreamType<PriceListsRes>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -97,9 +97,9 @@ class _PriceListsApi implements PriceListsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminPriceListsRes _value;
+    late PriceListsRes _value;
     try {
-      _value = AdminPriceListsRes.fromJson(_result.data!);
+      _value = PriceListsRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -108,15 +108,12 @@ class _PriceListsApi implements PriceListsApi {
   }
 
   @override
-  Future<AdminPriceListsRes> update(
-    String id,
-    AdminUpdatePriceListReq body,
-  ) async {
+  Future<PriceListsRes> update(String id, UpdatePriceListReq body) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = body;
-    final _options = _setStreamType<AdminPriceListsRes>(
+    final _options = _setStreamType<PriceListsRes>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -127,9 +124,9 @@ class _PriceListsApi implements PriceListsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminPriceListsRes _value;
+    late PriceListsRes _value;
     try {
-      _value = AdminPriceListsRes.fromJson(_result.data!);
+      _value = PriceListsRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -138,12 +135,12 @@ class _PriceListsApi implements PriceListsApi {
   }
 
   @override
-  Future<AdminPriceListsDeleteRes> delete(String id) async {
+  Future<PriceListsDeleteRes> delete(String id) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<AdminPriceListsDeleteRes>(
+    final _options = _setStreamType<PriceListsDeleteRes>(
       Options(method: 'DELETE', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -154,9 +151,9 @@ class _PriceListsApi implements PriceListsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminPriceListsDeleteRes _value;
+    late PriceListsDeleteRes _value;
     try {
-      _value = AdminPriceListsDeleteRes.fromJson(_result.data!);
+      _value = PriceListsDeleteRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -165,15 +162,15 @@ class _PriceListsApi implements PriceListsApi {
   }
 
   @override
-  Future<AdminPriceListsRes> managePrices(
+  Future<PriceListsRes> managePrices(
     String id,
-    AdminPriceListsManagePricesReq body,
+    PriceListsManagePricesReq body,
   ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = body;
-    final _options = _setStreamType<AdminPriceListsRes>(
+    final _options = _setStreamType<PriceListsRes>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -184,9 +181,9 @@ class _PriceListsApi implements PriceListsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminPriceListsRes _value;
+    late PriceListsRes _value;
     try {
-      _value = AdminPriceListsRes.fromJson(_result.data!);
+      _value = PriceListsRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -195,15 +192,15 @@ class _PriceListsApi implements PriceListsApi {
   }
 
   @override
-  Future<AdminPriceListsRes> removeProducts(
+  Future<PriceListsRes> removeProducts(
     String id,
-    AdminPriceListRemoveProductsReq body,
+    PriceListRemoveProductsReq body,
   ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = body;
-    final _options = _setStreamType<AdminPriceListsRes>(
+    final _options = _setStreamType<PriceListsRes>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -214,9 +211,9 @@ class _PriceListsApi implements PriceListsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminPriceListsRes _value;
+    late PriceListsRes _value;
     try {
-      _value = AdminPriceListsRes.fromJson(_result.data!);
+      _value = PriceListsRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

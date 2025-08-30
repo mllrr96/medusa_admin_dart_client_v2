@@ -18,7 +18,7 @@ class _DiscountsApi implements DiscountsApi {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<AdminDiscountsListRes> retrieveAll({
+  Future<DiscountsListRes> retrieveAll({
     Map<String, dynamic>? queryParameters,
   }) async {
     final _extra = <String, dynamic>{};
@@ -27,7 +27,7 @@ class _DiscountsApi implements DiscountsApi {
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<AdminDiscountsListRes>(
+    final _options = _setStreamType<DiscountsListRes>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -38,9 +38,9 @@ class _DiscountsApi implements DiscountsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminDiscountsListRes _value;
+    late DiscountsListRes _value;
     try {
-      _value = AdminDiscountsListRes.fromJson(_result.data!);
+      _value = DiscountsListRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -49,12 +49,12 @@ class _DiscountsApi implements DiscountsApi {
   }
 
   @override
-  Future<AdminDiscountsRes> create(AdminPostDiscountsReq body) async {
+  Future<DiscountsRes> create(PostDiscountsReq body) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = body;
-    final _options = _setStreamType<AdminDiscountsRes>(
+    final _options = _setStreamType<DiscountsRes>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -65,9 +65,9 @@ class _DiscountsApi implements DiscountsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminDiscountsRes _value;
+    late DiscountsRes _value;
     try {
-      _value = AdminDiscountsRes.fromJson(_result.data!);
+      _value = DiscountsRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -76,7 +76,7 @@ class _DiscountsApi implements DiscountsApi {
   }
 
   @override
-  Future<AdminDiscountsRes> retrieve(
+  Future<DiscountsRes> retrieve(
     String id, {
     Map<String, dynamic>? queryParameters,
   }) async {
@@ -86,7 +86,7 @@ class _DiscountsApi implements DiscountsApi {
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<AdminDiscountsRes>(
+    final _options = _setStreamType<DiscountsRes>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -97,9 +97,9 @@ class _DiscountsApi implements DiscountsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminDiscountsRes _value;
+    late DiscountsRes _value;
     try {
-      _value = AdminDiscountsRes.fromJson(_result.data!);
+      _value = DiscountsRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -108,15 +108,12 @@ class _DiscountsApi implements DiscountsApi {
   }
 
   @override
-  Future<AdminDiscountsRes> update(
-    String id,
-    AdminPostDiscountsDiscountReq body,
-  ) async {
+  Future<DiscountsRes> update(String id, PostDiscountsDiscountReq body) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = body;
-    final _options = _setStreamType<AdminDiscountsRes>(
+    final _options = _setStreamType<DiscountsRes>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -127,9 +124,9 @@ class _DiscountsApi implements DiscountsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminDiscountsRes _value;
+    late DiscountsRes _value;
     try {
-      _value = AdminDiscountsRes.fromJson(_result.data!);
+      _value = DiscountsRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -138,12 +135,12 @@ class _DiscountsApi implements DiscountsApi {
   }
 
   @override
-  Future<AdminDiscountsDeleteRes> delete(String id) async {
+  Future<DiscountsDeleteRes> delete(String id) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<AdminDiscountsDeleteRes>(
+    final _options = _setStreamType<DiscountsDeleteRes>(
       Options(method: 'DELETE', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -154,9 +151,9 @@ class _DiscountsApi implements DiscountsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminDiscountsDeleteRes _value;
+    late DiscountsDeleteRes _value;
     try {
-      _value = AdminDiscountsDeleteRes.fromJson(_result.data!);
+      _value = DiscountsDeleteRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -165,15 +162,15 @@ class _DiscountsApi implements DiscountsApi {
   }
 
   @override
-  Future<AdminDiscountsRes> addCondition(
+  Future<DiscountsRes> addCondition(
     String id,
-    AdminPostDiscountsDiscountConditions body,
+    PostDiscountsDiscountConditions body,
   ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = body;
-    final _options = _setStreamType<AdminDiscountsRes>(
+    final _options = _setStreamType<DiscountsRes>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -184,9 +181,9 @@ class _DiscountsApi implements DiscountsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminDiscountsRes _value;
+    late DiscountsRes _value;
     try {
-      _value = AdminDiscountsRes.fromJson(_result.data!);
+      _value = DiscountsRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -195,7 +192,7 @@ class _DiscountsApi implements DiscountsApi {
   }
 
   @override
-  Future<AdminDiscountsDeleteRes> removeCondition(
+  Future<DiscountsDeleteRes> removeCondition(
     String id,
     String conditionId,
   ) async {
@@ -203,7 +200,7 @@ class _DiscountsApi implements DiscountsApi {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<AdminDiscountsDeleteRes>(
+    final _options = _setStreamType<DiscountsDeleteRes>(
       Options(method: 'DELETE', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -214,9 +211,9 @@ class _DiscountsApi implements DiscountsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminDiscountsDeleteRes _value;
+    late DiscountsDeleteRes _value;
     try {
-      _value = AdminDiscountsDeleteRes.fromJson(_result.data!);
+      _value = DiscountsDeleteRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -225,12 +222,12 @@ class _DiscountsApi implements DiscountsApi {
   }
 
   @override
-  Future<AdminDiscountsRes> getCondition(String id, String conditionId) async {
+  Future<DiscountsRes> getCondition(String id, String conditionId) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<AdminDiscountsRes>(
+    final _options = _setStreamType<DiscountsRes>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -241,9 +238,9 @@ class _DiscountsApi implements DiscountsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminDiscountsRes _value;
+    late DiscountsRes _value;
     try {
-      _value = AdminDiscountsRes.fromJson(_result.data!);
+      _value = DiscountsRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -252,15 +249,15 @@ class _DiscountsApi implements DiscountsApi {
   }
 
   @override
-  Future<AdminDiscountsRes> createDynamicCode(
+  Future<DiscountsRes> createDynamicCode(
     String id,
-    AdminPostDiscountsDiscountDynamicCodesReq body,
+    PostDiscountsDiscountDynamicCodesReq body,
   ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = body;
-    final _options = _setStreamType<AdminDiscountsRes>(
+    final _options = _setStreamType<DiscountsRes>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -271,9 +268,9 @@ class _DiscountsApi implements DiscountsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminDiscountsRes _value;
+    late DiscountsRes _value;
     try {
-      _value = AdminDiscountsRes.fromJson(_result.data!);
+      _value = DiscountsRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -282,15 +279,12 @@ class _DiscountsApi implements DiscountsApi {
   }
 
   @override
-  Future<AdminDiscountsDeleteRes> deleteDynamicCode(
-    String id,
-    String code,
-  ) async {
+  Future<DiscountsDeleteRes> deleteDynamicCode(String id, String code) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<AdminDiscountsDeleteRes>(
+    final _options = _setStreamType<DiscountsDeleteRes>(
       Options(method: 'DELETE', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -301,9 +295,9 @@ class _DiscountsApi implements DiscountsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminDiscountsDeleteRes _value;
+    late DiscountsDeleteRes _value;
     try {
-      _value = AdminDiscountsDeleteRes.fromJson(_result.data!);
+      _value = DiscountsDeleteRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -312,12 +306,12 @@ class _DiscountsApi implements DiscountsApi {
   }
 
   @override
-  Future<AdminDiscountsRes> addRegion(String id, String regionId) async {
+  Future<DiscountsRes> addRegion(String id, String regionId) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<AdminDiscountsRes>(
+    final _options = _setStreamType<DiscountsRes>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -328,9 +322,9 @@ class _DiscountsApi implements DiscountsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminDiscountsRes _value;
+    late DiscountsRes _value;
     try {
-      _value = AdminDiscountsRes.fromJson(_result.data!);
+      _value = DiscountsRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -339,15 +333,12 @@ class _DiscountsApi implements DiscountsApi {
   }
 
   @override
-  Future<AdminDiscountsDeleteRes> removeRegion(
-    String id,
-    String regionId,
-  ) async {
+  Future<DiscountsDeleteRes> removeRegion(String id, String regionId) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<AdminDiscountsDeleteRes>(
+    final _options = _setStreamType<DiscountsDeleteRes>(
       Options(method: 'DELETE', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -358,9 +349,9 @@ class _DiscountsApi implements DiscountsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminDiscountsDeleteRes _value;
+    late DiscountsDeleteRes _value;
     try {
-      _value = AdminDiscountsDeleteRes.fromJson(_result.data!);
+      _value = DiscountsDeleteRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -369,12 +360,12 @@ class _DiscountsApi implements DiscountsApi {
   }
 
   @override
-  Future<AdminDiscountsRes> retrieveByCode(String code) async {
+  Future<DiscountsRes> retrieveByCode(String code) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<AdminDiscountsRes>(
+    final _options = _setStreamType<DiscountsRes>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -385,9 +376,9 @@ class _DiscountsApi implements DiscountsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminDiscountsRes _value;
+    late DiscountsRes _value;
     try {
-      _value = AdminDiscountsRes.fromJson(_result.data!);
+      _value = DiscountsRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

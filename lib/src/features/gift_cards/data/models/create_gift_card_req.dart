@@ -4,13 +4,13 @@ part 'create_gift_card_req.freezed.dart';
 part 'create_gift_card_req.g.dart';
 
 @freezed
-abstract class AdminCreateGiftCardRequest with _$AdminCreateGiftCardRequest {
-  const factory AdminCreateGiftCardRequest({
+abstract class CreateGiftCardRequest with _$CreateGiftCardRequest {
+  const factory CreateGiftCardRequest({
     required int value,
     required String regionId,
     Map<String, dynamic>? metadata,
-  }) = _AdminCreateGiftCardRequest;
+  }) = _CreateGiftCardRequest;
 
-  factory AdminCreateGiftCardRequest.fromJson(Map<String, dynamic> json) =>
-      _$AdminCreateGiftCardRequestFromJson(json);
+  factory CreateGiftCardRequest.fromJson(Map<String, dynamic> json) =>
+      _$CreateGiftCardRequestFromJson(json);
 }

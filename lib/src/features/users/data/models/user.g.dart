@@ -6,7 +6,7 @@ part of 'user.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_AdminUser _$AdminUserFromJson(Map<String, dynamic> json) => _AdminUser(
+_User _$UserFromJson(Map<String, dynamic> json) => _User(
   id: json['id'] as String,
   email: json['email'] as String,
   firstName: json['firstName'] as String?,
@@ -18,15 +18,14 @@ _AdminUser _$AdminUserFromJson(Map<String, dynamic> json) => _AdminUser(
   deletedAt: DateTime.parse(json['deletedAt'] as String),
 );
 
-Map<String, dynamic> _$AdminUserToJson(_AdminUser instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'email': instance.email,
-      'firstName': instance.firstName,
-      'lastName': instance.lastName,
-      'avatarUrl': instance.avatarUrl,
-      'metadata': instance.metadata,
-      'createdAt': instance.createdAt.toIso8601String(),
-      'updatedAt': instance.updatedAt.toIso8601String(),
-      'deletedAt': instance.deletedAt.toIso8601String(),
-    };
+Map<String, dynamic> _$UserToJson(_User instance) => <String, dynamic>{
+  'id': instance.id,
+  'email': instance.email,
+  'firstName': instance.firstName,
+  'lastName': instance.lastName,
+  'avatarUrl': instance.avatarUrl,
+  'metadata': instance.metadata,
+  'createdAt': instance.createdAt.toIso8601String(),
+  'updatedAt': instance.updatedAt.toIso8601String(),
+  'deletedAt': instance.deletedAt.toIso8601String(),
+};

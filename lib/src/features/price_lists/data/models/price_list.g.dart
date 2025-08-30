@@ -6,25 +6,24 @@ part of 'price_list.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_AdminPriceList _$AdminPriceListFromJson(Map<String, dynamic> json) =>
-    _AdminPriceList(
-      id: json['id'] as String,
-      title: json['title'] as String,
-      description: json['description'] as String,
-      rules: json['rules'] as Map<String, dynamic>,
-      startsAt: json['startsAt'] as String,
-      endsAt: json['endsAt'] as String,
-      status: json['status'] as String,
-      type: json['type'] as String,
-      prices: (json['prices'] as List<dynamic>)
-          .map((e) => AdminPrice.fromJson(e as Map<String, dynamic>))
-          .toList(),
-      createdAt: DateTime.parse(json['createdAt'] as String),
-      updatedAt: DateTime.parse(json['updatedAt'] as String),
-      deletedAt: DateTime.parse(json['deletedAt'] as String),
-    );
+_PriceList _$PriceListFromJson(Map<String, dynamic> json) => _PriceList(
+  id: json['id'] as String,
+  title: json['title'] as String,
+  description: json['description'] as String,
+  rules: json['rules'] as Map<String, dynamic>,
+  startsAt: json['startsAt'] as String,
+  endsAt: json['endsAt'] as String,
+  status: json['status'] as String,
+  type: json['type'] as String,
+  prices: (json['prices'] as List<dynamic>)
+      .map((e) => Price.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  createdAt: DateTime.parse(json['createdAt'] as String),
+  updatedAt: DateTime.parse(json['updatedAt'] as String),
+  deletedAt: DateTime.parse(json['deletedAt'] as String),
+);
 
-Map<String, dynamic> _$AdminPriceListToJson(_AdminPriceList instance) =>
+Map<String, dynamic> _$PriceListToJson(_PriceList instance) =>
     <String, dynamic>{
       'id': instance.id,
       'title': instance.title,

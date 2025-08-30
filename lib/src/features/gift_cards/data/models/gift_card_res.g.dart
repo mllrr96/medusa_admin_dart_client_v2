@@ -6,12 +6,10 @@ part of 'gift_card_res.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_AdminGiftCardResponse _$AdminGiftCardResponseFromJson(
-  Map<String, dynamic> json,
-) => _AdminGiftCardResponse(
-  giftCard: AdminGiftCard.fromJson(json['giftCard'] as Map<String, dynamic>),
-);
+_GiftCardResponse _$GiftCardResponseFromJson(Map<String, dynamic> json) =>
+    _GiftCardResponse(
+      giftCard: GiftCard.fromJson(json['giftCard'] as Map<String, dynamic>),
+    );
 
-Map<String, dynamic> _$AdminGiftCardResponseToJson(
-  _AdminGiftCardResponse instance,
-) => <String, dynamic>{'giftCard': instance.giftCard};
+Map<String, dynamic> _$GiftCardResponseToJson(_GiftCardResponse instance) =>
+    <String, dynamic>{'giftCard': instance.giftCard};

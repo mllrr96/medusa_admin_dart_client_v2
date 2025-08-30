@@ -18,7 +18,7 @@ class _UsersApi implements UsersApi {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<AdminUserListResponse> retrieveAll({
+  Future<UserListResponse> retrieveAll({
     Map<String, dynamic>? queryParameters,
   }) async {
     final _extra = <String, dynamic>{};
@@ -27,7 +27,7 @@ class _UsersApi implements UsersApi {
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<AdminUserListResponse>(
+    final _options = _setStreamType<UserListResponse>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -38,9 +38,9 @@ class _UsersApi implements UsersApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminUserListResponse _value;
+    late UserListResponse _value;
     try {
-      _value = AdminUserListResponse.fromJson(_result.data!);
+      _value = UserListResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -49,7 +49,7 @@ class _UsersApi implements UsersApi {
   }
 
   @override
-  Future<AdminUserResponse> retrieveMe({
+  Future<UserResponse> retrieveMe({
     Map<String, dynamic>? queryParameters,
   }) async {
     final _extra = <String, dynamic>{};
@@ -58,7 +58,7 @@ class _UsersApi implements UsersApi {
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<AdminUserResponse>(
+    final _options = _setStreamType<UserResponse>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -69,9 +69,9 @@ class _UsersApi implements UsersApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminUserResponse _value;
+    late UserResponse _value;
     try {
-      _value = AdminUserResponse.fromJson(_result.data!);
+      _value = UserResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -80,12 +80,12 @@ class _UsersApi implements UsersApi {
   }
 
   @override
-  Future<AdminUserResponse> retrieve(String id) async {
+  Future<UserResponse> retrieve(String id) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<AdminUserResponse>(
+    final _options = _setStreamType<UserResponse>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -96,9 +96,9 @@ class _UsersApi implements UsersApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminUserResponse _value;
+    late UserResponse _value;
     try {
-      _value = AdminUserResponse.fromJson(_result.data!);
+      _value = UserResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -107,13 +107,13 @@ class _UsersApi implements UsersApi {
   }
 
   @override
-  Future<AdminUserResponse> update(String id, Map<String, dynamic> body) async {
+  Future<UserResponse> update(String id, Map<String, dynamic> body) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = <String, dynamic>{};
     _data.addAll(body);
-    final _options = _setStreamType<AdminUserResponse>(
+    final _options = _setStreamType<UserResponse>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -124,9 +124,9 @@ class _UsersApi implements UsersApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminUserResponse _value;
+    late UserResponse _value;
     try {
-      _value = AdminUserResponse.fromJson(_result.data!);
+      _value = UserResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -135,12 +135,12 @@ class _UsersApi implements UsersApi {
   }
 
   @override
-  Future<AdminUserDeleteResponse> delete(String id) async {
+  Future<UserDeleteResponse> delete(String id) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<AdminUserDeleteResponse>(
+    final _options = _setStreamType<UserDeleteResponse>(
       Options(method: 'DELETE', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -151,9 +151,9 @@ class _UsersApi implements UsersApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late AdminUserDeleteResponse _value;
+    late UserDeleteResponse _value;
     try {
-      _value = AdminUserDeleteResponse.fromJson(_result.data!);
+      _value = UserDeleteResponse.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

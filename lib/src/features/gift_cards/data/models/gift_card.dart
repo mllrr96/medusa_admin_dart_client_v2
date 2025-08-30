@@ -6,8 +6,8 @@ part 'gift_card.freezed.dart';
 part 'gift_card.g.dart';
 
 @freezed
-abstract class AdminGiftCard with _$AdminGiftCard {
-  const factory AdminGiftCard({
+abstract class GiftCard with _$GiftCard {
+  const factory GiftCard({
     required String id,
     required String code,
     required String status,
@@ -22,8 +22,8 @@ abstract class AdminGiftCard with _$AdminGiftCard {
     required DateTime createdAt,
     required DateTime updatedAt,
     required LineItem lineItem,
-  }) = _AdminGiftCard;
+  }) = _GiftCard;
 
-  factory AdminGiftCard.fromJson(Map<String, dynamic> json) =>
-      _$AdminGiftCardFromJson(json);
+  factory GiftCard.fromJson(Map<String, dynamic> json) =>
+      _$GiftCardFromJson(json);
 }

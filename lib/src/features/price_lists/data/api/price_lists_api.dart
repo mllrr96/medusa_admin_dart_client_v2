@@ -11,39 +11,39 @@ abstract class PriceListsApi {
   factory PriceListsApi(Dio dio, {String baseUrl}) = _PriceListsApi;
 
   @GET('/admin/price-lists')
-  Future<AdminPriceListsListRes> retrieveAll({
+  Future<PriceListsListRes> retrieveAll({
     @Queries() Map<String, dynamic>? queryParameters,
   });
 
   @POST('/admin/price-lists')
-  Future<AdminPriceListsRes> create(
-    @Body() AdminCreatePriceListReq body,
+  Future<PriceListsRes> create(
+    @Body() CreatePriceListReq body,
   );
 
   @GET('/admin/price-lists/{id}')
-  Future<AdminPriceListsRes> retrieve(
+  Future<PriceListsRes> retrieve(
     @Path('id') String id, {
     @Queries() Map<String, dynamic>? queryParameters,
   });
 
   @POST('/admin/price-lists/{id}')
-  Future<AdminPriceListsRes> update(
+  Future<PriceListsRes> update(
     @Path('id') String id,
-    @Body() AdminUpdatePriceListReq body,
+    @Body() UpdatePriceListReq body,
   );
 
   @DELETE('/admin/price-lists/{id}')
-  Future<AdminPriceListsDeleteRes> delete(@Path('id') String id);
+  Future<PriceListsDeleteRes> delete(@Path('id') String id);
 
   @POST('/admin/price-lists/{id}/prices/batch')
-  Future<AdminPriceListsRes> managePrices(
+  Future<PriceListsRes> managePrices(
     @Path('id') String id,
-    @Body() AdminPriceListsManagePricesReq body,
+    @Body() PriceListsManagePricesReq body,
   );
 
   @POST('/admin/price-lists/{id}/products')
-  Future<AdminPriceListsRes> removeProducts(
+  Future<PriceListsRes> removeProducts(
     @Path('id') String id,
-    @Body() AdminPriceListRemoveProductsReq body,
+    @Body() PriceListRemoveProductsReq body,
   );
 }

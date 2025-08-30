@@ -13,22 +13,22 @@ part of 'user.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-mixin _$AdminUser {
+mixin _$User {
 
  String get id; String get email; String? get firstName; String? get lastName; String? get avatarUrl; Map<String, dynamic> get metadata; DateTime get createdAt; DateTime get updatedAt; DateTime get deletedAt;
-/// Create a copy of AdminUser
+/// Create a copy of User
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$AdminUserCopyWith<AdminUser> get copyWith => _$AdminUserCopyWithImpl<AdminUser>(this as AdminUser, _$identity);
+$UserCopyWith<User> get copyWith => _$UserCopyWithImpl<User>(this as User, _$identity);
 
-  /// Serializes this AdminUser to a JSON map.
+  /// Serializes this User to a JSON map.
   Map<String, dynamic> toJson();
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AdminUser&&(identical(other.id, id) || other.id == id)&&(identical(other.email, email) || other.email == email)&&(identical(other.firstName, firstName) || other.firstName == firstName)&&(identical(other.lastName, lastName) || other.lastName == lastName)&&(identical(other.avatarUrl, avatarUrl) || other.avatarUrl == avatarUrl)&&const DeepCollectionEquality().equals(other.metadata, metadata)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.deletedAt, deletedAt) || other.deletedAt == deletedAt));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is User&&(identical(other.id, id) || other.id == id)&&(identical(other.email, email) || other.email == email)&&(identical(other.firstName, firstName) || other.firstName == firstName)&&(identical(other.lastName, lastName) || other.lastName == lastName)&&(identical(other.avatarUrl, avatarUrl) || other.avatarUrl == avatarUrl)&&const DeepCollectionEquality().equals(other.metadata, metadata)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.deletedAt, deletedAt) || other.deletedAt == deletedAt));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -37,15 +37,15 @@ int get hashCode => Object.hash(runtimeType,id,email,firstName,lastName,avatarUr
 
 @override
 String toString() {
-  return 'AdminUser(id: $id, email: $email, firstName: $firstName, lastName: $lastName, avatarUrl: $avatarUrl, metadata: $metadata, createdAt: $createdAt, updatedAt: $updatedAt, deletedAt: $deletedAt)';
+  return 'User(id: $id, email: $email, firstName: $firstName, lastName: $lastName, avatarUrl: $avatarUrl, metadata: $metadata, createdAt: $createdAt, updatedAt: $updatedAt, deletedAt: $deletedAt)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $AdminUserCopyWith<$Res>  {
-  factory $AdminUserCopyWith(AdminUser value, $Res Function(AdminUser) _then) = _$AdminUserCopyWithImpl;
+abstract mixin class $UserCopyWith<$Res>  {
+  factory $UserCopyWith(User value, $Res Function(User) _then) = _$UserCopyWithImpl;
 @useResult
 $Res call({
  String id, String email, String? firstName, String? lastName, String? avatarUrl, Map<String, dynamic> metadata, DateTime createdAt, DateTime updatedAt, DateTime deletedAt
@@ -56,14 +56,14 @@ $Res call({
 
 }
 /// @nodoc
-class _$AdminUserCopyWithImpl<$Res>
-    implements $AdminUserCopyWith<$Res> {
-  _$AdminUserCopyWithImpl(this._self, this._then);
+class _$UserCopyWithImpl<$Res>
+    implements $UserCopyWith<$Res> {
+  _$UserCopyWithImpl(this._self, this._then);
 
-  final AdminUser _self;
-  final $Res Function(AdminUser) _then;
+  final User _self;
+  final $Res Function(User) _then;
 
-/// Create a copy of AdminUser
+/// Create a copy of User
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? email = null,Object? firstName = freezed,Object? lastName = freezed,Object? avatarUrl = freezed,Object? metadata = null,Object? createdAt = null,Object? updatedAt = null,Object? deletedAt = null,}) {
   return _then(_self.copyWith(
@@ -83,8 +83,8 @@ as DateTime,
 }
 
 
-/// Adds pattern-matching-related methods to [AdminUser].
-extension AdminUserPatterns on AdminUser {
+/// Adds pattern-matching-related methods to [User].
+extension UserPatterns on User {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -97,10 +97,10 @@ extension AdminUserPatterns on AdminUser {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AdminUser value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _User value)?  $default,{required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _AdminUser() when $default != null:
+case _User() when $default != null:
 return $default(_that);case _:
   return orElse();
 
@@ -119,10 +119,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AdminUser value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _User value)  $default,){
 final _that = this;
 switch (_that) {
-case _AdminUser():
+case _User():
 return $default(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -140,10 +140,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AdminUser value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _User value)?  $default,){
 final _that = this;
 switch (_that) {
-case _AdminUser() when $default != null:
+case _User() when $default != null:
 return $default(_that);case _:
   return null;
 
@@ -163,7 +163,7 @@ return $default(_that);case _:
 
 @optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String email,  String? firstName,  String? lastName,  String? avatarUrl,  Map<String, dynamic> metadata,  DateTime createdAt,  DateTime updatedAt,  DateTime deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _AdminUser() when $default != null:
+case _User() when $default != null:
 return $default(_that.id,_that.email,_that.firstName,_that.lastName,_that.avatarUrl,_that.metadata,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
   return orElse();
 
@@ -184,7 +184,7 @@ return $default(_that.id,_that.email,_that.firstName,_that.lastName,_that.avatar
 
 @optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String email,  String? firstName,  String? lastName,  String? avatarUrl,  Map<String, dynamic> metadata,  DateTime createdAt,  DateTime updatedAt,  DateTime deletedAt)  $default,) {final _that = this;
 switch (_that) {
-case _AdminUser():
+case _User():
 return $default(_that.id,_that.email,_that.firstName,_that.lastName,_that.avatarUrl,_that.metadata,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
   throw StateError('Unexpected subclass');
 
@@ -204,7 +204,7 @@ return $default(_that.id,_that.email,_that.firstName,_that.lastName,_that.avatar
 
 @optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String email,  String? firstName,  String? lastName,  String? avatarUrl,  Map<String, dynamic> metadata,  DateTime createdAt,  DateTime updatedAt,  DateTime deletedAt)?  $default,) {final _that = this;
 switch (_that) {
-case _AdminUser() when $default != null:
+case _User() when $default != null:
 return $default(_that.id,_that.email,_that.firstName,_that.lastName,_that.avatarUrl,_that.metadata,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
   return null;
 
@@ -216,9 +216,9 @@ return $default(_that.id,_that.email,_that.firstName,_that.lastName,_that.avatar
 /// @nodoc
 @JsonSerializable()
 
-class _AdminUser implements AdminUser {
-  const _AdminUser({required this.id, required this.email, this.firstName, this.lastName, this.avatarUrl, required final  Map<String, dynamic> metadata, required this.createdAt, required this.updatedAt, required this.deletedAt}): _metadata = metadata;
-  factory _AdminUser.fromJson(Map<String, dynamic> json) => _$AdminUserFromJson(json);
+class _User implements User {
+  const _User({required this.id, required this.email, this.firstName, this.lastName, this.avatarUrl, required final  Map<String, dynamic> metadata, required this.createdAt, required this.updatedAt, required this.deletedAt}): _metadata = metadata;
+  factory _User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 
 @override final  String id;
 @override final  String email;
@@ -236,20 +236,20 @@ class _AdminUser implements AdminUser {
 @override final  DateTime updatedAt;
 @override final  DateTime deletedAt;
 
-/// Create a copy of AdminUser
+/// Create a copy of User
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$AdminUserCopyWith<_AdminUser> get copyWith => __$AdminUserCopyWithImpl<_AdminUser>(this, _$identity);
+_$UserCopyWith<_User> get copyWith => __$UserCopyWithImpl<_User>(this, _$identity);
 
 @override
 Map<String, dynamic> toJson() {
-  return _$AdminUserToJson(this, );
+  return _$UserToJson(this, );
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AdminUser&&(identical(other.id, id) || other.id == id)&&(identical(other.email, email) || other.email == email)&&(identical(other.firstName, firstName) || other.firstName == firstName)&&(identical(other.lastName, lastName) || other.lastName == lastName)&&(identical(other.avatarUrl, avatarUrl) || other.avatarUrl == avatarUrl)&&const DeepCollectionEquality().equals(other._metadata, _metadata)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.deletedAt, deletedAt) || other.deletedAt == deletedAt));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _User&&(identical(other.id, id) || other.id == id)&&(identical(other.email, email) || other.email == email)&&(identical(other.firstName, firstName) || other.firstName == firstName)&&(identical(other.lastName, lastName) || other.lastName == lastName)&&(identical(other.avatarUrl, avatarUrl) || other.avatarUrl == avatarUrl)&&const DeepCollectionEquality().equals(other._metadata, _metadata)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.deletedAt, deletedAt) || other.deletedAt == deletedAt));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -258,15 +258,15 @@ int get hashCode => Object.hash(runtimeType,id,email,firstName,lastName,avatarUr
 
 @override
 String toString() {
-  return 'AdminUser(id: $id, email: $email, firstName: $firstName, lastName: $lastName, avatarUrl: $avatarUrl, metadata: $metadata, createdAt: $createdAt, updatedAt: $updatedAt, deletedAt: $deletedAt)';
+  return 'User(id: $id, email: $email, firstName: $firstName, lastName: $lastName, avatarUrl: $avatarUrl, metadata: $metadata, createdAt: $createdAt, updatedAt: $updatedAt, deletedAt: $deletedAt)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$AdminUserCopyWith<$Res> implements $AdminUserCopyWith<$Res> {
-  factory _$AdminUserCopyWith(_AdminUser value, $Res Function(_AdminUser) _then) = __$AdminUserCopyWithImpl;
+abstract mixin class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
+  factory _$UserCopyWith(_User value, $Res Function(_User) _then) = __$UserCopyWithImpl;
 @override @useResult
 $Res call({
  String id, String email, String? firstName, String? lastName, String? avatarUrl, Map<String, dynamic> metadata, DateTime createdAt, DateTime updatedAt, DateTime deletedAt
@@ -277,17 +277,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$AdminUserCopyWithImpl<$Res>
-    implements _$AdminUserCopyWith<$Res> {
-  __$AdminUserCopyWithImpl(this._self, this._then);
+class __$UserCopyWithImpl<$Res>
+    implements _$UserCopyWith<$Res> {
+  __$UserCopyWithImpl(this._self, this._then);
 
-  final _AdminUser _self;
-  final $Res Function(_AdminUser) _then;
+  final _User _self;
+  final $Res Function(_User) _then;
 
-/// Create a copy of AdminUser
+/// Create a copy of User
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? email = null,Object? firstName = freezed,Object? lastName = freezed,Object? avatarUrl = freezed,Object? metadata = null,Object? createdAt = null,Object? updatedAt = null,Object? deletedAt = null,}) {
-  return _then(_AdminUser(
+  return _then(_User(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,email: null == email ? _self.email : email // ignore: cast_nullable_to_non_nullable
 as String,firstName: freezed == firstName ? _self.firstName : firstName // ignore: cast_nullable_to_non_nullable

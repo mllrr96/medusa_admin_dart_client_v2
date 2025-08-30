@@ -1,8 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:medusa_admin_dart_client/src/core/models/address.dart';
-import 'package:medusa_admin_dart_client/src/core/models/admin_order_fulfillment.dart';
-import 'package:medusa_admin_dart_client/src/core/models/admin_order_shipping_method.dart';
-import 'package:medusa_admin_dart_client/src/core/models/admin_payment_collection.dart';
+import 'package:medusa_admin_dart_client/src/core/models/order_fulfillment.dart';
+import 'package:medusa_admin_dart_client/src/core/models/order_shipping_method.dart';
+import 'package:medusa_admin_dart_client/src/core/models/payment_collection.dart';
 import 'package:medusa_admin_dart_client/src/core/models/base_order_summary.dart';
 import 'package:medusa_admin_dart_client/src/core/models/customer.dart';
 import 'package:medusa_admin_dart_client/src/core/models/order_credit_line.dart';
@@ -26,7 +26,7 @@ abstract class Order with _$Order {
     @JsonKey(name: 'display_id') int? displayId,
     required List<OrderLineItem> items,
     @JsonKey(name: 'shipping_methods')
-    required List<AdminOrderShippingMethod> shippingMethods,
+    required List<OrderShippingMethod> shippingMethods,
     @JsonKey(name: 'payment_status') required String paymentStatus,
     @JsonKey(name: 'fulfillment_status') required String fulfillmentStatus,
     List<dynamic>? transactions,
@@ -64,8 +64,8 @@ abstract class Order with _$Order {
     @JsonKey(name: 'credit_lines') List<OrderCreditLine>? creditLines,
     @JsonKey(name: 'credit_line_total') required num creditLineTotal,
     @JsonKey(name: 'payment_collections')
-    List<AdminPaymentCollection>? paymentCollections,
-    List<AdminOrderFulfillment>? fulfillments,
+    List<PaymentCollection>? paymentCollections,
+    List<OrderFulfillment>? fulfillments,
     @JsonKey(name: 'sales_channel') SalesChannel? salesChannel,
     Customer? customer,
     @JsonKey(name: 'shipping_address') Address? shippingAddress,

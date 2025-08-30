@@ -7,31 +7,31 @@ part 'price_lists_models.freezed.dart';
 part 'price_lists_models.g.dart';
 
 @freezed
-abstract class AdminPriceListsListRes with _$AdminPriceListsListRes {
-  const factory AdminPriceListsListRes({
-    required List<AdminPriceList> priceLists,
+abstract class PriceListsListRes with _$PriceListsListRes {
+  const factory PriceListsListRes({
+    required List<PriceList> priceLists,
     required int count,
     required int offset,
     required int limit,
-  }) = _AdminPriceListsListRes;
+  }) = _PriceListsListRes;
 
-  factory AdminPriceListsListRes.fromJson(Map<String, dynamic> json) =>
-      _$AdminPriceListsListResFromJson(json);
+  factory PriceListsListRes.fromJson(Map<String, dynamic> json) =>
+      _$PriceListsListResFromJson(json);
 }
 
 @freezed
-abstract class AdminPriceListsRes with _$AdminPriceListsRes {
-  const factory AdminPriceListsRes({
-    required AdminPriceList priceList,
-  }) = _AdminPriceListsRes;
+abstract class PriceListsRes with _$PriceListsRes {
+  const factory PriceListsRes({
+    required PriceList priceList,
+  }) = _PriceListsRes;
 
-  factory AdminPriceListsRes.fromJson(Map<String, dynamic> json) =>
-      _$AdminPriceListsResFromJson(json);
+  factory PriceListsRes.fromJson(Map<String, dynamic> json) =>
+      _$PriceListsResFromJson(json);
 }
 
 @freezed
-abstract class AdminCreatePriceListReq with _$AdminCreatePriceListReq {
-  const factory AdminCreatePriceListReq({
+abstract class CreatePriceListReq with _$CreatePriceListReq {
+  const factory CreatePriceListReq({
     required String title,
     required String description,
     String? startsAt,
@@ -39,16 +39,16 @@ abstract class AdminCreatePriceListReq with _$AdminCreatePriceListReq {
     String? status,
     String? type,
     Map<String, dynamic>? rules,
-    List<AdminPrice>? prices,
-  }) = _AdminCreatePriceListReq;
+    List<Price>? prices,
+  }) = _CreatePriceListReq;
 
-  factory AdminCreatePriceListReq.fromJson(Map<String, dynamic> json) =>
-      _$AdminCreatePriceListReqFromJson(json);
+  factory CreatePriceListReq.fromJson(Map<String, dynamic> json) =>
+      _$CreatePriceListReqFromJson(json);
 }
 
 @freezed
-abstract class AdminUpdatePriceListReq with _$AdminUpdatePriceListReq {
-  const factory AdminUpdatePriceListReq({
+abstract class UpdatePriceListReq with _$UpdatePriceListReq {
+  const factory UpdatePriceListReq({
     String? title,
     String? description,
     String? startsAt,
@@ -56,44 +56,44 @@ abstract class AdminUpdatePriceListReq with _$AdminUpdatePriceListReq {
     String? status,
     String? type,
     Map<String, dynamic>? rules,
-  }) = _AdminUpdatePriceListReq;
+  }) = _UpdatePriceListReq;
 
-  factory AdminUpdatePriceListReq.fromJson(Map<String, dynamic> json) =>
-      _$AdminUpdatePriceListReqFromJson(json);
+  factory UpdatePriceListReq.fromJson(Map<String, dynamic> json) =>
+      _$UpdatePriceListReqFromJson(json);
 }
 
 @freezed
-abstract class AdminPriceListsDeleteRes with _$AdminPriceListsDeleteRes {
-  const factory AdminPriceListsDeleteRes({
+abstract class PriceListsDeleteRes with _$PriceListsDeleteRes {
+  const factory PriceListsDeleteRes({
     required String id,
     required String object,
     required bool deleted,
-  }) = _AdminPriceListsDeleteRes;
+  }) = _PriceListsDeleteRes;
 
-  factory AdminPriceListsDeleteRes.fromJson(Map<String, dynamic> json) =>
-      _$AdminPriceListsDeleteResFromJson(json);
+  factory PriceListsDeleteRes.fromJson(Map<String, dynamic> json) =>
+      _$PriceListsDeleteResFromJson(json);
 }
 
 @freezed
-abstract class AdminPriceListsManagePricesReq
-    with _$AdminPriceListsManagePricesReq {
-  const factory AdminPriceListsManagePricesReq({
-    List<AdminPrice>? create,
-    List<AdminPrice>? update,
+abstract class PriceListsManagePricesReq
+    with _$PriceListsManagePricesReq {
+  const factory PriceListsManagePricesReq({
+    List<Price>? create,
+    List<Price>? update,
     List<String>? delete,
-  }) = _AdminPriceListsManagePricesReq;
+  }) = _PriceListsManagePricesReq;
 
-  factory AdminPriceListsManagePricesReq.fromJson(Map<String, dynamic> json) =>
-      _$AdminPriceListsManagePricesReqFromJson(json);
+  factory PriceListsManagePricesReq.fromJson(Map<String, dynamic> json) =>
+      _$PriceListsManagePricesReqFromJson(json);
 }
 
 @freezed
-abstract class AdminPriceListRemoveProductsReq
-    with _$AdminPriceListRemoveProductsReq {
-  const factory AdminPriceListRemoveProductsReq({
+abstract class PriceListRemoveProductsReq
+    with _$PriceListRemoveProductsReq {
+  const factory PriceListRemoveProductsReq({
     List<String>? remove,
-  }) = _AdminPriceListRemoveProductsReq;
+  }) = _PriceListRemoveProductsReq;
 
-  factory AdminPriceListRemoveProductsReq.fromJson(Map<String, dynamic> json) =>
-      _$AdminPriceListRemoveProductsReqFromJson(json);
+  factory PriceListRemoveProductsReq.fromJson(Map<String, dynamic> json) =>
+      _$PriceListRemoveProductsReqFromJson(json);
 }

@@ -4,8 +4,8 @@ part 'user.freezed.dart';
 part 'user.g.dart';
 
 @freezed
-abstract class AdminUser with _$AdminUser {
-  const factory AdminUser({
+abstract class User with _$User {
+  const factory User({
     required String id,
     required String email,
     String? firstName,
@@ -15,8 +15,8 @@ abstract class AdminUser with _$AdminUser {
     required DateTime createdAt,
     required DateTime updatedAt,
     required DateTime deletedAt,
-  }) = _AdminUser;
+  }) = _User;
 
-  factory AdminUser.fromJson(Map<String, dynamic> json) =>
-      _$AdminUserFromJson(json);
+  factory User.fromJson(Map<String, dynamic> json) =>
+      _$UserFromJson(json);
 }

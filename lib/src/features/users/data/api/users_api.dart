@@ -1,8 +1,9 @@
 import 'package:dio/dio.dart';
+import 'package:medusa_admin_dart_client/src/features/users/data/models/user_delete_res.dart';
+import 'package:medusa_admin_dart_client/src/features/users/data/models/user_res.dart';
+import 'package:medusa_admin_dart_client/src/features/users/data/models/users_list_res.dart';
 import 'package:retrofit/retrofit.dart';
-import '../models/admin_user_delete_res.dart';
-import '../models/admin_user_res.dart';
-import '../models/admin_users_list_res.dart';
+
 
 part 'users_api.g.dart';
 
@@ -11,24 +12,24 @@ abstract class UsersApi {
   factory UsersApi(Dio dio, {String baseUrl}) = _UsersApi;
 
   @GET('/admin/users')
-  Future<AdminUserListResponse> retrieveAll({
+  Future<UserListResponse> retrieveAll({
     @Queries() Map<String, dynamic>? queryParameters,
   });
 
   @GET('/admin/users/me')
-  Future<AdminUserResponse> retrieveMe({
+  Future<UserResponse> retrieveMe({
     @Queries() Map<String, dynamic>? queryParameters,
   });
 
   @GET('/admin/users/{id}')
-  Future<AdminUserResponse> retrieve(@Path('id') String id);
+  Future<UserResponse> retrieve(@Path('id') String id);
 
   @POST('/admin/users/{id}')
-  Future<AdminUserResponse> update(
+  Future<UserResponse> update(
     @Path('id') String id,
     @Body() Map<String, dynamic> body,
   );
 
   @DELETE('/admin/users/{id}')
-  Future<AdminUserDeleteResponse> delete(@Path('id') String id);
+  Future<UserDeleteResponse> delete(@Path('id') String id);
 }

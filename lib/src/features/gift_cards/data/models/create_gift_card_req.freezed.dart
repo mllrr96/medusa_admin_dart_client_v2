@@ -13,22 +13,22 @@ part of 'create_gift_card_req.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-mixin _$AdminCreateGiftCardRequest {
+mixin _$CreateGiftCardRequest {
 
  int get value; String get regionId; Map<String, dynamic>? get metadata;
-/// Create a copy of AdminCreateGiftCardRequest
+/// Create a copy of CreateGiftCardRequest
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$AdminCreateGiftCardRequestCopyWith<AdminCreateGiftCardRequest> get copyWith => _$AdminCreateGiftCardRequestCopyWithImpl<AdminCreateGiftCardRequest>(this as AdminCreateGiftCardRequest, _$identity);
+$CreateGiftCardRequestCopyWith<CreateGiftCardRequest> get copyWith => _$CreateGiftCardRequestCopyWithImpl<CreateGiftCardRequest>(this as CreateGiftCardRequest, _$identity);
 
-  /// Serializes this AdminCreateGiftCardRequest to a JSON map.
+  /// Serializes this CreateGiftCardRequest to a JSON map.
   Map<String, dynamic> toJson();
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AdminCreateGiftCardRequest&&(identical(other.value, value) || other.value == value)&&(identical(other.regionId, regionId) || other.regionId == regionId)&&const DeepCollectionEquality().equals(other.metadata, metadata));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is CreateGiftCardRequest&&(identical(other.value, value) || other.value == value)&&(identical(other.regionId, regionId) || other.regionId == regionId)&&const DeepCollectionEquality().equals(other.metadata, metadata));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -37,15 +37,15 @@ int get hashCode => Object.hash(runtimeType,value,regionId,const DeepCollectionE
 
 @override
 String toString() {
-  return 'AdminCreateGiftCardRequest(value: $value, regionId: $regionId, metadata: $metadata)';
+  return 'CreateGiftCardRequest(value: $value, regionId: $regionId, metadata: $metadata)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $AdminCreateGiftCardRequestCopyWith<$Res>  {
-  factory $AdminCreateGiftCardRequestCopyWith(AdminCreateGiftCardRequest value, $Res Function(AdminCreateGiftCardRequest) _then) = _$AdminCreateGiftCardRequestCopyWithImpl;
+abstract mixin class $CreateGiftCardRequestCopyWith<$Res>  {
+  factory $CreateGiftCardRequestCopyWith(CreateGiftCardRequest value, $Res Function(CreateGiftCardRequest) _then) = _$CreateGiftCardRequestCopyWithImpl;
 @useResult
 $Res call({
  int value, String regionId, Map<String, dynamic>? metadata
@@ -56,14 +56,14 @@ $Res call({
 
 }
 /// @nodoc
-class _$AdminCreateGiftCardRequestCopyWithImpl<$Res>
-    implements $AdminCreateGiftCardRequestCopyWith<$Res> {
-  _$AdminCreateGiftCardRequestCopyWithImpl(this._self, this._then);
+class _$CreateGiftCardRequestCopyWithImpl<$Res>
+    implements $CreateGiftCardRequestCopyWith<$Res> {
+  _$CreateGiftCardRequestCopyWithImpl(this._self, this._then);
 
-  final AdminCreateGiftCardRequest _self;
-  final $Res Function(AdminCreateGiftCardRequest) _then;
+  final CreateGiftCardRequest _self;
+  final $Res Function(CreateGiftCardRequest) _then;
 
-/// Create a copy of AdminCreateGiftCardRequest
+/// Create a copy of CreateGiftCardRequest
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? value = null,Object? regionId = null,Object? metadata = freezed,}) {
   return _then(_self.copyWith(
@@ -77,8 +77,8 @@ as Map<String, dynamic>?,
 }
 
 
-/// Adds pattern-matching-related methods to [AdminCreateGiftCardRequest].
-extension AdminCreateGiftCardRequestPatterns on AdminCreateGiftCardRequest {
+/// Adds pattern-matching-related methods to [CreateGiftCardRequest].
+extension CreateGiftCardRequestPatterns on CreateGiftCardRequest {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -91,10 +91,10 @@ extension AdminCreateGiftCardRequestPatterns on AdminCreateGiftCardRequest {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AdminCreateGiftCardRequest value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _CreateGiftCardRequest value)?  $default,{required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _AdminCreateGiftCardRequest() when $default != null:
+case _CreateGiftCardRequest() when $default != null:
 return $default(_that);case _:
   return orElse();
 
@@ -113,10 +113,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AdminCreateGiftCardRequest value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _CreateGiftCardRequest value)  $default,){
 final _that = this;
 switch (_that) {
-case _AdminCreateGiftCardRequest():
+case _CreateGiftCardRequest():
 return $default(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -134,10 +134,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AdminCreateGiftCardRequest value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _CreateGiftCardRequest value)?  $default,){
 final _that = this;
 switch (_that) {
-case _AdminCreateGiftCardRequest() when $default != null:
+case _CreateGiftCardRequest() when $default != null:
 return $default(_that);case _:
   return null;
 
@@ -157,7 +157,7 @@ return $default(_that);case _:
 
 @optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int value,  String regionId,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _AdminCreateGiftCardRequest() when $default != null:
+case _CreateGiftCardRequest() when $default != null:
 return $default(_that.value,_that.regionId,_that.metadata);case _:
   return orElse();
 
@@ -178,7 +178,7 @@ return $default(_that.value,_that.regionId,_that.metadata);case _:
 
 @optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int value,  String regionId,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
 switch (_that) {
-case _AdminCreateGiftCardRequest():
+case _CreateGiftCardRequest():
 return $default(_that.value,_that.regionId,_that.metadata);case _:
   throw StateError('Unexpected subclass');
 
@@ -198,7 +198,7 @@ return $default(_that.value,_that.regionId,_that.metadata);case _:
 
 @optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int value,  String regionId,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
 switch (_that) {
-case _AdminCreateGiftCardRequest() when $default != null:
+case _CreateGiftCardRequest() when $default != null:
 return $default(_that.value,_that.regionId,_that.metadata);case _:
   return null;
 
@@ -210,9 +210,9 @@ return $default(_that.value,_that.regionId,_that.metadata);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _AdminCreateGiftCardRequest implements AdminCreateGiftCardRequest {
-  const _AdminCreateGiftCardRequest({required this.value, required this.regionId, final  Map<String, dynamic>? metadata}): _metadata = metadata;
-  factory _AdminCreateGiftCardRequest.fromJson(Map<String, dynamic> json) => _$AdminCreateGiftCardRequestFromJson(json);
+class _CreateGiftCardRequest implements CreateGiftCardRequest {
+  const _CreateGiftCardRequest({required this.value, required this.regionId, final  Map<String, dynamic>? metadata}): _metadata = metadata;
+  factory _CreateGiftCardRequest.fromJson(Map<String, dynamic> json) => _$CreateGiftCardRequestFromJson(json);
 
 @override final  int value;
 @override final  String regionId;
@@ -226,20 +226,20 @@ class _AdminCreateGiftCardRequest implements AdminCreateGiftCardRequest {
 }
 
 
-/// Create a copy of AdminCreateGiftCardRequest
+/// Create a copy of CreateGiftCardRequest
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$AdminCreateGiftCardRequestCopyWith<_AdminCreateGiftCardRequest> get copyWith => __$AdminCreateGiftCardRequestCopyWithImpl<_AdminCreateGiftCardRequest>(this, _$identity);
+_$CreateGiftCardRequestCopyWith<_CreateGiftCardRequest> get copyWith => __$CreateGiftCardRequestCopyWithImpl<_CreateGiftCardRequest>(this, _$identity);
 
 @override
 Map<String, dynamic> toJson() {
-  return _$AdminCreateGiftCardRequestToJson(this, );
+  return _$CreateGiftCardRequestToJson(this, );
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AdminCreateGiftCardRequest&&(identical(other.value, value) || other.value == value)&&(identical(other.regionId, regionId) || other.regionId == regionId)&&const DeepCollectionEquality().equals(other._metadata, _metadata));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CreateGiftCardRequest&&(identical(other.value, value) || other.value == value)&&(identical(other.regionId, regionId) || other.regionId == regionId)&&const DeepCollectionEquality().equals(other._metadata, _metadata));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -248,15 +248,15 @@ int get hashCode => Object.hash(runtimeType,value,regionId,const DeepCollectionE
 
 @override
 String toString() {
-  return 'AdminCreateGiftCardRequest(value: $value, regionId: $regionId, metadata: $metadata)';
+  return 'CreateGiftCardRequest(value: $value, regionId: $regionId, metadata: $metadata)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$AdminCreateGiftCardRequestCopyWith<$Res> implements $AdminCreateGiftCardRequestCopyWith<$Res> {
-  factory _$AdminCreateGiftCardRequestCopyWith(_AdminCreateGiftCardRequest value, $Res Function(_AdminCreateGiftCardRequest) _then) = __$AdminCreateGiftCardRequestCopyWithImpl;
+abstract mixin class _$CreateGiftCardRequestCopyWith<$Res> implements $CreateGiftCardRequestCopyWith<$Res> {
+  factory _$CreateGiftCardRequestCopyWith(_CreateGiftCardRequest value, $Res Function(_CreateGiftCardRequest) _then) = __$CreateGiftCardRequestCopyWithImpl;
 @override @useResult
 $Res call({
  int value, String regionId, Map<String, dynamic>? metadata
@@ -267,17 +267,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$AdminCreateGiftCardRequestCopyWithImpl<$Res>
-    implements _$AdminCreateGiftCardRequestCopyWith<$Res> {
-  __$AdminCreateGiftCardRequestCopyWithImpl(this._self, this._then);
+class __$CreateGiftCardRequestCopyWithImpl<$Res>
+    implements _$CreateGiftCardRequestCopyWith<$Res> {
+  __$CreateGiftCardRequestCopyWithImpl(this._self, this._then);
 
-  final _AdminCreateGiftCardRequest _self;
-  final $Res Function(_AdminCreateGiftCardRequest) _then;
+  final _CreateGiftCardRequest _self;
+  final $Res Function(_CreateGiftCardRequest) _then;
 
-/// Create a copy of AdminCreateGiftCardRequest
+/// Create a copy of CreateGiftCardRequest
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? value = null,Object? regionId = null,Object? metadata = freezed,}) {
-  return _then(_AdminCreateGiftCardRequest(
+  return _then(_CreateGiftCardRequest(
 value: null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
 as int,regionId: null == regionId ? _self.regionId : regionId // ignore: cast_nullable_to_non_nullable
 as String,metadata: freezed == metadata ? _self._metadata : metadata // ignore: cast_nullable_to_non_nullable

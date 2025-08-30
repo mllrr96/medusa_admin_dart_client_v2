@@ -12,26 +12,26 @@ abstract class GiftCardsApi {
   factory GiftCardsApi(Dio dio, {String baseUrl}) = _GiftCardsApi;
 
   @GET('/gift-cards')
-  Future<AdminGiftCardsListResponse> retrieveAll({
+  Future<GiftCardsListResponse> retrieveAll({
     @Queries() Map<String, dynamic>? queryParameters,
   });
 
   @POST('/gift-cards')
-  Future<AdminGiftCardResponse> create(
-    @Body() AdminCreateGiftCardRequest payload, {
+  Future<GiftCardResponse> create(
+    @Body() CreateGiftCardRequest payload, {
     @Queries() Map<String, dynamic>? queryParameters,
   });
 
   @GET('/gift-cards/{id}')
-  Future<AdminGiftCardResponse> retrieve({
+  Future<GiftCardResponse> retrieve({
     @Path('id') required String id,
     @Queries() Map<String, dynamic>? queryParameters,
   });
 
   @POST('/gift-cards/{id}')
-  Future<AdminGiftCardResponse> update({
+  Future<GiftCardResponse> update({
     @Path('id') required String id,
-    @Body() required AdminUpdateGiftCardRequest payload,
+    @Body() required UpdateGiftCardRequest payload,
     @Queries() Map<String, dynamic>? queryParameters,
   });
 

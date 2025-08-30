@@ -6,44 +6,44 @@ class PriceListsRepository {
 
   PriceListsRepository(this._priceListsApi);
 
-  Future<AdminPriceListsListRes> retrieveAll({
+  Future<PriceListsListRes> retrieveAll({
     Map<String, dynamic>? queryParameters,
   }) async {
     return _priceListsApi.retrieveAll(queryParameters: queryParameters);
   }
 
-  Future<AdminPriceListsRes> create(AdminCreatePriceListReq body) async {
+  Future<PriceListsRes> create(CreatePriceListReq body) async {
     return _priceListsApi.create(body);
   }
 
-  Future<AdminPriceListsRes> retrieve(
+  Future<PriceListsRes> retrieve(
     String id, {
     Map<String, dynamic>? queryParameters,
   }) async {
     return _priceListsApi.retrieve(id, queryParameters: queryParameters);
   }
 
-  Future<AdminPriceListsRes> update(
+  Future<PriceListsRes> update(
     String id,
-    AdminUpdatePriceListReq body,
+    UpdatePriceListReq body,
   ) async {
     return _priceListsApi.update(id, body);
   }
 
-  Future<AdminPriceListsDeleteRes> delete(String id) async {
+  Future<PriceListsDeleteRes> delete(String id) async {
     return _priceListsApi.delete(id);
   }
 
-  Future<AdminPriceListsRes> managePrices(
+  Future<PriceListsRes> managePrices(
     String id,
-    AdminPriceListsManagePricesReq body,
+    PriceListsManagePricesReq body,
   ) async {
     return _priceListsApi.managePrices(id, body);
   }
 
-  Future<AdminPriceListsRes> removeProducts(
+  Future<PriceListsRes> removeProducts(
     String id,
-    AdminPriceListRemoveProductsReq body,
+    PriceListRemoveProductsReq body,
   ) async {
     return _priceListsApi.removeProducts(id, body);
   }

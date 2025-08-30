@@ -6,23 +6,23 @@ class DiscountsRepository {
 
   final DiscountsApi _discountsApi;
 
-  Future<AdminDiscountsListRes> retrieveAll({
+  Future<DiscountsListRes> retrieveAll({
     Map<String, dynamic>? queryParameters,
   }) {
     return _discountsApi.retrieveAll(queryParameters: queryParameters);
   }
 
-  Future<AdminDiscountsRes> retrieve(String id) {
+  Future<DiscountsRes> retrieve(String id) {
     return _discountsApi.retrieve(id);
   }
 
-  Future<AdminDiscountsRes> create(AdminPostDiscountsReq body) {
+  Future<DiscountsRes> create(PostDiscountsReq body) {
     return _discountsApi.create(body);
   }
 
-  Future<AdminDiscountsRes> update(
+  Future<DiscountsRes> update(
     String id,
-    AdminPostDiscountsDiscountReq body,
+    PostDiscountsDiscountReq body,
   ) {
     return _discountsApi.update(id, body);
   }

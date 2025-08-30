@@ -13,22 +13,22 @@ part of 'price_lists_models.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-mixin _$AdminPriceListsListRes {
+mixin _$PriceListsListRes {
 
- List<AdminPriceList> get priceLists; int get count; int get offset; int get limit;
-/// Create a copy of AdminPriceListsListRes
+ List<PriceList> get priceLists; int get count; int get offset; int get limit;
+/// Create a copy of PriceListsListRes
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$AdminPriceListsListResCopyWith<AdminPriceListsListRes> get copyWith => _$AdminPriceListsListResCopyWithImpl<AdminPriceListsListRes>(this as AdminPriceListsListRes, _$identity);
+$PriceListsListResCopyWith<PriceListsListRes> get copyWith => _$PriceListsListResCopyWithImpl<PriceListsListRes>(this as PriceListsListRes, _$identity);
 
-  /// Serializes this AdminPriceListsListRes to a JSON map.
+  /// Serializes this PriceListsListRes to a JSON map.
   Map<String, dynamic> toJson();
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AdminPriceListsListRes&&const DeepCollectionEquality().equals(other.priceLists, priceLists)&&(identical(other.count, count) || other.count == count)&&(identical(other.offset, offset) || other.offset == offset)&&(identical(other.limit, limit) || other.limit == limit));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PriceListsListRes&&const DeepCollectionEquality().equals(other.priceLists, priceLists)&&(identical(other.count, count) || other.count == count)&&(identical(other.offset, offset) || other.offset == offset)&&(identical(other.limit, limit) || other.limit == limit));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -37,18 +37,18 @@ int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(
 
 @override
 String toString() {
-  return 'AdminPriceListsListRes(priceLists: $priceLists, count: $count, offset: $offset, limit: $limit)';
+  return 'PriceListsListRes(priceLists: $priceLists, count: $count, offset: $offset, limit: $limit)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $AdminPriceListsListResCopyWith<$Res>  {
-  factory $AdminPriceListsListResCopyWith(AdminPriceListsListRes value, $Res Function(AdminPriceListsListRes) _then) = _$AdminPriceListsListResCopyWithImpl;
+abstract mixin class $PriceListsListResCopyWith<$Res>  {
+  factory $PriceListsListResCopyWith(PriceListsListRes value, $Res Function(PriceListsListRes) _then) = _$PriceListsListResCopyWithImpl;
 @useResult
 $Res call({
- List<AdminPriceList> priceLists, int count, int offset, int limit
+ List<PriceList> priceLists, int count, int offset, int limit
 });
 
 
@@ -56,19 +56,19 @@ $Res call({
 
 }
 /// @nodoc
-class _$AdminPriceListsListResCopyWithImpl<$Res>
-    implements $AdminPriceListsListResCopyWith<$Res> {
-  _$AdminPriceListsListResCopyWithImpl(this._self, this._then);
+class _$PriceListsListResCopyWithImpl<$Res>
+    implements $PriceListsListResCopyWith<$Res> {
+  _$PriceListsListResCopyWithImpl(this._self, this._then);
 
-  final AdminPriceListsListRes _self;
-  final $Res Function(AdminPriceListsListRes) _then;
+  final PriceListsListRes _self;
+  final $Res Function(PriceListsListRes) _then;
 
-/// Create a copy of AdminPriceListsListRes
+/// Create a copy of PriceListsListRes
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? priceLists = null,Object? count = null,Object? offset = null,Object? limit = null,}) {
   return _then(_self.copyWith(
 priceLists: null == priceLists ? _self.priceLists : priceLists // ignore: cast_nullable_to_non_nullable
-as List<AdminPriceList>,count: null == count ? _self.count : count // ignore: cast_nullable_to_non_nullable
+as List<PriceList>,count: null == count ? _self.count : count // ignore: cast_nullable_to_non_nullable
 as int,offset: null == offset ? _self.offset : offset // ignore: cast_nullable_to_non_nullable
 as int,limit: null == limit ? _self.limit : limit // ignore: cast_nullable_to_non_nullable
 as int,
@@ -78,8 +78,8 @@ as int,
 }
 
 
-/// Adds pattern-matching-related methods to [AdminPriceListsListRes].
-extension AdminPriceListsListResPatterns on AdminPriceListsListRes {
+/// Adds pattern-matching-related methods to [PriceListsListRes].
+extension PriceListsListResPatterns on PriceListsListRes {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -92,10 +92,10 @@ extension AdminPriceListsListResPatterns on AdminPriceListsListRes {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AdminPriceListsListRes value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _PriceListsListRes value)?  $default,{required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _AdminPriceListsListRes() when $default != null:
+case _PriceListsListRes() when $default != null:
 return $default(_that);case _:
   return orElse();
 
@@ -114,10 +114,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AdminPriceListsListRes value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _PriceListsListRes value)  $default,){
 final _that = this;
 switch (_that) {
-case _AdminPriceListsListRes():
+case _PriceListsListRes():
 return $default(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -135,10 +135,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AdminPriceListsListRes value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _PriceListsListRes value)?  $default,){
 final _that = this;
 switch (_that) {
-case _AdminPriceListsListRes() when $default != null:
+case _PriceListsListRes() when $default != null:
 return $default(_that);case _:
   return null;
 
@@ -156,9 +156,9 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<AdminPriceList> priceLists,  int count,  int offset,  int limit)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<PriceList> priceLists,  int count,  int offset,  int limit)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _AdminPriceListsListRes() when $default != null:
+case _PriceListsListRes() when $default != null:
 return $default(_that.priceLists,_that.count,_that.offset,_that.limit);case _:
   return orElse();
 
@@ -177,9 +177,9 @@ return $default(_that.priceLists,_that.count,_that.offset,_that.limit);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<AdminPriceList> priceLists,  int count,  int offset,  int limit)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<PriceList> priceLists,  int count,  int offset,  int limit)  $default,) {final _that = this;
 switch (_that) {
-case _AdminPriceListsListRes():
+case _PriceListsListRes():
 return $default(_that.priceLists,_that.count,_that.offset,_that.limit);case _:
   throw StateError('Unexpected subclass');
 
@@ -197,9 +197,9 @@ return $default(_that.priceLists,_that.count,_that.offset,_that.limit);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<AdminPriceList> priceLists,  int count,  int offset,  int limit)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<PriceList> priceLists,  int count,  int offset,  int limit)?  $default,) {final _that = this;
 switch (_that) {
-case _AdminPriceListsListRes() when $default != null:
+case _PriceListsListRes() when $default != null:
 return $default(_that.priceLists,_that.count,_that.offset,_that.limit);case _:
   return null;
 
@@ -211,12 +211,12 @@ return $default(_that.priceLists,_that.count,_that.offset,_that.limit);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _AdminPriceListsListRes implements AdminPriceListsListRes {
-  const _AdminPriceListsListRes({required final  List<AdminPriceList> priceLists, required this.count, required this.offset, required this.limit}): _priceLists = priceLists;
-  factory _AdminPriceListsListRes.fromJson(Map<String, dynamic> json) => _$AdminPriceListsListResFromJson(json);
+class _PriceListsListRes implements PriceListsListRes {
+  const _PriceListsListRes({required final  List<PriceList> priceLists, required this.count, required this.offset, required this.limit}): _priceLists = priceLists;
+  factory _PriceListsListRes.fromJson(Map<String, dynamic> json) => _$PriceListsListResFromJson(json);
 
- final  List<AdminPriceList> _priceLists;
-@override List<AdminPriceList> get priceLists {
+ final  List<PriceList> _priceLists;
+@override List<PriceList> get priceLists {
   if (_priceLists is EqualUnmodifiableListView) return _priceLists;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_priceLists);
@@ -226,20 +226,20 @@ class _AdminPriceListsListRes implements AdminPriceListsListRes {
 @override final  int offset;
 @override final  int limit;
 
-/// Create a copy of AdminPriceListsListRes
+/// Create a copy of PriceListsListRes
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$AdminPriceListsListResCopyWith<_AdminPriceListsListRes> get copyWith => __$AdminPriceListsListResCopyWithImpl<_AdminPriceListsListRes>(this, _$identity);
+_$PriceListsListResCopyWith<_PriceListsListRes> get copyWith => __$PriceListsListResCopyWithImpl<_PriceListsListRes>(this, _$identity);
 
 @override
 Map<String, dynamic> toJson() {
-  return _$AdminPriceListsListResToJson(this, );
+  return _$PriceListsListResToJson(this, );
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AdminPriceListsListRes&&const DeepCollectionEquality().equals(other._priceLists, _priceLists)&&(identical(other.count, count) || other.count == count)&&(identical(other.offset, offset) || other.offset == offset)&&(identical(other.limit, limit) || other.limit == limit));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PriceListsListRes&&const DeepCollectionEquality().equals(other._priceLists, _priceLists)&&(identical(other.count, count) || other.count == count)&&(identical(other.offset, offset) || other.offset == offset)&&(identical(other.limit, limit) || other.limit == limit));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -248,18 +248,18 @@ int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(
 
 @override
 String toString() {
-  return 'AdminPriceListsListRes(priceLists: $priceLists, count: $count, offset: $offset, limit: $limit)';
+  return 'PriceListsListRes(priceLists: $priceLists, count: $count, offset: $offset, limit: $limit)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$AdminPriceListsListResCopyWith<$Res> implements $AdminPriceListsListResCopyWith<$Res> {
-  factory _$AdminPriceListsListResCopyWith(_AdminPriceListsListRes value, $Res Function(_AdminPriceListsListRes) _then) = __$AdminPriceListsListResCopyWithImpl;
+abstract mixin class _$PriceListsListResCopyWith<$Res> implements $PriceListsListResCopyWith<$Res> {
+  factory _$PriceListsListResCopyWith(_PriceListsListRes value, $Res Function(_PriceListsListRes) _then) = __$PriceListsListResCopyWithImpl;
 @override @useResult
 $Res call({
- List<AdminPriceList> priceLists, int count, int offset, int limit
+ List<PriceList> priceLists, int count, int offset, int limit
 });
 
 
@@ -267,19 +267,19 @@ $Res call({
 
 }
 /// @nodoc
-class __$AdminPriceListsListResCopyWithImpl<$Res>
-    implements _$AdminPriceListsListResCopyWith<$Res> {
-  __$AdminPriceListsListResCopyWithImpl(this._self, this._then);
+class __$PriceListsListResCopyWithImpl<$Res>
+    implements _$PriceListsListResCopyWith<$Res> {
+  __$PriceListsListResCopyWithImpl(this._self, this._then);
 
-  final _AdminPriceListsListRes _self;
-  final $Res Function(_AdminPriceListsListRes) _then;
+  final _PriceListsListRes _self;
+  final $Res Function(_PriceListsListRes) _then;
 
-/// Create a copy of AdminPriceListsListRes
+/// Create a copy of PriceListsListRes
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? priceLists = null,Object? count = null,Object? offset = null,Object? limit = null,}) {
-  return _then(_AdminPriceListsListRes(
+  return _then(_PriceListsListRes(
 priceLists: null == priceLists ? _self._priceLists : priceLists // ignore: cast_nullable_to_non_nullable
-as List<AdminPriceList>,count: null == count ? _self.count : count // ignore: cast_nullable_to_non_nullable
+as List<PriceList>,count: null == count ? _self.count : count // ignore: cast_nullable_to_non_nullable
 as int,offset: null == offset ? _self.offset : offset // ignore: cast_nullable_to_non_nullable
 as int,limit: null == limit ? _self.limit : limit // ignore: cast_nullable_to_non_nullable
 as int,
@@ -291,22 +291,22 @@ as int,
 
 
 /// @nodoc
-mixin _$AdminPriceListsRes {
+mixin _$PriceListsRes {
 
- AdminPriceList get priceList;
-/// Create a copy of AdminPriceListsRes
+ PriceList get priceList;
+/// Create a copy of PriceListsRes
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$AdminPriceListsResCopyWith<AdminPriceListsRes> get copyWith => _$AdminPriceListsResCopyWithImpl<AdminPriceListsRes>(this as AdminPriceListsRes, _$identity);
+$PriceListsResCopyWith<PriceListsRes> get copyWith => _$PriceListsResCopyWithImpl<PriceListsRes>(this as PriceListsRes, _$identity);
 
-  /// Serializes this AdminPriceListsRes to a JSON map.
+  /// Serializes this PriceListsRes to a JSON map.
   Map<String, dynamic> toJson();
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AdminPriceListsRes&&(identical(other.priceList, priceList) || other.priceList == priceList));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PriceListsRes&&(identical(other.priceList, priceList) || other.priceList == priceList));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -315,55 +315,55 @@ int get hashCode => Object.hash(runtimeType,priceList);
 
 @override
 String toString() {
-  return 'AdminPriceListsRes(priceList: $priceList)';
+  return 'PriceListsRes(priceList: $priceList)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $AdminPriceListsResCopyWith<$Res>  {
-  factory $AdminPriceListsResCopyWith(AdminPriceListsRes value, $Res Function(AdminPriceListsRes) _then) = _$AdminPriceListsResCopyWithImpl;
+abstract mixin class $PriceListsResCopyWith<$Res>  {
+  factory $PriceListsResCopyWith(PriceListsRes value, $Res Function(PriceListsRes) _then) = _$PriceListsResCopyWithImpl;
 @useResult
 $Res call({
- AdminPriceList priceList
+ PriceList priceList
 });
 
 
-$AdminPriceListCopyWith<$Res> get priceList;
+$PriceListCopyWith<$Res> get priceList;
 
 }
 /// @nodoc
-class _$AdminPriceListsResCopyWithImpl<$Res>
-    implements $AdminPriceListsResCopyWith<$Res> {
-  _$AdminPriceListsResCopyWithImpl(this._self, this._then);
+class _$PriceListsResCopyWithImpl<$Res>
+    implements $PriceListsResCopyWith<$Res> {
+  _$PriceListsResCopyWithImpl(this._self, this._then);
 
-  final AdminPriceListsRes _self;
-  final $Res Function(AdminPriceListsRes) _then;
+  final PriceListsRes _self;
+  final $Res Function(PriceListsRes) _then;
 
-/// Create a copy of AdminPriceListsRes
+/// Create a copy of PriceListsRes
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? priceList = null,}) {
   return _then(_self.copyWith(
 priceList: null == priceList ? _self.priceList : priceList // ignore: cast_nullable_to_non_nullable
-as AdminPriceList,
+as PriceList,
   ));
 }
-/// Create a copy of AdminPriceListsRes
+/// Create a copy of PriceListsRes
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$AdminPriceListCopyWith<$Res> get priceList {
+$PriceListCopyWith<$Res> get priceList {
   
-  return $AdminPriceListCopyWith<$Res>(_self.priceList, (value) {
+  return $PriceListCopyWith<$Res>(_self.priceList, (value) {
     return _then(_self.copyWith(priceList: value));
   });
 }
 }
 
 
-/// Adds pattern-matching-related methods to [AdminPriceListsRes].
-extension AdminPriceListsResPatterns on AdminPriceListsRes {
+/// Adds pattern-matching-related methods to [PriceListsRes].
+extension PriceListsResPatterns on PriceListsRes {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -376,10 +376,10 @@ extension AdminPriceListsResPatterns on AdminPriceListsRes {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AdminPriceListsRes value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _PriceListsRes value)?  $default,{required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _AdminPriceListsRes() when $default != null:
+case _PriceListsRes() when $default != null:
 return $default(_that);case _:
   return orElse();
 
@@ -398,10 +398,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AdminPriceListsRes value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _PriceListsRes value)  $default,){
 final _that = this;
 switch (_that) {
-case _AdminPriceListsRes():
+case _PriceListsRes():
 return $default(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -419,10 +419,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AdminPriceListsRes value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _PriceListsRes value)?  $default,){
 final _that = this;
 switch (_that) {
-case _AdminPriceListsRes() when $default != null:
+case _PriceListsRes() when $default != null:
 return $default(_that);case _:
   return null;
 
@@ -440,9 +440,9 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( AdminPriceList priceList)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( PriceList priceList)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _AdminPriceListsRes() when $default != null:
+case _PriceListsRes() when $default != null:
 return $default(_that.priceList);case _:
   return orElse();
 
@@ -461,9 +461,9 @@ return $default(_that.priceList);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( AdminPriceList priceList)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( PriceList priceList)  $default,) {final _that = this;
 switch (_that) {
-case _AdminPriceListsRes():
+case _PriceListsRes():
 return $default(_that.priceList);case _:
   throw StateError('Unexpected subclass');
 
@@ -481,9 +481,9 @@ return $default(_that.priceList);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( AdminPriceList priceList)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( PriceList priceList)?  $default,) {final _that = this;
 switch (_that) {
-case _AdminPriceListsRes() when $default != null:
+case _PriceListsRes() when $default != null:
 return $default(_that.priceList);case _:
   return null;
 
@@ -495,26 +495,26 @@ return $default(_that.priceList);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _AdminPriceListsRes implements AdminPriceListsRes {
-  const _AdminPriceListsRes({required this.priceList});
-  factory _AdminPriceListsRes.fromJson(Map<String, dynamic> json) => _$AdminPriceListsResFromJson(json);
+class _PriceListsRes implements PriceListsRes {
+  const _PriceListsRes({required this.priceList});
+  factory _PriceListsRes.fromJson(Map<String, dynamic> json) => _$PriceListsResFromJson(json);
 
-@override final  AdminPriceList priceList;
+@override final  PriceList priceList;
 
-/// Create a copy of AdminPriceListsRes
+/// Create a copy of PriceListsRes
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$AdminPriceListsResCopyWith<_AdminPriceListsRes> get copyWith => __$AdminPriceListsResCopyWithImpl<_AdminPriceListsRes>(this, _$identity);
+_$PriceListsResCopyWith<_PriceListsRes> get copyWith => __$PriceListsResCopyWithImpl<_PriceListsRes>(this, _$identity);
 
 @override
 Map<String, dynamic> toJson() {
-  return _$AdminPriceListsResToJson(this, );
+  return _$PriceListsResToJson(this, );
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AdminPriceListsRes&&(identical(other.priceList, priceList) || other.priceList == priceList));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PriceListsRes&&(identical(other.priceList, priceList) || other.priceList == priceList));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -523,48 +523,48 @@ int get hashCode => Object.hash(runtimeType,priceList);
 
 @override
 String toString() {
-  return 'AdminPriceListsRes(priceList: $priceList)';
+  return 'PriceListsRes(priceList: $priceList)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$AdminPriceListsResCopyWith<$Res> implements $AdminPriceListsResCopyWith<$Res> {
-  factory _$AdminPriceListsResCopyWith(_AdminPriceListsRes value, $Res Function(_AdminPriceListsRes) _then) = __$AdminPriceListsResCopyWithImpl;
+abstract mixin class _$PriceListsResCopyWith<$Res> implements $PriceListsResCopyWith<$Res> {
+  factory _$PriceListsResCopyWith(_PriceListsRes value, $Res Function(_PriceListsRes) _then) = __$PriceListsResCopyWithImpl;
 @override @useResult
 $Res call({
- AdminPriceList priceList
+ PriceList priceList
 });
 
 
-@override $AdminPriceListCopyWith<$Res> get priceList;
+@override $PriceListCopyWith<$Res> get priceList;
 
 }
 /// @nodoc
-class __$AdminPriceListsResCopyWithImpl<$Res>
-    implements _$AdminPriceListsResCopyWith<$Res> {
-  __$AdminPriceListsResCopyWithImpl(this._self, this._then);
+class __$PriceListsResCopyWithImpl<$Res>
+    implements _$PriceListsResCopyWith<$Res> {
+  __$PriceListsResCopyWithImpl(this._self, this._then);
 
-  final _AdminPriceListsRes _self;
-  final $Res Function(_AdminPriceListsRes) _then;
+  final _PriceListsRes _self;
+  final $Res Function(_PriceListsRes) _then;
 
-/// Create a copy of AdminPriceListsRes
+/// Create a copy of PriceListsRes
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? priceList = null,}) {
-  return _then(_AdminPriceListsRes(
+  return _then(_PriceListsRes(
 priceList: null == priceList ? _self.priceList : priceList // ignore: cast_nullable_to_non_nullable
-as AdminPriceList,
+as PriceList,
   ));
 }
 
-/// Create a copy of AdminPriceListsRes
+/// Create a copy of PriceListsRes
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$AdminPriceListCopyWith<$Res> get priceList {
+$PriceListCopyWith<$Res> get priceList {
   
-  return $AdminPriceListCopyWith<$Res>(_self.priceList, (value) {
+  return $PriceListCopyWith<$Res>(_self.priceList, (value) {
     return _then(_self.copyWith(priceList: value));
   });
 }
@@ -572,22 +572,22 @@ $AdminPriceListCopyWith<$Res> get priceList {
 
 
 /// @nodoc
-mixin _$AdminCreatePriceListReq {
+mixin _$CreatePriceListReq {
 
- String get title; String get description; String? get startsAt; String? get endsAt; String? get status; String? get type; Map<String, dynamic>? get rules; List<AdminPrice>? get prices;
-/// Create a copy of AdminCreatePriceListReq
+ String get title; String get description; String? get startsAt; String? get endsAt; String? get status; String? get type; Map<String, dynamic>? get rules; List<Price>? get prices;
+/// Create a copy of CreatePriceListReq
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$AdminCreatePriceListReqCopyWith<AdminCreatePriceListReq> get copyWith => _$AdminCreatePriceListReqCopyWithImpl<AdminCreatePriceListReq>(this as AdminCreatePriceListReq, _$identity);
+$CreatePriceListReqCopyWith<CreatePriceListReq> get copyWith => _$CreatePriceListReqCopyWithImpl<CreatePriceListReq>(this as CreatePriceListReq, _$identity);
 
-  /// Serializes this AdminCreatePriceListReq to a JSON map.
+  /// Serializes this CreatePriceListReq to a JSON map.
   Map<String, dynamic> toJson();
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AdminCreatePriceListReq&&(identical(other.title, title) || other.title == title)&&(identical(other.description, description) || other.description == description)&&(identical(other.startsAt, startsAt) || other.startsAt == startsAt)&&(identical(other.endsAt, endsAt) || other.endsAt == endsAt)&&(identical(other.status, status) || other.status == status)&&(identical(other.type, type) || other.type == type)&&const DeepCollectionEquality().equals(other.rules, rules)&&const DeepCollectionEquality().equals(other.prices, prices));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is CreatePriceListReq&&(identical(other.title, title) || other.title == title)&&(identical(other.description, description) || other.description == description)&&(identical(other.startsAt, startsAt) || other.startsAt == startsAt)&&(identical(other.endsAt, endsAt) || other.endsAt == endsAt)&&(identical(other.status, status) || other.status == status)&&(identical(other.type, type) || other.type == type)&&const DeepCollectionEquality().equals(other.rules, rules)&&const DeepCollectionEquality().equals(other.prices, prices));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -596,18 +596,18 @@ int get hashCode => Object.hash(runtimeType,title,description,startsAt,endsAt,st
 
 @override
 String toString() {
-  return 'AdminCreatePriceListReq(title: $title, description: $description, startsAt: $startsAt, endsAt: $endsAt, status: $status, type: $type, rules: $rules, prices: $prices)';
+  return 'CreatePriceListReq(title: $title, description: $description, startsAt: $startsAt, endsAt: $endsAt, status: $status, type: $type, rules: $rules, prices: $prices)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $AdminCreatePriceListReqCopyWith<$Res>  {
-  factory $AdminCreatePriceListReqCopyWith(AdminCreatePriceListReq value, $Res Function(AdminCreatePriceListReq) _then) = _$AdminCreatePriceListReqCopyWithImpl;
+abstract mixin class $CreatePriceListReqCopyWith<$Res>  {
+  factory $CreatePriceListReqCopyWith(CreatePriceListReq value, $Res Function(CreatePriceListReq) _then) = _$CreatePriceListReqCopyWithImpl;
 @useResult
 $Res call({
- String title, String description, String? startsAt, String? endsAt, String? status, String? type, Map<String, dynamic>? rules, List<AdminPrice>? prices
+ String title, String description, String? startsAt, String? endsAt, String? status, String? type, Map<String, dynamic>? rules, List<Price>? prices
 });
 
 
@@ -615,14 +615,14 @@ $Res call({
 
 }
 /// @nodoc
-class _$AdminCreatePriceListReqCopyWithImpl<$Res>
-    implements $AdminCreatePriceListReqCopyWith<$Res> {
-  _$AdminCreatePriceListReqCopyWithImpl(this._self, this._then);
+class _$CreatePriceListReqCopyWithImpl<$Res>
+    implements $CreatePriceListReqCopyWith<$Res> {
+  _$CreatePriceListReqCopyWithImpl(this._self, this._then);
 
-  final AdminCreatePriceListReq _self;
-  final $Res Function(AdminCreatePriceListReq) _then;
+  final CreatePriceListReq _self;
+  final $Res Function(CreatePriceListReq) _then;
 
-/// Create a copy of AdminCreatePriceListReq
+/// Create a copy of CreatePriceListReq
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? title = null,Object? description = null,Object? startsAt = freezed,Object? endsAt = freezed,Object? status = freezed,Object? type = freezed,Object? rules = freezed,Object? prices = freezed,}) {
   return _then(_self.copyWith(
@@ -634,15 +634,15 @@ as String?,status: freezed == status ? _self.status : status // ignore: cast_nul
 as String?,type: freezed == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
 as String?,rules: freezed == rules ? _self.rules : rules // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,prices: freezed == prices ? _self.prices : prices // ignore: cast_nullable_to_non_nullable
-as List<AdminPrice>?,
+as List<Price>?,
   ));
 }
 
 }
 
 
-/// Adds pattern-matching-related methods to [AdminCreatePriceListReq].
-extension AdminCreatePriceListReqPatterns on AdminCreatePriceListReq {
+/// Adds pattern-matching-related methods to [CreatePriceListReq].
+extension CreatePriceListReqPatterns on CreatePriceListReq {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -655,10 +655,10 @@ extension AdminCreatePriceListReqPatterns on AdminCreatePriceListReq {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AdminCreatePriceListReq value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _CreatePriceListReq value)?  $default,{required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _AdminCreatePriceListReq() when $default != null:
+case _CreatePriceListReq() when $default != null:
 return $default(_that);case _:
   return orElse();
 
@@ -677,10 +677,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AdminCreatePriceListReq value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _CreatePriceListReq value)  $default,){
 final _that = this;
 switch (_that) {
-case _AdminCreatePriceListReq():
+case _CreatePriceListReq():
 return $default(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -698,10 +698,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AdminCreatePriceListReq value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _CreatePriceListReq value)?  $default,){
 final _that = this;
 switch (_that) {
-case _AdminCreatePriceListReq() when $default != null:
+case _CreatePriceListReq() when $default != null:
 return $default(_that);case _:
   return null;
 
@@ -719,9 +719,9 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String title,  String description,  String? startsAt,  String? endsAt,  String? status,  String? type,  Map<String, dynamic>? rules,  List<AdminPrice>? prices)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String title,  String description,  String? startsAt,  String? endsAt,  String? status,  String? type,  Map<String, dynamic>? rules,  List<Price>? prices)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _AdminCreatePriceListReq() when $default != null:
+case _CreatePriceListReq() when $default != null:
 return $default(_that.title,_that.description,_that.startsAt,_that.endsAt,_that.status,_that.type,_that.rules,_that.prices);case _:
   return orElse();
 
@@ -740,9 +740,9 @@ return $default(_that.title,_that.description,_that.startsAt,_that.endsAt,_that.
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String title,  String description,  String? startsAt,  String? endsAt,  String? status,  String? type,  Map<String, dynamic>? rules,  List<AdminPrice>? prices)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String title,  String description,  String? startsAt,  String? endsAt,  String? status,  String? type,  Map<String, dynamic>? rules,  List<Price>? prices)  $default,) {final _that = this;
 switch (_that) {
-case _AdminCreatePriceListReq():
+case _CreatePriceListReq():
 return $default(_that.title,_that.description,_that.startsAt,_that.endsAt,_that.status,_that.type,_that.rules,_that.prices);case _:
   throw StateError('Unexpected subclass');
 
@@ -760,9 +760,9 @@ return $default(_that.title,_that.description,_that.startsAt,_that.endsAt,_that.
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String title,  String description,  String? startsAt,  String? endsAt,  String? status,  String? type,  Map<String, dynamic>? rules,  List<AdminPrice>? prices)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String title,  String description,  String? startsAt,  String? endsAt,  String? status,  String? type,  Map<String, dynamic>? rules,  List<Price>? prices)?  $default,) {final _that = this;
 switch (_that) {
-case _AdminCreatePriceListReq() when $default != null:
+case _CreatePriceListReq() when $default != null:
 return $default(_that.title,_that.description,_that.startsAt,_that.endsAt,_that.status,_that.type,_that.rules,_that.prices);case _:
   return null;
 
@@ -774,9 +774,9 @@ return $default(_that.title,_that.description,_that.startsAt,_that.endsAt,_that.
 /// @nodoc
 @JsonSerializable()
 
-class _AdminCreatePriceListReq implements AdminCreatePriceListReq {
-  const _AdminCreatePriceListReq({required this.title, required this.description, this.startsAt, this.endsAt, this.status, this.type, final  Map<String, dynamic>? rules, final  List<AdminPrice>? prices}): _rules = rules,_prices = prices;
-  factory _AdminCreatePriceListReq.fromJson(Map<String, dynamic> json) => _$AdminCreatePriceListReqFromJson(json);
+class _CreatePriceListReq implements CreatePriceListReq {
+  const _CreatePriceListReq({required this.title, required this.description, this.startsAt, this.endsAt, this.status, this.type, final  Map<String, dynamic>? rules, final  List<Price>? prices}): _rules = rules,_prices = prices;
+  factory _CreatePriceListReq.fromJson(Map<String, dynamic> json) => _$CreatePriceListReqFromJson(json);
 
 @override final  String title;
 @override final  String description;
@@ -793,8 +793,8 @@ class _AdminCreatePriceListReq implements AdminCreatePriceListReq {
   return EqualUnmodifiableMapView(value);
 }
 
- final  List<AdminPrice>? _prices;
-@override List<AdminPrice>? get prices {
+ final  List<Price>? _prices;
+@override List<Price>? get prices {
   final value = _prices;
   if (value == null) return null;
   if (_prices is EqualUnmodifiableListView) return _prices;
@@ -803,20 +803,20 @@ class _AdminCreatePriceListReq implements AdminCreatePriceListReq {
 }
 
 
-/// Create a copy of AdminCreatePriceListReq
+/// Create a copy of CreatePriceListReq
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$AdminCreatePriceListReqCopyWith<_AdminCreatePriceListReq> get copyWith => __$AdminCreatePriceListReqCopyWithImpl<_AdminCreatePriceListReq>(this, _$identity);
+_$CreatePriceListReqCopyWith<_CreatePriceListReq> get copyWith => __$CreatePriceListReqCopyWithImpl<_CreatePriceListReq>(this, _$identity);
 
 @override
 Map<String, dynamic> toJson() {
-  return _$AdminCreatePriceListReqToJson(this, );
+  return _$CreatePriceListReqToJson(this, );
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AdminCreatePriceListReq&&(identical(other.title, title) || other.title == title)&&(identical(other.description, description) || other.description == description)&&(identical(other.startsAt, startsAt) || other.startsAt == startsAt)&&(identical(other.endsAt, endsAt) || other.endsAt == endsAt)&&(identical(other.status, status) || other.status == status)&&(identical(other.type, type) || other.type == type)&&const DeepCollectionEquality().equals(other._rules, _rules)&&const DeepCollectionEquality().equals(other._prices, _prices));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CreatePriceListReq&&(identical(other.title, title) || other.title == title)&&(identical(other.description, description) || other.description == description)&&(identical(other.startsAt, startsAt) || other.startsAt == startsAt)&&(identical(other.endsAt, endsAt) || other.endsAt == endsAt)&&(identical(other.status, status) || other.status == status)&&(identical(other.type, type) || other.type == type)&&const DeepCollectionEquality().equals(other._rules, _rules)&&const DeepCollectionEquality().equals(other._prices, _prices));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -825,18 +825,18 @@ int get hashCode => Object.hash(runtimeType,title,description,startsAt,endsAt,st
 
 @override
 String toString() {
-  return 'AdminCreatePriceListReq(title: $title, description: $description, startsAt: $startsAt, endsAt: $endsAt, status: $status, type: $type, rules: $rules, prices: $prices)';
+  return 'CreatePriceListReq(title: $title, description: $description, startsAt: $startsAt, endsAt: $endsAt, status: $status, type: $type, rules: $rules, prices: $prices)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$AdminCreatePriceListReqCopyWith<$Res> implements $AdminCreatePriceListReqCopyWith<$Res> {
-  factory _$AdminCreatePriceListReqCopyWith(_AdminCreatePriceListReq value, $Res Function(_AdminCreatePriceListReq) _then) = __$AdminCreatePriceListReqCopyWithImpl;
+abstract mixin class _$CreatePriceListReqCopyWith<$Res> implements $CreatePriceListReqCopyWith<$Res> {
+  factory _$CreatePriceListReqCopyWith(_CreatePriceListReq value, $Res Function(_CreatePriceListReq) _then) = __$CreatePriceListReqCopyWithImpl;
 @override @useResult
 $Res call({
- String title, String description, String? startsAt, String? endsAt, String? status, String? type, Map<String, dynamic>? rules, List<AdminPrice>? prices
+ String title, String description, String? startsAt, String? endsAt, String? status, String? type, Map<String, dynamic>? rules, List<Price>? prices
 });
 
 
@@ -844,17 +844,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$AdminCreatePriceListReqCopyWithImpl<$Res>
-    implements _$AdminCreatePriceListReqCopyWith<$Res> {
-  __$AdminCreatePriceListReqCopyWithImpl(this._self, this._then);
+class __$CreatePriceListReqCopyWithImpl<$Res>
+    implements _$CreatePriceListReqCopyWith<$Res> {
+  __$CreatePriceListReqCopyWithImpl(this._self, this._then);
 
-  final _AdminCreatePriceListReq _self;
-  final $Res Function(_AdminCreatePriceListReq) _then;
+  final _CreatePriceListReq _self;
+  final $Res Function(_CreatePriceListReq) _then;
 
-/// Create a copy of AdminCreatePriceListReq
+/// Create a copy of CreatePriceListReq
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? title = null,Object? description = null,Object? startsAt = freezed,Object? endsAt = freezed,Object? status = freezed,Object? type = freezed,Object? rules = freezed,Object? prices = freezed,}) {
-  return _then(_AdminCreatePriceListReq(
+  return _then(_CreatePriceListReq(
 title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
 as String,description: null == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
 as String,startsAt: freezed == startsAt ? _self.startsAt : startsAt // ignore: cast_nullable_to_non_nullable
@@ -863,7 +863,7 @@ as String?,status: freezed == status ? _self.status : status // ignore: cast_nul
 as String?,type: freezed == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
 as String?,rules: freezed == rules ? _self._rules : rules // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,prices: freezed == prices ? _self._prices : prices // ignore: cast_nullable_to_non_nullable
-as List<AdminPrice>?,
+as List<Price>?,
   ));
 }
 
@@ -872,22 +872,22 @@ as List<AdminPrice>?,
 
 
 /// @nodoc
-mixin _$AdminUpdatePriceListReq {
+mixin _$UpdatePriceListReq {
 
  String? get title; String? get description; String? get startsAt; String? get endsAt; String? get status; String? get type; Map<String, dynamic>? get rules;
-/// Create a copy of AdminUpdatePriceListReq
+/// Create a copy of UpdatePriceListReq
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$AdminUpdatePriceListReqCopyWith<AdminUpdatePriceListReq> get copyWith => _$AdminUpdatePriceListReqCopyWithImpl<AdminUpdatePriceListReq>(this as AdminUpdatePriceListReq, _$identity);
+$UpdatePriceListReqCopyWith<UpdatePriceListReq> get copyWith => _$UpdatePriceListReqCopyWithImpl<UpdatePriceListReq>(this as UpdatePriceListReq, _$identity);
 
-  /// Serializes this AdminUpdatePriceListReq to a JSON map.
+  /// Serializes this UpdatePriceListReq to a JSON map.
   Map<String, dynamic> toJson();
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AdminUpdatePriceListReq&&(identical(other.title, title) || other.title == title)&&(identical(other.description, description) || other.description == description)&&(identical(other.startsAt, startsAt) || other.startsAt == startsAt)&&(identical(other.endsAt, endsAt) || other.endsAt == endsAt)&&(identical(other.status, status) || other.status == status)&&(identical(other.type, type) || other.type == type)&&const DeepCollectionEquality().equals(other.rules, rules));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UpdatePriceListReq&&(identical(other.title, title) || other.title == title)&&(identical(other.description, description) || other.description == description)&&(identical(other.startsAt, startsAt) || other.startsAt == startsAt)&&(identical(other.endsAt, endsAt) || other.endsAt == endsAt)&&(identical(other.status, status) || other.status == status)&&(identical(other.type, type) || other.type == type)&&const DeepCollectionEquality().equals(other.rules, rules));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -896,15 +896,15 @@ int get hashCode => Object.hash(runtimeType,title,description,startsAt,endsAt,st
 
 @override
 String toString() {
-  return 'AdminUpdatePriceListReq(title: $title, description: $description, startsAt: $startsAt, endsAt: $endsAt, status: $status, type: $type, rules: $rules)';
+  return 'UpdatePriceListReq(title: $title, description: $description, startsAt: $startsAt, endsAt: $endsAt, status: $status, type: $type, rules: $rules)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $AdminUpdatePriceListReqCopyWith<$Res>  {
-  factory $AdminUpdatePriceListReqCopyWith(AdminUpdatePriceListReq value, $Res Function(AdminUpdatePriceListReq) _then) = _$AdminUpdatePriceListReqCopyWithImpl;
+abstract mixin class $UpdatePriceListReqCopyWith<$Res>  {
+  factory $UpdatePriceListReqCopyWith(UpdatePriceListReq value, $Res Function(UpdatePriceListReq) _then) = _$UpdatePriceListReqCopyWithImpl;
 @useResult
 $Res call({
  String? title, String? description, String? startsAt, String? endsAt, String? status, String? type, Map<String, dynamic>? rules
@@ -915,14 +915,14 @@ $Res call({
 
 }
 /// @nodoc
-class _$AdminUpdatePriceListReqCopyWithImpl<$Res>
-    implements $AdminUpdatePriceListReqCopyWith<$Res> {
-  _$AdminUpdatePriceListReqCopyWithImpl(this._self, this._then);
+class _$UpdatePriceListReqCopyWithImpl<$Res>
+    implements $UpdatePriceListReqCopyWith<$Res> {
+  _$UpdatePriceListReqCopyWithImpl(this._self, this._then);
 
-  final AdminUpdatePriceListReq _self;
-  final $Res Function(AdminUpdatePriceListReq) _then;
+  final UpdatePriceListReq _self;
+  final $Res Function(UpdatePriceListReq) _then;
 
-/// Create a copy of AdminUpdatePriceListReq
+/// Create a copy of UpdatePriceListReq
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? title = freezed,Object? description = freezed,Object? startsAt = freezed,Object? endsAt = freezed,Object? status = freezed,Object? type = freezed,Object? rules = freezed,}) {
   return _then(_self.copyWith(
@@ -940,8 +940,8 @@ as Map<String, dynamic>?,
 }
 
 
-/// Adds pattern-matching-related methods to [AdminUpdatePriceListReq].
-extension AdminUpdatePriceListReqPatterns on AdminUpdatePriceListReq {
+/// Adds pattern-matching-related methods to [UpdatePriceListReq].
+extension UpdatePriceListReqPatterns on UpdatePriceListReq {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -954,10 +954,10 @@ extension AdminUpdatePriceListReqPatterns on AdminUpdatePriceListReq {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AdminUpdatePriceListReq value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _UpdatePriceListReq value)?  $default,{required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _AdminUpdatePriceListReq() when $default != null:
+case _UpdatePriceListReq() when $default != null:
 return $default(_that);case _:
   return orElse();
 
@@ -976,10 +976,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AdminUpdatePriceListReq value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _UpdatePriceListReq value)  $default,){
 final _that = this;
 switch (_that) {
-case _AdminUpdatePriceListReq():
+case _UpdatePriceListReq():
 return $default(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -997,10 +997,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AdminUpdatePriceListReq value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _UpdatePriceListReq value)?  $default,){
 final _that = this;
 switch (_that) {
-case _AdminUpdatePriceListReq() when $default != null:
+case _UpdatePriceListReq() when $default != null:
 return $default(_that);case _:
   return null;
 
@@ -1020,7 +1020,7 @@ return $default(_that);case _:
 
 @optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? title,  String? description,  String? startsAt,  String? endsAt,  String? status,  String? type,  Map<String, dynamic>? rules)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _AdminUpdatePriceListReq() when $default != null:
+case _UpdatePriceListReq() when $default != null:
 return $default(_that.title,_that.description,_that.startsAt,_that.endsAt,_that.status,_that.type,_that.rules);case _:
   return orElse();
 
@@ -1041,7 +1041,7 @@ return $default(_that.title,_that.description,_that.startsAt,_that.endsAt,_that.
 
 @optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? title,  String? description,  String? startsAt,  String? endsAt,  String? status,  String? type,  Map<String, dynamic>? rules)  $default,) {final _that = this;
 switch (_that) {
-case _AdminUpdatePriceListReq():
+case _UpdatePriceListReq():
 return $default(_that.title,_that.description,_that.startsAt,_that.endsAt,_that.status,_that.type,_that.rules);case _:
   throw StateError('Unexpected subclass');
 
@@ -1061,7 +1061,7 @@ return $default(_that.title,_that.description,_that.startsAt,_that.endsAt,_that.
 
 @optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? title,  String? description,  String? startsAt,  String? endsAt,  String? status,  String? type,  Map<String, dynamic>? rules)?  $default,) {final _that = this;
 switch (_that) {
-case _AdminUpdatePriceListReq() when $default != null:
+case _UpdatePriceListReq() when $default != null:
 return $default(_that.title,_that.description,_that.startsAt,_that.endsAt,_that.status,_that.type,_that.rules);case _:
   return null;
 
@@ -1073,9 +1073,9 @@ return $default(_that.title,_that.description,_that.startsAt,_that.endsAt,_that.
 /// @nodoc
 @JsonSerializable()
 
-class _AdminUpdatePriceListReq implements AdminUpdatePriceListReq {
-  const _AdminUpdatePriceListReq({this.title, this.description, this.startsAt, this.endsAt, this.status, this.type, final  Map<String, dynamic>? rules}): _rules = rules;
-  factory _AdminUpdatePriceListReq.fromJson(Map<String, dynamic> json) => _$AdminUpdatePriceListReqFromJson(json);
+class _UpdatePriceListReq implements UpdatePriceListReq {
+  const _UpdatePriceListReq({this.title, this.description, this.startsAt, this.endsAt, this.status, this.type, final  Map<String, dynamic>? rules}): _rules = rules;
+  factory _UpdatePriceListReq.fromJson(Map<String, dynamic> json) => _$UpdatePriceListReqFromJson(json);
 
 @override final  String? title;
 @override final  String? description;
@@ -1093,20 +1093,20 @@ class _AdminUpdatePriceListReq implements AdminUpdatePriceListReq {
 }
 
 
-/// Create a copy of AdminUpdatePriceListReq
+/// Create a copy of UpdatePriceListReq
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$AdminUpdatePriceListReqCopyWith<_AdminUpdatePriceListReq> get copyWith => __$AdminUpdatePriceListReqCopyWithImpl<_AdminUpdatePriceListReq>(this, _$identity);
+_$UpdatePriceListReqCopyWith<_UpdatePriceListReq> get copyWith => __$UpdatePriceListReqCopyWithImpl<_UpdatePriceListReq>(this, _$identity);
 
 @override
 Map<String, dynamic> toJson() {
-  return _$AdminUpdatePriceListReqToJson(this, );
+  return _$UpdatePriceListReqToJson(this, );
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AdminUpdatePriceListReq&&(identical(other.title, title) || other.title == title)&&(identical(other.description, description) || other.description == description)&&(identical(other.startsAt, startsAt) || other.startsAt == startsAt)&&(identical(other.endsAt, endsAt) || other.endsAt == endsAt)&&(identical(other.status, status) || other.status == status)&&(identical(other.type, type) || other.type == type)&&const DeepCollectionEquality().equals(other._rules, _rules));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UpdatePriceListReq&&(identical(other.title, title) || other.title == title)&&(identical(other.description, description) || other.description == description)&&(identical(other.startsAt, startsAt) || other.startsAt == startsAt)&&(identical(other.endsAt, endsAt) || other.endsAt == endsAt)&&(identical(other.status, status) || other.status == status)&&(identical(other.type, type) || other.type == type)&&const DeepCollectionEquality().equals(other._rules, _rules));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -1115,15 +1115,15 @@ int get hashCode => Object.hash(runtimeType,title,description,startsAt,endsAt,st
 
 @override
 String toString() {
-  return 'AdminUpdatePriceListReq(title: $title, description: $description, startsAt: $startsAt, endsAt: $endsAt, status: $status, type: $type, rules: $rules)';
+  return 'UpdatePriceListReq(title: $title, description: $description, startsAt: $startsAt, endsAt: $endsAt, status: $status, type: $type, rules: $rules)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$AdminUpdatePriceListReqCopyWith<$Res> implements $AdminUpdatePriceListReqCopyWith<$Res> {
-  factory _$AdminUpdatePriceListReqCopyWith(_AdminUpdatePriceListReq value, $Res Function(_AdminUpdatePriceListReq) _then) = __$AdminUpdatePriceListReqCopyWithImpl;
+abstract mixin class _$UpdatePriceListReqCopyWith<$Res> implements $UpdatePriceListReqCopyWith<$Res> {
+  factory _$UpdatePriceListReqCopyWith(_UpdatePriceListReq value, $Res Function(_UpdatePriceListReq) _then) = __$UpdatePriceListReqCopyWithImpl;
 @override @useResult
 $Res call({
  String? title, String? description, String? startsAt, String? endsAt, String? status, String? type, Map<String, dynamic>? rules
@@ -1134,17 +1134,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$AdminUpdatePriceListReqCopyWithImpl<$Res>
-    implements _$AdminUpdatePriceListReqCopyWith<$Res> {
-  __$AdminUpdatePriceListReqCopyWithImpl(this._self, this._then);
+class __$UpdatePriceListReqCopyWithImpl<$Res>
+    implements _$UpdatePriceListReqCopyWith<$Res> {
+  __$UpdatePriceListReqCopyWithImpl(this._self, this._then);
 
-  final _AdminUpdatePriceListReq _self;
-  final $Res Function(_AdminUpdatePriceListReq) _then;
+  final _UpdatePriceListReq _self;
+  final $Res Function(_UpdatePriceListReq) _then;
 
-/// Create a copy of AdminUpdatePriceListReq
+/// Create a copy of UpdatePriceListReq
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? title = freezed,Object? description = freezed,Object? startsAt = freezed,Object? endsAt = freezed,Object? status = freezed,Object? type = freezed,Object? rules = freezed,}) {
-  return _then(_AdminUpdatePriceListReq(
+  return _then(_UpdatePriceListReq(
 title: freezed == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
 as String?,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
 as String?,startsAt: freezed == startsAt ? _self.startsAt : startsAt // ignore: cast_nullable_to_non_nullable
@@ -1161,22 +1161,22 @@ as Map<String, dynamic>?,
 
 
 /// @nodoc
-mixin _$AdminPriceListsDeleteRes {
+mixin _$PriceListsDeleteRes {
 
  String get id; String get object; bool get deleted;
-/// Create a copy of AdminPriceListsDeleteRes
+/// Create a copy of PriceListsDeleteRes
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$AdminPriceListsDeleteResCopyWith<AdminPriceListsDeleteRes> get copyWith => _$AdminPriceListsDeleteResCopyWithImpl<AdminPriceListsDeleteRes>(this as AdminPriceListsDeleteRes, _$identity);
+$PriceListsDeleteResCopyWith<PriceListsDeleteRes> get copyWith => _$PriceListsDeleteResCopyWithImpl<PriceListsDeleteRes>(this as PriceListsDeleteRes, _$identity);
 
-  /// Serializes this AdminPriceListsDeleteRes to a JSON map.
+  /// Serializes this PriceListsDeleteRes to a JSON map.
   Map<String, dynamic> toJson();
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AdminPriceListsDeleteRes&&(identical(other.id, id) || other.id == id)&&(identical(other.object, object) || other.object == object)&&(identical(other.deleted, deleted) || other.deleted == deleted));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PriceListsDeleteRes&&(identical(other.id, id) || other.id == id)&&(identical(other.object, object) || other.object == object)&&(identical(other.deleted, deleted) || other.deleted == deleted));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -1185,15 +1185,15 @@ int get hashCode => Object.hash(runtimeType,id,object,deleted);
 
 @override
 String toString() {
-  return 'AdminPriceListsDeleteRes(id: $id, object: $object, deleted: $deleted)';
+  return 'PriceListsDeleteRes(id: $id, object: $object, deleted: $deleted)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $AdminPriceListsDeleteResCopyWith<$Res>  {
-  factory $AdminPriceListsDeleteResCopyWith(AdminPriceListsDeleteRes value, $Res Function(AdminPriceListsDeleteRes) _then) = _$AdminPriceListsDeleteResCopyWithImpl;
+abstract mixin class $PriceListsDeleteResCopyWith<$Res>  {
+  factory $PriceListsDeleteResCopyWith(PriceListsDeleteRes value, $Res Function(PriceListsDeleteRes) _then) = _$PriceListsDeleteResCopyWithImpl;
 @useResult
 $Res call({
  String id, String object, bool deleted
@@ -1204,14 +1204,14 @@ $Res call({
 
 }
 /// @nodoc
-class _$AdminPriceListsDeleteResCopyWithImpl<$Res>
-    implements $AdminPriceListsDeleteResCopyWith<$Res> {
-  _$AdminPriceListsDeleteResCopyWithImpl(this._self, this._then);
+class _$PriceListsDeleteResCopyWithImpl<$Res>
+    implements $PriceListsDeleteResCopyWith<$Res> {
+  _$PriceListsDeleteResCopyWithImpl(this._self, this._then);
 
-  final AdminPriceListsDeleteRes _self;
-  final $Res Function(AdminPriceListsDeleteRes) _then;
+  final PriceListsDeleteRes _self;
+  final $Res Function(PriceListsDeleteRes) _then;
 
-/// Create a copy of AdminPriceListsDeleteRes
+/// Create a copy of PriceListsDeleteRes
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? object = null,Object? deleted = null,}) {
   return _then(_self.copyWith(
@@ -1225,8 +1225,8 @@ as bool,
 }
 
 
-/// Adds pattern-matching-related methods to [AdminPriceListsDeleteRes].
-extension AdminPriceListsDeleteResPatterns on AdminPriceListsDeleteRes {
+/// Adds pattern-matching-related methods to [PriceListsDeleteRes].
+extension PriceListsDeleteResPatterns on PriceListsDeleteRes {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -1239,10 +1239,10 @@ extension AdminPriceListsDeleteResPatterns on AdminPriceListsDeleteRes {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AdminPriceListsDeleteRes value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _PriceListsDeleteRes value)?  $default,{required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _AdminPriceListsDeleteRes() when $default != null:
+case _PriceListsDeleteRes() when $default != null:
 return $default(_that);case _:
   return orElse();
 
@@ -1261,10 +1261,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AdminPriceListsDeleteRes value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _PriceListsDeleteRes value)  $default,){
 final _that = this;
 switch (_that) {
-case _AdminPriceListsDeleteRes():
+case _PriceListsDeleteRes():
 return $default(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -1282,10 +1282,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AdminPriceListsDeleteRes value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _PriceListsDeleteRes value)?  $default,){
 final _that = this;
 switch (_that) {
-case _AdminPriceListsDeleteRes() when $default != null:
+case _PriceListsDeleteRes() when $default != null:
 return $default(_that);case _:
   return null;
 
@@ -1305,7 +1305,7 @@ return $default(_that);case _:
 
 @optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String object,  bool deleted)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _AdminPriceListsDeleteRes() when $default != null:
+case _PriceListsDeleteRes() when $default != null:
 return $default(_that.id,_that.object,_that.deleted);case _:
   return orElse();
 
@@ -1326,7 +1326,7 @@ return $default(_that.id,_that.object,_that.deleted);case _:
 
 @optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String object,  bool deleted)  $default,) {final _that = this;
 switch (_that) {
-case _AdminPriceListsDeleteRes():
+case _PriceListsDeleteRes():
 return $default(_that.id,_that.object,_that.deleted);case _:
   throw StateError('Unexpected subclass');
 
@@ -1346,7 +1346,7 @@ return $default(_that.id,_that.object,_that.deleted);case _:
 
 @optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String object,  bool deleted)?  $default,) {final _that = this;
 switch (_that) {
-case _AdminPriceListsDeleteRes() when $default != null:
+case _PriceListsDeleteRes() when $default != null:
 return $default(_that.id,_that.object,_that.deleted);case _:
   return null;
 
@@ -1358,28 +1358,28 @@ return $default(_that.id,_that.object,_that.deleted);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _AdminPriceListsDeleteRes implements AdminPriceListsDeleteRes {
-  const _AdminPriceListsDeleteRes({required this.id, required this.object, required this.deleted});
-  factory _AdminPriceListsDeleteRes.fromJson(Map<String, dynamic> json) => _$AdminPriceListsDeleteResFromJson(json);
+class _PriceListsDeleteRes implements PriceListsDeleteRes {
+  const _PriceListsDeleteRes({required this.id, required this.object, required this.deleted});
+  factory _PriceListsDeleteRes.fromJson(Map<String, dynamic> json) => _$PriceListsDeleteResFromJson(json);
 
 @override final  String id;
 @override final  String object;
 @override final  bool deleted;
 
-/// Create a copy of AdminPriceListsDeleteRes
+/// Create a copy of PriceListsDeleteRes
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$AdminPriceListsDeleteResCopyWith<_AdminPriceListsDeleteRes> get copyWith => __$AdminPriceListsDeleteResCopyWithImpl<_AdminPriceListsDeleteRes>(this, _$identity);
+_$PriceListsDeleteResCopyWith<_PriceListsDeleteRes> get copyWith => __$PriceListsDeleteResCopyWithImpl<_PriceListsDeleteRes>(this, _$identity);
 
 @override
 Map<String, dynamic> toJson() {
-  return _$AdminPriceListsDeleteResToJson(this, );
+  return _$PriceListsDeleteResToJson(this, );
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AdminPriceListsDeleteRes&&(identical(other.id, id) || other.id == id)&&(identical(other.object, object) || other.object == object)&&(identical(other.deleted, deleted) || other.deleted == deleted));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PriceListsDeleteRes&&(identical(other.id, id) || other.id == id)&&(identical(other.object, object) || other.object == object)&&(identical(other.deleted, deleted) || other.deleted == deleted));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -1388,15 +1388,15 @@ int get hashCode => Object.hash(runtimeType,id,object,deleted);
 
 @override
 String toString() {
-  return 'AdminPriceListsDeleteRes(id: $id, object: $object, deleted: $deleted)';
+  return 'PriceListsDeleteRes(id: $id, object: $object, deleted: $deleted)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$AdminPriceListsDeleteResCopyWith<$Res> implements $AdminPriceListsDeleteResCopyWith<$Res> {
-  factory _$AdminPriceListsDeleteResCopyWith(_AdminPriceListsDeleteRes value, $Res Function(_AdminPriceListsDeleteRes) _then) = __$AdminPriceListsDeleteResCopyWithImpl;
+abstract mixin class _$PriceListsDeleteResCopyWith<$Res> implements $PriceListsDeleteResCopyWith<$Res> {
+  factory _$PriceListsDeleteResCopyWith(_PriceListsDeleteRes value, $Res Function(_PriceListsDeleteRes) _then) = __$PriceListsDeleteResCopyWithImpl;
 @override @useResult
 $Res call({
  String id, String object, bool deleted
@@ -1407,17 +1407,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$AdminPriceListsDeleteResCopyWithImpl<$Res>
-    implements _$AdminPriceListsDeleteResCopyWith<$Res> {
-  __$AdminPriceListsDeleteResCopyWithImpl(this._self, this._then);
+class __$PriceListsDeleteResCopyWithImpl<$Res>
+    implements _$PriceListsDeleteResCopyWith<$Res> {
+  __$PriceListsDeleteResCopyWithImpl(this._self, this._then);
 
-  final _AdminPriceListsDeleteRes _self;
-  final $Res Function(_AdminPriceListsDeleteRes) _then;
+  final _PriceListsDeleteRes _self;
+  final $Res Function(_PriceListsDeleteRes) _then;
 
-/// Create a copy of AdminPriceListsDeleteRes
+/// Create a copy of PriceListsDeleteRes
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? object = null,Object? deleted = null,}) {
-  return _then(_AdminPriceListsDeleteRes(
+  return _then(_PriceListsDeleteRes(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,object: null == object ? _self.object : object // ignore: cast_nullable_to_non_nullable
 as String,deleted: null == deleted ? _self.deleted : deleted // ignore: cast_nullable_to_non_nullable
@@ -1430,22 +1430,22 @@ as bool,
 
 
 /// @nodoc
-mixin _$AdminPriceListsManagePricesReq {
+mixin _$PriceListsManagePricesReq {
 
- List<AdminPrice>? get create; List<AdminPrice>? get update; List<String>? get delete;
-/// Create a copy of AdminPriceListsManagePricesReq
+ List<Price>? get create; List<Price>? get update; List<String>? get delete;
+/// Create a copy of PriceListsManagePricesReq
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$AdminPriceListsManagePricesReqCopyWith<AdminPriceListsManagePricesReq> get copyWith => _$AdminPriceListsManagePricesReqCopyWithImpl<AdminPriceListsManagePricesReq>(this as AdminPriceListsManagePricesReq, _$identity);
+$PriceListsManagePricesReqCopyWith<PriceListsManagePricesReq> get copyWith => _$PriceListsManagePricesReqCopyWithImpl<PriceListsManagePricesReq>(this as PriceListsManagePricesReq, _$identity);
 
-  /// Serializes this AdminPriceListsManagePricesReq to a JSON map.
+  /// Serializes this PriceListsManagePricesReq to a JSON map.
   Map<String, dynamic> toJson();
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AdminPriceListsManagePricesReq&&const DeepCollectionEquality().equals(other.create, create)&&const DeepCollectionEquality().equals(other.update, update)&&const DeepCollectionEquality().equals(other.delete, delete));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PriceListsManagePricesReq&&const DeepCollectionEquality().equals(other.create, create)&&const DeepCollectionEquality().equals(other.update, update)&&const DeepCollectionEquality().equals(other.delete, delete));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -1454,18 +1454,18 @@ int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(
 
 @override
 String toString() {
-  return 'AdminPriceListsManagePricesReq(create: $create, update: $update, delete: $delete)';
+  return 'PriceListsManagePricesReq(create: $create, update: $update, delete: $delete)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $AdminPriceListsManagePricesReqCopyWith<$Res>  {
-  factory $AdminPriceListsManagePricesReqCopyWith(AdminPriceListsManagePricesReq value, $Res Function(AdminPriceListsManagePricesReq) _then) = _$AdminPriceListsManagePricesReqCopyWithImpl;
+abstract mixin class $PriceListsManagePricesReqCopyWith<$Res>  {
+  factory $PriceListsManagePricesReqCopyWith(PriceListsManagePricesReq value, $Res Function(PriceListsManagePricesReq) _then) = _$PriceListsManagePricesReqCopyWithImpl;
 @useResult
 $Res call({
- List<AdminPrice>? create, List<AdminPrice>? update, List<String>? delete
+ List<Price>? create, List<Price>? update, List<String>? delete
 });
 
 
@@ -1473,20 +1473,20 @@ $Res call({
 
 }
 /// @nodoc
-class _$AdminPriceListsManagePricesReqCopyWithImpl<$Res>
-    implements $AdminPriceListsManagePricesReqCopyWith<$Res> {
-  _$AdminPriceListsManagePricesReqCopyWithImpl(this._self, this._then);
+class _$PriceListsManagePricesReqCopyWithImpl<$Res>
+    implements $PriceListsManagePricesReqCopyWith<$Res> {
+  _$PriceListsManagePricesReqCopyWithImpl(this._self, this._then);
 
-  final AdminPriceListsManagePricesReq _self;
-  final $Res Function(AdminPriceListsManagePricesReq) _then;
+  final PriceListsManagePricesReq _self;
+  final $Res Function(PriceListsManagePricesReq) _then;
 
-/// Create a copy of AdminPriceListsManagePricesReq
+/// Create a copy of PriceListsManagePricesReq
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? create = freezed,Object? update = freezed,Object? delete = freezed,}) {
   return _then(_self.copyWith(
 create: freezed == create ? _self.create : create // ignore: cast_nullable_to_non_nullable
-as List<AdminPrice>?,update: freezed == update ? _self.update : update // ignore: cast_nullable_to_non_nullable
-as List<AdminPrice>?,delete: freezed == delete ? _self.delete : delete // ignore: cast_nullable_to_non_nullable
+as List<Price>?,update: freezed == update ? _self.update : update // ignore: cast_nullable_to_non_nullable
+as List<Price>?,delete: freezed == delete ? _self.delete : delete // ignore: cast_nullable_to_non_nullable
 as List<String>?,
   ));
 }
@@ -1494,8 +1494,8 @@ as List<String>?,
 }
 
 
-/// Adds pattern-matching-related methods to [AdminPriceListsManagePricesReq].
-extension AdminPriceListsManagePricesReqPatterns on AdminPriceListsManagePricesReq {
+/// Adds pattern-matching-related methods to [PriceListsManagePricesReq].
+extension PriceListsManagePricesReqPatterns on PriceListsManagePricesReq {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -1508,10 +1508,10 @@ extension AdminPriceListsManagePricesReqPatterns on AdminPriceListsManagePricesR
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AdminPriceListsManagePricesReq value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _PriceListsManagePricesReq value)?  $default,{required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _AdminPriceListsManagePricesReq() when $default != null:
+case _PriceListsManagePricesReq() when $default != null:
 return $default(_that);case _:
   return orElse();
 
@@ -1530,10 +1530,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AdminPriceListsManagePricesReq value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _PriceListsManagePricesReq value)  $default,){
 final _that = this;
 switch (_that) {
-case _AdminPriceListsManagePricesReq():
+case _PriceListsManagePricesReq():
 return $default(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -1551,10 +1551,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AdminPriceListsManagePricesReq value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _PriceListsManagePricesReq value)?  $default,){
 final _that = this;
 switch (_that) {
-case _AdminPriceListsManagePricesReq() when $default != null:
+case _PriceListsManagePricesReq() when $default != null:
 return $default(_that);case _:
   return null;
 
@@ -1572,9 +1572,9 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<AdminPrice>? create,  List<AdminPrice>? update,  List<String>? delete)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<Price>? create,  List<Price>? update,  List<String>? delete)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _AdminPriceListsManagePricesReq() when $default != null:
+case _PriceListsManagePricesReq() when $default != null:
 return $default(_that.create,_that.update,_that.delete);case _:
   return orElse();
 
@@ -1593,9 +1593,9 @@ return $default(_that.create,_that.update,_that.delete);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<AdminPrice>? create,  List<AdminPrice>? update,  List<String>? delete)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<Price>? create,  List<Price>? update,  List<String>? delete)  $default,) {final _that = this;
 switch (_that) {
-case _AdminPriceListsManagePricesReq():
+case _PriceListsManagePricesReq():
 return $default(_that.create,_that.update,_that.delete);case _:
   throw StateError('Unexpected subclass');
 
@@ -1613,9 +1613,9 @@ return $default(_that.create,_that.update,_that.delete);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<AdminPrice>? create,  List<AdminPrice>? update,  List<String>? delete)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<Price>? create,  List<Price>? update,  List<String>? delete)?  $default,) {final _that = this;
 switch (_that) {
-case _AdminPriceListsManagePricesReq() when $default != null:
+case _PriceListsManagePricesReq() when $default != null:
 return $default(_that.create,_that.update,_that.delete);case _:
   return null;
 
@@ -1627,12 +1627,12 @@ return $default(_that.create,_that.update,_that.delete);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _AdminPriceListsManagePricesReq implements AdminPriceListsManagePricesReq {
-  const _AdminPriceListsManagePricesReq({final  List<AdminPrice>? create, final  List<AdminPrice>? update, final  List<String>? delete}): _create = create,_update = update,_delete = delete;
-  factory _AdminPriceListsManagePricesReq.fromJson(Map<String, dynamic> json) => _$AdminPriceListsManagePricesReqFromJson(json);
+class _PriceListsManagePricesReq implements PriceListsManagePricesReq {
+  const _PriceListsManagePricesReq({final  List<Price>? create, final  List<Price>? update, final  List<String>? delete}): _create = create,_update = update,_delete = delete;
+  factory _PriceListsManagePricesReq.fromJson(Map<String, dynamic> json) => _$PriceListsManagePricesReqFromJson(json);
 
- final  List<AdminPrice>? _create;
-@override List<AdminPrice>? get create {
+ final  List<Price>? _create;
+@override List<Price>? get create {
   final value = _create;
   if (value == null) return null;
   if (_create is EqualUnmodifiableListView) return _create;
@@ -1640,8 +1640,8 @@ class _AdminPriceListsManagePricesReq implements AdminPriceListsManagePricesReq 
   return EqualUnmodifiableListView(value);
 }
 
- final  List<AdminPrice>? _update;
-@override List<AdminPrice>? get update {
+ final  List<Price>? _update;
+@override List<Price>? get update {
   final value = _update;
   if (value == null) return null;
   if (_update is EqualUnmodifiableListView) return _update;
@@ -1659,20 +1659,20 @@ class _AdminPriceListsManagePricesReq implements AdminPriceListsManagePricesReq 
 }
 
 
-/// Create a copy of AdminPriceListsManagePricesReq
+/// Create a copy of PriceListsManagePricesReq
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$AdminPriceListsManagePricesReqCopyWith<_AdminPriceListsManagePricesReq> get copyWith => __$AdminPriceListsManagePricesReqCopyWithImpl<_AdminPriceListsManagePricesReq>(this, _$identity);
+_$PriceListsManagePricesReqCopyWith<_PriceListsManagePricesReq> get copyWith => __$PriceListsManagePricesReqCopyWithImpl<_PriceListsManagePricesReq>(this, _$identity);
 
 @override
 Map<String, dynamic> toJson() {
-  return _$AdminPriceListsManagePricesReqToJson(this, );
+  return _$PriceListsManagePricesReqToJson(this, );
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AdminPriceListsManagePricesReq&&const DeepCollectionEquality().equals(other._create, _create)&&const DeepCollectionEquality().equals(other._update, _update)&&const DeepCollectionEquality().equals(other._delete, _delete));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PriceListsManagePricesReq&&const DeepCollectionEquality().equals(other._create, _create)&&const DeepCollectionEquality().equals(other._update, _update)&&const DeepCollectionEquality().equals(other._delete, _delete));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -1681,18 +1681,18 @@ int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(
 
 @override
 String toString() {
-  return 'AdminPriceListsManagePricesReq(create: $create, update: $update, delete: $delete)';
+  return 'PriceListsManagePricesReq(create: $create, update: $update, delete: $delete)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$AdminPriceListsManagePricesReqCopyWith<$Res> implements $AdminPriceListsManagePricesReqCopyWith<$Res> {
-  factory _$AdminPriceListsManagePricesReqCopyWith(_AdminPriceListsManagePricesReq value, $Res Function(_AdminPriceListsManagePricesReq) _then) = __$AdminPriceListsManagePricesReqCopyWithImpl;
+abstract mixin class _$PriceListsManagePricesReqCopyWith<$Res> implements $PriceListsManagePricesReqCopyWith<$Res> {
+  factory _$PriceListsManagePricesReqCopyWith(_PriceListsManagePricesReq value, $Res Function(_PriceListsManagePricesReq) _then) = __$PriceListsManagePricesReqCopyWithImpl;
 @override @useResult
 $Res call({
- List<AdminPrice>? create, List<AdminPrice>? update, List<String>? delete
+ List<Price>? create, List<Price>? update, List<String>? delete
 });
 
 
@@ -1700,20 +1700,20 @@ $Res call({
 
 }
 /// @nodoc
-class __$AdminPriceListsManagePricesReqCopyWithImpl<$Res>
-    implements _$AdminPriceListsManagePricesReqCopyWith<$Res> {
-  __$AdminPriceListsManagePricesReqCopyWithImpl(this._self, this._then);
+class __$PriceListsManagePricesReqCopyWithImpl<$Res>
+    implements _$PriceListsManagePricesReqCopyWith<$Res> {
+  __$PriceListsManagePricesReqCopyWithImpl(this._self, this._then);
 
-  final _AdminPriceListsManagePricesReq _self;
-  final $Res Function(_AdminPriceListsManagePricesReq) _then;
+  final _PriceListsManagePricesReq _self;
+  final $Res Function(_PriceListsManagePricesReq) _then;
 
-/// Create a copy of AdminPriceListsManagePricesReq
+/// Create a copy of PriceListsManagePricesReq
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? create = freezed,Object? update = freezed,Object? delete = freezed,}) {
-  return _then(_AdminPriceListsManagePricesReq(
+  return _then(_PriceListsManagePricesReq(
 create: freezed == create ? _self._create : create // ignore: cast_nullable_to_non_nullable
-as List<AdminPrice>?,update: freezed == update ? _self._update : update // ignore: cast_nullable_to_non_nullable
-as List<AdminPrice>?,delete: freezed == delete ? _self._delete : delete // ignore: cast_nullable_to_non_nullable
+as List<Price>?,update: freezed == update ? _self._update : update // ignore: cast_nullable_to_non_nullable
+as List<Price>?,delete: freezed == delete ? _self._delete : delete // ignore: cast_nullable_to_non_nullable
 as List<String>?,
   ));
 }
@@ -1723,22 +1723,22 @@ as List<String>?,
 
 
 /// @nodoc
-mixin _$AdminPriceListRemoveProductsReq {
+mixin _$PriceListRemoveProductsReq {
 
  List<String>? get remove;
-/// Create a copy of AdminPriceListRemoveProductsReq
+/// Create a copy of PriceListRemoveProductsReq
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$AdminPriceListRemoveProductsReqCopyWith<AdminPriceListRemoveProductsReq> get copyWith => _$AdminPriceListRemoveProductsReqCopyWithImpl<AdminPriceListRemoveProductsReq>(this as AdminPriceListRemoveProductsReq, _$identity);
+$PriceListRemoveProductsReqCopyWith<PriceListRemoveProductsReq> get copyWith => _$PriceListRemoveProductsReqCopyWithImpl<PriceListRemoveProductsReq>(this as PriceListRemoveProductsReq, _$identity);
 
-  /// Serializes this AdminPriceListRemoveProductsReq to a JSON map.
+  /// Serializes this PriceListRemoveProductsReq to a JSON map.
   Map<String, dynamic> toJson();
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AdminPriceListRemoveProductsReq&&const DeepCollectionEquality().equals(other.remove, remove));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PriceListRemoveProductsReq&&const DeepCollectionEquality().equals(other.remove, remove));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -1747,15 +1747,15 @@ int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(
 
 @override
 String toString() {
-  return 'AdminPriceListRemoveProductsReq(remove: $remove)';
+  return 'PriceListRemoveProductsReq(remove: $remove)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $AdminPriceListRemoveProductsReqCopyWith<$Res>  {
-  factory $AdminPriceListRemoveProductsReqCopyWith(AdminPriceListRemoveProductsReq value, $Res Function(AdminPriceListRemoveProductsReq) _then) = _$AdminPriceListRemoveProductsReqCopyWithImpl;
+abstract mixin class $PriceListRemoveProductsReqCopyWith<$Res>  {
+  factory $PriceListRemoveProductsReqCopyWith(PriceListRemoveProductsReq value, $Res Function(PriceListRemoveProductsReq) _then) = _$PriceListRemoveProductsReqCopyWithImpl;
 @useResult
 $Res call({
  List<String>? remove
@@ -1766,14 +1766,14 @@ $Res call({
 
 }
 /// @nodoc
-class _$AdminPriceListRemoveProductsReqCopyWithImpl<$Res>
-    implements $AdminPriceListRemoveProductsReqCopyWith<$Res> {
-  _$AdminPriceListRemoveProductsReqCopyWithImpl(this._self, this._then);
+class _$PriceListRemoveProductsReqCopyWithImpl<$Res>
+    implements $PriceListRemoveProductsReqCopyWith<$Res> {
+  _$PriceListRemoveProductsReqCopyWithImpl(this._self, this._then);
 
-  final AdminPriceListRemoveProductsReq _self;
-  final $Res Function(AdminPriceListRemoveProductsReq) _then;
+  final PriceListRemoveProductsReq _self;
+  final $Res Function(PriceListRemoveProductsReq) _then;
 
-/// Create a copy of AdminPriceListRemoveProductsReq
+/// Create a copy of PriceListRemoveProductsReq
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? remove = freezed,}) {
   return _then(_self.copyWith(
@@ -1785,8 +1785,8 @@ as List<String>?,
 }
 
 
-/// Adds pattern-matching-related methods to [AdminPriceListRemoveProductsReq].
-extension AdminPriceListRemoveProductsReqPatterns on AdminPriceListRemoveProductsReq {
+/// Adds pattern-matching-related methods to [PriceListRemoveProductsReq].
+extension PriceListRemoveProductsReqPatterns on PriceListRemoveProductsReq {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -1799,10 +1799,10 @@ extension AdminPriceListRemoveProductsReqPatterns on AdminPriceListRemoveProduct
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AdminPriceListRemoveProductsReq value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _PriceListRemoveProductsReq value)?  $default,{required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _AdminPriceListRemoveProductsReq() when $default != null:
+case _PriceListRemoveProductsReq() when $default != null:
 return $default(_that);case _:
   return orElse();
 
@@ -1821,10 +1821,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AdminPriceListRemoveProductsReq value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _PriceListRemoveProductsReq value)  $default,){
 final _that = this;
 switch (_that) {
-case _AdminPriceListRemoveProductsReq():
+case _PriceListRemoveProductsReq():
 return $default(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -1842,10 +1842,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AdminPriceListRemoveProductsReq value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _PriceListRemoveProductsReq value)?  $default,){
 final _that = this;
 switch (_that) {
-case _AdminPriceListRemoveProductsReq() when $default != null:
+case _PriceListRemoveProductsReq() when $default != null:
 return $default(_that);case _:
   return null;
 
@@ -1865,7 +1865,7 @@ return $default(_that);case _:
 
 @optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<String>? remove)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _AdminPriceListRemoveProductsReq() when $default != null:
+case _PriceListRemoveProductsReq() when $default != null:
 return $default(_that.remove);case _:
   return orElse();
 
@@ -1886,7 +1886,7 @@ return $default(_that.remove);case _:
 
 @optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<String>? remove)  $default,) {final _that = this;
 switch (_that) {
-case _AdminPriceListRemoveProductsReq():
+case _PriceListRemoveProductsReq():
 return $default(_that.remove);case _:
   throw StateError('Unexpected subclass');
 
@@ -1906,7 +1906,7 @@ return $default(_that.remove);case _:
 
 @optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<String>? remove)?  $default,) {final _that = this;
 switch (_that) {
-case _AdminPriceListRemoveProductsReq() when $default != null:
+case _PriceListRemoveProductsReq() when $default != null:
 return $default(_that.remove);case _:
   return null;
 
@@ -1918,9 +1918,9 @@ return $default(_that.remove);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _AdminPriceListRemoveProductsReq implements AdminPriceListRemoveProductsReq {
-  const _AdminPriceListRemoveProductsReq({final  List<String>? remove}): _remove = remove;
-  factory _AdminPriceListRemoveProductsReq.fromJson(Map<String, dynamic> json) => _$AdminPriceListRemoveProductsReqFromJson(json);
+class _PriceListRemoveProductsReq implements PriceListRemoveProductsReq {
+  const _PriceListRemoveProductsReq({final  List<String>? remove}): _remove = remove;
+  factory _PriceListRemoveProductsReq.fromJson(Map<String, dynamic> json) => _$PriceListRemoveProductsReqFromJson(json);
 
  final  List<String>? _remove;
 @override List<String>? get remove {
@@ -1932,20 +1932,20 @@ class _AdminPriceListRemoveProductsReq implements AdminPriceListRemoveProductsRe
 }
 
 
-/// Create a copy of AdminPriceListRemoveProductsReq
+/// Create a copy of PriceListRemoveProductsReq
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$AdminPriceListRemoveProductsReqCopyWith<_AdminPriceListRemoveProductsReq> get copyWith => __$AdminPriceListRemoveProductsReqCopyWithImpl<_AdminPriceListRemoveProductsReq>(this, _$identity);
+_$PriceListRemoveProductsReqCopyWith<_PriceListRemoveProductsReq> get copyWith => __$PriceListRemoveProductsReqCopyWithImpl<_PriceListRemoveProductsReq>(this, _$identity);
 
 @override
 Map<String, dynamic> toJson() {
-  return _$AdminPriceListRemoveProductsReqToJson(this, );
+  return _$PriceListRemoveProductsReqToJson(this, );
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AdminPriceListRemoveProductsReq&&const DeepCollectionEquality().equals(other._remove, _remove));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PriceListRemoveProductsReq&&const DeepCollectionEquality().equals(other._remove, _remove));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -1954,15 +1954,15 @@ int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(
 
 @override
 String toString() {
-  return 'AdminPriceListRemoveProductsReq(remove: $remove)';
+  return 'PriceListRemoveProductsReq(remove: $remove)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$AdminPriceListRemoveProductsReqCopyWith<$Res> implements $AdminPriceListRemoveProductsReqCopyWith<$Res> {
-  factory _$AdminPriceListRemoveProductsReqCopyWith(_AdminPriceListRemoveProductsReq value, $Res Function(_AdminPriceListRemoveProductsReq) _then) = __$AdminPriceListRemoveProductsReqCopyWithImpl;
+abstract mixin class _$PriceListRemoveProductsReqCopyWith<$Res> implements $PriceListRemoveProductsReqCopyWith<$Res> {
+  factory _$PriceListRemoveProductsReqCopyWith(_PriceListRemoveProductsReq value, $Res Function(_PriceListRemoveProductsReq) _then) = __$PriceListRemoveProductsReqCopyWithImpl;
 @override @useResult
 $Res call({
  List<String>? remove
@@ -1973,17 +1973,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$AdminPriceListRemoveProductsReqCopyWithImpl<$Res>
-    implements _$AdminPriceListRemoveProductsReqCopyWith<$Res> {
-  __$AdminPriceListRemoveProductsReqCopyWithImpl(this._self, this._then);
+class __$PriceListRemoveProductsReqCopyWithImpl<$Res>
+    implements _$PriceListRemoveProductsReqCopyWith<$Res> {
+  __$PriceListRemoveProductsReqCopyWithImpl(this._self, this._then);
 
-  final _AdminPriceListRemoveProductsReq _self;
-  final $Res Function(_AdminPriceListRemoveProductsReq) _then;
+  final _PriceListRemoveProductsReq _self;
+  final $Res Function(_PriceListRemoveProductsReq) _then;
 
-/// Create a copy of AdminPriceListRemoveProductsReq
+/// Create a copy of PriceListRemoveProductsReq
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? remove = freezed,}) {
-  return _then(_AdminPriceListRemoveProductsReq(
+  return _then(_PriceListRemoveProductsReq(
 remove: freezed == remove ? _self._remove : remove // ignore: cast_nullable_to_non_nullable
 as List<String>?,
   ));

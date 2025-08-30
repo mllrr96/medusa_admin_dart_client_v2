@@ -11,24 +11,31 @@ part of 'update_gift_card_req.dart';
 
 // dart format off
 T _$identity<T>(T value) => value;
+UpdateGiftCardRequest _$UpdateGiftCardRequestFromJson(
+  Map<String, dynamic> json
+) {
+    return _AdminUpdateGiftCardRequest.fromJson(
+      json
+    );
+}
 
 /// @nodoc
-mixin _$AdminUpdateGiftCardRequest {
+mixin _$UpdateGiftCardRequest {
 
  bool? get isDisabled; int? get balance; String? get regionId; Map<String, dynamic>? get metadata;
-/// Create a copy of AdminUpdateGiftCardRequest
+/// Create a copy of UpdateGiftCardRequest
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$AdminUpdateGiftCardRequestCopyWith<AdminUpdateGiftCardRequest> get copyWith => _$AdminUpdateGiftCardRequestCopyWithImpl<AdminUpdateGiftCardRequest>(this as AdminUpdateGiftCardRequest, _$identity);
+$UpdateGiftCardRequestCopyWith<UpdateGiftCardRequest> get copyWith => _$UpdateGiftCardRequestCopyWithImpl<UpdateGiftCardRequest>(this as UpdateGiftCardRequest, _$identity);
 
-  /// Serializes this AdminUpdateGiftCardRequest to a JSON map.
+  /// Serializes this UpdateGiftCardRequest to a JSON map.
   Map<String, dynamic> toJson();
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is AdminUpdateGiftCardRequest&&(identical(other.isDisabled, isDisabled) || other.isDisabled == isDisabled)&&(identical(other.balance, balance) || other.balance == balance)&&(identical(other.regionId, regionId) || other.regionId == regionId)&&const DeepCollectionEquality().equals(other.metadata, metadata));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is UpdateGiftCardRequest&&(identical(other.isDisabled, isDisabled) || other.isDisabled == isDisabled)&&(identical(other.balance, balance) || other.balance == balance)&&(identical(other.regionId, regionId) || other.regionId == regionId)&&const DeepCollectionEquality().equals(other.metadata, metadata));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -37,15 +44,15 @@ int get hashCode => Object.hash(runtimeType,isDisabled,balance,regionId,const De
 
 @override
 String toString() {
-  return 'AdminUpdateGiftCardRequest(isDisabled: $isDisabled, balance: $balance, regionId: $regionId, metadata: $metadata)';
+  return 'UpdateGiftCardRequest(isDisabled: $isDisabled, balance: $balance, regionId: $regionId, metadata: $metadata)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $AdminUpdateGiftCardRequestCopyWith<$Res>  {
-  factory $AdminUpdateGiftCardRequestCopyWith(AdminUpdateGiftCardRequest value, $Res Function(AdminUpdateGiftCardRequest) _then) = _$AdminUpdateGiftCardRequestCopyWithImpl;
+abstract mixin class $UpdateGiftCardRequestCopyWith<$Res>  {
+  factory $UpdateGiftCardRequestCopyWith(UpdateGiftCardRequest value, $Res Function(UpdateGiftCardRequest) _then) = _$UpdateGiftCardRequestCopyWithImpl;
 @useResult
 $Res call({
  bool? isDisabled, int? balance, String? regionId, Map<String, dynamic>? metadata
@@ -56,14 +63,14 @@ $Res call({
 
 }
 /// @nodoc
-class _$AdminUpdateGiftCardRequestCopyWithImpl<$Res>
-    implements $AdminUpdateGiftCardRequestCopyWith<$Res> {
-  _$AdminUpdateGiftCardRequestCopyWithImpl(this._self, this._then);
+class _$UpdateGiftCardRequestCopyWithImpl<$Res>
+    implements $UpdateGiftCardRequestCopyWith<$Res> {
+  _$UpdateGiftCardRequestCopyWithImpl(this._self, this._then);
 
-  final AdminUpdateGiftCardRequest _self;
-  final $Res Function(AdminUpdateGiftCardRequest) _then;
+  final UpdateGiftCardRequest _self;
+  final $Res Function(UpdateGiftCardRequest) _then;
 
-/// Create a copy of AdminUpdateGiftCardRequest
+/// Create a copy of UpdateGiftCardRequest
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? isDisabled = freezed,Object? balance = freezed,Object? regionId = freezed,Object? metadata = freezed,}) {
   return _then(_self.copyWith(
@@ -78,8 +85,8 @@ as Map<String, dynamic>?,
 }
 
 
-/// Adds pattern-matching-related methods to [AdminUpdateGiftCardRequest].
-extension AdminUpdateGiftCardRequestPatterns on AdminUpdateGiftCardRequest {
+/// Adds pattern-matching-related methods to [UpdateGiftCardRequest].
+extension UpdateGiftCardRequestPatterns on UpdateGiftCardRequest {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -211,7 +218,7 @@ return $default(_that.isDisabled,_that.balance,_that.regionId,_that.metadata);ca
 /// @nodoc
 @JsonSerializable()
 
-class _AdminUpdateGiftCardRequest implements AdminUpdateGiftCardRequest {
+class _AdminUpdateGiftCardRequest implements UpdateGiftCardRequest {
   const _AdminUpdateGiftCardRequest({this.isDisabled, this.balance, this.regionId, final  Map<String, dynamic>? metadata}): _metadata = metadata;
   factory _AdminUpdateGiftCardRequest.fromJson(Map<String, dynamic> json) => _$AdminUpdateGiftCardRequestFromJson(json);
 
@@ -228,7 +235,7 @@ class _AdminUpdateGiftCardRequest implements AdminUpdateGiftCardRequest {
 }
 
 
-/// Create a copy of AdminUpdateGiftCardRequest
+/// Create a copy of UpdateGiftCardRequest
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
@@ -250,14 +257,14 @@ int get hashCode => Object.hash(runtimeType,isDisabled,balance,regionId,const De
 
 @override
 String toString() {
-  return 'AdminUpdateGiftCardRequest(isDisabled: $isDisabled, balance: $balance, regionId: $regionId, metadata: $metadata)';
+  return 'UpdateGiftCardRequest(isDisabled: $isDisabled, balance: $balance, regionId: $regionId, metadata: $metadata)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$AdminUpdateGiftCardRequestCopyWith<$Res> implements $AdminUpdateGiftCardRequestCopyWith<$Res> {
+abstract mixin class _$AdminUpdateGiftCardRequestCopyWith<$Res> implements $UpdateGiftCardRequestCopyWith<$Res> {
   factory _$AdminUpdateGiftCardRequestCopyWith(_AdminUpdateGiftCardRequest value, $Res Function(_AdminUpdateGiftCardRequest) _then) = __$AdminUpdateGiftCardRequestCopyWithImpl;
 @override @useResult
 $Res call({
@@ -276,7 +283,7 @@ class __$AdminUpdateGiftCardRequestCopyWithImpl<$Res>
   final _AdminUpdateGiftCardRequest _self;
   final $Res Function(_AdminUpdateGiftCardRequest) _then;
 
-/// Create a copy of AdminUpdateGiftCardRequest
+/// Create a copy of UpdateGiftCardRequest
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? isDisabled = freezed,Object? balance = freezed,Object? regionId = freezed,Object? metadata = freezed,}) {
   return _then(_AdminUpdateGiftCardRequest(
