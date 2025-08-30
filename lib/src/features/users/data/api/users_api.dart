@@ -4,7 +4,6 @@ import 'package:medusa_admin_dart_client/src/features/users/data/models/user_res
 import 'package:medusa_admin_dart_client/src/features/users/data/models/users_list_res.dart';
 import 'package:retrofit/retrofit.dart';
 
-
 part 'users_api.g.dart';
 
 @RestApi()

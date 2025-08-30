@@ -3,7 +3,6 @@ import 'package:medusa_admin_dart_client/src/features/users/data/models/user_del
 import 'package:medusa_admin_dart_client/src/features/users/data/models/user_res.dart';
 import 'package:medusa_admin_dart_client/src/features/users/data/models/users_list_res.dart';
 
-
 class UsersRepository {
   UsersRepository(this._usersApi);
 

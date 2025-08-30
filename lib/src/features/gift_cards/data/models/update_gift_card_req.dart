@@ -10,7 +10,7 @@ abstract class UpdateGiftCardRequest with _$UpdateGiftCardRequest {
     int? balance,
     String? regionId,
     Map<String, dynamic>? metadata,
-  }) = _AdminUpdateGiftCardRequest;
+  }) = _UpdateGiftCardRequest;
 
   factory UpdateGiftCardRequest.fromJson(Map<String, dynamic> json) =>
       _$UpdateGiftCardRequestFromJson(json);

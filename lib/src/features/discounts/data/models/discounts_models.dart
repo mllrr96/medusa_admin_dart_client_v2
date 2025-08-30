@@ -50,8 +50,7 @@ abstract class PostDiscountsReq with _$PostDiscountsReq {
 }
 
 @freezed
-abstract class PostDiscountsDiscountReq
-    with _$PostDiscountsDiscountReq {
+abstract class PostDiscountsDiscountReq with _$PostDiscountsDiscountReq {
   const factory PostDiscountsDiscountReq({
     String? code,
     DiscountRule? rule,

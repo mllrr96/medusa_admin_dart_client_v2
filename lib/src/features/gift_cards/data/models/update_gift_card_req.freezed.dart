@@ -11,13 +11,6 @@ part of 'update_gift_card_req.dart';
 
 // dart format off
 T _$identity<T>(T value) => value;
-UpdateGiftCardRequest _$UpdateGiftCardRequestFromJson(
-  Map<String, dynamic> json
-) {
-    return _AdminUpdateGiftCardRequest.fromJson(
-      json
-    );
-}
 
 /// @nodoc
 mixin _$UpdateGiftCardRequest {
@@ -99,10 +92,10 @@ extension UpdateGiftCardRequestPatterns on UpdateGiftCardRequest {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _AdminUpdateGiftCardRequest value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _UpdateGiftCardRequest value)?  $default,{required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _AdminUpdateGiftCardRequest() when $default != null:
+case _UpdateGiftCardRequest() when $default != null:
 return $default(_that);case _:
   return orElse();
 
@@ -121,10 +114,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _AdminUpdateGiftCardRequest value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _UpdateGiftCardRequest value)  $default,){
 final _that = this;
 switch (_that) {
-case _AdminUpdateGiftCardRequest():
+case _UpdateGiftCardRequest():
 return $default(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -142,10 +135,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _AdminUpdateGiftCardRequest value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _UpdateGiftCardRequest value)?  $default,){
 final _that = this;
 switch (_that) {
-case _AdminUpdateGiftCardRequest() when $default != null:
+case _UpdateGiftCardRequest() when $default != null:
 return $default(_that);case _:
   return null;
 
@@ -165,7 +158,7 @@ return $default(_that);case _:
 
 @optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( bool? isDisabled,  int? balance,  String? regionId,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _AdminUpdateGiftCardRequest() when $default != null:
+case _UpdateGiftCardRequest() when $default != null:
 return $default(_that.isDisabled,_that.balance,_that.regionId,_that.metadata);case _:
   return orElse();
 
@@ -186,7 +179,7 @@ return $default(_that.isDisabled,_that.balance,_that.regionId,_that.metadata);ca
 
 @optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( bool? isDisabled,  int? balance,  String? regionId,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
 switch (_that) {
-case _AdminUpdateGiftCardRequest():
+case _UpdateGiftCardRequest():
 return $default(_that.isDisabled,_that.balance,_that.regionId,_that.metadata);case _:
   throw StateError('Unexpected subclass');
 
@@ -206,7 +199,7 @@ return $default(_that.isDisabled,_that.balance,_that.regionId,_that.metadata);ca
 
 @optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( bool? isDisabled,  int? balance,  String? regionId,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
 switch (_that) {
-case _AdminUpdateGiftCardRequest() when $default != null:
+case _UpdateGiftCardRequest() when $default != null:
 return $default(_that.isDisabled,_that.balance,_that.regionId,_that.metadata);case _:
   return null;
 
@@ -218,9 +211,9 @@ return $default(_that.isDisabled,_that.balance,_that.regionId,_that.metadata);ca
 /// @nodoc
 @JsonSerializable()
 
-class _AdminUpdateGiftCardRequest implements UpdateGiftCardRequest {
-  const _AdminUpdateGiftCardRequest({this.isDisabled, this.balance, this.regionId, final  Map<String, dynamic>? metadata}): _metadata = metadata;
-  factory _AdminUpdateGiftCardRequest.fromJson(Map<String, dynamic> json) => _$AdminUpdateGiftCardRequestFromJson(json);
+class _UpdateGiftCardRequest implements UpdateGiftCardRequest {
+  const _UpdateGiftCardRequest({this.isDisabled, this.balance, this.regionId, final  Map<String, dynamic>? metadata}): _metadata = metadata;
+  factory _UpdateGiftCardRequest.fromJson(Map<String, dynamic> json) => _$UpdateGiftCardRequestFromJson(json);
 
 @override final  bool? isDisabled;
 @override final  int? balance;
@@ -239,16 +232,16 @@ class _AdminUpdateGiftCardRequest implements UpdateGiftCardRequest {
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$AdminUpdateGiftCardRequestCopyWith<_AdminUpdateGiftCardRequest> get copyWith => __$AdminUpdateGiftCardRequestCopyWithImpl<_AdminUpdateGiftCardRequest>(this, _$identity);
+_$UpdateGiftCardRequestCopyWith<_UpdateGiftCardRequest> get copyWith => __$UpdateGiftCardRequestCopyWithImpl<_UpdateGiftCardRequest>(this, _$identity);
 
 @override
 Map<String, dynamic> toJson() {
-  return _$AdminUpdateGiftCardRequestToJson(this, );
+  return _$UpdateGiftCardRequestToJson(this, );
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _AdminUpdateGiftCardRequest&&(identical(other.isDisabled, isDisabled) || other.isDisabled == isDisabled)&&(identical(other.balance, balance) || other.balance == balance)&&(identical(other.regionId, regionId) || other.regionId == regionId)&&const DeepCollectionEquality().equals(other._metadata, _metadata));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _UpdateGiftCardRequest&&(identical(other.isDisabled, isDisabled) || other.isDisabled == isDisabled)&&(identical(other.balance, balance) || other.balance == balance)&&(identical(other.regionId, regionId) || other.regionId == regionId)&&const DeepCollectionEquality().equals(other._metadata, _metadata));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -264,8 +257,8 @@ String toString() {
 }
 
 /// @nodoc
-abstract mixin class _$AdminUpdateGiftCardRequestCopyWith<$Res> implements $UpdateGiftCardRequestCopyWith<$Res> {
-  factory _$AdminUpdateGiftCardRequestCopyWith(_AdminUpdateGiftCardRequest value, $Res Function(_AdminUpdateGiftCardRequest) _then) = __$AdminUpdateGiftCardRequestCopyWithImpl;
+abstract mixin class _$UpdateGiftCardRequestCopyWith<$Res> implements $UpdateGiftCardRequestCopyWith<$Res> {
+  factory _$UpdateGiftCardRequestCopyWith(_UpdateGiftCardRequest value, $Res Function(_UpdateGiftCardRequest) _then) = __$UpdateGiftCardRequestCopyWithImpl;
 @override @useResult
 $Res call({
  bool? isDisabled, int? balance, String? regionId, Map<String, dynamic>? metadata
@@ -276,17 +269,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$AdminUpdateGiftCardRequestCopyWithImpl<$Res>
-    implements _$AdminUpdateGiftCardRequestCopyWith<$Res> {
-  __$AdminUpdateGiftCardRequestCopyWithImpl(this._self, this._then);
+class __$UpdateGiftCardRequestCopyWithImpl<$Res>
+    implements _$UpdateGiftCardRequestCopyWith<$Res> {
+  __$UpdateGiftCardRequestCopyWithImpl(this._self, this._then);
 
-  final _AdminUpdateGiftCardRequest _self;
-  final $Res Function(_AdminUpdateGiftCardRequest) _then;
+  final _UpdateGiftCardRequest _self;
+  final $Res Function(_UpdateGiftCardRequest) _then;
 
 /// Create a copy of UpdateGiftCardRequest
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? isDisabled = freezed,Object? balance = freezed,Object? regionId = freezed,Object? metadata = freezed,}) {
-  return _then(_AdminUpdateGiftCardRequest(
+  return _then(_UpdateGiftCardRequest(
 isDisabled: freezed == isDisabled ? _self.isDisabled : isDisabled // ignore: cast_nullable_to_non_nullable
 as bool?,balance: freezed == balance ? _self.balance : balance // ignore: cast_nullable_to_non_nullable
 as int?,regionId: freezed == regionId ? _self.regionId : regionId // ignore: cast_nullable_to_non_nullable

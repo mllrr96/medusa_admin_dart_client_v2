@@ -8,7 +8,6 @@ part 'gift_cards_list_res.g.dart';
 @freezed
 abstract class GiftCardsListResponse with _$GiftCardsListResponse {
   const factory GiftCardsListResponse({
-
     required List<GiftCard> giftCards,
     required int count,
     required int offset,
