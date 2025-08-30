@@ -5,7 +5,6 @@ import 'package:medusa_admin_dart_client/src/features/orders/data/models/order.d
 
 import 'cart.dart';
 
-
 part 'shipping_method.freezed.dart';
 part 'shipping_method.g.dart';
 

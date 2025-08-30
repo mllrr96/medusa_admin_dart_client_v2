@@ -1,4 +1,3 @@
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'campaign_budget.freezed.dart';
@@ -12,5 +11,6 @@ abstract class CampaignBudget with _$CampaignBudget {
     required int used,
   }) = _CampaignBudget;
 
-  factory CampaignBudget.fromJson(Map<String, dynamic> json) => _$CampaignBudgetFromJson(json);
+  factory CampaignBudget.fromJson(Map<String, dynamic> json) =>
+      _$CampaignBudgetFromJson(json);
 }

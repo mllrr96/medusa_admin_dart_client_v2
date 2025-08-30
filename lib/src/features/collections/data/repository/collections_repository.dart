@@ -1,4 +1,3 @@
-
 import '../api/collections_api.dart';
 import '../models/collection.dart';
 
@@ -7,7 +6,9 @@ class CollectionsRepository {
 
   final CollectionsApi _collectionsApi;
 
-  Future<List<ProductCollection>> retrieveAll({Map<String, dynamic>? queryParameters}) {
+  Future<List<ProductCollection>> retrieveAll({
+    Map<String, dynamic>? queryParameters,
+  }) {
     return _collectionsApi.retrieveAll(queryParameters: queryParameters);
   }
 

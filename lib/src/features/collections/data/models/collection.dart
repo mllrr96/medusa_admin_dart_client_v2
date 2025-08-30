@@ -1,4 +1,3 @@
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'collection.freezed.dart';
@@ -15,5 +14,6 @@ abstract class ProductCollection with _$ProductCollection {
     DateTime? deletedAt,
   }) = _Collection;
 
-  factory ProductCollection.fromJson(Map<String, dynamic> json) => _$ProductCollectionFromJson(json);
+  factory ProductCollection.fromJson(Map<String, dynamic> json) =>
+      _$ProductCollectionFromJson(json);
 }

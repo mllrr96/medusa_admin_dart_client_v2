@@ -18,7 +18,10 @@ abstract class NotificationsApi {
   Future<Notification> create(@Body() Notification notification);
 
   @PUT('/notifications/{id}')
-  Future<Notification> update(@Path('id') String id, @Body() Notification notification);
+  Future<Notification> update(
+    @Path('id') String id,
+    @Body() Notification notification,
+  );
 
   @DELETE('/notifications/{id}')
   Future<void> delete(@Path('id') String id);

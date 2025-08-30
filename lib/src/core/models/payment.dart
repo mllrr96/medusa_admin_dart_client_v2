@@ -4,7 +4,6 @@ import 'package:medusa_admin_dart_client/src/features/orders/data/models/order.d
 import 'cart.dart';
 import 'payment_provider.dart';
 
-
 part 'payment.freezed.dart';
 part 'payment.g.dart';
 

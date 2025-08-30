@@ -1,4 +1,3 @@
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'return_reason.freezed.dart';
@@ -13,11 +12,13 @@ abstract class ReturnReason with _$ReturnReason {
     String? description,
     @JsonKey(name: 'parent_return_reason_id') String? parentReturnReasonId,
     ReturnReason? parentReturnReason,
-    @JsonKey(name: 'return_reason_children') List<ReturnReason>? returnReasonChildren,
+    @JsonKey(name: 'return_reason_children')
+    List<ReturnReason>? returnReasonChildren,
     required DateTime createdAt,
     required DateTime updatedAt,
     DateTime? deletedAt,
   }) = _ReturnReason;
 
-  factory ReturnReason.fromJson(Map<String, dynamic> json) => _$ReturnReasonFromJson(json);
+  factory ReturnReason.fromJson(Map<String, dynamic> json) =>
+      _$ReturnReasonFromJson(json);
 }

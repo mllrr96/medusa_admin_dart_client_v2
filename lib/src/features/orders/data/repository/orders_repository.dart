@@ -1,5 +1,3 @@
-
-
 import 'package:medusa_admin_dart_client/src/features/orders/data/api/orders_api.dart';
 import 'package:medusa_admin_dart_client/src/features/orders/data/models/order_res.dart';
 import 'package:medusa_admin_dart_client/src/features/orders/data/models/orders_list_res.dart';
@@ -10,7 +8,10 @@ class OrdersRepository {
 
   OrdersRepository(this._ordersApi);
 
-  Future<OrderRes> retrieve(String id, {Map<String, dynamic>? queryParameters}) async {
+  Future<OrderRes> retrieve(
+    String id, {
+    Map<String, dynamic>? queryParameters,
+  }) async {
     try {
       return await _ordersApi.retrieve(id, queryParameters: queryParameters);
     } catch (e) {
@@ -26,9 +27,17 @@ class OrdersRepository {
     }
   }
 
-  Future<OrderRes> update(String id, PostOrdersOrderReq payload, {Map<String, dynamic>? queryParameters}) async {
+  Future<OrderRes> update(
+    String id,
+    PostOrdersOrderReq payload, {
+    Map<String, dynamic>? queryParameters,
+  }) async {
     try {
-      return await _ordersApi.update(id, payload, queryParameters: queryParameters);
+      return await _ordersApi.update(
+        id,
+        payload,
+        queryParameters: queryParameters,
+      );
     } catch (e) {
       rethrow;
     }

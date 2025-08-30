@@ -13,4 +13,3 @@ abstract class NoteRes with _$NoteRes {
   factory NoteRes.fromJson(Map<String, dynamic> json) =>
       _$NoteResFromJson(json);
 }
-

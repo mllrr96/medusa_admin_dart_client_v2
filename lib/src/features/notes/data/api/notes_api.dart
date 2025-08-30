@@ -1,4 +1,3 @@
-
 import 'package:medusa_admin_dart_client/src/features/notes/data/models/note.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:dio/dio.dart';

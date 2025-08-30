@@ -1,4 +1,3 @@
-
 import '../api/shipping_options_api.dart';
 import '../models/shipping_option.dart';
 
@@ -7,7 +6,9 @@ class ShippingOptionsRepository {
 
   final ShippingOptionsApi _shippingOptionsApi;
 
-  Future<List<ShippingOption>> retrieveAll({Map<String, dynamic>? queryParameters}) {
+  Future<List<ShippingOption>> retrieveAll({
+    Map<String, dynamic>? queryParameters,
+  }) {
     return _shippingOptionsApi.retrieveAll(queryParameters: queryParameters);
   }
 

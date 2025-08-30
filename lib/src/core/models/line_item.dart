@@ -7,7 +7,6 @@ import 'cart.dart';
 import 'product_variant.dart';
 import 'tax_line.dart';
 
-
 part 'line_item.freezed.dart';
 part 'line_item.g.dart';
 

@@ -6,7 +6,6 @@ import 'package:medusa_admin_dart_client/src/features/orders/data/models/order.d
 import 'line_item.dart';
 import 'refund.dart';
 
-
 part 'return.freezed.dart';
 part 'return.g.dart';
 

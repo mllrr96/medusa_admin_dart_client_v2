@@ -1,4 +1,3 @@
-
 import '../api/sales_channels_api.dart';
 import '../models/sales_channel.dart';
 
@@ -7,7 +6,9 @@ class SalesChannelsRepository {
 
   final SalesChannelsApi _salesChannelsApi;
 
-  Future<List<SalesChannel>> retrieveAll({Map<String, dynamic>? queryParameters}) {
+  Future<List<SalesChannel>> retrieveAll({
+    Map<String, dynamic>? queryParameters,
+  }) {
     return _salesChannelsApi.retrieveAll(queryParameters: queryParameters);
   }
 

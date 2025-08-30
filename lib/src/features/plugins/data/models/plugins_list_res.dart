@@ -7,7 +7,9 @@ part 'plugins_list_res.g.dart';
 
 @freezed
 abstract class PluginsListRes with _$PluginsListRes {
-  const factory PluginsListRes({required List<Plugin> plugins}) = _PluginsListRes;
+  const factory PluginsListRes({required List<Plugin> plugins}) =
+      _PluginsListRes;
 
-  factory PluginsListRes.fromJson(Map<String, dynamic> json) => _$PluginsListResFromJson(json);
+  factory PluginsListRes.fromJson(Map<String, dynamic> json) =>
+      _$PluginsListResFromJson(json);
 }

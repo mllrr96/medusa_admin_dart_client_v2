@@ -2,7 +2,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'note.dart';
 
-
 part 'notes_list_res.freezed.dart';
 part 'notes_list_res.g.dart';
 

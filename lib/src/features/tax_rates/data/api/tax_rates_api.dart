@@ -1,4 +1,3 @@
-
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 import '../models/tax_rate.dart';
@@ -10,7 +9,9 @@ abstract class TaxRatesApi {
   factory TaxRatesApi(Dio dio, {String baseUrl}) = _TaxRatesApi;
 
   @GET('/admin/tax-rates')
-  Future<List<TaxRate>> retrieveAll({@Queries() Map<String, dynamic>? queryParameters});
+  Future<List<TaxRate>> retrieveAll({
+    @Queries() Map<String, dynamic>? queryParameters,
+  });
 
   @GET('/admin/tax-rates/{id}')
   Future<TaxRate> retrieve(@Path('id') String id);
@@ -19,7 +20,10 @@ abstract class TaxRatesApi {
   Future<TaxRate> create(@Body() Map<String, dynamic> body);
 
   @POST('/admin/tax-rates/{id}')
-  Future<TaxRate> update(@Path('id') String id, @Body() Map<String, dynamic> body);
+  Future<TaxRate> update(
+    @Path('id') String id,
+    @Body() Map<String, dynamic> body,
+  );
 
   @DELETE('/admin/tax-rates/{id}')
   Future<void> delete(@Path('id') String id);

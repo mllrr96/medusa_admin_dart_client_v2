@@ -1,4 +1,3 @@
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'draft_order.freezed.dart';
@@ -18,5 +17,6 @@ abstract class DraftOrder with _$DraftOrder {
     DateTime? deletedAt,
   }) = _DraftOrder;
 
-  factory DraftOrder.fromJson(Map<String, dynamic> json) => _$DraftOrderFromJson(json);
+  factory DraftOrder.fromJson(Map<String, dynamic> json) =>
+      _$DraftOrderFromJson(json);
 }

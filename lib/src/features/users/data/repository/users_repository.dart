@@ -1,4 +1,3 @@
-
 import '../api/users_api.dart';
 import '../models/admin_user_delete_res.dart';
 import '../models/admin_user_res.dart';
@@ -9,11 +8,15 @@ class UsersRepository {
 
   final UsersApi _usersApi;
 
-  Future<AdminUserListResponse> retrieveAll({Map<String, dynamic>? queryParameters}) {
+  Future<AdminUserListResponse> retrieveAll({
+    Map<String, dynamic>? queryParameters,
+  }) {
     return _usersApi.retrieveAll(queryParameters: queryParameters);
   }
 
-  Future<AdminUserResponse> retrieveMe({Map<String, dynamic>? queryParameters}) {
+  Future<AdminUserResponse> retrieveMe({
+    Map<String, dynamic>? queryParameters,
+  }) {
     return _usersApi.retrieveMe(queryParameters: queryParameters);
   }
 

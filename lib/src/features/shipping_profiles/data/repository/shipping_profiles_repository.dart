@@ -1,4 +1,3 @@
-
 import '../api/shipping_profiles_api.dart';
 import '../models/shipping_profile.dart';
 
@@ -7,7 +6,9 @@ class ShippingProfilesRepository {
 
   final ShippingProfilesApi _shippingProfilesApi;
 
-  Future<List<ShippingProfile>> retrieveAll({Map<String, dynamic>? queryParameters}) {
+  Future<List<ShippingProfile>> retrieveAll({
+    Map<String, dynamic>? queryParameters,
+  }) {
     return _shippingProfilesApi.retrieveAll(queryParameters: queryParameters);
   }
 

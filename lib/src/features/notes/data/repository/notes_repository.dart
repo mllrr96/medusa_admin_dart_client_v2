@@ -1,5 +1,3 @@
-
-
 import 'package:medusa_admin_dart_client/src/features/notes/data/api/notes_api.dart';
 import 'package:medusa_admin_dart_client/src/features/notes/data/models/note.dart';
 

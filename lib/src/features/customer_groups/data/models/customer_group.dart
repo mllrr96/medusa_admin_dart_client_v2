@@ -1,4 +1,3 @@
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'customer_group.freezed.dart';
@@ -14,5 +13,6 @@ abstract class CustomerGroup with _$CustomerGroup {
     DateTime? deletedAt,
   }) = _CustomerGroup;
 
-  factory CustomerGroup.fromJson(Map<String, dynamic> json) => _$CustomerGroupFromJson(json);
+  factory CustomerGroup.fromJson(Map<String, dynamic> json) =>
+      _$CustomerGroupFromJson(json);
 }

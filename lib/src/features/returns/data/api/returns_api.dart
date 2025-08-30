@@ -1,4 +1,3 @@
-
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 import '../models/return.dart';
@@ -10,7 +9,9 @@ abstract class ReturnsApi {
   factory ReturnsApi(Dio dio, {String baseUrl}) = _ReturnsApi;
 
   @GET('/admin/returns')
-  Future<List<Return>> retrieveAll({@Queries() Map<String, dynamic>? queryParameters});
+  Future<List<Return>> retrieveAll({
+    @Queries() Map<String, dynamic>? queryParameters,
+  });
 
   @GET('/admin/returns/{id}')
   Future<Return> retrieve(@Path('id') String id);
@@ -19,7 +20,10 @@ abstract class ReturnsApi {
   Future<Return> create(@Body() Map<String, dynamic> body);
 
   @POST('/admin/returns/{id}')
-  Future<Return> update(@Path('id') String id, @Body() Map<String, dynamic> body);
+  Future<Return> update(
+    @Path('id') String id,
+    @Body() Map<String, dynamic> body,
+  );
 
   @DELETE('/admin/returns/{id}')
   Future<void> delete(@Path('id') String id);

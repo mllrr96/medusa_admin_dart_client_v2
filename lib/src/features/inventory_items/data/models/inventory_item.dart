@@ -1,4 +1,3 @@
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'inventory_level.dart';
 
@@ -32,5 +31,6 @@ abstract class InventoryItem with _$InventoryItem {
     Map<String, dynamic>? metadata,
   }) = _InventoryItem;
 
-  factory InventoryItem.fromJson(Map<String, dynamic> json) => _$InventoryItemFromJson(json);
+  factory InventoryItem.fromJson(Map<String, dynamic> json) =>
+      _$InventoryItemFromJson(json);
 }

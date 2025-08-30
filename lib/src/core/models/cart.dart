@@ -16,8 +16,7 @@ abstract class Cart with _$Cart {
   const factory Cart({
     required String id,
     String? email,
-    @JsonKey(name: 'customer_id')
-    String? customerId,
+    @JsonKey(name: 'customer_id') String? customerId,
     Customer? customer,
     @JsonKey(name: 'region_id') String? regionId,
     Region? region,

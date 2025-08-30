@@ -1,4 +1,3 @@
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'shipping_option.freezed.dart';
@@ -19,5 +18,6 @@ abstract class ShippingOption with _$ShippingOption {
     DateTime? deletedAt,
   }) = _ShippingOption;
 
-  factory ShippingOption.fromJson(Map<String, dynamic> json) => _$ShippingOptionFromJson(json);
+  factory ShippingOption.fromJson(Map<String, dynamic> json) =>
+      _$ShippingOptionFromJson(json);
 }

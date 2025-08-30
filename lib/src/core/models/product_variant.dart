@@ -4,7 +4,6 @@ import 'package:medusa_admin_dart_client/src/core/models/product.dart';
 import 'money_amount.dart';
 import 'product_option_value.dart';
 
-
 part 'product_variant.freezed.dart';
 part 'product_variant.g.dart';
 

@@ -1,4 +1,3 @@
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'user.freezed.dart';
@@ -18,5 +17,6 @@ abstract class AdminUser with _$AdminUser {
     required DateTime deletedAt,
   }) = _AdminUser;
 
-  factory AdminUser.fromJson(Map<String, dynamic> json) => _$AdminUserFromJson(json);
+  factory AdminUser.fromJson(Map<String, dynamic> json) =>
+      _$AdminUserFromJson(json);
 }

@@ -50,7 +50,8 @@ abstract class AdminPostDiscountsReq with _$AdminPostDiscountsReq {
 }
 
 @freezed
-abstract class AdminPostDiscountsDiscountReq with _$AdminPostDiscountsDiscountReq {
+abstract class AdminPostDiscountsDiscountReq
+    with _$AdminPostDiscountsDiscountReq {
   const factory AdminPostDiscountsDiscountReq({
     String? code,
     DiscountRule? rule,
@@ -80,7 +81,8 @@ abstract class AdminDiscountsDeleteRes with _$AdminDiscountsDeleteRes {
 }
 
 @freezed
-abstract class AdminPostDiscountsDiscountConditions with _$AdminPostDiscountsDiscountConditions {
+abstract class AdminPostDiscountsDiscountConditions
+    with _$AdminPostDiscountsDiscountConditions {
   const factory AdminPostDiscountsDiscountConditions({
     required String operator,
     List<String>? products,
@@ -91,18 +93,20 @@ abstract class AdminPostDiscountsDiscountConditions with _$AdminPostDiscountsDis
   }) = _AdminPostDiscountsDiscountConditions;
 
   factory AdminPostDiscountsDiscountConditions.fromJson(
-          Map<String, dynamic> json,) =>
-      _$AdminPostDiscountsDiscountConditionsFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$AdminPostDiscountsDiscountConditionsFromJson(json);
 }
 
 @freezed
-abstract class AdminPostDiscountsDiscountDynamicCodesReq with _$AdminPostDiscountsDiscountDynamicCodesReq {
+abstract class AdminPostDiscountsDiscountDynamicCodesReq
+    with _$AdminPostDiscountsDiscountDynamicCodesReq {
   const factory AdminPostDiscountsDiscountDynamicCodesReq({
     required String code,
     int? usageLimit,
     Map<String, dynamic>? metadata,
   }) = _AdminPostDiscountsDiscountDynamicCodesReq;
 
-  factory AdminPostDiscountsDiscountDynamicCodesReq.fromJson(Map<String, dynamic> json) =>
-      _$AdminPostDiscountsDiscountDynamicCodesReqFromJson(json);
+  factory AdminPostDiscountsDiscountDynamicCodesReq.fromJson(
+    Map<String, dynamic> json,
+  ) => _$AdminPostDiscountsDiscountDynamicCodesReqFromJson(json);
 }

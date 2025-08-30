@@ -26,7 +26,7 @@ abstract class OrderLineItem with _$OrderLineItem {
     @JsonKey(name: 'variant_barcode') required String variantBarcode,
     @JsonKey(name: 'variant_title') required String variantTitle,
     @JsonKey(name: 'variant_option_values')
-        required Map<String, dynamic> variantOptionValues,
+    required Map<String, dynamic> variantOptionValues,
     @JsonKey(name: 'requires_shipping') required bool requiresShipping,
     @JsonKey(name: 'is_discountable') required bool isDiscountable,
     @JsonKey(name: 'is_tax_inclusive') required bool isTaxInclusive,
@@ -52,7 +52,7 @@ abstract class OrderLineItem with _$OrderLineItem {
     @JsonKey(name: 'discount_tax_total') required num discountTaxTotal,
     @JsonKey(name: 'refundable_total') required num refundableTotal,
     @JsonKey(name: 'refundable_total_per_unit')
-        required num refundableTotalPerUnit,
+    required num refundableTotalPerUnit,
     @JsonKey(name: 'product_type_id') required String productTypeId,
   }) = _OrderLineItem;
 

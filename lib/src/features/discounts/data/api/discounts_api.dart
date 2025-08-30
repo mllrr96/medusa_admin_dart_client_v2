@@ -9,7 +9,9 @@ abstract class DiscountsApi {
   factory DiscountsApi(Dio dio, {String baseUrl}) = _DiscountsApi;
 
   @GET('/admin/discounts')
-  Future<AdminDiscountsListRes> retrieveAll({@Queries() Map<String, dynamic>? queryParameters});
+  Future<AdminDiscountsListRes> retrieveAll({
+    @Queries() Map<String, dynamic>? queryParameters,
+  });
 
   @POST('/admin/discounts')
   Future<AdminDiscountsRes> create(@Body() AdminPostDiscountsReq body);
@@ -60,7 +62,10 @@ abstract class DiscountsApi {
   );
 
   @POST('/admin/discounts/{id}/regions/{region_id}')
-  Future<AdminDiscountsRes> addRegion(@Path('id') String id, @Path('region_id') String regionId);
+  Future<AdminDiscountsRes> addRegion(
+    @Path('id') String id,
+    @Path('region_id') String regionId,
+  );
 
   @DELETE('/admin/discounts/{id}/regions/{region_id}')
   Future<AdminDiscountsDeleteRes> removeRegion(

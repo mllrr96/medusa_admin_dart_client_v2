@@ -1,4 +1,3 @@
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'customer.freezed.dart';
@@ -18,5 +17,6 @@ abstract class Customer with _$Customer {
     DateTime? deletedAt,
   }) = _Customer;
 
-  factory Customer.fromJson(Map<String, dynamic> json) => _$CustomerFromJson(json);
+  factory Customer.fromJson(Map<String, dynamic> json) =>
+      _$CustomerFromJson(json);
 }

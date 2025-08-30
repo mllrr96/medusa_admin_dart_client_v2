@@ -1,4 +1,3 @@
-
 import '../api/draft_orders_api.dart';
 import '../models/draft_order.dart';
 
@@ -7,7 +6,9 @@ class DraftOrdersRepository {
 
   final DraftOrdersApi _draftOrdersApi;
 
-  Future<List<DraftOrder>> retrieveAll({Map<String, dynamic>? queryParameters}) {
+  Future<List<DraftOrder>> retrieveAll({
+    Map<String, dynamic>? queryParameters,
+  }) {
     return _draftOrdersApi.retrieveAll(queryParameters: queryParameters);
   }
 

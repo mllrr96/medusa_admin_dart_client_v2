@@ -1,4 +1,3 @@
-
 import '../api/return_reasons_api.dart';
 import '../models/return_reason.dart';
 
@@ -7,7 +6,9 @@ class ReturnReasonsRepository {
 
   final ReturnReasonsApi _returnReasonsApi;
 
-  Future<List<ReturnReason>> retrieveAll({Map<String, dynamic>? queryParameters}) {
+  Future<List<ReturnReason>> retrieveAll({
+    Map<String, dynamic>? queryParameters,
+  }) {
     return _returnReasonsApi.retrieveAll(queryParameters: queryParameters);
   }
 

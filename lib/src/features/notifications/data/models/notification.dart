@@ -2,7 +2,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../customers/data/models/customer.dart';
 
-
 part 'notification.freezed.dart';
 part 'notification.g.dart';
 

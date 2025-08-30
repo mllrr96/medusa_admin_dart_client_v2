@@ -2,7 +2,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import '../../../auth/data/models/user.dart';
 
-
 part 'note.freezed.dart';
 part 'note.g.dart';
 

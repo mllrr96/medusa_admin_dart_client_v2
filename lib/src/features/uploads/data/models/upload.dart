@@ -1,4 +1,3 @@
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'upload.freezed.dart';
@@ -11,6 +10,5 @@ abstract class Upload with _$Upload {
     required String url,
   }) = _Upload;
 
-  factory Upload.fromJson(Map<String, dynamic> json) =>
-      _$UploadFromJson(json);
+  factory Upload.fromJson(Map<String, dynamic> json) => _$UploadFromJson(json);
 }

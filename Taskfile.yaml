@@ -44,3 +44,10 @@ tasks:
       Apply dart fix
     cmds:
       - dart fix --apply
+
+  format:
+    desc: Format dart files
+    summary: |
+      Run codegen
+    cmds:
+      - dart format .

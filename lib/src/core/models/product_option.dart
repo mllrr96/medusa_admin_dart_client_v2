@@ -3,7 +3,6 @@ import 'package:medusa_admin_dart_client/src/core/models/product.dart';
 
 import 'product_option_value.dart';
 
-
 part 'product_option.freezed.dart';
 part 'product_option.g.dart';
 

@@ -1,4 +1,3 @@
-
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 import '../models/campaign_delete_res.dart';
@@ -15,7 +14,9 @@ abstract class CampaignsApi {
   factory CampaignsApi(Dio dio, {String baseUrl}) = _CampaignsApi;
 
   @GET('/admin/campaigns')
-  Future<CampaignsListRes> list({@Queries() Map<String, dynamic>? queryParameters});
+  Future<CampaignsListRes> list({
+    @Queries() Map<String, dynamic>? queryParameters,
+  });
 
   @POST('/admin/campaigns')
   Future<CampaignRes> create(@Body() CreateCampaignReq body);

@@ -6,7 +6,6 @@ import 'package:medusa_admin_dart_client/src/core/models/tax_rate.dart';
 
 import 'requirement.dart';
 
-
 part 'shipping_option.freezed.dart';
 part 'shipping_option.g.dart';
 

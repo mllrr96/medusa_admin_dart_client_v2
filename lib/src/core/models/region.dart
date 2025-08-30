@@ -4,7 +4,6 @@ import 'country.dart';
 import 'fulfillment_provider.dart';
 import 'payment_provider.dart';
 
-
 part 'region.freezed.dart';
 part 'region.g.dart';
 

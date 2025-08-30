@@ -1,4 +1,3 @@
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'discount.freezed.dart';
@@ -17,5 +16,6 @@ abstract class Discount with _$Discount {
     DateTime? deletedAt,
   }) = _Discount;
 
-  factory Discount.fromJson(Map<String, dynamic> json) => _$DiscountFromJson(json);
+  factory Discount.fromJson(Map<String, dynamic> json) =>
+      _$DiscountFromJson(json);
 }

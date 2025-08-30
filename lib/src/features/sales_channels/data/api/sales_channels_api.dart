@@ -1,4 +1,3 @@
-
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 import '../models/sales_channel.dart';
@@ -10,7 +9,9 @@ abstract class SalesChannelsApi {
   factory SalesChannelsApi(Dio dio, {String baseUrl}) = _SalesChannelsApi;
 
   @GET('/admin/sales-channels')
-  Future<List<SalesChannel>> retrieveAll({@Queries() Map<String, dynamic>? queryParameters});
+  Future<List<SalesChannel>> retrieveAll({
+    @Queries() Map<String, dynamic>? queryParameters,
+  });
 
   @GET('/admin/sales-channels/{id}')
   Future<SalesChannel> retrieve(@Path('id') String id);
@@ -19,7 +20,10 @@ abstract class SalesChannelsApi {
   Future<SalesChannel> create(@Body() Map<String, dynamic> body);
 
   @POST('/admin/sales-channels/{id}')
-  Future<SalesChannel> update(@Path('id') String id, @Body() Map<String, dynamic> body);
+  Future<SalesChannel> update(
+    @Path('id') String id,
+    @Body() Map<String, dynamic> body,
+  );
 
   @DELETE('/admin/sales-channels/{id}')
   Future<void> delete(@Path('id') String id);

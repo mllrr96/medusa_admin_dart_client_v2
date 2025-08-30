@@ -8,7 +8,6 @@ import 'product_tag.dart';
 import 'product_type.dart';
 import 'product_variant.dart';
 
-
 part 'product.freezed.dart';
 part 'product.g.dart';
 

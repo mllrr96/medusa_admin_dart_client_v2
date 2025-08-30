@@ -3,7 +3,6 @@ import 'package:medusa_admin_dart_client/src/features/orders/data/models/order.d
 
 import 'fulfillment_provider.dart';
 
-
 part 'fulfillment.freezed.dart';
 part 'fulfillment.g.dart';
 

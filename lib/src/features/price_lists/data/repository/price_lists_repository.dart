@@ -6,7 +6,9 @@ class PriceListsRepository {
 
   PriceListsRepository(this._priceListsApi);
 
-  Future<AdminPriceListsListRes> retrieveAll({Map<String, dynamic>? queryParameters}) async {
+  Future<AdminPriceListsListRes> retrieveAll({
+    Map<String, dynamic>? queryParameters,
+  }) async {
     return _priceListsApi.retrieveAll(queryParameters: queryParameters);
   }
 
@@ -14,11 +16,17 @@ class PriceListsRepository {
     return _priceListsApi.create(body);
   }
 
-  Future<AdminPriceListsRes> retrieve(String id, {Map<String, dynamic>? queryParameters}) async {
+  Future<AdminPriceListsRes> retrieve(
+    String id, {
+    Map<String, dynamic>? queryParameters,
+  }) async {
     return _priceListsApi.retrieve(id, queryParameters: queryParameters);
   }
 
-  Future<AdminPriceListsRes> update(String id, AdminUpdatePriceListReq body) async {
+  Future<AdminPriceListsRes> update(
+    String id,
+    AdminUpdatePriceListReq body,
+  ) async {
     return _priceListsApi.update(id, body);
   }
 
@@ -26,7 +34,10 @@ class PriceListsRepository {
     return _priceListsApi.delete(id);
   }
 
-  Future<AdminPriceListsRes> managePrices(String id, AdminPriceListsManagePricesReq body) async {
+  Future<AdminPriceListsRes> managePrices(
+    String id,
+    AdminPriceListsManagePricesReq body,
+  ) async {
     return _priceListsApi.managePrices(id, body);
   }
 

@@ -4,7 +4,6 @@ import 'notification.dart';
 part 'notifications_list_res.freezed.dart';
 part 'notifications_list_res.g.dart';
 
-
 @freezed
 abstract class NotificationsListRes with _$NotificationsListRes {
   const factory NotificationsListRes({

@@ -1,4 +1,3 @@
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:medusa_admin_dart_client/src/core/models/address.dart';
 import 'package:medusa_admin_dart_client/src/core/models/admin_order_fulfillment.dart';
@@ -16,7 +15,7 @@ part 'order.g.dart';
 
 @freezed
 abstract class Order with _$Order {
-    const factory Order({
+  const factory Order({
     required String id,
     required int version,
     @JsonKey(name: 'region_id') required String regionId,
@@ -36,10 +35,8 @@ abstract class Order with _$Order {
     @JsonKey(name: 'created_at') required DateTime createdAt,
     @JsonKey(name: 'updated_at') required DateTime updatedAt,
     @JsonKey(name: 'original_item_total') required num originalItemTotal,
-    @JsonKey(name: 'original_item_subtotal')
-    required num originalItemSubtotal,
-    @JsonKey(name: 'original_item_tax_total')
-    required num originalItemTaxTotal,
+    @JsonKey(name: 'original_item_subtotal') required num originalItemSubtotal,
+    @JsonKey(name: 'original_item_tax_total') required num originalItemTaxTotal,
     @JsonKey(name: 'item_total') required num itemTotal,
     @JsonKey(name: 'item_subtotal') required num itemSubtotal,
     @JsonKey(name: 'item_tax_total') required num itemTaxTotal,

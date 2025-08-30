@@ -1,4 +1,3 @@
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'campaign_budget.dart';
 
@@ -21,5 +20,6 @@ abstract class Campaign with _$Campaign {
     DateTime? deletedAt,
   }) = _Campaign;
 
-  factory Campaign.fromJson(Map<String, dynamic> json) => _$CampaignFromJson(json);
+  factory Campaign.fromJson(Map<String, dynamic> json) =>
+      _$CampaignFromJson(json);
 }

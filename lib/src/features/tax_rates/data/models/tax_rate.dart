@@ -1,4 +1,3 @@
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'tax_rate.freezed.dart';
@@ -16,5 +15,6 @@ abstract class TaxRate with _$TaxRate {
     DateTime? deletedAt,
   }) = _TaxRate;
 
-  factory TaxRate.fromJson(Map<String, dynamic> json) => _$TaxRateFromJson(json);
+  factory TaxRate.fromJson(Map<String, dynamic> json) =>
+      _$TaxRateFromJson(json);
 }

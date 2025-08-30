@@ -1,7 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:medusa_admin_dart_client/src/features/orders/data/models/order.dart';
 
-
 part 'refund.freezed.dart';
 part 'refund.g.dart';
 

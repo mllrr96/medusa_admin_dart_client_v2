@@ -8,7 +8,6 @@ import 'line_item.dart';
 import 'payment.dart';
 import 'shipping_method.dart';
 
-
 part 'swap.freezed.dart';
 part 'swap.g.dart';
 

@@ -1,4 +1,3 @@
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'shipping_profile.freezed.dart';
@@ -15,5 +14,6 @@ abstract class ShippingProfile with _$ShippingProfile {
     DateTime? deletedAt,
   }) = _ShippingProfile;
 
-  factory ShippingProfile.fromJson(Map<String, dynamic> json) => _$ShippingProfileFromJson(json);
+  factory ShippingProfile.fromJson(Map<String, dynamic> json) =>
+      _$ShippingProfileFromJson(json);
 }

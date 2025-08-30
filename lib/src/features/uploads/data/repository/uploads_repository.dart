@@ -6,7 +6,6 @@ import 'package:medusa_admin_dart_client/src/features/uploads/data/models/upload
 import 'package:medusa_admin_dart_client/src/features/uploads/data/models/uploads_presigned_url_res.dart';
 import 'package:medusa_admin_dart_client/src/features/uploads/data/models/uploads_res.dart';
 
-
 class UploadsRepository {
   UploadsRepository(this._uploadsApi);
 

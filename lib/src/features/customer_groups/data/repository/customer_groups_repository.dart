@@ -1,4 +1,3 @@
-
 import '../api/customer_groups_api.dart';
 import '../models/customer_group.dart';
 
@@ -7,7 +6,9 @@ class CustomerGroupsRepository {
 
   final CustomerGroupsApi _customerGroupsApi;
 
-  Future<List<CustomerGroup>> retrieveAll({Map<String, dynamic>? queryParameters}) {
+  Future<List<CustomerGroup>> retrieveAll({
+    Map<String, dynamic>? queryParameters,
+  }) {
     return _customerGroupsApi.retrieveAll(queryParameters: queryParameters);
   }
 
@@ -32,6 +33,8 @@ class CustomerGroupsRepository {
   }
 
   Future<CustomerGroup> removeCustomers(String id, List<String> customerIds) {
-    return _customerGroupsApi.removeCustomers(id, {'customer_ids': customerIds});
+    return _customerGroupsApi.removeCustomers(id, {
+      'customer_ids': customerIds,
+    });
   }
 }

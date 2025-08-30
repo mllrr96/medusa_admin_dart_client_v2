@@ -43,15 +43,18 @@ class MedusaAdminV2 {
   DiscountsRepository get discounts => getIt<DiscountsRepository>();
   GiftCardsRepository get giftCards => getIt<GiftCardsRepository>();
   PriceListsRepository get priceLists => getIt<PriceListsRepository>();
-  ShippingOptionsRepository get shippingOptions => getIt<ShippingOptionsRepository>();
-  ShippingProfilesRepository get shippingProfiles => getIt<ShippingProfilesRepository>();
+  ShippingOptionsRepository get shippingOptions =>
+      getIt<ShippingOptionsRepository>();
+  ShippingProfilesRepository get shippingProfiles =>
+      getIt<ShippingProfilesRepository>();
   UsersRepository get users => getIt<UsersRepository>();
   UploadsRepository get uploads => getIt<UploadsRepository>();
   StoreRepository get store => getIt<StoreRepository>();
   TaxRatesRepository get taxRates => getIt<TaxRatesRepository>();
   CurrenciesRepository get currencies => getIt<CurrenciesRepository>();
   DraftOrdersRepository get draftOrders => getIt<DraftOrdersRepository>();
-  CustomerGroupsRepository get customerGroups => getIt<CustomerGroupsRepository>();
+  CustomerGroupsRepository get customerGroups =>
+      getIt<CustomerGroupsRepository>();
   NotesRepository get notes => getIt<NotesRepository>();
   NotificationsRepository get notifications => getIt<NotificationsRepository>();
   ReturnsRepository get returns => getIt<ReturnsRepository>();

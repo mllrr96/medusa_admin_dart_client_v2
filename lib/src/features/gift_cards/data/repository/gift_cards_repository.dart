@@ -17,7 +17,9 @@ class GiftCardsRepository {
     }
   }
 
-  Future<AdminGiftCardsListResponse> retrieveAll(Map<String, dynamic> queryParameters) async {
+  Future<AdminGiftCardsListResponse> retrieveAll(
+    Map<String, dynamic> queryParameters,
+  ) async {
     try {
       return await _giftCardsApi.retrieveAll(queryParameters: queryParameters);
     } catch (e) {
@@ -25,7 +27,9 @@ class GiftCardsRepository {
     }
   }
 
-  Future<AdminGiftCardResponse> create(AdminCreateGiftCardRequest giftCard) async {
+  Future<AdminGiftCardResponse> create(
+    AdminCreateGiftCardRequest giftCard,
+  ) async {
     try {
       return await _giftCardsApi.create(giftCard);
     } catch (e) {
@@ -33,7 +37,10 @@ class GiftCardsRepository {
     }
   }
 
-  Future<AdminGiftCardResponse> update(String id, AdminUpdateGiftCardRequest giftCard) async {
+  Future<AdminGiftCardResponse> update(
+    String id,
+    AdminUpdateGiftCardRequest giftCard,
+  ) async {
     try {
       return await _giftCardsApi.update(id: id, payload: giftCard);
     } catch (e) {

@@ -1,4 +1,3 @@
-
 import '../api/inventory_items_api.dart';
 import '../models/inventory_item.dart';
 
@@ -19,11 +18,18 @@ class InventoryItemsRepository {
     return _inventoryItemsApi.update(id, body);
   }
 
-  Future<InventoryItem> createLocationLevel(String id, Map<String, dynamic> body) {
+  Future<InventoryItem> createLocationLevel(
+    String id,
+    Map<String, dynamic> body,
+  ) {
     return _inventoryItemsApi.createLocationLevel(id, body);
   }
 
-  Future<InventoryItem> updateLocationLevel(String id, String locationId, Map<String, dynamic> body) {
+  Future<InventoryItem> updateLocationLevel(
+    String id,
+    String locationId,
+    Map<String, dynamic> body,
+  ) {
     return _inventoryItemsApi.updateLocationLevel(id, locationId, body);
   }
 

@@ -3,7 +3,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'product_option.dart';
 import 'product_variant.dart';
 
-
 part 'product_option_value.freezed.dart';
 part 'product_option_value.g.dart';
 

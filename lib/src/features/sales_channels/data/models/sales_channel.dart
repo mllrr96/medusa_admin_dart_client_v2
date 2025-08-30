@@ -1,4 +1,3 @@
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'sales_channel.freezed.dart';
@@ -16,5 +15,6 @@ abstract class SalesChannel with _$SalesChannel {
     DateTime? deletedAt,
   }) = _SalesChannel;
 
-  factory SalesChannel.fromJson(Map<String, dynamic> json) => _$SalesChannelFromJson(json);
+  factory SalesChannel.fromJson(Map<String, dynamic> json) =>
+      _$SalesChannelFromJson(json);
 }

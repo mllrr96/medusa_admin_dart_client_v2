@@ -9,7 +9,9 @@ abstract class SwapsApi {
   factory SwapsApi(Dio dio, {String baseUrl}) = _SwapsApi;
 
   @GET('/admin/swaps')
-  Future<List<Swap>> retrieveAll({@Queries() Map<String, dynamic>? queryParameters});
+  Future<List<Swap>> retrieveAll({
+    @Queries() Map<String, dynamic>? queryParameters,
+  });
 
   @GET('/admin/swaps/{id}')
   Future<Swap> retrieve(@Path('id') String id);

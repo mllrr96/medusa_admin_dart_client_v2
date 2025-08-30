@@ -61,130 +61,173 @@ void configureDependencies() {
 
   // Auth
   getIt.registerLazySingleton<AuthApi>(() => AuthApi(getIt<Dio>()));
-  getIt.registerLazySingleton<AuthRepository>(() => AuthRepository(getIt<AuthApi>()));
+  getIt.registerLazySingleton<AuthRepository>(
+    () => AuthRepository(getIt<AuthApi>()),
+  );
 
   // Products
   getIt.registerLazySingleton<ProductsApi>(() => ProductsApi(getIt<Dio>()));
   getIt.registerLazySingleton<ProductsRepository>(
-      () => ProductsRepository(getIt<ProductsApi>()));
+    () => ProductsRepository(getIt<ProductsApi>()),
+  );
 
   // Orders
   getIt.registerLazySingleton<OrdersApi>(() => OrdersApi(getIt<Dio>()));
   getIt.registerLazySingleton<OrdersRepository>(
-      () => OrdersRepository(getIt<OrdersApi>()));
+    () => OrdersRepository(getIt<OrdersApi>()),
+  );
 
   // Customers
   getIt.registerLazySingleton<CustomersApi>(() => CustomersApi(getIt<Dio>()));
   getIt.registerLazySingleton<CustomersRepository>(
-      () => CustomersRepository(getIt<CustomersApi>()));
+    () => CustomersRepository(getIt<CustomersApi>()),
+  );
 
   // Regions
   getIt.registerLazySingleton<RegionsApi>(() => RegionsApi(getIt<Dio>()));
   getIt.registerLazySingleton<RegionsRepository>(
-      () => RegionsRepository(getIt<RegionsApi>()));
+    () => RegionsRepository(getIt<RegionsApi>()),
+  );
 
   // Collections
-  getIt.registerLazySingleton<CollectionsApi>(() => CollectionsApi(getIt<Dio>()));
+  getIt.registerLazySingleton<CollectionsApi>(
+    () => CollectionsApi(getIt<Dio>()),
+  );
   getIt.registerLazySingleton<CollectionsRepository>(
-      () => CollectionsRepository(getIt<CollectionsApi>()));
+    () => CollectionsRepository(getIt<CollectionsApi>()),
+  );
 
   // Discounts
   getIt.registerLazySingleton<DiscountsApi>(() => DiscountsApi(getIt<Dio>()));
   getIt.registerLazySingleton<DiscountsRepository>(
-      () => DiscountsRepository(getIt<DiscountsApi>()));
+    () => DiscountsRepository(getIt<DiscountsApi>()),
+  );
 
   // Gift Cards
   getIt.registerLazySingleton<GiftCardsApi>(() => GiftCardsApi(getIt<Dio>()));
   getIt.registerLazySingleton<GiftCardsRepository>(
-      () => GiftCardsRepository(getIt<GiftCardsApi>()));
+    () => GiftCardsRepository(getIt<GiftCardsApi>()),
+  );
 
   // Price Lists
   getIt.registerLazySingleton<PriceListsApi>(() => PriceListsApi(getIt<Dio>()));
   getIt.registerLazySingleton<PriceListsRepository>(
-      () => PriceListsRepository(getIt<PriceListsApi>()));
+    () => PriceListsRepository(getIt<PriceListsApi>()),
+  );
 
   // Shipping Options
-  getIt.registerLazySingleton<ShippingOptionsApi>(() => ShippingOptionsApi(getIt<Dio>()));
+  getIt.registerLazySingleton<ShippingOptionsApi>(
+    () => ShippingOptionsApi(getIt<Dio>()),
+  );
   getIt.registerLazySingleton<ShippingOptionsRepository>(
-      () => ShippingOptionsRepository(getIt<ShippingOptionsApi>()));
+    () => ShippingOptionsRepository(getIt<ShippingOptionsApi>()),
+  );
 
   // Shipping Profiles
-  getIt.registerLazySingleton<ShippingProfilesApi>(() => ShippingProfilesApi(getIt<Dio>()));
+  getIt.registerLazySingleton<ShippingProfilesApi>(
+    () => ShippingProfilesApi(getIt<Dio>()),
+  );
   getIt.registerLazySingleton<ShippingProfilesRepository>(
-      () => ShippingProfilesRepository(getIt<ShippingProfilesApi>()));
+    () => ShippingProfilesRepository(getIt<ShippingProfilesApi>()),
+  );
 
   // Users
   getIt.registerLazySingleton<UsersApi>(() => UsersApi(getIt<Dio>()));
   getIt.registerLazySingleton<UsersRepository>(
-      () => UsersRepository(getIt<UsersApi>()));
+    () => UsersRepository(getIt<UsersApi>()),
+  );
 
   // Uploads
   getIt.registerLazySingleton<UploadsApi>(() => UploadsApi(getIt<Dio>()));
   getIt.registerLazySingleton<UploadsRepository>(
-      () => UploadsRepository(getIt<UploadsApi>()));
+    () => UploadsRepository(getIt<UploadsApi>()),
+  );
 
   // Store
   getIt.registerLazySingleton<StoreApi>(() => StoreApi(getIt<Dio>()));
   getIt.registerLazySingleton<StoreRepository>(
-      () => StoreRepository(getIt<StoreApi>()));
+    () => StoreRepository(getIt<StoreApi>()),
+  );
 
   // Tax Rates
   getIt.registerLazySingleton<TaxRatesApi>(() => TaxRatesApi(getIt<Dio>()));
   getIt.registerLazySingleton<TaxRatesRepository>(
-      () => TaxRatesRepository(getIt<TaxRatesApi>()));
+    () => TaxRatesRepository(getIt<TaxRatesApi>()),
+  );
 
   // Currencies
   getIt.registerLazySingleton<CurrenciesApi>(() => CurrenciesApi(getIt<Dio>()));
   getIt.registerLazySingleton<CurrenciesRepository>(
-      () => CurrenciesRepository(getIt<CurrenciesApi>()));
+    () => CurrenciesRepository(getIt<CurrenciesApi>()),
+  );
 
   // Draft Orders
-  getIt.registerLazySingleton<DraftOrdersApi>(() => DraftOrdersApi(getIt<Dio>()));
+  getIt.registerLazySingleton<DraftOrdersApi>(
+    () => DraftOrdersApi(getIt<Dio>()),
+  );
   getIt.registerLazySingleton<DraftOrdersRepository>(
-      () => DraftOrdersRepository(getIt<DraftOrdersApi>()));
+    () => DraftOrdersRepository(getIt<DraftOrdersApi>()),
+  );
 
   // Customer Groups
-  getIt.registerLazySingleton<CustomerGroupsApi>(() => CustomerGroupsApi(getIt<Dio>()));
+  getIt.registerLazySingleton<CustomerGroupsApi>(
+    () => CustomerGroupsApi(getIt<Dio>()),
+  );
   getIt.registerLazySingleton<CustomerGroupsRepository>(
-      () => CustomerGroupsRepository(getIt<CustomerGroupsApi>()));
+    () => CustomerGroupsRepository(getIt<CustomerGroupsApi>()),
+  );
 
   // Notes
   getIt.registerLazySingleton<NotesApi>(() => NotesApi(getIt<Dio>()));
   getIt.registerLazySingleton<NotesRepository>(
-      () => NotesRepository(getIt<NotesApi>()));
+    () => NotesRepository(getIt<NotesApi>()),
+  );
 
   // Notifications
-  getIt.registerLazySingleton<NotificationsApi>(() => NotificationsApi(getIt<Dio>()));
+  getIt.registerLazySingleton<NotificationsApi>(
+    () => NotificationsApi(getIt<Dio>()),
+  );
   getIt.registerLazySingleton<NotificationsRepository>(
-      () => NotificationsRepository(getIt<NotificationsApi>()));
+    () => NotificationsRepository(getIt<NotificationsApi>()),
+  );
 
   // Returns
   getIt.registerLazySingleton<ReturnsApi>(() => ReturnsApi(getIt<Dio>()));
   getIt.registerLazySingleton<ReturnsRepository>(
-      () => ReturnsRepository(getIt<ReturnsApi>()));
+    () => ReturnsRepository(getIt<ReturnsApi>()),
+  );
 
   // Sales Channels
-  getIt.registerLazySingleton<SalesChannelsApi>(() => SalesChannelsApi(getIt<Dio>()));
+  getIt.registerLazySingleton<SalesChannelsApi>(
+    () => SalesChannelsApi(getIt<Dio>()),
+  );
   getIt.registerLazySingleton<SalesChannelsRepository>(
-      () => SalesChannelsRepository(getIt<SalesChannelsApi>()));
+    () => SalesChannelsRepository(getIt<SalesChannelsApi>()),
+  );
 
   // Swaps
   getIt.registerLazySingleton<SwapsApi>(() => SwapsApi(getIt<Dio>()));
   getIt.registerLazySingleton<SwapsRepository>(
-      () => SwapsRepository(getIt<SwapsApi>()));
+    () => SwapsRepository(getIt<SwapsApi>()),
+  );
 
   // Api Keys
   getIt.registerLazySingleton<ApiKeysApi>(() => ApiKeysApi(getIt<Dio>()));
   getIt.registerLazySingleton<ApiKeysRepository>(
-      () => ApiKeysRepository(getIt<ApiKeysApi>()));
+    () => ApiKeysRepository(getIt<ApiKeysApi>()),
+  );
 
   // Campaigns
   getIt.registerLazySingleton<CampaignsApi>(() => CampaignsApi(getIt<Dio>()));
   getIt.registerLazySingleton<CampaignsRepository>(
-      () => CampaignsRepository(getIt<CampaignsApi>()));
+    () => CampaignsRepository(getIt<CampaignsApi>()),
+  );
 
   // Return Reasons
-  getIt.registerLazySingleton<ReturnReasonsApi>(() => ReturnReasonsApi(getIt<Dio>()));
+  getIt.registerLazySingleton<ReturnReasonsApi>(
+    () => ReturnReasonsApi(getIt<Dio>()),
+  );
   getIt.registerLazySingleton<ReturnReasonsRepository>(
-      () => ReturnReasonsRepository(getIt<ReturnReasonsApi>()));
+    () => ReturnReasonsRepository(getIt<ReturnReasonsApi>()),
+  );
 }

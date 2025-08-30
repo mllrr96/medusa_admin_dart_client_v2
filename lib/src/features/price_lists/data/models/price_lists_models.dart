@@ -75,7 +75,8 @@ abstract class AdminPriceListsDeleteRes with _$AdminPriceListsDeleteRes {
 }
 
 @freezed
-abstract class AdminPriceListsManagePricesReq with _$AdminPriceListsManagePricesReq {
+abstract class AdminPriceListsManagePricesReq
+    with _$AdminPriceListsManagePricesReq {
   const factory AdminPriceListsManagePricesReq({
     List<AdminPrice>? create,
     List<AdminPrice>? update,
@@ -87,7 +88,8 @@ abstract class AdminPriceListsManagePricesReq with _$AdminPriceListsManagePrices
 }
 
 @freezed
-abstract class AdminPriceListRemoveProductsReq with _$AdminPriceListRemoveProductsReq {
+abstract class AdminPriceListRemoveProductsReq
+    with _$AdminPriceListRemoveProductsReq {
   const factory AdminPriceListRemoveProductsReq({
     List<String>? remove,
   }) = _AdminPriceListRemoveProductsReq;

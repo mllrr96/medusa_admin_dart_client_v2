@@ -1,4 +1,3 @@
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'inventory_level.freezed.dart';
@@ -13,5 +12,6 @@ abstract class InventoryLevel with _$InventoryLevel {
     @JsonKey(name: 'incoming_quantity') required int incomingQuantity,
   }) = _InventoryLevel;
 
-  factory InventoryLevel.fromJson(Map<String, dynamic> json) => _$InventoryLevelFromJson(json);
+  factory InventoryLevel.fromJson(Map<String, dynamic> json) =>
+      _$InventoryLevelFromJson(json);
 }

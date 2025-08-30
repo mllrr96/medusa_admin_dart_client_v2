@@ -1,4 +1,3 @@
-
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
 import '../models/return_reason.dart';
@@ -10,7 +9,9 @@ abstract class ReturnReasonsApi {
   factory ReturnReasonsApi(Dio dio, {String baseUrl}) = _ReturnReasonsApi;
 
   @GET('/admin/return-reasons')
-  Future<List<ReturnReason>> retrieveAll({@Queries() Map<String, dynamic>? queryParameters});
+  Future<List<ReturnReason>> retrieveAll({
+    @Queries() Map<String, dynamic>? queryParameters,
+  });
 
   @GET('/admin/return-reasons/{id}')
   Future<ReturnReason> retrieve(@Path('id') String id);
@@ -19,7 +20,10 @@ abstract class ReturnReasonsApi {
   Future<ReturnReason> create(@Body() Map<String, dynamic> body);
 
   @POST('/admin/return-reasons/{id}')
-  Future<ReturnReason> update(@Path('id') String id, @Body() Map<String, dynamic> body);
+  Future<ReturnReason> update(
+    @Path('id') String id,
+    @Body() Map<String, dynamic> body,
+  );
 
   @DELETE('/admin/return-reasons/{id}')
   Future<void> delete(@Path('id') String id);

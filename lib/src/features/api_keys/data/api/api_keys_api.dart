@@ -1,4 +1,3 @@
-
 import 'package:dio/dio.dart';
 import 'package:medusa_admin_dart_client/src/features/api_keys/data/models/api_key_res.dart';
 import 'package:medusa_admin_dart_client/src/features/api_keys/data/models/api_keys_list_res.dart';
@@ -13,7 +12,9 @@ abstract class ApiKeysApi {
   factory ApiKeysApi(Dio dio, {String baseUrl}) = _ApiKeysApi;
 
   @GET('/admin/api-keys')
-  Future<ApiKeysListRes> list({@Queries() Map<String, dynamic>? queryParameters});
+  Future<ApiKeysListRes> list({
+    @Queries() Map<String, dynamic>? queryParameters,
+  });
 
   @POST('/admin/api-keys')
   Future<ApiKeyRes> create(@Body() CreateApiKeyReq body);
@@ -31,5 +32,8 @@ abstract class ApiKeysApi {
   Future<ApiKeyRes> revoke(@Path('id') String id);
 
   @POST('/admin/api-keys/{id}/sales-channels')
-  Future<ApiKeyRes> salesChannels(@Path('id') String id, @Body() Map<String, dynamic> body);
+  Future<ApiKeyRes> salesChannels(
+    @Path('id') String id,
+    @Body() Map<String, dynamic> body,
+  );
 }
