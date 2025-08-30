@@ -1,0 +1,530 @@
+Feature Name: Store Credit Accounts
+
+Endpoint: GET /admin/store-credit-accounts
+  OperationId: GetStoreCreditAccounts
+  Summary: List Store Credit Accounts
+  Security: api_token, cookie_auth, jwt_token
+  Query Parameters:
+    - fields, in=query, type=string, optional
+    - id, in=query, type=oneOf, optional
+    - customer_id, in=query, type=oneOf, optional
+    - transaction_group_id, in=query, type=oneOf, optional
+    - currency_code, in=query, type=oneOf, optional
+    - created_at, in=query, type=object, optional
+    - updated_at, in=query, type=object, optional
+    - $and, in=query, type=array, optional
+    - $or, in=query, type=array, optional
+    - limit, in=query, type=number, optional
+    - offset, in=query, type=number, optional
+    - order, in=query, type=string, optional
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminStoreCreditAccountsResponse
+    Type: object
+    Description: The paginated list of store credit accounts.
+    Properties:
+  - limit: number, (required)
+  - offset: number, (required)
+  - count: number, (required)
+  - store_credit_accounts: array, (required), items=object (AdminStoreCreditAccount)
+  - estimate_count: number, (optional)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminStoreCreditAccountsResponse
+    Type: object
+    Description: The paginated list of store credit accounts.
+    Properties:
+  - limit: number, (required)
+  - offset: number, (required)
+  - count: number, (required)
+  - store_credit_accounts: array, (required), items=object (AdminStoreCreditAccount)
+  - estimate_count: number, (optional)
+    Model: AdminStoreCreditAccount
+    Type: object
+    Description: The store credit account's details.
+    Properties:
+  - customer: object (AdminCustomer), (required)
+  - id: string, (required)
+  - customer_id: string, (required)
+  - currency_code: string, (required)
+  - credits: number, (required)
+  - debits: number, (required)
+  - balance: number, (required)
+  - transaction_groups: array, (required), items=object (AdminTransactionGroup)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+    Model: AdminCustomer
+    Type: object
+    Description: The customer's details.
+    Properties:
+  - id: string, (required)
+  - has_account: boolean, (required)
+  - groups: array, (optional), items=object (AdminCustomerGroup)
+  - email: string, (required), format=email
+  - default_billing_address_id: string, (required)
+  - default_shipping_address_id: string, (required)
+  - company_name: string, (required)
+  - first_name: string, (required)
+  - last_name: string, (required)
+  - addresses: array, (required), items=object (AdminCustomerAddress)
+  - phone: string, (optional)
+  - metadata: object, (optional)
+  - created_by: string, (optional)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - deleted_at: string, (optional), format=date-time
+    Model: AdminTransactionGroup
+    Type: object
+    Description: The transaction group's details.
+    Properties:
+  - id: string, (required)
+  - code: string, (required)
+  - credits: number, (required)
+  - debits: number, (required)
+  - balance: number, (required)
+  - account: object, (required)
+  - metadata: object, (required)
+    Model: AdminCustomerAddress
+    Type: object
+    Description: The customer's address.
+    Properties:
+  - id: string, (required)
+  - address_name: string, (required)
+  - is_default_shipping: boolean, (required)
+  - is_default_billing: boolean, (required)
+  - customer_id: string, (required)
+  - company: string, (required)
+  - first_name: string, (required)
+  - last_name: string, (required)
+  - address_1: string, (required)
+  - address_2: string, (required)
+  - city: string, (required)
+  - country_code: string, (required)
+  - province: string, (required)
+  - postal_code: string, (required)
+  - phone: string, (required)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+    Model: AdminCustomerGroup
+    Type: object
+    Description: The customer group's details.
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - customers: array, (required), items=object
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+
+Endpoint: POST /admin/store-credit-accounts
+  OperationId: PostStoreCreditAccounts
+  Summary: Create Store Credit Account
+  Security: api_token, cookie_auth, jwt_token
+  Query Parameters:
+    - fields, in=query, type=string, optional
+  Request Body:
+    Content-Type: application/json
+    Model: AdminCreateStoreCreditAccount
+    Type: object
+    Description: The details of the store credit account to create.
+    Properties:
+  - currency_code: string, (required)
+  - customer_id: string, (required)
+  - metadata: object, (optional)
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminStoreCreditAccountResponse
+    Type: object
+    Description: The store credit account's details.
+    Properties:
+  - store_credit_account: object (AdminStoreCreditAccount), (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminCreateStoreCreditAccount
+    Type: object
+    Description: The details of the store credit account to create.
+    Properties:
+  - currency_code: string, (required)
+  - customer_id: string, (required)
+  - metadata: object, (optional)
+    Model: AdminStoreCreditAccountResponse
+    Type: object
+    Description: The store credit account's details.
+    Properties:
+  - store_credit_account: object (AdminStoreCreditAccount), (required)
+    Model: AdminStoreCreditAccount
+    Type: object
+    Description: The store credit account's details.
+    Properties:
+  - customer: object (AdminCustomer), (required)
+  - id: string, (required)
+  - customer_id: string, (required)
+  - currency_code: string, (required)
+  - credits: number, (required)
+  - debits: number, (required)
+  - balance: number, (required)
+  - transaction_groups: array, (required), items=object (AdminTransactionGroup)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+    Model: AdminCustomer
+    Type: object
+    Description: The customer's details.
+    Properties:
+  - id: string, (required)
+  - has_account: boolean, (required)
+  - groups: array, (optional), items=object (AdminCustomerGroup)
+  - email: string, (required), format=email
+  - default_billing_address_id: string, (required)
+  - default_shipping_address_id: string, (required)
+  - company_name: string, (required)
+  - first_name: string, (required)
+  - last_name: string, (required)
+  - addresses: array, (required), items=object (AdminCustomerAddress)
+  - phone: string, (optional)
+  - metadata: object, (optional)
+  - created_by: string, (optional)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - deleted_at: string, (optional), format=date-time
+    Model: AdminTransactionGroup
+    Type: object
+    Description: The transaction group's details.
+    Properties:
+  - id: string, (required)
+  - code: string, (required)
+  - credits: number, (required)
+  - debits: number, (required)
+  - balance: number, (required)
+  - account: object, (required)
+  - metadata: object, (required)
+    Model: AdminCustomerAddress
+    Type: object
+    Description: The customer's address.
+    Properties:
+  - id: string, (required)
+  - address_name: string, (required)
+  - is_default_shipping: boolean, (required)
+  - is_default_billing: boolean, (required)
+  - customer_id: string, (required)
+  - company: string, (required)
+  - first_name: string, (required)
+  - last_name: string, (required)
+  - address_1: string, (required)
+  - address_2: string, (required)
+  - city: string, (required)
+  - country_code: string, (required)
+  - province: string, (required)
+  - postal_code: string, (required)
+  - phone: string, (required)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+    Model: AdminCustomerGroup
+    Type: object
+    Description: The customer group's details.
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - customers: array, (required), items=object
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+
+Endpoint: GET /admin/store-credit-accounts/{id}
+  OperationId: GetStoreCreditAccountsId
+  Summary: Get a Store Credit Account
+  Security: api_token, cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Query Parameters:
+    - fields, in=query, type=string, optional
+    - id, in=query, type=oneOf, optional
+    - customer_id, in=query, type=oneOf, optional
+    - transaction_group_id, in=query, type=oneOf, optional
+    - currency_code, in=query, type=oneOf, optional
+    - created_at, in=query, type=object, optional
+    - updated_at, in=query, type=object, optional
+    - $and, in=query, type=array, optional
+    - $or, in=query, type=array, optional
+    - limit, in=query, type=number, optional
+    - offset, in=query, type=number, optional
+    - order, in=query, type=string, optional
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminStoreCreditAccountResponse
+    Type: object
+    Description: The store credit account's details.
+    Properties:
+  - store_credit_account: object (AdminStoreCreditAccount), (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminStoreCreditAccountResponse
+    Type: object
+    Description: The store credit account's details.
+    Properties:
+  - store_credit_account: object (AdminStoreCreditAccount), (required)
+    Model: AdminStoreCreditAccount
+    Type: object
+    Description: The store credit account's details.
+    Properties:
+  - customer: object (AdminCustomer), (required)
+  - id: string, (required)
+  - customer_id: string, (required)
+  - currency_code: string, (required)
+  - credits: number, (required)
+  - debits: number, (required)
+  - balance: number, (required)
+  - transaction_groups: array, (required), items=object (AdminTransactionGroup)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+    Model: AdminCustomer
+    Type: object
+    Description: The customer's details.
+    Properties:
+  - id: string, (required)
+  - has_account: boolean, (required)
+  - groups: array, (optional), items=object (AdminCustomerGroup)
+  - email: string, (required), format=email
+  - default_billing_address_id: string, (required)
+  - default_shipping_address_id: string, (required)
+  - company_name: string, (required)
+  - first_name: string, (required)
+  - last_name: string, (required)
+  - addresses: array, (required), items=object (AdminCustomerAddress)
+  - phone: string, (optional)
+  - metadata: object, (optional)
+  - created_by: string, (optional)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - deleted_at: string, (optional), format=date-time
+    Model: AdminTransactionGroup
+    Type: object
+    Description: The transaction group's details.
+    Properties:
+  - id: string, (required)
+  - code: string, (required)
+  - credits: number, (required)
+  - debits: number, (required)
+  - balance: number, (required)
+  - account: object, (required)
+  - metadata: object, (required)
+    Model: AdminCustomerAddress
+    Type: object
+    Description: The customer's address.
+    Properties:
+  - id: string, (required)
+  - address_name: string, (required)
+  - is_default_shipping: boolean, (required)
+  - is_default_billing: boolean, (required)
+  - customer_id: string, (required)
+  - company: string, (required)
+  - first_name: string, (required)
+  - last_name: string, (required)
+  - address_1: string, (required)
+  - address_2: string, (required)
+  - city: string, (required)
+  - country_code: string, (required)
+  - province: string, (required)
+  - postal_code: string, (required)
+  - phone: string, (required)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+    Model: AdminCustomerGroup
+    Type: object
+    Description: The customer group's details.
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - customers: array, (required), items=object
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+
+Endpoint: GET /admin/store-credit-accounts/{id}/transactions
+  OperationId: GetStoreCreditAccountsIdTransactions
+  Summary: List Transactions
+  Security: api_token, cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Query Parameters:
+    - id, in=query, type=oneOf, optional
+    - transaction_group_id, in=query, type=oneOf, optional
+    - created_at, in=query, type=object, optional
+    - updated_at, in=query, type=object, optional
+    - limit, in=query, type=number, optional
+    - offset, in=query, type=number, optional
+    - order, in=query, type=string, optional
+    - fields, in=query, type=string, optional
+    - $and, in=query, type=array, optional
+    - $or, in=query, type=array, optional
+    - q, in=query, type=string, optional
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminTransactionsResponse
+    Type: object
+    Description: The paginated list of transactions.
+    Properties:
+  - limit: number, (required)
+  - offset: number, (required)
+  - count: number, (required)
+  - transactions: array, (required), items=object (AdminTransaction)
+  - estimate_count: number, (optional)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminTransactionsResponse
+    Type: object
+    Description: The paginated list of transactions.
+    Properties:
+  - limit: number, (required)
+  - offset: number, (required)
+  - count: number, (required)
+  - transactions: array, (required), items=object (AdminTransaction)
+  - estimate_count: number, (optional)
+    Model: AdminTransaction
+    Type: object
+    Description: The transaction's details.
+    Properties:
+  - id: string, (required)
+  - account_id: string, (required)
+  - transaction_group_id: string, (required)
+  - type: string, (required), enum=['credit', 'debit']
+  - amount: number, (required)
+  - account: object (AdminStoreCreditAccount), (required)
+  - note: string, (optional)
+  - reference: string, (optional)
+  - reference_id: string, (optional)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+    Model: AdminStoreCreditAccount
+    Type: object
+    Description: The store credit account's details.
+    Properties:
+  - customer: object (AdminCustomer), (required)
+  - id: string, (required)
+  - customer_id: string, (required)
+  - currency_code: string, (required)
+  - credits: number, (required)
+  - debits: number, (required)
+  - balance: number, (required)
+  - transaction_groups: array, (required), items=object (AdminTransactionGroup)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+    Model: AdminCustomer
+    Type: object
+    Description: The customer's details.
+    Properties:
+  - id: string, (required)
+  - has_account: boolean, (required)
+  - groups: array, (optional), items=object (AdminCustomerGroup)
+  - email: string, (required), format=email
+  - default_billing_address_id: string, (required)
+  - default_shipping_address_id: string, (required)
+  - company_name: string, (required)
+  - first_name: string, (required)
+  - last_name: string, (required)
+  - addresses: array, (required), items=object (AdminCustomerAddress)
+  - phone: string, (optional)
+  - metadata: object, (optional)
+  - created_by: string, (optional)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - deleted_at: string, (optional), format=date-time
+    Model: AdminTransactionGroup
+    Type: object
+    Description: The transaction group's details.
+    Properties:
+  - id: string, (required)
+  - code: string, (required)
+  - credits: number, (required)
+  - debits: number, (required)
+  - balance: number, (required)
+  - account: object, (required)
+  - metadata: object, (required)
+    Model: AdminCustomerAddress
+    Type: object
+    Description: The customer's address.
+    Properties:
+  - id: string, (required)
+  - address_name: string, (required)
+  - is_default_shipping: boolean, (required)
+  - is_default_billing: boolean, (required)
+  - customer_id: string, (required)
+  - company: string, (required)
+  - first_name: string, (required)
+  - last_name: string, (required)
+  - address_1: string, (required)
+  - address_2: string, (required)
+  - city: string, (required)
+  - country_code: string, (required)
+  - province: string, (required)
+  - postal_code: string, (required)
+  - phone: string, (required)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+    Model: AdminCustomerGroup
+    Type: object
+    Description: The customer group's details.
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - customers: array, (required), items=object
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+

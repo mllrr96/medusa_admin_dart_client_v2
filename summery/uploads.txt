@@ -1,0 +1,174 @@
+Feature Name: Uploads
+
+Endpoint: POST /admin/uploads
+  OperationId: PostUploads
+  Summary: Upload Files
+  Security: api_token, cookie_auth, jwt_token
+  Request Body:
+    Content-Type: application/json
+    Model: postuploads_body
+    Type: oneOf
+    Description: The files to upload.
+    oneOf: 2 variant(s)
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminFileListResponse
+    Type: object
+    Description: The list of uploaded files.
+    Properties:
+  - files: array, (required), items=object (AdminFile)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminFileListResponse
+    Type: object
+    Description: The list of uploaded files.
+    Properties:
+  - files: array, (required), items=object (AdminFile)
+    Model: AdminFile
+    Type: object
+    Description: A file's details.
+    Properties:
+  - id: string, (required)
+  - url: string, (required)
+
+Endpoint: POST /admin/uploads/presigned-urls
+  OperationId: PostUploadsPresignedUrls
+  Summary: Get Presigned Upload URL
+  Security: api_token, cookie_auth, jwt_token
+  Request Body:
+    Content-Type: application/json
+    Model: AdminUploadPreSignedUrl
+    Type: object
+    Description: The details of the file to upload.
+    Properties:
+  - originalname: string, (required)
+  - size: number, (required)
+  - mime_type: string, (required)
+  - access: string, (optional), enum=['public', 'private']
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminUploadPreSignedUrlResponse
+    Type: object
+    Description: The result of the pre-signed URL upload request.
+    Properties:
+  - url: string, (required)
+  - filename: string, (required)
+  - originalname: string, (required)
+  - mime_type: string, (required)
+  - extension: string, (required)
+  - size: number, (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminUploadPreSignedUrl
+    Type: object
+    Description: The details of the file to upload.
+    Properties:
+  - originalname: string, (required)
+  - size: number, (required)
+  - mime_type: string, (required)
+  - access: string, (optional), enum=['public', 'private']
+    Model: AdminUploadPreSignedUrlResponse
+    Type: object
+    Description: The result of the pre-signed URL upload request.
+    Properties:
+  - url: string, (required)
+  - filename: string, (required)
+  - originalname: string, (required)
+  - mime_type: string, (required)
+  - extension: string, (required)
+  - size: number, (required)
+
+Endpoint: DELETE /admin/uploads/{id}
+  OperationId: DeleteUploadsId
+  Summary: Delete a File
+  Security: api_token, cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: deleteuploadsid_body
+    Type: object
+    Description: The deletion's details.
+    Properties:
+  - id: string, (required)
+  - object: string, (required)
+  - deleted: boolean, (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+
+Endpoint: GET /admin/uploads/{id}
+  OperationId: GetUploadsId
+  Summary: Get a File
+  Security: api_token, cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Query Parameters:
+    - fields, in=query, type=string, optional
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminFileResponse
+    Type: object
+    Description: A file's details.
+    Properties:
+  - file: object (AdminFile), (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminFileResponse
+    Type: object
+    Description: A file's details.
+    Properties:
+  - file: object (AdminFile), (required)
+    Model: AdminFile
+    Type: object
+    Description: A file's details.
+    Properties:
+  - id: string, (required)
+  - url: string, (required)
+

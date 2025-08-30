@@ -1,0 +1,327 @@
+Feature Name: Sales Channels
+
+Endpoint: GET /admin/sales-channels
+  OperationId: GetSalesChannels
+  Summary: List Sales Channels
+  Security: api_token, cookie_auth, jwt_token
+  Query Parameters:
+    - fields, in=query, type=string, optional
+    - offset, in=query, type=number, optional
+    - limit, in=query, type=number, optional
+    - order, in=query, type=string, optional
+    - q, in=query, type=string, optional
+    - id, in=query, type=oneOf, optional
+    - name, in=query, type=oneOf, optional
+    - description, in=query, type=string, optional
+    - is_disabled, in=query, type=boolean, optional
+    - created_at, in=query, type=object, optional
+    - updated_at, in=query, type=object, optional
+    - deleted_at, in=query, type=object, optional
+    - location_id, in=query, type=oneOf, optional
+    - publishable_key_id, in=query, type=oneOf, optional
+    - $and, in=query, type=array, optional
+    - $or, in=query, type=array, optional
+    - with_deleted, in=query, type=boolean, optional
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: getsaleschannels_body
+    Type: object
+    Properties:
+  - limit: number, (required)
+  - offset: number, (required)
+  - count: number, (required)
+  - sales_channels: array, (required), items=object (AdminSalesChannel)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminSalesChannel
+    Type: object
+    Description: The sales channel's details.
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - description: string, (required)
+  - is_disabled: boolean, (required)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+
+Endpoint: POST /admin/sales-channels
+  OperationId: PostSalesChannels
+  Summary: Create Sales Channel
+  Security: api_token, cookie_auth, jwt_token
+  Query Parameters:
+    - fields, in=query, type=string, optional
+  Request Body:
+    Content-Type: application/json
+    Model: AdminCreateSalesChannel
+    Type: object
+    Description: The sales channel's details.
+    Properties:
+  - name: string, (required)
+  - description: string, (optional)
+  - is_disabled: boolean, (optional)
+  - metadata: object, (optional)
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminSalesChannelResponse
+    Type: object
+    Description: The sales channel's details.
+    Properties:
+  - sales_channel: object (AdminSalesChannel), (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminCreateSalesChannel
+    Type: object
+    Description: The sales channel's details.
+    Properties:
+  - name: string, (required)
+  - description: string, (optional)
+  - is_disabled: boolean, (optional)
+  - metadata: object, (optional)
+    Model: AdminSalesChannelResponse
+    Type: object
+    Description: The sales channel's details.
+    Properties:
+  - sales_channel: object (AdminSalesChannel), (required)
+    Model: AdminSalesChannel
+    Type: object
+    Description: The sales channel's details.
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - description: string, (required)
+  - is_disabled: boolean, (required)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+
+Endpoint: DELETE /admin/sales-channels/{id}
+  OperationId: DeleteSalesChannelsId
+  Summary: Delete a Sales Channel
+  Security: api_token, cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminSalesChannelDeleteResponse
+    Type: object
+    Description: The details of deleting a sales channel.
+    Properties:
+  - id: string, (required)
+  - object: string, (required)
+  - deleted: boolean, (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminSalesChannelDeleteResponse
+    Type: object
+    Description: The details of deleting a sales channel.
+    Properties:
+  - id: string, (required)
+  - object: string, (required)
+  - deleted: boolean, (required)
+
+Endpoint: GET /admin/sales-channels/{id}
+  OperationId: GetSalesChannelsId
+  Summary: Get a Sales Channel
+  Security: api_token, cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Query Parameters:
+    - fields, in=query, type=string, optional
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminSalesChannelResponse
+    Type: object
+    Description: The sales channel's details.
+    Properties:
+  - sales_channel: object (AdminSalesChannel), (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminSalesChannelResponse
+    Type: object
+    Description: The sales channel's details.
+    Properties:
+  - sales_channel: object (AdminSalesChannel), (required)
+    Model: AdminSalesChannel
+    Type: object
+    Description: The sales channel's details.
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - description: string, (required)
+  - is_disabled: boolean, (required)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+
+Endpoint: POST /admin/sales-channels/{id}
+  OperationId: PostSalesChannelsId
+  Summary: Update a Sales Channel
+  Security: api_token, cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Query Parameters:
+    - fields, in=query, type=string, optional
+  Request Body:
+    Content-Type: application/json
+    Model: AdminUpdateSalesChannel
+    Type: object
+    Description: The properties to update in the sales channel.
+    Properties:
+  - name: string, (optional)
+  - description: string, (optional)
+  - is_disabled: boolean, (optional)
+  - metadata: object, (optional)
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminSalesChannelResponse
+    Type: object
+    Description: The sales channel's details.
+    Properties:
+  - sales_channel: object (AdminSalesChannel), (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminSalesChannelResponse
+    Type: object
+    Description: The sales channel's details.
+    Properties:
+  - sales_channel: object (AdminSalesChannel), (required)
+    Model: AdminUpdateSalesChannel
+    Type: object
+    Description: The properties to update in the sales channel.
+    Properties:
+  - name: string, (optional)
+  - description: string, (optional)
+  - is_disabled: boolean, (optional)
+  - metadata: object, (optional)
+    Model: AdminSalesChannel
+    Type: object
+    Description: The sales channel's details.
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - description: string, (required)
+  - is_disabled: boolean, (required)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+
+Endpoint: POST /admin/sales-channels/{id}/products
+  OperationId: PostSalesChannelsIdProducts
+  Summary: Manage Products in Sales Channel
+  Security: api_token, cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Query Parameters:
+    - fields, in=query, type=string, optional
+  Request Body:
+    Content-Type: application/json
+    Model: postsaleschannelsidproducts_body
+    Type: object
+    Description: The products to add or remove from the channel.
+    Properties:
+  - add: array, (optional), items=string
+  - remove: array, (optional), items=string
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminSalesChannelResponse
+    Type: object
+    Description: The sales channel's details.
+    Properties:
+  - sales_channel: object (AdminSalesChannel), (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminSalesChannelResponse
+    Type: object
+    Description: The sales channel's details.
+    Properties:
+  - sales_channel: object (AdminSalesChannel), (required)
+    Model: AdminSalesChannel
+    Type: object
+    Description: The sales channel's details.
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - description: string, (required)
+  - is_disabled: boolean, (required)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+

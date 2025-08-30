@@ -1,0 +1,566 @@
+Feature Name: Tax Rates
+
+Endpoint: GET /admin/tax-rates
+  OperationId: GetTaxRates
+  Summary: List Tax Rates
+  Security: api_token, cookie_auth, jwt_token
+  Query Parameters:
+    - fields, in=query, type=string, optional
+    - offset, in=query, type=number, optional
+    - limit, in=query, type=number, optional
+    - order, in=query, type=string, optional
+    - q, in=query, type=string, optional
+    - tax_region_id, in=query, type=oneOf, optional
+    - is_default, in=query, type=string, optional, enum=['true', 'false']
+    - created_at, in=query, type=object, optional
+    - updated_at, in=query, type=object, optional
+    - deleted_at, in=query, type=object, optional
+    - $and, in=query, type=array, optional
+    - $or, in=query, type=array, optional
+    - service_zone_id, in=query, type=string, optional
+    - shipping_profile_id, in=query, type=string, optional
+    - provider_id, in=query, type=string, optional
+    - shipping_option_type_id, in=query, type=string, optional
+    - with_deleted, in=query, type=boolean, optional
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: gettaxrates_body
+    Type: object
+    Properties:
+  - limit: number, (required)
+  - offset: number, (required)
+  - count: number, (required)
+  - tax_rates: array, (required), items=object (AdminTaxRate)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminTaxRate
+    Type: object
+    Description: The tax rate's details.
+    Properties:
+  - id: string, (required)
+  - rate: number, (required)
+  - code: string, (required)
+  - name: string, (required)
+  - metadata: object, (required)
+  - tax_region_id: string, (required)
+  - is_combinable: boolean, (required)
+  - is_default: boolean, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+  - created_by: string, (required)
+  - tax_region: object (AdminTaxRegion), (required)
+  - rules: array, (required), items=object (AdminTaxRateRule)
+    Model: AdminTaxRateRule
+    Type: object
+    Description: The tax rate rule's details.
+    Properties:
+  - reference: string, (required)
+  - reference_id: string, (required)
+    Model: AdminTaxRegion
+    Type: object
+    Description: The tax region's details.
+    Properties:
+  - id: string, (required)
+  - country_code: string, (required)
+  - province_code: string, (required)
+  - metadata: object, (required)
+  - parent_id: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+  - created_by: string, (required)
+  - tax_rates: array, (required), items=object
+  - parent: object, (required)
+  - children: array, (required), items=object
+
+Endpoint: POST /admin/tax-rates
+  OperationId: PostTaxRates
+  Summary: Create Tax Rate
+  Security: api_token, cookie_auth, jwt_token
+  Query Parameters:
+    - fields, in=query, type=string, optional
+  Request Body:
+    Content-Type: application/json
+    Model: AdminCreateTaxRate
+    Type: object
+    Description: The tax rate's details.
+    Properties:
+  - name: string, (required)
+  - tax_region_id: string, (required)
+  - rate: number, (optional)
+  - code: string, (required)
+  - rules: array, (optional), items=object (AdminCreateTaxRateRule)
+  - is_default: boolean, (optional)
+  - is_combinable: boolean, (optional)
+  - metadata: object, (optional)
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminTaxRateResponse
+    Type: object
+    Description: The tax rate's details.
+    Properties:
+  - tax_rate: object (AdminTaxRate), (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminCreateTaxRate
+    Type: object
+    Description: The tax rate's details.
+    Properties:
+  - name: string, (required)
+  - tax_region_id: string, (required)
+  - rate: number, (optional)
+  - code: string, (required)
+  - rules: array, (optional), items=object (AdminCreateTaxRateRule)
+  - is_default: boolean, (optional)
+  - is_combinable: boolean, (optional)
+  - metadata: object, (optional)
+    Model: AdminTaxRateResponse
+    Type: object
+    Description: The tax rate's details.
+    Properties:
+  - tax_rate: object (AdminTaxRate), (required)
+    Model: AdminCreateTaxRateRule
+    Type: object
+    Description: The tax rate rule's details.
+    Properties:
+  - reference: string, (required)
+  - reference_id: string, (required)
+    Model: AdminTaxRate
+    Type: object
+    Description: The tax rate's details.
+    Properties:
+  - id: string, (required)
+  - rate: number, (required)
+  - code: string, (required)
+  - name: string, (required)
+  - metadata: object, (required)
+  - tax_region_id: string, (required)
+  - is_combinable: boolean, (required)
+  - is_default: boolean, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+  - created_by: string, (required)
+  - tax_region: object (AdminTaxRegion), (required)
+  - rules: array, (required), items=object (AdminTaxRateRule)
+    Model: AdminTaxRateRule
+    Type: object
+    Description: The tax rate rule's details.
+    Properties:
+  - reference: string, (required)
+  - reference_id: string, (required)
+    Model: AdminTaxRegion
+    Type: object
+    Description: The tax region's details.
+    Properties:
+  - id: string, (required)
+  - country_code: string, (required)
+  - province_code: string, (required)
+  - metadata: object, (required)
+  - parent_id: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+  - created_by: string, (required)
+  - tax_rates: array, (required), items=object
+  - parent: object, (required)
+  - children: array, (required), items=object
+
+Endpoint: DELETE /admin/tax-rates/{id}
+  OperationId: DeleteTaxRatesId
+  Summary: Delete a Tax Rate
+  Security: api_token, cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminTaxRateDeleteResponse
+    Type: object
+    Description: The details of the tax rate deletion.
+    Properties:
+  - id: string, (required)
+  - object: string, (required)
+  - deleted: boolean, (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminTaxRateDeleteResponse
+    Type: object
+    Description: The details of the tax rate deletion.
+    Properties:
+  - id: string, (required)
+  - object: string, (required)
+  - deleted: boolean, (required)
+
+Endpoint: GET /admin/tax-rates/{id}
+  OperationId: GetTaxRatesId
+  Summary: Get a Tax Rate
+  Security: api_token, cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Query Parameters:
+    - fields, in=query, type=string, optional
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminTaxRateResponse
+    Type: object
+    Description: The tax rate's details.
+    Properties:
+  - tax_rate: object (AdminTaxRate), (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminTaxRateResponse
+    Type: object
+    Description: The tax rate's details.
+    Properties:
+  - tax_rate: object (AdminTaxRate), (required)
+    Model: AdminTaxRate
+    Type: object
+    Description: The tax rate's details.
+    Properties:
+  - id: string, (required)
+  - rate: number, (required)
+  - code: string, (required)
+  - name: string, (required)
+  - metadata: object, (required)
+  - tax_region_id: string, (required)
+  - is_combinable: boolean, (required)
+  - is_default: boolean, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+  - created_by: string, (required)
+  - tax_region: object (AdminTaxRegion), (required)
+  - rules: array, (required), items=object (AdminTaxRateRule)
+    Model: AdminTaxRateRule
+    Type: object
+    Description: The tax rate rule's details.
+    Properties:
+  - reference: string, (required)
+  - reference_id: string, (required)
+    Model: AdminTaxRegion
+    Type: object
+    Description: The tax region's details.
+    Properties:
+  - id: string, (required)
+  - country_code: string, (required)
+  - province_code: string, (required)
+  - metadata: object, (required)
+  - parent_id: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+  - created_by: string, (required)
+  - tax_rates: array, (required), items=object
+  - parent: object, (required)
+  - children: array, (required), items=object
+
+Endpoint: POST /admin/tax-rates/{id}
+  OperationId: PostTaxRatesId
+  Summary: Update a Tax Rate
+  Security: api_token, cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Query Parameters:
+    - fields, in=query, type=string, optional
+  Request Body:
+    Content-Type: application/json
+    Model: AdminUpdateTaxRate
+    Type: object
+    Description: The properties to update in the tax rate.
+    Properties:
+  - rate: number, (optional)
+  - code: string, (optional)
+  - rules: array, (optional), items=object
+  - name: string, (optional)
+  - is_default: boolean, (optional)
+  - is_combinable: boolean, (optional)
+  - metadata: object, (optional)
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminTaxRateResponse
+    Type: object
+    Description: The tax rate's details.
+    Properties:
+  - tax_rate: object (AdminTaxRate), (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminTaxRateResponse
+    Type: object
+    Description: The tax rate's details.
+    Properties:
+  - tax_rate: object (AdminTaxRate), (required)
+    Model: AdminUpdateTaxRate
+    Type: object
+    Description: The properties to update in the tax rate.
+    Properties:
+  - rate: number, (optional)
+  - code: string, (optional)
+  - rules: array, (optional), items=object
+  - name: string, (optional)
+  - is_default: boolean, (optional)
+  - is_combinable: boolean, (optional)
+  - metadata: object, (optional)
+    Model: AdminTaxRate
+    Type: object
+    Description: The tax rate's details.
+    Properties:
+  - id: string, (required)
+  - rate: number, (required)
+  - code: string, (required)
+  - name: string, (required)
+  - metadata: object, (required)
+  - tax_region_id: string, (required)
+  - is_combinable: boolean, (required)
+  - is_default: boolean, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+  - created_by: string, (required)
+  - tax_region: object (AdminTaxRegion), (required)
+  - rules: array, (required), items=object (AdminTaxRateRule)
+    Model: AdminTaxRateRule
+    Type: object
+    Description: The tax rate rule's details.
+    Properties:
+  - reference: string, (required)
+  - reference_id: string, (required)
+    Model: AdminTaxRegion
+    Type: object
+    Description: The tax region's details.
+    Properties:
+  - id: string, (required)
+  - country_code: string, (required)
+  - province_code: string, (required)
+  - metadata: object, (required)
+  - parent_id: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+  - created_by: string, (required)
+  - tax_rates: array, (required), items=object
+  - parent: object, (required)
+  - children: array, (required), items=object
+
+Endpoint: POST /admin/tax-rates/{id}/rules
+  OperationId: PostTaxRatesIdRules
+  Summary: Create Tax Rule for a Rate
+  Security: api_token, cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Query Parameters:
+    - fields, in=query, type=string, optional
+  Request Body:
+    Content-Type: application/json
+    Model: AdminCreateTaxRateRule
+    Type: object
+    Description: The tax rate rule's details.
+    Properties:
+  - reference: string, (required)
+  - reference_id: string, (required)
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminTaxRateResponse
+    Type: object
+    Description: The tax rate's details.
+    Properties:
+  - tax_rate: object (AdminTaxRate), (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminCreateTaxRateRule
+    Type: object
+    Description: The tax rate rule's details.
+    Properties:
+  - reference: string, (required)
+  - reference_id: string, (required)
+    Model: AdminTaxRateResponse
+    Type: object
+    Description: The tax rate's details.
+    Properties:
+  - tax_rate: object (AdminTaxRate), (required)
+    Model: AdminTaxRate
+    Type: object
+    Description: The tax rate's details.
+    Properties:
+  - id: string, (required)
+  - rate: number, (required)
+  - code: string, (required)
+  - name: string, (required)
+  - metadata: object, (required)
+  - tax_region_id: string, (required)
+  - is_combinable: boolean, (required)
+  - is_default: boolean, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+  - created_by: string, (required)
+  - tax_region: object (AdminTaxRegion), (required)
+  - rules: array, (required), items=object (AdminTaxRateRule)
+    Model: AdminTaxRateRule
+    Type: object
+    Description: The tax rate rule's details.
+    Properties:
+  - reference: string, (required)
+  - reference_id: string, (required)
+    Model: AdminTaxRegion
+    Type: object
+    Description: The tax region's details.
+    Properties:
+  - id: string, (required)
+  - country_code: string, (required)
+  - province_code: string, (required)
+  - metadata: object, (required)
+  - parent_id: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+  - created_by: string, (required)
+  - tax_rates: array, (required), items=object
+  - parent: object, (required)
+  - children: array, (required), items=object
+
+Endpoint: DELETE /admin/tax-rates/{id}/rules/{rule_id}
+  OperationId: DeleteTaxRatesIdRulesRule_id
+  Summary: Remove Rule of Tax Rate
+  Security: api_token, cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+    - rule_id, in=path, type=string, required
+  Query Parameters:
+    - fields, in=query, type=string, optional
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: deletetaxratesidrulesrule_id_body
+    Type: object
+    Properties:
+  - id: string, (required)
+  - object: string, (required)
+  - deleted: boolean, (required)
+  - parent: object (AdminTaxRate), (optional)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminTaxRate
+    Type: object
+    Description: The tax rate's details.
+    Properties:
+  - id: string, (required)
+  - rate: number, (required)
+  - code: string, (required)
+  - name: string, (required)
+  - metadata: object, (required)
+  - tax_region_id: string, (required)
+  - is_combinable: boolean, (required)
+  - is_default: boolean, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+  - created_by: string, (required)
+  - tax_region: object (AdminTaxRegion), (required)
+  - rules: array, (required), items=object (AdminTaxRateRule)
+    Model: AdminTaxRateRule
+    Type: object
+    Description: The tax rate rule's details.
+    Properties:
+  - reference: string, (required)
+  - reference_id: string, (required)
+    Model: AdminTaxRegion
+    Type: object
+    Description: The tax region's details.
+    Properties:
+  - id: string, (required)
+  - country_code: string, (required)
+  - province_code: string, (required)
+  - metadata: object, (required)
+  - parent_id: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+  - created_by: string, (required)
+  - tax_rates: array, (required), items=object
+  - parent: object, (required)
+  - children: array, (required), items=object
+

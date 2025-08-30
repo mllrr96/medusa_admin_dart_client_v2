@@ -1,0 +1,265 @@
+Feature Name: Users
+
+Endpoint: GET /admin/users
+  OperationId: GetUsers
+  Summary: List Users
+  Security: cookie_auth, jwt_token
+  Query Parameters:
+    - fields, in=query, type=string, optional
+    - offset, in=query, type=number, optional
+    - limit, in=query, type=number, optional
+    - order, in=query, type=string, optional
+    - q, in=query, type=string, optional
+    - id, in=query, type=oneOf, optional
+    - email, in=query, type=string, optional, format=email
+    - first_name, in=query, type=string, optional
+    - last_name, in=query, type=string, optional
+    - created_at, in=query, type=object, optional
+    - updated_at, in=query, type=object, optional
+    - deleted_at, in=query, type=object, optional
+    - with_deleted, in=query, type=boolean, optional
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminUserListResponse
+    Type: object
+    Description: The paginated list of users.
+    Properties:
+  - limit: number, (required)
+  - offset: number, (required)
+  - count: number, (required)
+  - users: array, (required), items=object (AdminUser)
+  - estimate_count: number, (optional)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminUserListResponse
+    Type: object
+    Description: The paginated list of users.
+    Properties:
+  - limit: number, (required)
+  - offset: number, (required)
+  - count: number, (required)
+  - users: array, (required), items=object (AdminUser)
+  - estimate_count: number, (optional)
+    Model: AdminUser
+    Type: object
+    Description: The user's details.
+    Properties:
+  - id: string, (required)
+  - email: string, (required), format=email
+  - first_name: string, (required)
+  - last_name: string, (required)
+  - avatar_url: string, (required)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+
+Endpoint: GET /admin/users/me
+  OperationId: GetUsersMe
+  Summary: Get Logged-In User
+  Security: cookie_auth, jwt_token
+  Query Parameters:
+    - fields, in=query, type=string, optional
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminUserResponse
+    Type: object
+    Description: The user's details.
+    Properties:
+  - user: object (AdminUser), (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminUserResponse
+    Type: object
+    Description: The user's details.
+    Properties:
+  - user: object (AdminUser), (required)
+    Model: AdminUser
+    Type: object
+    Description: The user's details.
+    Properties:
+  - id: string, (required)
+  - email: string, (required), format=email
+  - first_name: string, (required)
+  - last_name: string, (required)
+  - avatar_url: string, (required)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+
+Endpoint: DELETE /admin/users/{id}
+  OperationId: DeleteUsersId
+  Summary: Delete a User
+  Security: cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminUserDeleteResponse
+    Type: object
+    Description: The details of the deleted user.
+    Properties:
+  - id: string, (required)
+  - object: string, (required)
+  - deleted: boolean, (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminUserDeleteResponse
+    Type: object
+    Description: The details of the deleted user.
+    Properties:
+  - id: string, (required)
+  - object: string, (required)
+  - deleted: boolean, (required)
+
+Endpoint: GET /admin/users/{id}
+  OperationId: GetUsersId
+  Summary: Get a User
+  Security: cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Query Parameters:
+    - fields, in=query, type=string, optional
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminUserResponse
+    Type: object
+    Description: The user's details.
+    Properties:
+  - user: object (AdminUser), (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminUserResponse
+    Type: object
+    Description: The user's details.
+    Properties:
+  - user: object (AdminUser), (required)
+    Model: AdminUser
+    Type: object
+    Description: The user's details.
+    Properties:
+  - id: string, (required)
+  - email: string, (required), format=email
+  - first_name: string, (required)
+  - last_name: string, (required)
+  - avatar_url: string, (required)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+
+Endpoint: POST /admin/users/{id}
+  OperationId: PostUsersId
+  Summary: Update a User
+  Security: cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Query Parameters:
+    - fields, in=query, type=string, optional
+  Request Body:
+    Content-Type: application/json
+    Model: AdminUpdateUser
+    Type: object
+    Description: The properties to update in a user.
+    Properties:
+  - first_name: string, (optional)
+  - last_name: string, (optional)
+  - avatar_url: string, (optional)
+  - metadata: object, (optional)
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminUserResponse
+    Type: object
+    Description: The user's details.
+    Properties:
+  - user: object (AdminUser), (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminUpdateUser
+    Type: object
+    Description: The properties to update in a user.
+    Properties:
+  - first_name: string, (optional)
+  - last_name: string, (optional)
+  - avatar_url: string, (optional)
+  - metadata: object, (optional)
+    Model: AdminUserResponse
+    Type: object
+    Description: The user's details.
+    Properties:
+  - user: object (AdminUser), (required)
+    Model: AdminUser
+    Type: object
+    Description: The user's details.
+    Properties:
+  - id: string, (required)
+  - email: string, (required), format=email
+  - first_name: string, (required)
+  - last_name: string, (required)
+  - avatar_url: string, (required)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+

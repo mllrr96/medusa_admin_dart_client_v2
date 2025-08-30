@@ -1,0 +1,674 @@
+Feature Name: Stock Locations
+
+Endpoint: GET /admin/stock-locations
+  OperationId: GetStockLocations
+  Summary: List Stock Locations
+  Security: api_token, cookie_auth, jwt_token
+  Query Parameters:
+    - fields, in=query, type=string, optional
+    - offset, in=query, type=number, optional
+    - limit, in=query, type=number, optional
+    - order, in=query, type=string, optional
+    - q, in=query, type=string, optional
+    - id, in=query, type=oneOf, optional
+    - name, in=query, type=oneOf, optional
+    - address_id, in=query, type=oneOf, optional
+    - sales_channel_id, in=query, type=oneOf, optional
+    - created_at, in=query, type=object, optional
+    - updated_at, in=query, type=object, optional
+    - deleted_at, in=query, type=object, optional
+    - $and, in=query, type=array, optional
+    - $or, in=query, type=array, optional
+    - with_deleted, in=query, type=boolean, optional
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminStockLocationListResponse
+    Type: object
+    Description: The paginated list of stock locations.
+    Properties:
+  - limit: number, (required)
+  - offset: number, (required)
+  - count: number, (required)
+  - stock_locations: array, (required), items=object (AdminStockLocation)
+  - estimate_count: number, (optional)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminStockLocationListResponse
+    Type: object
+    Description: The paginated list of stock locations.
+    Properties:
+  - limit: number, (required)
+  - offset: number, (required)
+  - count: number, (required)
+  - stock_locations: array, (required), items=object (AdminStockLocation)
+  - estimate_count: number, (optional)
+    Model: AdminStockLocation
+    Type: object
+    Description: The stock location's details.
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - address_id: string, (required)
+  - address: object (AdminStockLocationAddress), (optional)
+  - sales_channels: array, (optional), items=object (AdminSalesChannel)
+  - fulfillment_providers: array, (optional), items=object (AdminFulfillmentProvider)
+  - fulfillment_sets: array, (optional), items=object
+    Model: AdminFulfillmentProvider
+    Type: object
+    Description: The fulfillment provider's details.
+    Properties:
+  - id: string, (required)
+  - is_enabled: boolean, (required)
+    Model: AdminSalesChannel
+    Type: object
+    Description: The sales channel's details.
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - description: string, (required)
+  - is_disabled: boolean, (required)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+    Model: AdminStockLocationAddress
+    Type: object
+    Description: The details of the stock location address.
+    Properties:
+  - id: string, (required)
+  - address_1: string, (required)
+  - address_2: string, (required)
+  - company: string, (required)
+  - country_code: string, (required)
+  - city: string, (required)
+  - phone: string, (required)
+  - postal_code: string, (required)
+  - province: string, (required)
+
+Endpoint: POST /admin/stock-locations
+  OperationId: PostStockLocations
+  Summary: Create Stock Location
+  Security: api_token, cookie_auth, jwt_token
+  Query Parameters:
+    - fields, in=query, type=string, optional
+  Request Body:
+    Content-Type: application/json
+    Model: AdminCreateStockLocation
+    Type: object
+    Description: The stock location's details.
+    Properties:
+  - name: string, (required)
+  - address_id: string, (optional)
+  - address: object (AdminUpsertStockLocationAddress), (optional)
+  - metadata: object, (optional)
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminStockLocationResponse
+    Type: object
+    Description: The stock location's details.
+    Properties:
+  - stock_location: object (AdminStockLocation), (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminCreateStockLocation
+    Type: object
+    Description: The stock location's details.
+    Properties:
+  - name: string, (required)
+  - address_id: string, (optional)
+  - address: object (AdminUpsertStockLocationAddress), (optional)
+  - metadata: object, (optional)
+    Model: AdminStockLocationResponse
+    Type: object
+    Description: The stock location's details.
+    Properties:
+  - stock_location: object (AdminStockLocation), (required)
+    Model: AdminUpsertStockLocationAddress
+    Type: object
+    Description: The details of the stock location address to create.
+    Properties:
+  - address_1: string, (required)
+  - address_2: string, (optional)
+  - company: string, (optional)
+  - country_code: string, (required)
+  - city: string, (optional)
+  - phone: string, (optional)
+  - postal_code: string, (optional)
+  - province: string, (optional)
+    Model: AdminStockLocation
+    Type: object
+    Description: The stock location's details.
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - address_id: string, (required)
+  - address: object (AdminStockLocationAddress), (optional)
+  - sales_channels: array, (optional), items=object (AdminSalesChannel)
+  - fulfillment_providers: array, (optional), items=object (AdminFulfillmentProvider)
+  - fulfillment_sets: array, (optional), items=object
+    Model: AdminFulfillmentProvider
+    Type: object
+    Description: The fulfillment provider's details.
+    Properties:
+  - id: string, (required)
+  - is_enabled: boolean, (required)
+    Model: AdminSalesChannel
+    Type: object
+    Description: The sales channel's details.
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - description: string, (required)
+  - is_disabled: boolean, (required)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+    Model: AdminStockLocationAddress
+    Type: object
+    Description: The details of the stock location address.
+    Properties:
+  - id: string, (required)
+  - address_1: string, (required)
+  - address_2: string, (required)
+  - company: string, (required)
+  - country_code: string, (required)
+  - city: string, (required)
+  - phone: string, (required)
+  - postal_code: string, (required)
+  - province: string, (required)
+
+Endpoint: DELETE /admin/stock-locations/{id}
+  OperationId: DeleteStockLocationsId
+  Summary: Delete a Stock Location
+  Security: api_token, cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminStockLocationDeleteResponse
+    Type: object
+    Description: The details of the stock location's deletion.
+    Properties:
+  - id: string, (required)
+  - object: string, (required)
+  - deleted: boolean, (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminStockLocationDeleteResponse
+    Type: object
+    Description: The details of the stock location's deletion.
+    Properties:
+  - id: string, (required)
+  - object: string, (required)
+  - deleted: boolean, (required)
+
+Endpoint: GET /admin/stock-locations/{id}
+  OperationId: GetStockLocationsId
+  Summary: Get a Stock Location
+  Security: api_token, cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Query Parameters:
+    - fields, in=query, type=string, optional
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminStockLocationResponse
+    Type: object
+    Description: The stock location's details.
+    Properties:
+  - stock_location: object (AdminStockLocation), (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminStockLocationResponse
+    Type: object
+    Description: The stock location's details.
+    Properties:
+  - stock_location: object (AdminStockLocation), (required)
+    Model: AdminStockLocation
+    Type: object
+    Description: The stock location's details.
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - address_id: string, (required)
+  - address: object (AdminStockLocationAddress), (optional)
+  - sales_channels: array, (optional), items=object (AdminSalesChannel)
+  - fulfillment_providers: array, (optional), items=object (AdminFulfillmentProvider)
+  - fulfillment_sets: array, (optional), items=object
+    Model: AdminFulfillmentProvider
+    Type: object
+    Description: The fulfillment provider's details.
+    Properties:
+  - id: string, (required)
+  - is_enabled: boolean, (required)
+    Model: AdminSalesChannel
+    Type: object
+    Description: The sales channel's details.
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - description: string, (required)
+  - is_disabled: boolean, (required)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+    Model: AdminStockLocationAddress
+    Type: object
+    Description: The details of the stock location address.
+    Properties:
+  - id: string, (required)
+  - address_1: string, (required)
+  - address_2: string, (required)
+  - company: string, (required)
+  - country_code: string, (required)
+  - city: string, (required)
+  - phone: string, (required)
+  - postal_code: string, (required)
+  - province: string, (required)
+
+Endpoint: POST /admin/stock-locations/{id}
+  OperationId: PostStockLocationsId
+  Summary: Update a Stock Location
+  Security: api_token, cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Query Parameters:
+    - fields, in=query, type=string, optional
+  Request Body:
+    Content-Type: application/json
+    Model: AdminUpdateStockLocation
+    Type: object
+    Description: The properties to update in a stock location.
+    Properties:
+  - name: string, (optional)
+  - address: object, (optional)
+  - address_id: string, (optional)
+  - metadata: object, (optional)
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminStockLocationResponse
+    Type: object
+    Description: The stock location's details.
+    Properties:
+  - stock_location: object (AdminStockLocation), (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminStockLocationResponse
+    Type: object
+    Description: The stock location's details.
+    Properties:
+  - stock_location: object (AdminStockLocation), (required)
+    Model: AdminUpdateStockLocation
+    Type: object
+    Description: The properties to update in a stock location.
+    Properties:
+  - name: string, (optional)
+  - address: object, (optional)
+  - address_id: string, (optional)
+  - metadata: object, (optional)
+    Model: AdminStockLocation
+    Type: object
+    Description: The stock location's details.
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - address_id: string, (required)
+  - address: object (AdminStockLocationAddress), (optional)
+  - sales_channels: array, (optional), items=object (AdminSalesChannel)
+  - fulfillment_providers: array, (optional), items=object (AdminFulfillmentProvider)
+  - fulfillment_sets: array, (optional), items=object
+    Model: AdminFulfillmentProvider
+    Type: object
+    Description: The fulfillment provider's details.
+    Properties:
+  - id: string, (required)
+  - is_enabled: boolean, (required)
+    Model: AdminSalesChannel
+    Type: object
+    Description: The sales channel's details.
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - description: string, (required)
+  - is_disabled: boolean, (required)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+    Model: AdminStockLocationAddress
+    Type: object
+    Description: The details of the stock location address.
+    Properties:
+  - id: string, (required)
+  - address_1: string, (required)
+  - address_2: string, (required)
+  - company: string, (required)
+  - country_code: string, (required)
+  - city: string, (required)
+  - phone: string, (required)
+  - postal_code: string, (required)
+  - province: string, (required)
+
+Endpoint: POST /admin/stock-locations/{id}/fulfillment-providers
+  OperationId: PostStockLocationsIdFulfillmentProviders
+  Summary: Manage Fulfillment Providers of a Stock Location
+  Security: api_token, cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Query Parameters:
+    - fields, in=query, type=string, optional
+  Request Body:
+    Content-Type: application/json
+    Model: poststocklocationsidfulfillmentproviders_body
+    Type: object
+    Description: The fulfillment providers to add or remove from the stock location.
+    Properties:
+  - add: array, (optional), items=string
+  - remove: array, (optional), items=string
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminStockLocationResponse
+    Type: object
+    Description: The stock location's details.
+    Properties:
+  - stock_location: object (AdminStockLocation), (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminStockLocationResponse
+    Type: object
+    Description: The stock location's details.
+    Properties:
+  - stock_location: object (AdminStockLocation), (required)
+    Model: AdminStockLocation
+    Type: object
+    Description: The stock location's details.
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - address_id: string, (required)
+  - address: object (AdminStockLocationAddress), (optional)
+  - sales_channels: array, (optional), items=object (AdminSalesChannel)
+  - fulfillment_providers: array, (optional), items=object (AdminFulfillmentProvider)
+  - fulfillment_sets: array, (optional), items=object
+    Model: AdminFulfillmentProvider
+    Type: object
+    Description: The fulfillment provider's details.
+    Properties:
+  - id: string, (required)
+  - is_enabled: boolean, (required)
+    Model: AdminSalesChannel
+    Type: object
+    Description: The sales channel's details.
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - description: string, (required)
+  - is_disabled: boolean, (required)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+    Model: AdminStockLocationAddress
+    Type: object
+    Description: The details of the stock location address.
+    Properties:
+  - id: string, (required)
+  - address_1: string, (required)
+  - address_2: string, (required)
+  - company: string, (required)
+  - country_code: string, (required)
+  - city: string, (required)
+  - phone: string, (required)
+  - postal_code: string, (required)
+  - province: string, (required)
+
+Endpoint: POST /admin/stock-locations/{id}/fulfillment-sets
+  OperationId: PostStockLocationsIdFulfillmentSets
+  Summary: Add Fulfillment Set to Stock Location
+  Security: api_token, cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Query Parameters:
+    - fields, in=query, type=string, optional
+  Request Body:
+    Content-Type: application/json
+    Model: AdminCreateStockLocationFulfillmentSet
+    Type: object
+    Description: The fulfillment set to create.
+    Properties:
+  - name: string, (required)
+  - type: string, (required)
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminStockLocationResponse
+    Type: object
+    Description: The stock location's details.
+    Properties:
+  - stock_location: object (AdminStockLocation), (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminCreateStockLocationFulfillmentSet
+    Type: object
+    Description: The fulfillment set to create.
+    Properties:
+  - name: string, (required)
+  - type: string, (required)
+    Model: AdminStockLocationResponse
+    Type: object
+    Description: The stock location's details.
+    Properties:
+  - stock_location: object (AdminStockLocation), (required)
+    Model: AdminStockLocation
+    Type: object
+    Description: The stock location's details.
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - address_id: string, (required)
+  - address: object (AdminStockLocationAddress), (optional)
+  - sales_channels: array, (optional), items=object (AdminSalesChannel)
+  - fulfillment_providers: array, (optional), items=object (AdminFulfillmentProvider)
+  - fulfillment_sets: array, (optional), items=object
+    Model: AdminFulfillmentProvider
+    Type: object
+    Description: The fulfillment provider's details.
+    Properties:
+  - id: string, (required)
+  - is_enabled: boolean, (required)
+    Model: AdminSalesChannel
+    Type: object
+    Description: The sales channel's details.
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - description: string, (required)
+  - is_disabled: boolean, (required)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+    Model: AdminStockLocationAddress
+    Type: object
+    Description: The details of the stock location address.
+    Properties:
+  - id: string, (required)
+  - address_1: string, (required)
+  - address_2: string, (required)
+  - company: string, (required)
+  - country_code: string, (required)
+  - city: string, (required)
+  - phone: string, (required)
+  - postal_code: string, (required)
+  - province: string, (required)
+
+Endpoint: POST /admin/stock-locations/{id}/sales-channels
+  OperationId: PostStockLocationsIdSalesChannels
+  Summary: Manage Sales Channels of a Stock Location
+  Security: api_token, cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Query Parameters:
+    - fields, in=query, type=string, optional
+  Request Body:
+    Content-Type: application/json
+    Model: poststocklocationsidsaleschannels_body
+    Type: object
+    Description: The sales channels to add or remove.
+    Properties:
+  - add: array, (optional), items=string
+  - remove: array, (optional), items=string
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminStockLocationResponse
+    Type: object
+    Description: The stock location's details.
+    Properties:
+  - stock_location: object (AdminStockLocation), (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminStockLocationResponse
+    Type: object
+    Description: The stock location's details.
+    Properties:
+  - stock_location: object (AdminStockLocation), (required)
+    Model: AdminStockLocation
+    Type: object
+    Description: The stock location's details.
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - address_id: string, (required)
+  - address: object (AdminStockLocationAddress), (optional)
+  - sales_channels: array, (optional), items=object (AdminSalesChannel)
+  - fulfillment_providers: array, (optional), items=object (AdminFulfillmentProvider)
+  - fulfillment_sets: array, (optional), items=object
+    Model: AdminFulfillmentProvider
+    Type: object
+    Description: The fulfillment provider's details.
+    Properties:
+  - id: string, (required)
+  - is_enabled: boolean, (required)
+    Model: AdminSalesChannel
+    Type: object
+    Description: The sales channel's details.
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - description: string, (required)
+  - is_disabled: boolean, (required)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+    Model: AdminStockLocationAddress
+    Type: object
+    Description: The details of the stock location address.
+    Properties:
+  - id: string, (required)
+  - address_1: string, (required)
+  - address_2: string, (required)
+  - company: string, (required)
+  - country_code: string, (required)
+  - city: string, (required)
+  - phone: string, (required)
+  - postal_code: string, (required)
+  - province: string, (required)
+

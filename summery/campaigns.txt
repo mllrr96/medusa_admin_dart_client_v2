@@ -1,0 +1,309 @@
+Feature Name: Campaigns
+
+Endpoint: GET /admin/campaigns
+  OperationId: GetCampaigns
+  Summary: List Campaigns
+  Security: api_token, cookie_auth, jwt_token
+  Query Parameters:
+    - fields, in=query, type=string, optional
+    - offset, in=query, type=number, optional
+    - limit, in=query, type=number, optional
+    - order, in=query, type=string, optional
+    - with_deleted, in=query, type=boolean, optional
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: getcampaigns_body
+    Type: object
+    Properties:
+  - limit: number, (required)
+  - offset: number, (required)
+  - count: number, (required)
+  - campaigns: array, (required), items=object (CampaignResponse)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: CampaignResponse
+    Type: object
+    Description: The campaign's details.
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - description: string, (required)
+  - currency: string, (required)
+  - campaign_identifier: string, (required)
+  - starts_at: string, (required)
+  - ends_at: string, (required)
+  - budget: object, (required)
+
+Endpoint: POST /admin/campaigns
+  OperationId: PostCampaigns
+  Summary: Create Campaign
+  Security: api_token, cookie_auth, jwt_token
+  Query Parameters:
+    - fields, in=query, type=string, optional
+  Request Body:
+    Content-Type: application/json
+    Model: postcampaigns_body
+    Type: object
+    Properties:
+  - name: string, (required)
+  - campaign_identifier: string, (required)
+  - description: string, (required)
+  - budget: object, (required)
+  - starts_at: string, (required), format=date-time
+  - ends_at: string, (required), format=date-time
+  - promotions: array, (optional), items=object
+  - additional_data: object, (optional)
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminCampaignResponse
+    Type: object
+    Description: The campaign's details.
+    Properties:
+  - campaign: object (AdminCampaign), (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminCampaignResponse
+    Type: object
+    Description: The campaign's details.
+    Properties:
+  - campaign: object (AdminCampaign), (required)
+    Model: AdminCampaign
+    Type: object
+    Description: The campaign's details.
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - description: string, (required)
+  - currency: string, (required)
+  - campaign_identifier: string, (required)
+  - starts_at: string, (required)
+  - ends_at: string, (required)
+  - budget: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+
+Endpoint: DELETE /admin/campaigns/{id}
+  OperationId: DeleteCampaignsId
+  Summary: Delete a Campaign
+  Security: api_token, cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: deletecampaignsid_body
+    Type: object
+    Description: The deletion's details.
+    Properties:
+  - id: string, (required)
+  - object: string, (required)
+  - deleted: boolean, (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+
+Endpoint: GET /admin/campaigns/{id}
+  OperationId: GetCampaignsId
+  Summary: Get a Campaign
+  Security: api_token, cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Query Parameters:
+    - fields, in=query, type=string, optional
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminCampaignResponse
+    Type: object
+    Description: The campaign's details.
+    Properties:
+  - campaign: object (AdminCampaign), (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminCampaignResponse
+    Type: object
+    Description: The campaign's details.
+    Properties:
+  - campaign: object (AdminCampaign), (required)
+    Model: AdminCampaign
+    Type: object
+    Description: The campaign's details.
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - description: string, (required)
+  - currency: string, (required)
+  - campaign_identifier: string, (required)
+  - starts_at: string, (required)
+  - ends_at: string, (required)
+  - budget: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+
+Endpoint: POST /admin/campaigns/{id}
+  OperationId: PostCampaignsId
+  Summary: Update a Campaign
+  Security: api_token, cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Query Parameters:
+    - fields, in=query, type=string, optional
+  Request Body:
+    Content-Type: application/json
+    Model: postcampaignsid_body
+    Type: object
+    Properties:
+  - name: string, (optional)
+  - campaign_identifier: string, (optional)
+  - description: string, (required)
+  - budget: object, (optional)
+  - starts_at: string, (required), format=date-time
+  - ends_at: string, (required), format=date-time
+  - promotions: array, (optional), items=object
+  - additional_data: object, (optional)
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminCampaignResponse
+    Type: object
+    Description: The campaign's details.
+    Properties:
+  - campaign: object (AdminCampaign), (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminCampaignResponse
+    Type: object
+    Description: The campaign's details.
+    Properties:
+  - campaign: object (AdminCampaign), (required)
+    Model: AdminCampaign
+    Type: object
+    Description: The campaign's details.
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - description: string, (required)
+  - currency: string, (required)
+  - campaign_identifier: string, (required)
+  - starts_at: string, (required)
+  - ends_at: string, (required)
+  - budget: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+
+Endpoint: POST /admin/campaigns/{id}/promotions
+  OperationId: PostCampaignsIdPromotions
+  Summary: Manage the Promotions of a Campaign
+  Security: api_token, cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Query Parameters:
+    - fields, in=query, type=string, optional
+  Request Body:
+    Content-Type: application/json
+    Model: postcampaignsidpromotions_body
+    Type: object
+    Description: The promotions to add or remove from the campaign.
+    Properties:
+  - add: array, (optional), items=string
+  - remove: array, (optional), items=string
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminCampaignResponse
+    Type: object
+    Description: The campaign's details.
+    Properties:
+  - campaign: object (AdminCampaign), (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminCampaignResponse
+    Type: object
+    Description: The campaign's details.
+    Properties:
+  - campaign: object (AdminCampaign), (required)
+    Model: AdminCampaign
+    Type: object
+    Description: The campaign's details.
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - description: string, (required)
+  - currency: string, (required)
+  - campaign_identifier: string, (required)
+  - starts_at: string, (required)
+  - ends_at: string, (required)
+  - budget: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+

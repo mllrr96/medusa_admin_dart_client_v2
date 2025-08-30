@@ -1,0 +1,104 @@
+Feature Name: Fulfillment Providers
+
+Endpoint: GET /admin/fulfillment-providers
+  OperationId: GetFulfillmentProviders
+  Summary: List Fulfillment Providers
+  Security: api_token, cookie_auth, jwt_token
+  Query Parameters:
+    - fields, in=query, type=string, optional
+    - offset, in=query, type=number, optional
+    - limit, in=query, type=number, optional
+    - order, in=query, type=string, optional
+    - id, in=query, type=oneOf, optional
+    - is_enabled, in=query, type=boolean, optional
+    - q, in=query, type=string, optional
+    - stock_location_id, in=query, type=oneOf, optional
+    - with_deleted, in=query, type=boolean, optional
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminFulfillmentProviderListResponse
+    Type: object
+    Description: The paginated list of fulfillment providers.
+    Properties:
+  - limit: number, (required)
+  - offset: number, (required)
+  - count: number, (required)
+  - fulfillment_providers: array, (required), items=object (AdminFulfillmentProvider)
+  - estimate_count: number, (optional)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminFulfillmentProviderListResponse
+    Type: object
+    Description: The paginated list of fulfillment providers.
+    Properties:
+  - limit: number, (required)
+  - offset: number, (required)
+  - count: number, (required)
+  - fulfillment_providers: array, (required), items=object (AdminFulfillmentProvider)
+  - estimate_count: number, (optional)
+    Model: AdminFulfillmentProvider
+    Type: object
+    Description: The fulfillment provider's details.
+    Properties:
+  - id: string, (required)
+  - is_enabled: boolean, (required)
+
+Endpoint: GET /admin/fulfillment-providers/{id}/options
+  OperationId: GetFulfillmentProvidersIdOptions
+  Summary: List Fulfillment Options
+  Security: api_token, cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminFulfillmentProviderOptionsListResponse
+    Type: object
+    Description: The paginated list of fulfillment options.
+    Properties:
+  - limit: number, (required)
+  - offset: number, (required)
+  - count: number, (required)
+  - fulfillment_options: array, (required), items=object (AdminFulfillmentProviderOption)
+  - estimate_count: number, (optional)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminFulfillmentProviderOptionsListResponse
+    Type: object
+    Description: The paginated list of fulfillment options.
+    Properties:
+  - limit: number, (required)
+  - offset: number, (required)
+  - count: number, (required)
+  - fulfillment_options: array, (required), items=object (AdminFulfillmentProviderOption)
+  - estimate_count: number, (optional)
+    Model: AdminFulfillmentProviderOption
+    Type: object
+    Description: The fulfillment option's details.
+    Properties:
+  - id: string, (required)
+  - is_return: boolean, (required)
+

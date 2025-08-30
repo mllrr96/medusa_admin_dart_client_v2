@@ -1,0 +1,2918 @@
+Feature Name: Gift Cards
+
+Endpoint: GET /admin/gift-cards
+  OperationId: GetGiftCards
+  Summary: List Gift Cards
+  Security: api_token, cookie_auth, jwt_token
+  Query Parameters:
+    - id, in=query, type=oneOf, optional
+    - customer_id, in=query, type=oneOf, optional
+    - created_at, in=query, type=object, optional
+    - updated_at, in=query, type=object, optional
+    - limit, in=query, type=number, optional
+    - offset, in=query, type=number, optional
+    - order, in=query, type=string, optional
+    - fields, in=query, type=string, optional
+    - $and, in=query, type=array, optional
+    - $or, in=query, type=array, optional
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminGiftCardsResponse
+    Type: object
+    Description: The paginated list of gift cards.
+    Properties:
+  - limit: number, (required)
+  - offset: number, (required)
+  - count: number, (required)
+  - gift_cards: array, (required), items=object (AdminGiftCard)
+  - estimate_count: number, (optional)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminGiftCardsResponse
+    Type: object
+    Description: The paginated list of gift cards.
+    Properties:
+  - limit: number, (required)
+  - offset: number, (required)
+  - count: number, (required)
+  - gift_cards: array, (required), items=object (AdminGiftCard)
+  - estimate_count: number, (optional)
+    Model: AdminGiftCard
+    Type: object
+    Description: The gift card's details.
+    Properties:
+  - line_item: object (AdminOrderLineItem), (required)
+  - customer: object (AdminCustomer), (required)
+  - id: string, (required)
+  - code: string, (required)
+  - status: string, (required), enum=['pending', 'redeemed']
+  - value: number, (required)
+  - currency_code: string, (required)
+  - customer_id: string, (required)
+  - reference_id: string, (required)
+  - note: string, (required)
+  - reference: string, (required)
+  - expires_at: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+    Model: AdminCustomer
+    Type: object
+    Description: The customer's details.
+    Properties:
+  - id: string, (required)
+  - has_account: boolean, (required)
+  - groups: array, (optional), items=object (AdminCustomerGroup)
+  - email: string, (required), format=email
+  - default_billing_address_id: string, (required)
+  - default_shipping_address_id: string, (required)
+  - company_name: string, (required)
+  - first_name: string, (required)
+  - last_name: string, (required)
+  - addresses: array, (required), items=object (AdminCustomerAddress)
+  - phone: string, (optional)
+  - metadata: object, (optional)
+  - created_by: string, (optional)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - deleted_at: string, (optional), format=date-time
+    Model: AdminOrderLineItem
+    Type: object
+    Description: The item's details.
+    Properties:
+  - id: string, (required)
+  - title: string, (required)
+  - subtitle: string, (required)
+  - thumbnail: string, (required)
+  - variant: object (AdminProductVariant), (optional)
+  - variant_id: string, (required)
+  - product: object (AdminProduct), (optional)
+  - product_id: string, (required)
+  - product_title: string, (required)
+  - product_description: string, (required)
+  - product_subtitle: string, (required)
+  - product_type: string, (required)
+  - product_collection: string, (required)
+  - product_handle: string, (required)
+  - variant_sku: string, (required)
+  - variant_barcode: string, (required)
+  - variant_title: string, (required)
+  - variant_option_values: object, (required)
+  - requires_shipping: boolean, (required)
+  - is_discountable: boolean, (required)
+  - is_tax_inclusive: boolean, (required)
+  - compare_at_unit_price: number, (optional)
+  - unit_price: number, (required)
+  - quantity: number, (required)
+  - tax_lines: array, (optional), items=object (BaseOrderLineItemTaxLine)
+  - adjustments: array, (optional), items=object (BaseOrderLineItemAdjustment)
+  - detail: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - metadata: object, (required)
+  - original_total: number, (required)
+  - original_subtotal: number, (required)
+  - original_tax_total: number, (required)
+  - item_total: number, (required)
+  - item_subtotal: number, (required)
+  - item_tax_total: number, (required)
+  - total: number, (required)
+  - subtotal: number, (required)
+  - tax_total: number, (required)
+  - discount_total: number, (required)
+  - discount_tax_total: number, (required)
+  - refundable_total: number, (required)
+  - refundable_total_per_unit: number, (required)
+  - product_type_id: string, (required)
+    Model: AdminCustomerAddress
+    Type: object
+    Description: The customer's address.
+    Properties:
+  - id: string, (required)
+  - address_name: string, (required)
+  - is_default_shipping: boolean, (required)
+  - is_default_billing: boolean, (required)
+  - customer_id: string, (required)
+  - company: string, (required)
+  - first_name: string, (required)
+  - last_name: string, (required)
+  - address_1: string, (required)
+  - address_2: string, (required)
+  - city: string, (required)
+  - country_code: string, (required)
+  - province: string, (required)
+  - postal_code: string, (required)
+  - phone: string, (required)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+    Model: AdminCustomerGroup
+    Type: object
+    Description: The customer group's details.
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - customers: array, (required), items=object
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+    Model: AdminProduct
+    Type: object
+    Description: The product's details.
+    Properties:
+  - collection: object (AdminCollection), (optional)
+  - categories: array, (optional), items=object (AdminProductCategory)
+  - sales_channels: array, (optional), items=object (AdminSalesChannel)
+  - variants: array, (required), items=object (AdminProductVariant)
+  - type: object (AdminProductType), (required)
+  - tags: array, (optional), items=object (AdminProductTag)
+  - length: number, (required)
+  - title: string, (required)
+  - status: string, (required), enum=['draft', 'proposed', 'published', 'rejected']
+  - options: array, (required), items=object (AdminProductOption)
+  - description: string, (required)
+  - id: string, (required)
+  - metadata: object, (optional)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - handle: string, (required)
+  - subtitle: string, (required)
+  - is_giftcard: boolean, (required)
+  - thumbnail: string, (required)
+  - width: number, (required)
+  - weight: number, (required)
+  - height: number, (required)
+  - origin_country: string, (required)
+  - hs_code: string, (required)
+  - mid_code: string, (required)
+  - material: string, (required)
+  - collection_id: string, (required)
+  - type_id: string, (required)
+  - images: array, (required), items=object (AdminProductImage)
+  - discountable: boolean, (required)
+  - external_id: string, (required)
+  - deleted_at: string, (required), format=date-time
+  - shipping_profile: object (AdminShippingProfile), (optional)
+    Model: AdminProductVariant
+    Type: object
+    Description: The product variant's details.
+    Properties:
+  - prices: array, (required), items=object (AdminPrice)
+  - id: string, (required)
+  - title: string, (required)
+  - sku: string, (required)
+  - barcode: string, (required)
+  - ean: string, (required)
+  - upc: string, (required)
+  - allow_backorder: boolean, (required)
+  - manage_inventory: boolean, (required)
+  - inventory_quantity: number, (optional)
+  - hs_code: string, (required)
+  - origin_country: string, (required)
+  - mid_code: string, (required)
+  - material: string, (required)
+  - weight: number, (required)
+  - length: number, (required)
+  - height: number, (required)
+  - width: number, (required)
+  - variant_rank: number, (optional)
+  - options: array, (required), items=object (AdminProductOptionValue)
+  - product: object, (optional)
+  - product_id: string, (optional)
+  - calculated_price: object (BaseCalculatedPriceSet), (optional)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+  - metadata: object, (optional)
+  - inventory_items: array, (optional), items=object (AdminProductVariantInventoryItemLink)
+    Model: BaseOrderLineItemAdjustment
+    Type: object
+    Description: The adjustment's details.
+    Properties:
+  - item: object, (required)
+  - item_id: string, (required)
+  - id: string, (required)
+  - code: string, (optional)
+  - amount: number, (required)
+  - order_id: string, (required)
+  - description: string, (optional)
+  - promotion_id: string, (optional)
+  - provider_id: string, (optional)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+    Model: BaseOrderLineItemTaxLine
+    Type: object
+    Description: The tax line's tax lines.
+    Properties:
+  - item: object, (required)
+  - item_id: string, (required)
+  - total: number, (required)
+  - subtotal: number, (required)
+  - id: string, (required)
+  - description: string, (optional)
+  - tax_rate_id: string, (optional)
+  - code: string, (required)
+  - rate: number, (required)
+  - provider_id: string, (optional)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+    Model: AdminCollection
+    Type: object
+    Description: The product collection's details.
+    Properties:
+  - id: string, (required)
+  - title: string, (required)
+  - handle: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+  - products: array, (optional), items=object (BaseProduct)
+  - metadata: object, (required)
+    Model: AdminProductCategory
+    Type: object
+    Description: The product category's details.
+    Properties:
+  - category_children: array, (required), items=object
+  - parent_category: object, (required)
+  - products: array, (optional), items=object
+  - name: string, (required)
+  - description: string, (required)
+  - id: string, (required)
+  - metadata: object, (optional)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - handle: string, (required)
+  - deleted_at: string, (required), format=date-time
+  - is_active: boolean, (required)
+  - is_internal: boolean, (required)
+  - rank: number, (required)
+  - parent_category_id: string, (required)
+    Model: AdminProductImage
+    Type: object
+    Description: The image's details.
+    Properties:
+  - id: string, (required)
+  - url: string, (required)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - deleted_at: string, (optional), format=date-time
+  - metadata: object, (optional)
+  - rank: number, (required)
+    Model: AdminProductOption
+    Type: object
+    Description: The product option's details.
+    Properties:
+  - id: string, (required)
+  - title: string, (required)
+  - product: object, (optional)
+  - product_id: string, (optional)
+  - values: array, (optional), items=object
+  - metadata: object, (optional)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - deleted_at: string, (optional), format=date-time
+    Model: AdminProductTag
+    Type: object
+    Description: The product tag's details.
+    Properties:
+  - id: string, (required)
+  - value: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (optional), format=date-time
+  - metadata: object, (optional)
+    Model: AdminProductType
+    Type: object
+    Description: The product type's details.
+    Properties:
+  - id: string, (required)
+  - value: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (optional), format=date-time
+  - metadata: object, (optional)
+    Model: AdminSalesChannel
+    Type: object
+    Description: The sales channel's details.
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - description: string, (required)
+  - is_disabled: boolean, (required)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+    Model: AdminShippingProfile
+    Type: object
+    Description: The shipping profile's details..
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - type: string, (required)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+    Model: AdminPrice
+    Type: object
+    Description: The price's details.
+    Properties:
+  - id: string, (required)
+  - title: string, (required)
+  - currency_code: string, (required)
+  - amount: number, (required)
+  - raw_amount: object, (required)
+  - min_quantity: number, (required)
+  - max_quantity: number, (required)
+  - price_set_id: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+    Model: AdminProductOptionValue
+    Type: object
+    Description: The product option value's details.
+    Properties:
+  - id: string, (required)
+  - value: string, (required)
+  - option: object (AdminProductOption), (optional)
+  - option_id: string, (optional)
+  - metadata: object, (optional)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - deleted_at: string, (optional), format=date-time
+    Model: AdminProductVariantInventoryItemLink
+    Type: object
+    Description: An association between a product variant and an inventory item.
+    Properties:
+  - id: string, (required)
+  - variant_id: string, (required)
+  - variant: object, (optional)
+  - inventory_item_id: string, (required)
+  - inventory: object (AdminInventoryItem), (optional)
+    Model: BaseCalculatedPriceSet
+    Type: object
+    Description: The calculated price's details.
+    Properties:
+  - id: string, (required)
+  - is_calculated_price_price_list: boolean, (optional)
+  - is_calculated_price_tax_inclusive: boolean, (optional)
+  - calculated_amount: number, (required)
+  - calculated_amount_with_tax: number, (optional)
+  - calculated_amount_without_tax: number, (optional)
+  - is_original_price_price_list: boolean, (optional)
+  - is_original_price_tax_inclusive: boolean, (optional)
+  - original_amount: number, (required)
+  - currency_code: string, (required)
+  - calculated_price: object, (optional)
+  - original_price: object, (optional)
+  - original_amount_with_tax: number, (required)
+  - original_amount_without_tax: number, (required)
+    Model: BaseProduct
+    Type: object
+    Description: The product's details.
+    Properties:
+  - collection: object (BaseCollection), (optional)
+  - categories: array, (optional), items=object (BaseProductCategory)
+  - variants: array, (required), items=object
+  - type: object (BaseProductType), (optional)
+  - tags: array, (optional), items=object (BaseProductTag)
+  - length: number, (required)
+  - title: string, (required)
+  - status: string, (required), enum=['draft', 'proposed', 'published', 'rejected']
+  - options: array, (required), items=object (BaseProductOption)
+  - description: string, (required)
+  - id: string, (required)
+  - metadata: object, (optional)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - handle: string, (required)
+  - subtitle: string, (required)
+  - is_giftcard: boolean, (required)
+  - thumbnail: string, (required)
+  - width: number, (required)
+  - weight: number, (required)
+  - height: number, (required)
+  - origin_country: string, (required)
+  - hs_code: string, (required)
+  - mid_code: string, (required)
+  - material: string, (required)
+  - collection_id: string, (required)
+  - type_id: string, (required)
+  - images: array, (required), items=object (BaseProductImage)
+  - discountable: boolean, (required)
+  - external_id: string, (required)
+  - deleted_at: string, (required), format=date-time
+    Model: AdminInventoryItem
+    Type: object
+    Description: The inventory item's details.
+    Properties:
+  - id: string, (required)
+  - sku: string, (optional)
+  - origin_country: string, (optional)
+  - hs_code: string, (optional)
+  - requires_shipping: boolean, (required)
+  - mid_code: string, (optional)
+  - material: string, (optional)
+  - weight: number, (optional)
+  - length: number, (optional)
+  - height: number, (optional)
+  - width: number, (optional)
+  - title: string, (optional)
+  - description: string, (optional)
+  - thumbnail: string, (optional)
+  - metadata: object, (optional)
+  - location_levels: array, (optional), items=object (AdminInventoryLevel)
+    Model: BaseCollection
+    Type: object
+    Description: The product collection's details.
+    Properties:
+  - id: string, (required)
+  - title: string, (required)
+  - handle: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+  - products: array, (optional), items=object
+  - metadata: object, (required)
+    Model: BaseProductCategory
+    Type: object
+    Description: The product category's details.
+    Properties:
+  - category_children: array, (required), items=object (AdminProductCategory)
+  - parent_category: object (AdminProductCategory), (required)
+  - products: array, (optional), items=object
+  - name: string, (required)
+  - description: string, (required)
+  - id: string, (required)
+  - metadata: object, (optional)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - handle: string, (required)
+  - deleted_at: string, (required), format=date-time
+  - is_active: boolean, (required)
+  - is_internal: boolean, (required)
+  - rank: number, (required)
+  - parent_category_id: string, (required)
+    Model: BaseProductImage
+    Type: object
+    Description: The image's details.
+    Properties:
+  - id: string, (required)
+  - url: string, (required)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - deleted_at: string, (optional), format=date-time
+  - metadata: object, (optional)
+  - rank: number, (required)
+    Model: BaseProductOption
+    Type: object
+    Description: The product option's details.
+    Properties:
+  - id: string, (required)
+  - title: string, (required)
+  - product: object, (optional)
+  - product_id: string, (optional)
+  - values: array, (optional), items=object (BaseProductOptionValue)
+  - metadata: object, (optional)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - deleted_at: string, (optional), format=date-time
+    Model: BaseProductTag
+    Type: object
+    Description: The product tag's details.
+    Properties:
+  - id: string, (required)
+  - value: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (optional), format=date-time
+  - metadata: object, (optional)
+    Model: BaseProductType
+    Type: object
+    Description: The product type's details.
+    Properties:
+  - id: string, (required)
+  - value: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (optional), format=date-time
+  - metadata: object, (optional)
+    Model: AdminInventoryLevel
+    Type: object
+    Description: The location level's location levels.
+    Properties:
+  - id: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+  - inventory_item_id: string, (required)
+  - location_id: string, (required)
+  - stocked_quantity: number, (required)
+  - reserved_quantity: number, (required)
+  - incoming_quantity: number, (required)
+  - metadata: object, (required)
+  - inventory_item: object, (optional)
+  - available_quantity: number, (required)
+    Model: BaseProductOptionValue
+    Type: object
+    Description: The product option value's details.
+    Properties:
+  - id: string, (required)
+  - value: string, (required)
+  - option: object, (optional)
+  - option_id: string, (optional)
+  - metadata: object, (optional)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - deleted_at: string, (optional), format=date-time
+
+Endpoint: POST /admin/gift-cards
+  OperationId: PostGiftCards
+  Summary: Create Gift Card
+  Security: api_token, cookie_auth, jwt_token
+  Query Parameters:
+    - fields, in=query, type=string, optional
+  Request Body:
+    Content-Type: application/json
+    Model: AdminCreateGiftCardParams
+    Type: object
+    Description: The details of the gift card to create.
+    Properties:
+  - code: string, (required)
+  - value: number, (required)
+  - currency_code: string, (required)
+  - expires_at: string, (required)
+  - reference_id: string, (required)
+  - reference: string, (required)
+  - line_item_id: string, (required)
+  - customer_id: string, (required)
+  - metadata: object, (required)
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminGiftCardResponse
+    Type: object
+    Description: The gift card's details.
+    Properties:
+  - gift_card: object (AdminGiftCard), (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminCreateGiftCardParams
+    Type: object
+    Description: The details of the gift card to create.
+    Properties:
+  - code: string, (required)
+  - value: number, (required)
+  - currency_code: string, (required)
+  - expires_at: string, (required)
+  - reference_id: string, (required)
+  - reference: string, (required)
+  - line_item_id: string, (required)
+  - customer_id: string, (required)
+  - metadata: object, (required)
+    Model: AdminGiftCardResponse
+    Type: object
+    Description: The gift card's details.
+    Properties:
+  - gift_card: object (AdminGiftCard), (required)
+    Model: AdminGiftCard
+    Type: object
+    Description: The gift card's details.
+    Properties:
+  - line_item: object (AdminOrderLineItem), (required)
+  - customer: object (AdminCustomer), (required)
+  - id: string, (required)
+  - code: string, (required)
+  - status: string, (required), enum=['pending', 'redeemed']
+  - value: number, (required)
+  - currency_code: string, (required)
+  - customer_id: string, (required)
+  - reference_id: string, (required)
+  - note: string, (required)
+  - reference: string, (required)
+  - expires_at: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+    Model: AdminCustomer
+    Type: object
+    Description: The customer's details.
+    Properties:
+  - id: string, (required)
+  - has_account: boolean, (required)
+  - groups: array, (optional), items=object (AdminCustomerGroup)
+  - email: string, (required), format=email
+  - default_billing_address_id: string, (required)
+  - default_shipping_address_id: string, (required)
+  - company_name: string, (required)
+  - first_name: string, (required)
+  - last_name: string, (required)
+  - addresses: array, (required), items=object (AdminCustomerAddress)
+  - phone: string, (optional)
+  - metadata: object, (optional)
+  - created_by: string, (optional)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - deleted_at: string, (optional), format=date-time
+    Model: AdminOrderLineItem
+    Type: object
+    Description: The item's details.
+    Properties:
+  - id: string, (required)
+  - title: string, (required)
+  - subtitle: string, (required)
+  - thumbnail: string, (required)
+  - variant: object (AdminProductVariant), (optional)
+  - variant_id: string, (required)
+  - product: object (AdminProduct), (optional)
+  - product_id: string, (required)
+  - product_title: string, (required)
+  - product_description: string, (required)
+  - product_subtitle: string, (required)
+  - product_type: string, (required)
+  - product_collection: string, (required)
+  - product_handle: string, (required)
+  - variant_sku: string, (required)
+  - variant_barcode: string, (required)
+  - variant_title: string, (required)
+  - variant_option_values: object, (required)
+  - requires_shipping: boolean, (required)
+  - is_discountable: boolean, (required)
+  - is_tax_inclusive: boolean, (required)
+  - compare_at_unit_price: number, (optional)
+  - unit_price: number, (required)
+  - quantity: number, (required)
+  - tax_lines: array, (optional), items=object (BaseOrderLineItemTaxLine)
+  - adjustments: array, (optional), items=object (BaseOrderLineItemAdjustment)
+  - detail: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - metadata: object, (required)
+  - original_total: number, (required)
+  - original_subtotal: number, (required)
+  - original_tax_total: number, (required)
+  - item_total: number, (required)
+  - item_subtotal: number, (required)
+  - item_tax_total: number, (required)
+  - total: number, (required)
+  - subtotal: number, (required)
+  - tax_total: number, (required)
+  - discount_total: number, (required)
+  - discount_tax_total: number, (required)
+  - refundable_total: number, (required)
+  - refundable_total_per_unit: number, (required)
+  - product_type_id: string, (required)
+    Model: AdminCustomerAddress
+    Type: object
+    Description: The customer's address.
+    Properties:
+  - id: string, (required)
+  - address_name: string, (required)
+  - is_default_shipping: boolean, (required)
+  - is_default_billing: boolean, (required)
+  - customer_id: string, (required)
+  - company: string, (required)
+  - first_name: string, (required)
+  - last_name: string, (required)
+  - address_1: string, (required)
+  - address_2: string, (required)
+  - city: string, (required)
+  - country_code: string, (required)
+  - province: string, (required)
+  - postal_code: string, (required)
+  - phone: string, (required)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+    Model: AdminCustomerGroup
+    Type: object
+    Description: The customer group's details.
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - customers: array, (required), items=object
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+    Model: AdminProduct
+    Type: object
+    Description: The product's details.
+    Properties:
+  - collection: object (AdminCollection), (optional)
+  - categories: array, (optional), items=object (AdminProductCategory)
+  - sales_channels: array, (optional), items=object (AdminSalesChannel)
+  - variants: array, (required), items=object (AdminProductVariant)
+  - type: object (AdminProductType), (required)
+  - tags: array, (optional), items=object (AdminProductTag)
+  - length: number, (required)
+  - title: string, (required)
+  - status: string, (required), enum=['draft', 'proposed', 'published', 'rejected']
+  - options: array, (required), items=object (AdminProductOption)
+  - description: string, (required)
+  - id: string, (required)
+  - metadata: object, (optional)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - handle: string, (required)
+  - subtitle: string, (required)
+  - is_giftcard: boolean, (required)
+  - thumbnail: string, (required)
+  - width: number, (required)
+  - weight: number, (required)
+  - height: number, (required)
+  - origin_country: string, (required)
+  - hs_code: string, (required)
+  - mid_code: string, (required)
+  - material: string, (required)
+  - collection_id: string, (required)
+  - type_id: string, (required)
+  - images: array, (required), items=object (AdminProductImage)
+  - discountable: boolean, (required)
+  - external_id: string, (required)
+  - deleted_at: string, (required), format=date-time
+  - shipping_profile: object (AdminShippingProfile), (optional)
+    Model: AdminProductVariant
+    Type: object
+    Description: The product variant's details.
+    Properties:
+  - prices: array, (required), items=object (AdminPrice)
+  - id: string, (required)
+  - title: string, (required)
+  - sku: string, (required)
+  - barcode: string, (required)
+  - ean: string, (required)
+  - upc: string, (required)
+  - allow_backorder: boolean, (required)
+  - manage_inventory: boolean, (required)
+  - inventory_quantity: number, (optional)
+  - hs_code: string, (required)
+  - origin_country: string, (required)
+  - mid_code: string, (required)
+  - material: string, (required)
+  - weight: number, (required)
+  - length: number, (required)
+  - height: number, (required)
+  - width: number, (required)
+  - variant_rank: number, (optional)
+  - options: array, (required), items=object (AdminProductOptionValue)
+  - product: object, (optional)
+  - product_id: string, (optional)
+  - calculated_price: object (BaseCalculatedPriceSet), (optional)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+  - metadata: object, (optional)
+  - inventory_items: array, (optional), items=object (AdminProductVariantInventoryItemLink)
+    Model: BaseOrderLineItemAdjustment
+    Type: object
+    Description: The adjustment's details.
+    Properties:
+  - item: object, (required)
+  - item_id: string, (required)
+  - id: string, (required)
+  - code: string, (optional)
+  - amount: number, (required)
+  - order_id: string, (required)
+  - description: string, (optional)
+  - promotion_id: string, (optional)
+  - provider_id: string, (optional)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+    Model: BaseOrderLineItemTaxLine
+    Type: object
+    Description: The tax line's tax lines.
+    Properties:
+  - item: object, (required)
+  - item_id: string, (required)
+  - total: number, (required)
+  - subtotal: number, (required)
+  - id: string, (required)
+  - description: string, (optional)
+  - tax_rate_id: string, (optional)
+  - code: string, (required)
+  - rate: number, (required)
+  - provider_id: string, (optional)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+    Model: AdminCollection
+    Type: object
+    Description: The product collection's details.
+    Properties:
+  - id: string, (required)
+  - title: string, (required)
+  - handle: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+  - products: array, (optional), items=object (BaseProduct)
+  - metadata: object, (required)
+    Model: AdminProductCategory
+    Type: object
+    Description: The product category's details.
+    Properties:
+  - category_children: array, (required), items=object
+  - parent_category: object, (required)
+  - products: array, (optional), items=object
+  - name: string, (required)
+  - description: string, (required)
+  - id: string, (required)
+  - metadata: object, (optional)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - handle: string, (required)
+  - deleted_at: string, (required), format=date-time
+  - is_active: boolean, (required)
+  - is_internal: boolean, (required)
+  - rank: number, (required)
+  - parent_category_id: string, (required)
+    Model: AdminProductImage
+    Type: object
+    Description: The image's details.
+    Properties:
+  - id: string, (required)
+  - url: string, (required)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - deleted_at: string, (optional), format=date-time
+  - metadata: object, (optional)
+  - rank: number, (required)
+    Model: AdminProductOption
+    Type: object
+    Description: The product option's details.
+    Properties:
+  - id: string, (required)
+  - title: string, (required)
+  - product: object, (optional)
+  - product_id: string, (optional)
+  - values: array, (optional), items=object
+  - metadata: object, (optional)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - deleted_at: string, (optional), format=date-time
+    Model: AdminProductTag
+    Type: object
+    Description: The product tag's details.
+    Properties:
+  - id: string, (required)
+  - value: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (optional), format=date-time
+  - metadata: object, (optional)
+    Model: AdminProductType
+    Type: object
+    Description: The product type's details.
+    Properties:
+  - id: string, (required)
+  - value: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (optional), format=date-time
+  - metadata: object, (optional)
+    Model: AdminSalesChannel
+    Type: object
+    Description: The sales channel's details.
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - description: string, (required)
+  - is_disabled: boolean, (required)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+    Model: AdminShippingProfile
+    Type: object
+    Description: The shipping profile's details..
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - type: string, (required)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+    Model: AdminPrice
+    Type: object
+    Description: The price's details.
+    Properties:
+  - id: string, (required)
+  - title: string, (required)
+  - currency_code: string, (required)
+  - amount: number, (required)
+  - raw_amount: object, (required)
+  - min_quantity: number, (required)
+  - max_quantity: number, (required)
+  - price_set_id: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+    Model: AdminProductOptionValue
+    Type: object
+    Description: The product option value's details.
+    Properties:
+  - id: string, (required)
+  - value: string, (required)
+  - option: object (AdminProductOption), (optional)
+  - option_id: string, (optional)
+  - metadata: object, (optional)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - deleted_at: string, (optional), format=date-time
+    Model: AdminProductVariantInventoryItemLink
+    Type: object
+    Description: An association between a product variant and an inventory item.
+    Properties:
+  - id: string, (required)
+  - variant_id: string, (required)
+  - variant: object, (optional)
+  - inventory_item_id: string, (required)
+  - inventory: object (AdminInventoryItem), (optional)
+    Model: BaseCalculatedPriceSet
+    Type: object
+    Description: The calculated price's details.
+    Properties:
+  - id: string, (required)
+  - is_calculated_price_price_list: boolean, (optional)
+  - is_calculated_price_tax_inclusive: boolean, (optional)
+  - calculated_amount: number, (required)
+  - calculated_amount_with_tax: number, (optional)
+  - calculated_amount_without_tax: number, (optional)
+  - is_original_price_price_list: boolean, (optional)
+  - is_original_price_tax_inclusive: boolean, (optional)
+  - original_amount: number, (required)
+  - currency_code: string, (required)
+  - calculated_price: object, (optional)
+  - original_price: object, (optional)
+  - original_amount_with_tax: number, (required)
+  - original_amount_without_tax: number, (required)
+    Model: BaseProduct
+    Type: object
+    Description: The product's details.
+    Properties:
+  - collection: object (BaseCollection), (optional)
+  - categories: array, (optional), items=object (BaseProductCategory)
+  - variants: array, (required), items=object
+  - type: object (BaseProductType), (optional)
+  - tags: array, (optional), items=object (BaseProductTag)
+  - length: number, (required)
+  - title: string, (required)
+  - status: string, (required), enum=['draft', 'proposed', 'published', 'rejected']
+  - options: array, (required), items=object (BaseProductOption)
+  - description: string, (required)
+  - id: string, (required)
+  - metadata: object, (optional)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - handle: string, (required)
+  - subtitle: string, (required)
+  - is_giftcard: boolean, (required)
+  - thumbnail: string, (required)
+  - width: number, (required)
+  - weight: number, (required)
+  - height: number, (required)
+  - origin_country: string, (required)
+  - hs_code: string, (required)
+  - mid_code: string, (required)
+  - material: string, (required)
+  - collection_id: string, (required)
+  - type_id: string, (required)
+  - images: array, (required), items=object (BaseProductImage)
+  - discountable: boolean, (required)
+  - external_id: string, (required)
+  - deleted_at: string, (required), format=date-time
+    Model: AdminInventoryItem
+    Type: object
+    Description: The inventory item's details.
+    Properties:
+  - id: string, (required)
+  - sku: string, (optional)
+  - origin_country: string, (optional)
+  - hs_code: string, (optional)
+  - requires_shipping: boolean, (required)
+  - mid_code: string, (optional)
+  - material: string, (optional)
+  - weight: number, (optional)
+  - length: number, (optional)
+  - height: number, (optional)
+  - width: number, (optional)
+  - title: string, (optional)
+  - description: string, (optional)
+  - thumbnail: string, (optional)
+  - metadata: object, (optional)
+  - location_levels: array, (optional), items=object (AdminInventoryLevel)
+    Model: BaseCollection
+    Type: object
+    Description: The product collection's details.
+    Properties:
+  - id: string, (required)
+  - title: string, (required)
+  - handle: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+  - products: array, (optional), items=object
+  - metadata: object, (required)
+    Model: BaseProductCategory
+    Type: object
+    Description: The product category's details.
+    Properties:
+  - category_children: array, (required), items=object (AdminProductCategory)
+  - parent_category: object (AdminProductCategory), (required)
+  - products: array, (optional), items=object
+  - name: string, (required)
+  - description: string, (required)
+  - id: string, (required)
+  - metadata: object, (optional)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - handle: string, (required)
+  - deleted_at: string, (required), format=date-time
+  - is_active: boolean, (required)
+  - is_internal: boolean, (required)
+  - rank: number, (required)
+  - parent_category_id: string, (required)
+    Model: BaseProductImage
+    Type: object
+    Description: The image's details.
+    Properties:
+  - id: string, (required)
+  - url: string, (required)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - deleted_at: string, (optional), format=date-time
+  - metadata: object, (optional)
+  - rank: number, (required)
+    Model: BaseProductOption
+    Type: object
+    Description: The product option's details.
+    Properties:
+  - id: string, (required)
+  - title: string, (required)
+  - product: object, (optional)
+  - product_id: string, (optional)
+  - values: array, (optional), items=object (BaseProductOptionValue)
+  - metadata: object, (optional)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - deleted_at: string, (optional), format=date-time
+    Model: BaseProductTag
+    Type: object
+    Description: The product tag's details.
+    Properties:
+  - id: string, (required)
+  - value: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (optional), format=date-time
+  - metadata: object, (optional)
+    Model: BaseProductType
+    Type: object
+    Description: The product type's details.
+    Properties:
+  - id: string, (required)
+  - value: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (optional), format=date-time
+  - metadata: object, (optional)
+    Model: AdminInventoryLevel
+    Type: object
+    Description: The location level's location levels.
+    Properties:
+  - id: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+  - inventory_item_id: string, (required)
+  - location_id: string, (required)
+  - stocked_quantity: number, (required)
+  - reserved_quantity: number, (required)
+  - incoming_quantity: number, (required)
+  - metadata: object, (required)
+  - inventory_item: object, (optional)
+  - available_quantity: number, (required)
+    Model: BaseProductOptionValue
+    Type: object
+    Description: The product option value's details.
+    Properties:
+  - id: string, (required)
+  - value: string, (required)
+  - option: object, (optional)
+  - option_id: string, (optional)
+  - metadata: object, (optional)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - deleted_at: string, (optional), format=date-time
+
+Endpoint: GET /admin/gift-cards/{id}
+  OperationId: GetGiftCardsId
+  Summary: Get a Gift Card
+  Security: api_token, cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Query Parameters:
+    - fields, in=query, type=string, optional
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminGiftCardResponse
+    Type: object
+    Description: The gift card's details.
+    Properties:
+  - gift_card: object (AdminGiftCard), (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminGiftCardResponse
+    Type: object
+    Description: The gift card's details.
+    Properties:
+  - gift_card: object (AdminGiftCard), (required)
+    Model: AdminGiftCard
+    Type: object
+    Description: The gift card's details.
+    Properties:
+  - line_item: object (AdminOrderLineItem), (required)
+  - customer: object (AdminCustomer), (required)
+  - id: string, (required)
+  - code: string, (required)
+  - status: string, (required), enum=['pending', 'redeemed']
+  - value: number, (required)
+  - currency_code: string, (required)
+  - customer_id: string, (required)
+  - reference_id: string, (required)
+  - note: string, (required)
+  - reference: string, (required)
+  - expires_at: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+    Model: AdminCustomer
+    Type: object
+    Description: The customer's details.
+    Properties:
+  - id: string, (required)
+  - has_account: boolean, (required)
+  - groups: array, (optional), items=object (AdminCustomerGroup)
+  - email: string, (required), format=email
+  - default_billing_address_id: string, (required)
+  - default_shipping_address_id: string, (required)
+  - company_name: string, (required)
+  - first_name: string, (required)
+  - last_name: string, (required)
+  - addresses: array, (required), items=object (AdminCustomerAddress)
+  - phone: string, (optional)
+  - metadata: object, (optional)
+  - created_by: string, (optional)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - deleted_at: string, (optional), format=date-time
+    Model: AdminOrderLineItem
+    Type: object
+    Description: The item's details.
+    Properties:
+  - id: string, (required)
+  - title: string, (required)
+  - subtitle: string, (required)
+  - thumbnail: string, (required)
+  - variant: object (AdminProductVariant), (optional)
+  - variant_id: string, (required)
+  - product: object (AdminProduct), (optional)
+  - product_id: string, (required)
+  - product_title: string, (required)
+  - product_description: string, (required)
+  - product_subtitle: string, (required)
+  - product_type: string, (required)
+  - product_collection: string, (required)
+  - product_handle: string, (required)
+  - variant_sku: string, (required)
+  - variant_barcode: string, (required)
+  - variant_title: string, (required)
+  - variant_option_values: object, (required)
+  - requires_shipping: boolean, (required)
+  - is_discountable: boolean, (required)
+  - is_tax_inclusive: boolean, (required)
+  - compare_at_unit_price: number, (optional)
+  - unit_price: number, (required)
+  - quantity: number, (required)
+  - tax_lines: array, (optional), items=object (BaseOrderLineItemTaxLine)
+  - adjustments: array, (optional), items=object (BaseOrderLineItemAdjustment)
+  - detail: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - metadata: object, (required)
+  - original_total: number, (required)
+  - original_subtotal: number, (required)
+  - original_tax_total: number, (required)
+  - item_total: number, (required)
+  - item_subtotal: number, (required)
+  - item_tax_total: number, (required)
+  - total: number, (required)
+  - subtotal: number, (required)
+  - tax_total: number, (required)
+  - discount_total: number, (required)
+  - discount_tax_total: number, (required)
+  - refundable_total: number, (required)
+  - refundable_total_per_unit: number, (required)
+  - product_type_id: string, (required)
+    Model: AdminCustomerAddress
+    Type: object
+    Description: The customer's address.
+    Properties:
+  - id: string, (required)
+  - address_name: string, (required)
+  - is_default_shipping: boolean, (required)
+  - is_default_billing: boolean, (required)
+  - customer_id: string, (required)
+  - company: string, (required)
+  - first_name: string, (required)
+  - last_name: string, (required)
+  - address_1: string, (required)
+  - address_2: string, (required)
+  - city: string, (required)
+  - country_code: string, (required)
+  - province: string, (required)
+  - postal_code: string, (required)
+  - phone: string, (required)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+    Model: AdminCustomerGroup
+    Type: object
+    Description: The customer group's details.
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - customers: array, (required), items=object
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+    Model: AdminProduct
+    Type: object
+    Description: The product's details.
+    Properties:
+  - collection: object (AdminCollection), (optional)
+  - categories: array, (optional), items=object (AdminProductCategory)
+  - sales_channels: array, (optional), items=object (AdminSalesChannel)
+  - variants: array, (required), items=object (AdminProductVariant)
+  - type: object (AdminProductType), (required)
+  - tags: array, (optional), items=object (AdminProductTag)
+  - length: number, (required)
+  - title: string, (required)
+  - status: string, (required), enum=['draft', 'proposed', 'published', 'rejected']
+  - options: array, (required), items=object (AdminProductOption)
+  - description: string, (required)
+  - id: string, (required)
+  - metadata: object, (optional)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - handle: string, (required)
+  - subtitle: string, (required)
+  - is_giftcard: boolean, (required)
+  - thumbnail: string, (required)
+  - width: number, (required)
+  - weight: number, (required)
+  - height: number, (required)
+  - origin_country: string, (required)
+  - hs_code: string, (required)
+  - mid_code: string, (required)
+  - material: string, (required)
+  - collection_id: string, (required)
+  - type_id: string, (required)
+  - images: array, (required), items=object (AdminProductImage)
+  - discountable: boolean, (required)
+  - external_id: string, (required)
+  - deleted_at: string, (required), format=date-time
+  - shipping_profile: object (AdminShippingProfile), (optional)
+    Model: AdminProductVariant
+    Type: object
+    Description: The product variant's details.
+    Properties:
+  - prices: array, (required), items=object (AdminPrice)
+  - id: string, (required)
+  - title: string, (required)
+  - sku: string, (required)
+  - barcode: string, (required)
+  - ean: string, (required)
+  - upc: string, (required)
+  - allow_backorder: boolean, (required)
+  - manage_inventory: boolean, (required)
+  - inventory_quantity: number, (optional)
+  - hs_code: string, (required)
+  - origin_country: string, (required)
+  - mid_code: string, (required)
+  - material: string, (required)
+  - weight: number, (required)
+  - length: number, (required)
+  - height: number, (required)
+  - width: number, (required)
+  - variant_rank: number, (optional)
+  - options: array, (required), items=object (AdminProductOptionValue)
+  - product: object, (optional)
+  - product_id: string, (optional)
+  - calculated_price: object (BaseCalculatedPriceSet), (optional)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+  - metadata: object, (optional)
+  - inventory_items: array, (optional), items=object (AdminProductVariantInventoryItemLink)
+    Model: BaseOrderLineItemAdjustment
+    Type: object
+    Description: The adjustment's details.
+    Properties:
+  - item: object, (required)
+  - item_id: string, (required)
+  - id: string, (required)
+  - code: string, (optional)
+  - amount: number, (required)
+  - order_id: string, (required)
+  - description: string, (optional)
+  - promotion_id: string, (optional)
+  - provider_id: string, (optional)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+    Model: BaseOrderLineItemTaxLine
+    Type: object
+    Description: The tax line's tax lines.
+    Properties:
+  - item: object, (required)
+  - item_id: string, (required)
+  - total: number, (required)
+  - subtotal: number, (required)
+  - id: string, (required)
+  - description: string, (optional)
+  - tax_rate_id: string, (optional)
+  - code: string, (required)
+  - rate: number, (required)
+  - provider_id: string, (optional)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+    Model: AdminCollection
+    Type: object
+    Description: The product collection's details.
+    Properties:
+  - id: string, (required)
+  - title: string, (required)
+  - handle: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+  - products: array, (optional), items=object (BaseProduct)
+  - metadata: object, (required)
+    Model: AdminProductCategory
+    Type: object
+    Description: The product category's details.
+    Properties:
+  - category_children: array, (required), items=object
+  - parent_category: object, (required)
+  - products: array, (optional), items=object
+  - name: string, (required)
+  - description: string, (required)
+  - id: string, (required)
+  - metadata: object, (optional)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - handle: string, (required)
+  - deleted_at: string, (required), format=date-time
+  - is_active: boolean, (required)
+  - is_internal: boolean, (required)
+  - rank: number, (required)
+  - parent_category_id: string, (required)
+    Model: AdminProductImage
+    Type: object
+    Description: The image's details.
+    Properties:
+  - id: string, (required)
+  - url: string, (required)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - deleted_at: string, (optional), format=date-time
+  - metadata: object, (optional)
+  - rank: number, (required)
+    Model: AdminProductOption
+    Type: object
+    Description: The product option's details.
+    Properties:
+  - id: string, (required)
+  - title: string, (required)
+  - product: object, (optional)
+  - product_id: string, (optional)
+  - values: array, (optional), items=object
+  - metadata: object, (optional)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - deleted_at: string, (optional), format=date-time
+    Model: AdminProductTag
+    Type: object
+    Description: The product tag's details.
+    Properties:
+  - id: string, (required)
+  - value: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (optional), format=date-time
+  - metadata: object, (optional)
+    Model: AdminProductType
+    Type: object
+    Description: The product type's details.
+    Properties:
+  - id: string, (required)
+  - value: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (optional), format=date-time
+  - metadata: object, (optional)
+    Model: AdminSalesChannel
+    Type: object
+    Description: The sales channel's details.
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - description: string, (required)
+  - is_disabled: boolean, (required)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+    Model: AdminShippingProfile
+    Type: object
+    Description: The shipping profile's details..
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - type: string, (required)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+    Model: AdminPrice
+    Type: object
+    Description: The price's details.
+    Properties:
+  - id: string, (required)
+  - title: string, (required)
+  - currency_code: string, (required)
+  - amount: number, (required)
+  - raw_amount: object, (required)
+  - min_quantity: number, (required)
+  - max_quantity: number, (required)
+  - price_set_id: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+    Model: AdminProductOptionValue
+    Type: object
+    Description: The product option value's details.
+    Properties:
+  - id: string, (required)
+  - value: string, (required)
+  - option: object (AdminProductOption), (optional)
+  - option_id: string, (optional)
+  - metadata: object, (optional)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - deleted_at: string, (optional), format=date-time
+    Model: AdminProductVariantInventoryItemLink
+    Type: object
+    Description: An association between a product variant and an inventory item.
+    Properties:
+  - id: string, (required)
+  - variant_id: string, (required)
+  - variant: object, (optional)
+  - inventory_item_id: string, (required)
+  - inventory: object (AdminInventoryItem), (optional)
+    Model: BaseCalculatedPriceSet
+    Type: object
+    Description: The calculated price's details.
+    Properties:
+  - id: string, (required)
+  - is_calculated_price_price_list: boolean, (optional)
+  - is_calculated_price_tax_inclusive: boolean, (optional)
+  - calculated_amount: number, (required)
+  - calculated_amount_with_tax: number, (optional)
+  - calculated_amount_without_tax: number, (optional)
+  - is_original_price_price_list: boolean, (optional)
+  - is_original_price_tax_inclusive: boolean, (optional)
+  - original_amount: number, (required)
+  - currency_code: string, (required)
+  - calculated_price: object, (optional)
+  - original_price: object, (optional)
+  - original_amount_with_tax: number, (required)
+  - original_amount_without_tax: number, (required)
+    Model: BaseProduct
+    Type: object
+    Description: The product's details.
+    Properties:
+  - collection: object (BaseCollection), (optional)
+  - categories: array, (optional), items=object (BaseProductCategory)
+  - variants: array, (required), items=object
+  - type: object (BaseProductType), (optional)
+  - tags: array, (optional), items=object (BaseProductTag)
+  - length: number, (required)
+  - title: string, (required)
+  - status: string, (required), enum=['draft', 'proposed', 'published', 'rejected']
+  - options: array, (required), items=object (BaseProductOption)
+  - description: string, (required)
+  - id: string, (required)
+  - metadata: object, (optional)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - handle: string, (required)
+  - subtitle: string, (required)
+  - is_giftcard: boolean, (required)
+  - thumbnail: string, (required)
+  - width: number, (required)
+  - weight: number, (required)
+  - height: number, (required)
+  - origin_country: string, (required)
+  - hs_code: string, (required)
+  - mid_code: string, (required)
+  - material: string, (required)
+  - collection_id: string, (required)
+  - type_id: string, (required)
+  - images: array, (required), items=object (BaseProductImage)
+  - discountable: boolean, (required)
+  - external_id: string, (required)
+  - deleted_at: string, (required), format=date-time
+    Model: AdminInventoryItem
+    Type: object
+    Description: The inventory item's details.
+    Properties:
+  - id: string, (required)
+  - sku: string, (optional)
+  - origin_country: string, (optional)
+  - hs_code: string, (optional)
+  - requires_shipping: boolean, (required)
+  - mid_code: string, (optional)
+  - material: string, (optional)
+  - weight: number, (optional)
+  - length: number, (optional)
+  - height: number, (optional)
+  - width: number, (optional)
+  - title: string, (optional)
+  - description: string, (optional)
+  - thumbnail: string, (optional)
+  - metadata: object, (optional)
+  - location_levels: array, (optional), items=object (AdminInventoryLevel)
+    Model: BaseCollection
+    Type: object
+    Description: The product collection's details.
+    Properties:
+  - id: string, (required)
+  - title: string, (required)
+  - handle: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+  - products: array, (optional), items=object
+  - metadata: object, (required)
+    Model: BaseProductCategory
+    Type: object
+    Description: The product category's details.
+    Properties:
+  - category_children: array, (required), items=object (AdminProductCategory)
+  - parent_category: object (AdminProductCategory), (required)
+  - products: array, (optional), items=object
+  - name: string, (required)
+  - description: string, (required)
+  - id: string, (required)
+  - metadata: object, (optional)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - handle: string, (required)
+  - deleted_at: string, (required), format=date-time
+  - is_active: boolean, (required)
+  - is_internal: boolean, (required)
+  - rank: number, (required)
+  - parent_category_id: string, (required)
+    Model: BaseProductImage
+    Type: object
+    Description: The image's details.
+    Properties:
+  - id: string, (required)
+  - url: string, (required)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - deleted_at: string, (optional), format=date-time
+  - metadata: object, (optional)
+  - rank: number, (required)
+    Model: BaseProductOption
+    Type: object
+    Description: The product option's details.
+    Properties:
+  - id: string, (required)
+  - title: string, (required)
+  - product: object, (optional)
+  - product_id: string, (optional)
+  - values: array, (optional), items=object (BaseProductOptionValue)
+  - metadata: object, (optional)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - deleted_at: string, (optional), format=date-time
+    Model: BaseProductTag
+    Type: object
+    Description: The product tag's details.
+    Properties:
+  - id: string, (required)
+  - value: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (optional), format=date-time
+  - metadata: object, (optional)
+    Model: BaseProductType
+    Type: object
+    Description: The product type's details.
+    Properties:
+  - id: string, (required)
+  - value: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (optional), format=date-time
+  - metadata: object, (optional)
+    Model: AdminInventoryLevel
+    Type: object
+    Description: The location level's location levels.
+    Properties:
+  - id: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+  - inventory_item_id: string, (required)
+  - location_id: string, (required)
+  - stocked_quantity: number, (required)
+  - reserved_quantity: number, (required)
+  - incoming_quantity: number, (required)
+  - metadata: object, (required)
+  - inventory_item: object, (optional)
+  - available_quantity: number, (required)
+    Model: BaseProductOptionValue
+    Type: object
+    Description: The product option value's details.
+    Properties:
+  - id: string, (required)
+  - value: string, (required)
+  - option: object, (optional)
+  - option_id: string, (optional)
+  - metadata: object, (optional)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - deleted_at: string, (optional), format=date-time
+
+Endpoint: POST /admin/gift-cards/{id}
+  OperationId: PostGiftCardsId
+  Summary: Update a Gift Card
+  Security: api_token, cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Query Parameters:
+    - fields, in=query, type=string, optional
+  Request Body:
+    Content-Type: application/json
+    Model: AdminUpdateGiftCardParams
+    Type: object
+    Description: The details to update in the gift card.
+    Properties:
+  - status: string, (optional), enum=['pending', 'redeemed']
+  - value: number, (optional)
+  - customer_id: string, (optional)
+  - currency_code: string, (optional)
+  - note: string, (optional)
+  - expires_at: string, (optional)
+  - metadata: object, (optional)
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminGiftCardResponse
+    Type: object
+    Description: The gift card's details.
+    Properties:
+  - gift_card: object (AdminGiftCard), (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminGiftCardResponse
+    Type: object
+    Description: The gift card's details.
+    Properties:
+  - gift_card: object (AdminGiftCard), (required)
+    Model: AdminUpdateGiftCardParams
+    Type: object
+    Description: The details to update in the gift card.
+    Properties:
+  - status: string, (optional), enum=['pending', 'redeemed']
+  - value: number, (optional)
+  - customer_id: string, (optional)
+  - currency_code: string, (optional)
+  - note: string, (optional)
+  - expires_at: string, (optional)
+  - metadata: object, (optional)
+    Model: AdminGiftCard
+    Type: object
+    Description: The gift card's details.
+    Properties:
+  - line_item: object (AdminOrderLineItem), (required)
+  - customer: object (AdminCustomer), (required)
+  - id: string, (required)
+  - code: string, (required)
+  - status: string, (required), enum=['pending', 'redeemed']
+  - value: number, (required)
+  - currency_code: string, (required)
+  - customer_id: string, (required)
+  - reference_id: string, (required)
+  - note: string, (required)
+  - reference: string, (required)
+  - expires_at: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+    Model: AdminCustomer
+    Type: object
+    Description: The customer's details.
+    Properties:
+  - id: string, (required)
+  - has_account: boolean, (required)
+  - groups: array, (optional), items=object (AdminCustomerGroup)
+  - email: string, (required), format=email
+  - default_billing_address_id: string, (required)
+  - default_shipping_address_id: string, (required)
+  - company_name: string, (required)
+  - first_name: string, (required)
+  - last_name: string, (required)
+  - addresses: array, (required), items=object (AdminCustomerAddress)
+  - phone: string, (optional)
+  - metadata: object, (optional)
+  - created_by: string, (optional)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - deleted_at: string, (optional), format=date-time
+    Model: AdminOrderLineItem
+    Type: object
+    Description: The item's details.
+    Properties:
+  - id: string, (required)
+  - title: string, (required)
+  - subtitle: string, (required)
+  - thumbnail: string, (required)
+  - variant: object (AdminProductVariant), (optional)
+  - variant_id: string, (required)
+  - product: object (AdminProduct), (optional)
+  - product_id: string, (required)
+  - product_title: string, (required)
+  - product_description: string, (required)
+  - product_subtitle: string, (required)
+  - product_type: string, (required)
+  - product_collection: string, (required)
+  - product_handle: string, (required)
+  - variant_sku: string, (required)
+  - variant_barcode: string, (required)
+  - variant_title: string, (required)
+  - variant_option_values: object, (required)
+  - requires_shipping: boolean, (required)
+  - is_discountable: boolean, (required)
+  - is_tax_inclusive: boolean, (required)
+  - compare_at_unit_price: number, (optional)
+  - unit_price: number, (required)
+  - quantity: number, (required)
+  - tax_lines: array, (optional), items=object (BaseOrderLineItemTaxLine)
+  - adjustments: array, (optional), items=object (BaseOrderLineItemAdjustment)
+  - detail: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - metadata: object, (required)
+  - original_total: number, (required)
+  - original_subtotal: number, (required)
+  - original_tax_total: number, (required)
+  - item_total: number, (required)
+  - item_subtotal: number, (required)
+  - item_tax_total: number, (required)
+  - total: number, (required)
+  - subtotal: number, (required)
+  - tax_total: number, (required)
+  - discount_total: number, (required)
+  - discount_tax_total: number, (required)
+  - refundable_total: number, (required)
+  - refundable_total_per_unit: number, (required)
+  - product_type_id: string, (required)
+    Model: AdminCustomerAddress
+    Type: object
+    Description: The customer's address.
+    Properties:
+  - id: string, (required)
+  - address_name: string, (required)
+  - is_default_shipping: boolean, (required)
+  - is_default_billing: boolean, (required)
+  - customer_id: string, (required)
+  - company: string, (required)
+  - first_name: string, (required)
+  - last_name: string, (required)
+  - address_1: string, (required)
+  - address_2: string, (required)
+  - city: string, (required)
+  - country_code: string, (required)
+  - province: string, (required)
+  - postal_code: string, (required)
+  - phone: string, (required)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+    Model: AdminCustomerGroup
+    Type: object
+    Description: The customer group's details.
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - customers: array, (required), items=object
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+    Model: AdminProduct
+    Type: object
+    Description: The product's details.
+    Properties:
+  - collection: object (AdminCollection), (optional)
+  - categories: array, (optional), items=object (AdminProductCategory)
+  - sales_channels: array, (optional), items=object (AdminSalesChannel)
+  - variants: array, (required), items=object (AdminProductVariant)
+  - type: object (AdminProductType), (required)
+  - tags: array, (optional), items=object (AdminProductTag)
+  - length: number, (required)
+  - title: string, (required)
+  - status: string, (required), enum=['draft', 'proposed', 'published', 'rejected']
+  - options: array, (required), items=object (AdminProductOption)
+  - description: string, (required)
+  - id: string, (required)
+  - metadata: object, (optional)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - handle: string, (required)
+  - subtitle: string, (required)
+  - is_giftcard: boolean, (required)
+  - thumbnail: string, (required)
+  - width: number, (required)
+  - weight: number, (required)
+  - height: number, (required)
+  - origin_country: string, (required)
+  - hs_code: string, (required)
+  - mid_code: string, (required)
+  - material: string, (required)
+  - collection_id: string, (required)
+  - type_id: string, (required)
+  - images: array, (required), items=object (AdminProductImage)
+  - discountable: boolean, (required)
+  - external_id: string, (required)
+  - deleted_at: string, (required), format=date-time
+  - shipping_profile: object (AdminShippingProfile), (optional)
+    Model: AdminProductVariant
+    Type: object
+    Description: The product variant's details.
+    Properties:
+  - prices: array, (required), items=object (AdminPrice)
+  - id: string, (required)
+  - title: string, (required)
+  - sku: string, (required)
+  - barcode: string, (required)
+  - ean: string, (required)
+  - upc: string, (required)
+  - allow_backorder: boolean, (required)
+  - manage_inventory: boolean, (required)
+  - inventory_quantity: number, (optional)
+  - hs_code: string, (required)
+  - origin_country: string, (required)
+  - mid_code: string, (required)
+  - material: string, (required)
+  - weight: number, (required)
+  - length: number, (required)
+  - height: number, (required)
+  - width: number, (required)
+  - variant_rank: number, (optional)
+  - options: array, (required), items=object (AdminProductOptionValue)
+  - product: object, (optional)
+  - product_id: string, (optional)
+  - calculated_price: object (BaseCalculatedPriceSet), (optional)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+  - metadata: object, (optional)
+  - inventory_items: array, (optional), items=object (AdminProductVariantInventoryItemLink)
+    Model: BaseOrderLineItemAdjustment
+    Type: object
+    Description: The adjustment's details.
+    Properties:
+  - item: object, (required)
+  - item_id: string, (required)
+  - id: string, (required)
+  - code: string, (optional)
+  - amount: number, (required)
+  - order_id: string, (required)
+  - description: string, (optional)
+  - promotion_id: string, (optional)
+  - provider_id: string, (optional)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+    Model: BaseOrderLineItemTaxLine
+    Type: object
+    Description: The tax line's tax lines.
+    Properties:
+  - item: object, (required)
+  - item_id: string, (required)
+  - total: number, (required)
+  - subtotal: number, (required)
+  - id: string, (required)
+  - description: string, (optional)
+  - tax_rate_id: string, (optional)
+  - code: string, (required)
+  - rate: number, (required)
+  - provider_id: string, (optional)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+    Model: AdminCollection
+    Type: object
+    Description: The product collection's details.
+    Properties:
+  - id: string, (required)
+  - title: string, (required)
+  - handle: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+  - products: array, (optional), items=object (BaseProduct)
+  - metadata: object, (required)
+    Model: AdminProductCategory
+    Type: object
+    Description: The product category's details.
+    Properties:
+  - category_children: array, (required), items=object
+  - parent_category: object, (required)
+  - products: array, (optional), items=object
+  - name: string, (required)
+  - description: string, (required)
+  - id: string, (required)
+  - metadata: object, (optional)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - handle: string, (required)
+  - deleted_at: string, (required), format=date-time
+  - is_active: boolean, (required)
+  - is_internal: boolean, (required)
+  - rank: number, (required)
+  - parent_category_id: string, (required)
+    Model: AdminProductImage
+    Type: object
+    Description: The image's details.
+    Properties:
+  - id: string, (required)
+  - url: string, (required)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - deleted_at: string, (optional), format=date-time
+  - metadata: object, (optional)
+  - rank: number, (required)
+    Model: AdminProductOption
+    Type: object
+    Description: The product option's details.
+    Properties:
+  - id: string, (required)
+  - title: string, (required)
+  - product: object, (optional)
+  - product_id: string, (optional)
+  - values: array, (optional), items=object
+  - metadata: object, (optional)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - deleted_at: string, (optional), format=date-time
+    Model: AdminProductTag
+    Type: object
+    Description: The product tag's details.
+    Properties:
+  - id: string, (required)
+  - value: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (optional), format=date-time
+  - metadata: object, (optional)
+    Model: AdminProductType
+    Type: object
+    Description: The product type's details.
+    Properties:
+  - id: string, (required)
+  - value: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (optional), format=date-time
+  - metadata: object, (optional)
+    Model: AdminSalesChannel
+    Type: object
+    Description: The sales channel's details.
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - description: string, (required)
+  - is_disabled: boolean, (required)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+    Model: AdminShippingProfile
+    Type: object
+    Description: The shipping profile's details..
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - type: string, (required)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+    Model: AdminPrice
+    Type: object
+    Description: The price's details.
+    Properties:
+  - id: string, (required)
+  - title: string, (required)
+  - currency_code: string, (required)
+  - amount: number, (required)
+  - raw_amount: object, (required)
+  - min_quantity: number, (required)
+  - max_quantity: number, (required)
+  - price_set_id: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+    Model: AdminProductOptionValue
+    Type: object
+    Description: The product option value's details.
+    Properties:
+  - id: string, (required)
+  - value: string, (required)
+  - option: object (AdminProductOption), (optional)
+  - option_id: string, (optional)
+  - metadata: object, (optional)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - deleted_at: string, (optional), format=date-time
+    Model: AdminProductVariantInventoryItemLink
+    Type: object
+    Description: An association between a product variant and an inventory item.
+    Properties:
+  - id: string, (required)
+  - variant_id: string, (required)
+  - variant: object, (optional)
+  - inventory_item_id: string, (required)
+  - inventory: object (AdminInventoryItem), (optional)
+    Model: BaseCalculatedPriceSet
+    Type: object
+    Description: The calculated price's details.
+    Properties:
+  - id: string, (required)
+  - is_calculated_price_price_list: boolean, (optional)
+  - is_calculated_price_tax_inclusive: boolean, (optional)
+  - calculated_amount: number, (required)
+  - calculated_amount_with_tax: number, (optional)
+  - calculated_amount_without_tax: number, (optional)
+  - is_original_price_price_list: boolean, (optional)
+  - is_original_price_tax_inclusive: boolean, (optional)
+  - original_amount: number, (required)
+  - currency_code: string, (required)
+  - calculated_price: object, (optional)
+  - original_price: object, (optional)
+  - original_amount_with_tax: number, (required)
+  - original_amount_without_tax: number, (required)
+    Model: BaseProduct
+    Type: object
+    Description: The product's details.
+    Properties:
+  - collection: object (BaseCollection), (optional)
+  - categories: array, (optional), items=object (BaseProductCategory)
+  - variants: array, (required), items=object
+  - type: object (BaseProductType), (optional)
+  - tags: array, (optional), items=object (BaseProductTag)
+  - length: number, (required)
+  - title: string, (required)
+  - status: string, (required), enum=['draft', 'proposed', 'published', 'rejected']
+  - options: array, (required), items=object (BaseProductOption)
+  - description: string, (required)
+  - id: string, (required)
+  - metadata: object, (optional)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - handle: string, (required)
+  - subtitle: string, (required)
+  - is_giftcard: boolean, (required)
+  - thumbnail: string, (required)
+  - width: number, (required)
+  - weight: number, (required)
+  - height: number, (required)
+  - origin_country: string, (required)
+  - hs_code: string, (required)
+  - mid_code: string, (required)
+  - material: string, (required)
+  - collection_id: string, (required)
+  - type_id: string, (required)
+  - images: array, (required), items=object (BaseProductImage)
+  - discountable: boolean, (required)
+  - external_id: string, (required)
+  - deleted_at: string, (required), format=date-time
+    Model: AdminInventoryItem
+    Type: object
+    Description: The inventory item's details.
+    Properties:
+  - id: string, (required)
+  - sku: string, (optional)
+  - origin_country: string, (optional)
+  - hs_code: string, (optional)
+  - requires_shipping: boolean, (required)
+  - mid_code: string, (optional)
+  - material: string, (optional)
+  - weight: number, (optional)
+  - length: number, (optional)
+  - height: number, (optional)
+  - width: number, (optional)
+  - title: string, (optional)
+  - description: string, (optional)
+  - thumbnail: string, (optional)
+  - metadata: object, (optional)
+  - location_levels: array, (optional), items=object (AdminInventoryLevel)
+    Model: BaseCollection
+    Type: object
+    Description: The product collection's details.
+    Properties:
+  - id: string, (required)
+  - title: string, (required)
+  - handle: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+  - products: array, (optional), items=object
+  - metadata: object, (required)
+    Model: BaseProductCategory
+    Type: object
+    Description: The product category's details.
+    Properties:
+  - category_children: array, (required), items=object (AdminProductCategory)
+  - parent_category: object (AdminProductCategory), (required)
+  - products: array, (optional), items=object
+  - name: string, (required)
+  - description: string, (required)
+  - id: string, (required)
+  - metadata: object, (optional)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - handle: string, (required)
+  - deleted_at: string, (required), format=date-time
+  - is_active: boolean, (required)
+  - is_internal: boolean, (required)
+  - rank: number, (required)
+  - parent_category_id: string, (required)
+    Model: BaseProductImage
+    Type: object
+    Description: The image's details.
+    Properties:
+  - id: string, (required)
+  - url: string, (required)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - deleted_at: string, (optional), format=date-time
+  - metadata: object, (optional)
+  - rank: number, (required)
+    Model: BaseProductOption
+    Type: object
+    Description: The product option's details.
+    Properties:
+  - id: string, (required)
+  - title: string, (required)
+  - product: object, (optional)
+  - product_id: string, (optional)
+  - values: array, (optional), items=object (BaseProductOptionValue)
+  - metadata: object, (optional)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - deleted_at: string, (optional), format=date-time
+    Model: BaseProductTag
+    Type: object
+    Description: The product tag's details.
+    Properties:
+  - id: string, (required)
+  - value: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (optional), format=date-time
+  - metadata: object, (optional)
+    Model: BaseProductType
+    Type: object
+    Description: The product type's details.
+    Properties:
+  - id: string, (required)
+  - value: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (optional), format=date-time
+  - metadata: object, (optional)
+    Model: AdminInventoryLevel
+    Type: object
+    Description: The location level's location levels.
+    Properties:
+  - id: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+  - inventory_item_id: string, (required)
+  - location_id: string, (required)
+  - stocked_quantity: number, (required)
+  - reserved_quantity: number, (required)
+  - incoming_quantity: number, (required)
+  - metadata: object, (required)
+  - inventory_item: object, (optional)
+  - available_quantity: number, (required)
+    Model: BaseProductOptionValue
+    Type: object
+    Description: The product option value's details.
+    Properties:
+  - id: string, (required)
+  - value: string, (required)
+  - option: object, (optional)
+  - option_id: string, (optional)
+  - metadata: object, (optional)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - deleted_at: string, (optional), format=date-time
+
+Endpoint: GET /admin/gift-cards/{id}/orders
+  OperationId: GetGiftCardsIdOrders
+  Summary: List Gift Card's Orders
+  Security: api_token, cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Query Parameters:
+    - fields, in=query, type=string, optional
+  Responses:
+    - Status: 200 - OK
+      (no content)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+
+Endpoint: POST /admin/gift-cards/{id}/redeem
+  OperationId: PostGiftCardsIdRedeem
+  Summary: Redeem a Gift Card
+  Security: api_token, cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Query Parameters:
+    - fields, in=query, type=string, optional
+  Request Body:
+    Content-Type: application/json
+    Model: AdminRedeemGiftCard
+    Type: object
+    Description: The details of the gift card to redeem.
+    Properties:
+  - customer_id: string, (required)
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminGiftCardResponse
+    Type: object
+    Description: The gift card's details.
+    Properties:
+  - gift_card: object (AdminGiftCard), (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminGiftCardResponse
+    Type: object
+    Description: The gift card's details.
+    Properties:
+  - gift_card: object (AdminGiftCard), (required)
+    Model: AdminRedeemGiftCard
+    Type: object
+    Description: The details of the gift card to redeem.
+    Properties:
+  - customer_id: string, (required)
+    Model: AdminGiftCard
+    Type: object
+    Description: The gift card's details.
+    Properties:
+  - line_item: object (AdminOrderLineItem), (required)
+  - customer: object (AdminCustomer), (required)
+  - id: string, (required)
+  - code: string, (required)
+  - status: string, (required), enum=['pending', 'redeemed']
+  - value: number, (required)
+  - currency_code: string, (required)
+  - customer_id: string, (required)
+  - reference_id: string, (required)
+  - note: string, (required)
+  - reference: string, (required)
+  - expires_at: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+    Model: AdminCustomer
+    Type: object
+    Description: The customer's details.
+    Properties:
+  - id: string, (required)
+  - has_account: boolean, (required)
+  - groups: array, (optional), items=object (AdminCustomerGroup)
+  - email: string, (required), format=email
+  - default_billing_address_id: string, (required)
+  - default_shipping_address_id: string, (required)
+  - company_name: string, (required)
+  - first_name: string, (required)
+  - last_name: string, (required)
+  - addresses: array, (required), items=object (AdminCustomerAddress)
+  - phone: string, (optional)
+  - metadata: object, (optional)
+  - created_by: string, (optional)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - deleted_at: string, (optional), format=date-time
+    Model: AdminOrderLineItem
+    Type: object
+    Description: The item's details.
+    Properties:
+  - id: string, (required)
+  - title: string, (required)
+  - subtitle: string, (required)
+  - thumbnail: string, (required)
+  - variant: object (AdminProductVariant), (optional)
+  - variant_id: string, (required)
+  - product: object (AdminProduct), (optional)
+  - product_id: string, (required)
+  - product_title: string, (required)
+  - product_description: string, (required)
+  - product_subtitle: string, (required)
+  - product_type: string, (required)
+  - product_collection: string, (required)
+  - product_handle: string, (required)
+  - variant_sku: string, (required)
+  - variant_barcode: string, (required)
+  - variant_title: string, (required)
+  - variant_option_values: object, (required)
+  - requires_shipping: boolean, (required)
+  - is_discountable: boolean, (required)
+  - is_tax_inclusive: boolean, (required)
+  - compare_at_unit_price: number, (optional)
+  - unit_price: number, (required)
+  - quantity: number, (required)
+  - tax_lines: array, (optional), items=object (BaseOrderLineItemTaxLine)
+  - adjustments: array, (optional), items=object (BaseOrderLineItemAdjustment)
+  - detail: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - metadata: object, (required)
+  - original_total: number, (required)
+  - original_subtotal: number, (required)
+  - original_tax_total: number, (required)
+  - item_total: number, (required)
+  - item_subtotal: number, (required)
+  - item_tax_total: number, (required)
+  - total: number, (required)
+  - subtotal: number, (required)
+  - tax_total: number, (required)
+  - discount_total: number, (required)
+  - discount_tax_total: number, (required)
+  - refundable_total: number, (required)
+  - refundable_total_per_unit: number, (required)
+  - product_type_id: string, (required)
+    Model: AdminCustomerAddress
+    Type: object
+    Description: The customer's address.
+    Properties:
+  - id: string, (required)
+  - address_name: string, (required)
+  - is_default_shipping: boolean, (required)
+  - is_default_billing: boolean, (required)
+  - customer_id: string, (required)
+  - company: string, (required)
+  - first_name: string, (required)
+  - last_name: string, (required)
+  - address_1: string, (required)
+  - address_2: string, (required)
+  - city: string, (required)
+  - country_code: string, (required)
+  - province: string, (required)
+  - postal_code: string, (required)
+  - phone: string, (required)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+    Model: AdminCustomerGroup
+    Type: object
+    Description: The customer group's details.
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - customers: array, (required), items=object
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+    Model: AdminProduct
+    Type: object
+    Description: The product's details.
+    Properties:
+  - collection: object (AdminCollection), (optional)
+  - categories: array, (optional), items=object (AdminProductCategory)
+  - sales_channels: array, (optional), items=object (AdminSalesChannel)
+  - variants: array, (required), items=object (AdminProductVariant)
+  - type: object (AdminProductType), (required)
+  - tags: array, (optional), items=object (AdminProductTag)
+  - length: number, (required)
+  - title: string, (required)
+  - status: string, (required), enum=['draft', 'proposed', 'published', 'rejected']
+  - options: array, (required), items=object (AdminProductOption)
+  - description: string, (required)
+  - id: string, (required)
+  - metadata: object, (optional)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - handle: string, (required)
+  - subtitle: string, (required)
+  - is_giftcard: boolean, (required)
+  - thumbnail: string, (required)
+  - width: number, (required)
+  - weight: number, (required)
+  - height: number, (required)
+  - origin_country: string, (required)
+  - hs_code: string, (required)
+  - mid_code: string, (required)
+  - material: string, (required)
+  - collection_id: string, (required)
+  - type_id: string, (required)
+  - images: array, (required), items=object (AdminProductImage)
+  - discountable: boolean, (required)
+  - external_id: string, (required)
+  - deleted_at: string, (required), format=date-time
+  - shipping_profile: object (AdminShippingProfile), (optional)
+    Model: AdminProductVariant
+    Type: object
+    Description: The product variant's details.
+    Properties:
+  - prices: array, (required), items=object (AdminPrice)
+  - id: string, (required)
+  - title: string, (required)
+  - sku: string, (required)
+  - barcode: string, (required)
+  - ean: string, (required)
+  - upc: string, (required)
+  - allow_backorder: boolean, (required)
+  - manage_inventory: boolean, (required)
+  - inventory_quantity: number, (optional)
+  - hs_code: string, (required)
+  - origin_country: string, (required)
+  - mid_code: string, (required)
+  - material: string, (required)
+  - weight: number, (required)
+  - length: number, (required)
+  - height: number, (required)
+  - width: number, (required)
+  - variant_rank: number, (optional)
+  - options: array, (required), items=object (AdminProductOptionValue)
+  - product: object, (optional)
+  - product_id: string, (optional)
+  - calculated_price: object (BaseCalculatedPriceSet), (optional)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+  - metadata: object, (optional)
+  - inventory_items: array, (optional), items=object (AdminProductVariantInventoryItemLink)
+    Model: BaseOrderLineItemAdjustment
+    Type: object
+    Description: The adjustment's details.
+    Properties:
+  - item: object, (required)
+  - item_id: string, (required)
+  - id: string, (required)
+  - code: string, (optional)
+  - amount: number, (required)
+  - order_id: string, (required)
+  - description: string, (optional)
+  - promotion_id: string, (optional)
+  - provider_id: string, (optional)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+    Model: BaseOrderLineItemTaxLine
+    Type: object
+    Description: The tax line's tax lines.
+    Properties:
+  - item: object, (required)
+  - item_id: string, (required)
+  - total: number, (required)
+  - subtotal: number, (required)
+  - id: string, (required)
+  - description: string, (optional)
+  - tax_rate_id: string, (optional)
+  - code: string, (required)
+  - rate: number, (required)
+  - provider_id: string, (optional)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+    Model: AdminCollection
+    Type: object
+    Description: The product collection's details.
+    Properties:
+  - id: string, (required)
+  - title: string, (required)
+  - handle: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+  - products: array, (optional), items=object (BaseProduct)
+  - metadata: object, (required)
+    Model: AdminProductCategory
+    Type: object
+    Description: The product category's details.
+    Properties:
+  - category_children: array, (required), items=object
+  - parent_category: object, (required)
+  - products: array, (optional), items=object
+  - name: string, (required)
+  - description: string, (required)
+  - id: string, (required)
+  - metadata: object, (optional)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - handle: string, (required)
+  - deleted_at: string, (required), format=date-time
+  - is_active: boolean, (required)
+  - is_internal: boolean, (required)
+  - rank: number, (required)
+  - parent_category_id: string, (required)
+    Model: AdminProductImage
+    Type: object
+    Description: The image's details.
+    Properties:
+  - id: string, (required)
+  - url: string, (required)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - deleted_at: string, (optional), format=date-time
+  - metadata: object, (optional)
+  - rank: number, (required)
+    Model: AdminProductOption
+    Type: object
+    Description: The product option's details.
+    Properties:
+  - id: string, (required)
+  - title: string, (required)
+  - product: object, (optional)
+  - product_id: string, (optional)
+  - values: array, (optional), items=object
+  - metadata: object, (optional)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - deleted_at: string, (optional), format=date-time
+    Model: AdminProductTag
+    Type: object
+    Description: The product tag's details.
+    Properties:
+  - id: string, (required)
+  - value: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (optional), format=date-time
+  - metadata: object, (optional)
+    Model: AdminProductType
+    Type: object
+    Description: The product type's details.
+    Properties:
+  - id: string, (required)
+  - value: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (optional), format=date-time
+  - metadata: object, (optional)
+    Model: AdminSalesChannel
+    Type: object
+    Description: The sales channel's details.
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - description: string, (required)
+  - is_disabled: boolean, (required)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+    Model: AdminShippingProfile
+    Type: object
+    Description: The shipping profile's details..
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - type: string, (required)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+    Model: AdminPrice
+    Type: object
+    Description: The price's details.
+    Properties:
+  - id: string, (required)
+  - title: string, (required)
+  - currency_code: string, (required)
+  - amount: number, (required)
+  - raw_amount: object, (required)
+  - min_quantity: number, (required)
+  - max_quantity: number, (required)
+  - price_set_id: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+    Model: AdminProductOptionValue
+    Type: object
+    Description: The product option value's details.
+    Properties:
+  - id: string, (required)
+  - value: string, (required)
+  - option: object (AdminProductOption), (optional)
+  - option_id: string, (optional)
+  - metadata: object, (optional)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - deleted_at: string, (optional), format=date-time
+    Model: AdminProductVariantInventoryItemLink
+    Type: object
+    Description: An association between a product variant and an inventory item.
+    Properties:
+  - id: string, (required)
+  - variant_id: string, (required)
+  - variant: object, (optional)
+  - inventory_item_id: string, (required)
+  - inventory: object (AdminInventoryItem), (optional)
+    Model: BaseCalculatedPriceSet
+    Type: object
+    Description: The calculated price's details.
+    Properties:
+  - id: string, (required)
+  - is_calculated_price_price_list: boolean, (optional)
+  - is_calculated_price_tax_inclusive: boolean, (optional)
+  - calculated_amount: number, (required)
+  - calculated_amount_with_tax: number, (optional)
+  - calculated_amount_without_tax: number, (optional)
+  - is_original_price_price_list: boolean, (optional)
+  - is_original_price_tax_inclusive: boolean, (optional)
+  - original_amount: number, (required)
+  - currency_code: string, (required)
+  - calculated_price: object, (optional)
+  - original_price: object, (optional)
+  - original_amount_with_tax: number, (required)
+  - original_amount_without_tax: number, (required)
+    Model: BaseProduct
+    Type: object
+    Description: The product's details.
+    Properties:
+  - collection: object (BaseCollection), (optional)
+  - categories: array, (optional), items=object (BaseProductCategory)
+  - variants: array, (required), items=object
+  - type: object (BaseProductType), (optional)
+  - tags: array, (optional), items=object (BaseProductTag)
+  - length: number, (required)
+  - title: string, (required)
+  - status: string, (required), enum=['draft', 'proposed', 'published', 'rejected']
+  - options: array, (required), items=object (BaseProductOption)
+  - description: string, (required)
+  - id: string, (required)
+  - metadata: object, (optional)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - handle: string, (required)
+  - subtitle: string, (required)
+  - is_giftcard: boolean, (required)
+  - thumbnail: string, (required)
+  - width: number, (required)
+  - weight: number, (required)
+  - height: number, (required)
+  - origin_country: string, (required)
+  - hs_code: string, (required)
+  - mid_code: string, (required)
+  - material: string, (required)
+  - collection_id: string, (required)
+  - type_id: string, (required)
+  - images: array, (required), items=object (BaseProductImage)
+  - discountable: boolean, (required)
+  - external_id: string, (required)
+  - deleted_at: string, (required), format=date-time
+    Model: AdminInventoryItem
+    Type: object
+    Description: The inventory item's details.
+    Properties:
+  - id: string, (required)
+  - sku: string, (optional)
+  - origin_country: string, (optional)
+  - hs_code: string, (optional)
+  - requires_shipping: boolean, (required)
+  - mid_code: string, (optional)
+  - material: string, (optional)
+  - weight: number, (optional)
+  - length: number, (optional)
+  - height: number, (optional)
+  - width: number, (optional)
+  - title: string, (optional)
+  - description: string, (optional)
+  - thumbnail: string, (optional)
+  - metadata: object, (optional)
+  - location_levels: array, (optional), items=object (AdminInventoryLevel)
+    Model: BaseCollection
+    Type: object
+    Description: The product collection's details.
+    Properties:
+  - id: string, (required)
+  - title: string, (required)
+  - handle: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+  - products: array, (optional), items=object
+  - metadata: object, (required)
+    Model: BaseProductCategory
+    Type: object
+    Description: The product category's details.
+    Properties:
+  - category_children: array, (required), items=object (AdminProductCategory)
+  - parent_category: object (AdminProductCategory), (required)
+  - products: array, (optional), items=object
+  - name: string, (required)
+  - description: string, (required)
+  - id: string, (required)
+  - metadata: object, (optional)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - handle: string, (required)
+  - deleted_at: string, (required), format=date-time
+  - is_active: boolean, (required)
+  - is_internal: boolean, (required)
+  - rank: number, (required)
+  - parent_category_id: string, (required)
+    Model: BaseProductImage
+    Type: object
+    Description: The image's details.
+    Properties:
+  - id: string, (required)
+  - url: string, (required)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - deleted_at: string, (optional), format=date-time
+  - metadata: object, (optional)
+  - rank: number, (required)
+    Model: BaseProductOption
+    Type: object
+    Description: The product option's details.
+    Properties:
+  - id: string, (required)
+  - title: string, (required)
+  - product: object, (optional)
+  - product_id: string, (optional)
+  - values: array, (optional), items=object (BaseProductOptionValue)
+  - metadata: object, (optional)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - deleted_at: string, (optional), format=date-time
+    Model: BaseProductTag
+    Type: object
+    Description: The product tag's details.
+    Properties:
+  - id: string, (required)
+  - value: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (optional), format=date-time
+  - metadata: object, (optional)
+    Model: BaseProductType
+    Type: object
+    Description: The product type's details.
+    Properties:
+  - id: string, (required)
+  - value: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (optional), format=date-time
+  - metadata: object, (optional)
+    Model: AdminInventoryLevel
+    Type: object
+    Description: The location level's location levels.
+    Properties:
+  - id: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+  - inventory_item_id: string, (required)
+  - location_id: string, (required)
+  - stocked_quantity: number, (required)
+  - reserved_quantity: number, (required)
+  - incoming_quantity: number, (required)
+  - metadata: object, (required)
+  - inventory_item: object, (optional)
+  - available_quantity: number, (required)
+    Model: BaseProductOptionValue
+    Type: object
+    Description: The product option value's details.
+    Properties:
+  - id: string, (required)
+  - value: string, (required)
+  - option: object, (optional)
+  - option_id: string, (optional)
+  - metadata: object, (optional)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - deleted_at: string, (optional), format=date-time
+

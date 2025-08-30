@@ -1,0 +1,602 @@
+Feature Name: Shipping Options
+
+Endpoint: GET /admin/shipping-options
+  OperationId: GetShippingOptions
+  Summary: List Shipping Options
+  Security: api_token, cookie_auth, jwt_token
+  Query Parameters:
+    - fields, in=query, type=string, optional
+    - offset, in=query, type=number, optional
+    - limit, in=query, type=number, optional
+    - order, in=query, type=string, optional
+    - id, in=query, type=oneOf, optional
+    - q, in=query, type=string, optional
+    - service_zone_id, in=query, type=oneOf, optional
+    - shipping_profile_id, in=query, type=oneOf, optional
+    - provider_id, in=query, type=oneOf, optional
+    - shipping_option_type_id, in=query, type=oneOf, optional
+    - created_at, in=query, type=object, optional
+    - updated_at, in=query, type=object, optional
+    - deleted_at, in=query, type=object, optional
+    - stock_location_id, in=query, type=oneOf, optional
+    - is_return, in=query, type=boolean, optional
+    - admin_only, in=query, type=boolean, optional
+    - with_deleted, in=query, type=boolean, optional
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: getshippingoptions_body
+    Type: object
+    Properties:
+  - limit: number, (required)
+  - offset: number, (required)
+  - count: number, (required)
+  - shipping_options: array, (required), items=object
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+
+Endpoint: POST /admin/shipping-options
+  OperationId: PostShippingOptions
+  Summary: Create Shipping Option
+  Security: api_token, cookie_auth, jwt_token
+  Query Parameters:
+    - fields, in=query, type=string, optional
+  Request Body:
+    Content-Type: application/json
+    Model: AdminCreateShippingOption
+    Type: object
+    Description: The shipping option's details.
+    Properties:
+  - name: string, (required)
+  - service_zone_id: string, (required)
+  - shipping_profile_id: string, (required)
+  - data: object, (optional)
+  - price_type: string, (required), enum=['flat', 'calculated']
+  - provider_id: string, (required)
+  - type: object (AdminCreateShippingOptionType), (required)
+  - prices: array, (required), items=oneOf
+  - rules: array, (optional), items=object (AdminCreateShippingOptionRule)
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminShippingOptionResponse
+    Type: object
+    Description: The shipping option's details.
+    Properties:
+  - shipping_option: object (AdminShippingOption), (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminCreateShippingOption
+    Type: object
+    Description: The shipping option's details.
+    Properties:
+  - name: string, (required)
+  - service_zone_id: string, (required)
+  - shipping_profile_id: string, (required)
+  - data: object, (optional)
+  - price_type: string, (required), enum=['flat', 'calculated']
+  - provider_id: string, (required)
+  - type: object (AdminCreateShippingOptionType), (required)
+  - prices: array, (required), items=oneOf
+  - rules: array, (optional), items=object (AdminCreateShippingOptionRule)
+    Model: AdminShippingOptionResponse
+    Type: object
+    Description: The shipping option's details.
+    Properties:
+  - shipping_option: object (AdminShippingOption), (required)
+    Model: AdminCreateShippingOptionRule
+    Type: object
+    Description: The details of the shipping option rule.
+    Properties:
+  - operator: string, (required), enum=['gt', 'lt', 'eq', 'ne', 'in', 'lte', 'gte', 'nin']
+  - attribute: string, (required)
+  - value: oneOf, (required)
+    Model: AdminCreateShippingOptionType
+    Type: object
+    Description: The shipping option type's details.
+    Properties:
+  - label: string, (required)
+  - description: string, (required)
+  - code: string, (required)
+    Model: AdminShippingOption
+    Type: object
+    Description: The shipping option's details.
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - price_type: string, (required), enum=['calculated', 'flat']
+  - service_zone_id: string, (required)
+  - service_zone: object, (required)
+  - provider_id: string, (required)
+  - provider: object (AdminFulfillmentProvider), (required)
+  - shipping_option_type_id: string, (required)
+  - type: object (AdminShippingOptionType), (required)
+  - shipping_profile_id: string, (required)
+  - shipping_profile: object (AdminShippingProfile), (required)
+  - rules: array, (required), items=object (AdminShippingOptionRule)
+  - prices: array, (required), items=object (AdminShippingOptionPrice)
+  - data: object, (required)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+    Model: AdminFulfillmentProvider
+    Type: object
+    Description: The fulfillment provider's details.
+    Properties:
+  - id: string, (required)
+  - is_enabled: boolean, (required)
+    Model: AdminShippingOptionPrice
+    Type: object
+    Description: The details of the shipping option's price.
+    Properties:
+  - price_rules: array, (required), items=object (AdminShippingOptionPriceRule)
+  - rules_count: number, (required)
+  - id: string, (required)
+  - title: string, (required)
+  - currency_code: string, (required)
+  - amount: number, (required)
+  - raw_amount: object, (required)
+  - min_quantity: number, (required)
+  - max_quantity: number, (required)
+  - price_set_id: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+    Model: AdminShippingOptionRule
+    Type: object
+    Description: The shipping option rule's details.
+    Properties:
+  - id: string, (required)
+  - attribute: string, (required)
+  - operator: string, (required), enum=['gt', 'lt', 'eq', 'ne', 'in', 'lte', 'gte', 'nin']
+  - value: oneOf, (required)
+  - shipping_option_id: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+    Model: AdminShippingOptionType
+    Type: object
+    Description: The shipping option's details.
+    Properties:
+  - id: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+  - label: string, (required)
+  - description: string, (required)
+  - code: string, (required)
+  - shipping_option_id: string, (required)
+    Model: AdminShippingProfile
+    Type: object
+    Description: The shipping profile's details..
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - type: string, (required)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+    Model: AdminShippingOptionPriceRule
+    Type: object
+    Description: The details of a shipping option price's rule.
+    Properties:
+  - id: string, (required)
+  - value: oneOf, (required)
+  - operator: string, (required), enum=['gt', 'lt', 'eq', 'ne', 'in', 'lte', 'gte', 'nin']
+  - attribute: string, (required)
+  - price_id: string, (required)
+  - priority: number, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+
+Endpoint: DELETE /admin/shipping-options/{id}
+  OperationId: DeleteShippingOptionsId
+  Summary: Delete a Shipping Option
+  Security: api_token, cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminShippingOptionDeleteResponse
+    Type: object
+    Description: The details of the shipping option's deletion.
+    Properties:
+  - id: string, (required)
+  - object: string, (required)
+  - deleted: boolean, (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminShippingOptionDeleteResponse
+    Type: object
+    Description: The details of the shipping option's deletion.
+    Properties:
+  - id: string, (required)
+  - object: string, (required)
+  - deleted: boolean, (required)
+
+Endpoint: GET /admin/shipping-options/{id}
+  OperationId: GetShippingOptionsId
+  Summary: Get a Shipping Option
+  Security: api_token, cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Query Parameters:
+    - fields, in=query, type=string, optional
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminShippingOptionResponse
+    Type: object
+    Description: The shipping option's details.
+    Properties:
+  - shipping_option: object (AdminShippingOption), (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminShippingOptionResponse
+    Type: object
+    Description: The shipping option's details.
+    Properties:
+  - shipping_option: object (AdminShippingOption), (required)
+    Model: AdminShippingOption
+    Type: object
+    Description: The shipping option's details.
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - price_type: string, (required), enum=['calculated', 'flat']
+  - service_zone_id: string, (required)
+  - service_zone: object, (required)
+  - provider_id: string, (required)
+  - provider: object (AdminFulfillmentProvider), (required)
+  - shipping_option_type_id: string, (required)
+  - type: object (AdminShippingOptionType), (required)
+  - shipping_profile_id: string, (required)
+  - shipping_profile: object (AdminShippingProfile), (required)
+  - rules: array, (required), items=object (AdminShippingOptionRule)
+  - prices: array, (required), items=object (AdminShippingOptionPrice)
+  - data: object, (required)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+    Model: AdminFulfillmentProvider
+    Type: object
+    Description: The fulfillment provider's details.
+    Properties:
+  - id: string, (required)
+  - is_enabled: boolean, (required)
+    Model: AdminShippingOptionPrice
+    Type: object
+    Description: The details of the shipping option's price.
+    Properties:
+  - price_rules: array, (required), items=object (AdminShippingOptionPriceRule)
+  - rules_count: number, (required)
+  - id: string, (required)
+  - title: string, (required)
+  - currency_code: string, (required)
+  - amount: number, (required)
+  - raw_amount: object, (required)
+  - min_quantity: number, (required)
+  - max_quantity: number, (required)
+  - price_set_id: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+    Model: AdminShippingOptionRule
+    Type: object
+    Description: The shipping option rule's details.
+    Properties:
+  - id: string, (required)
+  - attribute: string, (required)
+  - operator: string, (required), enum=['gt', 'lt', 'eq', 'ne', 'in', 'lte', 'gte', 'nin']
+  - value: oneOf, (required)
+  - shipping_option_id: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+    Model: AdminShippingOptionType
+    Type: object
+    Description: The shipping option's details.
+    Properties:
+  - id: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+  - label: string, (required)
+  - description: string, (required)
+  - code: string, (required)
+  - shipping_option_id: string, (required)
+    Model: AdminShippingProfile
+    Type: object
+    Description: The shipping profile's details..
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - type: string, (required)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+    Model: AdminShippingOptionPriceRule
+    Type: object
+    Description: The details of a shipping option price's rule.
+    Properties:
+  - id: string, (required)
+  - value: oneOf, (required)
+  - operator: string, (required), enum=['gt', 'lt', 'eq', 'ne', 'in', 'lte', 'gte', 'nin']
+  - attribute: string, (required)
+  - price_id: string, (required)
+  - priority: number, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+
+Endpoint: POST /admin/shipping-options/{id}
+  OperationId: PostShippingOptionsId
+  Summary: Update a Shipping Option
+  Security: api_token, cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Query Parameters:
+    - fields, in=query, type=string, optional
+  Request Body:
+    Content-Type: application/json
+    Model: AdminUpdateShippingOption
+    Type: object
+    Description: The properties to update in the shipping option.
+    Properties:
+  - name: string, (optional)
+  - data: object, (optional)
+  - price_type: string, (optional), enum=['calculated', 'flat']
+  - provider_id: string, (optional)
+  - shipping_profile_id: string, (optional)
+  - type: object, (optional)
+  - prices: array, (optional), items=oneOf
+  - rules: array, (optional), items=oneOf
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminShippingOptionResponse
+    Type: object
+    Description: The shipping option's details.
+    Properties:
+  - shipping_option: object (AdminShippingOption), (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminShippingOptionResponse
+    Type: object
+    Description: The shipping option's details.
+    Properties:
+  - shipping_option: object (AdminShippingOption), (required)
+    Model: AdminUpdateShippingOption
+    Type: object
+    Description: The properties to update in the shipping option.
+    Properties:
+  - name: string, (optional)
+  - data: object, (optional)
+  - price_type: string, (optional), enum=['calculated', 'flat']
+  - provider_id: string, (optional)
+  - shipping_profile_id: string, (optional)
+  - type: object, (optional)
+  - prices: array, (optional), items=oneOf
+  - rules: array, (optional), items=oneOf
+    Model: AdminShippingOption
+    Type: object
+    Description: The shipping option's details.
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - price_type: string, (required), enum=['calculated', 'flat']
+  - service_zone_id: string, (required)
+  - service_zone: object, (required)
+  - provider_id: string, (required)
+  - provider: object (AdminFulfillmentProvider), (required)
+  - shipping_option_type_id: string, (required)
+  - type: object (AdminShippingOptionType), (required)
+  - shipping_profile_id: string, (required)
+  - shipping_profile: object (AdminShippingProfile), (required)
+  - rules: array, (required), items=object (AdminShippingOptionRule)
+  - prices: array, (required), items=object (AdminShippingOptionPrice)
+  - data: object, (required)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+    Model: AdminFulfillmentProvider
+    Type: object
+    Description: The fulfillment provider's details.
+    Properties:
+  - id: string, (required)
+  - is_enabled: boolean, (required)
+    Model: AdminShippingOptionPrice
+    Type: object
+    Description: The details of the shipping option's price.
+    Properties:
+  - price_rules: array, (required), items=object (AdminShippingOptionPriceRule)
+  - rules_count: number, (required)
+  - id: string, (required)
+  - title: string, (required)
+  - currency_code: string, (required)
+  - amount: number, (required)
+  - raw_amount: object, (required)
+  - min_quantity: number, (required)
+  - max_quantity: number, (required)
+  - price_set_id: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+    Model: AdminShippingOptionRule
+    Type: object
+    Description: The shipping option rule's details.
+    Properties:
+  - id: string, (required)
+  - attribute: string, (required)
+  - operator: string, (required), enum=['gt', 'lt', 'eq', 'ne', 'in', 'lte', 'gte', 'nin']
+  - value: oneOf, (required)
+  - shipping_option_id: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+    Model: AdminShippingOptionType
+    Type: object
+    Description: The shipping option's details.
+    Properties:
+  - id: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+  - label: string, (required)
+  - description: string, (required)
+  - code: string, (required)
+  - shipping_option_id: string, (required)
+    Model: AdminShippingProfile
+    Type: object
+    Description: The shipping profile's details..
+    Properties:
+  - id: string, (required)
+  - name: string, (required)
+  - type: string, (required)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+    Model: AdminShippingOptionPriceRule
+    Type: object
+    Description: The details of a shipping option price's rule.
+    Properties:
+  - id: string, (required)
+  - value: oneOf, (required)
+  - operator: string, (required), enum=['gt', 'lt', 'eq', 'ne', 'in', 'lte', 'gte', 'nin']
+  - attribute: string, (required)
+  - price_id: string, (required)
+  - priority: number, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+
+Endpoint: POST /admin/shipping-options/{id}/rules/batch
+  OperationId: PostShippingOptionsIdRulesBatch
+  Summary: Manage the Rules of a Shipping Option
+  Security: api_token, cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Query Parameters:
+    - fields, in=query, type=string, optional
+  Request Body:
+    Content-Type: application/json
+    Model: postshippingoptionsidrulesbatch_body
+    Type: object
+    Description: The rules to create, update, or delete.
+    Properties:
+  - create: array, (optional), items=object (AdminCreateShippingOptionRule)
+  - update: array, (optional), items=object (AdminUpdateShippingOptionRule)
+  - delete: array, (optional), items=string
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: postshippingoptionsidrulesbatch_body
+    Type: object
+    Description: The batch operation's result.
+    Properties:
+  - created: array, (required), items=object (AdminShippingOptionRule)
+  - updated: array, (required), items=object (AdminShippingOptionRule)
+  - deleted: object, (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminCreateShippingOptionRule
+    Type: object
+    Description: The details of the shipping option rule.
+    Properties:
+  - operator: string, (required), enum=['gt', 'lt', 'eq', 'ne', 'in', 'lte', 'gte', 'nin']
+  - attribute: string, (required)
+  - value: oneOf, (required)
+    Model: AdminShippingOptionRule
+    Type: object
+    Description: The shipping option rule's details.
+    Properties:
+  - id: string, (required)
+  - attribute: string, (required)
+  - operator: string, (required), enum=['gt', 'lt', 'eq', 'ne', 'in', 'lte', 'gte', 'nin']
+  - value: oneOf, (required)
+  - shipping_option_id: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+    Model: AdminUpdateShippingOptionRule
+    Type: object
+    Description: The properties to update in the shipping option rule.
+    Properties:
+  - id: string, (required)
+  - operator: string, (required), enum=['in', 'eq', 'ne', 'gt', 'gte', 'lt', 'lte', 'nin']
+  - attribute: string, (required)
+  - value: oneOf, (required)
+

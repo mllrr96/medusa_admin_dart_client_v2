@@ -1,0 +1,266 @@
+Feature Name: Auth
+
+Endpoint: DELETE /auth/session
+  OperationId: DeleteSession
+  Summary: Delete Authentication Session
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: deletesession_body
+    Type: object
+    Description: The deletion's details.
+    Properties:
+  - success: boolean, (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+
+Endpoint: POST /auth/session
+  OperationId: PostSession
+  Summary: Set Authentication Session
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AuthAdminSessionResponse
+    Type: object
+    Description: The authenticated user's details.
+    Properties:
+  - user: object (AdminUser), (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AuthAdminSessionResponse
+    Type: object
+    Description: The authenticated user's details.
+    Properties:
+  - user: object (AdminUser), (required)
+    Model: AdminUser
+    Type: object
+    Description: The user's details.
+    Properties:
+  - id: string, (required)
+  - email: string, (required), format=email
+  - first_name: string, (required)
+  - last_name: string, (required)
+  - avatar_url: string, (required)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+
+Endpoint: POST /auth/token/refresh
+  OperationId: PostAdminAuthTokenRefresh
+  Summary: Refresh Authentication Token
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AuthResponse
+    Type: object
+    Description: The authentication's details.
+    Properties:
+  - token: string, (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AuthResponse
+    Type: object
+    Description: The authentication's details.
+    Properties:
+  - token: string, (required)
+
+Endpoint: POST /auth/user/{auth_provider}
+  OperationId: PostActor_typeAuth_provider
+  Summary: Authenticate User
+  Path Parameters:
+    - auth_provider, in=path, type=string, required
+  Request Body:
+    Content-Type: application/json
+    Model: postactor_typeauth_provider_body
+    Type: object
+    Description: The input data necessary for authentication.  For example, for email-pass authentication, pass `email` and `password` properties.  For the Google and GitHub authentication providers, you can pass `callback_url` to indicate the URL in the frontend that the user should be redirected to after completing their authentication. This will override the provider's `callbackUrl` configurations in `medusa-config.ts`.
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: postactor_typeauth_provider_body
+    Type: oneOf
+    oneOf: 2 variant(s)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AuthCallbackResponse
+    Type: object
+    Description: The authentication's details.
+    Properties:
+  - location: string, (required)
+    Model: AuthResponse
+    Type: object
+    Description: The authentication's details.
+    Properties:
+  - token: string, (required)
+
+Endpoint: POST /auth/user/{auth_provider}/callback
+  OperationId: PostActor_typeAuth_providerCallback
+  Summary: Validate Authentication Callback
+  Path Parameters:
+    - auth_provider, in=path, type=string, required
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AuthResponse
+    Type: object
+    Description: The authentication's details.
+    Properties:
+  - token: string, (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AuthResponse
+    Type: object
+    Description: The authentication's details.
+    Properties:
+  - token: string, (required)
+
+Endpoint: POST /auth/user/{auth_provider}/register
+  OperationId: PostActor_typeAuth_provider_register
+  Summary: Retrieve Registration JWT Token
+  Path Parameters:
+    - auth_provider, in=path, type=string, required
+  Request Body:
+    Content-Type: application/json
+    Model: postactor_typeauth_provider_register_body
+    Type: object
+    Description: The input data necessary for authentication. For example, for email-pass authentication, pass `email` and `password` properties.
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AuthResponse
+    Type: object
+    Description: The authentication's details.
+    Properties:
+  - token: string, (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AuthResponse
+    Type: object
+    Description: The authentication's details.
+    Properties:
+  - token: string, (required)
+
+Endpoint: POST /auth/user/{auth_provider}/reset-password
+  OperationId: PostActor_typeAuth_providerResetPassword
+  Summary: Generate Reset Password Token for Admin User
+  Path Parameters:
+    - auth_provider, in=path, type=string, required
+  Request Body:
+    Content-Type: application/json
+    Model: postactor_typeauth_providerresetpassword_body
+    Type: object
+    Description: The user's identifier for the selected auth provider. For example, for the `emailpass` auth provider, the value is the user's email.
+  Responses:
+    - Status: 201 - OK
+      (no content)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+
+Endpoint: POST /auth/user/{auth_provider}/update
+  OperationId: PostActor_typeAuth_providerUpdate
+  Summary: Reset an Admin User's Password
+  Security: reset_password
+  Path Parameters:
+    - auth_provider, in=path, type=string, required
+  Request Body:
+    Content-Type: application/json
+    Model: postactor_typeauth_providerupdate_body
+    Type: object
+    Description: The input data necessary for authentication. For example, for email-pass authentication, pass `email` and `password` properties.
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: postactor_typeauth_providerupdate_body
+    Type: object
+    Description: Details on the reset password's status.
+    Properties:
+  - success: boolean, (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+

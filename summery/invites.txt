@@ -1,0 +1,285 @@
+Feature Name: Invites
+
+Endpoint: GET /admin/invites
+  OperationId: GetInvites
+  Summary: List Invites
+  Security: api_token, cookie_auth, jwt_token
+  Query Parameters:
+    - fields, in=query, type=string, optional
+    - offset, in=query, type=number, optional
+    - limit, in=query, type=number, optional
+    - order, in=query, type=string, optional
+    - q, in=query, type=string, optional
+    - id, in=query, type=oneOf, optional
+    - email, in=query, type=oneOf, optional
+    - created_at, in=query, type=object, optional
+    - updated_at, in=query, type=object, optional
+    - deleted_at, in=query, type=object, optional
+    - $and, in=query, type=array, optional
+    - $or, in=query, type=array, optional
+    - with_deleted, in=query, type=boolean, optional
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: getinvites_body
+    Type: object
+    Properties:
+  - limit: number, (required)
+  - offset: number, (required)
+  - count: number, (required)
+  - invites: array, (required), items=object (AdminInvite)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminInvite
+    Type: object
+    Description: The invite's details.
+    Properties:
+  - id: string, (required)
+  - email: string, (required), format=email
+  - accepted: boolean, (required)
+  - token: string, (required)
+  - expires_at: string, (required), format=date-time
+  - metadata: object, (optional)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+
+Endpoint: POST /admin/invites
+  OperationId: PostInvites
+  Summary: Create Invite
+  Security: api_token, cookie_auth, jwt_token
+  Query Parameters:
+    - fields, in=query, type=string, optional
+  Request Body:
+    Content-Type: application/json
+    Model: postinvites_body
+    Type: object
+    Description: The invite's details.
+    Properties:
+  - email: string, (required), format=email
+  - metadata: object, (optional)
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminInviteResponse
+    Type: object
+    Description: The invite's details.
+    Properties:
+  - invite: object (AdminInvite), (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminInviteResponse
+    Type: object
+    Description: The invite's details.
+    Properties:
+  - invite: object (AdminInvite), (required)
+    Model: AdminInvite
+    Type: object
+    Description: The invite's details.
+    Properties:
+  - id: string, (required)
+  - email: string, (required), format=email
+  - accepted: boolean, (required)
+  - token: string, (required)
+  - expires_at: string, (required), format=date-time
+  - metadata: object, (optional)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+
+Endpoint: POST /admin/invites/accept
+  OperationId: PostInvitesAccept
+  Summary: Accept Invite
+  Security: cookie_auth, jwt_token
+  Request Body:
+    Content-Type: application/json
+    Model: AdminInviteAccept
+    Type: object
+    Description: The details of the user to be created.
+    Properties:
+  - email: string, (optional), format=email
+  - first_name: string, (optional)
+  - last_name: string, (optional)
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: postinvitesaccept_body
+    Type: oneOf
+    oneOf: 2 variant(s)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminInviteAccept
+    Type: object
+    Description: The details of the user to be created.
+    Properties:
+  - email: string, (optional), format=email
+  - first_name: string, (optional)
+  - last_name: string, (optional)
+    Model: AdminUser
+    Type: object
+    Description: The user's details.
+    Properties:
+  - id: string, (required)
+  - email: string, (required), format=email
+  - first_name: string, (required)
+  - last_name: string, (required)
+  - avatar_url: string, (required)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+
+Endpoint: DELETE /admin/invites/{id}
+  OperationId: DeleteInvitesId
+  Summary: Delete Invite
+  Security: api_token, cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: deleteinvitesid_body
+    Type: object
+    Description: The deletion's details.
+    Properties:
+  - id: string, (required)
+  - object: string, (required)
+  - deleted: boolean, (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+
+Endpoint: GET /admin/invites/{id}
+  OperationId: GetInvitesId
+  Summary: Get an Invite
+  Security: api_token, cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Query Parameters:
+    - fields, in=query, type=string, optional
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminInviteResponse
+    Type: object
+    Description: The invite's details.
+    Properties:
+  - invite: object (AdminInvite), (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminInviteResponse
+    Type: object
+    Description: The invite's details.
+    Properties:
+  - invite: object (AdminInvite), (required)
+    Model: AdminInvite
+    Type: object
+    Description: The invite's details.
+    Properties:
+  - id: string, (required)
+  - email: string, (required), format=email
+  - accepted: boolean, (required)
+  - token: string, (required)
+  - expires_at: string, (required), format=date-time
+  - metadata: object, (optional)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+
+Endpoint: POST /admin/invites/{id}/resend
+  OperationId: PostInvitesIdResend
+  Summary: Refresh Invite Token
+  Security: api_token, cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Query Parameters:
+    - fields, in=query, type=string, optional
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminInviteResponse
+    Type: object
+    Description: The invite's details.
+    Properties:
+  - invite: object (AdminInvite), (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminInviteResponse
+    Type: object
+    Description: The invite's details.
+    Properties:
+  - invite: object (AdminInvite), (required)
+    Model: AdminInvite
+    Type: object
+    Description: The invite's details.
+    Properties:
+  - id: string, (required)
+  - email: string, (required), format=email
+  - accepted: boolean, (required)
+  - token: string, (required)
+  - expires_at: string, (required), format=date-time
+  - metadata: object, (optional)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+

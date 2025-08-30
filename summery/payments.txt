@@ -1,0 +1,609 @@
+Feature Name: Payments
+
+Endpoint: GET /admin/payments
+  OperationId: GetPayments
+  Summary: List Payments
+  Security: api_token, cookie_auth, jwt_token
+  Query Parameters:
+    - fields, in=query, type=string, optional
+    - offset, in=query, type=number, optional
+    - limit, in=query, type=number, optional
+    - order, in=query, type=string, optional
+    - q, in=query, type=string, optional
+    - id, in=query, type=oneOf, optional
+    - payment_session_id, in=query, type=oneOf, optional
+    - created_at, in=query, type=object, optional
+    - updated_at, in=query, type=object, optional
+    - deleted_at, in=query, type=object, optional
+    - $and, in=query, type=array, optional
+    - $or, in=query, type=array, optional
+    - with_deleted, in=query, type=boolean, optional
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: getpayments_body
+    Type: object
+    Properties:
+  - limit: number, (required)
+  - offset: number, (required)
+  - count: number, (required)
+  - payments: array, (required), items=object (AdminPayment)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminPayment
+    Type: object
+    Description: The payment's details.
+    Properties:
+  - id: string, (required)
+  - amount: number, (required)
+  - authorized_amount: number, (optional)
+  - currency_code: string, (required)
+  - provider_id: string, (required)
+  - data: object, (optional)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - captured_at: string, (optional), format=date-time
+  - canceled_at: string, (optional), format=date-time
+  - captured_amount: number, (optional)
+  - refunded_amount: number, (optional)
+  - captures: array, (optional), items=object (BaseCapture)
+  - refunds: array, (optional), items=object (AdminRefund)
+  - payment_collection: object, (optional)
+  - payment_session: object (AdminPaymentSession), (optional)
+    Model: AdminPaymentSession
+    Type: object
+    Description: The payment session's details.
+    Properties:
+  - id: string, (required)
+  - amount: number, (required)
+  - currency_code: string, (required)
+  - provider_id: string, (required)
+  - data: object, (required)
+  - context: object, (optional)
+  - status: string, (required), enum=['authorized', 'captured', 'canceled', 'pending', 'requires_more', 'error']
+  - authorized_at: string, (optional), format=date-time
+  - payment_collection: object, (optional)
+  - payment: object (BasePayment), (optional)
+    Model: AdminRefund
+    Type: object
+    Description: The refund's details.
+    Properties:
+  - id: string, (required)
+  - amount: number, (required)
+  - refund_reason_id: string, (optional)
+  - note: string, (optional)
+  - created_at: string, (required), format=date-time
+  - created_by: string, (optional)
+  - payment: object (BasePayment), (required)
+  - refund_reason: object (RefundReason), (optional)
+    Model: BaseCapture
+    Type: object
+    Description: The details of a captured payment.
+    Properties:
+  - id: string, (required)
+  - amount: number, (required)
+  - created_at: string, (required), format=date-time
+  - created_by: string, (optional)
+  - payment: object, (required)
+    Model: BasePayment
+    Type: object
+    Description: The payment's details.
+    Properties:
+  - id: string, (required)
+  - amount: number, (required)
+  - authorized_amount: number, (optional)
+  - currency_code: string, (required)
+  - provider_id: string, (required)
+  - data: object, (optional)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - captured_at: string, (optional), format=date-time
+  - canceled_at: string, (optional), format=date-time
+  - captured_amount: number, (optional)
+  - refunded_amount: number, (optional)
+  - captures: array, (optional), items=object (BaseCapture)
+  - refunds: array, (optional), items=object (BaseRefund)
+  - payment_collection: object, (optional)
+  - payment_session: object, (optional)
+    Model: RefundReason
+    Type: object
+    Description: The refund reason's details.
+    Properties:
+  - id: string, (required)
+  - label: string, (required)
+  - description: string, (optional)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+    Model: BaseRefund
+    Type: object
+    Description: The refund's details.
+    Properties:
+  - id: string, (required)
+  - amount: number, (required)
+  - refund_reason_id: string, (optional)
+  - note: string, (optional)
+  - created_at: string, (required), format=date-time
+  - created_by: string, (optional)
+  - payment: object, (required)
+  - refund_reason: object (RefundReason), (optional)
+
+Endpoint: GET /admin/payments/payment-providers
+  OperationId: GetPaymentsPaymentProviders
+  Summary: List Payment Providers
+  Security: api_token, cookie_auth, jwt_token
+  Query Parameters:
+    - fields, in=query, type=string, optional
+    - offset, in=query, type=number, optional
+    - limit, in=query, type=number, optional
+    - order, in=query, type=string, optional
+    - id, in=query, type=oneOf, required
+    - is_enabled, in=query, type=boolean, optional
+    - $and, in=query, type=array, optional
+    - $or, in=query, type=array, optional
+    - with_deleted, in=query, type=boolean, optional
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: getpaymentspaymentproviders_body
+    Type: object
+    Properties:
+  - limit: number, (required)
+  - offset: number, (required)
+  - count: number, (required)
+  - payment_providers: array, (required), items=object (AdminPaymentProvider)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminPaymentProvider
+    Type: object
+    Description: The payment provider's details.
+    Properties:
+  - id: string, (required)
+  - is_enabled: boolean, (required)
+
+Endpoint: GET /admin/payments/{id}
+  OperationId: GetPaymentsId
+  Summary: Get a Payment
+  Security: api_token, cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Query Parameters:
+    - fields, in=query, type=string, optional
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminPaymentResponse
+    Type: object
+    Description: The payment's details.
+    Properties:
+  - payment: object (AdminPayment), (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminPaymentResponse
+    Type: object
+    Description: The payment's details.
+    Properties:
+  - payment: object (AdminPayment), (required)
+    Model: AdminPayment
+    Type: object
+    Description: The payment's details.
+    Properties:
+  - id: string, (required)
+  - amount: number, (required)
+  - authorized_amount: number, (optional)
+  - currency_code: string, (required)
+  - provider_id: string, (required)
+  - data: object, (optional)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - captured_at: string, (optional), format=date-time
+  - canceled_at: string, (optional), format=date-time
+  - captured_amount: number, (optional)
+  - refunded_amount: number, (optional)
+  - captures: array, (optional), items=object (BaseCapture)
+  - refunds: array, (optional), items=object (AdminRefund)
+  - payment_collection: object, (optional)
+  - payment_session: object (AdminPaymentSession), (optional)
+    Model: AdminPaymentSession
+    Type: object
+    Description: The payment session's details.
+    Properties:
+  - id: string, (required)
+  - amount: number, (required)
+  - currency_code: string, (required)
+  - provider_id: string, (required)
+  - data: object, (required)
+  - context: object, (optional)
+  - status: string, (required), enum=['authorized', 'captured', 'canceled', 'pending', 'requires_more', 'error']
+  - authorized_at: string, (optional), format=date-time
+  - payment_collection: object, (optional)
+  - payment: object (BasePayment), (optional)
+    Model: AdminRefund
+    Type: object
+    Description: The refund's details.
+    Properties:
+  - id: string, (required)
+  - amount: number, (required)
+  - refund_reason_id: string, (optional)
+  - note: string, (optional)
+  - created_at: string, (required), format=date-time
+  - created_by: string, (optional)
+  - payment: object (BasePayment), (required)
+  - refund_reason: object (RefundReason), (optional)
+    Model: BaseCapture
+    Type: object
+    Description: The details of a captured payment.
+    Properties:
+  - id: string, (required)
+  - amount: number, (required)
+  - created_at: string, (required), format=date-time
+  - created_by: string, (optional)
+  - payment: object, (required)
+    Model: BasePayment
+    Type: object
+    Description: The payment's details.
+    Properties:
+  - id: string, (required)
+  - amount: number, (required)
+  - authorized_amount: number, (optional)
+  - currency_code: string, (required)
+  - provider_id: string, (required)
+  - data: object, (optional)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - captured_at: string, (optional), format=date-time
+  - canceled_at: string, (optional), format=date-time
+  - captured_amount: number, (optional)
+  - refunded_amount: number, (optional)
+  - captures: array, (optional), items=object (BaseCapture)
+  - refunds: array, (optional), items=object (BaseRefund)
+  - payment_collection: object, (optional)
+  - payment_session: object, (optional)
+    Model: RefundReason
+    Type: object
+    Description: The refund reason's details.
+    Properties:
+  - id: string, (required)
+  - label: string, (required)
+  - description: string, (optional)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+    Model: BaseRefund
+    Type: object
+    Description: The refund's details.
+    Properties:
+  - id: string, (required)
+  - amount: number, (required)
+  - refund_reason_id: string, (optional)
+  - note: string, (optional)
+  - created_at: string, (required), format=date-time
+  - created_by: string, (optional)
+  - payment: object, (required)
+  - refund_reason: object (RefundReason), (optional)
+
+Endpoint: POST /admin/payments/{id}/capture
+  OperationId: PostPaymentsIdCapture
+  Summary: Capture Payment
+  Security: api_token, cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Query Parameters:
+    - fields, in=query, type=string, optional
+  Request Body:
+    Content-Type: application/json
+    Model: AdminCreatePaymentCapture
+    Type: object
+    Description: The payment's details.
+    Properties:
+  - amount: number, (optional)
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminPaymentResponse
+    Type: object
+    Description: The payment's details.
+    Properties:
+  - payment: object (AdminPayment), (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminCreatePaymentCapture
+    Type: object
+    Description: The payment's details.
+    Properties:
+  - amount: number, (optional)
+    Model: AdminPaymentResponse
+    Type: object
+    Description: The payment's details.
+    Properties:
+  - payment: object (AdminPayment), (required)
+    Model: AdminPayment
+    Type: object
+    Description: The payment's details.
+    Properties:
+  - id: string, (required)
+  - amount: number, (required)
+  - authorized_amount: number, (optional)
+  - currency_code: string, (required)
+  - provider_id: string, (required)
+  - data: object, (optional)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - captured_at: string, (optional), format=date-time
+  - canceled_at: string, (optional), format=date-time
+  - captured_amount: number, (optional)
+  - refunded_amount: number, (optional)
+  - captures: array, (optional), items=object (BaseCapture)
+  - refunds: array, (optional), items=object (AdminRefund)
+  - payment_collection: object, (optional)
+  - payment_session: object (AdminPaymentSession), (optional)
+    Model: AdminPaymentSession
+    Type: object
+    Description: The payment session's details.
+    Properties:
+  - id: string, (required)
+  - amount: number, (required)
+  - currency_code: string, (required)
+  - provider_id: string, (required)
+  - data: object, (required)
+  - context: object, (optional)
+  - status: string, (required), enum=['authorized', 'captured', 'canceled', 'pending', 'requires_more', 'error']
+  - authorized_at: string, (optional), format=date-time
+  - payment_collection: object, (optional)
+  - payment: object (BasePayment), (optional)
+    Model: AdminRefund
+    Type: object
+    Description: The refund's details.
+    Properties:
+  - id: string, (required)
+  - amount: number, (required)
+  - refund_reason_id: string, (optional)
+  - note: string, (optional)
+  - created_at: string, (required), format=date-time
+  - created_by: string, (optional)
+  - payment: object (BasePayment), (required)
+  - refund_reason: object (RefundReason), (optional)
+    Model: BaseCapture
+    Type: object
+    Description: The details of a captured payment.
+    Properties:
+  - id: string, (required)
+  - amount: number, (required)
+  - created_at: string, (required), format=date-time
+  - created_by: string, (optional)
+  - payment: object, (required)
+    Model: BasePayment
+    Type: object
+    Description: The payment's details.
+    Properties:
+  - id: string, (required)
+  - amount: number, (required)
+  - authorized_amount: number, (optional)
+  - currency_code: string, (required)
+  - provider_id: string, (required)
+  - data: object, (optional)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - captured_at: string, (optional), format=date-time
+  - canceled_at: string, (optional), format=date-time
+  - captured_amount: number, (optional)
+  - refunded_amount: number, (optional)
+  - captures: array, (optional), items=object (BaseCapture)
+  - refunds: array, (optional), items=object (BaseRefund)
+  - payment_collection: object, (optional)
+  - payment_session: object, (optional)
+    Model: RefundReason
+    Type: object
+    Description: The refund reason's details.
+    Properties:
+  - id: string, (required)
+  - label: string, (required)
+  - description: string, (optional)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+    Model: BaseRefund
+    Type: object
+    Description: The refund's details.
+    Properties:
+  - id: string, (required)
+  - amount: number, (required)
+  - refund_reason_id: string, (optional)
+  - note: string, (optional)
+  - created_at: string, (required), format=date-time
+  - created_by: string, (optional)
+  - payment: object, (required)
+  - refund_reason: object (RefundReason), (optional)
+
+Endpoint: POST /admin/payments/{id}/refund
+  OperationId: PostPaymentsIdRefund
+  Summary: Refund Payment
+  Security: api_token, cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Query Parameters:
+    - fields, in=query, type=string, optional
+  Request Body:
+    Content-Type: application/json
+    Model: AdminCreatePaymentRefund
+    Type: object
+    Description: The refund's details.
+    Properties:
+  - amount: number, (optional)
+  - refund_reason_id: string, (optional)
+  - note: string, (optional)
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminPaymentResponse
+    Type: object
+    Description: The payment's details.
+    Properties:
+  - payment: object (AdminPayment), (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminCreatePaymentRefund
+    Type: object
+    Description: The refund's details.
+    Properties:
+  - amount: number, (optional)
+  - refund_reason_id: string, (optional)
+  - note: string, (optional)
+    Model: AdminPaymentResponse
+    Type: object
+    Description: The payment's details.
+    Properties:
+  - payment: object (AdminPayment), (required)
+    Model: AdminPayment
+    Type: object
+    Description: The payment's details.
+    Properties:
+  - id: string, (required)
+  - amount: number, (required)
+  - authorized_amount: number, (optional)
+  - currency_code: string, (required)
+  - provider_id: string, (required)
+  - data: object, (optional)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - captured_at: string, (optional), format=date-time
+  - canceled_at: string, (optional), format=date-time
+  - captured_amount: number, (optional)
+  - refunded_amount: number, (optional)
+  - captures: array, (optional), items=object (BaseCapture)
+  - refunds: array, (optional), items=object (AdminRefund)
+  - payment_collection: object, (optional)
+  - payment_session: object (AdminPaymentSession), (optional)
+    Model: AdminPaymentSession
+    Type: object
+    Description: The payment session's details.
+    Properties:
+  - id: string, (required)
+  - amount: number, (required)
+  - currency_code: string, (required)
+  - provider_id: string, (required)
+  - data: object, (required)
+  - context: object, (optional)
+  - status: string, (required), enum=['authorized', 'captured', 'canceled', 'pending', 'requires_more', 'error']
+  - authorized_at: string, (optional), format=date-time
+  - payment_collection: object, (optional)
+  - payment: object (BasePayment), (optional)
+    Model: AdminRefund
+    Type: object
+    Description: The refund's details.
+    Properties:
+  - id: string, (required)
+  - amount: number, (required)
+  - refund_reason_id: string, (optional)
+  - note: string, (optional)
+  - created_at: string, (required), format=date-time
+  - created_by: string, (optional)
+  - payment: object (BasePayment), (required)
+  - refund_reason: object (RefundReason), (optional)
+    Model: BaseCapture
+    Type: object
+    Description: The details of a captured payment.
+    Properties:
+  - id: string, (required)
+  - amount: number, (required)
+  - created_at: string, (required), format=date-time
+  - created_by: string, (optional)
+  - payment: object, (required)
+    Model: BasePayment
+    Type: object
+    Description: The payment's details.
+    Properties:
+  - id: string, (required)
+  - amount: number, (required)
+  - authorized_amount: number, (optional)
+  - currency_code: string, (required)
+  - provider_id: string, (required)
+  - data: object, (optional)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - captured_at: string, (optional), format=date-time
+  - canceled_at: string, (optional), format=date-time
+  - captured_amount: number, (optional)
+  - refunded_amount: number, (optional)
+  - captures: array, (optional), items=object (BaseCapture)
+  - refunds: array, (optional), items=object (BaseRefund)
+  - payment_collection: object, (optional)
+  - payment_session: object, (optional)
+    Model: RefundReason
+    Type: object
+    Description: The refund reason's details.
+    Properties:
+  - id: string, (required)
+  - label: string, (required)
+  - description: string, (optional)
+  - metadata: object, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+    Model: BaseRefund
+    Type: object
+    Description: The refund's details.
+    Properties:
+  - id: string, (required)
+  - amount: number, (required)
+  - refund_reason_id: string, (optional)
+  - note: string, (optional)
+  - created_at: string, (required), format=date-time
+  - created_by: string, (optional)
+  - payment: object, (required)
+  - refund_reason: object (RefundReason), (optional)
+

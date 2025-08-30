@@ -1,0 +1,518 @@
+Feature Name: Price Lists
+
+Endpoint: GET /admin/price-lists
+  OperationId: GetPriceLists
+  Summary: List Price Lists
+  Security: api_token, cookie_auth, jwt_token
+  Query Parameters:
+    - fields, in=query, type=string, optional
+    - offset, in=query, type=number, optional
+    - limit, in=query, type=number, optional
+    - order, in=query, type=string, optional
+    - q, in=query, type=string, optional
+    - id, in=query, type=oneOf, optional
+    - starts_at, in=query, type=object, optional
+    - ends_at, in=query, type=object, optional
+    - status, in=query, type=array, optional
+    - rules_count, in=query, type=array, optional
+    - $and, in=query, type=array, optional
+    - $or, in=query, type=array, optional
+    - with_deleted, in=query, type=boolean, optional
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminPriceListListResponse
+    Type: object
+    Description: The paginated list of price lists.
+    Properties:
+  - limit: number, (required)
+  - offset: number, (required)
+  - count: number, (required)
+  - price_lists: array, (required), items=object (AdminPriceList)
+  - estimate_count: number, (optional)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminPriceListListResponse
+    Type: object
+    Description: The paginated list of price lists.
+    Properties:
+  - limit: number, (required)
+  - offset: number, (required)
+  - count: number, (required)
+  - price_lists: array, (required), items=object (AdminPriceList)
+  - estimate_count: number, (optional)
+    Model: AdminPriceList
+    Type: object
+    Description: The price list's details.
+    Properties:
+  - id: string, (required)
+  - title: string, (required)
+  - description: string, (required)
+  - rules: object, (required)
+  - starts_at: string, (required)
+  - ends_at: string, (required)
+  - status: string, (required), enum=['draft', 'active']
+  - type: string, (required), enum=['sale', 'override']
+  - prices: array, (required), items=object (AdminPriceListPrice)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+    Model: AdminPriceListPrice
+    Type: object
+    Description: The details of a price list's price.
+    Properties:
+  - variant_id: string, (required)
+  - rules: object, (required)
+  - id: string, (required)
+  - title: string, (required)
+  - currency_code: string, (required)
+  - amount: number, (required)
+  - raw_amount: object, (required)
+  - min_quantity: number, (required)
+  - max_quantity: number, (required)
+  - price_set_id: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+
+Endpoint: POST /admin/price-lists
+  OperationId: PostPriceLists
+  Summary: Create Price List
+  Security: api_token, cookie_auth, jwt_token
+  Query Parameters:
+    - fields, in=query, type=string, optional
+  Request Body:
+    Content-Type: application/json
+    Model: AdminCreatePriceList
+    Type: object
+    Description: The price list's details.
+    Properties:
+  - title: string, (required)
+  - description: string, (required)
+  - starts_at: string, (optional), format=date-time
+  - ends_at: string, (optional), format=date-time
+  - status: string, (optional), enum=['active', 'draft']
+  - type: string, (optional), enum=['sale', 'override']
+  - rules: object, (optional)
+  - prices: array, (optional), items=object
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminPriceListResponse
+    Type: object
+    Description: The price list's details.
+    Properties:
+  - price_list: object (AdminPriceList), (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminCreatePriceList
+    Type: object
+    Description: The price list's details.
+    Properties:
+  - title: string, (required)
+  - description: string, (required)
+  - starts_at: string, (optional), format=date-time
+  - ends_at: string, (optional), format=date-time
+  - status: string, (optional), enum=['active', 'draft']
+  - type: string, (optional), enum=['sale', 'override']
+  - rules: object, (optional)
+  - prices: array, (optional), items=object
+    Model: AdminPriceListResponse
+    Type: object
+    Description: The price list's details.
+    Properties:
+  - price_list: object (AdminPriceList), (required)
+    Model: AdminPriceList
+    Type: object
+    Description: The price list's details.
+    Properties:
+  - id: string, (required)
+  - title: string, (required)
+  - description: string, (required)
+  - rules: object, (required)
+  - starts_at: string, (required)
+  - ends_at: string, (required)
+  - status: string, (required), enum=['draft', 'active']
+  - type: string, (required), enum=['sale', 'override']
+  - prices: array, (required), items=object (AdminPriceListPrice)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+    Model: AdminPriceListPrice
+    Type: object
+    Description: The details of a price list's price.
+    Properties:
+  - variant_id: string, (required)
+  - rules: object, (required)
+  - id: string, (required)
+  - title: string, (required)
+  - currency_code: string, (required)
+  - amount: number, (required)
+  - raw_amount: object, (required)
+  - min_quantity: number, (required)
+  - max_quantity: number, (required)
+  - price_set_id: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+
+Endpoint: DELETE /admin/price-lists/{id}
+  OperationId: DeletePriceListsId
+  Summary: Delete a Price List
+  Security: api_token, cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminPriceListDeleteResponse
+    Type: object
+    Description: The details of the deleted price list.
+    Properties:
+  - id: string, (required)
+  - object: string, (required)
+  - deleted: boolean, (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminPriceListDeleteResponse
+    Type: object
+    Description: The details of the deleted price list.
+    Properties:
+  - id: string, (required)
+  - object: string, (required)
+  - deleted: boolean, (required)
+
+Endpoint: GET /admin/price-lists/{id}
+  OperationId: GetPriceListsId
+  Summary: Get a Price List
+  Security: api_token, cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Query Parameters:
+    - fields, in=query, type=string, optional
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminPriceListResponse
+    Type: object
+    Description: The price list's details.
+    Properties:
+  - price_list: object (AdminPriceList), (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminPriceListResponse
+    Type: object
+    Description: The price list's details.
+    Properties:
+  - price_list: object (AdminPriceList), (required)
+    Model: AdminPriceList
+    Type: object
+    Description: The price list's details.
+    Properties:
+  - id: string, (required)
+  - title: string, (required)
+  - description: string, (required)
+  - rules: object, (required)
+  - starts_at: string, (required)
+  - ends_at: string, (required)
+  - status: string, (required), enum=['draft', 'active']
+  - type: string, (required), enum=['sale', 'override']
+  - prices: array, (required), items=object (AdminPriceListPrice)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+    Model: AdminPriceListPrice
+    Type: object
+    Description: The details of a price list's price.
+    Properties:
+  - variant_id: string, (required)
+  - rules: object, (required)
+  - id: string, (required)
+  - title: string, (required)
+  - currency_code: string, (required)
+  - amount: number, (required)
+  - raw_amount: object, (required)
+  - min_quantity: number, (required)
+  - max_quantity: number, (required)
+  - price_set_id: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+
+Endpoint: POST /admin/price-lists/{id}
+  OperationId: PostPriceListsId
+  Summary: Update a Price List
+  Security: api_token, cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Query Parameters:
+    - fields, in=query, type=string, optional
+  Request Body:
+    Content-Type: application/json
+    Model: AdminUpdatePriceList
+    Type: object
+    Description: the details to update in a price list.
+    Properties:
+  - title: string, (optional)
+  - description: string, (optional)
+  - starts_at: string, (optional)
+  - ends_at: string, (optional)
+  - status: string, (optional), enum=['active', 'draft']
+  - type: string, (optional), enum=['sale', 'override']
+  - rules: object, (optional)
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminPriceListResponse
+    Type: object
+    Description: The price list's details.
+    Properties:
+  - price_list: object (AdminPriceList), (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminPriceListResponse
+    Type: object
+    Description: The price list's details.
+    Properties:
+  - price_list: object (AdminPriceList), (required)
+    Model: AdminUpdatePriceList
+    Type: object
+    Description: the details to update in a price list.
+    Properties:
+  - title: string, (optional)
+  - description: string, (optional)
+  - starts_at: string, (optional)
+  - ends_at: string, (optional)
+  - status: string, (optional), enum=['active', 'draft']
+  - type: string, (optional), enum=['sale', 'override']
+  - rules: object, (optional)
+    Model: AdminPriceList
+    Type: object
+    Description: The price list's details.
+    Properties:
+  - id: string, (required)
+  - title: string, (required)
+  - description: string, (required)
+  - rules: object, (required)
+  - starts_at: string, (required)
+  - ends_at: string, (required)
+  - status: string, (required), enum=['draft', 'active']
+  - type: string, (required), enum=['sale', 'override']
+  - prices: array, (required), items=object (AdminPriceListPrice)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+    Model: AdminPriceListPrice
+    Type: object
+    Description: The details of a price list's price.
+    Properties:
+  - variant_id: string, (required)
+  - rules: object, (required)
+  - id: string, (required)
+  - title: string, (required)
+  - currency_code: string, (required)
+  - amount: number, (required)
+  - raw_amount: object, (required)
+  - min_quantity: number, (required)
+  - max_quantity: number, (required)
+  - price_set_id: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+
+Endpoint: POST /admin/price-lists/{id}/prices/batch
+  OperationId: PostPriceListsIdPricesBatch
+  Summary: Manage Prices in Price List
+  Security: api_token, cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Request Body:
+    Content-Type: application/json
+    Model: postpricelistsidpricesbatch_body
+    Type: object
+    Description: The prices to create, update, or delete.
+    Properties:
+  - create: array, (optional), items=object
+  - update: array, (optional), items=object
+  - delete: array, (optional), items=string
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminPriceListBatchResponse
+    Type: object
+    Description: The details of the created, updated, and deleted prices in a price list.
+    Properties:
+  - created: array, (required), items=object (AdminPrice)
+  - updated: array, (required), items=object (AdminPrice)
+  - deleted: object, (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminPriceListBatchResponse
+    Type: object
+    Description: The details of the created, updated, and deleted prices in a price list.
+    Properties:
+  - created: array, (required), items=object (AdminPrice)
+  - updated: array, (required), items=object (AdminPrice)
+  - deleted: object, (required)
+    Model: AdminPrice
+    Type: object
+    Description: The price's details.
+    Properties:
+  - id: string, (required)
+  - title: string, (required)
+  - currency_code: string, (required)
+  - amount: number, (required)
+  - raw_amount: object, (required)
+  - min_quantity: number, (required)
+  - max_quantity: number, (required)
+  - price_set_id: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+
+Endpoint: POST /admin/price-lists/{id}/products
+  OperationId: PostPriceListsIdProducts
+  Summary: Remove Products from Price List
+  Security: api_token, cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Query Parameters:
+    - fields, in=query, type=string, optional
+  Request Body:
+    Content-Type: application/json
+    Model: AdminLinkPriceListProducts
+    Type: object
+    Description: The products removal details.
+    Properties:
+  - remove: array, (optional), items=string
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminPriceListResponse
+    Type: object
+    Description: The price list's details.
+    Properties:
+  - price_list: object (AdminPriceList), (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminLinkPriceListProducts
+    Type: object
+    Description: The products removal details.
+    Properties:
+  - remove: array, (optional), items=string
+    Model: AdminPriceListResponse
+    Type: object
+    Description: The price list's details.
+    Properties:
+  - price_list: object (AdminPriceList), (required)
+    Model: AdminPriceList
+    Type: object
+    Description: The price list's details.
+    Properties:
+  - id: string, (required)
+  - title: string, (required)
+  - description: string, (required)
+  - rules: object, (required)
+  - starts_at: string, (required)
+  - ends_at: string, (required)
+  - status: string, (required), enum=['draft', 'active']
+  - type: string, (required), enum=['sale', 'override']
+  - prices: array, (required), items=object (AdminPriceListPrice)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+    Model: AdminPriceListPrice
+    Type: object
+    Description: The details of a price list's price.
+    Properties:
+  - variant_id: string, (required)
+  - rules: object, (required)
+  - id: string, (required)
+  - title: string, (required)
+  - currency_code: string, (required)
+  - amount: number, (required)
+  - raw_amount: object, (required)
+  - min_quantity: number, (required)
+  - max_quantity: number, (required)
+  - price_set_id: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+

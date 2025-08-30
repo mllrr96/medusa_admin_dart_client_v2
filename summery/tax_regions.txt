@@ -1,0 +1,275 @@
+Feature Name: Tax Regions
+
+Endpoint: GET /admin/tax-regions
+  OperationId: GetTaxRegions
+  Summary: List Tax Regions
+  Security: api_token, cookie_auth, jwt_token
+  Query Parameters:
+    - fields, in=query, type=string, optional
+    - offset, in=query, type=number, optional
+    - limit, in=query, type=number, optional
+    - order, in=query, type=string, optional
+    - q, in=query, type=string, optional
+    - id, in=query, type=oneOf, optional
+    - country_code, in=query, type=oneOf, optional
+    - province_code, in=query, type=oneOf, optional
+    - parent_id, in=query, type=oneOf, optional
+    - created_by, in=query, type=oneOf, optional
+    - created_at, in=query, type=oneOf, optional
+    - updated_at, in=query, type=oneOf, optional
+    - deleted_at, in=query, type=oneOf, optional
+    - $and, in=query, type=array, optional
+    - $or, in=query, type=array, optional
+    - with_deleted, in=query, type=boolean, optional
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: gettaxregions_body
+    Type: object
+    Properties:
+  - limit: number, (required)
+  - offset: number, (required)
+  - count: number, (required)
+  - tax_regions: array, (required), items=object
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+
+Endpoint: POST /admin/tax-regions
+  OperationId: PostTaxRegions
+  Summary: Create Tax Region
+  Security: api_token, cookie_auth, jwt_token
+  Query Parameters:
+    - fields, in=query, type=string, optional
+  Request Body:
+    Content-Type: application/json
+    Model: AdminCreateTaxRegion
+    Type: object
+    Description: The tax region's details.
+    Properties:
+  - country_code: string, (required)
+  - province_code: string, (optional)
+  - parent_id: string, (optional)
+  - default_tax_rate: object, (optional)
+  - metadata: object, (optional)
+  - provider_id: string, (optional)
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminTaxRegionResponse
+    Type: object
+    Description: The tax region's details.
+    Properties:
+  - tax_region: object (AdminTaxRegion), (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminCreateTaxRegion
+    Type: object
+    Description: The tax region's details.
+    Properties:
+  - country_code: string, (required)
+  - province_code: string, (optional)
+  - parent_id: string, (optional)
+  - default_tax_rate: object, (optional)
+  - metadata: object, (optional)
+  - provider_id: string, (optional)
+    Model: AdminTaxRegionResponse
+    Type: object
+    Description: The tax region's details.
+    Properties:
+  - tax_region: object (AdminTaxRegion), (required)
+    Model: AdminTaxRegion
+    Type: object
+    Description: The tax region's details.
+    Properties:
+  - id: string, (required)
+  - country_code: string, (required)
+  - province_code: string, (required)
+  - metadata: object, (required)
+  - parent_id: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+  - created_by: string, (required)
+  - tax_rates: array, (required), items=object
+  - parent: object, (required)
+  - children: array, (required), items=object
+
+Endpoint: DELETE /admin/tax-regions/{id}
+  OperationId: DeleteTaxRegionsId
+  Summary: Delete a Tax Region
+  Security: api_token, cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminTaxRegionDeleteResponse
+    Type: object
+    Description: The details of the tax region deletion.
+    Properties:
+  - id: string, (required)
+  - object: string, (required)
+  - deleted: boolean, (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminTaxRegionDeleteResponse
+    Type: object
+    Description: The details of the tax region deletion.
+    Properties:
+  - id: string, (required)
+  - object: string, (required)
+  - deleted: boolean, (required)
+
+Endpoint: GET /admin/tax-regions/{id}
+  OperationId: GetTaxRegionsId
+  Summary: Get a Tax Region
+  Security: api_token, cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Query Parameters:
+    - fields, in=query, type=string, optional
+    - province_code, in=query, type=string, optional
+    - provider_id, in=query, type=string, optional
+    - metadata, in=query, type=object, optional
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminTaxRegionResponse
+    Type: object
+    Description: The tax region's details.
+    Properties:
+  - tax_region: object (AdminTaxRegion), (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminTaxRegionResponse
+    Type: object
+    Description: The tax region's details.
+    Properties:
+  - tax_region: object (AdminTaxRegion), (required)
+    Model: AdminTaxRegion
+    Type: object
+    Description: The tax region's details.
+    Properties:
+  - id: string, (required)
+  - country_code: string, (required)
+  - province_code: string, (required)
+  - metadata: object, (required)
+  - parent_id: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+  - created_by: string, (required)
+  - tax_rates: array, (required), items=object
+  - parent: object, (required)
+  - children: array, (required), items=object
+
+Endpoint: POST /admin/tax-regions/{id}
+  OperationId: PostTaxRegionsId
+  Summary: Update a Tax Region
+  Security: api_token, cookie_auth, jwt_token
+  Path Parameters:
+    - id, in=path, type=string, required
+  Query Parameters:
+    - fields, in=query, type=string, optional
+  Request Body:
+    Content-Type: application/json
+    Model: AdminUpdateTaxRegion
+    Type: object
+    Description: The details to update in a tax region.
+    Properties:
+  - province_code: string, (optional)
+  - metadata: object, (optional)
+  - provider_id: string, (optional)
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: AdminTaxRegionResponse
+    Type: object
+    Description: The tax region's details.
+    Properties:
+  - tax_region: object (AdminTaxRegion), (required)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminTaxRegionResponse
+    Type: object
+    Description: The tax region's details.
+    Properties:
+  - tax_region: object (AdminTaxRegion), (required)
+    Model: AdminUpdateTaxRegion
+    Type: object
+    Description: The details to update in a tax region.
+    Properties:
+  - province_code: string, (optional)
+  - metadata: object, (optional)
+  - provider_id: string, (optional)
+    Model: AdminTaxRegion
+    Type: object
+    Description: The tax region's details.
+    Properties:
+  - id: string, (required)
+  - country_code: string, (required)
+  - province_code: string, (required)
+  - metadata: object, (required)
+  - parent_id: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+  - created_by: string, (required)
+  - tax_rates: array, (required), items=object
+  - parent: object, (required)
+  - children: array, (required), items=object
+

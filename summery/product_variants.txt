@@ -1,0 +1,183 @@
+Feature Name: Product Variants
+
+Endpoint: GET /admin/product-variants
+  OperationId: GetProductVariants
+  Summary: List Product Variants
+  Security: api_token, cookie_auth, jwt_token
+  Query Parameters:
+    - fields, in=query, type=string, optional
+    - offset, in=query, type=number, optional
+    - limit, in=query, type=number, optional
+    - order, in=query, type=string, optional
+    - q, in=query, type=string, optional
+    - id, in=query, type=oneOf, optional
+    - manage_inventory, in=query, type=boolean, optional
+    - allow_backorder, in=query, type=boolean, optional
+    - created_at, in=query, type=object, optional
+    - updated_at, in=query, type=object, optional
+    - deleted_at, in=query, type=object, optional
+    - $and, in=query, type=array, optional
+    - $or, in=query, type=array, optional
+    - with_deleted, in=query, type=boolean, optional
+    - ean, in=query, type=oneOf, optional
+    - upc, in=query, type=oneOf, optional
+    - barcode, in=query, type=oneOf, optional
+  Responses:
+    - Status: 200 - OK
+      Content-Type: application/json
+    Model: getproductvariants_body
+    Type: object
+    Properties:
+  - limit: number, (required)
+  - offset: number, (required)
+  - count: number, (required)
+  - variants: array, (required), items=object (AdminProductVariant)
+    - Status: 400
+      (no content)
+    - Status: 401
+      (no content)
+    - Status: 404
+      (no content)
+    - Status: 409
+      (no content)
+    - Status: 422
+      (no content)
+    - Status: 500
+      (no content)
+  Referenced Models:
+    Model: AdminProductVariant
+    Type: object
+    Description: The product variant's details.
+    Properties:
+  - prices: array, (required), items=object (AdminPrice)
+  - id: string, (required)
+  - title: string, (required)
+  - sku: string, (required)
+  - barcode: string, (required)
+  - ean: string, (required)
+  - upc: string, (required)
+  - allow_backorder: boolean, (required)
+  - manage_inventory: boolean, (required)
+  - inventory_quantity: number, (optional)
+  - hs_code: string, (required)
+  - origin_country: string, (required)
+  - mid_code: string, (required)
+  - material: string, (required)
+  - weight: number, (required)
+  - length: number, (required)
+  - height: number, (required)
+  - width: number, (required)
+  - variant_rank: number, (optional)
+  - options: array, (required), items=object (AdminProductOptionValue)
+  - product: object, (optional)
+  - product_id: string, (optional)
+  - calculated_price: object (BaseCalculatedPriceSet), (optional)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+  - metadata: object, (optional)
+  - inventory_items: array, (optional), items=object (AdminProductVariantInventoryItemLink)
+    Model: AdminPrice
+    Type: object
+    Description: The price's details.
+    Properties:
+  - id: string, (required)
+  - title: string, (required)
+  - currency_code: string, (required)
+  - amount: number, (required)
+  - raw_amount: object, (required)
+  - min_quantity: number, (required)
+  - max_quantity: number, (required)
+  - price_set_id: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+    Model: AdminProductOptionValue
+    Type: object
+    Description: The product option value's details.
+    Properties:
+  - id: string, (required)
+  - value: string, (required)
+  - option: object (AdminProductOption), (optional)
+  - option_id: string, (optional)
+  - metadata: object, (optional)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - deleted_at: string, (optional), format=date-time
+    Model: AdminProductVariantInventoryItemLink
+    Type: object
+    Description: An association between a product variant and an inventory item.
+    Properties:
+  - id: string, (required)
+  - variant_id: string, (required)
+  - variant: object, (optional)
+  - inventory_item_id: string, (required)
+  - inventory: object (AdminInventoryItem), (optional)
+    Model: BaseCalculatedPriceSet
+    Type: object
+    Description: The calculated price's details.
+    Properties:
+  - id: string, (required)
+  - is_calculated_price_price_list: boolean, (optional)
+  - is_calculated_price_tax_inclusive: boolean, (optional)
+  - calculated_amount: number, (required)
+  - calculated_amount_with_tax: number, (optional)
+  - calculated_amount_without_tax: number, (optional)
+  - is_original_price_price_list: boolean, (optional)
+  - is_original_price_tax_inclusive: boolean, (optional)
+  - original_amount: number, (required)
+  - currency_code: string, (required)
+  - calculated_price: object, (optional)
+  - original_price: object, (optional)
+  - original_amount_with_tax: number, (required)
+  - original_amount_without_tax: number, (required)
+    Model: AdminProductOption
+    Type: object
+    Description: The product option's details.
+    Properties:
+  - id: string, (required)
+  - title: string, (required)
+  - product: object, (optional)
+  - product_id: string, (optional)
+  - values: array, (optional), items=object
+  - metadata: object, (optional)
+  - created_at: string, (optional), format=date-time
+  - updated_at: string, (optional), format=date-time
+  - deleted_at: string, (optional), format=date-time
+    Model: AdminInventoryItem
+    Type: object
+    Description: The inventory item's details.
+    Properties:
+  - id: string, (required)
+  - sku: string, (optional)
+  - origin_country: string, (optional)
+  - hs_code: string, (optional)
+  - requires_shipping: boolean, (required)
+  - mid_code: string, (optional)
+  - material: string, (optional)
+  - weight: number, (optional)
+  - length: number, (optional)
+  - height: number, (optional)
+  - width: number, (optional)
+  - title: string, (optional)
+  - description: string, (optional)
+  - thumbnail: string, (optional)
+  - metadata: object, (optional)
+  - location_levels: array, (optional), items=object (AdminInventoryLevel)
+    Model: AdminInventoryLevel
+    Type: object
+    Description: The location level's location levels.
+    Properties:
+  - id: string, (required)
+  - created_at: string, (required), format=date-time
+  - updated_at: string, (required), format=date-time
+  - deleted_at: string, (required), format=date-time
+  - inventory_item_id: string, (required)
+  - location_id: string, (required)
+  - stocked_quantity: number, (required)
+  - reserved_quantity: number, (required)
+  - incoming_quantity: number, (required)
+  - metadata: object, (required)
+  - inventory_item: object, (optional)
+  - available_quantity: number, (required)
+
