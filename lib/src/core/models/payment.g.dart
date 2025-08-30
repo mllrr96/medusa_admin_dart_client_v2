@@ -9,53 +9,53 @@ part of 'payment.dart';
 _Payment _$PaymentFromJson(Map<String, dynamic> json) => _Payment(
   id: json['id'] as String,
   status: json['status'] as String,
-  cartId: json['cartId'] as String,
+  cartId: json['cart_id'] as String,
   cart: json['cart'] == null
       ? null
       : Cart.fromJson(json['cart'] as Map<String, dynamic>),
-  orderId: json['orderId'] as String,
+  orderId: json['order_id'] as String,
   order: json['order'] == null
       ? null
       : Order.fromJson(json['order'] as Map<String, dynamic>),
-  currencyCode: json['currencyCode'] as String,
+  currencyCode: json['currency_code'] as String,
   amount: (json['amount'] as num).toInt(),
-  providerId: json['providerId'] as String,
-  paymentProvider: json['paymentProvider'] == null
+  providerId: json['provider_id'] as String,
+  paymentProvider: json['payment_provider'] == null
       ? null
       : PaymentProvider.fromJson(
-          json['paymentProvider'] as Map<String, dynamic>,
+          json['payment_provider'] as Map<String, dynamic>,
         ),
   data: json['data'] as Map<String, dynamic>?,
-  capturedAt: json['capturedAt'] == null
+  capturedAt: json['captured_at'] == null
       ? null
-      : DateTime.parse(json['capturedAt'] as String),
-  createdAt: json['createdAt'] == null
+      : DateTime.parse(json['captured_at'] as String),
+  createdAt: json['created_at'] == null
       ? null
-      : DateTime.parse(json['createdAt'] as String),
-  updatedAt: json['updatedAt'] == null
+      : DateTime.parse(json['created_at'] as String),
+  updatedAt: json['updated_at'] == null
       ? null
-      : DateTime.parse(json['updatedAt'] as String),
-  deletedAt: json['deletedAt'] == null
+      : DateTime.parse(json['updated_at'] as String),
+  deletedAt: json['deleted_at'] == null
       ? null
-      : DateTime.parse(json['deletedAt'] as String),
+      : DateTime.parse(json['deleted_at'] as String),
   metadata: json['metadata'] as Map<String, dynamic>?,
 );
 
 Map<String, dynamic> _$PaymentToJson(_Payment instance) => <String, dynamic>{
   'id': instance.id,
   'status': instance.status,
-  'cartId': instance.cartId,
+  'cart_id': instance.cartId,
   'cart': instance.cart,
-  'orderId': instance.orderId,
+  'order_id': instance.orderId,
   'order': instance.order,
-  'currencyCode': instance.currencyCode,
+  'currency_code': instance.currencyCode,
   'amount': instance.amount,
-  'providerId': instance.providerId,
-  'paymentProvider': instance.paymentProvider,
+  'provider_id': instance.providerId,
+  'payment_provider': instance.paymentProvider,
   'data': instance.data,
-  'capturedAt': instance.capturedAt?.toIso8601String(),
-  'createdAt': instance.createdAt?.toIso8601String(),
-  'updatedAt': instance.updatedAt?.toIso8601String(),
-  'deletedAt': instance.deletedAt?.toIso8601String(),
+  'captured_at': instance.capturedAt?.toIso8601String(),
+  'created_at': instance.createdAt?.toIso8601String(),
+  'updated_at': instance.updatedAt?.toIso8601String(),
+  'deleted_at': instance.deletedAt?.toIso8601String(),
   'metadata': instance.metadata,
 };

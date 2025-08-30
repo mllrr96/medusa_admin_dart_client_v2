@@ -10,16 +10,16 @@ _Requirement _$RequirementFromJson(Map<String, dynamic> json) => _Requirement(
   id: json['id'] as String,
   type: json['type'] as String,
   value: json['value'] as String,
-  shippingOptionId: json['shippingOptionId'] as String,
-  createdAt: json['createdAt'] == null
+  shippingOptionId: json['shipping_option_id'] as String,
+  createdAt: json['created_at'] == null
       ? null
-      : DateTime.parse(json['createdAt'] as String),
-  updatedAt: json['updatedAt'] == null
+      : DateTime.parse(json['created_at'] as String),
+  updatedAt: json['updated_at'] == null
       ? null
-      : DateTime.parse(json['updatedAt'] as String),
-  deletedAt: json['deletedAt'] == null
+      : DateTime.parse(json['updated_at'] as String),
+  deletedAt: json['deleted_at'] == null
       ? null
-      : DateTime.parse(json['deletedAt'] as String),
+      : DateTime.parse(json['deleted_at'] as String),
   metadata: json['metadata'] as Map<String, dynamic>?,
 );
 
@@ -28,9 +28,9 @@ Map<String, dynamic> _$RequirementToJson(_Requirement instance) =>
       'id': instance.id,
       'type': instance.type,
       'value': instance.value,
-      'shippingOptionId': instance.shippingOptionId,
-      'createdAt': instance.createdAt?.toIso8601String(),
-      'updatedAt': instance.updatedAt?.toIso8601String(),
-      'deletedAt': instance.deletedAt?.toIso8601String(),
+      'shipping_option_id': instance.shippingOptionId,
+      'created_at': instance.createdAt?.toIso8601String(),
+      'updated_at': instance.updatedAt?.toIso8601String(),
+      'deleted_at': instance.deletedAt?.toIso8601String(),
       'metadata': instance.metadata,
     };

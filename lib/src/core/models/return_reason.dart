@@ -11,12 +11,12 @@ abstract class ReturnReason with _$ReturnReason {
     required String label,
     String? description,
     @JsonKey(name: 'parent_return_reason_id') String? parentReturnReasonId,
-    ReturnReason? parentReturnReason,
+    @JsonKey(name: 'parent_return_reason') ReturnReason? parentReturnReason,
     @JsonKey(name: 'return_reason_children')
     List<ReturnReason>? returnReasonChildren,
-    DateTime? createdAt,
-    DateTime? updatedAt,
-    DateTime? deletedAt,
+    @JsonKey(name: 'created_at') DateTime? createdAt,
+    @JsonKey(name: 'updated_at') DateTime? updatedAt,
+    @JsonKey(name: 'deleted_at') DateTime? deletedAt,
     Map<String, dynamic>? metadata,
   }) = _ReturnReason;
 

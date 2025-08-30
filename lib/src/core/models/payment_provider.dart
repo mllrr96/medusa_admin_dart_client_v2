@@ -7,7 +7,7 @@ part 'payment_provider.g.dart';
 abstract class PaymentProvider with _$PaymentProvider {
   const factory PaymentProvider({
     required String id,
-    required bool isEnabled,
+    @JsonKey(name: 'is_enabled') required bool isEnabled,
   }) = _PaymentProvider;
 
   factory PaymentProvider.fromJson(Map<String, dynamic> json) =>

@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$LineItem {
 
- String get id; String get title; String get description; String get thumbnail; bool get isGiftcard; int get quantity; int get unitPrice;@JsonKey(name: 'variant_id') String? get variantId; ProductVariant? get variant;@JsonKey(name: 'product_id') String? get productId; Product? get product;@JsonKey(name: 'order_id') String? get orderId; Order? get order;@JsonKey(name: 'cart_id') String? get cartId; Cart? get cart;@JsonKey(name: 'original_item_id') String? get originalItemId;@JsonKey(name: 'tax_lines') List<TaxLine>? get taxLines;@JsonKey(name: 'adjustments') List<Adjustment>? get adjustments;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt; Map<String, dynamic>? get metadata;
+ String get id; String get title; String get description; String get thumbnail;@JsonKey(name: 'is_giftcard') bool get isGiftcard; int get quantity;@JsonKey(name: 'unit_price') int get unitPrice;@JsonKey(name: 'variant_id') String? get variantId; ProductVariant? get variant;@JsonKey(name: 'product_id') String? get productId; Product? get product;@JsonKey(name: 'order_id') String? get orderId; Order? get order;@JsonKey(name: 'cart_id') String? get cartId; Cart? get cart;@JsonKey(name: 'original_item_id') String? get originalItemId;@JsonKey(name: 'tax_lines') List<TaxLine>? get taxLines;@JsonKey(name: 'adjustments') List<Adjustment>? get adjustments;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt; Map<String, dynamic>? get metadata;
 /// Create a copy of LineItem
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $LineItemCopyWith<$Res>  {
   factory $LineItemCopyWith(LineItem value, $Res Function(LineItem) _then) = _$LineItemCopyWithImpl;
 @useResult
 $Res call({
- String id, String title, String description, String thumbnail, bool isGiftcard, int quantity, int unitPrice,@JsonKey(name: 'variant_id') String? variantId, ProductVariant? variant,@JsonKey(name: 'product_id') String? productId, Product? product,@JsonKey(name: 'order_id') String? orderId, Order? order,@JsonKey(name: 'cart_id') String? cartId, Cart? cart,@JsonKey(name: 'original_item_id') String? originalItemId,@JsonKey(name: 'tax_lines') List<TaxLine>? taxLines,@JsonKey(name: 'adjustments') List<Adjustment>? adjustments,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
+ String id, String title, String description, String thumbnail,@JsonKey(name: 'is_giftcard') bool isGiftcard, int quantity,@JsonKey(name: 'unit_price') int unitPrice,@JsonKey(name: 'variant_id') String? variantId, ProductVariant? variant,@JsonKey(name: 'product_id') String? productId, Product? product,@JsonKey(name: 'order_id') String? orderId, Order? order,@JsonKey(name: 'cart_id') String? cartId, Cart? cart,@JsonKey(name: 'original_item_id') String? originalItemId,@JsonKey(name: 'tax_lines') List<TaxLine>? taxLines,@JsonKey(name: 'adjustments') List<Adjustment>? adjustments,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
 });
 
 
@@ -222,7 +222,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String title,  String description,  String thumbnail,  bool isGiftcard,  int quantity,  int unitPrice, @JsonKey(name: 'variant_id')  String? variantId,  ProductVariant? variant, @JsonKey(name: 'product_id')  String? productId,  Product? product, @JsonKey(name: 'order_id')  String? orderId,  Order? order, @JsonKey(name: 'cart_id')  String? cartId,  Cart? cart, @JsonKey(name: 'original_item_id')  String? originalItemId, @JsonKey(name: 'tax_lines')  List<TaxLine>? taxLines, @JsonKey(name: 'adjustments')  List<Adjustment>? adjustments, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String title,  String description,  String thumbnail, @JsonKey(name: 'is_giftcard')  bool isGiftcard,  int quantity, @JsonKey(name: 'unit_price')  int unitPrice, @JsonKey(name: 'variant_id')  String? variantId,  ProductVariant? variant, @JsonKey(name: 'product_id')  String? productId,  Product? product, @JsonKey(name: 'order_id')  String? orderId,  Order? order, @JsonKey(name: 'cart_id')  String? cartId,  Cart? cart, @JsonKey(name: 'original_item_id')  String? originalItemId, @JsonKey(name: 'tax_lines')  List<TaxLine>? taxLines, @JsonKey(name: 'adjustments')  List<Adjustment>? adjustments, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _LineItem() when $default != null:
 return $default(_that.id,_that.title,_that.description,_that.thumbnail,_that.isGiftcard,_that.quantity,_that.unitPrice,_that.variantId,_that.variant,_that.productId,_that.product,_that.orderId,_that.order,_that.cartId,_that.cart,_that.originalItemId,_that.taxLines,_that.adjustments,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -243,7 +243,7 @@ return $default(_that.id,_that.title,_that.description,_that.thumbnail,_that.isG
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String title,  String description,  String thumbnail,  bool isGiftcard,  int quantity,  int unitPrice, @JsonKey(name: 'variant_id')  String? variantId,  ProductVariant? variant, @JsonKey(name: 'product_id')  String? productId,  Product? product, @JsonKey(name: 'order_id')  String? orderId,  Order? order, @JsonKey(name: 'cart_id')  String? cartId,  Cart? cart, @JsonKey(name: 'original_item_id')  String? originalItemId, @JsonKey(name: 'tax_lines')  List<TaxLine>? taxLines, @JsonKey(name: 'adjustments')  List<Adjustment>? adjustments, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String title,  String description,  String thumbnail, @JsonKey(name: 'is_giftcard')  bool isGiftcard,  int quantity, @JsonKey(name: 'unit_price')  int unitPrice, @JsonKey(name: 'variant_id')  String? variantId,  ProductVariant? variant, @JsonKey(name: 'product_id')  String? productId,  Product? product, @JsonKey(name: 'order_id')  String? orderId,  Order? order, @JsonKey(name: 'cart_id')  String? cartId,  Cart? cart, @JsonKey(name: 'original_item_id')  String? originalItemId, @JsonKey(name: 'tax_lines')  List<TaxLine>? taxLines, @JsonKey(name: 'adjustments')  List<Adjustment>? adjustments, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
 switch (_that) {
 case _LineItem():
 return $default(_that.id,_that.title,_that.description,_that.thumbnail,_that.isGiftcard,_that.quantity,_that.unitPrice,_that.variantId,_that.variant,_that.productId,_that.product,_that.orderId,_that.order,_that.cartId,_that.cart,_that.originalItemId,_that.taxLines,_that.adjustments,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -263,7 +263,7 @@ return $default(_that.id,_that.title,_that.description,_that.thumbnail,_that.isG
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String title,  String description,  String thumbnail,  bool isGiftcard,  int quantity,  int unitPrice, @JsonKey(name: 'variant_id')  String? variantId,  ProductVariant? variant, @JsonKey(name: 'product_id')  String? productId,  Product? product, @JsonKey(name: 'order_id')  String? orderId,  Order? order, @JsonKey(name: 'cart_id')  String? cartId,  Cart? cart, @JsonKey(name: 'original_item_id')  String? originalItemId, @JsonKey(name: 'tax_lines')  List<TaxLine>? taxLines, @JsonKey(name: 'adjustments')  List<Adjustment>? adjustments, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String title,  String description,  String thumbnail, @JsonKey(name: 'is_giftcard')  bool isGiftcard,  int quantity, @JsonKey(name: 'unit_price')  int unitPrice, @JsonKey(name: 'variant_id')  String? variantId,  ProductVariant? variant, @JsonKey(name: 'product_id')  String? productId,  Product? product, @JsonKey(name: 'order_id')  String? orderId,  Order? order, @JsonKey(name: 'cart_id')  String? cartId,  Cart? cart, @JsonKey(name: 'original_item_id')  String? originalItemId, @JsonKey(name: 'tax_lines')  List<TaxLine>? taxLines, @JsonKey(name: 'adjustments')  List<Adjustment>? adjustments, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
 switch (_that) {
 case _LineItem() when $default != null:
 return $default(_that.id,_that.title,_that.description,_that.thumbnail,_that.isGiftcard,_that.quantity,_that.unitPrice,_that.variantId,_that.variant,_that.productId,_that.product,_that.orderId,_that.order,_that.cartId,_that.cart,_that.originalItemId,_that.taxLines,_that.adjustments,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -278,16 +278,16 @@ return $default(_that.id,_that.title,_that.description,_that.thumbnail,_that.isG
 @JsonSerializable()
 
 class _LineItem implements LineItem {
-  const _LineItem({required this.id, required this.title, required this.description, required this.thumbnail, required this.isGiftcard, required this.quantity, required this.unitPrice, @JsonKey(name: 'variant_id') this.variantId, this.variant, @JsonKey(name: 'product_id') this.productId, this.product, @JsonKey(name: 'order_id') this.orderId, this.order, @JsonKey(name: 'cart_id') this.cartId, this.cart, @JsonKey(name: 'original_item_id') this.originalItemId, @JsonKey(name: 'tax_lines') final  List<TaxLine>? taxLines, @JsonKey(name: 'adjustments') final  List<Adjustment>? adjustments, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt, final  Map<String, dynamic>? metadata}): _taxLines = taxLines,_adjustments = adjustments,_metadata = metadata;
+  const _LineItem({required this.id, required this.title, required this.description, required this.thumbnail, @JsonKey(name: 'is_giftcard') required this.isGiftcard, required this.quantity, @JsonKey(name: 'unit_price') required this.unitPrice, @JsonKey(name: 'variant_id') this.variantId, this.variant, @JsonKey(name: 'product_id') this.productId, this.product, @JsonKey(name: 'order_id') this.orderId, this.order, @JsonKey(name: 'cart_id') this.cartId, this.cart, @JsonKey(name: 'original_item_id') this.originalItemId, @JsonKey(name: 'tax_lines') final  List<TaxLine>? taxLines, @JsonKey(name: 'adjustments') final  List<Adjustment>? adjustments, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt, final  Map<String, dynamic>? metadata}): _taxLines = taxLines,_adjustments = adjustments,_metadata = metadata;
   factory _LineItem.fromJson(Map<String, dynamic> json) => _$LineItemFromJson(json);
 
 @override final  String id;
 @override final  String title;
 @override final  String description;
 @override final  String thumbnail;
-@override final  bool isGiftcard;
+@override@JsonKey(name: 'is_giftcard') final  bool isGiftcard;
 @override final  int quantity;
-@override final  int unitPrice;
+@override@JsonKey(name: 'unit_price') final  int unitPrice;
 @override@JsonKey(name: 'variant_id') final  String? variantId;
 @override final  ProductVariant? variant;
 @override@JsonKey(name: 'product_id') final  String? productId;
@@ -361,7 +361,7 @@ abstract mixin class _$LineItemCopyWith<$Res> implements $LineItemCopyWith<$Res>
   factory _$LineItemCopyWith(_LineItem value, $Res Function(_LineItem) _then) = __$LineItemCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String title, String description, String thumbnail, bool isGiftcard, int quantity, int unitPrice,@JsonKey(name: 'variant_id') String? variantId, ProductVariant? variant,@JsonKey(name: 'product_id') String? productId, Product? product,@JsonKey(name: 'order_id') String? orderId, Order? order,@JsonKey(name: 'cart_id') String? cartId, Cart? cart,@JsonKey(name: 'original_item_id') String? originalItemId,@JsonKey(name: 'tax_lines') List<TaxLine>? taxLines,@JsonKey(name: 'adjustments') List<Adjustment>? adjustments,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
+ String id, String title, String description, String thumbnail,@JsonKey(name: 'is_giftcard') bool isGiftcard, int quantity,@JsonKey(name: 'unit_price') int unitPrice,@JsonKey(name: 'variant_id') String? variantId, ProductVariant? variant,@JsonKey(name: 'product_id') String? productId, Product? product,@JsonKey(name: 'order_id') String? orderId, Order? order,@JsonKey(name: 'cart_id') String? cartId, Cart? cart,@JsonKey(name: 'original_item_id') String? originalItemId,@JsonKey(name: 'tax_lines') List<TaxLine>? taxLines,@JsonKey(name: 'adjustments') List<Adjustment>? adjustments,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
 });
 
 

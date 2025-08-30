@@ -11,11 +11,11 @@ abstract class TaxRate with _$TaxRate {
     required String rate,
     required String name,
     required String code,
-    required String regionId,
+    @JsonKey(name: 'region_id') required String regionId,
     Region? region,
-    DateTime? createdAt,
-    DateTime? updatedAt,
-    DateTime? deletedAt,
+    @JsonKey(name: 'created_at') DateTime? createdAt,
+    @JsonKey(name: 'updated_at') DateTime? updatedAt,
+    @JsonKey(name: 'deleted_at') DateTime? deletedAt,
     Map<String, dynamic>? metadata,
   }) = _TaxRate;
 

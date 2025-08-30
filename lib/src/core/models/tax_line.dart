@@ -12,8 +12,8 @@ abstract class TaxLine with _$TaxLine {
     required String code,
     required String name,
     required num rate,
-    DateTime? createdAt,
-    DateTime? updatedAt,
+    @JsonKey(name: 'created_at') DateTime? createdAt,
+    @JsonKey(name: 'updated_at') DateTime? updatedAt,
     Map<String, dynamic>? metadata,
   }) = _TaxLine;
 

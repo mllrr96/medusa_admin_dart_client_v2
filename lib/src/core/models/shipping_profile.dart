@@ -9,9 +9,9 @@ abstract class ShippingProfile with _$ShippingProfile {
     required String id,
     required String name,
     required String type,
-    DateTime? createdAt,
-    DateTime? updatedAt,
-    DateTime? deletedAt,
+    @JsonKey(name: 'created_at') DateTime? createdAt,
+    @JsonKey(name: 'updated_at') DateTime? updatedAt,
+    @JsonKey(name: 'deleted_at') DateTime? deletedAt,
     Map<String, dynamic>? metadata,
   }) = _ShippingProfile;
 

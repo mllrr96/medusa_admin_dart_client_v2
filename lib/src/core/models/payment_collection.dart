@@ -9,18 +9,19 @@ part 'payment_collection.g.dart';
 abstract class PaymentCollection with _$PaymentCollection {
   const factory PaymentCollection({
     required String id,
-    required String currency_code,
+    @JsonKey(name: 'currency_code') required String currencyCode,
     required num amount,
-    num? authorized_amount,
-    num? captured_amount,
-    num? refunded_amount,
-    String? completed_at,
-    String? created_at,
-    String? updated_at,
+    @JsonKey(name: 'authorized_amount') num? authorizedAmount,
+    @JsonKey(name: 'captured_amount') num? capturedAmount,
+    @JsonKey(name: 'refunded_amount') num? refundedAmount,
+    @JsonKey(name: 'completed_at') String? completedAt,
+    @JsonKey(name: 'created_at') String? createdAt,
+    @JsonKey(name: 'updated_at') String? updatedAt,
     Map<String, dynamic>? metadata,
     required String status,
-    required List<PaymentProvider> payment_providers,
-    List<dynamic>? payment_sessions,
+    @JsonKey(name: 'payment_providers')
+    required List<PaymentProvider> paymentProviders,
+    @JsonKey(name: 'payment_sessions') List<dynamic>? paymentSessions,
     List<Payment>? payments,
   }) = _PaymentCollection;
 

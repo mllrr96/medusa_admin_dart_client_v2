@@ -11,16 +11,16 @@ _SalesChannel _$SalesChannelFromJson(Map<String, dynamic> json) =>
       id: json['id'] as String,
       name: json['name'] as String,
       description: json['description'] as String?,
-      isDisabled: json['isDisabled'] as bool,
-      createdAt: json['createdAt'] == null
+      isDisabled: json['is_disabled'] as bool,
+      createdAt: json['created_at'] == null
           ? null
-          : DateTime.parse(json['createdAt'] as String),
-      updatedAt: json['updatedAt'] == null
+          : DateTime.parse(json['created_at'] as String),
+      updatedAt: json['updated_at'] == null
           ? null
-          : DateTime.parse(json['updatedAt'] as String),
-      deletedAt: json['deletedAt'] == null
+          : DateTime.parse(json['updated_at'] as String),
+      deletedAt: json['deleted_at'] == null
           ? null
-          : DateTime.parse(json['deletedAt'] as String),
+          : DateTime.parse(json['deleted_at'] as String),
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
@@ -29,9 +29,9 @@ Map<String, dynamic> _$SalesChannelToJson(_SalesChannel instance) =>
       'id': instance.id,
       'name': instance.name,
       'description': instance.description,
-      'isDisabled': instance.isDisabled,
-      'createdAt': instance.createdAt?.toIso8601String(),
-      'updatedAt': instance.updatedAt?.toIso8601String(),
-      'deletedAt': instance.deletedAt?.toIso8601String(),
+      'is_disabled': instance.isDisabled,
+      'created_at': instance.createdAt?.toIso8601String(),
+      'updated_at': instance.updatedAt?.toIso8601String(),
+      'deleted_at': instance.deletedAt?.toIso8601String(),
       'metadata': instance.metadata,
     };

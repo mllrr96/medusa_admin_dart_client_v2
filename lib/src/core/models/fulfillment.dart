@@ -11,18 +11,19 @@ abstract class Fulfillment with _$Fulfillment {
   const factory Fulfillment({
     required String id,
     required String status,
-    required String orderId,
+    @JsonKey(name: 'order_id') required String orderId,
     Order? order,
-    required String trackingNumber,
-    required List<String> trackingNumbers,
-    required String providerId,
+    @JsonKey(name: 'tracking_number') required String trackingNumber,
+    @JsonKey(name: 'tracking_numbers') required List<String> trackingNumbers,
+    @JsonKey(name: 'provider_id') required String providerId,
+    @JsonKey(name: 'fulfillment_provider')
     FulfillmentProvider? fulfillmentProvider,
     Map<String, dynamic>? data,
-    DateTime? shippedAt,
-    DateTime? canceledAt,
-    DateTime? createdAt,
-    DateTime? updatedAt,
-    DateTime? deletedAt,
+    @JsonKey(name: 'shipped_at') DateTime? shippedAt,
+    @JsonKey(name: 'canceled_at') DateTime? canceledAt,
+    @JsonKey(name: 'created_at') DateTime? createdAt,
+    @JsonKey(name: 'updated_at') DateTime? updatedAt,
+    @JsonKey(name: 'deleted_at') DateTime? deletedAt,
     Map<String, dynamic>? metadata,
   }) = _Fulfillment;
 

@@ -6,13 +6,13 @@ part 'base_order_summary.g.dart';
 @freezed
 abstract class BaseOrderSummary with _$BaseOrderSummary {
   const factory BaseOrderSummary({
-    required num paid_total,
-    required num refunded_total,
-    required num pending_difference,
-    required num current_order_total,
-    required num original_order_total,
-    required num transaction_total,
-    required num accounting_total,
+    @JsonKey(name: 'paid_total') required num paidTotal,
+    @JsonKey(name: 'refunded_total') required num refundedTotal,
+    @JsonKey(name: 'pending_difference') required num pendingDifference,
+    @JsonKey(name: 'current_order_total') required num currentOrderTotal,
+    @JsonKey(name: 'original_order_total') required num originalOrderTotal,
+    @JsonKey(name: 'transaction_total') required num transactionTotal,
+    @JsonKey(name: 'accounting_total') required num accountingTotal,
   }) = _BaseOrderSummary;
 
   factory BaseOrderSummary.fromJson(Map<String, dynamic> json) =>

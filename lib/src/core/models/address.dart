@@ -8,16 +8,16 @@ abstract class Address with _$Address {
   const factory Address({
     required String id,
     String? company,
-    required String address1,
-    String? address2,
+    @JsonKey(name: 'address_1') required String address1,
+    @JsonKey(name: 'address_2') String? address2,
     required String city,
-    required String countryCode,
+    @JsonKey(name: 'country_code') required String countryCode,
     required String province,
-    required String postalCode,
+    @JsonKey(name: 'postal_code') required String postalCode,
     String? phone,
-    DateTime? createdAt,
-    DateTime? updatedAt,
-    DateTime? deletedAt,
+    @JsonKey(name: 'created_at') DateTime? createdAt,
+    @JsonKey(name: 'updated_at') DateTime? updatedAt,
+    @JsonKey(name: 'deleted_at') DateTime? deletedAt,
     Map<String, dynamic>? metadata,
   }) = _Address;
 

@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Country {
 
- int get id; String get iso2; String get iso3; String get numCode; String get name; String get displayOnStore;
+ int get id;@JsonKey(name: 'iso_2') String get iso2;@JsonKey(name: 'iso_3') String get iso3;@JsonKey(name: 'num_code') String get numCode; String get name;@JsonKey(name: 'display_on_store') String get displayOnStore;
 /// Create a copy of Country
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $CountryCopyWith<$Res>  {
   factory $CountryCopyWith(Country value, $Res Function(Country) _then) = _$CountryCopyWithImpl;
 @useResult
 $Res call({
- int id, String iso2, String iso3, String numCode, String name, String displayOnStore
+ int id,@JsonKey(name: 'iso_2') String iso2,@JsonKey(name: 'iso_3') String iso3,@JsonKey(name: 'num_code') String numCode, String name,@JsonKey(name: 'display_on_store') String displayOnStore
 });
 
 
@@ -158,7 +158,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int id,  String iso2,  String iso3,  String numCode,  String name,  String displayOnStore)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int id, @JsonKey(name: 'iso_2')  String iso2, @JsonKey(name: 'iso_3')  String iso3, @JsonKey(name: 'num_code')  String numCode,  String name, @JsonKey(name: 'display_on_store')  String displayOnStore)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Country() when $default != null:
 return $default(_that.id,_that.iso2,_that.iso3,_that.numCode,_that.name,_that.displayOnStore);case _:
@@ -179,7 +179,7 @@ return $default(_that.id,_that.iso2,_that.iso3,_that.numCode,_that.name,_that.di
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int id,  String iso2,  String iso3,  String numCode,  String name,  String displayOnStore)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int id, @JsonKey(name: 'iso_2')  String iso2, @JsonKey(name: 'iso_3')  String iso3, @JsonKey(name: 'num_code')  String numCode,  String name, @JsonKey(name: 'display_on_store')  String displayOnStore)  $default,) {final _that = this;
 switch (_that) {
 case _Country():
 return $default(_that.id,_that.iso2,_that.iso3,_that.numCode,_that.name,_that.displayOnStore);case _:
@@ -199,7 +199,7 @@ return $default(_that.id,_that.iso2,_that.iso3,_that.numCode,_that.name,_that.di
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int id,  String iso2,  String iso3,  String numCode,  String name,  String displayOnStore)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int id, @JsonKey(name: 'iso_2')  String iso2, @JsonKey(name: 'iso_3')  String iso3, @JsonKey(name: 'num_code')  String numCode,  String name, @JsonKey(name: 'display_on_store')  String displayOnStore)?  $default,) {final _that = this;
 switch (_that) {
 case _Country() when $default != null:
 return $default(_that.id,_that.iso2,_that.iso3,_that.numCode,_that.name,_that.displayOnStore);case _:
@@ -214,15 +214,15 @@ return $default(_that.id,_that.iso2,_that.iso3,_that.numCode,_that.name,_that.di
 @JsonSerializable()
 
 class _Country implements Country {
-  const _Country({required this.id, required this.iso2, required this.iso3, required this.numCode, required this.name, required this.displayOnStore});
+  const _Country({required this.id, @JsonKey(name: 'iso_2') required this.iso2, @JsonKey(name: 'iso_3') required this.iso3, @JsonKey(name: 'num_code') required this.numCode, required this.name, @JsonKey(name: 'display_on_store') required this.displayOnStore});
   factory _Country.fromJson(Map<String, dynamic> json) => _$CountryFromJson(json);
 
 @override final  int id;
-@override final  String iso2;
-@override final  String iso3;
-@override final  String numCode;
+@override@JsonKey(name: 'iso_2') final  String iso2;
+@override@JsonKey(name: 'iso_3') final  String iso3;
+@override@JsonKey(name: 'num_code') final  String numCode;
 @override final  String name;
-@override final  String displayOnStore;
+@override@JsonKey(name: 'display_on_store') final  String displayOnStore;
 
 /// Create a copy of Country
 /// with the given fields replaced by the non-null parameter values.
@@ -257,7 +257,7 @@ abstract mixin class _$CountryCopyWith<$Res> implements $CountryCopyWith<$Res> {
   factory _$CountryCopyWith(_Country value, $Res Function(_Country) _then) = __$CountryCopyWithImpl;
 @override @useResult
 $Res call({
- int id, String iso2, String iso3, String numCode, String name, String displayOnStore
+ int id,@JsonKey(name: 'iso_2') String iso2,@JsonKey(name: 'iso_3') String iso3,@JsonKey(name: 'num_code') String numCode, String name,@JsonKey(name: 'display_on_store') String displayOnStore
 });
 
 

@@ -15,12 +15,12 @@ _Adjustment _$AdjustmentFromJson(Map<String, dynamic> json) => _Adjustment(
       ? null
       : Discount.fromJson(json['discount'] as Map<String, dynamic>),
   itemId: json['item_id'] as String,
-  createdAt: json['createdAt'] == null
+  createdAt: json['created_at'] == null
       ? null
-      : DateTime.parse(json['createdAt'] as String),
-  updatedAt: json['updatedAt'] == null
+      : DateTime.parse(json['created_at'] as String),
+  updatedAt: json['updated_at'] == null
       ? null
-      : DateTime.parse(json['updatedAt'] as String),
+      : DateTime.parse(json['updated_at'] as String),
   metadata: json['metadata'] as Map<String, dynamic>?,
 );
 
@@ -32,7 +32,7 @@ Map<String, dynamic> _$AdjustmentToJson(_Adjustment instance) =>
       'discount_id': instance.discountId,
       'discount': instance.discount,
       'item_id': instance.itemId,
-      'createdAt': instance.createdAt?.toIso8601String(),
-      'updatedAt': instance.updatedAt?.toIso8601String(),
+      'created_at': instance.createdAt?.toIso8601String(),
+      'updated_at': instance.updatedAt?.toIso8601String(),
       'metadata': instance.metadata,
     };

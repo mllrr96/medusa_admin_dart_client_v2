@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Image {
 
- String get id; String get url; DateTime? get createdAt; DateTime? get updatedAt; DateTime? get deletedAt; Map<String, dynamic>? get metadata;
+ String get id; String get url;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt; Map<String, dynamic>? get metadata;
 /// Create a copy of Image
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $ImageCopyWith<$Res>  {
   factory $ImageCopyWith(Image value, $Res Function(Image) _then) = _$ImageCopyWithImpl;
 @useResult
 $Res call({
- String id, String url, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt, Map<String, dynamic>? metadata
+ String id, String url,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
 });
 
 
@@ -158,7 +158,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String url,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String url, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Image() when $default != null:
 return $default(_that.id,_that.url,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -179,7 +179,7 @@ return $default(_that.id,_that.url,_that.createdAt,_that.updatedAt,_that.deleted
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String url,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String url, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
 switch (_that) {
 case _Image():
 return $default(_that.id,_that.url,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -199,7 +199,7 @@ return $default(_that.id,_that.url,_that.createdAt,_that.updatedAt,_that.deleted
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String url,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String url, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
 switch (_that) {
 case _Image() when $default != null:
 return $default(_that.id,_that.url,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -214,14 +214,14 @@ return $default(_that.id,_that.url,_that.createdAt,_that.updatedAt,_that.deleted
 @JsonSerializable()
 
 class _Image implements Image {
-  const _Image({required this.id, required this.url, this.createdAt, this.updatedAt, this.deletedAt, final  Map<String, dynamic>? metadata}): _metadata = metadata;
+  const _Image({required this.id, required this.url, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt, final  Map<String, dynamic>? metadata}): _metadata = metadata;
   factory _Image.fromJson(Map<String, dynamic> json) => _$ImageFromJson(json);
 
 @override final  String id;
 @override final  String url;
-@override final  DateTime? createdAt;
-@override final  DateTime? updatedAt;
-@override final  DateTime? deletedAt;
+@override@JsonKey(name: 'created_at') final  DateTime? createdAt;
+@override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
+@override@JsonKey(name: 'deleted_at') final  DateTime? deletedAt;
  final  Map<String, dynamic>? _metadata;
 @override Map<String, dynamic>? get metadata {
   final value = _metadata;
@@ -265,7 +265,7 @@ abstract mixin class _$ImageCopyWith<$Res> implements $ImageCopyWith<$Res> {
   factory _$ImageCopyWith(_Image value, $Res Function(_Image) _then) = __$ImageCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String url, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt, Map<String, dynamic>? metadata
+ String id, String url,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
 });
 
 

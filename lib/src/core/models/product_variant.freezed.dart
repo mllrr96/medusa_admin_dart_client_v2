@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ProductVariant {
 
- String get id; String get title;@JsonKey(name: 'product_id') String get productId; Product? get product; String get sku; String get barcode; String get ean; String get upc; int get inventoryQuantity; bool get allowBackorder; bool get manageInventory; int get hsCode; String get originCountry; String get midCode; String get material; int get weight; int get length; int get height; int get width; int get gst; int get vat; int get taxablePrice; int get originalPrice; int get calculatedPrice; int get originalTaxablePrice; int get calculatedTaxablePrice; List<ProductOptionValue> get options; List<MoneyAmount> get prices; DateTime? get createdAt; DateTime? get updatedAt; DateTime? get deletedAt; Map<String, dynamic>? get metadata;
+ String get id; String get title;@JsonKey(name: 'product_id') String get productId; Product? get product; String get sku; String get barcode; String get ean; String get upc;@JsonKey(name: 'inventory_quantity') int get inventoryQuantity;@JsonKey(name: 'allow_backorder') bool get allowBackorder;@JsonKey(name: 'manage_inventory') bool get manageInventory;@JsonKey(name: 'hs_code') int get hsCode;@JsonKey(name: 'origin_country') String get originCountry;@JsonKey(name: 'mid_code') String get midCode; String get material; int get weight; int get length; int get height; int get width; int get gst; int get vat;@JsonKey(name: 'taxable_price') int get taxablePrice;@JsonKey(name: 'original_price') int get originalPrice;@JsonKey(name: 'calculated_price') int get calculatedPrice;@JsonKey(name: 'original_taxable_price') int get originalTaxablePrice;@JsonKey(name: 'calculated_taxable_price') int get calculatedTaxablePrice; List<ProductOptionValue> get options; List<MoneyAmount> get prices;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt; Map<String, dynamic>? get metadata;
 /// Create a copy of ProductVariant
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $ProductVariantCopyWith<$Res>  {
   factory $ProductVariantCopyWith(ProductVariant value, $Res Function(ProductVariant) _then) = _$ProductVariantCopyWithImpl;
 @useResult
 $Res call({
- String id, String title,@JsonKey(name: 'product_id') String productId, Product? product, String sku, String barcode, String ean, String upc, int inventoryQuantity, bool allowBackorder, bool manageInventory, int hsCode, String originCountry, String midCode, String material, int weight, int length, int height, int width, int gst, int vat, int taxablePrice, int originalPrice, int calculatedPrice, int originalTaxablePrice, int calculatedTaxablePrice, List<ProductOptionValue> options, List<MoneyAmount> prices, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt, Map<String, dynamic>? metadata
+ String id, String title,@JsonKey(name: 'product_id') String productId, Product? product, String sku, String barcode, String ean, String upc,@JsonKey(name: 'inventory_quantity') int inventoryQuantity,@JsonKey(name: 'allow_backorder') bool allowBackorder,@JsonKey(name: 'manage_inventory') bool manageInventory,@JsonKey(name: 'hs_code') int hsCode,@JsonKey(name: 'origin_country') String originCountry,@JsonKey(name: 'mid_code') String midCode, String material, int weight, int length, int height, int width, int gst, int vat,@JsonKey(name: 'taxable_price') int taxablePrice,@JsonKey(name: 'original_price') int originalPrice,@JsonKey(name: 'calculated_price') int calculatedPrice,@JsonKey(name: 'original_taxable_price') int originalTaxablePrice,@JsonKey(name: 'calculated_taxable_price') int calculatedTaxablePrice, List<ProductOptionValue> options, List<MoneyAmount> prices,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
 });
 
 
@@ -196,7 +196,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String title, @JsonKey(name: 'product_id')  String productId,  Product? product,  String sku,  String barcode,  String ean,  String upc,  int inventoryQuantity,  bool allowBackorder,  bool manageInventory,  int hsCode,  String originCountry,  String midCode,  String material,  int weight,  int length,  int height,  int width,  int gst,  int vat,  int taxablePrice,  int originalPrice,  int calculatedPrice,  int originalTaxablePrice,  int calculatedTaxablePrice,  List<ProductOptionValue> options,  List<MoneyAmount> prices,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String title, @JsonKey(name: 'product_id')  String productId,  Product? product,  String sku,  String barcode,  String ean,  String upc, @JsonKey(name: 'inventory_quantity')  int inventoryQuantity, @JsonKey(name: 'allow_backorder')  bool allowBackorder, @JsonKey(name: 'manage_inventory')  bool manageInventory, @JsonKey(name: 'hs_code')  int hsCode, @JsonKey(name: 'origin_country')  String originCountry, @JsonKey(name: 'mid_code')  String midCode,  String material,  int weight,  int length,  int height,  int width,  int gst,  int vat, @JsonKey(name: 'taxable_price')  int taxablePrice, @JsonKey(name: 'original_price')  int originalPrice, @JsonKey(name: 'calculated_price')  int calculatedPrice, @JsonKey(name: 'original_taxable_price')  int originalTaxablePrice, @JsonKey(name: 'calculated_taxable_price')  int calculatedTaxablePrice,  List<ProductOptionValue> options,  List<MoneyAmount> prices, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ProductVariant() when $default != null:
 return $default(_that.id,_that.title,_that.productId,_that.product,_that.sku,_that.barcode,_that.ean,_that.upc,_that.inventoryQuantity,_that.allowBackorder,_that.manageInventory,_that.hsCode,_that.originCountry,_that.midCode,_that.material,_that.weight,_that.length,_that.height,_that.width,_that.gst,_that.vat,_that.taxablePrice,_that.originalPrice,_that.calculatedPrice,_that.originalTaxablePrice,_that.calculatedTaxablePrice,_that.options,_that.prices,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -217,7 +217,7 @@ return $default(_that.id,_that.title,_that.productId,_that.product,_that.sku,_th
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String title, @JsonKey(name: 'product_id')  String productId,  Product? product,  String sku,  String barcode,  String ean,  String upc,  int inventoryQuantity,  bool allowBackorder,  bool manageInventory,  int hsCode,  String originCountry,  String midCode,  String material,  int weight,  int length,  int height,  int width,  int gst,  int vat,  int taxablePrice,  int originalPrice,  int calculatedPrice,  int originalTaxablePrice,  int calculatedTaxablePrice,  List<ProductOptionValue> options,  List<MoneyAmount> prices,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String title, @JsonKey(name: 'product_id')  String productId,  Product? product,  String sku,  String barcode,  String ean,  String upc, @JsonKey(name: 'inventory_quantity')  int inventoryQuantity, @JsonKey(name: 'allow_backorder')  bool allowBackorder, @JsonKey(name: 'manage_inventory')  bool manageInventory, @JsonKey(name: 'hs_code')  int hsCode, @JsonKey(name: 'origin_country')  String originCountry, @JsonKey(name: 'mid_code')  String midCode,  String material,  int weight,  int length,  int height,  int width,  int gst,  int vat, @JsonKey(name: 'taxable_price')  int taxablePrice, @JsonKey(name: 'original_price')  int originalPrice, @JsonKey(name: 'calculated_price')  int calculatedPrice, @JsonKey(name: 'original_taxable_price')  int originalTaxablePrice, @JsonKey(name: 'calculated_taxable_price')  int calculatedTaxablePrice,  List<ProductOptionValue> options,  List<MoneyAmount> prices, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
 switch (_that) {
 case _ProductVariant():
 return $default(_that.id,_that.title,_that.productId,_that.product,_that.sku,_that.barcode,_that.ean,_that.upc,_that.inventoryQuantity,_that.allowBackorder,_that.manageInventory,_that.hsCode,_that.originCountry,_that.midCode,_that.material,_that.weight,_that.length,_that.height,_that.width,_that.gst,_that.vat,_that.taxablePrice,_that.originalPrice,_that.calculatedPrice,_that.originalTaxablePrice,_that.calculatedTaxablePrice,_that.options,_that.prices,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -237,7 +237,7 @@ return $default(_that.id,_that.title,_that.productId,_that.product,_that.sku,_th
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String title, @JsonKey(name: 'product_id')  String productId,  Product? product,  String sku,  String barcode,  String ean,  String upc,  int inventoryQuantity,  bool allowBackorder,  bool manageInventory,  int hsCode,  String originCountry,  String midCode,  String material,  int weight,  int length,  int height,  int width,  int gst,  int vat,  int taxablePrice,  int originalPrice,  int calculatedPrice,  int originalTaxablePrice,  int calculatedTaxablePrice,  List<ProductOptionValue> options,  List<MoneyAmount> prices,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String title, @JsonKey(name: 'product_id')  String productId,  Product? product,  String sku,  String barcode,  String ean,  String upc, @JsonKey(name: 'inventory_quantity')  int inventoryQuantity, @JsonKey(name: 'allow_backorder')  bool allowBackorder, @JsonKey(name: 'manage_inventory')  bool manageInventory, @JsonKey(name: 'hs_code')  int hsCode, @JsonKey(name: 'origin_country')  String originCountry, @JsonKey(name: 'mid_code')  String midCode,  String material,  int weight,  int length,  int height,  int width,  int gst,  int vat, @JsonKey(name: 'taxable_price')  int taxablePrice, @JsonKey(name: 'original_price')  int originalPrice, @JsonKey(name: 'calculated_price')  int calculatedPrice, @JsonKey(name: 'original_taxable_price')  int originalTaxablePrice, @JsonKey(name: 'calculated_taxable_price')  int calculatedTaxablePrice,  List<ProductOptionValue> options,  List<MoneyAmount> prices, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
 switch (_that) {
 case _ProductVariant() when $default != null:
 return $default(_that.id,_that.title,_that.productId,_that.product,_that.sku,_that.barcode,_that.ean,_that.upc,_that.inventoryQuantity,_that.allowBackorder,_that.manageInventory,_that.hsCode,_that.originCountry,_that.midCode,_that.material,_that.weight,_that.length,_that.height,_that.width,_that.gst,_that.vat,_that.taxablePrice,_that.originalPrice,_that.calculatedPrice,_that.originalTaxablePrice,_that.calculatedTaxablePrice,_that.options,_that.prices,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -252,7 +252,7 @@ return $default(_that.id,_that.title,_that.productId,_that.product,_that.sku,_th
 @JsonSerializable()
 
 class _ProductVariant implements ProductVariant {
-  const _ProductVariant({required this.id, required this.title, @JsonKey(name: 'product_id') required this.productId, this.product, required this.sku, required this.barcode, required this.ean, required this.upc, required this.inventoryQuantity, required this.allowBackorder, required this.manageInventory, required this.hsCode, required this.originCountry, required this.midCode, required this.material, required this.weight, required this.length, required this.height, required this.width, required this.gst, required this.vat, required this.taxablePrice, required this.originalPrice, required this.calculatedPrice, required this.originalTaxablePrice, required this.calculatedTaxablePrice, required final  List<ProductOptionValue> options, required final  List<MoneyAmount> prices, this.createdAt, this.updatedAt, this.deletedAt, final  Map<String, dynamic>? metadata}): _options = options,_prices = prices,_metadata = metadata;
+  const _ProductVariant({required this.id, required this.title, @JsonKey(name: 'product_id') required this.productId, this.product, required this.sku, required this.barcode, required this.ean, required this.upc, @JsonKey(name: 'inventory_quantity') required this.inventoryQuantity, @JsonKey(name: 'allow_backorder') required this.allowBackorder, @JsonKey(name: 'manage_inventory') required this.manageInventory, @JsonKey(name: 'hs_code') required this.hsCode, @JsonKey(name: 'origin_country') required this.originCountry, @JsonKey(name: 'mid_code') required this.midCode, required this.material, required this.weight, required this.length, required this.height, required this.width, required this.gst, required this.vat, @JsonKey(name: 'taxable_price') required this.taxablePrice, @JsonKey(name: 'original_price') required this.originalPrice, @JsonKey(name: 'calculated_price') required this.calculatedPrice, @JsonKey(name: 'original_taxable_price') required this.originalTaxablePrice, @JsonKey(name: 'calculated_taxable_price') required this.calculatedTaxablePrice, required final  List<ProductOptionValue> options, required final  List<MoneyAmount> prices, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt, final  Map<String, dynamic>? metadata}): _options = options,_prices = prices,_metadata = metadata;
   factory _ProductVariant.fromJson(Map<String, dynamic> json) => _$ProductVariantFromJson(json);
 
 @override final  String id;
@@ -263,12 +263,12 @@ class _ProductVariant implements ProductVariant {
 @override final  String barcode;
 @override final  String ean;
 @override final  String upc;
-@override final  int inventoryQuantity;
-@override final  bool allowBackorder;
-@override final  bool manageInventory;
-@override final  int hsCode;
-@override final  String originCountry;
-@override final  String midCode;
+@override@JsonKey(name: 'inventory_quantity') final  int inventoryQuantity;
+@override@JsonKey(name: 'allow_backorder') final  bool allowBackorder;
+@override@JsonKey(name: 'manage_inventory') final  bool manageInventory;
+@override@JsonKey(name: 'hs_code') final  int hsCode;
+@override@JsonKey(name: 'origin_country') final  String originCountry;
+@override@JsonKey(name: 'mid_code') final  String midCode;
 @override final  String material;
 @override final  int weight;
 @override final  int length;
@@ -276,11 +276,11 @@ class _ProductVariant implements ProductVariant {
 @override final  int width;
 @override final  int gst;
 @override final  int vat;
-@override final  int taxablePrice;
-@override final  int originalPrice;
-@override final  int calculatedPrice;
-@override final  int originalTaxablePrice;
-@override final  int calculatedTaxablePrice;
+@override@JsonKey(name: 'taxable_price') final  int taxablePrice;
+@override@JsonKey(name: 'original_price') final  int originalPrice;
+@override@JsonKey(name: 'calculated_price') final  int calculatedPrice;
+@override@JsonKey(name: 'original_taxable_price') final  int originalTaxablePrice;
+@override@JsonKey(name: 'calculated_taxable_price') final  int calculatedTaxablePrice;
  final  List<ProductOptionValue> _options;
 @override List<ProductOptionValue> get options {
   if (_options is EqualUnmodifiableListView) return _options;
@@ -295,9 +295,9 @@ class _ProductVariant implements ProductVariant {
   return EqualUnmodifiableListView(_prices);
 }
 
-@override final  DateTime? createdAt;
-@override final  DateTime? updatedAt;
-@override final  DateTime? deletedAt;
+@override@JsonKey(name: 'created_at') final  DateTime? createdAt;
+@override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
+@override@JsonKey(name: 'deleted_at') final  DateTime? deletedAt;
  final  Map<String, dynamic>? _metadata;
 @override Map<String, dynamic>? get metadata {
   final value = _metadata;
@@ -341,7 +341,7 @@ abstract mixin class _$ProductVariantCopyWith<$Res> implements $ProductVariantCo
   factory _$ProductVariantCopyWith(_ProductVariant value, $Res Function(_ProductVariant) _then) = __$ProductVariantCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String title,@JsonKey(name: 'product_id') String productId, Product? product, String sku, String barcode, String ean, String upc, int inventoryQuantity, bool allowBackorder, bool manageInventory, int hsCode, String originCountry, String midCode, String material, int weight, int length, int height, int width, int gst, int vat, int taxablePrice, int originalPrice, int calculatedPrice, int originalTaxablePrice, int calculatedTaxablePrice, List<ProductOptionValue> options, List<MoneyAmount> prices, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt, Map<String, dynamic>? metadata
+ String id, String title,@JsonKey(name: 'product_id') String productId, Product? product, String sku, String barcode, String ean, String upc,@JsonKey(name: 'inventory_quantity') int inventoryQuantity,@JsonKey(name: 'allow_backorder') bool allowBackorder,@JsonKey(name: 'manage_inventory') bool manageInventory,@JsonKey(name: 'hs_code') int hsCode,@JsonKey(name: 'origin_country') String originCountry,@JsonKey(name: 'mid_code') String midCode, String material, int weight, int length, int height, int width, int gst, int vat,@JsonKey(name: 'taxable_price') int taxablePrice,@JsonKey(name: 'original_price') int originalPrice,@JsonKey(name: 'calculated_price') int calculatedPrice,@JsonKey(name: 'original_taxable_price') int originalTaxablePrice,@JsonKey(name: 'calculated_taxable_price') int calculatedTaxablePrice, List<ProductOptionValue> options, List<MoneyAmount> prices,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
 });
 
 

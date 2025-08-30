@@ -8,21 +8,21 @@ part 'order_address.g.dart';
 abstract class OrderAddress with _$OrderAddress {
   const factory OrderAddress({
     required String id,
-    String? customer_id,
-    String? first_name,
-    String? last_name,
+    @JsonKey(name: 'customer_id') String? customerId,
+    @JsonKey(name: 'first_name') String? firstName,
+    @JsonKey(name: 'last_name') String? lastName,
     String? phone,
     String? company,
-    String? address_1,
-    String? address_2,
+    @JsonKey(name: 'address_1') String? address1,
+    @JsonKey(name: 'address_2') String? address2,
     String? city,
-    String? country_code,
+    @JsonKey(name: 'country_code') String? countryCode,
     Country? country,
     String? province,
-    String? postal_code,
+    @JsonKey(name: 'postal_code') String? postalCode,
     required Map<String, dynamic> metadata,
-    required String created_at,
-    required String updated_at,
+    @JsonKey(name: 'created_at') required String createdAt,
+    @JsonKey(name: 'updated_at') required String updatedAt,
   }) = _OrderAddress;
 
   factory OrderAddress.fromJson(Map<String, dynamic> json) =>

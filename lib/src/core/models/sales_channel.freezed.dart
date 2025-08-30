@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$SalesChannel {
 
- String get id; String get name; String? get description; bool get isDisabled; DateTime? get createdAt; DateTime? get updatedAt; DateTime? get deletedAt; Map<String, dynamic>? get metadata;
+ String get id; String get name; String? get description;@JsonKey(name: 'is_disabled') bool get isDisabled;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt; Map<String, dynamic>? get metadata;
 /// Create a copy of SalesChannel
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $SalesChannelCopyWith<$Res>  {
   factory $SalesChannelCopyWith(SalesChannel value, $Res Function(SalesChannel) _then) = _$SalesChannelCopyWithImpl;
 @useResult
 $Res call({
- String id, String name, String? description, bool isDisabled, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt, Map<String, dynamic>? metadata
+ String id, String name, String? description,@JsonKey(name: 'is_disabled') bool isDisabled,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
 });
 
 
@@ -160,7 +160,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  String? description,  bool isDisabled,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  String? description, @JsonKey(name: 'is_disabled')  bool isDisabled, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _SalesChannel() when $default != null:
 return $default(_that.id,_that.name,_that.description,_that.isDisabled,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -181,7 +181,7 @@ return $default(_that.id,_that.name,_that.description,_that.isDisabled,_that.cre
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  String? description,  bool isDisabled,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  String? description, @JsonKey(name: 'is_disabled')  bool isDisabled, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
 switch (_that) {
 case _SalesChannel():
 return $default(_that.id,_that.name,_that.description,_that.isDisabled,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -201,7 +201,7 @@ return $default(_that.id,_that.name,_that.description,_that.isDisabled,_that.cre
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  String? description,  bool isDisabled,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  String? description, @JsonKey(name: 'is_disabled')  bool isDisabled, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
 switch (_that) {
 case _SalesChannel() when $default != null:
 return $default(_that.id,_that.name,_that.description,_that.isDisabled,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -216,16 +216,16 @@ return $default(_that.id,_that.name,_that.description,_that.isDisabled,_that.cre
 @JsonSerializable()
 
 class _SalesChannel implements SalesChannel {
-  const _SalesChannel({required this.id, required this.name, this.description, required this.isDisabled, this.createdAt, this.updatedAt, this.deletedAt, final  Map<String, dynamic>? metadata}): _metadata = metadata;
+  const _SalesChannel({required this.id, required this.name, this.description, @JsonKey(name: 'is_disabled') required this.isDisabled, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt, final  Map<String, dynamic>? metadata}): _metadata = metadata;
   factory _SalesChannel.fromJson(Map<String, dynamic> json) => _$SalesChannelFromJson(json);
 
 @override final  String id;
 @override final  String name;
 @override final  String? description;
-@override final  bool isDisabled;
-@override final  DateTime? createdAt;
-@override final  DateTime? updatedAt;
-@override final  DateTime? deletedAt;
+@override@JsonKey(name: 'is_disabled') final  bool isDisabled;
+@override@JsonKey(name: 'created_at') final  DateTime? createdAt;
+@override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
+@override@JsonKey(name: 'deleted_at') final  DateTime? deletedAt;
  final  Map<String, dynamic>? _metadata;
 @override Map<String, dynamic>? get metadata {
   final value = _metadata;
@@ -269,7 +269,7 @@ abstract mixin class _$SalesChannelCopyWith<$Res> implements $SalesChannelCopyWi
   factory _$SalesChannelCopyWith(_SalesChannel value, $Res Function(_SalesChannel) _then) = __$SalesChannelCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String name, String? description, bool isDisabled, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt, Map<String, dynamic>? metadata
+ String id, String name, String? description,@JsonKey(name: 'is_disabled') bool isDisabled,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
 });
 
 

@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Swap {
 
- String get id; String get fulfillmentStatus; String get paymentStatus; String get orderId; Order? get order; String get cartId; Cart? get cart; String get differenceDue; String get shippingAddressId; Address? get shippingAddress; String get billingAddressId; Address? get billingAddress; String get noNotification; List<LineItem> get additionalItems; List<LineItem> get returnItems; List<Fulfillment> get fulfillments; List<Payment> get payments; List<ShippingMethod> get shippingMethods; String get returnOrder; String get differenceAmount; String get taxRate; String get currencyCode; String get externalId; DateTime? get confirmedAt; DateTime? get canceledAt; DateTime? get createdAt; DateTime? get updatedAt; DateTime? get deletedAt; Map<String, dynamic>? get metadata;
+ String get id;@JsonKey(name: 'fulfillment_status') String get fulfillmentStatus;@JsonKey(name: 'payment_status') String get paymentStatus;@JsonKey(name: 'order_id') String get orderId; Order? get order;@JsonKey(name: 'cart_id') String get cartId; Cart? get cart;@JsonKey(name: 'difference_due') String get differenceDue;@JsonKey(name: 'shipping_address_id') String get shippingAddressId;@JsonKey(name: 'shipping_address') Address? get shippingAddress;@JsonKey(name: 'billing_address_id') String get billingAddressId;@JsonKey(name: 'billing_address') Address? get billingAddress;@JsonKey(name: 'no_notification') String get noNotification;@JsonKey(name: 'additional_items') List<LineItem> get additionalItems;@JsonKey(name: 'return_items') List<LineItem> get returnItems; List<Fulfillment> get fulfillments; List<Payment> get payments;@JsonKey(name: 'shipping_methods') List<ShippingMethod> get shippingMethods;@JsonKey(name: 'return_order') String get returnOrder;@JsonKey(name: 'difference_amount') String get differenceAmount;@JsonKey(name: 'tax_rate') String get taxRate;@JsonKey(name: 'currency_code') String get currencyCode;@JsonKey(name: 'external_id') String get externalId;@JsonKey(name: 'confirmed_at') DateTime? get confirmedAt;@JsonKey(name: 'canceled_at') DateTime? get canceledAt;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt; Map<String, dynamic>? get metadata;
 /// Create a copy of Swap
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $SwapCopyWith<$Res>  {
   factory $SwapCopyWith(Swap value, $Res Function(Swap) _then) = _$SwapCopyWithImpl;
 @useResult
 $Res call({
- String id, String fulfillmentStatus, String paymentStatus, String orderId, Order? order, String cartId, Cart? cart, String differenceDue, String shippingAddressId, Address? shippingAddress, String billingAddressId, Address? billingAddress, String noNotification, List<LineItem> additionalItems, List<LineItem> returnItems, List<Fulfillment> fulfillments, List<Payment> payments, List<ShippingMethod> shippingMethods, String returnOrder, String differenceAmount, String taxRate, String currencyCode, String externalId, DateTime? confirmedAt, DateTime? canceledAt, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt, Map<String, dynamic>? metadata
+ String id,@JsonKey(name: 'fulfillment_status') String fulfillmentStatus,@JsonKey(name: 'payment_status') String paymentStatus,@JsonKey(name: 'order_id') String orderId, Order? order,@JsonKey(name: 'cart_id') String cartId, Cart? cart,@JsonKey(name: 'difference_due') String differenceDue,@JsonKey(name: 'shipping_address_id') String shippingAddressId,@JsonKey(name: 'shipping_address') Address? shippingAddress,@JsonKey(name: 'billing_address_id') String billingAddressId,@JsonKey(name: 'billing_address') Address? billingAddress,@JsonKey(name: 'no_notification') String noNotification,@JsonKey(name: 'additional_items') List<LineItem> additionalItems,@JsonKey(name: 'return_items') List<LineItem> returnItems, List<Fulfillment> fulfillments, List<Payment> payments,@JsonKey(name: 'shipping_methods') List<ShippingMethod> shippingMethods,@JsonKey(name: 'return_order') String returnOrder,@JsonKey(name: 'difference_amount') String differenceAmount,@JsonKey(name: 'tax_rate') String taxRate,@JsonKey(name: 'currency_code') String currencyCode,@JsonKey(name: 'external_id') String externalId,@JsonKey(name: 'confirmed_at') DateTime? confirmedAt,@JsonKey(name: 'canceled_at') DateTime? canceledAt,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
 });
 
 
@@ -229,7 +229,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String fulfillmentStatus,  String paymentStatus,  String orderId,  Order? order,  String cartId,  Cart? cart,  String differenceDue,  String shippingAddressId,  Address? shippingAddress,  String billingAddressId,  Address? billingAddress,  String noNotification,  List<LineItem> additionalItems,  List<LineItem> returnItems,  List<Fulfillment> fulfillments,  List<Payment> payments,  List<ShippingMethod> shippingMethods,  String returnOrder,  String differenceAmount,  String taxRate,  String currencyCode,  String externalId,  DateTime? confirmedAt,  DateTime? canceledAt,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'fulfillment_status')  String fulfillmentStatus, @JsonKey(name: 'payment_status')  String paymentStatus, @JsonKey(name: 'order_id')  String orderId,  Order? order, @JsonKey(name: 'cart_id')  String cartId,  Cart? cart, @JsonKey(name: 'difference_due')  String differenceDue, @JsonKey(name: 'shipping_address_id')  String shippingAddressId, @JsonKey(name: 'shipping_address')  Address? shippingAddress, @JsonKey(name: 'billing_address_id')  String billingAddressId, @JsonKey(name: 'billing_address')  Address? billingAddress, @JsonKey(name: 'no_notification')  String noNotification, @JsonKey(name: 'additional_items')  List<LineItem> additionalItems, @JsonKey(name: 'return_items')  List<LineItem> returnItems,  List<Fulfillment> fulfillments,  List<Payment> payments, @JsonKey(name: 'shipping_methods')  List<ShippingMethod> shippingMethods, @JsonKey(name: 'return_order')  String returnOrder, @JsonKey(name: 'difference_amount')  String differenceAmount, @JsonKey(name: 'tax_rate')  String taxRate, @JsonKey(name: 'currency_code')  String currencyCode, @JsonKey(name: 'external_id')  String externalId, @JsonKey(name: 'confirmed_at')  DateTime? confirmedAt, @JsonKey(name: 'canceled_at')  DateTime? canceledAt, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Swap() when $default != null:
 return $default(_that.id,_that.fulfillmentStatus,_that.paymentStatus,_that.orderId,_that.order,_that.cartId,_that.cart,_that.differenceDue,_that.shippingAddressId,_that.shippingAddress,_that.billingAddressId,_that.billingAddress,_that.noNotification,_that.additionalItems,_that.returnItems,_that.fulfillments,_that.payments,_that.shippingMethods,_that.returnOrder,_that.differenceAmount,_that.taxRate,_that.currencyCode,_that.externalId,_that.confirmedAt,_that.canceledAt,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -250,7 +250,7 @@ return $default(_that.id,_that.fulfillmentStatus,_that.paymentStatus,_that.order
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String fulfillmentStatus,  String paymentStatus,  String orderId,  Order? order,  String cartId,  Cart? cart,  String differenceDue,  String shippingAddressId,  Address? shippingAddress,  String billingAddressId,  Address? billingAddress,  String noNotification,  List<LineItem> additionalItems,  List<LineItem> returnItems,  List<Fulfillment> fulfillments,  List<Payment> payments,  List<ShippingMethod> shippingMethods,  String returnOrder,  String differenceAmount,  String taxRate,  String currencyCode,  String externalId,  DateTime? confirmedAt,  DateTime? canceledAt,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'fulfillment_status')  String fulfillmentStatus, @JsonKey(name: 'payment_status')  String paymentStatus, @JsonKey(name: 'order_id')  String orderId,  Order? order, @JsonKey(name: 'cart_id')  String cartId,  Cart? cart, @JsonKey(name: 'difference_due')  String differenceDue, @JsonKey(name: 'shipping_address_id')  String shippingAddressId, @JsonKey(name: 'shipping_address')  Address? shippingAddress, @JsonKey(name: 'billing_address_id')  String billingAddressId, @JsonKey(name: 'billing_address')  Address? billingAddress, @JsonKey(name: 'no_notification')  String noNotification, @JsonKey(name: 'additional_items')  List<LineItem> additionalItems, @JsonKey(name: 'return_items')  List<LineItem> returnItems,  List<Fulfillment> fulfillments,  List<Payment> payments, @JsonKey(name: 'shipping_methods')  List<ShippingMethod> shippingMethods, @JsonKey(name: 'return_order')  String returnOrder, @JsonKey(name: 'difference_amount')  String differenceAmount, @JsonKey(name: 'tax_rate')  String taxRate, @JsonKey(name: 'currency_code')  String currencyCode, @JsonKey(name: 'external_id')  String externalId, @JsonKey(name: 'confirmed_at')  DateTime? confirmedAt, @JsonKey(name: 'canceled_at')  DateTime? canceledAt, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
 switch (_that) {
 case _Swap():
 return $default(_that.id,_that.fulfillmentStatus,_that.paymentStatus,_that.orderId,_that.order,_that.cartId,_that.cart,_that.differenceDue,_that.shippingAddressId,_that.shippingAddress,_that.billingAddressId,_that.billingAddress,_that.noNotification,_that.additionalItems,_that.returnItems,_that.fulfillments,_that.payments,_that.shippingMethods,_that.returnOrder,_that.differenceAmount,_that.taxRate,_that.currencyCode,_that.externalId,_that.confirmedAt,_that.canceledAt,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -270,7 +270,7 @@ return $default(_that.id,_that.fulfillmentStatus,_that.paymentStatus,_that.order
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String fulfillmentStatus,  String paymentStatus,  String orderId,  Order? order,  String cartId,  Cart? cart,  String differenceDue,  String shippingAddressId,  Address? shippingAddress,  String billingAddressId,  Address? billingAddress,  String noNotification,  List<LineItem> additionalItems,  List<LineItem> returnItems,  List<Fulfillment> fulfillments,  List<Payment> payments,  List<ShippingMethod> shippingMethods,  String returnOrder,  String differenceAmount,  String taxRate,  String currencyCode,  String externalId,  DateTime? confirmedAt,  DateTime? canceledAt,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'fulfillment_status')  String fulfillmentStatus, @JsonKey(name: 'payment_status')  String paymentStatus, @JsonKey(name: 'order_id')  String orderId,  Order? order, @JsonKey(name: 'cart_id')  String cartId,  Cart? cart, @JsonKey(name: 'difference_due')  String differenceDue, @JsonKey(name: 'shipping_address_id')  String shippingAddressId, @JsonKey(name: 'shipping_address')  Address? shippingAddress, @JsonKey(name: 'billing_address_id')  String billingAddressId, @JsonKey(name: 'billing_address')  Address? billingAddress, @JsonKey(name: 'no_notification')  String noNotification, @JsonKey(name: 'additional_items')  List<LineItem> additionalItems, @JsonKey(name: 'return_items')  List<LineItem> returnItems,  List<Fulfillment> fulfillments,  List<Payment> payments, @JsonKey(name: 'shipping_methods')  List<ShippingMethod> shippingMethods, @JsonKey(name: 'return_order')  String returnOrder, @JsonKey(name: 'difference_amount')  String differenceAmount, @JsonKey(name: 'tax_rate')  String taxRate, @JsonKey(name: 'currency_code')  String currencyCode, @JsonKey(name: 'external_id')  String externalId, @JsonKey(name: 'confirmed_at')  DateTime? confirmedAt, @JsonKey(name: 'canceled_at')  DateTime? canceledAt, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
 switch (_that) {
 case _Swap() when $default != null:
 return $default(_that.id,_that.fulfillmentStatus,_that.paymentStatus,_that.orderId,_that.order,_that.cartId,_that.cart,_that.differenceDue,_that.shippingAddressId,_that.shippingAddress,_that.billingAddressId,_that.billingAddress,_that.noNotification,_that.additionalItems,_that.returnItems,_that.fulfillments,_that.payments,_that.shippingMethods,_that.returnOrder,_that.differenceAmount,_that.taxRate,_that.currencyCode,_that.externalId,_that.confirmedAt,_that.canceledAt,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -285,31 +285,31 @@ return $default(_that.id,_that.fulfillmentStatus,_that.paymentStatus,_that.order
 @JsonSerializable()
 
 class _Swap implements Swap {
-  const _Swap({required this.id, required this.fulfillmentStatus, required this.paymentStatus, required this.orderId, this.order, required this.cartId, this.cart, required this.differenceDue, required this.shippingAddressId, this.shippingAddress, required this.billingAddressId, this.billingAddress, required this.noNotification, required final  List<LineItem> additionalItems, required final  List<LineItem> returnItems, required final  List<Fulfillment> fulfillments, required final  List<Payment> payments, required final  List<ShippingMethod> shippingMethods, required this.returnOrder, required this.differenceAmount, required this.taxRate, required this.currencyCode, required this.externalId, this.confirmedAt, this.canceledAt, this.createdAt, this.updatedAt, this.deletedAt, final  Map<String, dynamic>? metadata}): _additionalItems = additionalItems,_returnItems = returnItems,_fulfillments = fulfillments,_payments = payments,_shippingMethods = shippingMethods,_metadata = metadata;
+  const _Swap({required this.id, @JsonKey(name: 'fulfillment_status') required this.fulfillmentStatus, @JsonKey(name: 'payment_status') required this.paymentStatus, @JsonKey(name: 'order_id') required this.orderId, this.order, @JsonKey(name: 'cart_id') required this.cartId, this.cart, @JsonKey(name: 'difference_due') required this.differenceDue, @JsonKey(name: 'shipping_address_id') required this.shippingAddressId, @JsonKey(name: 'shipping_address') this.shippingAddress, @JsonKey(name: 'billing_address_id') required this.billingAddressId, @JsonKey(name: 'billing_address') this.billingAddress, @JsonKey(name: 'no_notification') required this.noNotification, @JsonKey(name: 'additional_items') required final  List<LineItem> additionalItems, @JsonKey(name: 'return_items') required final  List<LineItem> returnItems, required final  List<Fulfillment> fulfillments, required final  List<Payment> payments, @JsonKey(name: 'shipping_methods') required final  List<ShippingMethod> shippingMethods, @JsonKey(name: 'return_order') required this.returnOrder, @JsonKey(name: 'difference_amount') required this.differenceAmount, @JsonKey(name: 'tax_rate') required this.taxRate, @JsonKey(name: 'currency_code') required this.currencyCode, @JsonKey(name: 'external_id') required this.externalId, @JsonKey(name: 'confirmed_at') this.confirmedAt, @JsonKey(name: 'canceled_at') this.canceledAt, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt, final  Map<String, dynamic>? metadata}): _additionalItems = additionalItems,_returnItems = returnItems,_fulfillments = fulfillments,_payments = payments,_shippingMethods = shippingMethods,_metadata = metadata;
   factory _Swap.fromJson(Map<String, dynamic> json) => _$SwapFromJson(json);
 
 @override final  String id;
-@override final  String fulfillmentStatus;
-@override final  String paymentStatus;
-@override final  String orderId;
+@override@JsonKey(name: 'fulfillment_status') final  String fulfillmentStatus;
+@override@JsonKey(name: 'payment_status') final  String paymentStatus;
+@override@JsonKey(name: 'order_id') final  String orderId;
 @override final  Order? order;
-@override final  String cartId;
+@override@JsonKey(name: 'cart_id') final  String cartId;
 @override final  Cart? cart;
-@override final  String differenceDue;
-@override final  String shippingAddressId;
-@override final  Address? shippingAddress;
-@override final  String billingAddressId;
-@override final  Address? billingAddress;
-@override final  String noNotification;
+@override@JsonKey(name: 'difference_due') final  String differenceDue;
+@override@JsonKey(name: 'shipping_address_id') final  String shippingAddressId;
+@override@JsonKey(name: 'shipping_address') final  Address? shippingAddress;
+@override@JsonKey(name: 'billing_address_id') final  String billingAddressId;
+@override@JsonKey(name: 'billing_address') final  Address? billingAddress;
+@override@JsonKey(name: 'no_notification') final  String noNotification;
  final  List<LineItem> _additionalItems;
-@override List<LineItem> get additionalItems {
+@override@JsonKey(name: 'additional_items') List<LineItem> get additionalItems {
   if (_additionalItems is EqualUnmodifiableListView) return _additionalItems;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_additionalItems);
 }
 
  final  List<LineItem> _returnItems;
-@override List<LineItem> get returnItems {
+@override@JsonKey(name: 'return_items') List<LineItem> get returnItems {
   if (_returnItems is EqualUnmodifiableListView) return _returnItems;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_returnItems);
@@ -330,22 +330,22 @@ class _Swap implements Swap {
 }
 
  final  List<ShippingMethod> _shippingMethods;
-@override List<ShippingMethod> get shippingMethods {
+@override@JsonKey(name: 'shipping_methods') List<ShippingMethod> get shippingMethods {
   if (_shippingMethods is EqualUnmodifiableListView) return _shippingMethods;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_shippingMethods);
 }
 
-@override final  String returnOrder;
-@override final  String differenceAmount;
-@override final  String taxRate;
-@override final  String currencyCode;
-@override final  String externalId;
-@override final  DateTime? confirmedAt;
-@override final  DateTime? canceledAt;
-@override final  DateTime? createdAt;
-@override final  DateTime? updatedAt;
-@override final  DateTime? deletedAt;
+@override@JsonKey(name: 'return_order') final  String returnOrder;
+@override@JsonKey(name: 'difference_amount') final  String differenceAmount;
+@override@JsonKey(name: 'tax_rate') final  String taxRate;
+@override@JsonKey(name: 'currency_code') final  String currencyCode;
+@override@JsonKey(name: 'external_id') final  String externalId;
+@override@JsonKey(name: 'confirmed_at') final  DateTime? confirmedAt;
+@override@JsonKey(name: 'canceled_at') final  DateTime? canceledAt;
+@override@JsonKey(name: 'created_at') final  DateTime? createdAt;
+@override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
+@override@JsonKey(name: 'deleted_at') final  DateTime? deletedAt;
  final  Map<String, dynamic>? _metadata;
 @override Map<String, dynamic>? get metadata {
   final value = _metadata;
@@ -389,7 +389,7 @@ abstract mixin class _$SwapCopyWith<$Res> implements $SwapCopyWith<$Res> {
   factory _$SwapCopyWith(_Swap value, $Res Function(_Swap) _then) = __$SwapCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String fulfillmentStatus, String paymentStatus, String orderId, Order? order, String cartId, Cart? cart, String differenceDue, String shippingAddressId, Address? shippingAddress, String billingAddressId, Address? billingAddress, String noNotification, List<LineItem> additionalItems, List<LineItem> returnItems, List<Fulfillment> fulfillments, List<Payment> payments, List<ShippingMethod> shippingMethods, String returnOrder, String differenceAmount, String taxRate, String currencyCode, String externalId, DateTime? confirmedAt, DateTime? canceledAt, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt, Map<String, dynamic>? metadata
+ String id,@JsonKey(name: 'fulfillment_status') String fulfillmentStatus,@JsonKey(name: 'payment_status') String paymentStatus,@JsonKey(name: 'order_id') String orderId, Order? order,@JsonKey(name: 'cart_id') String cartId, Cart? cart,@JsonKey(name: 'difference_due') String differenceDue,@JsonKey(name: 'shipping_address_id') String shippingAddressId,@JsonKey(name: 'shipping_address') Address? shippingAddress,@JsonKey(name: 'billing_address_id') String billingAddressId,@JsonKey(name: 'billing_address') Address? billingAddress,@JsonKey(name: 'no_notification') String noNotification,@JsonKey(name: 'additional_items') List<LineItem> additionalItems,@JsonKey(name: 'return_items') List<LineItem> returnItems, List<Fulfillment> fulfillments, List<Payment> payments,@JsonKey(name: 'shipping_methods') List<ShippingMethod> shippingMethods,@JsonKey(name: 'return_order') String returnOrder,@JsonKey(name: 'difference_amount') String differenceAmount,@JsonKey(name: 'tax_rate') String taxRate,@JsonKey(name: 'currency_code') String currencyCode,@JsonKey(name: 'external_id') String externalId,@JsonKey(name: 'confirmed_at') DateTime? confirmedAt,@JsonKey(name: 'canceled_at') DateTime? canceledAt,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
 });
 
 

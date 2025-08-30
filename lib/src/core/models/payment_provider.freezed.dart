@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$PaymentProvider {
 
- String get id; bool get isEnabled;
+ String get id;@JsonKey(name: 'is_enabled') bool get isEnabled;
 /// Create a copy of PaymentProvider
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $PaymentProviderCopyWith<$Res>  {
   factory $PaymentProviderCopyWith(PaymentProvider value, $Res Function(PaymentProvider) _then) = _$PaymentProviderCopyWithImpl;
 @useResult
 $Res call({
- String id, bool isEnabled
+ String id,@JsonKey(name: 'is_enabled') bool isEnabled
 });
 
 
@@ -154,7 +154,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  bool isEnabled)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'is_enabled')  bool isEnabled)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _PaymentProvider() when $default != null:
 return $default(_that.id,_that.isEnabled);case _:
@@ -175,7 +175,7 @@ return $default(_that.id,_that.isEnabled);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  bool isEnabled)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'is_enabled')  bool isEnabled)  $default,) {final _that = this;
 switch (_that) {
 case _PaymentProvider():
 return $default(_that.id,_that.isEnabled);case _:
@@ -195,7 +195,7 @@ return $default(_that.id,_that.isEnabled);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  bool isEnabled)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'is_enabled')  bool isEnabled)?  $default,) {final _that = this;
 switch (_that) {
 case _PaymentProvider() when $default != null:
 return $default(_that.id,_that.isEnabled);case _:
@@ -210,11 +210,11 @@ return $default(_that.id,_that.isEnabled);case _:
 @JsonSerializable()
 
 class _PaymentProvider implements PaymentProvider {
-  const _PaymentProvider({required this.id, required this.isEnabled});
+  const _PaymentProvider({required this.id, @JsonKey(name: 'is_enabled') required this.isEnabled});
   factory _PaymentProvider.fromJson(Map<String, dynamic> json) => _$PaymentProviderFromJson(json);
 
 @override final  String id;
-@override final  bool isEnabled;
+@override@JsonKey(name: 'is_enabled') final  bool isEnabled;
 
 /// Create a copy of PaymentProvider
 /// with the given fields replaced by the non-null parameter values.
@@ -249,7 +249,7 @@ abstract mixin class _$PaymentProviderCopyWith<$Res> implements $PaymentProvider
   factory _$PaymentProviderCopyWith(_PaymentProvider value, $Res Function(_PaymentProvider) _then) = __$PaymentProviderCopyWithImpl;
 @override @useResult
 $Res call({
- String id, bool isEnabled
+ String id,@JsonKey(name: 'is_enabled') bool isEnabled
 });
 
 

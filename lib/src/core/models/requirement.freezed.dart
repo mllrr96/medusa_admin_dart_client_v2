@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Requirement {
 
- String get id; String get type; String get value; String get shippingOptionId; DateTime? get createdAt; DateTime? get updatedAt; DateTime? get deletedAt; Map<String, dynamic>? get metadata;
+ String get id; String get type; String get value;@JsonKey(name: 'shipping_option_id') String get shippingOptionId;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt; Map<String, dynamic>? get metadata;
 /// Create a copy of Requirement
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $RequirementCopyWith<$Res>  {
   factory $RequirementCopyWith(Requirement value, $Res Function(Requirement) _then) = _$RequirementCopyWithImpl;
 @useResult
 $Res call({
- String id, String type, String value, String shippingOptionId, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt, Map<String, dynamic>? metadata
+ String id, String type, String value,@JsonKey(name: 'shipping_option_id') String shippingOptionId,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
 });
 
 
@@ -160,7 +160,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String type,  String value,  String shippingOptionId,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String type,  String value, @JsonKey(name: 'shipping_option_id')  String shippingOptionId, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Requirement() when $default != null:
 return $default(_that.id,_that.type,_that.value,_that.shippingOptionId,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -181,7 +181,7 @@ return $default(_that.id,_that.type,_that.value,_that.shippingOptionId,_that.cre
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String type,  String value,  String shippingOptionId,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String type,  String value, @JsonKey(name: 'shipping_option_id')  String shippingOptionId, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
 switch (_that) {
 case _Requirement():
 return $default(_that.id,_that.type,_that.value,_that.shippingOptionId,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -201,7 +201,7 @@ return $default(_that.id,_that.type,_that.value,_that.shippingOptionId,_that.cre
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String type,  String value,  String shippingOptionId,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String type,  String value, @JsonKey(name: 'shipping_option_id')  String shippingOptionId, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
 switch (_that) {
 case _Requirement() when $default != null:
 return $default(_that.id,_that.type,_that.value,_that.shippingOptionId,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -216,16 +216,16 @@ return $default(_that.id,_that.type,_that.value,_that.shippingOptionId,_that.cre
 @JsonSerializable()
 
 class _Requirement implements Requirement {
-  const _Requirement({required this.id, required this.type, required this.value, required this.shippingOptionId, this.createdAt, this.updatedAt, this.deletedAt, final  Map<String, dynamic>? metadata}): _metadata = metadata;
+  const _Requirement({required this.id, required this.type, required this.value, @JsonKey(name: 'shipping_option_id') required this.shippingOptionId, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt, final  Map<String, dynamic>? metadata}): _metadata = metadata;
   factory _Requirement.fromJson(Map<String, dynamic> json) => _$RequirementFromJson(json);
 
 @override final  String id;
 @override final  String type;
 @override final  String value;
-@override final  String shippingOptionId;
-@override final  DateTime? createdAt;
-@override final  DateTime? updatedAt;
-@override final  DateTime? deletedAt;
+@override@JsonKey(name: 'shipping_option_id') final  String shippingOptionId;
+@override@JsonKey(name: 'created_at') final  DateTime? createdAt;
+@override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
+@override@JsonKey(name: 'deleted_at') final  DateTime? deletedAt;
  final  Map<String, dynamic>? _metadata;
 @override Map<String, dynamic>? get metadata {
   final value = _metadata;
@@ -269,7 +269,7 @@ abstract mixin class _$RequirementCopyWith<$Res> implements $RequirementCopyWith
   factory _$RequirementCopyWith(_Requirement value, $Res Function(_Requirement) _then) = __$RequirementCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String type, String value, String shippingOptionId, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt, Map<String, dynamic>? metadata
+ String id, String type, String value,@JsonKey(name: 'shipping_option_id') String shippingOptionId,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
 });
 
 

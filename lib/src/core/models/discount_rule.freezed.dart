@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$DiscountRule {
 
- String get id; String get type; String get value; String get allocation; List<Product> get products; List<ProductCollection> get productCollections; List<ProductType> get productTypes; List<ProductTag> get productTags; DateTime? get createdAt; DateTime? get updatedAt; DateTime? get deletedAt; Map<String, dynamic>? get metadata;
+ String get id; String get type; String get value; String get allocation; List<Product> get products;@JsonKey(name: 'product_collections') List<ProductCollection> get productCollections;@JsonKey(name: 'product_types') List<ProductType> get productTypes;@JsonKey(name: 'product_tags') List<ProductTag> get productTags;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt; Map<String, dynamic>? get metadata;
 /// Create a copy of DiscountRule
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $DiscountRuleCopyWith<$Res>  {
   factory $DiscountRuleCopyWith(DiscountRule value, $Res Function(DiscountRule) _then) = _$DiscountRuleCopyWithImpl;
 @useResult
 $Res call({
- String id, String type, String value, String allocation, List<Product> products, List<ProductCollection> productCollections, List<ProductType> productTypes, List<ProductTag> productTags, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt, Map<String, dynamic>? metadata
+ String id, String type, String value, String allocation, List<Product> products,@JsonKey(name: 'product_collections') List<ProductCollection> productCollections,@JsonKey(name: 'product_types') List<ProductType> productTypes,@JsonKey(name: 'product_tags') List<ProductTag> productTags,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
 });
 
 
@@ -164,7 +164,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String type,  String value,  String allocation,  List<Product> products,  List<ProductCollection> productCollections,  List<ProductType> productTypes,  List<ProductTag> productTags,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String type,  String value,  String allocation,  List<Product> products, @JsonKey(name: 'product_collections')  List<ProductCollection> productCollections, @JsonKey(name: 'product_types')  List<ProductType> productTypes, @JsonKey(name: 'product_tags')  List<ProductTag> productTags, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _DiscountRule() when $default != null:
 return $default(_that.id,_that.type,_that.value,_that.allocation,_that.products,_that.productCollections,_that.productTypes,_that.productTags,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -185,7 +185,7 @@ return $default(_that.id,_that.type,_that.value,_that.allocation,_that.products,
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String type,  String value,  String allocation,  List<Product> products,  List<ProductCollection> productCollections,  List<ProductType> productTypes,  List<ProductTag> productTags,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String type,  String value,  String allocation,  List<Product> products, @JsonKey(name: 'product_collections')  List<ProductCollection> productCollections, @JsonKey(name: 'product_types')  List<ProductType> productTypes, @JsonKey(name: 'product_tags')  List<ProductTag> productTags, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
 switch (_that) {
 case _DiscountRule():
 return $default(_that.id,_that.type,_that.value,_that.allocation,_that.products,_that.productCollections,_that.productTypes,_that.productTags,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -205,7 +205,7 @@ return $default(_that.id,_that.type,_that.value,_that.allocation,_that.products,
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String type,  String value,  String allocation,  List<Product> products,  List<ProductCollection> productCollections,  List<ProductType> productTypes,  List<ProductTag> productTags,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String type,  String value,  String allocation,  List<Product> products, @JsonKey(name: 'product_collections')  List<ProductCollection> productCollections, @JsonKey(name: 'product_types')  List<ProductType> productTypes, @JsonKey(name: 'product_tags')  List<ProductTag> productTags, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
 switch (_that) {
 case _DiscountRule() when $default != null:
 return $default(_that.id,_that.type,_that.value,_that.allocation,_that.products,_that.productCollections,_that.productTypes,_that.productTags,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -220,7 +220,7 @@ return $default(_that.id,_that.type,_that.value,_that.allocation,_that.products,
 @JsonSerializable()
 
 class _DiscountRule implements DiscountRule {
-  const _DiscountRule({required this.id, required this.type, required this.value, required this.allocation, required final  List<Product> products, required final  List<ProductCollection> productCollections, required final  List<ProductType> productTypes, required final  List<ProductTag> productTags, this.createdAt, this.updatedAt, this.deletedAt, final  Map<String, dynamic>? metadata}): _products = products,_productCollections = productCollections,_productTypes = productTypes,_productTags = productTags,_metadata = metadata;
+  const _DiscountRule({required this.id, required this.type, required this.value, required this.allocation, required final  List<Product> products, @JsonKey(name: 'product_collections') required final  List<ProductCollection> productCollections, @JsonKey(name: 'product_types') required final  List<ProductType> productTypes, @JsonKey(name: 'product_tags') required final  List<ProductTag> productTags, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt, final  Map<String, dynamic>? metadata}): _products = products,_productCollections = productCollections,_productTypes = productTypes,_productTags = productTags,_metadata = metadata;
   factory _DiscountRule.fromJson(Map<String, dynamic> json) => _$DiscountRuleFromJson(json);
 
 @override final  String id;
@@ -235,29 +235,29 @@ class _DiscountRule implements DiscountRule {
 }
 
  final  List<ProductCollection> _productCollections;
-@override List<ProductCollection> get productCollections {
+@override@JsonKey(name: 'product_collections') List<ProductCollection> get productCollections {
   if (_productCollections is EqualUnmodifiableListView) return _productCollections;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_productCollections);
 }
 
  final  List<ProductType> _productTypes;
-@override List<ProductType> get productTypes {
+@override@JsonKey(name: 'product_types') List<ProductType> get productTypes {
   if (_productTypes is EqualUnmodifiableListView) return _productTypes;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_productTypes);
 }
 
  final  List<ProductTag> _productTags;
-@override List<ProductTag> get productTags {
+@override@JsonKey(name: 'product_tags') List<ProductTag> get productTags {
   if (_productTags is EqualUnmodifiableListView) return _productTags;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_productTags);
 }
 
-@override final  DateTime? createdAt;
-@override final  DateTime? updatedAt;
-@override final  DateTime? deletedAt;
+@override@JsonKey(name: 'created_at') final  DateTime? createdAt;
+@override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
+@override@JsonKey(name: 'deleted_at') final  DateTime? deletedAt;
  final  Map<String, dynamic>? _metadata;
 @override Map<String, dynamic>? get metadata {
   final value = _metadata;
@@ -301,7 +301,7 @@ abstract mixin class _$DiscountRuleCopyWith<$Res> implements $DiscountRuleCopyWi
   factory _$DiscountRuleCopyWith(_DiscountRule value, $Res Function(_DiscountRule) _then) = __$DiscountRuleCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String type, String value, String allocation, List<Product> products, List<ProductCollection> productCollections, List<ProductType> productTypes, List<ProductTag> productTags, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt, Map<String, dynamic>? metadata
+ String id, String type, String value, String allocation, List<Product> products,@JsonKey(name: 'product_collections') List<ProductCollection> productCollections,@JsonKey(name: 'product_types') List<ProductType> productTypes,@JsonKey(name: 'product_tags') List<ProductTag> productTags,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
 });
 
 

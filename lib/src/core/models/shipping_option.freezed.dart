@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ShippingOption {
 
- String get id; String get name; String get regionId; Region? get region; String get profileId; ShippingProfile? get profile; String get providerId; FulfillmentProvider? get provider; String get priceType; int get amount; bool get isReturn; bool get adminOnly; List<Requirement> get requirements; List<TaxRate> get taxRates; DateTime? get createdAt; DateTime? get updatedAt; DateTime? get deletedAt; Map<String, dynamic>? get metadata;
+ String get id; String get name;@JsonKey(name: 'region_id') String get regionId; Region? get region;@JsonKey(name: 'profile_id') String get profileId; ShippingProfile? get profile;@JsonKey(name: 'provider_id') String get providerId; FulfillmentProvider? get provider;@JsonKey(name: 'price_type') String get priceType; int get amount;@JsonKey(name: 'is_return') bool get isReturn;@JsonKey(name: 'admin_only') bool get adminOnly; List<Requirement> get requirements;@JsonKey(name: 'tax_rates') List<TaxRate> get taxRates;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt; Map<String, dynamic>? get metadata;
 /// Create a copy of ShippingOption
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $ShippingOptionCopyWith<$Res>  {
   factory $ShippingOptionCopyWith(ShippingOption value, $Res Function(ShippingOption) _then) = _$ShippingOptionCopyWithImpl;
 @useResult
 $Res call({
- String id, String name, String regionId, Region? region, String profileId, ShippingProfile? profile, String providerId, FulfillmentProvider? provider, String priceType, int amount, bool isReturn, bool adminOnly, List<Requirement> requirements, List<TaxRate> taxRates, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt, Map<String, dynamic>? metadata
+ String id, String name,@JsonKey(name: 'region_id') String regionId, Region? region,@JsonKey(name: 'profile_id') String profileId, ShippingProfile? profile,@JsonKey(name: 'provider_id') String providerId, FulfillmentProvider? provider,@JsonKey(name: 'price_type') String priceType, int amount,@JsonKey(name: 'is_return') bool isReturn,@JsonKey(name: 'admin_only') bool adminOnly, List<Requirement> requirements,@JsonKey(name: 'tax_rates') List<TaxRate> taxRates,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
 });
 
 
@@ -206,7 +206,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  String regionId,  Region? region,  String profileId,  ShippingProfile? profile,  String providerId,  FulfillmentProvider? provider,  String priceType,  int amount,  bool isReturn,  bool adminOnly,  List<Requirement> requirements,  List<TaxRate> taxRates,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(name: 'region_id')  String regionId,  Region? region, @JsonKey(name: 'profile_id')  String profileId,  ShippingProfile? profile, @JsonKey(name: 'provider_id')  String providerId,  FulfillmentProvider? provider, @JsonKey(name: 'price_type')  String priceType,  int amount, @JsonKey(name: 'is_return')  bool isReturn, @JsonKey(name: 'admin_only')  bool adminOnly,  List<Requirement> requirements, @JsonKey(name: 'tax_rates')  List<TaxRate> taxRates, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ShippingOption() when $default != null:
 return $default(_that.id,_that.name,_that.regionId,_that.region,_that.profileId,_that.profile,_that.providerId,_that.provider,_that.priceType,_that.amount,_that.isReturn,_that.adminOnly,_that.requirements,_that.taxRates,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -227,7 +227,7 @@ return $default(_that.id,_that.name,_that.regionId,_that.region,_that.profileId,
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  String regionId,  Region? region,  String profileId,  ShippingProfile? profile,  String providerId,  FulfillmentProvider? provider,  String priceType,  int amount,  bool isReturn,  bool adminOnly,  List<Requirement> requirements,  List<TaxRate> taxRates,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(name: 'region_id')  String regionId,  Region? region, @JsonKey(name: 'profile_id')  String profileId,  ShippingProfile? profile, @JsonKey(name: 'provider_id')  String providerId,  FulfillmentProvider? provider, @JsonKey(name: 'price_type')  String priceType,  int amount, @JsonKey(name: 'is_return')  bool isReturn, @JsonKey(name: 'admin_only')  bool adminOnly,  List<Requirement> requirements, @JsonKey(name: 'tax_rates')  List<TaxRate> taxRates, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
 switch (_that) {
 case _ShippingOption():
 return $default(_that.id,_that.name,_that.regionId,_that.region,_that.profileId,_that.profile,_that.providerId,_that.provider,_that.priceType,_that.amount,_that.isReturn,_that.adminOnly,_that.requirements,_that.taxRates,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -247,7 +247,7 @@ return $default(_that.id,_that.name,_that.regionId,_that.region,_that.profileId,
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  String regionId,  Region? region,  String profileId,  ShippingProfile? profile,  String providerId,  FulfillmentProvider? provider,  String priceType,  int amount,  bool isReturn,  bool adminOnly,  List<Requirement> requirements,  List<TaxRate> taxRates,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name, @JsonKey(name: 'region_id')  String regionId,  Region? region, @JsonKey(name: 'profile_id')  String profileId,  ShippingProfile? profile, @JsonKey(name: 'provider_id')  String providerId,  FulfillmentProvider? provider, @JsonKey(name: 'price_type')  String priceType,  int amount, @JsonKey(name: 'is_return')  bool isReturn, @JsonKey(name: 'admin_only')  bool adminOnly,  List<Requirement> requirements, @JsonKey(name: 'tax_rates')  List<TaxRate> taxRates, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
 switch (_that) {
 case _ShippingOption() when $default != null:
 return $default(_that.id,_that.name,_that.regionId,_that.region,_that.profileId,_that.profile,_that.providerId,_that.provider,_that.priceType,_that.amount,_that.isReturn,_that.adminOnly,_that.requirements,_that.taxRates,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -262,21 +262,21 @@ return $default(_that.id,_that.name,_that.regionId,_that.region,_that.profileId,
 @JsonSerializable()
 
 class _ShippingOption implements ShippingOption {
-  const _ShippingOption({required this.id, required this.name, required this.regionId, this.region, required this.profileId, this.profile, required this.providerId, this.provider, required this.priceType, required this.amount, required this.isReturn, required this.adminOnly, required final  List<Requirement> requirements, required final  List<TaxRate> taxRates, this.createdAt, this.updatedAt, this.deletedAt, final  Map<String, dynamic>? metadata}): _requirements = requirements,_taxRates = taxRates,_metadata = metadata;
+  const _ShippingOption({required this.id, required this.name, @JsonKey(name: 'region_id') required this.regionId, this.region, @JsonKey(name: 'profile_id') required this.profileId, this.profile, @JsonKey(name: 'provider_id') required this.providerId, this.provider, @JsonKey(name: 'price_type') required this.priceType, required this.amount, @JsonKey(name: 'is_return') required this.isReturn, @JsonKey(name: 'admin_only') required this.adminOnly, required final  List<Requirement> requirements, @JsonKey(name: 'tax_rates') required final  List<TaxRate> taxRates, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt, final  Map<String, dynamic>? metadata}): _requirements = requirements,_taxRates = taxRates,_metadata = metadata;
   factory _ShippingOption.fromJson(Map<String, dynamic> json) => _$ShippingOptionFromJson(json);
 
 @override final  String id;
 @override final  String name;
-@override final  String regionId;
+@override@JsonKey(name: 'region_id') final  String regionId;
 @override final  Region? region;
-@override final  String profileId;
+@override@JsonKey(name: 'profile_id') final  String profileId;
 @override final  ShippingProfile? profile;
-@override final  String providerId;
+@override@JsonKey(name: 'provider_id') final  String providerId;
 @override final  FulfillmentProvider? provider;
-@override final  String priceType;
+@override@JsonKey(name: 'price_type') final  String priceType;
 @override final  int amount;
-@override final  bool isReturn;
-@override final  bool adminOnly;
+@override@JsonKey(name: 'is_return') final  bool isReturn;
+@override@JsonKey(name: 'admin_only') final  bool adminOnly;
  final  List<Requirement> _requirements;
 @override List<Requirement> get requirements {
   if (_requirements is EqualUnmodifiableListView) return _requirements;
@@ -285,15 +285,15 @@ class _ShippingOption implements ShippingOption {
 }
 
  final  List<TaxRate> _taxRates;
-@override List<TaxRate> get taxRates {
+@override@JsonKey(name: 'tax_rates') List<TaxRate> get taxRates {
   if (_taxRates is EqualUnmodifiableListView) return _taxRates;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_taxRates);
 }
 
-@override final  DateTime? createdAt;
-@override final  DateTime? updatedAt;
-@override final  DateTime? deletedAt;
+@override@JsonKey(name: 'created_at') final  DateTime? createdAt;
+@override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
+@override@JsonKey(name: 'deleted_at') final  DateTime? deletedAt;
  final  Map<String, dynamic>? _metadata;
 @override Map<String, dynamic>? get metadata {
   final value = _metadata;
@@ -337,7 +337,7 @@ abstract mixin class _$ShippingOptionCopyWith<$Res> implements $ShippingOptionCo
   factory _$ShippingOptionCopyWith(_ShippingOption value, $Res Function(_ShippingOption) _then) = __$ShippingOptionCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String name, String regionId, Region? region, String profileId, ShippingProfile? profile, String providerId, FulfillmentProvider? provider, String priceType, int amount, bool isReturn, bool adminOnly, List<Requirement> requirements, List<TaxRate> taxRates, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt, Map<String, dynamic>? metadata
+ String id, String name,@JsonKey(name: 'region_id') String regionId, Region? region,@JsonKey(name: 'profile_id') String profileId, ShippingProfile? profile,@JsonKey(name: 'provider_id') String providerId, FulfillmentProvider? provider,@JsonKey(name: 'price_type') String priceType, int amount,@JsonKey(name: 'is_return') bool isReturn,@JsonKey(name: 'admin_only') bool adminOnly, List<Requirement> requirements,@JsonKey(name: 'tax_rates') List<TaxRate> taxRates,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
 });
 
 

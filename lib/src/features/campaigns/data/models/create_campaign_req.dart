@@ -8,11 +8,11 @@ part 'create_campaign_req.g.dart';
 abstract class CreateCampaignReq with _$CreateCampaignReq {
   const factory CreateCampaignReq({
     required String name,
-    required String campaignIdentifier,
+    @JsonKey(name: 'campaign_identifier') required String campaignIdentifier,
     required String description,
     required Budget budget,
-    required DateTime startsAt,
-    required DateTime endsAt,
+    @JsonKey(name: 'starts_at') required DateTime startsAt,
+    @JsonKey(name: 'ends_at') required DateTime endsAt,
     List<String>? promotions,
   }) = _CreateCampaignReq;
 

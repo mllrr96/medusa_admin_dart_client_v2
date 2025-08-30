@@ -14,8 +14,8 @@ abstract class Adjustment with _$Adjustment {
     @JsonKey(name: 'discount_id') String? discountId,
     Discount? discount,
     @JsonKey(name: 'item_id') required String itemId,
-    DateTime? createdAt,
-    DateTime? updatedAt,
+    @JsonKey(name: 'created_at') DateTime? createdAt,
+    @JsonKey(name: 'updated_at') DateTime? updatedAt,
     Map<String, dynamic>? metadata,
   }) = _Adjustment;
 

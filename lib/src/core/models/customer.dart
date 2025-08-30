@@ -8,12 +8,12 @@ abstract class Customer with _$Customer {
   const factory Customer({
     required String id,
     required String email,
-    String? firstName,
-    String? lastName,
+    @JsonKey(name: 'first_name') String? firstName,
+    @JsonKey(name: 'last_name') String? lastName,
     String? phone,
-    DateTime? createdAt,
-    DateTime? updatedAt,
-    DateTime? deletedAt,
+    @JsonKey(name: 'created_at') DateTime? createdAt,
+    @JsonKey(name: 'updated_at') DateTime? updatedAt,
+    @JsonKey(name: 'deleted_at') DateTime? deletedAt,
     Map<String, dynamic>? metadata,
   }) = _Customer;
 

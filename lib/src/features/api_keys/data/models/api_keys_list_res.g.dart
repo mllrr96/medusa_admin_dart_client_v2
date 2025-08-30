@@ -8,7 +8,7 @@ part of 'api_keys_list_res.dart';
 
 _ApiKeysListRes _$ApiKeysListResFromJson(Map<String, dynamic> json) =>
     _ApiKeysListRes(
-      apiKeys: (json['apiKeys'] as List<dynamic>)
+      apiKeys: (json['api_keys'] as List<dynamic>)
           .map((e) => ApiKey.fromJson(e as Map<String, dynamic>))
           .toList(),
       limit: (json['limit'] as num).toInt(),
@@ -18,7 +18,7 @@ _ApiKeysListRes _$ApiKeysListResFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$ApiKeysListResToJson(_ApiKeysListRes instance) =>
     <String, dynamic>{
-      'apiKeys': instance.apiKeys,
+      'api_keys': instance.apiKeys,
       'limit': instance.limit,
       'offset': instance.offset,
       'count': instance.count,

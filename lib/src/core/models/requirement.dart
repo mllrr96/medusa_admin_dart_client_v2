@@ -9,10 +9,10 @@ abstract class Requirement with _$Requirement {
     required String id,
     required String type,
     required String value,
-    required String shippingOptionId,
-    DateTime? createdAt,
-    DateTime? updatedAt,
-    DateTime? deletedAt,
+    @JsonKey(name: 'shipping_option_id') required String shippingOptionId,
+    @JsonKey(name: 'created_at') DateTime? createdAt,
+    @JsonKey(name: 'updated_at') DateTime? updatedAt,
+    @JsonKey(name: 'deleted_at') DateTime? deletedAt,
     Map<String, dynamic>? metadata,
   }) = _Requirement;
 

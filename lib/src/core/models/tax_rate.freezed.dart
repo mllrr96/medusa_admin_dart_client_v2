@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$TaxRate {
 
- String get id; String get rate; String get name; String get code; String get regionId; Region? get region; DateTime? get createdAt; DateTime? get updatedAt; DateTime? get deletedAt; Map<String, dynamic>? get metadata;
+ String get id; String get rate; String get name; String get code;@JsonKey(name: 'region_id') String get regionId; Region? get region;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt; Map<String, dynamic>? get metadata;
 /// Create a copy of TaxRate
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $TaxRateCopyWith<$Res>  {
   factory $TaxRateCopyWith(TaxRate value, $Res Function(TaxRate) _then) = _$TaxRateCopyWithImpl;
 @useResult
 $Res call({
- String id, String rate, String name, String code, String regionId, Region? region, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt, Map<String, dynamic>? metadata
+ String id, String rate, String name, String code,@JsonKey(name: 'region_id') String regionId, Region? region,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
 });
 
 
@@ -174,7 +174,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String rate,  String name,  String code,  String regionId,  Region? region,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String rate,  String name,  String code, @JsonKey(name: 'region_id')  String regionId,  Region? region, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _TaxRate() when $default != null:
 return $default(_that.id,_that.rate,_that.name,_that.code,_that.regionId,_that.region,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -195,7 +195,7 @@ return $default(_that.id,_that.rate,_that.name,_that.code,_that.regionId,_that.r
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String rate,  String name,  String code,  String regionId,  Region? region,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String rate,  String name,  String code, @JsonKey(name: 'region_id')  String regionId,  Region? region, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
 switch (_that) {
 case _TaxRate():
 return $default(_that.id,_that.rate,_that.name,_that.code,_that.regionId,_that.region,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -215,7 +215,7 @@ return $default(_that.id,_that.rate,_that.name,_that.code,_that.regionId,_that.r
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String rate,  String name,  String code,  String regionId,  Region? region,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String rate,  String name,  String code, @JsonKey(name: 'region_id')  String regionId,  Region? region, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
 switch (_that) {
 case _TaxRate() when $default != null:
 return $default(_that.id,_that.rate,_that.name,_that.code,_that.regionId,_that.region,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -230,18 +230,18 @@ return $default(_that.id,_that.rate,_that.name,_that.code,_that.regionId,_that.r
 @JsonSerializable()
 
 class _TaxRate implements TaxRate {
-  const _TaxRate({required this.id, required this.rate, required this.name, required this.code, required this.regionId, this.region, this.createdAt, this.updatedAt, this.deletedAt, final  Map<String, dynamic>? metadata}): _metadata = metadata;
+  const _TaxRate({required this.id, required this.rate, required this.name, required this.code, @JsonKey(name: 'region_id') required this.regionId, this.region, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt, final  Map<String, dynamic>? metadata}): _metadata = metadata;
   factory _TaxRate.fromJson(Map<String, dynamic> json) => _$TaxRateFromJson(json);
 
 @override final  String id;
 @override final  String rate;
 @override final  String name;
 @override final  String code;
-@override final  String regionId;
+@override@JsonKey(name: 'region_id') final  String regionId;
 @override final  Region? region;
-@override final  DateTime? createdAt;
-@override final  DateTime? updatedAt;
-@override final  DateTime? deletedAt;
+@override@JsonKey(name: 'created_at') final  DateTime? createdAt;
+@override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
+@override@JsonKey(name: 'deleted_at') final  DateTime? deletedAt;
  final  Map<String, dynamic>? _metadata;
 @override Map<String, dynamic>? get metadata {
   final value = _metadata;
@@ -285,7 +285,7 @@ abstract mixin class _$TaxRateCopyWith<$Res> implements $TaxRateCopyWith<$Res> {
   factory _$TaxRateCopyWith(_TaxRate value, $Res Function(_TaxRate) _then) = __$TaxRateCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String rate, String name, String code, String regionId, Region? region, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt, Map<String, dynamic>? metadata
+ String id, String rate, String name, String code,@JsonKey(name: 'region_id') String regionId, Region? region,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
 });
 
 

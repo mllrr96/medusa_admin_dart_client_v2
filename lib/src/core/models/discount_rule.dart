@@ -16,12 +16,13 @@ abstract class DiscountRule with _$DiscountRule {
     required String value,
     required String allocation,
     required List<Product> products,
+    @JsonKey(name: 'product_collections')
     required List<ProductCollection> productCollections,
-    required List<ProductType> productTypes,
-    required List<ProductTag> productTags,
-    DateTime? createdAt,
-    DateTime? updatedAt,
-    DateTime? deletedAt,
+    @JsonKey(name: 'product_types') required List<ProductType> productTypes,
+    @JsonKey(name: 'product_tags') required List<ProductTag> productTags,
+    @JsonKey(name: 'created_at') DateTime? createdAt,
+    @JsonKey(name: 'updated_at') DateTime? updatedAt,
+    @JsonKey(name: 'deleted_at') DateTime? deletedAt,
     Map<String, dynamic>? metadata,
   }) = _DiscountRule;
 

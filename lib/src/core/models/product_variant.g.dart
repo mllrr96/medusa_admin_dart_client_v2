@@ -18,12 +18,12 @@ _ProductVariant _$ProductVariantFromJson(Map<String, dynamic> json) =>
       barcode: json['barcode'] as String,
       ean: json['ean'] as String,
       upc: json['upc'] as String,
-      inventoryQuantity: (json['inventoryQuantity'] as num).toInt(),
-      allowBackorder: json['allowBackorder'] as bool,
-      manageInventory: json['manageInventory'] as bool,
-      hsCode: (json['hsCode'] as num).toInt(),
-      originCountry: json['originCountry'] as String,
-      midCode: json['midCode'] as String,
+      inventoryQuantity: (json['inventory_quantity'] as num).toInt(),
+      allowBackorder: json['allow_backorder'] as bool,
+      manageInventory: json['manage_inventory'] as bool,
+      hsCode: (json['hs_code'] as num).toInt(),
+      originCountry: json['origin_country'] as String,
+      midCode: json['mid_code'] as String,
       material: json['material'] as String,
       weight: (json['weight'] as num).toInt(),
       length: (json['length'] as num).toInt(),
@@ -31,26 +31,26 @@ _ProductVariant _$ProductVariantFromJson(Map<String, dynamic> json) =>
       width: (json['width'] as num).toInt(),
       gst: (json['gst'] as num).toInt(),
       vat: (json['vat'] as num).toInt(),
-      taxablePrice: (json['taxablePrice'] as num).toInt(),
-      originalPrice: (json['originalPrice'] as num).toInt(),
-      calculatedPrice: (json['calculatedPrice'] as num).toInt(),
-      originalTaxablePrice: (json['originalTaxablePrice'] as num).toInt(),
-      calculatedTaxablePrice: (json['calculatedTaxablePrice'] as num).toInt(),
+      taxablePrice: (json['taxable_price'] as num).toInt(),
+      originalPrice: (json['original_price'] as num).toInt(),
+      calculatedPrice: (json['calculated_price'] as num).toInt(),
+      originalTaxablePrice: (json['original_taxable_price'] as num).toInt(),
+      calculatedTaxablePrice: (json['calculated_taxable_price'] as num).toInt(),
       options: (json['options'] as List<dynamic>)
           .map((e) => ProductOptionValue.fromJson(e as Map<String, dynamic>))
           .toList(),
       prices: (json['prices'] as List<dynamic>)
           .map((e) => MoneyAmount.fromJson(e as Map<String, dynamic>))
           .toList(),
-      createdAt: json['createdAt'] == null
+      createdAt: json['created_at'] == null
           ? null
-          : DateTime.parse(json['createdAt'] as String),
-      updatedAt: json['updatedAt'] == null
+          : DateTime.parse(json['created_at'] as String),
+      updatedAt: json['updated_at'] == null
           ? null
-          : DateTime.parse(json['updatedAt'] as String),
-      deletedAt: json['deletedAt'] == null
+          : DateTime.parse(json['updated_at'] as String),
+      deletedAt: json['deleted_at'] == null
           ? null
-          : DateTime.parse(json['deletedAt'] as String),
+          : DateTime.parse(json['deleted_at'] as String),
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
@@ -64,12 +64,12 @@ Map<String, dynamic> _$ProductVariantToJson(_ProductVariant instance) =>
       'barcode': instance.barcode,
       'ean': instance.ean,
       'upc': instance.upc,
-      'inventoryQuantity': instance.inventoryQuantity,
-      'allowBackorder': instance.allowBackorder,
-      'manageInventory': instance.manageInventory,
-      'hsCode': instance.hsCode,
-      'originCountry': instance.originCountry,
-      'midCode': instance.midCode,
+      'inventory_quantity': instance.inventoryQuantity,
+      'allow_backorder': instance.allowBackorder,
+      'manage_inventory': instance.manageInventory,
+      'hs_code': instance.hsCode,
+      'origin_country': instance.originCountry,
+      'mid_code': instance.midCode,
       'material': instance.material,
       'weight': instance.weight,
       'length': instance.length,
@@ -77,15 +77,15 @@ Map<String, dynamic> _$ProductVariantToJson(_ProductVariant instance) =>
       'width': instance.width,
       'gst': instance.gst,
       'vat': instance.vat,
-      'taxablePrice': instance.taxablePrice,
-      'originalPrice': instance.originalPrice,
-      'calculatedPrice': instance.calculatedPrice,
-      'originalTaxablePrice': instance.originalTaxablePrice,
-      'calculatedTaxablePrice': instance.calculatedTaxablePrice,
+      'taxable_price': instance.taxablePrice,
+      'original_price': instance.originalPrice,
+      'calculated_price': instance.calculatedPrice,
+      'original_taxable_price': instance.originalTaxablePrice,
+      'calculated_taxable_price': instance.calculatedTaxablePrice,
       'options': instance.options,
       'prices': instance.prices,
-      'createdAt': instance.createdAt?.toIso8601String(),
-      'updatedAt': instance.updatedAt?.toIso8601String(),
-      'deletedAt': instance.deletedAt?.toIso8601String(),
+      'created_at': instance.createdAt?.toIso8601String(),
+      'updated_at': instance.updatedAt?.toIso8601String(),
+      'deleted_at': instance.deletedAt?.toIso8601String(),
       'metadata': instance.metadata,
     };

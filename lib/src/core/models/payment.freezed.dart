@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Payment {
 
- String get id; String get status; String get cartId; Cart? get cart; String get orderId; Order? get order; String get currencyCode; int get amount; String get providerId; PaymentProvider? get paymentProvider; Map<String, dynamic>? get data; DateTime? get capturedAt; DateTime? get createdAt; DateTime? get updatedAt; DateTime? get deletedAt; Map<String, dynamic>? get metadata;
+ String get id; String get status;@JsonKey(name: 'cart_id') String get cartId; Cart? get cart;@JsonKey(name: 'order_id') String get orderId; Order? get order;@JsonKey(name: 'currency_code') String get currencyCode; int get amount;@JsonKey(name: 'provider_id') String get providerId;@JsonKey(name: 'payment_provider') PaymentProvider? get paymentProvider; Map<String, dynamic>? get data;@JsonKey(name: 'captured_at') DateTime? get capturedAt;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt; Map<String, dynamic>? get metadata;
 /// Create a copy of Payment
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $PaymentCopyWith<$Res>  {
   factory $PaymentCopyWith(Payment value, $Res Function(Payment) _then) = _$PaymentCopyWithImpl;
 @useResult
 $Res call({
- String id, String status, String cartId, Cart? cart, String orderId, Order? order, String currencyCode, int amount, String providerId, PaymentProvider? paymentProvider, Map<String, dynamic>? data, DateTime? capturedAt, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt, Map<String, dynamic>? metadata
+ String id, String status,@JsonKey(name: 'cart_id') String cartId, Cart? cart,@JsonKey(name: 'order_id') String orderId, Order? order,@JsonKey(name: 'currency_code') String currencyCode, int amount,@JsonKey(name: 'provider_id') String providerId,@JsonKey(name: 'payment_provider') PaymentProvider? paymentProvider, Map<String, dynamic>? data,@JsonKey(name: 'captured_at') DateTime? capturedAt,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
 });
 
 
@@ -204,7 +204,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String status,  String cartId,  Cart? cart,  String orderId,  Order? order,  String currencyCode,  int amount,  String providerId,  PaymentProvider? paymentProvider,  Map<String, dynamic>? data,  DateTime? capturedAt,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String status, @JsonKey(name: 'cart_id')  String cartId,  Cart? cart, @JsonKey(name: 'order_id')  String orderId,  Order? order, @JsonKey(name: 'currency_code')  String currencyCode,  int amount, @JsonKey(name: 'provider_id')  String providerId, @JsonKey(name: 'payment_provider')  PaymentProvider? paymentProvider,  Map<String, dynamic>? data, @JsonKey(name: 'captured_at')  DateTime? capturedAt, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Payment() when $default != null:
 return $default(_that.id,_that.status,_that.cartId,_that.cart,_that.orderId,_that.order,_that.currencyCode,_that.amount,_that.providerId,_that.paymentProvider,_that.data,_that.capturedAt,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -225,7 +225,7 @@ return $default(_that.id,_that.status,_that.cartId,_that.cart,_that.orderId,_tha
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String status,  String cartId,  Cart? cart,  String orderId,  Order? order,  String currencyCode,  int amount,  String providerId,  PaymentProvider? paymentProvider,  Map<String, dynamic>? data,  DateTime? capturedAt,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String status, @JsonKey(name: 'cart_id')  String cartId,  Cart? cart, @JsonKey(name: 'order_id')  String orderId,  Order? order, @JsonKey(name: 'currency_code')  String currencyCode,  int amount, @JsonKey(name: 'provider_id')  String providerId, @JsonKey(name: 'payment_provider')  PaymentProvider? paymentProvider,  Map<String, dynamic>? data, @JsonKey(name: 'captured_at')  DateTime? capturedAt, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
 switch (_that) {
 case _Payment():
 return $default(_that.id,_that.status,_that.cartId,_that.cart,_that.orderId,_that.order,_that.currencyCode,_that.amount,_that.providerId,_that.paymentProvider,_that.data,_that.capturedAt,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -245,7 +245,7 @@ return $default(_that.id,_that.status,_that.cartId,_that.cart,_that.orderId,_tha
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String status,  String cartId,  Cart? cart,  String orderId,  Order? order,  String currencyCode,  int amount,  String providerId,  PaymentProvider? paymentProvider,  Map<String, dynamic>? data,  DateTime? capturedAt,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String status, @JsonKey(name: 'cart_id')  String cartId,  Cart? cart, @JsonKey(name: 'order_id')  String orderId,  Order? order, @JsonKey(name: 'currency_code')  String currencyCode,  int amount, @JsonKey(name: 'provider_id')  String providerId, @JsonKey(name: 'payment_provider')  PaymentProvider? paymentProvider,  Map<String, dynamic>? data, @JsonKey(name: 'captured_at')  DateTime? capturedAt, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
 switch (_that) {
 case _Payment() when $default != null:
 return $default(_that.id,_that.status,_that.cartId,_that.cart,_that.orderId,_that.order,_that.currencyCode,_that.amount,_that.providerId,_that.paymentProvider,_that.data,_that.capturedAt,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -260,19 +260,19 @@ return $default(_that.id,_that.status,_that.cartId,_that.cart,_that.orderId,_tha
 @JsonSerializable()
 
 class _Payment implements Payment {
-  const _Payment({required this.id, required this.status, required this.cartId, this.cart, required this.orderId, this.order, required this.currencyCode, required this.amount, required this.providerId, this.paymentProvider, final  Map<String, dynamic>? data, this.capturedAt, this.createdAt, this.updatedAt, this.deletedAt, final  Map<String, dynamic>? metadata}): _data = data,_metadata = metadata;
+  const _Payment({required this.id, required this.status, @JsonKey(name: 'cart_id') required this.cartId, this.cart, @JsonKey(name: 'order_id') required this.orderId, this.order, @JsonKey(name: 'currency_code') required this.currencyCode, required this.amount, @JsonKey(name: 'provider_id') required this.providerId, @JsonKey(name: 'payment_provider') this.paymentProvider, final  Map<String, dynamic>? data, @JsonKey(name: 'captured_at') this.capturedAt, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt, final  Map<String, dynamic>? metadata}): _data = data,_metadata = metadata;
   factory _Payment.fromJson(Map<String, dynamic> json) => _$PaymentFromJson(json);
 
 @override final  String id;
 @override final  String status;
-@override final  String cartId;
+@override@JsonKey(name: 'cart_id') final  String cartId;
 @override final  Cart? cart;
-@override final  String orderId;
+@override@JsonKey(name: 'order_id') final  String orderId;
 @override final  Order? order;
-@override final  String currencyCode;
+@override@JsonKey(name: 'currency_code') final  String currencyCode;
 @override final  int amount;
-@override final  String providerId;
-@override final  PaymentProvider? paymentProvider;
+@override@JsonKey(name: 'provider_id') final  String providerId;
+@override@JsonKey(name: 'payment_provider') final  PaymentProvider? paymentProvider;
  final  Map<String, dynamic>? _data;
 @override Map<String, dynamic>? get data {
   final value = _data;
@@ -282,10 +282,10 @@ class _Payment implements Payment {
   return EqualUnmodifiableMapView(value);
 }
 
-@override final  DateTime? capturedAt;
-@override final  DateTime? createdAt;
-@override final  DateTime? updatedAt;
-@override final  DateTime? deletedAt;
+@override@JsonKey(name: 'captured_at') final  DateTime? capturedAt;
+@override@JsonKey(name: 'created_at') final  DateTime? createdAt;
+@override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
+@override@JsonKey(name: 'deleted_at') final  DateTime? deletedAt;
  final  Map<String, dynamic>? _metadata;
 @override Map<String, dynamic>? get metadata {
   final value = _metadata;
@@ -329,7 +329,7 @@ abstract mixin class _$PaymentCopyWith<$Res> implements $PaymentCopyWith<$Res> {
   factory _$PaymentCopyWith(_Payment value, $Res Function(_Payment) _then) = __$PaymentCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String status, String cartId, Cart? cart, String orderId, Order? order, String currencyCode, int amount, String providerId, PaymentProvider? paymentProvider, Map<String, dynamic>? data, DateTime? capturedAt, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt, Map<String, dynamic>? metadata
+ String id, String status,@JsonKey(name: 'cart_id') String cartId, Cart? cart,@JsonKey(name: 'order_id') String orderId, Order? order,@JsonKey(name: 'currency_code') String currencyCode, int amount,@JsonKey(name: 'provider_id') String providerId,@JsonKey(name: 'payment_provider') PaymentProvider? paymentProvider, Map<String, dynamic>? data,@JsonKey(name: 'captured_at') DateTime? capturedAt,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
 });
 
 

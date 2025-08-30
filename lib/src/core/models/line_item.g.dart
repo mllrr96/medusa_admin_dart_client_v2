@@ -11,9 +11,9 @@ _LineItem _$LineItemFromJson(Map<String, dynamic> json) => _LineItem(
   title: json['title'] as String,
   description: json['description'] as String,
   thumbnail: json['thumbnail'] as String,
-  isGiftcard: json['isGiftcard'] as bool,
+  isGiftcard: json['is_giftcard'] as bool,
   quantity: (json['quantity'] as num).toInt(),
-  unitPrice: (json['unitPrice'] as num).toInt(),
+  unitPrice: (json['unit_price'] as num).toInt(),
   variantId: json['variant_id'] as String?,
   variant: json['variant'] == null
       ? null
@@ -54,9 +54,9 @@ Map<String, dynamic> _$LineItemToJson(_LineItem instance) => <String, dynamic>{
   'title': instance.title,
   'description': instance.description,
   'thumbnail': instance.thumbnail,
-  'isGiftcard': instance.isGiftcard,
+  'is_giftcard': instance.isGiftcard,
   'quantity': instance.quantity,
-  'unitPrice': instance.unitPrice,
+  'unit_price': instance.unitPrice,
   'variant_id': instance.variantId,
   'variant': instance.variant,
   'product_id': instance.productId,

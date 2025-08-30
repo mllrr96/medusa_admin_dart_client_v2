@@ -9,59 +9,59 @@ part of 'shipping_method.dart';
 _ShippingMethod _$ShippingMethodFromJson(Map<String, dynamic> json) =>
     _ShippingMethod(
       id: json['id'] as String,
-      shippingOptionId: json['shippingOptionId'] as String,
-      shippingOption: json['shippingOption'] == null
+      shippingOptionId: json['shipping_option_id'] as String,
+      shippingOption: json['shipping_option'] == null
           ? null
           : ShippingOption.fromJson(
-              json['shippingOption'] as Map<String, dynamic>,
+              json['shipping_option'] as Map<String, dynamic>,
             ),
-      orderId: json['orderId'] as String,
+      orderId: json['order_id'] as String,
       order: json['order'] == null
           ? null
           : Order.fromJson(json['order'] as Map<String, dynamic>),
-      cartId: json['cartId'] as String,
+      cartId: json['cart_id'] as String,
       cart: json['cart'] == null
           ? null
           : Cart.fromJson(json['cart'] as Map<String, dynamic>),
-      swapId: json['swapId'] as String,
+      swapId: json['swap_id'] as String,
       swap: json['swap'] == null
           ? null
           : Swap.fromJson(json['swap'] as Map<String, dynamic>),
       price: (json['price'] as num).toInt(),
       data: json['data'] as String,
-      taxRate: json['taxRate'] as String,
-      taxInclusive: json['taxInclusive'] as String,
-      includesTax: json['includesTax'] as String,
-      createdAt: json['createdAt'] == null
+      taxRate: json['tax_rate'] as String,
+      taxInclusive: json['tax_inclusive'] as String,
+      includesTax: json['includes_tax'] as String,
+      createdAt: json['created_at'] == null
           ? null
-          : DateTime.parse(json['createdAt'] as String),
-      updatedAt: json['updatedAt'] == null
+          : DateTime.parse(json['created_at'] as String),
+      updatedAt: json['updated_at'] == null
           ? null
-          : DateTime.parse(json['updatedAt'] as String),
-      deletedAt: json['deletedAt'] == null
+          : DateTime.parse(json['updated_at'] as String),
+      deletedAt: json['deleted_at'] == null
           ? null
-          : DateTime.parse(json['deletedAt'] as String),
+          : DateTime.parse(json['deleted_at'] as String),
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
 Map<String, dynamic> _$ShippingMethodToJson(_ShippingMethod instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'shippingOptionId': instance.shippingOptionId,
-      'shippingOption': instance.shippingOption,
-      'orderId': instance.orderId,
+      'shipping_option_id': instance.shippingOptionId,
+      'shipping_option': instance.shippingOption,
+      'order_id': instance.orderId,
       'order': instance.order,
-      'cartId': instance.cartId,
+      'cart_id': instance.cartId,
       'cart': instance.cart,
-      'swapId': instance.swapId,
+      'swap_id': instance.swapId,
       'swap': instance.swap,
       'price': instance.price,
       'data': instance.data,
-      'taxRate': instance.taxRate,
-      'taxInclusive': instance.taxInclusive,
-      'includesTax': instance.includesTax,
-      'createdAt': instance.createdAt?.toIso8601String(),
-      'updatedAt': instance.updatedAt?.toIso8601String(),
-      'deletedAt': instance.deletedAt?.toIso8601String(),
+      'tax_rate': instance.taxRate,
+      'tax_inclusive': instance.taxInclusive,
+      'includes_tax': instance.includesTax,
+      'created_at': instance.createdAt?.toIso8601String(),
+      'updated_at': instance.updatedAt?.toIso8601String(),
+      'deleted_at': instance.deletedAt?.toIso8601String(),
       'metadata': instance.metadata,
     };

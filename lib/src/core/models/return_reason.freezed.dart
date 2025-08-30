@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ReturnReason {
 
- String get id; String get value; String get label; String? get description;@JsonKey(name: 'parent_return_reason_id') String? get parentReturnReasonId; ReturnReason? get parentReturnReason;@JsonKey(name: 'return_reason_children') List<ReturnReason>? get returnReasonChildren; DateTime? get createdAt; DateTime? get updatedAt; DateTime? get deletedAt; Map<String, dynamic>? get metadata;
+ String get id; String get value; String get label; String? get description;@JsonKey(name: 'parent_return_reason_id') String? get parentReturnReasonId;@JsonKey(name: 'parent_return_reason') ReturnReason? get parentReturnReason;@JsonKey(name: 'return_reason_children') List<ReturnReason>? get returnReasonChildren;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt; Map<String, dynamic>? get metadata;
 /// Create a copy of ReturnReason
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $ReturnReasonCopyWith<$Res>  {
   factory $ReturnReasonCopyWith(ReturnReason value, $Res Function(ReturnReason) _then) = _$ReturnReasonCopyWithImpl;
 @useResult
 $Res call({
- String id, String value, String label, String? description,@JsonKey(name: 'parent_return_reason_id') String? parentReturnReasonId, ReturnReason? parentReturnReason,@JsonKey(name: 'return_reason_children') List<ReturnReason>? returnReasonChildren, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt, Map<String, dynamic>? metadata
+ String id, String value, String label, String? description,@JsonKey(name: 'parent_return_reason_id') String? parentReturnReasonId,@JsonKey(name: 'parent_return_reason') ReturnReason? parentReturnReason,@JsonKey(name: 'return_reason_children') List<ReturnReason>? returnReasonChildren,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
 });
 
 
@@ -175,7 +175,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String value,  String label,  String? description, @JsonKey(name: 'parent_return_reason_id')  String? parentReturnReasonId,  ReturnReason? parentReturnReason, @JsonKey(name: 'return_reason_children')  List<ReturnReason>? returnReasonChildren,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String value,  String label,  String? description, @JsonKey(name: 'parent_return_reason_id')  String? parentReturnReasonId, @JsonKey(name: 'parent_return_reason')  ReturnReason? parentReturnReason, @JsonKey(name: 'return_reason_children')  List<ReturnReason>? returnReasonChildren, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ReturnReason() when $default != null:
 return $default(_that.id,_that.value,_that.label,_that.description,_that.parentReturnReasonId,_that.parentReturnReason,_that.returnReasonChildren,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -196,7 +196,7 @@ return $default(_that.id,_that.value,_that.label,_that.description,_that.parentR
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String value,  String label,  String? description, @JsonKey(name: 'parent_return_reason_id')  String? parentReturnReasonId,  ReturnReason? parentReturnReason, @JsonKey(name: 'return_reason_children')  List<ReturnReason>? returnReasonChildren,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String value,  String label,  String? description, @JsonKey(name: 'parent_return_reason_id')  String? parentReturnReasonId, @JsonKey(name: 'parent_return_reason')  ReturnReason? parentReturnReason, @JsonKey(name: 'return_reason_children')  List<ReturnReason>? returnReasonChildren, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
 switch (_that) {
 case _ReturnReason():
 return $default(_that.id,_that.value,_that.label,_that.description,_that.parentReturnReasonId,_that.parentReturnReason,_that.returnReasonChildren,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -216,7 +216,7 @@ return $default(_that.id,_that.value,_that.label,_that.description,_that.parentR
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String value,  String label,  String? description, @JsonKey(name: 'parent_return_reason_id')  String? parentReturnReasonId,  ReturnReason? parentReturnReason, @JsonKey(name: 'return_reason_children')  List<ReturnReason>? returnReasonChildren,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String value,  String label,  String? description, @JsonKey(name: 'parent_return_reason_id')  String? parentReturnReasonId, @JsonKey(name: 'parent_return_reason')  ReturnReason? parentReturnReason, @JsonKey(name: 'return_reason_children')  List<ReturnReason>? returnReasonChildren, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
 switch (_that) {
 case _ReturnReason() when $default != null:
 return $default(_that.id,_that.value,_that.label,_that.description,_that.parentReturnReasonId,_that.parentReturnReason,_that.returnReasonChildren,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -231,7 +231,7 @@ return $default(_that.id,_that.value,_that.label,_that.description,_that.parentR
 @JsonSerializable()
 
 class _ReturnReason implements ReturnReason {
-  const _ReturnReason({required this.id, required this.value, required this.label, this.description, @JsonKey(name: 'parent_return_reason_id') this.parentReturnReasonId, this.parentReturnReason, @JsonKey(name: 'return_reason_children') final  List<ReturnReason>? returnReasonChildren, this.createdAt, this.updatedAt, this.deletedAt, final  Map<String, dynamic>? metadata}): _returnReasonChildren = returnReasonChildren,_metadata = metadata;
+  const _ReturnReason({required this.id, required this.value, required this.label, this.description, @JsonKey(name: 'parent_return_reason_id') this.parentReturnReasonId, @JsonKey(name: 'parent_return_reason') this.parentReturnReason, @JsonKey(name: 'return_reason_children') final  List<ReturnReason>? returnReasonChildren, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt, final  Map<String, dynamic>? metadata}): _returnReasonChildren = returnReasonChildren,_metadata = metadata;
   factory _ReturnReason.fromJson(Map<String, dynamic> json) => _$ReturnReasonFromJson(json);
 
 @override final  String id;
@@ -239,7 +239,7 @@ class _ReturnReason implements ReturnReason {
 @override final  String label;
 @override final  String? description;
 @override@JsonKey(name: 'parent_return_reason_id') final  String? parentReturnReasonId;
-@override final  ReturnReason? parentReturnReason;
+@override@JsonKey(name: 'parent_return_reason') final  ReturnReason? parentReturnReason;
  final  List<ReturnReason>? _returnReasonChildren;
 @override@JsonKey(name: 'return_reason_children') List<ReturnReason>? get returnReasonChildren {
   final value = _returnReasonChildren;
@@ -249,9 +249,9 @@ class _ReturnReason implements ReturnReason {
   return EqualUnmodifiableListView(value);
 }
 
-@override final  DateTime? createdAt;
-@override final  DateTime? updatedAt;
-@override final  DateTime? deletedAt;
+@override@JsonKey(name: 'created_at') final  DateTime? createdAt;
+@override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
+@override@JsonKey(name: 'deleted_at') final  DateTime? deletedAt;
  final  Map<String, dynamic>? _metadata;
 @override Map<String, dynamic>? get metadata {
   final value = _metadata;
@@ -295,7 +295,7 @@ abstract mixin class _$ReturnReasonCopyWith<$Res> implements $ReturnReasonCopyWi
   factory _$ReturnReasonCopyWith(_ReturnReason value, $Res Function(_ReturnReason) _then) = __$ReturnReasonCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String value, String label, String? description,@JsonKey(name: 'parent_return_reason_id') String? parentReturnReasonId, ReturnReason? parentReturnReason,@JsonKey(name: 'return_reason_children') List<ReturnReason>? returnReasonChildren, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt, Map<String, dynamic>? metadata
+ String id, String value, String label, String? description,@JsonKey(name: 'parent_return_reason_id') String? parentReturnReasonId,@JsonKey(name: 'parent_return_reason') ReturnReason? parentReturnReason,@JsonKey(name: 'return_reason_children') List<ReturnReason>? returnReasonChildren,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
 });
 
 

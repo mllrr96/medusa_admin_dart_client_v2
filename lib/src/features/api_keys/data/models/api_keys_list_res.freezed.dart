@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ApiKeysListRes {
 
- List<ApiKey> get apiKeys; int get limit; int get offset; int get count;
+@JsonKey(name: 'api_keys') List<ApiKey> get apiKeys; int get limit; int get offset; int get count;
 /// Create a copy of ApiKeysListRes
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $ApiKeysListResCopyWith<$Res>  {
   factory $ApiKeysListResCopyWith(ApiKeysListRes value, $Res Function(ApiKeysListRes) _then) = _$ApiKeysListResCopyWithImpl;
 @useResult
 $Res call({
- List<ApiKey> apiKeys, int limit, int offset, int count
+@JsonKey(name: 'api_keys') List<ApiKey> apiKeys, int limit, int offset, int count
 });
 
 
@@ -156,7 +156,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<ApiKey> apiKeys,  int limit,  int offset,  int count)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'api_keys')  List<ApiKey> apiKeys,  int limit,  int offset,  int count)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ApiKeysListRes() when $default != null:
 return $default(_that.apiKeys,_that.limit,_that.offset,_that.count);case _:
@@ -177,7 +177,7 @@ return $default(_that.apiKeys,_that.limit,_that.offset,_that.count);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<ApiKey> apiKeys,  int limit,  int offset,  int count)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'api_keys')  List<ApiKey> apiKeys,  int limit,  int offset,  int count)  $default,) {final _that = this;
 switch (_that) {
 case _ApiKeysListRes():
 return $default(_that.apiKeys,_that.limit,_that.offset,_that.count);case _:
@@ -197,7 +197,7 @@ return $default(_that.apiKeys,_that.limit,_that.offset,_that.count);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<ApiKey> apiKeys,  int limit,  int offset,  int count)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'api_keys')  List<ApiKey> apiKeys,  int limit,  int offset,  int count)?  $default,) {final _that = this;
 switch (_that) {
 case _ApiKeysListRes() when $default != null:
 return $default(_that.apiKeys,_that.limit,_that.offset,_that.count);case _:
@@ -212,11 +212,11 @@ return $default(_that.apiKeys,_that.limit,_that.offset,_that.count);case _:
 @JsonSerializable()
 
 class _ApiKeysListRes implements ApiKeysListRes {
-  const _ApiKeysListRes({required final  List<ApiKey> apiKeys, required this.limit, required this.offset, required this.count}): _apiKeys = apiKeys;
+  const _ApiKeysListRes({@JsonKey(name: 'api_keys') required final  List<ApiKey> apiKeys, required this.limit, required this.offset, required this.count}): _apiKeys = apiKeys;
   factory _ApiKeysListRes.fromJson(Map<String, dynamic> json) => _$ApiKeysListResFromJson(json);
 
  final  List<ApiKey> _apiKeys;
-@override List<ApiKey> get apiKeys {
+@override@JsonKey(name: 'api_keys') List<ApiKey> get apiKeys {
   if (_apiKeys is EqualUnmodifiableListView) return _apiKeys;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_apiKeys);
@@ -259,7 +259,7 @@ abstract mixin class _$ApiKeysListResCopyWith<$Res> implements $ApiKeysListResCo
   factory _$ApiKeysListResCopyWith(_ApiKeysListRes value, $Res Function(_ApiKeysListRes) _then) = __$ApiKeysListResCopyWithImpl;
 @override @useResult
 $Res call({
- List<ApiKey> apiKeys, int limit, int offset, int count
+@JsonKey(name: 'api_keys') List<ApiKey> apiKeys, int limit, int offset, int count
 });
 
 

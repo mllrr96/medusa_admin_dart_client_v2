@@ -12,18 +12,20 @@ abstract class Region with _$Region {
   const factory Region({
     required String id,
     required String name,
-    required String currencyCode,
+    @JsonKey(name: 'currency_code') required String currencyCode,
     required List<Country> countries,
+    @JsonKey(name: 'payment_providers')
     required List<PaymentProvider> paymentProviders,
+    @JsonKey(name: 'fulfillment_providers')
     required List<FulfillmentProvider> fulfillmentProviders,
-    required int taxRate,
-    required String taxCode,
-    required bool automaticTaxes,
-    required String giftCardsTaxable,
-    required String productsTaxable,
-    DateTime? createdAt,
-    DateTime? updatedAt,
-    DateTime? deletedAt,
+    @JsonKey(name: 'tax_rate') required int taxRate,
+    @JsonKey(name: 'tax_code') required String taxCode,
+    @JsonKey(name: 'automatic_taxes') required bool automaticTaxes,
+    @JsonKey(name: 'gift_cards_taxable') required String giftCardsTaxable,
+    @JsonKey(name: 'products_taxable') required String productsTaxable,
+    @JsonKey(name: 'created_at') DateTime? createdAt,
+    @JsonKey(name: 'updated_at') DateTime? updatedAt,
+    @JsonKey(name: 'deleted_at') DateTime? deletedAt,
     Map<String, dynamic>? metadata,
   }) = _Region;
 

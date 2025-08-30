@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$OrderAddress {
 
- String get id; String? get customer_id; String? get first_name; String? get last_name; String? get phone; String? get company; String? get address_1; String? get address_2; String? get city; String? get country_code; Country? get country; String? get province; String? get postal_code; Map<String, dynamic> get metadata; String get created_at; String get updated_at;
+ String get id;@JsonKey(name: 'customer_id') String? get customerId;@JsonKey(name: 'first_name') String? get firstName;@JsonKey(name: 'last_name') String? get lastName; String? get phone; String? get company;@JsonKey(name: 'address_1') String? get address1;@JsonKey(name: 'address_2') String? get address2; String? get city;@JsonKey(name: 'country_code') String? get countryCode; Country? get country; String? get province;@JsonKey(name: 'postal_code') String? get postalCode; Map<String, dynamic> get metadata;@JsonKey(name: 'created_at') String get createdAt;@JsonKey(name: 'updated_at') String get updatedAt;
 /// Create a copy of OrderAddress
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $OrderAddressCopyWith<OrderAddress> get copyWith => _$OrderAddressCopyWithImpl<O
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is OrderAddress&&(identical(other.id, id) || other.id == id)&&(identical(other.customer_id, customer_id) || other.customer_id == customer_id)&&(identical(other.first_name, first_name) || other.first_name == first_name)&&(identical(other.last_name, last_name) || other.last_name == last_name)&&(identical(other.phone, phone) || other.phone == phone)&&(identical(other.company, company) || other.company == company)&&(identical(other.address_1, address_1) || other.address_1 == address_1)&&(identical(other.address_2, address_2) || other.address_2 == address_2)&&(identical(other.city, city) || other.city == city)&&(identical(other.country_code, country_code) || other.country_code == country_code)&&(identical(other.country, country) || other.country == country)&&(identical(other.province, province) || other.province == province)&&(identical(other.postal_code, postal_code) || other.postal_code == postal_code)&&const DeepCollectionEquality().equals(other.metadata, metadata)&&(identical(other.created_at, created_at) || other.created_at == created_at)&&(identical(other.updated_at, updated_at) || other.updated_at == updated_at));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is OrderAddress&&(identical(other.id, id) || other.id == id)&&(identical(other.customerId, customerId) || other.customerId == customerId)&&(identical(other.firstName, firstName) || other.firstName == firstName)&&(identical(other.lastName, lastName) || other.lastName == lastName)&&(identical(other.phone, phone) || other.phone == phone)&&(identical(other.company, company) || other.company == company)&&(identical(other.address1, address1) || other.address1 == address1)&&(identical(other.address2, address2) || other.address2 == address2)&&(identical(other.city, city) || other.city == city)&&(identical(other.countryCode, countryCode) || other.countryCode == countryCode)&&(identical(other.country, country) || other.country == country)&&(identical(other.province, province) || other.province == province)&&(identical(other.postalCode, postalCode) || other.postalCode == postalCode)&&const DeepCollectionEquality().equals(other.metadata, metadata)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,customer_id,first_name,last_name,phone,company,address_1,address_2,city,country_code,country,province,postal_code,const DeepCollectionEquality().hash(metadata),created_at,updated_at);
+int get hashCode => Object.hash(runtimeType,id,customerId,firstName,lastName,phone,company,address1,address2,city,countryCode,country,province,postalCode,const DeepCollectionEquality().hash(metadata),createdAt,updatedAt);
 
 @override
 String toString() {
-  return 'OrderAddress(id: $id, customer_id: $customer_id, first_name: $first_name, last_name: $last_name, phone: $phone, company: $company, address_1: $address_1, address_2: $address_2, city: $city, country_code: $country_code, country: $country, province: $province, postal_code: $postal_code, metadata: $metadata, created_at: $created_at, updated_at: $updated_at)';
+  return 'OrderAddress(id: $id, customerId: $customerId, firstName: $firstName, lastName: $lastName, phone: $phone, company: $company, address1: $address1, address2: $address2, city: $city, countryCode: $countryCode, country: $country, province: $province, postalCode: $postalCode, metadata: $metadata, createdAt: $createdAt, updatedAt: $updatedAt)';
 }
 
 
@@ -48,7 +48,7 @@ abstract mixin class $OrderAddressCopyWith<$Res>  {
   factory $OrderAddressCopyWith(OrderAddress value, $Res Function(OrderAddress) _then) = _$OrderAddressCopyWithImpl;
 @useResult
 $Res call({
- String id, String? customer_id, String? first_name, String? last_name, String? phone, String? company, String? address_1, String? address_2, String? city, String? country_code, Country? country, String? province, String? postal_code, Map<String, dynamic> metadata, String created_at, String updated_at
+ String id,@JsonKey(name: 'customer_id') String? customerId,@JsonKey(name: 'first_name') String? firstName,@JsonKey(name: 'last_name') String? lastName, String? phone, String? company,@JsonKey(name: 'address_1') String? address1,@JsonKey(name: 'address_2') String? address2, String? city,@JsonKey(name: 'country_code') String? countryCode, Country? country, String? province,@JsonKey(name: 'postal_code') String? postalCode, Map<String, dynamic> metadata,@JsonKey(name: 'created_at') String createdAt,@JsonKey(name: 'updated_at') String updatedAt
 });
 
 
@@ -65,24 +65,24 @@ class _$OrderAddressCopyWithImpl<$Res>
 
 /// Create a copy of OrderAddress
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? customer_id = freezed,Object? first_name = freezed,Object? last_name = freezed,Object? phone = freezed,Object? company = freezed,Object? address_1 = freezed,Object? address_2 = freezed,Object? city = freezed,Object? country_code = freezed,Object? country = freezed,Object? province = freezed,Object? postal_code = freezed,Object? metadata = null,Object? created_at = null,Object? updated_at = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? customerId = freezed,Object? firstName = freezed,Object? lastName = freezed,Object? phone = freezed,Object? company = freezed,Object? address1 = freezed,Object? address2 = freezed,Object? city = freezed,Object? countryCode = freezed,Object? country = freezed,Object? province = freezed,Object? postalCode = freezed,Object? metadata = null,Object? createdAt = null,Object? updatedAt = null,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,customer_id: freezed == customer_id ? _self.customer_id : customer_id // ignore: cast_nullable_to_non_nullable
-as String?,first_name: freezed == first_name ? _self.first_name : first_name // ignore: cast_nullable_to_non_nullable
-as String?,last_name: freezed == last_name ? _self.last_name : last_name // ignore: cast_nullable_to_non_nullable
+as String,customerId: freezed == customerId ? _self.customerId : customerId // ignore: cast_nullable_to_non_nullable
+as String?,firstName: freezed == firstName ? _self.firstName : firstName // ignore: cast_nullable_to_non_nullable
+as String?,lastName: freezed == lastName ? _self.lastName : lastName // ignore: cast_nullable_to_non_nullable
 as String?,phone: freezed == phone ? _self.phone : phone // ignore: cast_nullable_to_non_nullable
 as String?,company: freezed == company ? _self.company : company // ignore: cast_nullable_to_non_nullable
-as String?,address_1: freezed == address_1 ? _self.address_1 : address_1 // ignore: cast_nullable_to_non_nullable
-as String?,address_2: freezed == address_2 ? _self.address_2 : address_2 // ignore: cast_nullable_to_non_nullable
+as String?,address1: freezed == address1 ? _self.address1 : address1 // ignore: cast_nullable_to_non_nullable
+as String?,address2: freezed == address2 ? _self.address2 : address2 // ignore: cast_nullable_to_non_nullable
 as String?,city: freezed == city ? _self.city : city // ignore: cast_nullable_to_non_nullable
-as String?,country_code: freezed == country_code ? _self.country_code : country_code // ignore: cast_nullable_to_non_nullable
+as String?,countryCode: freezed == countryCode ? _self.countryCode : countryCode // ignore: cast_nullable_to_non_nullable
 as String?,country: freezed == country ? _self.country : country // ignore: cast_nullable_to_non_nullable
 as Country?,province: freezed == province ? _self.province : province // ignore: cast_nullable_to_non_nullable
-as String?,postal_code: freezed == postal_code ? _self.postal_code : postal_code // ignore: cast_nullable_to_non_nullable
+as String?,postalCode: freezed == postalCode ? _self.postalCode : postalCode // ignore: cast_nullable_to_non_nullable
 as String?,metadata: null == metadata ? _self.metadata : metadata // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>,created_at: null == created_at ? _self.created_at : created_at // ignore: cast_nullable_to_non_nullable
-as String,updated_at: null == updated_at ? _self.updated_at : updated_at // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as String,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
 as String,
   ));
 }
@@ -180,10 +180,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String? customer_id,  String? first_name,  String? last_name,  String? phone,  String? company,  String? address_1,  String? address_2,  String? city,  String? country_code,  Country? country,  String? province,  String? postal_code,  Map<String, dynamic> metadata,  String created_at,  String updated_at)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'customer_id')  String? customerId, @JsonKey(name: 'first_name')  String? firstName, @JsonKey(name: 'last_name')  String? lastName,  String? phone,  String? company, @JsonKey(name: 'address_1')  String? address1, @JsonKey(name: 'address_2')  String? address2,  String? city, @JsonKey(name: 'country_code')  String? countryCode,  Country? country,  String? province, @JsonKey(name: 'postal_code')  String? postalCode,  Map<String, dynamic> metadata, @JsonKey(name: 'created_at')  String createdAt, @JsonKey(name: 'updated_at')  String updatedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _OrderAddress() when $default != null:
-return $default(_that.id,_that.customer_id,_that.first_name,_that.last_name,_that.phone,_that.company,_that.address_1,_that.address_2,_that.city,_that.country_code,_that.country,_that.province,_that.postal_code,_that.metadata,_that.created_at,_that.updated_at);case _:
+return $default(_that.id,_that.customerId,_that.firstName,_that.lastName,_that.phone,_that.company,_that.address1,_that.address2,_that.city,_that.countryCode,_that.country,_that.province,_that.postalCode,_that.metadata,_that.createdAt,_that.updatedAt);case _:
   return orElse();
 
 }
@@ -201,10 +201,10 @@ return $default(_that.id,_that.customer_id,_that.first_name,_that.last_name,_tha
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String? customer_id,  String? first_name,  String? last_name,  String? phone,  String? company,  String? address_1,  String? address_2,  String? city,  String? country_code,  Country? country,  String? province,  String? postal_code,  Map<String, dynamic> metadata,  String created_at,  String updated_at)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'customer_id')  String? customerId, @JsonKey(name: 'first_name')  String? firstName, @JsonKey(name: 'last_name')  String? lastName,  String? phone,  String? company, @JsonKey(name: 'address_1')  String? address1, @JsonKey(name: 'address_2')  String? address2,  String? city, @JsonKey(name: 'country_code')  String? countryCode,  Country? country,  String? province, @JsonKey(name: 'postal_code')  String? postalCode,  Map<String, dynamic> metadata, @JsonKey(name: 'created_at')  String createdAt, @JsonKey(name: 'updated_at')  String updatedAt)  $default,) {final _that = this;
 switch (_that) {
 case _OrderAddress():
-return $default(_that.id,_that.customer_id,_that.first_name,_that.last_name,_that.phone,_that.company,_that.address_1,_that.address_2,_that.city,_that.country_code,_that.country,_that.province,_that.postal_code,_that.metadata,_that.created_at,_that.updated_at);case _:
+return $default(_that.id,_that.customerId,_that.firstName,_that.lastName,_that.phone,_that.company,_that.address1,_that.address2,_that.city,_that.countryCode,_that.country,_that.province,_that.postalCode,_that.metadata,_that.createdAt,_that.updatedAt);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -221,10 +221,10 @@ return $default(_that.id,_that.customer_id,_that.first_name,_that.last_name,_tha
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String? customer_id,  String? first_name,  String? last_name,  String? phone,  String? company,  String? address_1,  String? address_2,  String? city,  String? country_code,  Country? country,  String? province,  String? postal_code,  Map<String, dynamic> metadata,  String created_at,  String updated_at)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'customer_id')  String? customerId, @JsonKey(name: 'first_name')  String? firstName, @JsonKey(name: 'last_name')  String? lastName,  String? phone,  String? company, @JsonKey(name: 'address_1')  String? address1, @JsonKey(name: 'address_2')  String? address2,  String? city, @JsonKey(name: 'country_code')  String? countryCode,  Country? country,  String? province, @JsonKey(name: 'postal_code')  String? postalCode,  Map<String, dynamic> metadata, @JsonKey(name: 'created_at')  String createdAt, @JsonKey(name: 'updated_at')  String updatedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _OrderAddress() when $default != null:
-return $default(_that.id,_that.customer_id,_that.first_name,_that.last_name,_that.phone,_that.company,_that.address_1,_that.address_2,_that.city,_that.country_code,_that.country,_that.province,_that.postal_code,_that.metadata,_that.created_at,_that.updated_at);case _:
+return $default(_that.id,_that.customerId,_that.firstName,_that.lastName,_that.phone,_that.company,_that.address1,_that.address2,_that.city,_that.countryCode,_that.country,_that.province,_that.postalCode,_that.metadata,_that.createdAt,_that.updatedAt);case _:
   return null;
 
 }
@@ -236,22 +236,22 @@ return $default(_that.id,_that.customer_id,_that.first_name,_that.last_name,_tha
 @JsonSerializable()
 
 class _OrderAddress implements OrderAddress {
-  const _OrderAddress({required this.id, this.customer_id, this.first_name, this.last_name, this.phone, this.company, this.address_1, this.address_2, this.city, this.country_code, this.country, this.province, this.postal_code, required final  Map<String, dynamic> metadata, required this.created_at, required this.updated_at}): _metadata = metadata;
+  const _OrderAddress({required this.id, @JsonKey(name: 'customer_id') this.customerId, @JsonKey(name: 'first_name') this.firstName, @JsonKey(name: 'last_name') this.lastName, this.phone, this.company, @JsonKey(name: 'address_1') this.address1, @JsonKey(name: 'address_2') this.address2, this.city, @JsonKey(name: 'country_code') this.countryCode, this.country, this.province, @JsonKey(name: 'postal_code') this.postalCode, required final  Map<String, dynamic> metadata, @JsonKey(name: 'created_at') required this.createdAt, @JsonKey(name: 'updated_at') required this.updatedAt}): _metadata = metadata;
   factory _OrderAddress.fromJson(Map<String, dynamic> json) => _$OrderAddressFromJson(json);
 
 @override final  String id;
-@override final  String? customer_id;
-@override final  String? first_name;
-@override final  String? last_name;
+@override@JsonKey(name: 'customer_id') final  String? customerId;
+@override@JsonKey(name: 'first_name') final  String? firstName;
+@override@JsonKey(name: 'last_name') final  String? lastName;
 @override final  String? phone;
 @override final  String? company;
-@override final  String? address_1;
-@override final  String? address_2;
+@override@JsonKey(name: 'address_1') final  String? address1;
+@override@JsonKey(name: 'address_2') final  String? address2;
 @override final  String? city;
-@override final  String? country_code;
+@override@JsonKey(name: 'country_code') final  String? countryCode;
 @override final  Country? country;
 @override final  String? province;
-@override final  String? postal_code;
+@override@JsonKey(name: 'postal_code') final  String? postalCode;
  final  Map<String, dynamic> _metadata;
 @override Map<String, dynamic> get metadata {
   if (_metadata is EqualUnmodifiableMapView) return _metadata;
@@ -259,8 +259,8 @@ class _OrderAddress implements OrderAddress {
   return EqualUnmodifiableMapView(_metadata);
 }
 
-@override final  String created_at;
-@override final  String updated_at;
+@override@JsonKey(name: 'created_at') final  String createdAt;
+@override@JsonKey(name: 'updated_at') final  String updatedAt;
 
 /// Create a copy of OrderAddress
 /// with the given fields replaced by the non-null parameter values.
@@ -275,16 +275,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _OrderAddress&&(identical(other.id, id) || other.id == id)&&(identical(other.customer_id, customer_id) || other.customer_id == customer_id)&&(identical(other.first_name, first_name) || other.first_name == first_name)&&(identical(other.last_name, last_name) || other.last_name == last_name)&&(identical(other.phone, phone) || other.phone == phone)&&(identical(other.company, company) || other.company == company)&&(identical(other.address_1, address_1) || other.address_1 == address_1)&&(identical(other.address_2, address_2) || other.address_2 == address_2)&&(identical(other.city, city) || other.city == city)&&(identical(other.country_code, country_code) || other.country_code == country_code)&&(identical(other.country, country) || other.country == country)&&(identical(other.province, province) || other.province == province)&&(identical(other.postal_code, postal_code) || other.postal_code == postal_code)&&const DeepCollectionEquality().equals(other._metadata, _metadata)&&(identical(other.created_at, created_at) || other.created_at == created_at)&&(identical(other.updated_at, updated_at) || other.updated_at == updated_at));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _OrderAddress&&(identical(other.id, id) || other.id == id)&&(identical(other.customerId, customerId) || other.customerId == customerId)&&(identical(other.firstName, firstName) || other.firstName == firstName)&&(identical(other.lastName, lastName) || other.lastName == lastName)&&(identical(other.phone, phone) || other.phone == phone)&&(identical(other.company, company) || other.company == company)&&(identical(other.address1, address1) || other.address1 == address1)&&(identical(other.address2, address2) || other.address2 == address2)&&(identical(other.city, city) || other.city == city)&&(identical(other.countryCode, countryCode) || other.countryCode == countryCode)&&(identical(other.country, country) || other.country == country)&&(identical(other.province, province) || other.province == province)&&(identical(other.postalCode, postalCode) || other.postalCode == postalCode)&&const DeepCollectionEquality().equals(other._metadata, _metadata)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,customer_id,first_name,last_name,phone,company,address_1,address_2,city,country_code,country,province,postal_code,const DeepCollectionEquality().hash(_metadata),created_at,updated_at);
+int get hashCode => Object.hash(runtimeType,id,customerId,firstName,lastName,phone,company,address1,address2,city,countryCode,country,province,postalCode,const DeepCollectionEquality().hash(_metadata),createdAt,updatedAt);
 
 @override
 String toString() {
-  return 'OrderAddress(id: $id, customer_id: $customer_id, first_name: $first_name, last_name: $last_name, phone: $phone, company: $company, address_1: $address_1, address_2: $address_2, city: $city, country_code: $country_code, country: $country, province: $province, postal_code: $postal_code, metadata: $metadata, created_at: $created_at, updated_at: $updated_at)';
+  return 'OrderAddress(id: $id, customerId: $customerId, firstName: $firstName, lastName: $lastName, phone: $phone, company: $company, address1: $address1, address2: $address2, city: $city, countryCode: $countryCode, country: $country, province: $province, postalCode: $postalCode, metadata: $metadata, createdAt: $createdAt, updatedAt: $updatedAt)';
 }
 
 
@@ -295,7 +295,7 @@ abstract mixin class _$OrderAddressCopyWith<$Res> implements $OrderAddressCopyWi
   factory _$OrderAddressCopyWith(_OrderAddress value, $Res Function(_OrderAddress) _then) = __$OrderAddressCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String? customer_id, String? first_name, String? last_name, String? phone, String? company, String? address_1, String? address_2, String? city, String? country_code, Country? country, String? province, String? postal_code, Map<String, dynamic> metadata, String created_at, String updated_at
+ String id,@JsonKey(name: 'customer_id') String? customerId,@JsonKey(name: 'first_name') String? firstName,@JsonKey(name: 'last_name') String? lastName, String? phone, String? company,@JsonKey(name: 'address_1') String? address1,@JsonKey(name: 'address_2') String? address2, String? city,@JsonKey(name: 'country_code') String? countryCode, Country? country, String? province,@JsonKey(name: 'postal_code') String? postalCode, Map<String, dynamic> metadata,@JsonKey(name: 'created_at') String createdAt,@JsonKey(name: 'updated_at') String updatedAt
 });
 
 
@@ -312,24 +312,24 @@ class __$OrderAddressCopyWithImpl<$Res>
 
 /// Create a copy of OrderAddress
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? customer_id = freezed,Object? first_name = freezed,Object? last_name = freezed,Object? phone = freezed,Object? company = freezed,Object? address_1 = freezed,Object? address_2 = freezed,Object? city = freezed,Object? country_code = freezed,Object? country = freezed,Object? province = freezed,Object? postal_code = freezed,Object? metadata = null,Object? created_at = null,Object? updated_at = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? customerId = freezed,Object? firstName = freezed,Object? lastName = freezed,Object? phone = freezed,Object? company = freezed,Object? address1 = freezed,Object? address2 = freezed,Object? city = freezed,Object? countryCode = freezed,Object? country = freezed,Object? province = freezed,Object? postalCode = freezed,Object? metadata = null,Object? createdAt = null,Object? updatedAt = null,}) {
   return _then(_OrderAddress(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,customer_id: freezed == customer_id ? _self.customer_id : customer_id // ignore: cast_nullable_to_non_nullable
-as String?,first_name: freezed == first_name ? _self.first_name : first_name // ignore: cast_nullable_to_non_nullable
-as String?,last_name: freezed == last_name ? _self.last_name : last_name // ignore: cast_nullable_to_non_nullable
+as String,customerId: freezed == customerId ? _self.customerId : customerId // ignore: cast_nullable_to_non_nullable
+as String?,firstName: freezed == firstName ? _self.firstName : firstName // ignore: cast_nullable_to_non_nullable
+as String?,lastName: freezed == lastName ? _self.lastName : lastName // ignore: cast_nullable_to_non_nullable
 as String?,phone: freezed == phone ? _self.phone : phone // ignore: cast_nullable_to_non_nullable
 as String?,company: freezed == company ? _self.company : company // ignore: cast_nullable_to_non_nullable
-as String?,address_1: freezed == address_1 ? _self.address_1 : address_1 // ignore: cast_nullable_to_non_nullable
-as String?,address_2: freezed == address_2 ? _self.address_2 : address_2 // ignore: cast_nullable_to_non_nullable
+as String?,address1: freezed == address1 ? _self.address1 : address1 // ignore: cast_nullable_to_non_nullable
+as String?,address2: freezed == address2 ? _self.address2 : address2 // ignore: cast_nullable_to_non_nullable
 as String?,city: freezed == city ? _self.city : city // ignore: cast_nullable_to_non_nullable
-as String?,country_code: freezed == country_code ? _self.country_code : country_code // ignore: cast_nullable_to_non_nullable
+as String?,countryCode: freezed == countryCode ? _self.countryCode : countryCode // ignore: cast_nullable_to_non_nullable
 as String?,country: freezed == country ? _self.country : country // ignore: cast_nullable_to_non_nullable
 as Country?,province: freezed == province ? _self.province : province // ignore: cast_nullable_to_non_nullable
-as String?,postal_code: freezed == postal_code ? _self.postal_code : postal_code // ignore: cast_nullable_to_non_nullable
+as String?,postalCode: freezed == postalCode ? _self.postalCode : postalCode // ignore: cast_nullable_to_non_nullable
 as String?,metadata: null == metadata ? _self._metadata : metadata // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>,created_at: null == created_at ? _self.created_at : created_at // ignore: cast_nullable_to_non_nullable
-as String,updated_at: null == updated_at ? _self.updated_at : updated_at // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as String,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
 as String,
   ));
 }

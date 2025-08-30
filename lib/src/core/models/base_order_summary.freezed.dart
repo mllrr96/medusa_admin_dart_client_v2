@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$BaseOrderSummary {
 
- num get paid_total; num get refunded_total; num get pending_difference; num get current_order_total; num get original_order_total; num get transaction_total; num get accounting_total;
+@JsonKey(name: 'paid_total') num get paidTotal;@JsonKey(name: 'refunded_total') num get refundedTotal;@JsonKey(name: 'pending_difference') num get pendingDifference;@JsonKey(name: 'current_order_total') num get currentOrderTotal;@JsonKey(name: 'original_order_total') num get originalOrderTotal;@JsonKey(name: 'transaction_total') num get transactionTotal;@JsonKey(name: 'accounting_total') num get accountingTotal;
 /// Create a copy of BaseOrderSummary
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $BaseOrderSummaryCopyWith<BaseOrderSummary> get copyWith => _$BaseOrderSummaryCo
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is BaseOrderSummary&&(identical(other.paid_total, paid_total) || other.paid_total == paid_total)&&(identical(other.refunded_total, refunded_total) || other.refunded_total == refunded_total)&&(identical(other.pending_difference, pending_difference) || other.pending_difference == pending_difference)&&(identical(other.current_order_total, current_order_total) || other.current_order_total == current_order_total)&&(identical(other.original_order_total, original_order_total) || other.original_order_total == original_order_total)&&(identical(other.transaction_total, transaction_total) || other.transaction_total == transaction_total)&&(identical(other.accounting_total, accounting_total) || other.accounting_total == accounting_total));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is BaseOrderSummary&&(identical(other.paidTotal, paidTotal) || other.paidTotal == paidTotal)&&(identical(other.refundedTotal, refundedTotal) || other.refundedTotal == refundedTotal)&&(identical(other.pendingDifference, pendingDifference) || other.pendingDifference == pendingDifference)&&(identical(other.currentOrderTotal, currentOrderTotal) || other.currentOrderTotal == currentOrderTotal)&&(identical(other.originalOrderTotal, originalOrderTotal) || other.originalOrderTotal == originalOrderTotal)&&(identical(other.transactionTotal, transactionTotal) || other.transactionTotal == transactionTotal)&&(identical(other.accountingTotal, accountingTotal) || other.accountingTotal == accountingTotal));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,paid_total,refunded_total,pending_difference,current_order_total,original_order_total,transaction_total,accounting_total);
+int get hashCode => Object.hash(runtimeType,paidTotal,refundedTotal,pendingDifference,currentOrderTotal,originalOrderTotal,transactionTotal,accountingTotal);
 
 @override
 String toString() {
-  return 'BaseOrderSummary(paid_total: $paid_total, refunded_total: $refunded_total, pending_difference: $pending_difference, current_order_total: $current_order_total, original_order_total: $original_order_total, transaction_total: $transaction_total, accounting_total: $accounting_total)';
+  return 'BaseOrderSummary(paidTotal: $paidTotal, refundedTotal: $refundedTotal, pendingDifference: $pendingDifference, currentOrderTotal: $currentOrderTotal, originalOrderTotal: $originalOrderTotal, transactionTotal: $transactionTotal, accountingTotal: $accountingTotal)';
 }
 
 
@@ -48,7 +48,7 @@ abstract mixin class $BaseOrderSummaryCopyWith<$Res>  {
   factory $BaseOrderSummaryCopyWith(BaseOrderSummary value, $Res Function(BaseOrderSummary) _then) = _$BaseOrderSummaryCopyWithImpl;
 @useResult
 $Res call({
- num paid_total, num refunded_total, num pending_difference, num current_order_total, num original_order_total, num transaction_total, num accounting_total
+@JsonKey(name: 'paid_total') num paidTotal,@JsonKey(name: 'refunded_total') num refundedTotal,@JsonKey(name: 'pending_difference') num pendingDifference,@JsonKey(name: 'current_order_total') num currentOrderTotal,@JsonKey(name: 'original_order_total') num originalOrderTotal,@JsonKey(name: 'transaction_total') num transactionTotal,@JsonKey(name: 'accounting_total') num accountingTotal
 });
 
 
@@ -65,15 +65,15 @@ class _$BaseOrderSummaryCopyWithImpl<$Res>
 
 /// Create a copy of BaseOrderSummary
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? paid_total = null,Object? refunded_total = null,Object? pending_difference = null,Object? current_order_total = null,Object? original_order_total = null,Object? transaction_total = null,Object? accounting_total = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? paidTotal = null,Object? refundedTotal = null,Object? pendingDifference = null,Object? currentOrderTotal = null,Object? originalOrderTotal = null,Object? transactionTotal = null,Object? accountingTotal = null,}) {
   return _then(_self.copyWith(
-paid_total: null == paid_total ? _self.paid_total : paid_total // ignore: cast_nullable_to_non_nullable
-as num,refunded_total: null == refunded_total ? _self.refunded_total : refunded_total // ignore: cast_nullable_to_non_nullable
-as num,pending_difference: null == pending_difference ? _self.pending_difference : pending_difference // ignore: cast_nullable_to_non_nullable
-as num,current_order_total: null == current_order_total ? _self.current_order_total : current_order_total // ignore: cast_nullable_to_non_nullable
-as num,original_order_total: null == original_order_total ? _self.original_order_total : original_order_total // ignore: cast_nullable_to_non_nullable
-as num,transaction_total: null == transaction_total ? _self.transaction_total : transaction_total // ignore: cast_nullable_to_non_nullable
-as num,accounting_total: null == accounting_total ? _self.accounting_total : accounting_total // ignore: cast_nullable_to_non_nullable
+paidTotal: null == paidTotal ? _self.paidTotal : paidTotal // ignore: cast_nullable_to_non_nullable
+as num,refundedTotal: null == refundedTotal ? _self.refundedTotal : refundedTotal // ignore: cast_nullable_to_non_nullable
+as num,pendingDifference: null == pendingDifference ? _self.pendingDifference : pendingDifference // ignore: cast_nullable_to_non_nullable
+as num,currentOrderTotal: null == currentOrderTotal ? _self.currentOrderTotal : currentOrderTotal // ignore: cast_nullable_to_non_nullable
+as num,originalOrderTotal: null == originalOrderTotal ? _self.originalOrderTotal : originalOrderTotal // ignore: cast_nullable_to_non_nullable
+as num,transactionTotal: null == transactionTotal ? _self.transactionTotal : transactionTotal // ignore: cast_nullable_to_non_nullable
+as num,accountingTotal: null == accountingTotal ? _self.accountingTotal : accountingTotal // ignore: cast_nullable_to_non_nullable
 as num,
   ));
 }
@@ -159,10 +159,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( num paid_total,  num refunded_total,  num pending_difference,  num current_order_total,  num original_order_total,  num transaction_total,  num accounting_total)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'paid_total')  num paidTotal, @JsonKey(name: 'refunded_total')  num refundedTotal, @JsonKey(name: 'pending_difference')  num pendingDifference, @JsonKey(name: 'current_order_total')  num currentOrderTotal, @JsonKey(name: 'original_order_total')  num originalOrderTotal, @JsonKey(name: 'transaction_total')  num transactionTotal, @JsonKey(name: 'accounting_total')  num accountingTotal)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _BaseOrderSummary() when $default != null:
-return $default(_that.paid_total,_that.refunded_total,_that.pending_difference,_that.current_order_total,_that.original_order_total,_that.transaction_total,_that.accounting_total);case _:
+return $default(_that.paidTotal,_that.refundedTotal,_that.pendingDifference,_that.currentOrderTotal,_that.originalOrderTotal,_that.transactionTotal,_that.accountingTotal);case _:
   return orElse();
 
 }
@@ -180,10 +180,10 @@ return $default(_that.paid_total,_that.refunded_total,_that.pending_difference,_
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( num paid_total,  num refunded_total,  num pending_difference,  num current_order_total,  num original_order_total,  num transaction_total,  num accounting_total)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'paid_total')  num paidTotal, @JsonKey(name: 'refunded_total')  num refundedTotal, @JsonKey(name: 'pending_difference')  num pendingDifference, @JsonKey(name: 'current_order_total')  num currentOrderTotal, @JsonKey(name: 'original_order_total')  num originalOrderTotal, @JsonKey(name: 'transaction_total')  num transactionTotal, @JsonKey(name: 'accounting_total')  num accountingTotal)  $default,) {final _that = this;
 switch (_that) {
 case _BaseOrderSummary():
-return $default(_that.paid_total,_that.refunded_total,_that.pending_difference,_that.current_order_total,_that.original_order_total,_that.transaction_total,_that.accounting_total);case _:
+return $default(_that.paidTotal,_that.refundedTotal,_that.pendingDifference,_that.currentOrderTotal,_that.originalOrderTotal,_that.transactionTotal,_that.accountingTotal);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -200,10 +200,10 @@ return $default(_that.paid_total,_that.refunded_total,_that.pending_difference,_
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( num paid_total,  num refunded_total,  num pending_difference,  num current_order_total,  num original_order_total,  num transaction_total,  num accounting_total)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'paid_total')  num paidTotal, @JsonKey(name: 'refunded_total')  num refundedTotal, @JsonKey(name: 'pending_difference')  num pendingDifference, @JsonKey(name: 'current_order_total')  num currentOrderTotal, @JsonKey(name: 'original_order_total')  num originalOrderTotal, @JsonKey(name: 'transaction_total')  num transactionTotal, @JsonKey(name: 'accounting_total')  num accountingTotal)?  $default,) {final _that = this;
 switch (_that) {
 case _BaseOrderSummary() when $default != null:
-return $default(_that.paid_total,_that.refunded_total,_that.pending_difference,_that.current_order_total,_that.original_order_total,_that.transaction_total,_that.accounting_total);case _:
+return $default(_that.paidTotal,_that.refundedTotal,_that.pendingDifference,_that.currentOrderTotal,_that.originalOrderTotal,_that.transactionTotal,_that.accountingTotal);case _:
   return null;
 
 }
@@ -215,16 +215,16 @@ return $default(_that.paid_total,_that.refunded_total,_that.pending_difference,_
 @JsonSerializable()
 
 class _BaseOrderSummary implements BaseOrderSummary {
-  const _BaseOrderSummary({required this.paid_total, required this.refunded_total, required this.pending_difference, required this.current_order_total, required this.original_order_total, required this.transaction_total, required this.accounting_total});
+  const _BaseOrderSummary({@JsonKey(name: 'paid_total') required this.paidTotal, @JsonKey(name: 'refunded_total') required this.refundedTotal, @JsonKey(name: 'pending_difference') required this.pendingDifference, @JsonKey(name: 'current_order_total') required this.currentOrderTotal, @JsonKey(name: 'original_order_total') required this.originalOrderTotal, @JsonKey(name: 'transaction_total') required this.transactionTotal, @JsonKey(name: 'accounting_total') required this.accountingTotal});
   factory _BaseOrderSummary.fromJson(Map<String, dynamic> json) => _$BaseOrderSummaryFromJson(json);
 
-@override final  num paid_total;
-@override final  num refunded_total;
-@override final  num pending_difference;
-@override final  num current_order_total;
-@override final  num original_order_total;
-@override final  num transaction_total;
-@override final  num accounting_total;
+@override@JsonKey(name: 'paid_total') final  num paidTotal;
+@override@JsonKey(name: 'refunded_total') final  num refundedTotal;
+@override@JsonKey(name: 'pending_difference') final  num pendingDifference;
+@override@JsonKey(name: 'current_order_total') final  num currentOrderTotal;
+@override@JsonKey(name: 'original_order_total') final  num originalOrderTotal;
+@override@JsonKey(name: 'transaction_total') final  num transactionTotal;
+@override@JsonKey(name: 'accounting_total') final  num accountingTotal;
 
 /// Create a copy of BaseOrderSummary
 /// with the given fields replaced by the non-null parameter values.
@@ -239,16 +239,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BaseOrderSummary&&(identical(other.paid_total, paid_total) || other.paid_total == paid_total)&&(identical(other.refunded_total, refunded_total) || other.refunded_total == refunded_total)&&(identical(other.pending_difference, pending_difference) || other.pending_difference == pending_difference)&&(identical(other.current_order_total, current_order_total) || other.current_order_total == current_order_total)&&(identical(other.original_order_total, original_order_total) || other.original_order_total == original_order_total)&&(identical(other.transaction_total, transaction_total) || other.transaction_total == transaction_total)&&(identical(other.accounting_total, accounting_total) || other.accounting_total == accounting_total));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BaseOrderSummary&&(identical(other.paidTotal, paidTotal) || other.paidTotal == paidTotal)&&(identical(other.refundedTotal, refundedTotal) || other.refundedTotal == refundedTotal)&&(identical(other.pendingDifference, pendingDifference) || other.pendingDifference == pendingDifference)&&(identical(other.currentOrderTotal, currentOrderTotal) || other.currentOrderTotal == currentOrderTotal)&&(identical(other.originalOrderTotal, originalOrderTotal) || other.originalOrderTotal == originalOrderTotal)&&(identical(other.transactionTotal, transactionTotal) || other.transactionTotal == transactionTotal)&&(identical(other.accountingTotal, accountingTotal) || other.accountingTotal == accountingTotal));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,paid_total,refunded_total,pending_difference,current_order_total,original_order_total,transaction_total,accounting_total);
+int get hashCode => Object.hash(runtimeType,paidTotal,refundedTotal,pendingDifference,currentOrderTotal,originalOrderTotal,transactionTotal,accountingTotal);
 
 @override
 String toString() {
-  return 'BaseOrderSummary(paid_total: $paid_total, refunded_total: $refunded_total, pending_difference: $pending_difference, current_order_total: $current_order_total, original_order_total: $original_order_total, transaction_total: $transaction_total, accounting_total: $accounting_total)';
+  return 'BaseOrderSummary(paidTotal: $paidTotal, refundedTotal: $refundedTotal, pendingDifference: $pendingDifference, currentOrderTotal: $currentOrderTotal, originalOrderTotal: $originalOrderTotal, transactionTotal: $transactionTotal, accountingTotal: $accountingTotal)';
 }
 
 
@@ -259,7 +259,7 @@ abstract mixin class _$BaseOrderSummaryCopyWith<$Res> implements $BaseOrderSumma
   factory _$BaseOrderSummaryCopyWith(_BaseOrderSummary value, $Res Function(_BaseOrderSummary) _then) = __$BaseOrderSummaryCopyWithImpl;
 @override @useResult
 $Res call({
- num paid_total, num refunded_total, num pending_difference, num current_order_total, num original_order_total, num transaction_total, num accounting_total
+@JsonKey(name: 'paid_total') num paidTotal,@JsonKey(name: 'refunded_total') num refundedTotal,@JsonKey(name: 'pending_difference') num pendingDifference,@JsonKey(name: 'current_order_total') num currentOrderTotal,@JsonKey(name: 'original_order_total') num originalOrderTotal,@JsonKey(name: 'transaction_total') num transactionTotal,@JsonKey(name: 'accounting_total') num accountingTotal
 });
 
 
@@ -276,15 +276,15 @@ class __$BaseOrderSummaryCopyWithImpl<$Res>
 
 /// Create a copy of BaseOrderSummary
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? paid_total = null,Object? refunded_total = null,Object? pending_difference = null,Object? current_order_total = null,Object? original_order_total = null,Object? transaction_total = null,Object? accounting_total = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? paidTotal = null,Object? refundedTotal = null,Object? pendingDifference = null,Object? currentOrderTotal = null,Object? originalOrderTotal = null,Object? transactionTotal = null,Object? accountingTotal = null,}) {
   return _then(_BaseOrderSummary(
-paid_total: null == paid_total ? _self.paid_total : paid_total // ignore: cast_nullable_to_non_nullable
-as num,refunded_total: null == refunded_total ? _self.refunded_total : refunded_total // ignore: cast_nullable_to_non_nullable
-as num,pending_difference: null == pending_difference ? _self.pending_difference : pending_difference // ignore: cast_nullable_to_non_nullable
-as num,current_order_total: null == current_order_total ? _self.current_order_total : current_order_total // ignore: cast_nullable_to_non_nullable
-as num,original_order_total: null == original_order_total ? _self.original_order_total : original_order_total // ignore: cast_nullable_to_non_nullable
-as num,transaction_total: null == transaction_total ? _self.transaction_total : transaction_total // ignore: cast_nullable_to_non_nullable
-as num,accounting_total: null == accounting_total ? _self.accounting_total : accounting_total // ignore: cast_nullable_to_non_nullable
+paidTotal: null == paidTotal ? _self.paidTotal : paidTotal // ignore: cast_nullable_to_non_nullable
+as num,refundedTotal: null == refundedTotal ? _self.refundedTotal : refundedTotal // ignore: cast_nullable_to_non_nullable
+as num,pendingDifference: null == pendingDifference ? _self.pendingDifference : pendingDifference // ignore: cast_nullable_to_non_nullable
+as num,currentOrderTotal: null == currentOrderTotal ? _self.currentOrderTotal : currentOrderTotal // ignore: cast_nullable_to_non_nullable
+as num,originalOrderTotal: null == originalOrderTotal ? _self.originalOrderTotal : originalOrderTotal // ignore: cast_nullable_to_non_nullable
+as num,transactionTotal: null == transactionTotal ? _self.transactionTotal : transactionTotal // ignore: cast_nullable_to_non_nullable
+as num,accountingTotal: null == accountingTotal ? _self.accountingTotal : accountingTotal // ignore: cast_nullable_to_non_nullable
 as num,
   ));
 }

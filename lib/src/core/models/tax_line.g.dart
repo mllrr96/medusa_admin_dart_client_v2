@@ -13,12 +13,12 @@ _TaxLine _$TaxLineFromJson(Map<String, dynamic> json) => _TaxLine(
   code: json['code'] as String,
   name: json['name'] as String,
   rate: json['rate'] as num,
-  createdAt: json['createdAt'] == null
+  createdAt: json['created_at'] == null
       ? null
-      : DateTime.parse(json['createdAt'] as String),
-  updatedAt: json['updatedAt'] == null
+      : DateTime.parse(json['created_at'] as String),
+  updatedAt: json['updated_at'] == null
       ? null
-      : DateTime.parse(json['updatedAt'] as String),
+      : DateTime.parse(json['updated_at'] as String),
   metadata: json['metadata'] as Map<String, dynamic>?,
 );
 
@@ -29,7 +29,7 @@ Map<String, dynamic> _$TaxLineToJson(_TaxLine instance) => <String, dynamic>{
   'code': instance.code,
   'name': instance.name,
   'rate': instance.rate,
-  'createdAt': instance.createdAt?.toIso8601String(),
-  'updatedAt': instance.updatedAt?.toIso8601String(),
+  'created_at': instance.createdAt?.toIso8601String(),
+  'updated_at': instance.updatedAt?.toIso8601String(),
   'metadata': instance.metadata,
 };

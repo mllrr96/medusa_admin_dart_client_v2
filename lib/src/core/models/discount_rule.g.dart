@@ -15,24 +15,24 @@ _DiscountRule _$DiscountRuleFromJson(Map<String, dynamic> json) =>
       products: (json['products'] as List<dynamic>)
           .map((e) => Product.fromJson(e as Map<String, dynamic>))
           .toList(),
-      productCollections: (json['productCollections'] as List<dynamic>)
+      productCollections: (json['product_collections'] as List<dynamic>)
           .map((e) => ProductCollection.fromJson(e as Map<String, dynamic>))
           .toList(),
-      productTypes: (json['productTypes'] as List<dynamic>)
+      productTypes: (json['product_types'] as List<dynamic>)
           .map((e) => ProductType.fromJson(e as Map<String, dynamic>))
           .toList(),
-      productTags: (json['productTags'] as List<dynamic>)
+      productTags: (json['product_tags'] as List<dynamic>)
           .map((e) => ProductTag.fromJson(e as Map<String, dynamic>))
           .toList(),
-      createdAt: json['createdAt'] == null
+      createdAt: json['created_at'] == null
           ? null
-          : DateTime.parse(json['createdAt'] as String),
-      updatedAt: json['updatedAt'] == null
+          : DateTime.parse(json['created_at'] as String),
+      updatedAt: json['updated_at'] == null
           ? null
-          : DateTime.parse(json['updatedAt'] as String),
-      deletedAt: json['deletedAt'] == null
+          : DateTime.parse(json['updated_at'] as String),
+      deletedAt: json['deleted_at'] == null
           ? null
-          : DateTime.parse(json['deletedAt'] as String),
+          : DateTime.parse(json['deleted_at'] as String),
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
@@ -43,11 +43,11 @@ Map<String, dynamic> _$DiscountRuleToJson(_DiscountRule instance) =>
       'value': instance.value,
       'allocation': instance.allocation,
       'products': instance.products,
-      'productCollections': instance.productCollections,
-      'productTypes': instance.productTypes,
-      'productTags': instance.productTags,
-      'createdAt': instance.createdAt?.toIso8601String(),
-      'updatedAt': instance.updatedAt?.toIso8601String(),
-      'deletedAt': instance.deletedAt?.toIso8601String(),
+      'product_collections': instance.productCollections,
+      'product_types': instance.productTypes,
+      'product_tags': instance.productTags,
+      'created_at': instance.createdAt?.toIso8601String(),
+      'updated_at': instance.updatedAt?.toIso8601String(),
+      'deleted_at': instance.deletedAt?.toIso8601String(),
       'metadata': instance.metadata,
     };

@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Discount {
 
- String get id; String get code; String get ruleId; DiscountRule? get rule; bool get isDisabled; String get parentDiscountId; Discount? get parentDiscount; List<Discount> get usageCount; List<Discount> get regions; DateTime? get startsAt; DateTime? get endsAt; DateTime? get createdAt; DateTime? get updatedAt; DateTime? get deletedAt; Map<String, dynamic>? get metadata;
+ String get id; String get code;@JsonKey(name: 'rule_id') String get ruleId; DiscountRule? get rule;@JsonKey(name: 'is_disabled') bool get isDisabled;@JsonKey(name: 'parent_discount_id') String get parentDiscountId;@JsonKey(name: 'parent_discount') Discount? get parentDiscount;@JsonKey(name: 'usage_count') List<Discount> get usageCount; List<Discount> get regions;@JsonKey(name: 'starts_at') DateTime? get startsAt;@JsonKey(name: 'ends_at') DateTime? get endsAt;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt; Map<String, dynamic>? get metadata;
 /// Create a copy of Discount
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $DiscountCopyWith<$Res>  {
   factory $DiscountCopyWith(Discount value, $Res Function(Discount) _then) = _$DiscountCopyWithImpl;
 @useResult
 $Res call({
- String id, String code, String ruleId, DiscountRule? rule, bool isDisabled, String parentDiscountId, Discount? parentDiscount, List<Discount> usageCount, List<Discount> regions, DateTime? startsAt, DateTime? endsAt, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt, Map<String, dynamic>? metadata
+ String id, String code,@JsonKey(name: 'rule_id') String ruleId, DiscountRule? rule,@JsonKey(name: 'is_disabled') bool isDisabled,@JsonKey(name: 'parent_discount_id') String parentDiscountId,@JsonKey(name: 'parent_discount') Discount? parentDiscount,@JsonKey(name: 'usage_count') List<Discount> usageCount, List<Discount> regions,@JsonKey(name: 'starts_at') DateTime? startsAt,@JsonKey(name: 'ends_at') DateTime? endsAt,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
 });
 
 
@@ -191,7 +191,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String code,  String ruleId,  DiscountRule? rule,  bool isDisabled,  String parentDiscountId,  Discount? parentDiscount,  List<Discount> usageCount,  List<Discount> regions,  DateTime? startsAt,  DateTime? endsAt,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String code, @JsonKey(name: 'rule_id')  String ruleId,  DiscountRule? rule, @JsonKey(name: 'is_disabled')  bool isDisabled, @JsonKey(name: 'parent_discount_id')  String parentDiscountId, @JsonKey(name: 'parent_discount')  Discount? parentDiscount, @JsonKey(name: 'usage_count')  List<Discount> usageCount,  List<Discount> regions, @JsonKey(name: 'starts_at')  DateTime? startsAt, @JsonKey(name: 'ends_at')  DateTime? endsAt, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Discount() when $default != null:
 return $default(_that.id,_that.code,_that.ruleId,_that.rule,_that.isDisabled,_that.parentDiscountId,_that.parentDiscount,_that.usageCount,_that.regions,_that.startsAt,_that.endsAt,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -212,7 +212,7 @@ return $default(_that.id,_that.code,_that.ruleId,_that.rule,_that.isDisabled,_th
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String code,  String ruleId,  DiscountRule? rule,  bool isDisabled,  String parentDiscountId,  Discount? parentDiscount,  List<Discount> usageCount,  List<Discount> regions,  DateTime? startsAt,  DateTime? endsAt,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String code, @JsonKey(name: 'rule_id')  String ruleId,  DiscountRule? rule, @JsonKey(name: 'is_disabled')  bool isDisabled, @JsonKey(name: 'parent_discount_id')  String parentDiscountId, @JsonKey(name: 'parent_discount')  Discount? parentDiscount, @JsonKey(name: 'usage_count')  List<Discount> usageCount,  List<Discount> regions, @JsonKey(name: 'starts_at')  DateTime? startsAt, @JsonKey(name: 'ends_at')  DateTime? endsAt, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
 switch (_that) {
 case _Discount():
 return $default(_that.id,_that.code,_that.ruleId,_that.rule,_that.isDisabled,_that.parentDiscountId,_that.parentDiscount,_that.usageCount,_that.regions,_that.startsAt,_that.endsAt,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -232,7 +232,7 @@ return $default(_that.id,_that.code,_that.ruleId,_that.rule,_that.isDisabled,_th
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String code,  String ruleId,  DiscountRule? rule,  bool isDisabled,  String parentDiscountId,  Discount? parentDiscount,  List<Discount> usageCount,  List<Discount> regions,  DateTime? startsAt,  DateTime? endsAt,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String code, @JsonKey(name: 'rule_id')  String ruleId,  DiscountRule? rule, @JsonKey(name: 'is_disabled')  bool isDisabled, @JsonKey(name: 'parent_discount_id')  String parentDiscountId, @JsonKey(name: 'parent_discount')  Discount? parentDiscount, @JsonKey(name: 'usage_count')  List<Discount> usageCount,  List<Discount> regions, @JsonKey(name: 'starts_at')  DateTime? startsAt, @JsonKey(name: 'ends_at')  DateTime? endsAt, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
 switch (_that) {
 case _Discount() when $default != null:
 return $default(_that.id,_that.code,_that.ruleId,_that.rule,_that.isDisabled,_that.parentDiscountId,_that.parentDiscount,_that.usageCount,_that.regions,_that.startsAt,_that.endsAt,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -247,18 +247,18 @@ return $default(_that.id,_that.code,_that.ruleId,_that.rule,_that.isDisabled,_th
 @JsonSerializable()
 
 class _Discount implements Discount {
-  const _Discount({required this.id, required this.code, required this.ruleId, this.rule, required this.isDisabled, required this.parentDiscountId, this.parentDiscount, required final  List<Discount> usageCount, required final  List<Discount> regions, this.startsAt, this.endsAt, this.createdAt, this.updatedAt, this.deletedAt, final  Map<String, dynamic>? metadata}): _usageCount = usageCount,_regions = regions,_metadata = metadata;
+  const _Discount({required this.id, required this.code, @JsonKey(name: 'rule_id') required this.ruleId, this.rule, @JsonKey(name: 'is_disabled') required this.isDisabled, @JsonKey(name: 'parent_discount_id') required this.parentDiscountId, @JsonKey(name: 'parent_discount') this.parentDiscount, @JsonKey(name: 'usage_count') required final  List<Discount> usageCount, required final  List<Discount> regions, @JsonKey(name: 'starts_at') this.startsAt, @JsonKey(name: 'ends_at') this.endsAt, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt, final  Map<String, dynamic>? metadata}): _usageCount = usageCount,_regions = regions,_metadata = metadata;
   factory _Discount.fromJson(Map<String, dynamic> json) => _$DiscountFromJson(json);
 
 @override final  String id;
 @override final  String code;
-@override final  String ruleId;
+@override@JsonKey(name: 'rule_id') final  String ruleId;
 @override final  DiscountRule? rule;
-@override final  bool isDisabled;
-@override final  String parentDiscountId;
-@override final  Discount? parentDiscount;
+@override@JsonKey(name: 'is_disabled') final  bool isDisabled;
+@override@JsonKey(name: 'parent_discount_id') final  String parentDiscountId;
+@override@JsonKey(name: 'parent_discount') final  Discount? parentDiscount;
  final  List<Discount> _usageCount;
-@override List<Discount> get usageCount {
+@override@JsonKey(name: 'usage_count') List<Discount> get usageCount {
   if (_usageCount is EqualUnmodifiableListView) return _usageCount;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_usageCount);
@@ -271,11 +271,11 @@ class _Discount implements Discount {
   return EqualUnmodifiableListView(_regions);
 }
 
-@override final  DateTime? startsAt;
-@override final  DateTime? endsAt;
-@override final  DateTime? createdAt;
-@override final  DateTime? updatedAt;
-@override final  DateTime? deletedAt;
+@override@JsonKey(name: 'starts_at') final  DateTime? startsAt;
+@override@JsonKey(name: 'ends_at') final  DateTime? endsAt;
+@override@JsonKey(name: 'created_at') final  DateTime? createdAt;
+@override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
+@override@JsonKey(name: 'deleted_at') final  DateTime? deletedAt;
  final  Map<String, dynamic>? _metadata;
 @override Map<String, dynamic>? get metadata {
   final value = _metadata;
@@ -319,7 +319,7 @@ abstract mixin class _$DiscountCopyWith<$Res> implements $DiscountCopyWith<$Res>
   factory _$DiscountCopyWith(_Discount value, $Res Function(_Discount) _then) = __$DiscountCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String code, String ruleId, DiscountRule? rule, bool isDisabled, String parentDiscountId, Discount? parentDiscount, List<Discount> usageCount, List<Discount> regions, DateTime? startsAt, DateTime? endsAt, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt, Map<String, dynamic>? metadata
+ String id, String code,@JsonKey(name: 'rule_id') String ruleId, DiscountRule? rule,@JsonKey(name: 'is_disabled') bool isDisabled,@JsonKey(name: 'parent_discount_id') String parentDiscountId,@JsonKey(name: 'parent_discount') Discount? parentDiscount,@JsonKey(name: 'usage_count') List<Discount> usageCount, List<Discount> regions,@JsonKey(name: 'starts_at') DateTime? startsAt,@JsonKey(name: 'ends_at') DateTime? endsAt,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
 });
 
 

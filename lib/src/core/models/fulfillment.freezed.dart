@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Fulfillment {
 
- String get id; String get status; String get orderId; Order? get order; String get trackingNumber; List<String> get trackingNumbers; String get providerId; FulfillmentProvider? get fulfillmentProvider; Map<String, dynamic>? get data; DateTime? get shippedAt; DateTime? get canceledAt; DateTime? get createdAt; DateTime? get updatedAt; DateTime? get deletedAt; Map<String, dynamic>? get metadata;
+ String get id; String get status;@JsonKey(name: 'order_id') String get orderId; Order? get order;@JsonKey(name: 'tracking_number') String get trackingNumber;@JsonKey(name: 'tracking_numbers') List<String> get trackingNumbers;@JsonKey(name: 'provider_id') String get providerId;@JsonKey(name: 'fulfillment_provider') FulfillmentProvider? get fulfillmentProvider; Map<String, dynamic>? get data;@JsonKey(name: 'shipped_at') DateTime? get shippedAt;@JsonKey(name: 'canceled_at') DateTime? get canceledAt;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt; Map<String, dynamic>? get metadata;
 /// Create a copy of Fulfillment
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $FulfillmentCopyWith<$Res>  {
   factory $FulfillmentCopyWith(Fulfillment value, $Res Function(Fulfillment) _then) = _$FulfillmentCopyWithImpl;
 @useResult
 $Res call({
- String id, String status, String orderId, Order? order, String trackingNumber, List<String> trackingNumbers, String providerId, FulfillmentProvider? fulfillmentProvider, Map<String, dynamic>? data, DateTime? shippedAt, DateTime? canceledAt, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt, Map<String, dynamic>? metadata
+ String id, String status,@JsonKey(name: 'order_id') String orderId, Order? order,@JsonKey(name: 'tracking_number') String trackingNumber,@JsonKey(name: 'tracking_numbers') List<String> trackingNumbers,@JsonKey(name: 'provider_id') String providerId,@JsonKey(name: 'fulfillment_provider') FulfillmentProvider? fulfillmentProvider, Map<String, dynamic>? data,@JsonKey(name: 'shipped_at') DateTime? shippedAt,@JsonKey(name: 'canceled_at') DateTime? canceledAt,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
 });
 
 
@@ -191,7 +191,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String status,  String orderId,  Order? order,  String trackingNumber,  List<String> trackingNumbers,  String providerId,  FulfillmentProvider? fulfillmentProvider,  Map<String, dynamic>? data,  DateTime? shippedAt,  DateTime? canceledAt,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String status, @JsonKey(name: 'order_id')  String orderId,  Order? order, @JsonKey(name: 'tracking_number')  String trackingNumber, @JsonKey(name: 'tracking_numbers')  List<String> trackingNumbers, @JsonKey(name: 'provider_id')  String providerId, @JsonKey(name: 'fulfillment_provider')  FulfillmentProvider? fulfillmentProvider,  Map<String, dynamic>? data, @JsonKey(name: 'shipped_at')  DateTime? shippedAt, @JsonKey(name: 'canceled_at')  DateTime? canceledAt, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Fulfillment() when $default != null:
 return $default(_that.id,_that.status,_that.orderId,_that.order,_that.trackingNumber,_that.trackingNumbers,_that.providerId,_that.fulfillmentProvider,_that.data,_that.shippedAt,_that.canceledAt,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -212,7 +212,7 @@ return $default(_that.id,_that.status,_that.orderId,_that.order,_that.trackingNu
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String status,  String orderId,  Order? order,  String trackingNumber,  List<String> trackingNumbers,  String providerId,  FulfillmentProvider? fulfillmentProvider,  Map<String, dynamic>? data,  DateTime? shippedAt,  DateTime? canceledAt,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String status, @JsonKey(name: 'order_id')  String orderId,  Order? order, @JsonKey(name: 'tracking_number')  String trackingNumber, @JsonKey(name: 'tracking_numbers')  List<String> trackingNumbers, @JsonKey(name: 'provider_id')  String providerId, @JsonKey(name: 'fulfillment_provider')  FulfillmentProvider? fulfillmentProvider,  Map<String, dynamic>? data, @JsonKey(name: 'shipped_at')  DateTime? shippedAt, @JsonKey(name: 'canceled_at')  DateTime? canceledAt, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
 switch (_that) {
 case _Fulfillment():
 return $default(_that.id,_that.status,_that.orderId,_that.order,_that.trackingNumber,_that.trackingNumbers,_that.providerId,_that.fulfillmentProvider,_that.data,_that.shippedAt,_that.canceledAt,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -232,7 +232,7 @@ return $default(_that.id,_that.status,_that.orderId,_that.order,_that.trackingNu
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String status,  String orderId,  Order? order,  String trackingNumber,  List<String> trackingNumbers,  String providerId,  FulfillmentProvider? fulfillmentProvider,  Map<String, dynamic>? data,  DateTime? shippedAt,  DateTime? canceledAt,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String status, @JsonKey(name: 'order_id')  String orderId,  Order? order, @JsonKey(name: 'tracking_number')  String trackingNumber, @JsonKey(name: 'tracking_numbers')  List<String> trackingNumbers, @JsonKey(name: 'provider_id')  String providerId, @JsonKey(name: 'fulfillment_provider')  FulfillmentProvider? fulfillmentProvider,  Map<String, dynamic>? data, @JsonKey(name: 'shipped_at')  DateTime? shippedAt, @JsonKey(name: 'canceled_at')  DateTime? canceledAt, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
 switch (_that) {
 case _Fulfillment() when $default != null:
 return $default(_that.id,_that.status,_that.orderId,_that.order,_that.trackingNumber,_that.trackingNumbers,_that.providerId,_that.fulfillmentProvider,_that.data,_that.shippedAt,_that.canceledAt,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -247,23 +247,23 @@ return $default(_that.id,_that.status,_that.orderId,_that.order,_that.trackingNu
 @JsonSerializable()
 
 class _Fulfillment implements Fulfillment {
-  const _Fulfillment({required this.id, required this.status, required this.orderId, this.order, required this.trackingNumber, required final  List<String> trackingNumbers, required this.providerId, this.fulfillmentProvider, final  Map<String, dynamic>? data, this.shippedAt, this.canceledAt, this.createdAt, this.updatedAt, this.deletedAt, final  Map<String, dynamic>? metadata}): _trackingNumbers = trackingNumbers,_data = data,_metadata = metadata;
+  const _Fulfillment({required this.id, required this.status, @JsonKey(name: 'order_id') required this.orderId, this.order, @JsonKey(name: 'tracking_number') required this.trackingNumber, @JsonKey(name: 'tracking_numbers') required final  List<String> trackingNumbers, @JsonKey(name: 'provider_id') required this.providerId, @JsonKey(name: 'fulfillment_provider') this.fulfillmentProvider, final  Map<String, dynamic>? data, @JsonKey(name: 'shipped_at') this.shippedAt, @JsonKey(name: 'canceled_at') this.canceledAt, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt, final  Map<String, dynamic>? metadata}): _trackingNumbers = trackingNumbers,_data = data,_metadata = metadata;
   factory _Fulfillment.fromJson(Map<String, dynamic> json) => _$FulfillmentFromJson(json);
 
 @override final  String id;
 @override final  String status;
-@override final  String orderId;
+@override@JsonKey(name: 'order_id') final  String orderId;
 @override final  Order? order;
-@override final  String trackingNumber;
+@override@JsonKey(name: 'tracking_number') final  String trackingNumber;
  final  List<String> _trackingNumbers;
-@override List<String> get trackingNumbers {
+@override@JsonKey(name: 'tracking_numbers') List<String> get trackingNumbers {
   if (_trackingNumbers is EqualUnmodifiableListView) return _trackingNumbers;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_trackingNumbers);
 }
 
-@override final  String providerId;
-@override final  FulfillmentProvider? fulfillmentProvider;
+@override@JsonKey(name: 'provider_id') final  String providerId;
+@override@JsonKey(name: 'fulfillment_provider') final  FulfillmentProvider? fulfillmentProvider;
  final  Map<String, dynamic>? _data;
 @override Map<String, dynamic>? get data {
   final value = _data;
@@ -273,11 +273,11 @@ class _Fulfillment implements Fulfillment {
   return EqualUnmodifiableMapView(value);
 }
 
-@override final  DateTime? shippedAt;
-@override final  DateTime? canceledAt;
-@override final  DateTime? createdAt;
-@override final  DateTime? updatedAt;
-@override final  DateTime? deletedAt;
+@override@JsonKey(name: 'shipped_at') final  DateTime? shippedAt;
+@override@JsonKey(name: 'canceled_at') final  DateTime? canceledAt;
+@override@JsonKey(name: 'created_at') final  DateTime? createdAt;
+@override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
+@override@JsonKey(name: 'deleted_at') final  DateTime? deletedAt;
  final  Map<String, dynamic>? _metadata;
 @override Map<String, dynamic>? get metadata {
   final value = _metadata;
@@ -321,7 +321,7 @@ abstract mixin class _$FulfillmentCopyWith<$Res> implements $FulfillmentCopyWith
   factory _$FulfillmentCopyWith(_Fulfillment value, $Res Function(_Fulfillment) _then) = __$FulfillmentCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String status, String orderId, Order? order, String trackingNumber, List<String> trackingNumbers, String providerId, FulfillmentProvider? fulfillmentProvider, Map<String, dynamic>? data, DateTime? shippedAt, DateTime? canceledAt, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt, Map<String, dynamic>? metadata
+ String id, String status,@JsonKey(name: 'order_id') String orderId, Order? order,@JsonKey(name: 'tracking_number') String trackingNumber,@JsonKey(name: 'tracking_numbers') List<String> trackingNumbers,@JsonKey(name: 'provider_id') String providerId,@JsonKey(name: 'fulfillment_provider') FulfillmentProvider? fulfillmentProvider, Map<String, dynamic>? data,@JsonKey(name: 'shipped_at') DateTime? shippedAt,@JsonKey(name: 'canceled_at') DateTime? canceledAt,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
 });
 
 

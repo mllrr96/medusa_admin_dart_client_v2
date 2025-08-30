@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ProductOption {
 
- String get id; String get title;@JsonKey(name: 'product_id') String get productId; Product? get product;@JsonKey(name: 'values') List<ProductOptionValue>? get values; DateTime? get createdAt; DateTime? get updatedAt; DateTime? get deletedAt; Map<String, dynamic>? get metadata;
+ String get id; String get title;@JsonKey(name: 'product_id') String get productId; Product? get product;@JsonKey(name: 'values') List<ProductOptionValue>? get values;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt; Map<String, dynamic>? get metadata;
 /// Create a copy of ProductOption
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $ProductOptionCopyWith<$Res>  {
   factory $ProductOptionCopyWith(ProductOption value, $Res Function(ProductOption) _then) = _$ProductOptionCopyWithImpl;
 @useResult
 $Res call({
- String id, String title,@JsonKey(name: 'product_id') String productId, Product? product,@JsonKey(name: 'values') List<ProductOptionValue>? values, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt, Map<String, dynamic>? metadata
+ String id, String title,@JsonKey(name: 'product_id') String productId, Product? product,@JsonKey(name: 'values') List<ProductOptionValue>? values,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
 });
 
 
@@ -173,7 +173,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String title, @JsonKey(name: 'product_id')  String productId,  Product? product, @JsonKey(name: 'values')  List<ProductOptionValue>? values,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String title, @JsonKey(name: 'product_id')  String productId,  Product? product, @JsonKey(name: 'values')  List<ProductOptionValue>? values, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ProductOption() when $default != null:
 return $default(_that.id,_that.title,_that.productId,_that.product,_that.values,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -194,7 +194,7 @@ return $default(_that.id,_that.title,_that.productId,_that.product,_that.values,
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String title, @JsonKey(name: 'product_id')  String productId,  Product? product, @JsonKey(name: 'values')  List<ProductOptionValue>? values,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String title, @JsonKey(name: 'product_id')  String productId,  Product? product, @JsonKey(name: 'values')  List<ProductOptionValue>? values, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
 switch (_that) {
 case _ProductOption():
 return $default(_that.id,_that.title,_that.productId,_that.product,_that.values,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -214,7 +214,7 @@ return $default(_that.id,_that.title,_that.productId,_that.product,_that.values,
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String title, @JsonKey(name: 'product_id')  String productId,  Product? product, @JsonKey(name: 'values')  List<ProductOptionValue>? values,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String title, @JsonKey(name: 'product_id')  String productId,  Product? product, @JsonKey(name: 'values')  List<ProductOptionValue>? values, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
 switch (_that) {
 case _ProductOption() when $default != null:
 return $default(_that.id,_that.title,_that.productId,_that.product,_that.values,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -229,7 +229,7 @@ return $default(_that.id,_that.title,_that.productId,_that.product,_that.values,
 @JsonSerializable()
 
 class _ProductOption implements ProductOption {
-  const _ProductOption({required this.id, required this.title, @JsonKey(name: 'product_id') required this.productId, this.product, @JsonKey(name: 'values') final  List<ProductOptionValue>? values, this.createdAt, this.updatedAt, this.deletedAt, final  Map<String, dynamic>? metadata}): _values = values,_metadata = metadata;
+  const _ProductOption({required this.id, required this.title, @JsonKey(name: 'product_id') required this.productId, this.product, @JsonKey(name: 'values') final  List<ProductOptionValue>? values, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt, final  Map<String, dynamic>? metadata}): _values = values,_metadata = metadata;
   factory _ProductOption.fromJson(Map<String, dynamic> json) => _$ProductOptionFromJson(json);
 
 @override final  String id;
@@ -245,9 +245,9 @@ class _ProductOption implements ProductOption {
   return EqualUnmodifiableListView(value);
 }
 
-@override final  DateTime? createdAt;
-@override final  DateTime? updatedAt;
-@override final  DateTime? deletedAt;
+@override@JsonKey(name: 'created_at') final  DateTime? createdAt;
+@override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
+@override@JsonKey(name: 'deleted_at') final  DateTime? deletedAt;
  final  Map<String, dynamic>? _metadata;
 @override Map<String, dynamic>? get metadata {
   final value = _metadata;
@@ -291,7 +291,7 @@ abstract mixin class _$ProductOptionCopyWith<$Res> implements $ProductOptionCopy
   factory _$ProductOptionCopyWith(_ProductOption value, $Res Function(_ProductOption) _then) = __$ProductOptionCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String title,@JsonKey(name: 'product_id') String productId, Product? product,@JsonKey(name: 'values') List<ProductOptionValue>? values, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt, Map<String, dynamic>? metadata
+ String id, String title,@JsonKey(name: 'product_id') String productId, Product? product,@JsonKey(name: 'values') List<ProductOptionValue>? values,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
 });
 
 

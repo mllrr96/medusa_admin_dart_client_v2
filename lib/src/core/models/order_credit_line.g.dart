@@ -9,25 +9,25 @@ part of 'order_credit_line.dart';
 _OrderCreditLine _$OrderCreditLineFromJson(Map<String, dynamic> json) =>
     _OrderCreditLine(
       id: json['id'] as String,
-      order_id: json['order_id'] as String,
+      orderId: json['order_id'] as String,
       order: json['order'],
       reference: json['reference'] as String,
-      reference_id: json['reference_id'] as String,
+      referenceId: json['reference_id'] as String,
       metadata: json['metadata'] as Map<String, dynamic>,
-      created_at: json['created_at'] as String,
-      updated_at: json['updated_at'] as String,
+      createdAt: json['created_at'] as String,
+      updatedAt: json['updated_at'] as String,
       amount: json['amount'] as num,
     );
 
 Map<String, dynamic> _$OrderCreditLineToJson(_OrderCreditLine instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'order_id': instance.order_id,
+      'order_id': instance.orderId,
       'order': instance.order,
       'reference': instance.reference,
-      'reference_id': instance.reference_id,
+      'reference_id': instance.referenceId,
       'metadata': instance.metadata,
-      'created_at': instance.created_at,
-      'updated_at': instance.updated_at,
+      'created_at': instance.createdAt,
+      'updated_at': instance.updatedAt,
       'amount': instance.amount,
     };

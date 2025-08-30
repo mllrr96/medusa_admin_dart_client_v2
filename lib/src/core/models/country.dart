@@ -7,11 +7,11 @@ part 'country.g.dart';
 abstract class Country with _$Country {
   const factory Country({
     required int id,
-    required String iso2,
-    required String iso3,
-    required String numCode,
+    @JsonKey(name: 'iso_2') required String iso2,
+    @JsonKey(name: 'iso_3') required String iso3,
+    @JsonKey(name: 'num_code') required String numCode,
     required String name,
-    required String displayOnStore,
+    @JsonKey(name: 'display_on_store') required String displayOnStore,
   }) = _Country;
 
   factory Country.fromJson(Map<String, dynamic> json) =>

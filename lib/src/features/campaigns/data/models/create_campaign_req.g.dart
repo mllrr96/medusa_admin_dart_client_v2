@@ -9,11 +9,11 @@ part of 'create_campaign_req.dart';
 _CreateCampaignReq _$CreateCampaignReqFromJson(Map<String, dynamic> json) =>
     _CreateCampaignReq(
       name: json['name'] as String,
-      campaignIdentifier: json['campaignIdentifier'] as String,
+      campaignIdentifier: json['campaign_identifier'] as String,
       description: json['description'] as String,
       budget: Budget.fromJson(json['budget'] as Map<String, dynamic>),
-      startsAt: DateTime.parse(json['startsAt'] as String),
-      endsAt: DateTime.parse(json['endsAt'] as String),
+      startsAt: DateTime.parse(json['starts_at'] as String),
+      endsAt: DateTime.parse(json['ends_at'] as String),
       promotions: (json['promotions'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
@@ -22,10 +22,10 @@ _CreateCampaignReq _$CreateCampaignReqFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$CreateCampaignReqToJson(_CreateCampaignReq instance) =>
     <String, dynamic>{
       'name': instance.name,
-      'campaignIdentifier': instance.campaignIdentifier,
+      'campaign_identifier': instance.campaignIdentifier,
       'description': instance.description,
       'budget': instance.budget,
-      'startsAt': instance.startsAt.toIso8601String(),
-      'endsAt': instance.endsAt.toIso8601String(),
+      'starts_at': instance.startsAt.toIso8601String(),
+      'ends_at': instance.endsAt.toIso8601String(),
       'promotions': instance.promotions,
     };

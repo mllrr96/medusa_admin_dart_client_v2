@@ -9,47 +9,47 @@ part of 'region.dart';
 _Region _$RegionFromJson(Map<String, dynamic> json) => _Region(
   id: json['id'] as String,
   name: json['name'] as String,
-  currencyCode: json['currencyCode'] as String,
+  currencyCode: json['currency_code'] as String,
   countries: (json['countries'] as List<dynamic>)
       .map((e) => Country.fromJson(e as Map<String, dynamic>))
       .toList(),
-  paymentProviders: (json['paymentProviders'] as List<dynamic>)
+  paymentProviders: (json['payment_providers'] as List<dynamic>)
       .map((e) => PaymentProvider.fromJson(e as Map<String, dynamic>))
       .toList(),
-  fulfillmentProviders: (json['fulfillmentProviders'] as List<dynamic>)
+  fulfillmentProviders: (json['fulfillment_providers'] as List<dynamic>)
       .map((e) => FulfillmentProvider.fromJson(e as Map<String, dynamic>))
       .toList(),
-  taxRate: (json['taxRate'] as num).toInt(),
-  taxCode: json['taxCode'] as String,
-  automaticTaxes: json['automaticTaxes'] as bool,
-  giftCardsTaxable: json['giftCardsTaxable'] as String,
-  productsTaxable: json['productsTaxable'] as String,
-  createdAt: json['createdAt'] == null
+  taxRate: (json['tax_rate'] as num).toInt(),
+  taxCode: json['tax_code'] as String,
+  automaticTaxes: json['automatic_taxes'] as bool,
+  giftCardsTaxable: json['gift_cards_taxable'] as String,
+  productsTaxable: json['products_taxable'] as String,
+  createdAt: json['created_at'] == null
       ? null
-      : DateTime.parse(json['createdAt'] as String),
-  updatedAt: json['updatedAt'] == null
+      : DateTime.parse(json['created_at'] as String),
+  updatedAt: json['updated_at'] == null
       ? null
-      : DateTime.parse(json['updatedAt'] as String),
-  deletedAt: json['deletedAt'] == null
+      : DateTime.parse(json['updated_at'] as String),
+  deletedAt: json['deleted_at'] == null
       ? null
-      : DateTime.parse(json['deletedAt'] as String),
+      : DateTime.parse(json['deleted_at'] as String),
   metadata: json['metadata'] as Map<String, dynamic>?,
 );
 
 Map<String, dynamic> _$RegionToJson(_Region instance) => <String, dynamic>{
   'id': instance.id,
   'name': instance.name,
-  'currencyCode': instance.currencyCode,
+  'currency_code': instance.currencyCode,
   'countries': instance.countries,
-  'paymentProviders': instance.paymentProviders,
-  'fulfillmentProviders': instance.fulfillmentProviders,
-  'taxRate': instance.taxRate,
-  'taxCode': instance.taxCode,
-  'automaticTaxes': instance.automaticTaxes,
-  'giftCardsTaxable': instance.giftCardsTaxable,
-  'productsTaxable': instance.productsTaxable,
-  'createdAt': instance.createdAt?.toIso8601String(),
-  'updatedAt': instance.updatedAt?.toIso8601String(),
-  'deletedAt': instance.deletedAt?.toIso8601String(),
+  'payment_providers': instance.paymentProviders,
+  'fulfillment_providers': instance.fulfillmentProviders,
+  'tax_rate': instance.taxRate,
+  'tax_code': instance.taxCode,
+  'automatic_taxes': instance.automaticTaxes,
+  'gift_cards_taxable': instance.giftCardsTaxable,
+  'products_taxable': instance.productsTaxable,
+  'created_at': instance.createdAt?.toIso8601String(),
+  'updated_at': instance.updatedAt?.toIso8601String(),
+  'deleted_at': instance.deletedAt?.toIso8601String(),
   'metadata': instance.metadata,
 };

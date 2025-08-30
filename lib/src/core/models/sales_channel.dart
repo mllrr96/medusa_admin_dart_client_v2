@@ -9,10 +9,10 @@ abstract class SalesChannel with _$SalesChannel {
     required String id,
     required String name,
     String? description,
-    required bool isDisabled,
-    DateTime? createdAt,
-    DateTime? updatedAt,
-    DateTime? deletedAt,
+    @JsonKey(name: 'is_disabled') required bool isDisabled,
+    @JsonKey(name: 'created_at') DateTime? createdAt,
+    @JsonKey(name: 'updated_at') DateTime? updatedAt,
+    @JsonKey(name: 'deleted_at') DateTime? deletedAt,
     Map<String, dynamic>? metadata,
   }) = _SalesChannel;
 

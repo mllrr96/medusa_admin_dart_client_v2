@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ShippingMethod {
 
- String get id; String get shippingOptionId; ShippingOption? get shippingOption; String get orderId; Order? get order; String get cartId; Cart? get cart; String get swapId; Swap? get swap; int get price; String get data; String get taxRate; String get taxInclusive; String get includesTax; DateTime? get createdAt; DateTime? get updatedAt; DateTime? get deletedAt; Map<String, dynamic>? get metadata;
+ String get id;@JsonKey(name: 'shipping_option_id') String get shippingOptionId;@JsonKey(name: 'shipping_option') ShippingOption? get shippingOption;@JsonKey(name: 'order_id') String get orderId; Order? get order;@JsonKey(name: 'cart_id') String get cartId; Cart? get cart;@JsonKey(name: 'swap_id') String get swapId; Swap? get swap; int get price; String get data;@JsonKey(name: 'tax_rate') String get taxRate;@JsonKey(name: 'tax_inclusive') String get taxInclusive;@JsonKey(name: 'includes_tax') String get includesTax;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt; Map<String, dynamic>? get metadata;
 /// Create a copy of ShippingMethod
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $ShippingMethodCopyWith<$Res>  {
   factory $ShippingMethodCopyWith(ShippingMethod value, $Res Function(ShippingMethod) _then) = _$ShippingMethodCopyWithImpl;
 @useResult
 $Res call({
- String id, String shippingOptionId, ShippingOption? shippingOption, String orderId, Order? order, String cartId, Cart? cart, String swapId, Swap? swap, int price, String data, String taxRate, String taxInclusive, String includesTax, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt, Map<String, dynamic>? metadata
+ String id,@JsonKey(name: 'shipping_option_id') String shippingOptionId,@JsonKey(name: 'shipping_option') ShippingOption? shippingOption,@JsonKey(name: 'order_id') String orderId, Order? order,@JsonKey(name: 'cart_id') String cartId, Cart? cart,@JsonKey(name: 'swap_id') String swapId, Swap? swap, int price, String data,@JsonKey(name: 'tax_rate') String taxRate,@JsonKey(name: 'tax_inclusive') String taxInclusive,@JsonKey(name: 'includes_tax') String includesTax,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
 });
 
 
@@ -218,7 +218,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String shippingOptionId,  ShippingOption? shippingOption,  String orderId,  Order? order,  String cartId,  Cart? cart,  String swapId,  Swap? swap,  int price,  String data,  String taxRate,  String taxInclusive,  String includesTax,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'shipping_option_id')  String shippingOptionId, @JsonKey(name: 'shipping_option')  ShippingOption? shippingOption, @JsonKey(name: 'order_id')  String orderId,  Order? order, @JsonKey(name: 'cart_id')  String cartId,  Cart? cart, @JsonKey(name: 'swap_id')  String swapId,  Swap? swap,  int price,  String data, @JsonKey(name: 'tax_rate')  String taxRate, @JsonKey(name: 'tax_inclusive')  String taxInclusive, @JsonKey(name: 'includes_tax')  String includesTax, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ShippingMethod() when $default != null:
 return $default(_that.id,_that.shippingOptionId,_that.shippingOption,_that.orderId,_that.order,_that.cartId,_that.cart,_that.swapId,_that.swap,_that.price,_that.data,_that.taxRate,_that.taxInclusive,_that.includesTax,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -239,7 +239,7 @@ return $default(_that.id,_that.shippingOptionId,_that.shippingOption,_that.order
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String shippingOptionId,  ShippingOption? shippingOption,  String orderId,  Order? order,  String cartId,  Cart? cart,  String swapId,  Swap? swap,  int price,  String data,  String taxRate,  String taxInclusive,  String includesTax,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'shipping_option_id')  String shippingOptionId, @JsonKey(name: 'shipping_option')  ShippingOption? shippingOption, @JsonKey(name: 'order_id')  String orderId,  Order? order, @JsonKey(name: 'cart_id')  String cartId,  Cart? cart, @JsonKey(name: 'swap_id')  String swapId,  Swap? swap,  int price,  String data, @JsonKey(name: 'tax_rate')  String taxRate, @JsonKey(name: 'tax_inclusive')  String taxInclusive, @JsonKey(name: 'includes_tax')  String includesTax, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
 switch (_that) {
 case _ShippingMethod():
 return $default(_that.id,_that.shippingOptionId,_that.shippingOption,_that.orderId,_that.order,_that.cartId,_that.cart,_that.swapId,_that.swap,_that.price,_that.data,_that.taxRate,_that.taxInclusive,_that.includesTax,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -259,7 +259,7 @@ return $default(_that.id,_that.shippingOptionId,_that.shippingOption,_that.order
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String shippingOptionId,  ShippingOption? shippingOption,  String orderId,  Order? order,  String cartId,  Cart? cart,  String swapId,  Swap? swap,  int price,  String data,  String taxRate,  String taxInclusive,  String includesTax,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'shipping_option_id')  String shippingOptionId, @JsonKey(name: 'shipping_option')  ShippingOption? shippingOption, @JsonKey(name: 'order_id')  String orderId,  Order? order, @JsonKey(name: 'cart_id')  String cartId,  Cart? cart, @JsonKey(name: 'swap_id')  String swapId,  Swap? swap,  int price,  String data, @JsonKey(name: 'tax_rate')  String taxRate, @JsonKey(name: 'tax_inclusive')  String taxInclusive, @JsonKey(name: 'includes_tax')  String includesTax, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
 switch (_that) {
 case _ShippingMethod() when $default != null:
 return $default(_that.id,_that.shippingOptionId,_that.shippingOption,_that.orderId,_that.order,_that.cartId,_that.cart,_that.swapId,_that.swap,_that.price,_that.data,_that.taxRate,_that.taxInclusive,_that.includesTax,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -274,26 +274,26 @@ return $default(_that.id,_that.shippingOptionId,_that.shippingOption,_that.order
 @JsonSerializable()
 
 class _ShippingMethod implements ShippingMethod {
-  const _ShippingMethod({required this.id, required this.shippingOptionId, this.shippingOption, required this.orderId, this.order, required this.cartId, this.cart, required this.swapId, this.swap, required this.price, required this.data, required this.taxRate, required this.taxInclusive, required this.includesTax, this.createdAt, this.updatedAt, this.deletedAt, final  Map<String, dynamic>? metadata}): _metadata = metadata;
+  const _ShippingMethod({required this.id, @JsonKey(name: 'shipping_option_id') required this.shippingOptionId, @JsonKey(name: 'shipping_option') this.shippingOption, @JsonKey(name: 'order_id') required this.orderId, this.order, @JsonKey(name: 'cart_id') required this.cartId, this.cart, @JsonKey(name: 'swap_id') required this.swapId, this.swap, required this.price, required this.data, @JsonKey(name: 'tax_rate') required this.taxRate, @JsonKey(name: 'tax_inclusive') required this.taxInclusive, @JsonKey(name: 'includes_tax') required this.includesTax, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt, final  Map<String, dynamic>? metadata}): _metadata = metadata;
   factory _ShippingMethod.fromJson(Map<String, dynamic> json) => _$ShippingMethodFromJson(json);
 
 @override final  String id;
-@override final  String shippingOptionId;
-@override final  ShippingOption? shippingOption;
-@override final  String orderId;
+@override@JsonKey(name: 'shipping_option_id') final  String shippingOptionId;
+@override@JsonKey(name: 'shipping_option') final  ShippingOption? shippingOption;
+@override@JsonKey(name: 'order_id') final  String orderId;
 @override final  Order? order;
-@override final  String cartId;
+@override@JsonKey(name: 'cart_id') final  String cartId;
 @override final  Cart? cart;
-@override final  String swapId;
+@override@JsonKey(name: 'swap_id') final  String swapId;
 @override final  Swap? swap;
 @override final  int price;
 @override final  String data;
-@override final  String taxRate;
-@override final  String taxInclusive;
-@override final  String includesTax;
-@override final  DateTime? createdAt;
-@override final  DateTime? updatedAt;
-@override final  DateTime? deletedAt;
+@override@JsonKey(name: 'tax_rate') final  String taxRate;
+@override@JsonKey(name: 'tax_inclusive') final  String taxInclusive;
+@override@JsonKey(name: 'includes_tax') final  String includesTax;
+@override@JsonKey(name: 'created_at') final  DateTime? createdAt;
+@override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
+@override@JsonKey(name: 'deleted_at') final  DateTime? deletedAt;
  final  Map<String, dynamic>? _metadata;
 @override Map<String, dynamic>? get metadata {
   final value = _metadata;
@@ -337,7 +337,7 @@ abstract mixin class _$ShippingMethodCopyWith<$Res> implements $ShippingMethodCo
   factory _$ShippingMethodCopyWith(_ShippingMethod value, $Res Function(_ShippingMethod) _then) = __$ShippingMethodCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String shippingOptionId, ShippingOption? shippingOption, String orderId, Order? order, String cartId, Cart? cart, String swapId, Swap? swap, int price, String data, String taxRate, String taxInclusive, String includesTax, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt, Map<String, dynamic>? metadata
+ String id,@JsonKey(name: 'shipping_option_id') String shippingOptionId,@JsonKey(name: 'shipping_option') ShippingOption? shippingOption,@JsonKey(name: 'order_id') String orderId, Order? order,@JsonKey(name: 'cart_id') String cartId, Cart? cart,@JsonKey(name: 'swap_id') String swapId, Swap? swap, int price, String data,@JsonKey(name: 'tax_rate') String taxRate,@JsonKey(name: 'tax_inclusive') String taxInclusive,@JsonKey(name: 'includes_tax') String includesTax,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
 });
 
 

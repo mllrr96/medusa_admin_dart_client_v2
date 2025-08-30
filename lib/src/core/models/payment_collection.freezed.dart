@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$PaymentCollection {
 
- String get id; String get currency_code; num get amount; num? get authorized_amount; num? get captured_amount; num? get refunded_amount; String? get completed_at; String? get created_at; String? get updated_at; Map<String, dynamic>? get metadata; String get status; List<PaymentProvider> get payment_providers; List<dynamic>? get payment_sessions; List<Payment>? get payments;
+ String get id;@JsonKey(name: 'currency_code') String get currencyCode; num get amount;@JsonKey(name: 'authorized_amount') num? get authorizedAmount;@JsonKey(name: 'captured_amount') num? get capturedAmount;@JsonKey(name: 'refunded_amount') num? get refundedAmount;@JsonKey(name: 'completed_at') String? get completedAt;@JsonKey(name: 'created_at') String? get createdAt;@JsonKey(name: 'updated_at') String? get updatedAt; Map<String, dynamic>? get metadata; String get status;@JsonKey(name: 'payment_providers') List<PaymentProvider> get paymentProviders;@JsonKey(name: 'payment_sessions') List<dynamic>? get paymentSessions; List<Payment>? get payments;
 /// Create a copy of PaymentCollection
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $PaymentCollectionCopyWith<PaymentCollection> get copyWith => _$PaymentCollectio
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is PaymentCollection&&(identical(other.id, id) || other.id == id)&&(identical(other.currency_code, currency_code) || other.currency_code == currency_code)&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.authorized_amount, authorized_amount) || other.authorized_amount == authorized_amount)&&(identical(other.captured_amount, captured_amount) || other.captured_amount == captured_amount)&&(identical(other.refunded_amount, refunded_amount) || other.refunded_amount == refunded_amount)&&(identical(other.completed_at, completed_at) || other.completed_at == completed_at)&&(identical(other.created_at, created_at) || other.created_at == created_at)&&(identical(other.updated_at, updated_at) || other.updated_at == updated_at)&&const DeepCollectionEquality().equals(other.metadata, metadata)&&(identical(other.status, status) || other.status == status)&&const DeepCollectionEquality().equals(other.payment_providers, payment_providers)&&const DeepCollectionEquality().equals(other.payment_sessions, payment_sessions)&&const DeepCollectionEquality().equals(other.payments, payments));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PaymentCollection&&(identical(other.id, id) || other.id == id)&&(identical(other.currencyCode, currencyCode) || other.currencyCode == currencyCode)&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.authorizedAmount, authorizedAmount) || other.authorizedAmount == authorizedAmount)&&(identical(other.capturedAmount, capturedAmount) || other.capturedAmount == capturedAmount)&&(identical(other.refundedAmount, refundedAmount) || other.refundedAmount == refundedAmount)&&(identical(other.completedAt, completedAt) || other.completedAt == completedAt)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&const DeepCollectionEquality().equals(other.metadata, metadata)&&(identical(other.status, status) || other.status == status)&&const DeepCollectionEquality().equals(other.paymentProviders, paymentProviders)&&const DeepCollectionEquality().equals(other.paymentSessions, paymentSessions)&&const DeepCollectionEquality().equals(other.payments, payments));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,currency_code,amount,authorized_amount,captured_amount,refunded_amount,completed_at,created_at,updated_at,const DeepCollectionEquality().hash(metadata),status,const DeepCollectionEquality().hash(payment_providers),const DeepCollectionEquality().hash(payment_sessions),const DeepCollectionEquality().hash(payments));
+int get hashCode => Object.hash(runtimeType,id,currencyCode,amount,authorizedAmount,capturedAmount,refundedAmount,completedAt,createdAt,updatedAt,const DeepCollectionEquality().hash(metadata),status,const DeepCollectionEquality().hash(paymentProviders),const DeepCollectionEquality().hash(paymentSessions),const DeepCollectionEquality().hash(payments));
 
 @override
 String toString() {
-  return 'PaymentCollection(id: $id, currency_code: $currency_code, amount: $amount, authorized_amount: $authorized_amount, captured_amount: $captured_amount, refunded_amount: $refunded_amount, completed_at: $completed_at, created_at: $created_at, updated_at: $updated_at, metadata: $metadata, status: $status, payment_providers: $payment_providers, payment_sessions: $payment_sessions, payments: $payments)';
+  return 'PaymentCollection(id: $id, currencyCode: $currencyCode, amount: $amount, authorizedAmount: $authorizedAmount, capturedAmount: $capturedAmount, refundedAmount: $refundedAmount, completedAt: $completedAt, createdAt: $createdAt, updatedAt: $updatedAt, metadata: $metadata, status: $status, paymentProviders: $paymentProviders, paymentSessions: $paymentSessions, payments: $payments)';
 }
 
 
@@ -48,7 +48,7 @@ abstract mixin class $PaymentCollectionCopyWith<$Res>  {
   factory $PaymentCollectionCopyWith(PaymentCollection value, $Res Function(PaymentCollection) _then) = _$PaymentCollectionCopyWithImpl;
 @useResult
 $Res call({
- String id, String currency_code, num amount, num? authorized_amount, num? captured_amount, num? refunded_amount, String? completed_at, String? created_at, String? updated_at, Map<String, dynamic>? metadata, String status, List<PaymentProvider> payment_providers, List<dynamic>? payment_sessions, List<Payment>? payments
+ String id,@JsonKey(name: 'currency_code') String currencyCode, num amount,@JsonKey(name: 'authorized_amount') num? authorizedAmount,@JsonKey(name: 'captured_amount') num? capturedAmount,@JsonKey(name: 'refunded_amount') num? refundedAmount,@JsonKey(name: 'completed_at') String? completedAt,@JsonKey(name: 'created_at') String? createdAt,@JsonKey(name: 'updated_at') String? updatedAt, Map<String, dynamic>? metadata, String status,@JsonKey(name: 'payment_providers') List<PaymentProvider> paymentProviders,@JsonKey(name: 'payment_sessions') List<dynamic>? paymentSessions, List<Payment>? payments
 });
 
 
@@ -65,21 +65,21 @@ class _$PaymentCollectionCopyWithImpl<$Res>
 
 /// Create a copy of PaymentCollection
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? currency_code = null,Object? amount = null,Object? authorized_amount = freezed,Object? captured_amount = freezed,Object? refunded_amount = freezed,Object? completed_at = freezed,Object? created_at = freezed,Object? updated_at = freezed,Object? metadata = freezed,Object? status = null,Object? payment_providers = null,Object? payment_sessions = freezed,Object? payments = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? currencyCode = null,Object? amount = null,Object? authorizedAmount = freezed,Object? capturedAmount = freezed,Object? refundedAmount = freezed,Object? completedAt = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? metadata = freezed,Object? status = null,Object? paymentProviders = null,Object? paymentSessions = freezed,Object? payments = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,currency_code: null == currency_code ? _self.currency_code : currency_code // ignore: cast_nullable_to_non_nullable
+as String,currencyCode: null == currencyCode ? _self.currencyCode : currencyCode // ignore: cast_nullable_to_non_nullable
 as String,amount: null == amount ? _self.amount : amount // ignore: cast_nullable_to_non_nullable
-as num,authorized_amount: freezed == authorized_amount ? _self.authorized_amount : authorized_amount // ignore: cast_nullable_to_non_nullable
-as num?,captured_amount: freezed == captured_amount ? _self.captured_amount : captured_amount // ignore: cast_nullable_to_non_nullable
-as num?,refunded_amount: freezed == refunded_amount ? _self.refunded_amount : refunded_amount // ignore: cast_nullable_to_non_nullable
-as num?,completed_at: freezed == completed_at ? _self.completed_at : completed_at // ignore: cast_nullable_to_non_nullable
-as String?,created_at: freezed == created_at ? _self.created_at : created_at // ignore: cast_nullable_to_non_nullable
-as String?,updated_at: freezed == updated_at ? _self.updated_at : updated_at // ignore: cast_nullable_to_non_nullable
+as num,authorizedAmount: freezed == authorizedAmount ? _self.authorizedAmount : authorizedAmount // ignore: cast_nullable_to_non_nullable
+as num?,capturedAmount: freezed == capturedAmount ? _self.capturedAmount : capturedAmount // ignore: cast_nullable_to_non_nullable
+as num?,refundedAmount: freezed == refundedAmount ? _self.refundedAmount : refundedAmount // ignore: cast_nullable_to_non_nullable
+as num?,completedAt: freezed == completedAt ? _self.completedAt : completedAt // ignore: cast_nullable_to_non_nullable
+as String?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as String?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
 as String?,metadata: freezed == metadata ? _self.metadata : metadata // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
-as String,payment_providers: null == payment_providers ? _self.payment_providers : payment_providers // ignore: cast_nullable_to_non_nullable
-as List<PaymentProvider>,payment_sessions: freezed == payment_sessions ? _self.payment_sessions : payment_sessions // ignore: cast_nullable_to_non_nullable
+as String,paymentProviders: null == paymentProviders ? _self.paymentProviders : paymentProviders // ignore: cast_nullable_to_non_nullable
+as List<PaymentProvider>,paymentSessions: freezed == paymentSessions ? _self.paymentSessions : paymentSessions // ignore: cast_nullable_to_non_nullable
 as List<dynamic>?,payments: freezed == payments ? _self.payments : payments // ignore: cast_nullable_to_non_nullable
 as List<Payment>?,
   ));
@@ -166,10 +166,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String currency_code,  num amount,  num? authorized_amount,  num? captured_amount,  num? refunded_amount,  String? completed_at,  String? created_at,  String? updated_at,  Map<String, dynamic>? metadata,  String status,  List<PaymentProvider> payment_providers,  List<dynamic>? payment_sessions,  List<Payment>? payments)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'currency_code')  String currencyCode,  num amount, @JsonKey(name: 'authorized_amount')  num? authorizedAmount, @JsonKey(name: 'captured_amount')  num? capturedAmount, @JsonKey(name: 'refunded_amount')  num? refundedAmount, @JsonKey(name: 'completed_at')  String? completedAt, @JsonKey(name: 'created_at')  String? createdAt, @JsonKey(name: 'updated_at')  String? updatedAt,  Map<String, dynamic>? metadata,  String status, @JsonKey(name: 'payment_providers')  List<PaymentProvider> paymentProviders, @JsonKey(name: 'payment_sessions')  List<dynamic>? paymentSessions,  List<Payment>? payments)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _PaymentCollection() when $default != null:
-return $default(_that.id,_that.currency_code,_that.amount,_that.authorized_amount,_that.captured_amount,_that.refunded_amount,_that.completed_at,_that.created_at,_that.updated_at,_that.metadata,_that.status,_that.payment_providers,_that.payment_sessions,_that.payments);case _:
+return $default(_that.id,_that.currencyCode,_that.amount,_that.authorizedAmount,_that.capturedAmount,_that.refundedAmount,_that.completedAt,_that.createdAt,_that.updatedAt,_that.metadata,_that.status,_that.paymentProviders,_that.paymentSessions,_that.payments);case _:
   return orElse();
 
 }
@@ -187,10 +187,10 @@ return $default(_that.id,_that.currency_code,_that.amount,_that.authorized_amoun
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String currency_code,  num amount,  num? authorized_amount,  num? captured_amount,  num? refunded_amount,  String? completed_at,  String? created_at,  String? updated_at,  Map<String, dynamic>? metadata,  String status,  List<PaymentProvider> payment_providers,  List<dynamic>? payment_sessions,  List<Payment>? payments)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'currency_code')  String currencyCode,  num amount, @JsonKey(name: 'authorized_amount')  num? authorizedAmount, @JsonKey(name: 'captured_amount')  num? capturedAmount, @JsonKey(name: 'refunded_amount')  num? refundedAmount, @JsonKey(name: 'completed_at')  String? completedAt, @JsonKey(name: 'created_at')  String? createdAt, @JsonKey(name: 'updated_at')  String? updatedAt,  Map<String, dynamic>? metadata,  String status, @JsonKey(name: 'payment_providers')  List<PaymentProvider> paymentProviders, @JsonKey(name: 'payment_sessions')  List<dynamic>? paymentSessions,  List<Payment>? payments)  $default,) {final _that = this;
 switch (_that) {
 case _PaymentCollection():
-return $default(_that.id,_that.currency_code,_that.amount,_that.authorized_amount,_that.captured_amount,_that.refunded_amount,_that.completed_at,_that.created_at,_that.updated_at,_that.metadata,_that.status,_that.payment_providers,_that.payment_sessions,_that.payments);case _:
+return $default(_that.id,_that.currencyCode,_that.amount,_that.authorizedAmount,_that.capturedAmount,_that.refundedAmount,_that.completedAt,_that.createdAt,_that.updatedAt,_that.metadata,_that.status,_that.paymentProviders,_that.paymentSessions,_that.payments);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -207,10 +207,10 @@ return $default(_that.id,_that.currency_code,_that.amount,_that.authorized_amoun
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String currency_code,  num amount,  num? authorized_amount,  num? captured_amount,  num? refunded_amount,  String? completed_at,  String? created_at,  String? updated_at,  Map<String, dynamic>? metadata,  String status,  List<PaymentProvider> payment_providers,  List<dynamic>? payment_sessions,  List<Payment>? payments)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'currency_code')  String currencyCode,  num amount, @JsonKey(name: 'authorized_amount')  num? authorizedAmount, @JsonKey(name: 'captured_amount')  num? capturedAmount, @JsonKey(name: 'refunded_amount')  num? refundedAmount, @JsonKey(name: 'completed_at')  String? completedAt, @JsonKey(name: 'created_at')  String? createdAt, @JsonKey(name: 'updated_at')  String? updatedAt,  Map<String, dynamic>? metadata,  String status, @JsonKey(name: 'payment_providers')  List<PaymentProvider> paymentProviders, @JsonKey(name: 'payment_sessions')  List<dynamic>? paymentSessions,  List<Payment>? payments)?  $default,) {final _that = this;
 switch (_that) {
 case _PaymentCollection() when $default != null:
-return $default(_that.id,_that.currency_code,_that.amount,_that.authorized_amount,_that.captured_amount,_that.refunded_amount,_that.completed_at,_that.created_at,_that.updated_at,_that.metadata,_that.status,_that.payment_providers,_that.payment_sessions,_that.payments);case _:
+return $default(_that.id,_that.currencyCode,_that.amount,_that.authorizedAmount,_that.capturedAmount,_that.refundedAmount,_that.completedAt,_that.createdAt,_that.updatedAt,_that.metadata,_that.status,_that.paymentProviders,_that.paymentSessions,_that.payments);case _:
   return null;
 
 }
@@ -222,18 +222,18 @@ return $default(_that.id,_that.currency_code,_that.amount,_that.authorized_amoun
 @JsonSerializable()
 
 class _PaymentCollection implements PaymentCollection {
-  const _PaymentCollection({required this.id, required this.currency_code, required this.amount, this.authorized_amount, this.captured_amount, this.refunded_amount, this.completed_at, this.created_at, this.updated_at, final  Map<String, dynamic>? metadata, required this.status, required final  List<PaymentProvider> payment_providers, final  List<dynamic>? payment_sessions, final  List<Payment>? payments}): _metadata = metadata,_payment_providers = payment_providers,_payment_sessions = payment_sessions,_payments = payments;
+  const _PaymentCollection({required this.id, @JsonKey(name: 'currency_code') required this.currencyCode, required this.amount, @JsonKey(name: 'authorized_amount') this.authorizedAmount, @JsonKey(name: 'captured_amount') this.capturedAmount, @JsonKey(name: 'refunded_amount') this.refundedAmount, @JsonKey(name: 'completed_at') this.completedAt, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, final  Map<String, dynamic>? metadata, required this.status, @JsonKey(name: 'payment_providers') required final  List<PaymentProvider> paymentProviders, @JsonKey(name: 'payment_sessions') final  List<dynamic>? paymentSessions, final  List<Payment>? payments}): _metadata = metadata,_paymentProviders = paymentProviders,_paymentSessions = paymentSessions,_payments = payments;
   factory _PaymentCollection.fromJson(Map<String, dynamic> json) => _$PaymentCollectionFromJson(json);
 
 @override final  String id;
-@override final  String currency_code;
+@override@JsonKey(name: 'currency_code') final  String currencyCode;
 @override final  num amount;
-@override final  num? authorized_amount;
-@override final  num? captured_amount;
-@override final  num? refunded_amount;
-@override final  String? completed_at;
-@override final  String? created_at;
-@override final  String? updated_at;
+@override@JsonKey(name: 'authorized_amount') final  num? authorizedAmount;
+@override@JsonKey(name: 'captured_amount') final  num? capturedAmount;
+@override@JsonKey(name: 'refunded_amount') final  num? refundedAmount;
+@override@JsonKey(name: 'completed_at') final  String? completedAt;
+@override@JsonKey(name: 'created_at') final  String? createdAt;
+@override@JsonKey(name: 'updated_at') final  String? updatedAt;
  final  Map<String, dynamic>? _metadata;
 @override Map<String, dynamic>? get metadata {
   final value = _metadata;
@@ -244,18 +244,18 @@ class _PaymentCollection implements PaymentCollection {
 }
 
 @override final  String status;
- final  List<PaymentProvider> _payment_providers;
-@override List<PaymentProvider> get payment_providers {
-  if (_payment_providers is EqualUnmodifiableListView) return _payment_providers;
+ final  List<PaymentProvider> _paymentProviders;
+@override@JsonKey(name: 'payment_providers') List<PaymentProvider> get paymentProviders {
+  if (_paymentProviders is EqualUnmodifiableListView) return _paymentProviders;
   // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_payment_providers);
+  return EqualUnmodifiableListView(_paymentProviders);
 }
 
- final  List<dynamic>? _payment_sessions;
-@override List<dynamic>? get payment_sessions {
-  final value = _payment_sessions;
+ final  List<dynamic>? _paymentSessions;
+@override@JsonKey(name: 'payment_sessions') List<dynamic>? get paymentSessions {
+  final value = _paymentSessions;
   if (value == null) return null;
-  if (_payment_sessions is EqualUnmodifiableListView) return _payment_sessions;
+  if (_paymentSessions is EqualUnmodifiableListView) return _paymentSessions;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(value);
 }
@@ -283,16 +283,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PaymentCollection&&(identical(other.id, id) || other.id == id)&&(identical(other.currency_code, currency_code) || other.currency_code == currency_code)&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.authorized_amount, authorized_amount) || other.authorized_amount == authorized_amount)&&(identical(other.captured_amount, captured_amount) || other.captured_amount == captured_amount)&&(identical(other.refunded_amount, refunded_amount) || other.refunded_amount == refunded_amount)&&(identical(other.completed_at, completed_at) || other.completed_at == completed_at)&&(identical(other.created_at, created_at) || other.created_at == created_at)&&(identical(other.updated_at, updated_at) || other.updated_at == updated_at)&&const DeepCollectionEquality().equals(other._metadata, _metadata)&&(identical(other.status, status) || other.status == status)&&const DeepCollectionEquality().equals(other._payment_providers, _payment_providers)&&const DeepCollectionEquality().equals(other._payment_sessions, _payment_sessions)&&const DeepCollectionEquality().equals(other._payments, _payments));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PaymentCollection&&(identical(other.id, id) || other.id == id)&&(identical(other.currencyCode, currencyCode) || other.currencyCode == currencyCode)&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.authorizedAmount, authorizedAmount) || other.authorizedAmount == authorizedAmount)&&(identical(other.capturedAmount, capturedAmount) || other.capturedAmount == capturedAmount)&&(identical(other.refundedAmount, refundedAmount) || other.refundedAmount == refundedAmount)&&(identical(other.completedAt, completedAt) || other.completedAt == completedAt)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&const DeepCollectionEquality().equals(other._metadata, _metadata)&&(identical(other.status, status) || other.status == status)&&const DeepCollectionEquality().equals(other._paymentProviders, _paymentProviders)&&const DeepCollectionEquality().equals(other._paymentSessions, _paymentSessions)&&const DeepCollectionEquality().equals(other._payments, _payments));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,currency_code,amount,authorized_amount,captured_amount,refunded_amount,completed_at,created_at,updated_at,const DeepCollectionEquality().hash(_metadata),status,const DeepCollectionEquality().hash(_payment_providers),const DeepCollectionEquality().hash(_payment_sessions),const DeepCollectionEquality().hash(_payments));
+int get hashCode => Object.hash(runtimeType,id,currencyCode,amount,authorizedAmount,capturedAmount,refundedAmount,completedAt,createdAt,updatedAt,const DeepCollectionEquality().hash(_metadata),status,const DeepCollectionEquality().hash(_paymentProviders),const DeepCollectionEquality().hash(_paymentSessions),const DeepCollectionEquality().hash(_payments));
 
 @override
 String toString() {
-  return 'PaymentCollection(id: $id, currency_code: $currency_code, amount: $amount, authorized_amount: $authorized_amount, captured_amount: $captured_amount, refunded_amount: $refunded_amount, completed_at: $completed_at, created_at: $created_at, updated_at: $updated_at, metadata: $metadata, status: $status, payment_providers: $payment_providers, payment_sessions: $payment_sessions, payments: $payments)';
+  return 'PaymentCollection(id: $id, currencyCode: $currencyCode, amount: $amount, authorizedAmount: $authorizedAmount, capturedAmount: $capturedAmount, refundedAmount: $refundedAmount, completedAt: $completedAt, createdAt: $createdAt, updatedAt: $updatedAt, metadata: $metadata, status: $status, paymentProviders: $paymentProviders, paymentSessions: $paymentSessions, payments: $payments)';
 }
 
 
@@ -303,7 +303,7 @@ abstract mixin class _$PaymentCollectionCopyWith<$Res> implements $PaymentCollec
   factory _$PaymentCollectionCopyWith(_PaymentCollection value, $Res Function(_PaymentCollection) _then) = __$PaymentCollectionCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String currency_code, num amount, num? authorized_amount, num? captured_amount, num? refunded_amount, String? completed_at, String? created_at, String? updated_at, Map<String, dynamic>? metadata, String status, List<PaymentProvider> payment_providers, List<dynamic>? payment_sessions, List<Payment>? payments
+ String id,@JsonKey(name: 'currency_code') String currencyCode, num amount,@JsonKey(name: 'authorized_amount') num? authorizedAmount,@JsonKey(name: 'captured_amount') num? capturedAmount,@JsonKey(name: 'refunded_amount') num? refundedAmount,@JsonKey(name: 'completed_at') String? completedAt,@JsonKey(name: 'created_at') String? createdAt,@JsonKey(name: 'updated_at') String? updatedAt, Map<String, dynamic>? metadata, String status,@JsonKey(name: 'payment_providers') List<PaymentProvider> paymentProviders,@JsonKey(name: 'payment_sessions') List<dynamic>? paymentSessions, List<Payment>? payments
 });
 
 
@@ -320,21 +320,21 @@ class __$PaymentCollectionCopyWithImpl<$Res>
 
 /// Create a copy of PaymentCollection
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? currency_code = null,Object? amount = null,Object? authorized_amount = freezed,Object? captured_amount = freezed,Object? refunded_amount = freezed,Object? completed_at = freezed,Object? created_at = freezed,Object? updated_at = freezed,Object? metadata = freezed,Object? status = null,Object? payment_providers = null,Object? payment_sessions = freezed,Object? payments = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? currencyCode = null,Object? amount = null,Object? authorizedAmount = freezed,Object? capturedAmount = freezed,Object? refundedAmount = freezed,Object? completedAt = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? metadata = freezed,Object? status = null,Object? paymentProviders = null,Object? paymentSessions = freezed,Object? payments = freezed,}) {
   return _then(_PaymentCollection(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,currency_code: null == currency_code ? _self.currency_code : currency_code // ignore: cast_nullable_to_non_nullable
+as String,currencyCode: null == currencyCode ? _self.currencyCode : currencyCode // ignore: cast_nullable_to_non_nullable
 as String,amount: null == amount ? _self.amount : amount // ignore: cast_nullable_to_non_nullable
-as num,authorized_amount: freezed == authorized_amount ? _self.authorized_amount : authorized_amount // ignore: cast_nullable_to_non_nullable
-as num?,captured_amount: freezed == captured_amount ? _self.captured_amount : captured_amount // ignore: cast_nullable_to_non_nullable
-as num?,refunded_amount: freezed == refunded_amount ? _self.refunded_amount : refunded_amount // ignore: cast_nullable_to_non_nullable
-as num?,completed_at: freezed == completed_at ? _self.completed_at : completed_at // ignore: cast_nullable_to_non_nullable
-as String?,created_at: freezed == created_at ? _self.created_at : created_at // ignore: cast_nullable_to_non_nullable
-as String?,updated_at: freezed == updated_at ? _self.updated_at : updated_at // ignore: cast_nullable_to_non_nullable
+as num,authorizedAmount: freezed == authorizedAmount ? _self.authorizedAmount : authorizedAmount // ignore: cast_nullable_to_non_nullable
+as num?,capturedAmount: freezed == capturedAmount ? _self.capturedAmount : capturedAmount // ignore: cast_nullable_to_non_nullable
+as num?,refundedAmount: freezed == refundedAmount ? _self.refundedAmount : refundedAmount // ignore: cast_nullable_to_non_nullable
+as num?,completedAt: freezed == completedAt ? _self.completedAt : completedAt // ignore: cast_nullable_to_non_nullable
+as String?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as String?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
 as String?,metadata: freezed == metadata ? _self._metadata : metadata // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
-as String,payment_providers: null == payment_providers ? _self._payment_providers : payment_providers // ignore: cast_nullable_to_non_nullable
-as List<PaymentProvider>,payment_sessions: freezed == payment_sessions ? _self._payment_sessions : payment_sessions // ignore: cast_nullable_to_non_nullable
+as String,paymentProviders: null == paymentProviders ? _self._paymentProviders : paymentProviders // ignore: cast_nullable_to_non_nullable
+as List<PaymentProvider>,paymentSessions: freezed == paymentSessions ? _self._paymentSessions : paymentSessions // ignore: cast_nullable_to_non_nullable
 as List<dynamic>?,payments: freezed == payments ? _self._payments : payments // ignore: cast_nullable_to_non_nullable
 as List<Payment>?,
   ));

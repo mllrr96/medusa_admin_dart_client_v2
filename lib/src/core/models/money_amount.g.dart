@@ -8,7 +8,7 @@ part of 'money_amount.dart';
 
 _MoneyAmount _$MoneyAmountFromJson(Map<String, dynamic> json) => _MoneyAmount(
   id: json['id'] as String,
-  currencyCode: json['currencyCode'] as String,
+  currencyCode: json['currency_code'] as String,
   amount: (json['amount'] as num).toInt(),
   variantId: json['variant_id'] as String?,
   variant: json['variant'] == null
@@ -18,29 +18,29 @@ _MoneyAmount _$MoneyAmountFromJson(Map<String, dynamic> json) => _MoneyAmount(
   region: json['region'] == null
       ? null
       : Region.fromJson(json['region'] as Map<String, dynamic>),
-  createdAt: json['createdAt'] == null
+  createdAt: json['created_at'] == null
       ? null
-      : DateTime.parse(json['createdAt'] as String),
-  updatedAt: json['updatedAt'] == null
+      : DateTime.parse(json['created_at'] as String),
+  updatedAt: json['updated_at'] == null
       ? null
-      : DateTime.parse(json['updatedAt'] as String),
-  deletedAt: json['deletedAt'] == null
+      : DateTime.parse(json['updated_at'] as String),
+  deletedAt: json['deleted_at'] == null
       ? null
-      : DateTime.parse(json['deletedAt'] as String),
+      : DateTime.parse(json['deleted_at'] as String),
   metadata: json['metadata'] as Map<String, dynamic>?,
 );
 
 Map<String, dynamic> _$MoneyAmountToJson(_MoneyAmount instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'currencyCode': instance.currencyCode,
+      'currency_code': instance.currencyCode,
       'amount': instance.amount,
       'variant_id': instance.variantId,
       'variant': instance.variant,
       'region_id': instance.regionId,
       'region': instance.region,
-      'createdAt': instance.createdAt?.toIso8601String(),
-      'updatedAt': instance.updatedAt?.toIso8601String(),
-      'deletedAt': instance.deletedAt?.toIso8601String(),
+      'created_at': instance.createdAt?.toIso8601String(),
+      'updated_at': instance.updatedAt?.toIso8601String(),
+      'deleted_at': instance.deletedAt?.toIso8601String(),
       'metadata': instance.metadata,
     };

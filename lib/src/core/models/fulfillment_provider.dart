@@ -7,7 +7,7 @@ part 'fulfillment_provider.g.dart';
 abstract class FulfillmentProvider with _$FulfillmentProvider {
   const factory FulfillmentProvider({
     required String id,
-    required bool isEnabled,
+    @JsonKey(name: 'is_enabled') required bool isEnabled,
   }) = _FulfillmentProvider;
 
   factory FulfillmentProvider.fromJson(Map<String, dynamic> json) =>

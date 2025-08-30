@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$OrderCreditLine {
 
- String get id; String get order_id; dynamic get order; String get reference; String get reference_id; Map<String, dynamic> get metadata; String get created_at; String get updated_at; num get amount;
+ String get id;@JsonKey(name: 'order_id') String get orderId; dynamic get order; String get reference;@JsonKey(name: 'reference_id') String get referenceId; Map<String, dynamic> get metadata;@JsonKey(name: 'created_at') String get createdAt;@JsonKey(name: 'updated_at') String get updatedAt; num get amount;
 /// Create a copy of OrderCreditLine
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $OrderCreditLineCopyWith<OrderCreditLine> get copyWith => _$OrderCreditLineCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is OrderCreditLine&&(identical(other.id, id) || other.id == id)&&(identical(other.order_id, order_id) || other.order_id == order_id)&&const DeepCollectionEquality().equals(other.order, order)&&(identical(other.reference, reference) || other.reference == reference)&&(identical(other.reference_id, reference_id) || other.reference_id == reference_id)&&const DeepCollectionEquality().equals(other.metadata, metadata)&&(identical(other.created_at, created_at) || other.created_at == created_at)&&(identical(other.updated_at, updated_at) || other.updated_at == updated_at)&&(identical(other.amount, amount) || other.amount == amount));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is OrderCreditLine&&(identical(other.id, id) || other.id == id)&&(identical(other.orderId, orderId) || other.orderId == orderId)&&const DeepCollectionEquality().equals(other.order, order)&&(identical(other.reference, reference) || other.reference == reference)&&(identical(other.referenceId, referenceId) || other.referenceId == referenceId)&&const DeepCollectionEquality().equals(other.metadata, metadata)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.amount, amount) || other.amount == amount));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,order_id,const DeepCollectionEquality().hash(order),reference,reference_id,const DeepCollectionEquality().hash(metadata),created_at,updated_at,amount);
+int get hashCode => Object.hash(runtimeType,id,orderId,const DeepCollectionEquality().hash(order),reference,referenceId,const DeepCollectionEquality().hash(metadata),createdAt,updatedAt,amount);
 
 @override
 String toString() {
-  return 'OrderCreditLine(id: $id, order_id: $order_id, order: $order, reference: $reference, reference_id: $reference_id, metadata: $metadata, created_at: $created_at, updated_at: $updated_at, amount: $amount)';
+  return 'OrderCreditLine(id: $id, orderId: $orderId, order: $order, reference: $reference, referenceId: $referenceId, metadata: $metadata, createdAt: $createdAt, updatedAt: $updatedAt, amount: $amount)';
 }
 
 
@@ -48,7 +48,7 @@ abstract mixin class $OrderCreditLineCopyWith<$Res>  {
   factory $OrderCreditLineCopyWith(OrderCreditLine value, $Res Function(OrderCreditLine) _then) = _$OrderCreditLineCopyWithImpl;
 @useResult
 $Res call({
- String id, String order_id, dynamic order, String reference, String reference_id, Map<String, dynamic> metadata, String created_at, String updated_at, num amount
+ String id,@JsonKey(name: 'order_id') String orderId, dynamic order, String reference,@JsonKey(name: 'reference_id') String referenceId, Map<String, dynamic> metadata,@JsonKey(name: 'created_at') String createdAt,@JsonKey(name: 'updated_at') String updatedAt, num amount
 });
 
 
@@ -65,16 +65,16 @@ class _$OrderCreditLineCopyWithImpl<$Res>
 
 /// Create a copy of OrderCreditLine
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? order_id = null,Object? order = freezed,Object? reference = null,Object? reference_id = null,Object? metadata = null,Object? created_at = null,Object? updated_at = null,Object? amount = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? orderId = null,Object? order = freezed,Object? reference = null,Object? referenceId = null,Object? metadata = null,Object? createdAt = null,Object? updatedAt = null,Object? amount = null,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,order_id: null == order_id ? _self.order_id : order_id // ignore: cast_nullable_to_non_nullable
+as String,orderId: null == orderId ? _self.orderId : orderId // ignore: cast_nullable_to_non_nullable
 as String,order: freezed == order ? _self.order : order // ignore: cast_nullable_to_non_nullable
 as dynamic,reference: null == reference ? _self.reference : reference // ignore: cast_nullable_to_non_nullable
-as String,reference_id: null == reference_id ? _self.reference_id : reference_id // ignore: cast_nullable_to_non_nullable
+as String,referenceId: null == referenceId ? _self.referenceId : referenceId // ignore: cast_nullable_to_non_nullable
 as String,metadata: null == metadata ? _self.metadata : metadata // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>,created_at: null == created_at ? _self.created_at : created_at // ignore: cast_nullable_to_non_nullable
-as String,updated_at: null == updated_at ? _self.updated_at : updated_at // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as String,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
 as String,amount: null == amount ? _self.amount : amount // ignore: cast_nullable_to_non_nullable
 as num,
   ));
@@ -161,10 +161,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String order_id,  dynamic order,  String reference,  String reference_id,  Map<String, dynamic> metadata,  String created_at,  String updated_at,  num amount)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'order_id')  String orderId,  dynamic order,  String reference, @JsonKey(name: 'reference_id')  String referenceId,  Map<String, dynamic> metadata, @JsonKey(name: 'created_at')  String createdAt, @JsonKey(name: 'updated_at')  String updatedAt,  num amount)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _OrderCreditLine() when $default != null:
-return $default(_that.id,_that.order_id,_that.order,_that.reference,_that.reference_id,_that.metadata,_that.created_at,_that.updated_at,_that.amount);case _:
+return $default(_that.id,_that.orderId,_that.order,_that.reference,_that.referenceId,_that.metadata,_that.createdAt,_that.updatedAt,_that.amount);case _:
   return orElse();
 
 }
@@ -182,10 +182,10 @@ return $default(_that.id,_that.order_id,_that.order,_that.reference,_that.refere
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String order_id,  dynamic order,  String reference,  String reference_id,  Map<String, dynamic> metadata,  String created_at,  String updated_at,  num amount)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'order_id')  String orderId,  dynamic order,  String reference, @JsonKey(name: 'reference_id')  String referenceId,  Map<String, dynamic> metadata, @JsonKey(name: 'created_at')  String createdAt, @JsonKey(name: 'updated_at')  String updatedAt,  num amount)  $default,) {final _that = this;
 switch (_that) {
 case _OrderCreditLine():
-return $default(_that.id,_that.order_id,_that.order,_that.reference,_that.reference_id,_that.metadata,_that.created_at,_that.updated_at,_that.amount);case _:
+return $default(_that.id,_that.orderId,_that.order,_that.reference,_that.referenceId,_that.metadata,_that.createdAt,_that.updatedAt,_that.amount);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -202,10 +202,10 @@ return $default(_that.id,_that.order_id,_that.order,_that.reference,_that.refere
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String order_id,  dynamic order,  String reference,  String reference_id,  Map<String, dynamic> metadata,  String created_at,  String updated_at,  num amount)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'order_id')  String orderId,  dynamic order,  String reference, @JsonKey(name: 'reference_id')  String referenceId,  Map<String, dynamic> metadata, @JsonKey(name: 'created_at')  String createdAt, @JsonKey(name: 'updated_at')  String updatedAt,  num amount)?  $default,) {final _that = this;
 switch (_that) {
 case _OrderCreditLine() when $default != null:
-return $default(_that.id,_that.order_id,_that.order,_that.reference,_that.reference_id,_that.metadata,_that.created_at,_that.updated_at,_that.amount);case _:
+return $default(_that.id,_that.orderId,_that.order,_that.reference,_that.referenceId,_that.metadata,_that.createdAt,_that.updatedAt,_that.amount);case _:
   return null;
 
 }
@@ -217,14 +217,14 @@ return $default(_that.id,_that.order_id,_that.order,_that.reference,_that.refere
 @JsonSerializable()
 
 class _OrderCreditLine implements OrderCreditLine {
-  const _OrderCreditLine({required this.id, required this.order_id, required this.order, required this.reference, required this.reference_id, required final  Map<String, dynamic> metadata, required this.created_at, required this.updated_at, required this.amount}): _metadata = metadata;
+  const _OrderCreditLine({required this.id, @JsonKey(name: 'order_id') required this.orderId, required this.order, required this.reference, @JsonKey(name: 'reference_id') required this.referenceId, required final  Map<String, dynamic> metadata, @JsonKey(name: 'created_at') required this.createdAt, @JsonKey(name: 'updated_at') required this.updatedAt, required this.amount}): _metadata = metadata;
   factory _OrderCreditLine.fromJson(Map<String, dynamic> json) => _$OrderCreditLineFromJson(json);
 
 @override final  String id;
-@override final  String order_id;
+@override@JsonKey(name: 'order_id') final  String orderId;
 @override final  dynamic order;
 @override final  String reference;
-@override final  String reference_id;
+@override@JsonKey(name: 'reference_id') final  String referenceId;
  final  Map<String, dynamic> _metadata;
 @override Map<String, dynamic> get metadata {
   if (_metadata is EqualUnmodifiableMapView) return _metadata;
@@ -232,8 +232,8 @@ class _OrderCreditLine implements OrderCreditLine {
   return EqualUnmodifiableMapView(_metadata);
 }
 
-@override final  String created_at;
-@override final  String updated_at;
+@override@JsonKey(name: 'created_at') final  String createdAt;
+@override@JsonKey(name: 'updated_at') final  String updatedAt;
 @override final  num amount;
 
 /// Create a copy of OrderCreditLine
@@ -249,16 +249,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _OrderCreditLine&&(identical(other.id, id) || other.id == id)&&(identical(other.order_id, order_id) || other.order_id == order_id)&&const DeepCollectionEquality().equals(other.order, order)&&(identical(other.reference, reference) || other.reference == reference)&&(identical(other.reference_id, reference_id) || other.reference_id == reference_id)&&const DeepCollectionEquality().equals(other._metadata, _metadata)&&(identical(other.created_at, created_at) || other.created_at == created_at)&&(identical(other.updated_at, updated_at) || other.updated_at == updated_at)&&(identical(other.amount, amount) || other.amount == amount));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _OrderCreditLine&&(identical(other.id, id) || other.id == id)&&(identical(other.orderId, orderId) || other.orderId == orderId)&&const DeepCollectionEquality().equals(other.order, order)&&(identical(other.reference, reference) || other.reference == reference)&&(identical(other.referenceId, referenceId) || other.referenceId == referenceId)&&const DeepCollectionEquality().equals(other._metadata, _metadata)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.amount, amount) || other.amount == amount));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,order_id,const DeepCollectionEquality().hash(order),reference,reference_id,const DeepCollectionEquality().hash(_metadata),created_at,updated_at,amount);
+int get hashCode => Object.hash(runtimeType,id,orderId,const DeepCollectionEquality().hash(order),reference,referenceId,const DeepCollectionEquality().hash(_metadata),createdAt,updatedAt,amount);
 
 @override
 String toString() {
-  return 'OrderCreditLine(id: $id, order_id: $order_id, order: $order, reference: $reference, reference_id: $reference_id, metadata: $metadata, created_at: $created_at, updated_at: $updated_at, amount: $amount)';
+  return 'OrderCreditLine(id: $id, orderId: $orderId, order: $order, reference: $reference, referenceId: $referenceId, metadata: $metadata, createdAt: $createdAt, updatedAt: $updatedAt, amount: $amount)';
 }
 
 
@@ -269,7 +269,7 @@ abstract mixin class _$OrderCreditLineCopyWith<$Res> implements $OrderCreditLine
   factory _$OrderCreditLineCopyWith(_OrderCreditLine value, $Res Function(_OrderCreditLine) _then) = __$OrderCreditLineCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String order_id, dynamic order, String reference, String reference_id, Map<String, dynamic> metadata, String created_at, String updated_at, num amount
+ String id,@JsonKey(name: 'order_id') String orderId, dynamic order, String reference,@JsonKey(name: 'reference_id') String referenceId, Map<String, dynamic> metadata,@JsonKey(name: 'created_at') String createdAt,@JsonKey(name: 'updated_at') String updatedAt, num amount
 });
 
 
@@ -286,16 +286,16 @@ class __$OrderCreditLineCopyWithImpl<$Res>
 
 /// Create a copy of OrderCreditLine
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? order_id = null,Object? order = freezed,Object? reference = null,Object? reference_id = null,Object? metadata = null,Object? created_at = null,Object? updated_at = null,Object? amount = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? orderId = null,Object? order = freezed,Object? reference = null,Object? referenceId = null,Object? metadata = null,Object? createdAt = null,Object? updatedAt = null,Object? amount = null,}) {
   return _then(_OrderCreditLine(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,order_id: null == order_id ? _self.order_id : order_id // ignore: cast_nullable_to_non_nullable
+as String,orderId: null == orderId ? _self.orderId : orderId // ignore: cast_nullable_to_non_nullable
 as String,order: freezed == order ? _self.order : order // ignore: cast_nullable_to_non_nullable
 as dynamic,reference: null == reference ? _self.reference : reference // ignore: cast_nullable_to_non_nullable
-as String,reference_id: null == reference_id ? _self.reference_id : reference_id // ignore: cast_nullable_to_non_nullable
+as String,referenceId: null == referenceId ? _self.referenceId : referenceId // ignore: cast_nullable_to_non_nullable
 as String,metadata: null == metadata ? _self._metadata : metadata // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>,created_at: null == created_at ? _self.created_at : created_at // ignore: cast_nullable_to_non_nullable
-as String,updated_at: null == updated_at ? _self.updated_at : updated_at // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as String,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
 as String,amount: null == amount ? _self.amount : amount // ignore: cast_nullable_to_non_nullable
 as num,
   ));

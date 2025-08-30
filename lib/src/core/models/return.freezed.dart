@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Return {
 
- String get id; String get status; String get orderId; Order? get order; String get swapId; Swap? get swap; String get refundId; Refund? get refund; List<LineItem> get items; int get shippingTotal; int get discountTotal; int get taxTotal; int get total; String get returnReasonId; ReturnReason? get returnReason; String get note; String get noNotification; DateTime? get receivedAt; DateTime? get createdAt; DateTime? get updatedAt; DateTime? get deletedAt; Map<String, dynamic>? get metadata;
+ String get id; String get status;@JsonKey(name: 'order_id') String get orderId; Order? get order;@JsonKey(name: 'swap_id') String get swapId; Swap? get swap;@JsonKey(name: 'refund_id') String get refundId; Refund? get refund; List<LineItem> get items;@JsonKey(name: 'shipping_total') int get shippingTotal;@JsonKey(name: 'discount_total') int get discountTotal;@JsonKey(name: 'tax_total') int get taxTotal; int get total;@JsonKey(name: 'return_reason_id') String get returnReasonId;@JsonKey(name: 'return_reason') ReturnReason? get returnReason; String get note;@JsonKey(name: 'no_notification') String get noNotification;@JsonKey(name: 'received_at') DateTime? get receivedAt;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt; Map<String, dynamic>? get metadata;
 /// Create a copy of Return
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $ReturnCopyWith<$Res>  {
   factory $ReturnCopyWith(Return value, $Res Function(Return) _then) = _$ReturnCopyWithImpl;
 @useResult
 $Res call({
- String id, String status, String orderId, Order? order, String swapId, Swap? swap, String refundId, Refund? refund, List<LineItem> items, int shippingTotal, int discountTotal, int taxTotal, int total, String returnReasonId, ReturnReason? returnReason, String note, String noNotification, DateTime? receivedAt, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt, Map<String, dynamic>? metadata
+ String id, String status,@JsonKey(name: 'order_id') String orderId, Order? order,@JsonKey(name: 'swap_id') String swapId, Swap? swap,@JsonKey(name: 'refund_id') String refundId, Refund? refund, List<LineItem> items,@JsonKey(name: 'shipping_total') int shippingTotal,@JsonKey(name: 'discount_total') int discountTotal,@JsonKey(name: 'tax_total') int taxTotal, int total,@JsonKey(name: 'return_reason_id') String returnReasonId,@JsonKey(name: 'return_reason') ReturnReason? returnReason, String note,@JsonKey(name: 'no_notification') String noNotification,@JsonKey(name: 'received_at') DateTime? receivedAt,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
 });
 
 
@@ -222,7 +222,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String status,  String orderId,  Order? order,  String swapId,  Swap? swap,  String refundId,  Refund? refund,  List<LineItem> items,  int shippingTotal,  int discountTotal,  int taxTotal,  int total,  String returnReasonId,  ReturnReason? returnReason,  String note,  String noNotification,  DateTime? receivedAt,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String status, @JsonKey(name: 'order_id')  String orderId,  Order? order, @JsonKey(name: 'swap_id')  String swapId,  Swap? swap, @JsonKey(name: 'refund_id')  String refundId,  Refund? refund,  List<LineItem> items, @JsonKey(name: 'shipping_total')  int shippingTotal, @JsonKey(name: 'discount_total')  int discountTotal, @JsonKey(name: 'tax_total')  int taxTotal,  int total, @JsonKey(name: 'return_reason_id')  String returnReasonId, @JsonKey(name: 'return_reason')  ReturnReason? returnReason,  String note, @JsonKey(name: 'no_notification')  String noNotification, @JsonKey(name: 'received_at')  DateTime? receivedAt, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Return() when $default != null:
 return $default(_that.id,_that.status,_that.orderId,_that.order,_that.swapId,_that.swap,_that.refundId,_that.refund,_that.items,_that.shippingTotal,_that.discountTotal,_that.taxTotal,_that.total,_that.returnReasonId,_that.returnReason,_that.note,_that.noNotification,_that.receivedAt,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -243,7 +243,7 @@ return $default(_that.id,_that.status,_that.orderId,_that.order,_that.swapId,_th
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String status,  String orderId,  Order? order,  String swapId,  Swap? swap,  String refundId,  Refund? refund,  List<LineItem> items,  int shippingTotal,  int discountTotal,  int taxTotal,  int total,  String returnReasonId,  ReturnReason? returnReason,  String note,  String noNotification,  DateTime? receivedAt,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String status, @JsonKey(name: 'order_id')  String orderId,  Order? order, @JsonKey(name: 'swap_id')  String swapId,  Swap? swap, @JsonKey(name: 'refund_id')  String refundId,  Refund? refund,  List<LineItem> items, @JsonKey(name: 'shipping_total')  int shippingTotal, @JsonKey(name: 'discount_total')  int discountTotal, @JsonKey(name: 'tax_total')  int taxTotal,  int total, @JsonKey(name: 'return_reason_id')  String returnReasonId, @JsonKey(name: 'return_reason')  ReturnReason? returnReason,  String note, @JsonKey(name: 'no_notification')  String noNotification, @JsonKey(name: 'received_at')  DateTime? receivedAt, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
 switch (_that) {
 case _Return():
 return $default(_that.id,_that.status,_that.orderId,_that.order,_that.swapId,_that.swap,_that.refundId,_that.refund,_that.items,_that.shippingTotal,_that.discountTotal,_that.taxTotal,_that.total,_that.returnReasonId,_that.returnReason,_that.note,_that.noNotification,_that.receivedAt,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -263,7 +263,7 @@ return $default(_that.id,_that.status,_that.orderId,_that.order,_that.swapId,_th
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String status,  String orderId,  Order? order,  String swapId,  Swap? swap,  String refundId,  Refund? refund,  List<LineItem> items,  int shippingTotal,  int discountTotal,  int taxTotal,  int total,  String returnReasonId,  ReturnReason? returnReason,  String note,  String noNotification,  DateTime? receivedAt,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String status, @JsonKey(name: 'order_id')  String orderId,  Order? order, @JsonKey(name: 'swap_id')  String swapId,  Swap? swap, @JsonKey(name: 'refund_id')  String refundId,  Refund? refund,  List<LineItem> items, @JsonKey(name: 'shipping_total')  int shippingTotal, @JsonKey(name: 'discount_total')  int discountTotal, @JsonKey(name: 'tax_total')  int taxTotal,  int total, @JsonKey(name: 'return_reason_id')  String returnReasonId, @JsonKey(name: 'return_reason')  ReturnReason? returnReason,  String note, @JsonKey(name: 'no_notification')  String noNotification, @JsonKey(name: 'received_at')  DateTime? receivedAt, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
 switch (_that) {
 case _Return() when $default != null:
 return $default(_that.id,_that.status,_that.orderId,_that.order,_that.swapId,_that.swap,_that.refundId,_that.refund,_that.items,_that.shippingTotal,_that.discountTotal,_that.taxTotal,_that.total,_that.returnReasonId,_that.returnReason,_that.note,_that.noNotification,_that.receivedAt,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -278,16 +278,16 @@ return $default(_that.id,_that.status,_that.orderId,_that.order,_that.swapId,_th
 @JsonSerializable()
 
 class _Return implements Return {
-  const _Return({required this.id, required this.status, required this.orderId, this.order, required this.swapId, this.swap, required this.refundId, this.refund, required final  List<LineItem> items, required this.shippingTotal, required this.discountTotal, required this.taxTotal, required this.total, required this.returnReasonId, this.returnReason, required this.note, required this.noNotification, this.receivedAt, this.createdAt, this.updatedAt, this.deletedAt, final  Map<String, dynamic>? metadata}): _items = items,_metadata = metadata;
+  const _Return({required this.id, required this.status, @JsonKey(name: 'order_id') required this.orderId, this.order, @JsonKey(name: 'swap_id') required this.swapId, this.swap, @JsonKey(name: 'refund_id') required this.refundId, this.refund, required final  List<LineItem> items, @JsonKey(name: 'shipping_total') required this.shippingTotal, @JsonKey(name: 'discount_total') required this.discountTotal, @JsonKey(name: 'tax_total') required this.taxTotal, required this.total, @JsonKey(name: 'return_reason_id') required this.returnReasonId, @JsonKey(name: 'return_reason') this.returnReason, required this.note, @JsonKey(name: 'no_notification') required this.noNotification, @JsonKey(name: 'received_at') this.receivedAt, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt, final  Map<String, dynamic>? metadata}): _items = items,_metadata = metadata;
   factory _Return.fromJson(Map<String, dynamic> json) => _$ReturnFromJson(json);
 
 @override final  String id;
 @override final  String status;
-@override final  String orderId;
+@override@JsonKey(name: 'order_id') final  String orderId;
 @override final  Order? order;
-@override final  String swapId;
+@override@JsonKey(name: 'swap_id') final  String swapId;
 @override final  Swap? swap;
-@override final  String refundId;
+@override@JsonKey(name: 'refund_id') final  String refundId;
 @override final  Refund? refund;
  final  List<LineItem> _items;
 @override List<LineItem> get items {
@@ -296,18 +296,18 @@ class _Return implements Return {
   return EqualUnmodifiableListView(_items);
 }
 
-@override final  int shippingTotal;
-@override final  int discountTotal;
-@override final  int taxTotal;
+@override@JsonKey(name: 'shipping_total') final  int shippingTotal;
+@override@JsonKey(name: 'discount_total') final  int discountTotal;
+@override@JsonKey(name: 'tax_total') final  int taxTotal;
 @override final  int total;
-@override final  String returnReasonId;
-@override final  ReturnReason? returnReason;
+@override@JsonKey(name: 'return_reason_id') final  String returnReasonId;
+@override@JsonKey(name: 'return_reason') final  ReturnReason? returnReason;
 @override final  String note;
-@override final  String noNotification;
-@override final  DateTime? receivedAt;
-@override final  DateTime? createdAt;
-@override final  DateTime? updatedAt;
-@override final  DateTime? deletedAt;
+@override@JsonKey(name: 'no_notification') final  String noNotification;
+@override@JsonKey(name: 'received_at') final  DateTime? receivedAt;
+@override@JsonKey(name: 'created_at') final  DateTime? createdAt;
+@override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
+@override@JsonKey(name: 'deleted_at') final  DateTime? deletedAt;
  final  Map<String, dynamic>? _metadata;
 @override Map<String, dynamic>? get metadata {
   final value = _metadata;
@@ -351,7 +351,7 @@ abstract mixin class _$ReturnCopyWith<$Res> implements $ReturnCopyWith<$Res> {
   factory _$ReturnCopyWith(_Return value, $Res Function(_Return) _then) = __$ReturnCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String status, String orderId, Order? order, String swapId, Swap? swap, String refundId, Refund? refund, List<LineItem> items, int shippingTotal, int discountTotal, int taxTotal, int total, String returnReasonId, ReturnReason? returnReason, String note, String noNotification, DateTime? receivedAt, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt, Map<String, dynamic>? metadata
+ String id, String status,@JsonKey(name: 'order_id') String orderId, Order? order,@JsonKey(name: 'swap_id') String swapId, Swap? swap,@JsonKey(name: 'refund_id') String refundId, Refund? refund, List<LineItem> items,@JsonKey(name: 'shipping_total') int shippingTotal,@JsonKey(name: 'discount_total') int discountTotal,@JsonKey(name: 'tax_total') int taxTotal, int total,@JsonKey(name: 'return_reason_id') String returnReasonId,@JsonKey(name: 'return_reason') ReturnReason? returnReason, String note,@JsonKey(name: 'no_notification') String noNotification,@JsonKey(name: 'received_at') DateTime? receivedAt,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
 });
 
 

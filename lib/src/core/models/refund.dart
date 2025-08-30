@@ -8,15 +8,15 @@ part 'refund.g.dart';
 abstract class Refund with _$Refund {
   const factory Refund({
     required String id,
-    required String orderId,
+    @JsonKey(name: 'order_id') required String orderId,
     Order? order,
     required int amount,
     required String note,
     required String reason,
-    required String createdBy,
-    DateTime? createdAt,
-    DateTime? updatedAt,
-    DateTime? deletedAt,
+    @JsonKey(name: 'created_by') required String createdBy,
+    @JsonKey(name: 'created_at') DateTime? createdAt,
+    @JsonKey(name: 'updated_at') DateTime? updatedAt,
+    @JsonKey(name: 'deleted_at') DateTime? deletedAt,
     Map<String, dynamic>? metadata,
   }) = _Refund;
 

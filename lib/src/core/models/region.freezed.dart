@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Region {
 
- String get id; String get name; String get currencyCode; List<Country> get countries; List<PaymentProvider> get paymentProviders; List<FulfillmentProvider> get fulfillmentProviders; int get taxRate; String get taxCode; bool get automaticTaxes; String get giftCardsTaxable; String get productsTaxable; DateTime? get createdAt; DateTime? get updatedAt; DateTime? get deletedAt; Map<String, dynamic>? get metadata;
+ String get id; String get name;@JsonKey(name: 'currency_code') String get currencyCode; List<Country> get countries;@JsonKey(name: 'payment_providers') List<PaymentProvider> get paymentProviders;@JsonKey(name: 'fulfillment_providers') List<FulfillmentProvider> get fulfillmentProviders;@JsonKey(name: 'tax_rate') int get taxRate;@JsonKey(name: 'tax_code') String get taxCode;@JsonKey(name: 'automatic_taxes') bool get automaticTaxes;@JsonKey(name: 'gift_cards_taxable') String get giftCardsTaxable;@JsonKey(name: 'products_taxable') String get productsTaxable;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt; Map<String, dynamic>? get metadata;
 /// Create a copy of Region
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $RegionCopyWith<$Res>  {
   factory $RegionCopyWith(Region value, $Res Function(Region) _then) = _$RegionCopyWithImpl;
 @useResult
 $Res call({
- String id, String name, String currencyCode, List<Country> countries, List<PaymentProvider> paymentProviders, List<FulfillmentProvider> fulfillmentProviders, int taxRate, String taxCode, bool automaticTaxes, String giftCardsTaxable, String productsTaxable, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt, Map<String, dynamic>? metadata
+ String id, String name,@JsonKey(name: 'currency_code') String currencyCode, List<Country> countries,@JsonKey(name: 'payment_providers') List<PaymentProvider> paymentProviders,@JsonKey(name: 'fulfillment_providers') List<FulfillmentProvider> fulfillmentProviders,@JsonKey(name: 'tax_rate') int taxRate,@JsonKey(name: 'tax_code') String taxCode,@JsonKey(name: 'automatic_taxes') bool automaticTaxes,@JsonKey(name: 'gift_cards_taxable') String giftCardsTaxable,@JsonKey(name: 'products_taxable') String productsTaxable,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
 });
 
 
@@ -167,7 +167,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  String currencyCode,  List<Country> countries,  List<PaymentProvider> paymentProviders,  List<FulfillmentProvider> fulfillmentProviders,  int taxRate,  String taxCode,  bool automaticTaxes,  String giftCardsTaxable,  String productsTaxable,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(name: 'currency_code')  String currencyCode,  List<Country> countries, @JsonKey(name: 'payment_providers')  List<PaymentProvider> paymentProviders, @JsonKey(name: 'fulfillment_providers')  List<FulfillmentProvider> fulfillmentProviders, @JsonKey(name: 'tax_rate')  int taxRate, @JsonKey(name: 'tax_code')  String taxCode, @JsonKey(name: 'automatic_taxes')  bool automaticTaxes, @JsonKey(name: 'gift_cards_taxable')  String giftCardsTaxable, @JsonKey(name: 'products_taxable')  String productsTaxable, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Region() when $default != null:
 return $default(_that.id,_that.name,_that.currencyCode,_that.countries,_that.paymentProviders,_that.fulfillmentProviders,_that.taxRate,_that.taxCode,_that.automaticTaxes,_that.giftCardsTaxable,_that.productsTaxable,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -188,7 +188,7 @@ return $default(_that.id,_that.name,_that.currencyCode,_that.countries,_that.pay
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  String currencyCode,  List<Country> countries,  List<PaymentProvider> paymentProviders,  List<FulfillmentProvider> fulfillmentProviders,  int taxRate,  String taxCode,  bool automaticTaxes,  String giftCardsTaxable,  String productsTaxable,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(name: 'currency_code')  String currencyCode,  List<Country> countries, @JsonKey(name: 'payment_providers')  List<PaymentProvider> paymentProviders, @JsonKey(name: 'fulfillment_providers')  List<FulfillmentProvider> fulfillmentProviders, @JsonKey(name: 'tax_rate')  int taxRate, @JsonKey(name: 'tax_code')  String taxCode, @JsonKey(name: 'automatic_taxes')  bool automaticTaxes, @JsonKey(name: 'gift_cards_taxable')  String giftCardsTaxable, @JsonKey(name: 'products_taxable')  String productsTaxable, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
 switch (_that) {
 case _Region():
 return $default(_that.id,_that.name,_that.currencyCode,_that.countries,_that.paymentProviders,_that.fulfillmentProviders,_that.taxRate,_that.taxCode,_that.automaticTaxes,_that.giftCardsTaxable,_that.productsTaxable,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -208,7 +208,7 @@ return $default(_that.id,_that.name,_that.currencyCode,_that.countries,_that.pay
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  String currencyCode,  List<Country> countries,  List<PaymentProvider> paymentProviders,  List<FulfillmentProvider> fulfillmentProviders,  int taxRate,  String taxCode,  bool automaticTaxes,  String giftCardsTaxable,  String productsTaxable,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name, @JsonKey(name: 'currency_code')  String currencyCode,  List<Country> countries, @JsonKey(name: 'payment_providers')  List<PaymentProvider> paymentProviders, @JsonKey(name: 'fulfillment_providers')  List<FulfillmentProvider> fulfillmentProviders, @JsonKey(name: 'tax_rate')  int taxRate, @JsonKey(name: 'tax_code')  String taxCode, @JsonKey(name: 'automatic_taxes')  bool automaticTaxes, @JsonKey(name: 'gift_cards_taxable')  String giftCardsTaxable, @JsonKey(name: 'products_taxable')  String productsTaxable, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
 switch (_that) {
 case _Region() when $default != null:
 return $default(_that.id,_that.name,_that.currencyCode,_that.countries,_that.paymentProviders,_that.fulfillmentProviders,_that.taxRate,_that.taxCode,_that.automaticTaxes,_that.giftCardsTaxable,_that.productsTaxable,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -223,12 +223,12 @@ return $default(_that.id,_that.name,_that.currencyCode,_that.countries,_that.pay
 @JsonSerializable()
 
 class _Region implements Region {
-  const _Region({required this.id, required this.name, required this.currencyCode, required final  List<Country> countries, required final  List<PaymentProvider> paymentProviders, required final  List<FulfillmentProvider> fulfillmentProviders, required this.taxRate, required this.taxCode, required this.automaticTaxes, required this.giftCardsTaxable, required this.productsTaxable, this.createdAt, this.updatedAt, this.deletedAt, final  Map<String, dynamic>? metadata}): _countries = countries,_paymentProviders = paymentProviders,_fulfillmentProviders = fulfillmentProviders,_metadata = metadata;
+  const _Region({required this.id, required this.name, @JsonKey(name: 'currency_code') required this.currencyCode, required final  List<Country> countries, @JsonKey(name: 'payment_providers') required final  List<PaymentProvider> paymentProviders, @JsonKey(name: 'fulfillment_providers') required final  List<FulfillmentProvider> fulfillmentProviders, @JsonKey(name: 'tax_rate') required this.taxRate, @JsonKey(name: 'tax_code') required this.taxCode, @JsonKey(name: 'automatic_taxes') required this.automaticTaxes, @JsonKey(name: 'gift_cards_taxable') required this.giftCardsTaxable, @JsonKey(name: 'products_taxable') required this.productsTaxable, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt, final  Map<String, dynamic>? metadata}): _countries = countries,_paymentProviders = paymentProviders,_fulfillmentProviders = fulfillmentProviders,_metadata = metadata;
   factory _Region.fromJson(Map<String, dynamic> json) => _$RegionFromJson(json);
 
 @override final  String id;
 @override final  String name;
-@override final  String currencyCode;
+@override@JsonKey(name: 'currency_code') final  String currencyCode;
  final  List<Country> _countries;
 @override List<Country> get countries {
   if (_countries is EqualUnmodifiableListView) return _countries;
@@ -237,27 +237,27 @@ class _Region implements Region {
 }
 
  final  List<PaymentProvider> _paymentProviders;
-@override List<PaymentProvider> get paymentProviders {
+@override@JsonKey(name: 'payment_providers') List<PaymentProvider> get paymentProviders {
   if (_paymentProviders is EqualUnmodifiableListView) return _paymentProviders;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_paymentProviders);
 }
 
  final  List<FulfillmentProvider> _fulfillmentProviders;
-@override List<FulfillmentProvider> get fulfillmentProviders {
+@override@JsonKey(name: 'fulfillment_providers') List<FulfillmentProvider> get fulfillmentProviders {
   if (_fulfillmentProviders is EqualUnmodifiableListView) return _fulfillmentProviders;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_fulfillmentProviders);
 }
 
-@override final  int taxRate;
-@override final  String taxCode;
-@override final  bool automaticTaxes;
-@override final  String giftCardsTaxable;
-@override final  String productsTaxable;
-@override final  DateTime? createdAt;
-@override final  DateTime? updatedAt;
-@override final  DateTime? deletedAt;
+@override@JsonKey(name: 'tax_rate') final  int taxRate;
+@override@JsonKey(name: 'tax_code') final  String taxCode;
+@override@JsonKey(name: 'automatic_taxes') final  bool automaticTaxes;
+@override@JsonKey(name: 'gift_cards_taxable') final  String giftCardsTaxable;
+@override@JsonKey(name: 'products_taxable') final  String productsTaxable;
+@override@JsonKey(name: 'created_at') final  DateTime? createdAt;
+@override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
+@override@JsonKey(name: 'deleted_at') final  DateTime? deletedAt;
  final  Map<String, dynamic>? _metadata;
 @override Map<String, dynamic>? get metadata {
   final value = _metadata;
@@ -301,7 +301,7 @@ abstract mixin class _$RegionCopyWith<$Res> implements $RegionCopyWith<$Res> {
   factory _$RegionCopyWith(_Region value, $Res Function(_Region) _then) = __$RegionCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String name, String currencyCode, List<Country> countries, List<PaymentProvider> paymentProviders, List<FulfillmentProvider> fulfillmentProviders, int taxRate, String taxCode, bool automaticTaxes, String giftCardsTaxable, String productsTaxable, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt, Map<String, dynamic>? metadata
+ String id, String name,@JsonKey(name: 'currency_code') String currencyCode, List<Country> countries,@JsonKey(name: 'payment_providers') List<PaymentProvider> paymentProviders,@JsonKey(name: 'fulfillment_providers') List<FulfillmentProvider> fulfillmentProviders,@JsonKey(name: 'tax_rate') int taxRate,@JsonKey(name: 'tax_code') String taxCode,@JsonKey(name: 'automatic_taxes') bool automaticTaxes,@JsonKey(name: 'gift_cards_taxable') String giftCardsTaxable,@JsonKey(name: 'products_taxable') String productsTaxable,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
 });
 
 

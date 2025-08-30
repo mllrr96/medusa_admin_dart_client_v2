@@ -8,9 +8,9 @@ abstract class ProductTag with _$ProductTag {
   const factory ProductTag({
     required String id,
     required String value,
-    DateTime? createdAt,
-    DateTime? updatedAt,
-    DateTime? deletedAt,
+    @JsonKey(name: 'created_at') DateTime? createdAt,
+    @JsonKey(name: 'updated_at') DateTime? updatedAt,
+    @JsonKey(name: 'deleted_at') DateTime? deletedAt,
     Map<String, dynamic>? metadata,
   }) = _ProductTag;
 

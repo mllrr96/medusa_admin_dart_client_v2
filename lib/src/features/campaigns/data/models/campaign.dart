@@ -15,9 +15,9 @@ abstract class Campaign with _$Campaign {
     @JsonKey(name: 'ends_at') DateTime? endsAt,
     CampaignBudget? budget,
     required List<dynamic> promotions,
-    required DateTime createdAt,
-    required DateTime updatedAt,
-    DateTime? deletedAt,
+    @JsonKey(name: 'created_at') required DateTime createdAt,
+    @JsonKey(name: 'updated_at') required DateTime updatedAt,
+    @JsonKey(name: 'deleted_at') DateTime? deletedAt,
   }) = _Campaign;
 
   factory Campaign.fromJson(Map<String, dynamic> json) =>

@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Address {
 
- String get id; String? get company; String get address1; String? get address2; String get city; String get countryCode; String get province; String get postalCode; String? get phone; DateTime? get createdAt; DateTime? get updatedAt; DateTime? get deletedAt; Map<String, dynamic>? get metadata;
+ String get id; String? get company;@JsonKey(name: 'address_1') String get address1;@JsonKey(name: 'address_2') String? get address2; String get city;@JsonKey(name: 'country_code') String get countryCode; String get province;@JsonKey(name: 'postal_code') String get postalCode; String? get phone;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt; Map<String, dynamic>? get metadata;
 /// Create a copy of Address
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $AddressCopyWith<$Res>  {
   factory $AddressCopyWith(Address value, $Res Function(Address) _then) = _$AddressCopyWithImpl;
 @useResult
 $Res call({
- String id, String? company, String address1, String? address2, String city, String countryCode, String province, String postalCode, String? phone, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt, Map<String, dynamic>? metadata
+ String id, String? company,@JsonKey(name: 'address_1') String address1,@JsonKey(name: 'address_2') String? address2, String city,@JsonKey(name: 'country_code') String countryCode, String province,@JsonKey(name: 'postal_code') String postalCode, String? phone,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
 });
 
 
@@ -165,7 +165,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String? company,  String address1,  String? address2,  String city,  String countryCode,  String province,  String postalCode,  String? phone,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String? company, @JsonKey(name: 'address_1')  String address1, @JsonKey(name: 'address_2')  String? address2,  String city, @JsonKey(name: 'country_code')  String countryCode,  String province, @JsonKey(name: 'postal_code')  String postalCode,  String? phone, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Address() when $default != null:
 return $default(_that.id,_that.company,_that.address1,_that.address2,_that.city,_that.countryCode,_that.province,_that.postalCode,_that.phone,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -186,7 +186,7 @@ return $default(_that.id,_that.company,_that.address1,_that.address2,_that.city,
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String? company,  String address1,  String? address2,  String city,  String countryCode,  String province,  String postalCode,  String? phone,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String? company, @JsonKey(name: 'address_1')  String address1, @JsonKey(name: 'address_2')  String? address2,  String city, @JsonKey(name: 'country_code')  String countryCode,  String province, @JsonKey(name: 'postal_code')  String postalCode,  String? phone, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
 switch (_that) {
 case _Address():
 return $default(_that.id,_that.company,_that.address1,_that.address2,_that.city,_that.countryCode,_that.province,_that.postalCode,_that.phone,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -206,7 +206,7 @@ return $default(_that.id,_that.company,_that.address1,_that.address2,_that.city,
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String? company,  String address1,  String? address2,  String city,  String countryCode,  String province,  String postalCode,  String? phone,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String? company, @JsonKey(name: 'address_1')  String address1, @JsonKey(name: 'address_2')  String? address2,  String city, @JsonKey(name: 'country_code')  String countryCode,  String province, @JsonKey(name: 'postal_code')  String postalCode,  String? phone, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
 switch (_that) {
 case _Address() when $default != null:
 return $default(_that.id,_that.company,_that.address1,_that.address2,_that.city,_that.countryCode,_that.province,_that.postalCode,_that.phone,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -221,21 +221,21 @@ return $default(_that.id,_that.company,_that.address1,_that.address2,_that.city,
 @JsonSerializable()
 
 class _Address implements Address {
-  const _Address({required this.id, this.company, required this.address1, this.address2, required this.city, required this.countryCode, required this.province, required this.postalCode, this.phone, this.createdAt, this.updatedAt, this.deletedAt, final  Map<String, dynamic>? metadata}): _metadata = metadata;
+  const _Address({required this.id, this.company, @JsonKey(name: 'address_1') required this.address1, @JsonKey(name: 'address_2') this.address2, required this.city, @JsonKey(name: 'country_code') required this.countryCode, required this.province, @JsonKey(name: 'postal_code') required this.postalCode, this.phone, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt, final  Map<String, dynamic>? metadata}): _metadata = metadata;
   factory _Address.fromJson(Map<String, dynamic> json) => _$AddressFromJson(json);
 
 @override final  String id;
 @override final  String? company;
-@override final  String address1;
-@override final  String? address2;
+@override@JsonKey(name: 'address_1') final  String address1;
+@override@JsonKey(name: 'address_2') final  String? address2;
 @override final  String city;
-@override final  String countryCode;
+@override@JsonKey(name: 'country_code') final  String countryCode;
 @override final  String province;
-@override final  String postalCode;
+@override@JsonKey(name: 'postal_code') final  String postalCode;
 @override final  String? phone;
-@override final  DateTime? createdAt;
-@override final  DateTime? updatedAt;
-@override final  DateTime? deletedAt;
+@override@JsonKey(name: 'created_at') final  DateTime? createdAt;
+@override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
+@override@JsonKey(name: 'deleted_at') final  DateTime? deletedAt;
  final  Map<String, dynamic>? _metadata;
 @override Map<String, dynamic>? get metadata {
   final value = _metadata;
@@ -279,7 +279,7 @@ abstract mixin class _$AddressCopyWith<$Res> implements $AddressCopyWith<$Res> {
   factory _$AddressCopyWith(_Address value, $Res Function(_Address) _then) = __$AddressCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String? company, String address1, String? address2, String city, String countryCode, String province, String postalCode, String? phone, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt, Map<String, dynamic>? metadata
+ String id, String? company,@JsonKey(name: 'address_1') String address1,@JsonKey(name: 'address_2') String? address2, String city,@JsonKey(name: 'country_code') String countryCode, String province,@JsonKey(name: 'postal_code') String postalCode, String? phone,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
 });
 
 

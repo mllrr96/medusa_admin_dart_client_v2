@@ -21,11 +21,11 @@ _Campaign _$CampaignFromJson(Map<String, dynamic> json) => _Campaign(
       ? null
       : CampaignBudget.fromJson(json['budget'] as Map<String, dynamic>),
   promotions: json['promotions'] as List<dynamic>,
-  createdAt: DateTime.parse(json['createdAt'] as String),
-  updatedAt: DateTime.parse(json['updatedAt'] as String),
-  deletedAt: json['deletedAt'] == null
+  createdAt: DateTime.parse(json['created_at'] as String),
+  updatedAt: DateTime.parse(json['updated_at'] as String),
+  deletedAt: json['deleted_at'] == null
       ? null
-      : DateTime.parse(json['deletedAt'] as String),
+      : DateTime.parse(json['deleted_at'] as String),
 );
 
 Map<String, dynamic> _$CampaignToJson(_Campaign instance) => <String, dynamic>{
@@ -37,7 +37,7 @@ Map<String, dynamic> _$CampaignToJson(_Campaign instance) => <String, dynamic>{
   'ends_at': instance.endsAt?.toIso8601String(),
   'budget': instance.budget,
   'promotions': instance.promotions,
-  'createdAt': instance.createdAt.toIso8601String(),
-  'updatedAt': instance.updatedAt.toIso8601String(),
-  'deletedAt': instance.deletedAt?.toIso8601String(),
+  'created_at': instance.createdAt.toIso8601String(),
+  'updated_at': instance.updatedAt.toIso8601String(),
+  'deleted_at': instance.deletedAt?.toIso8601String(),
 };

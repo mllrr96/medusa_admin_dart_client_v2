@@ -14,9 +14,9 @@ abstract class ProductOption with _$ProductOption {
     @JsonKey(name: 'product_id') required String productId,
     Product? product,
     @JsonKey(name: 'values') List<ProductOptionValue>? values,
-    DateTime? createdAt,
-    DateTime? updatedAt,
-    DateTime? deletedAt,
+    @JsonKey(name: 'created_at') DateTime? createdAt,
+    @JsonKey(name: 'updated_at') DateTime? updatedAt,
+    @JsonKey(name: 'deleted_at') DateTime? deletedAt,
     Map<String, dynamic>? metadata,
   }) = _ProductOption;
 

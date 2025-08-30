@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$TaxLine {
 
- String get id;@JsonKey(name: 'item_id') String get itemId;@JsonKey(name: 'rate_id') String get rateId; String get code; String get name; num get rate; DateTime? get createdAt; DateTime? get updatedAt; Map<String, dynamic>? get metadata;
+ String get id;@JsonKey(name: 'item_id') String get itemId;@JsonKey(name: 'rate_id') String get rateId; String get code; String get name; num get rate;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt; Map<String, dynamic>? get metadata;
 /// Create a copy of TaxLine
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $TaxLineCopyWith<$Res>  {
   factory $TaxLineCopyWith(TaxLine value, $Res Function(TaxLine) _then) = _$TaxLineCopyWithImpl;
 @useResult
 $Res call({
- String id,@JsonKey(name: 'item_id') String itemId,@JsonKey(name: 'rate_id') String rateId, String code, String name, num rate, DateTime? createdAt, DateTime? updatedAt, Map<String, dynamic>? metadata
+ String id,@JsonKey(name: 'item_id') String itemId,@JsonKey(name: 'rate_id') String rateId, String code, String name, num rate,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt, Map<String, dynamic>? metadata
 });
 
 
@@ -161,7 +161,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'item_id')  String itemId, @JsonKey(name: 'rate_id')  String rateId,  String code,  String name,  num rate,  DateTime? createdAt,  DateTime? updatedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'item_id')  String itemId, @JsonKey(name: 'rate_id')  String rateId,  String code,  String name,  num rate, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _TaxLine() when $default != null:
 return $default(_that.id,_that.itemId,_that.rateId,_that.code,_that.name,_that.rate,_that.createdAt,_that.updatedAt,_that.metadata);case _:
@@ -182,7 +182,7 @@ return $default(_that.id,_that.itemId,_that.rateId,_that.code,_that.name,_that.r
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'item_id')  String itemId, @JsonKey(name: 'rate_id')  String rateId,  String code,  String name,  num rate,  DateTime? createdAt,  DateTime? updatedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'item_id')  String itemId, @JsonKey(name: 'rate_id')  String rateId,  String code,  String name,  num rate, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
 switch (_that) {
 case _TaxLine():
 return $default(_that.id,_that.itemId,_that.rateId,_that.code,_that.name,_that.rate,_that.createdAt,_that.updatedAt,_that.metadata);case _:
@@ -202,7 +202,7 @@ return $default(_that.id,_that.itemId,_that.rateId,_that.code,_that.name,_that.r
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'item_id')  String itemId, @JsonKey(name: 'rate_id')  String rateId,  String code,  String name,  num rate,  DateTime? createdAt,  DateTime? updatedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'item_id')  String itemId, @JsonKey(name: 'rate_id')  String rateId,  String code,  String name,  num rate, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
 switch (_that) {
 case _TaxLine() when $default != null:
 return $default(_that.id,_that.itemId,_that.rateId,_that.code,_that.name,_that.rate,_that.createdAt,_that.updatedAt,_that.metadata);case _:
@@ -217,7 +217,7 @@ return $default(_that.id,_that.itemId,_that.rateId,_that.code,_that.name,_that.r
 @JsonSerializable()
 
 class _TaxLine implements TaxLine {
-  const _TaxLine({required this.id, @JsonKey(name: 'item_id') required this.itemId, @JsonKey(name: 'rate_id') required this.rateId, required this.code, required this.name, required this.rate, this.createdAt, this.updatedAt, final  Map<String, dynamic>? metadata}): _metadata = metadata;
+  const _TaxLine({required this.id, @JsonKey(name: 'item_id') required this.itemId, @JsonKey(name: 'rate_id') required this.rateId, required this.code, required this.name, required this.rate, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, final  Map<String, dynamic>? metadata}): _metadata = metadata;
   factory _TaxLine.fromJson(Map<String, dynamic> json) => _$TaxLineFromJson(json);
 
 @override final  String id;
@@ -226,8 +226,8 @@ class _TaxLine implements TaxLine {
 @override final  String code;
 @override final  String name;
 @override final  num rate;
-@override final  DateTime? createdAt;
-@override final  DateTime? updatedAt;
+@override@JsonKey(name: 'created_at') final  DateTime? createdAt;
+@override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
  final  Map<String, dynamic>? _metadata;
 @override Map<String, dynamic>? get metadata {
   final value = _metadata;
@@ -271,7 +271,7 @@ abstract mixin class _$TaxLineCopyWith<$Res> implements $TaxLineCopyWith<$Res> {
   factory _$TaxLineCopyWith(_TaxLine value, $Res Function(_TaxLine) _then) = __$TaxLineCopyWithImpl;
 @override @useResult
 $Res call({
- String id,@JsonKey(name: 'item_id') String itemId,@JsonKey(name: 'rate_id') String rateId, String code, String name, num rate, DateTime? createdAt, DateTime? updatedAt, Map<String, dynamic>? metadata
+ String id,@JsonKey(name: 'item_id') String itemId,@JsonKey(name: 'rate_id') String rateId, String code, String name, num rate,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt, Map<String, dynamic>? metadata
 });
 
 

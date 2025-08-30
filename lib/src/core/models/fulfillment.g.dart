@@ -9,36 +9,36 @@ part of 'fulfillment.dart';
 _Fulfillment _$FulfillmentFromJson(Map<String, dynamic> json) => _Fulfillment(
   id: json['id'] as String,
   status: json['status'] as String,
-  orderId: json['orderId'] as String,
+  orderId: json['order_id'] as String,
   order: json['order'] == null
       ? null
       : Order.fromJson(json['order'] as Map<String, dynamic>),
-  trackingNumber: json['trackingNumber'] as String,
-  trackingNumbers: (json['trackingNumbers'] as List<dynamic>)
+  trackingNumber: json['tracking_number'] as String,
+  trackingNumbers: (json['tracking_numbers'] as List<dynamic>)
       .map((e) => e as String)
       .toList(),
-  providerId: json['providerId'] as String,
-  fulfillmentProvider: json['fulfillmentProvider'] == null
+  providerId: json['provider_id'] as String,
+  fulfillmentProvider: json['fulfillment_provider'] == null
       ? null
       : FulfillmentProvider.fromJson(
-          json['fulfillmentProvider'] as Map<String, dynamic>,
+          json['fulfillment_provider'] as Map<String, dynamic>,
         ),
   data: json['data'] as Map<String, dynamic>?,
-  shippedAt: json['shippedAt'] == null
+  shippedAt: json['shipped_at'] == null
       ? null
-      : DateTime.parse(json['shippedAt'] as String),
-  canceledAt: json['canceledAt'] == null
+      : DateTime.parse(json['shipped_at'] as String),
+  canceledAt: json['canceled_at'] == null
       ? null
-      : DateTime.parse(json['canceledAt'] as String),
-  createdAt: json['createdAt'] == null
+      : DateTime.parse(json['canceled_at'] as String),
+  createdAt: json['created_at'] == null
       ? null
-      : DateTime.parse(json['createdAt'] as String),
-  updatedAt: json['updatedAt'] == null
+      : DateTime.parse(json['created_at'] as String),
+  updatedAt: json['updated_at'] == null
       ? null
-      : DateTime.parse(json['updatedAt'] as String),
-  deletedAt: json['deletedAt'] == null
+      : DateTime.parse(json['updated_at'] as String),
+  deletedAt: json['deleted_at'] == null
       ? null
-      : DateTime.parse(json['deletedAt'] as String),
+      : DateTime.parse(json['deleted_at'] as String),
   metadata: json['metadata'] as Map<String, dynamic>?,
 );
 
@@ -46,17 +46,17 @@ Map<String, dynamic> _$FulfillmentToJson(_Fulfillment instance) =>
     <String, dynamic>{
       'id': instance.id,
       'status': instance.status,
-      'orderId': instance.orderId,
+      'order_id': instance.orderId,
       'order': instance.order,
-      'trackingNumber': instance.trackingNumber,
-      'trackingNumbers': instance.trackingNumbers,
-      'providerId': instance.providerId,
-      'fulfillmentProvider': instance.fulfillmentProvider,
+      'tracking_number': instance.trackingNumber,
+      'tracking_numbers': instance.trackingNumbers,
+      'provider_id': instance.providerId,
+      'fulfillment_provider': instance.fulfillmentProvider,
       'data': instance.data,
-      'shippedAt': instance.shippedAt?.toIso8601String(),
-      'canceledAt': instance.canceledAt?.toIso8601String(),
-      'createdAt': instance.createdAt?.toIso8601String(),
-      'updatedAt': instance.updatedAt?.toIso8601String(),
-      'deletedAt': instance.deletedAt?.toIso8601String(),
+      'shipped_at': instance.shippedAt?.toIso8601String(),
+      'canceled_at': instance.canceledAt?.toIso8601String(),
+      'created_at': instance.createdAt?.toIso8601String(),
+      'updated_at': instance.updatedAt?.toIso8601String(),
+      'deleted_at': instance.deletedAt?.toIso8601String(),
       'metadata': instance.metadata,
     };

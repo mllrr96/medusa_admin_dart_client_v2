@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Adjustment {
 
- String get id; String get description; int get amount;@JsonKey(name: 'discount_id') String? get discountId; Discount? get discount;@JsonKey(name: 'item_id') String get itemId; DateTime? get createdAt; DateTime? get updatedAt; Map<String, dynamic>? get metadata;
+ String get id; String get description; int get amount;@JsonKey(name: 'discount_id') String? get discountId; Discount? get discount;@JsonKey(name: 'item_id') String get itemId;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt; Map<String, dynamic>? get metadata;
 /// Create a copy of Adjustment
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $AdjustmentCopyWith<$Res>  {
   factory $AdjustmentCopyWith(Adjustment value, $Res Function(Adjustment) _then) = _$AdjustmentCopyWithImpl;
 @useResult
 $Res call({
- String id, String description, int amount,@JsonKey(name: 'discount_id') String? discountId, Discount? discount,@JsonKey(name: 'item_id') String itemId, DateTime? createdAt, DateTime? updatedAt, Map<String, dynamic>? metadata
+ String id, String description, int amount,@JsonKey(name: 'discount_id') String? discountId, Discount? discount,@JsonKey(name: 'item_id') String itemId,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt, Map<String, dynamic>? metadata
 });
 
 
@@ -173,7 +173,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String description,  int amount, @JsonKey(name: 'discount_id')  String? discountId,  Discount? discount, @JsonKey(name: 'item_id')  String itemId,  DateTime? createdAt,  DateTime? updatedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String description,  int amount, @JsonKey(name: 'discount_id')  String? discountId,  Discount? discount, @JsonKey(name: 'item_id')  String itemId, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Adjustment() when $default != null:
 return $default(_that.id,_that.description,_that.amount,_that.discountId,_that.discount,_that.itemId,_that.createdAt,_that.updatedAt,_that.metadata);case _:
@@ -194,7 +194,7 @@ return $default(_that.id,_that.description,_that.amount,_that.discountId,_that.d
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String description,  int amount, @JsonKey(name: 'discount_id')  String? discountId,  Discount? discount, @JsonKey(name: 'item_id')  String itemId,  DateTime? createdAt,  DateTime? updatedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String description,  int amount, @JsonKey(name: 'discount_id')  String? discountId,  Discount? discount, @JsonKey(name: 'item_id')  String itemId, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
 switch (_that) {
 case _Adjustment():
 return $default(_that.id,_that.description,_that.amount,_that.discountId,_that.discount,_that.itemId,_that.createdAt,_that.updatedAt,_that.metadata);case _:
@@ -214,7 +214,7 @@ return $default(_that.id,_that.description,_that.amount,_that.discountId,_that.d
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String description,  int amount, @JsonKey(name: 'discount_id')  String? discountId,  Discount? discount, @JsonKey(name: 'item_id')  String itemId,  DateTime? createdAt,  DateTime? updatedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String description,  int amount, @JsonKey(name: 'discount_id')  String? discountId,  Discount? discount, @JsonKey(name: 'item_id')  String itemId, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
 switch (_that) {
 case _Adjustment() when $default != null:
 return $default(_that.id,_that.description,_that.amount,_that.discountId,_that.discount,_that.itemId,_that.createdAt,_that.updatedAt,_that.metadata);case _:
@@ -229,7 +229,7 @@ return $default(_that.id,_that.description,_that.amount,_that.discountId,_that.d
 @JsonSerializable()
 
 class _Adjustment implements Adjustment {
-  const _Adjustment({required this.id, required this.description, required this.amount, @JsonKey(name: 'discount_id') this.discountId, this.discount, @JsonKey(name: 'item_id') required this.itemId, this.createdAt, this.updatedAt, final  Map<String, dynamic>? metadata}): _metadata = metadata;
+  const _Adjustment({required this.id, required this.description, required this.amount, @JsonKey(name: 'discount_id') this.discountId, this.discount, @JsonKey(name: 'item_id') required this.itemId, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, final  Map<String, dynamic>? metadata}): _metadata = metadata;
   factory _Adjustment.fromJson(Map<String, dynamic> json) => _$AdjustmentFromJson(json);
 
 @override final  String id;
@@ -238,8 +238,8 @@ class _Adjustment implements Adjustment {
 @override@JsonKey(name: 'discount_id') final  String? discountId;
 @override final  Discount? discount;
 @override@JsonKey(name: 'item_id') final  String itemId;
-@override final  DateTime? createdAt;
-@override final  DateTime? updatedAt;
+@override@JsonKey(name: 'created_at') final  DateTime? createdAt;
+@override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
  final  Map<String, dynamic>? _metadata;
 @override Map<String, dynamic>? get metadata {
   final value = _metadata;
@@ -283,7 +283,7 @@ abstract mixin class _$AdjustmentCopyWith<$Res> implements $AdjustmentCopyWith<$
   factory _$AdjustmentCopyWith(_Adjustment value, $Res Function(_Adjustment) _then) = __$AdjustmentCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String description, int amount,@JsonKey(name: 'discount_id') String? discountId, Discount? discount,@JsonKey(name: 'item_id') String itemId, DateTime? createdAt, DateTime? updatedAt, Map<String, dynamic>? metadata
+ String id, String description, int amount,@JsonKey(name: 'discount_id') String? discountId, Discount? discount,@JsonKey(name: 'item_id') String itemId,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt, Map<String, dynamic>? metadata
 });
 
 

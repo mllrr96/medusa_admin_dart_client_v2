@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Refund {
 
- String get id; String get orderId; Order? get order; int get amount; String get note; String get reason; String get createdBy; DateTime? get createdAt; DateTime? get updatedAt; DateTime? get deletedAt; Map<String, dynamic>? get metadata;
+ String get id;@JsonKey(name: 'order_id') String get orderId; Order? get order; int get amount; String get note; String get reason;@JsonKey(name: 'created_by') String get createdBy;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt; Map<String, dynamic>? get metadata;
 /// Create a copy of Refund
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $RefundCopyWith<$Res>  {
   factory $RefundCopyWith(Refund value, $Res Function(Refund) _then) = _$RefundCopyWithImpl;
 @useResult
 $Res call({
- String id, String orderId, Order? order, int amount, String note, String reason, String createdBy, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt, Map<String, dynamic>? metadata
+ String id,@JsonKey(name: 'order_id') String orderId, Order? order, int amount, String note, String reason,@JsonKey(name: 'created_by') String createdBy,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
 });
 
 
@@ -175,7 +175,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String orderId,  Order? order,  int amount,  String note,  String reason,  String createdBy,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'order_id')  String orderId,  Order? order,  int amount,  String note,  String reason, @JsonKey(name: 'created_by')  String createdBy, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Refund() when $default != null:
 return $default(_that.id,_that.orderId,_that.order,_that.amount,_that.note,_that.reason,_that.createdBy,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -196,7 +196,7 @@ return $default(_that.id,_that.orderId,_that.order,_that.amount,_that.note,_that
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String orderId,  Order? order,  int amount,  String note,  String reason,  String createdBy,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'order_id')  String orderId,  Order? order,  int amount,  String note,  String reason, @JsonKey(name: 'created_by')  String createdBy, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
 switch (_that) {
 case _Refund():
 return $default(_that.id,_that.orderId,_that.order,_that.amount,_that.note,_that.reason,_that.createdBy,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -216,7 +216,7 @@ return $default(_that.id,_that.orderId,_that.order,_that.amount,_that.note,_that
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String orderId,  Order? order,  int amount,  String note,  String reason,  String createdBy,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'order_id')  String orderId,  Order? order,  int amount,  String note,  String reason, @JsonKey(name: 'created_by')  String createdBy, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
 switch (_that) {
 case _Refund() when $default != null:
 return $default(_that.id,_that.orderId,_that.order,_that.amount,_that.note,_that.reason,_that.createdBy,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -231,19 +231,19 @@ return $default(_that.id,_that.orderId,_that.order,_that.amount,_that.note,_that
 @JsonSerializable()
 
 class _Refund implements Refund {
-  const _Refund({required this.id, required this.orderId, this.order, required this.amount, required this.note, required this.reason, required this.createdBy, this.createdAt, this.updatedAt, this.deletedAt, final  Map<String, dynamic>? metadata}): _metadata = metadata;
+  const _Refund({required this.id, @JsonKey(name: 'order_id') required this.orderId, this.order, required this.amount, required this.note, required this.reason, @JsonKey(name: 'created_by') required this.createdBy, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt, final  Map<String, dynamic>? metadata}): _metadata = metadata;
   factory _Refund.fromJson(Map<String, dynamic> json) => _$RefundFromJson(json);
 
 @override final  String id;
-@override final  String orderId;
+@override@JsonKey(name: 'order_id') final  String orderId;
 @override final  Order? order;
 @override final  int amount;
 @override final  String note;
 @override final  String reason;
-@override final  String createdBy;
-@override final  DateTime? createdAt;
-@override final  DateTime? updatedAt;
-@override final  DateTime? deletedAt;
+@override@JsonKey(name: 'created_by') final  String createdBy;
+@override@JsonKey(name: 'created_at') final  DateTime? createdAt;
+@override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
+@override@JsonKey(name: 'deleted_at') final  DateTime? deletedAt;
  final  Map<String, dynamic>? _metadata;
 @override Map<String, dynamic>? get metadata {
   final value = _metadata;
@@ -287,7 +287,7 @@ abstract mixin class _$RefundCopyWith<$Res> implements $RefundCopyWith<$Res> {
   factory _$RefundCopyWith(_Refund value, $Res Function(_Refund) _then) = __$RefundCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String orderId, Order? order, int amount, String note, String reason, String createdBy, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt, Map<String, dynamic>? metadata
+ String id,@JsonKey(name: 'order_id') String orderId, Order? order, int amount, String note, String reason,@JsonKey(name: 'created_by') String createdBy,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
 });
 
 

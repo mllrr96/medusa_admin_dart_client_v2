@@ -7,13 +7,13 @@ part 'order_credit_line.g.dart';
 abstract class OrderCreditLine with _$OrderCreditLine {
   const factory OrderCreditLine({
     required String id,
-    required String order_id,
+    @JsonKey(name: 'order_id') required String orderId,
     required dynamic order,
     required String reference,
-    required String reference_id,
+    @JsonKey(name: 'reference_id') required String referenceId,
     required Map<String, dynamic> metadata,
-    required String created_at,
-    required String updated_at,
+    @JsonKey(name: 'created_at') required String createdAt,
+    @JsonKey(name: 'updated_at') required String updatedAt,
     required num amount,
   }) = _OrderCreditLine;
 

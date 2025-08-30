@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Campaign {
 
- String get id; String get name; String? get description;@JsonKey(name: 'campaign_identifier') String get campaignIdentifier;@JsonKey(name: 'starts_at') DateTime? get startsAt;@JsonKey(name: 'ends_at') DateTime? get endsAt; CampaignBudget? get budget; List<dynamic> get promotions; DateTime get createdAt; DateTime get updatedAt; DateTime? get deletedAt;
+ String get id; String get name; String? get description;@JsonKey(name: 'campaign_identifier') String get campaignIdentifier;@JsonKey(name: 'starts_at') DateTime? get startsAt;@JsonKey(name: 'ends_at') DateTime? get endsAt; CampaignBudget? get budget; List<dynamic> get promotions;@JsonKey(name: 'created_at') DateTime get createdAt;@JsonKey(name: 'updated_at') DateTime get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt;
 /// Create a copy of Campaign
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $CampaignCopyWith<$Res>  {
   factory $CampaignCopyWith(Campaign value, $Res Function(Campaign) _then) = _$CampaignCopyWithImpl;
 @useResult
 $Res call({
- String id, String name, String? description,@JsonKey(name: 'campaign_identifier') String campaignIdentifier,@JsonKey(name: 'starts_at') DateTime? startsAt,@JsonKey(name: 'ends_at') DateTime? endsAt, CampaignBudget? budget, List<dynamic> promotions, DateTime createdAt, DateTime updatedAt, DateTime? deletedAt
+ String id, String name, String? description,@JsonKey(name: 'campaign_identifier') String campaignIdentifier,@JsonKey(name: 'starts_at') DateTime? startsAt,@JsonKey(name: 'ends_at') DateTime? endsAt, CampaignBudget? budget, List<dynamic> promotions,@JsonKey(name: 'created_at') DateTime createdAt,@JsonKey(name: 'updated_at') DateTime updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
 });
 
 
@@ -175,7 +175,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  String? description, @JsonKey(name: 'campaign_identifier')  String campaignIdentifier, @JsonKey(name: 'starts_at')  DateTime? startsAt, @JsonKey(name: 'ends_at')  DateTime? endsAt,  CampaignBudget? budget,  List<dynamic> promotions,  DateTime createdAt,  DateTime updatedAt,  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  String? description, @JsonKey(name: 'campaign_identifier')  String campaignIdentifier, @JsonKey(name: 'starts_at')  DateTime? startsAt, @JsonKey(name: 'ends_at')  DateTime? endsAt,  CampaignBudget? budget,  List<dynamic> promotions, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'updated_at')  DateTime updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Campaign() when $default != null:
 return $default(_that.id,_that.name,_that.description,_that.campaignIdentifier,_that.startsAt,_that.endsAt,_that.budget,_that.promotions,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -196,7 +196,7 @@ return $default(_that.id,_that.name,_that.description,_that.campaignIdentifier,_
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  String? description, @JsonKey(name: 'campaign_identifier')  String campaignIdentifier, @JsonKey(name: 'starts_at')  DateTime? startsAt, @JsonKey(name: 'ends_at')  DateTime? endsAt,  CampaignBudget? budget,  List<dynamic> promotions,  DateTime createdAt,  DateTime updatedAt,  DateTime? deletedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  String? description, @JsonKey(name: 'campaign_identifier')  String campaignIdentifier, @JsonKey(name: 'starts_at')  DateTime? startsAt, @JsonKey(name: 'ends_at')  DateTime? endsAt,  CampaignBudget? budget,  List<dynamic> promotions, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'updated_at')  DateTime updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)  $default,) {final _that = this;
 switch (_that) {
 case _Campaign():
 return $default(_that.id,_that.name,_that.description,_that.campaignIdentifier,_that.startsAt,_that.endsAt,_that.budget,_that.promotions,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -216,7 +216,7 @@ return $default(_that.id,_that.name,_that.description,_that.campaignIdentifier,_
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  String? description, @JsonKey(name: 'campaign_identifier')  String campaignIdentifier, @JsonKey(name: 'starts_at')  DateTime? startsAt, @JsonKey(name: 'ends_at')  DateTime? endsAt,  CampaignBudget? budget,  List<dynamic> promotions,  DateTime createdAt,  DateTime updatedAt,  DateTime? deletedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  String? description, @JsonKey(name: 'campaign_identifier')  String campaignIdentifier, @JsonKey(name: 'starts_at')  DateTime? startsAt, @JsonKey(name: 'ends_at')  DateTime? endsAt,  CampaignBudget? budget,  List<dynamic> promotions, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'updated_at')  DateTime updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _Campaign() when $default != null:
 return $default(_that.id,_that.name,_that.description,_that.campaignIdentifier,_that.startsAt,_that.endsAt,_that.budget,_that.promotions,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -231,7 +231,7 @@ return $default(_that.id,_that.name,_that.description,_that.campaignIdentifier,_
 @JsonSerializable()
 
 class _Campaign implements Campaign {
-  const _Campaign({required this.id, required this.name, this.description, @JsonKey(name: 'campaign_identifier') required this.campaignIdentifier, @JsonKey(name: 'starts_at') this.startsAt, @JsonKey(name: 'ends_at') this.endsAt, this.budget, required final  List<dynamic> promotions, required this.createdAt, required this.updatedAt, this.deletedAt}): _promotions = promotions;
+  const _Campaign({required this.id, required this.name, this.description, @JsonKey(name: 'campaign_identifier') required this.campaignIdentifier, @JsonKey(name: 'starts_at') this.startsAt, @JsonKey(name: 'ends_at') this.endsAt, this.budget, required final  List<dynamic> promotions, @JsonKey(name: 'created_at') required this.createdAt, @JsonKey(name: 'updated_at') required this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt}): _promotions = promotions;
   factory _Campaign.fromJson(Map<String, dynamic> json) => _$CampaignFromJson(json);
 
 @override final  String id;
@@ -248,9 +248,9 @@ class _Campaign implements Campaign {
   return EqualUnmodifiableListView(_promotions);
 }
 
-@override final  DateTime createdAt;
-@override final  DateTime updatedAt;
-@override final  DateTime? deletedAt;
+@override@JsonKey(name: 'created_at') final  DateTime createdAt;
+@override@JsonKey(name: 'updated_at') final  DateTime updatedAt;
+@override@JsonKey(name: 'deleted_at') final  DateTime? deletedAt;
 
 /// Create a copy of Campaign
 /// with the given fields replaced by the non-null parameter values.
@@ -285,7 +285,7 @@ abstract mixin class _$CampaignCopyWith<$Res> implements $CampaignCopyWith<$Res>
   factory _$CampaignCopyWith(_Campaign value, $Res Function(_Campaign) _then) = __$CampaignCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String name, String? description,@JsonKey(name: 'campaign_identifier') String campaignIdentifier,@JsonKey(name: 'starts_at') DateTime? startsAt,@JsonKey(name: 'ends_at') DateTime? endsAt, CampaignBudget? budget, List<dynamic> promotions, DateTime createdAt, DateTime updatedAt, DateTime? deletedAt
+ String id, String name, String? description,@JsonKey(name: 'campaign_identifier') String campaignIdentifier,@JsonKey(name: 'starts_at') DateTime? startsAt,@JsonKey(name: 'ends_at') DateTime? endsAt, CampaignBudget? budget, List<dynamic> promotions,@JsonKey(name: 'created_at') DateTime createdAt,@JsonKey(name: 'updated_at') DateTime updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
 });
 
 

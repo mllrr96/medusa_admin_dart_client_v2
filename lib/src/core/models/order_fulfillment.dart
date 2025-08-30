@@ -7,18 +7,18 @@ part 'order_fulfillment.g.dart';
 abstract class OrderFulfillment with _$OrderFulfillment {
   const factory OrderFulfillment({
     required String id,
-    required String location_id,
-    required String packed_at,
-    required String shipped_at,
-    required String delivered_at,
-    required String canceled_at,
+    @JsonKey(name: 'location_id') required String locationId,
+    @JsonKey(name: 'packed_at') required String packedAt,
+    @JsonKey(name: 'shipped_at') required String shippedAt,
+    @JsonKey(name: 'delivered_at') required String deliveredAt,
+    @JsonKey(name: 'canceled_at') required String canceledAt,
     required Map<String, dynamic> data,
-    required String provider_id,
-    required String shipping_option_id,
+    @JsonKey(name: 'provider_id') required String providerId,
+    @JsonKey(name: 'shipping_option_id') required String shippingOptionId,
     required Map<String, dynamic> metadata,
-    required String created_at,
-    required String updated_at,
-    required bool requires_shipping,
+    @JsonKey(name: 'created_at') required String createdAt,
+    @JsonKey(name: 'updated_at') required String updatedAt,
+    @JsonKey(name: 'requires_shipping') required bool requiresShipping,
   }) = _OrderFulfillment;
 
   factory OrderFulfillment.fromJson(Map<String, dynamic> json) =>

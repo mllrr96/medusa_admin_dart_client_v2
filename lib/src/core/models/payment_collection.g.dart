@@ -9,20 +9,20 @@ part of 'payment_collection.dart';
 _PaymentCollection _$PaymentCollectionFromJson(Map<String, dynamic> json) =>
     _PaymentCollection(
       id: json['id'] as String,
-      currency_code: json['currency_code'] as String,
+      currencyCode: json['currency_code'] as String,
       amount: json['amount'] as num,
-      authorized_amount: json['authorized_amount'] as num?,
-      captured_amount: json['captured_amount'] as num?,
-      refunded_amount: json['refunded_amount'] as num?,
-      completed_at: json['completed_at'] as String?,
-      created_at: json['created_at'] as String?,
-      updated_at: json['updated_at'] as String?,
+      authorizedAmount: json['authorized_amount'] as num?,
+      capturedAmount: json['captured_amount'] as num?,
+      refundedAmount: json['refunded_amount'] as num?,
+      completedAt: json['completed_at'] as String?,
+      createdAt: json['created_at'] as String?,
+      updatedAt: json['updated_at'] as String?,
       metadata: json['metadata'] as Map<String, dynamic>?,
       status: json['status'] as String,
-      payment_providers: (json['payment_providers'] as List<dynamic>)
+      paymentProviders: (json['payment_providers'] as List<dynamic>)
           .map((e) => PaymentProvider.fromJson(e as Map<String, dynamic>))
           .toList(),
-      payment_sessions: json['payment_sessions'] as List<dynamic>?,
+      paymentSessions: json['payment_sessions'] as List<dynamic>?,
       payments: (json['payments'] as List<dynamic>?)
           ?.map((e) => Payment.fromJson(e as Map<String, dynamic>))
           .toList(),
@@ -31,17 +31,17 @@ _PaymentCollection _$PaymentCollectionFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$PaymentCollectionToJson(_PaymentCollection instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'currency_code': instance.currency_code,
+      'currency_code': instance.currencyCode,
       'amount': instance.amount,
-      'authorized_amount': instance.authorized_amount,
-      'captured_amount': instance.captured_amount,
-      'refunded_amount': instance.refunded_amount,
-      'completed_at': instance.completed_at,
-      'created_at': instance.created_at,
-      'updated_at': instance.updated_at,
+      'authorized_amount': instance.authorizedAmount,
+      'captured_amount': instance.capturedAmount,
+      'refunded_amount': instance.refundedAmount,
+      'completed_at': instance.completedAt,
+      'created_at': instance.createdAt,
+      'updated_at': instance.updatedAt,
       'metadata': instance.metadata,
       'status': instance.status,
-      'payment_providers': instance.payment_providers,
-      'payment_sessions': instance.payment_sessions,
+      'payment_providers': instance.paymentProviders,
+      'payment_sessions': instance.paymentSessions,
       'payments': instance.payments,
     };

@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$MoneyAmount {
 
- String get id; String get currencyCode; int get amount;@JsonKey(name: 'variant_id') String? get variantId; ProductVariant? get variant;@JsonKey(name: 'region_id') String? get regionId; Region? get region; DateTime? get createdAt; DateTime? get updatedAt; DateTime? get deletedAt; Map<String, dynamic>? get metadata;
+ String get id;@JsonKey(name: 'currency_code') String get currencyCode; int get amount;@JsonKey(name: 'variant_id') String? get variantId; ProductVariant? get variant;@JsonKey(name: 'region_id') String? get regionId; Region? get region;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt; Map<String, dynamic>? get metadata;
 /// Create a copy of MoneyAmount
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $MoneyAmountCopyWith<$Res>  {
   factory $MoneyAmountCopyWith(MoneyAmount value, $Res Function(MoneyAmount) _then) = _$MoneyAmountCopyWithImpl;
 @useResult
 $Res call({
- String id, String currencyCode, int amount,@JsonKey(name: 'variant_id') String? variantId, ProductVariant? variant,@JsonKey(name: 'region_id') String? regionId, Region? region, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt, Map<String, dynamic>? metadata
+ String id,@JsonKey(name: 'currency_code') String currencyCode, int amount,@JsonKey(name: 'variant_id') String? variantId, ProductVariant? variant,@JsonKey(name: 'region_id') String? regionId, Region? region,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
 });
 
 
@@ -187,7 +187,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String currencyCode,  int amount, @JsonKey(name: 'variant_id')  String? variantId,  ProductVariant? variant, @JsonKey(name: 'region_id')  String? regionId,  Region? region,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'currency_code')  String currencyCode,  int amount, @JsonKey(name: 'variant_id')  String? variantId,  ProductVariant? variant, @JsonKey(name: 'region_id')  String? regionId,  Region? region, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _MoneyAmount() when $default != null:
 return $default(_that.id,_that.currencyCode,_that.amount,_that.variantId,_that.variant,_that.regionId,_that.region,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -208,7 +208,7 @@ return $default(_that.id,_that.currencyCode,_that.amount,_that.variantId,_that.v
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String currencyCode,  int amount, @JsonKey(name: 'variant_id')  String? variantId,  ProductVariant? variant, @JsonKey(name: 'region_id')  String? regionId,  Region? region,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'currency_code')  String currencyCode,  int amount, @JsonKey(name: 'variant_id')  String? variantId,  ProductVariant? variant, @JsonKey(name: 'region_id')  String? regionId,  Region? region, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
 switch (_that) {
 case _MoneyAmount():
 return $default(_that.id,_that.currencyCode,_that.amount,_that.variantId,_that.variant,_that.regionId,_that.region,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -228,7 +228,7 @@ return $default(_that.id,_that.currencyCode,_that.amount,_that.variantId,_that.v
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String currencyCode,  int amount, @JsonKey(name: 'variant_id')  String? variantId,  ProductVariant? variant, @JsonKey(name: 'region_id')  String? regionId,  Region? region,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'currency_code')  String currencyCode,  int amount, @JsonKey(name: 'variant_id')  String? variantId,  ProductVariant? variant, @JsonKey(name: 'region_id')  String? regionId,  Region? region, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
 switch (_that) {
 case _MoneyAmount() when $default != null:
 return $default(_that.id,_that.currencyCode,_that.amount,_that.variantId,_that.variant,_that.regionId,_that.region,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -243,19 +243,19 @@ return $default(_that.id,_that.currencyCode,_that.amount,_that.variantId,_that.v
 @JsonSerializable()
 
 class _MoneyAmount implements MoneyAmount {
-  const _MoneyAmount({required this.id, required this.currencyCode, required this.amount, @JsonKey(name: 'variant_id') this.variantId, this.variant, @JsonKey(name: 'region_id') this.regionId, this.region, this.createdAt, this.updatedAt, this.deletedAt, final  Map<String, dynamic>? metadata}): _metadata = metadata;
+  const _MoneyAmount({required this.id, @JsonKey(name: 'currency_code') required this.currencyCode, required this.amount, @JsonKey(name: 'variant_id') this.variantId, this.variant, @JsonKey(name: 'region_id') this.regionId, this.region, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt, final  Map<String, dynamic>? metadata}): _metadata = metadata;
   factory _MoneyAmount.fromJson(Map<String, dynamic> json) => _$MoneyAmountFromJson(json);
 
 @override final  String id;
-@override final  String currencyCode;
+@override@JsonKey(name: 'currency_code') final  String currencyCode;
 @override final  int amount;
 @override@JsonKey(name: 'variant_id') final  String? variantId;
 @override final  ProductVariant? variant;
 @override@JsonKey(name: 'region_id') final  String? regionId;
 @override final  Region? region;
-@override final  DateTime? createdAt;
-@override final  DateTime? updatedAt;
-@override final  DateTime? deletedAt;
+@override@JsonKey(name: 'created_at') final  DateTime? createdAt;
+@override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
+@override@JsonKey(name: 'deleted_at') final  DateTime? deletedAt;
  final  Map<String, dynamic>? _metadata;
 @override Map<String, dynamic>? get metadata {
   final value = _metadata;
@@ -299,7 +299,7 @@ abstract mixin class _$MoneyAmountCopyWith<$Res> implements $MoneyAmountCopyWith
   factory _$MoneyAmountCopyWith(_MoneyAmount value, $Res Function(_MoneyAmount) _then) = __$MoneyAmountCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String currencyCode, int amount,@JsonKey(name: 'variant_id') String? variantId, ProductVariant? variant,@JsonKey(name: 'region_id') String? regionId, Region? region, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt, Map<String, dynamic>? metadata
+ String id,@JsonKey(name: 'currency_code') String currencyCode, int amount,@JsonKey(name: 'variant_id') String? variantId, ProductVariant? variant,@JsonKey(name: 'region_id') String? regionId, Region? region,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
 });
 
 
