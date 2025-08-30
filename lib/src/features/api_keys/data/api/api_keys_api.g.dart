@@ -18,14 +18,14 @@ class _ApiKeysApi implements ApiKeysApi {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<List<ApiKey>> list({Map<String, dynamic>? queryParameters}) async {
+  Future<ApiKeysListRes> list({Map<String, dynamic>? queryParameters}) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     queryParameters.addAll(queryParameters ?? <String, dynamic>{});
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<List<ApiKey>>(
+    final _options = _setStreamType<ApiKeysListRes>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -35,12 +35,10 @@ class _ApiKeysApi implements ApiKeysApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<List<dynamic>>(_options);
-    late List<ApiKey> _value;
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late ApiKeysListRes _value;
     try {
-      _value = _result.data!
-          .map((dynamic i) => ApiKey.fromJson(i as Map<String, dynamic>))
-          .toList();
+      _value = ApiKeysListRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -49,13 +47,12 @@ class _ApiKeysApi implements ApiKeysApi {
   }
 
   @override
-  Future<ApiKey> create(Map<String, dynamic> body) async {
+  Future<ApiKeyRes> create(CreateApiKeyReq body) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(body);
-    final _options = _setStreamType<ApiKey>(
+    final _data = body;
+    final _options = _setStreamType<ApiKeyRes>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -66,9 +63,9 @@ class _ApiKeysApi implements ApiKeysApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late ApiKey _value;
+    late ApiKeyRes _value;
     try {
-      _value = ApiKey.fromJson(_result.data!);
+      _value = ApiKeyRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -77,12 +74,12 @@ class _ApiKeysApi implements ApiKeysApi {
   }
 
   @override
-  Future<ApiKey> retrieve(String id) async {
+  Future<ApiKeyRes> retrieve(String id) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<ApiKey>(
+    final _options = _setStreamType<ApiKeyRes>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -93,9 +90,9 @@ class _ApiKeysApi implements ApiKeysApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late ApiKey _value;
+    late ApiKeyRes _value;
     try {
-      _value = ApiKey.fromJson(_result.data!);
+      _value = ApiKeyRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -104,14 +101,13 @@ class _ApiKeysApi implements ApiKeysApi {
   }
 
   @override
-  Future<ApiKey> update(String id, Map<String, dynamic> body) async {
+  Future<ApiKeyRes> update(String id, UpdateApiKeyReq body) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(body);
-    final _options = _setStreamType<ApiKey>(
-      Options(method: 'PUT', headers: _headers, extra: _extra)
+    final _data = body;
+    final _options = _setStreamType<ApiKeyRes>(
+      Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
             '/admin/api-keys/${id}',
@@ -121,9 +117,9 @@ class _ApiKeysApi implements ApiKeysApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late ApiKey _value;
+    late ApiKeyRes _value;
     try {
-      _value = ApiKey.fromJson(_result.data!);
+      _value = ApiKeyRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -151,12 +147,12 @@ class _ApiKeysApi implements ApiKeysApi {
   }
 
   @override
-  Future<ApiKey> revoke(String id) async {
+  Future<ApiKeyRes> revoke(String id) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<ApiKey>(
+    final _options = _setStreamType<ApiKeyRes>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -167,9 +163,37 @@ class _ApiKeysApi implements ApiKeysApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late ApiKey _value;
+    late ApiKeyRes _value;
     try {
-      _value = ApiKey.fromJson(_result.data!);
+      _value = ApiKeyRes.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<ApiKeyRes> salesChannels(String id, Map<String, dynamic> body) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = <String, dynamic>{};
+    _data.addAll(body);
+    final _options = _setStreamType<ApiKeyRes>(
+      Options(method: 'POST', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            '/admin/api-keys/${id}/sales-channels',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late ApiKeyRes _value;
+    try {
+      _value = ApiKeyRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

@@ -18,14 +18,14 @@ class _CampaignsApi implements CampaignsApi {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<List<Campaign>> list({Map<String, dynamic>? queryParameters}) async {
+  Future<CampaignsListRes> list({Map<String, dynamic>? queryParameters}) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     queryParameters.addAll(queryParameters ?? <String, dynamic>{});
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<List<Campaign>>(
+    final _options = _setStreamType<CampaignsListRes>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -35,12 +35,10 @@ class _CampaignsApi implements CampaignsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<List<dynamic>>(_options);
-    late List<Campaign> _value;
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late CampaignsListRes _value;
     try {
-      _value = _result.data!
-          .map((dynamic i) => Campaign.fromJson(i as Map<String, dynamic>))
-          .toList();
+      _value = CampaignsListRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -49,13 +47,12 @@ class _CampaignsApi implements CampaignsApi {
   }
 
   @override
-  Future<Campaign> create(Map<String, dynamic> body) async {
+  Future<CampaignRes> create(CreateCampaignReq body) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(body);
-    final _options = _setStreamType<Campaign>(
+    final _data = body;
+    final _options = _setStreamType<CampaignRes>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -66,9 +63,9 @@ class _CampaignsApi implements CampaignsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late Campaign _value;
+    late CampaignRes _value;
     try {
-      _value = Campaign.fromJson(_result.data!);
+      _value = CampaignRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -77,12 +74,12 @@ class _CampaignsApi implements CampaignsApi {
   }
 
   @override
-  Future<Campaign> retrieve(String id) async {
+  Future<CampaignRes> retrieve(String id) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<Campaign>(
+    final _options = _setStreamType<CampaignRes>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -93,9 +90,9 @@ class _CampaignsApi implements CampaignsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late Campaign _value;
+    late CampaignRes _value;
     try {
-      _value = Campaign.fromJson(_result.data!);
+      _value = CampaignRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -104,14 +101,13 @@ class _CampaignsApi implements CampaignsApi {
   }
 
   @override
-  Future<Campaign> update(String id, Map<String, dynamic> body) async {
+  Future<CampaignRes> update(String id, UpdateCampaignReq body) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(body);
-    final _options = _setStreamType<Campaign>(
-      Options(method: 'PUT', headers: _headers, extra: _extra)
+    final _data = body;
+    final _options = _setStreamType<CampaignRes>(
+      Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
             '/admin/campaigns/${id}',
@@ -121,9 +117,9 @@ class _CampaignsApi implements CampaignsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late Campaign _value;
+    late CampaignRes _value;
     try {
-      _value = Campaign.fromJson(_result.data!);
+      _value = CampaignRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -132,12 +128,12 @@ class _CampaignsApi implements CampaignsApi {
   }
 
   @override
-  Future<void> delete(String id) async {
+  Future<CampaignDeleteRes> delete(String id) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<void>(
+    final _options = _setStreamType<CampaignDeleteRes>(
       Options(method: 'DELETE', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -147,7 +143,45 @@ class _CampaignsApi implements CampaignsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    await _dio.fetch<void>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late CampaignDeleteRes _value;
+    try {
+      _value = CampaignDeleteRes.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<CampaignRes> managePromotions(
+    String id,
+    ManagePromotionsReq body,
+  ) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = body;
+    final _options = _setStreamType<CampaignRes>(
+      Options(method: 'POST', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            '/admin/campaigns/${id}/promotions',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late CampaignRes _value;
+    try {
+      _value = CampaignRes.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
   }
 
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {

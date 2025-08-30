@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ApiKey {
 
- String get id; String get title; String? get token;@JsonKey(name: 'redacted_token') String? get redactedToken; String get type;@JsonKey(name: 'last_used_at') DateTime? get lastUsedAt;@JsonKey(name: 'created_by') String get createdBy; DateTime get createdAt; DateTime get updatedAt; DateTime? get deletedAt;@JsonKey(name: 'revoked_at') DateTime? get revokedAt;
+ String get id; String get token; String get redacted; String get title; String get type;@JsonKey(name: 'last_used_at') DateTime? get lastUsedAt;@JsonKey(name: 'created_by') String get createdBy;@JsonKey(name: 'created_at') DateTime get createdAt;@JsonKey(name: 'revoked_by') String? get revokedBy;@JsonKey(name: 'revoked_at') DateTime? get revokedAt;@JsonKey(name: 'updated_at') DateTime get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt;
 /// Create a copy of ApiKey
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $ApiKeyCopyWith<ApiKey> get copyWith => _$ApiKeyCopyWithImpl<ApiKey>(this as Api
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ApiKey&&(identical(other.id, id) || other.id == id)&&(identical(other.title, title) || other.title == title)&&(identical(other.token, token) || other.token == token)&&(identical(other.redactedToken, redactedToken) || other.redactedToken == redactedToken)&&(identical(other.type, type) || other.type == type)&&(identical(other.lastUsedAt, lastUsedAt) || other.lastUsedAt == lastUsedAt)&&(identical(other.createdBy, createdBy) || other.createdBy == createdBy)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.deletedAt, deletedAt) || other.deletedAt == deletedAt)&&(identical(other.revokedAt, revokedAt) || other.revokedAt == revokedAt));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ApiKey&&(identical(other.id, id) || other.id == id)&&(identical(other.token, token) || other.token == token)&&(identical(other.redacted, redacted) || other.redacted == redacted)&&(identical(other.title, title) || other.title == title)&&(identical(other.type, type) || other.type == type)&&(identical(other.lastUsedAt, lastUsedAt) || other.lastUsedAt == lastUsedAt)&&(identical(other.createdBy, createdBy) || other.createdBy == createdBy)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.revokedBy, revokedBy) || other.revokedBy == revokedBy)&&(identical(other.revokedAt, revokedAt) || other.revokedAt == revokedAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.deletedAt, deletedAt) || other.deletedAt == deletedAt));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,title,token,redactedToken,type,lastUsedAt,createdBy,createdAt,updatedAt,deletedAt,revokedAt);
+int get hashCode => Object.hash(runtimeType,id,token,redacted,title,type,lastUsedAt,createdBy,createdAt,revokedBy,revokedAt,updatedAt,deletedAt);
 
 @override
 String toString() {
-  return 'ApiKey(id: $id, title: $title, token: $token, redactedToken: $redactedToken, type: $type, lastUsedAt: $lastUsedAt, createdBy: $createdBy, createdAt: $createdAt, updatedAt: $updatedAt, deletedAt: $deletedAt, revokedAt: $revokedAt)';
+  return 'ApiKey(id: $id, token: $token, redacted: $redacted, title: $title, type: $type, lastUsedAt: $lastUsedAt, createdBy: $createdBy, createdAt: $createdAt, revokedBy: $revokedBy, revokedAt: $revokedAt, updatedAt: $updatedAt, deletedAt: $deletedAt)';
 }
 
 
@@ -48,7 +48,7 @@ abstract mixin class $ApiKeyCopyWith<$Res>  {
   factory $ApiKeyCopyWith(ApiKey value, $Res Function(ApiKey) _then) = _$ApiKeyCopyWithImpl;
 @useResult
 $Res call({
- String id, String title, String? token,@JsonKey(name: 'redacted_token') String? redactedToken, String type,@JsonKey(name: 'last_used_at') DateTime? lastUsedAt,@JsonKey(name: 'created_by') String createdBy, DateTime createdAt, DateTime updatedAt, DateTime? deletedAt,@JsonKey(name: 'revoked_at') DateTime? revokedAt
+ String id, String token, String redacted, String title, String type,@JsonKey(name: 'last_used_at') DateTime? lastUsedAt,@JsonKey(name: 'created_by') String createdBy,@JsonKey(name: 'created_at') DateTime createdAt,@JsonKey(name: 'revoked_by') String? revokedBy,@JsonKey(name: 'revoked_at') DateTime? revokedAt,@JsonKey(name: 'updated_at') DateTime updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
 });
 
 
@@ -65,19 +65,20 @@ class _$ApiKeyCopyWithImpl<$Res>
 
 /// Create a copy of ApiKey
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? title = null,Object? token = freezed,Object? redactedToken = freezed,Object? type = null,Object? lastUsedAt = freezed,Object? createdBy = null,Object? createdAt = null,Object? updatedAt = null,Object? deletedAt = freezed,Object? revokedAt = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? token = null,Object? redacted = null,Object? title = null,Object? type = null,Object? lastUsedAt = freezed,Object? createdBy = null,Object? createdAt = null,Object? revokedBy = freezed,Object? revokedAt = freezed,Object? updatedAt = null,Object? deletedAt = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,token: null == token ? _self.token : token // ignore: cast_nullable_to_non_nullable
+as String,redacted: null == redacted ? _self.redacted : redacted // ignore: cast_nullable_to_non_nullable
 as String,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
-as String,token: freezed == token ? _self.token : token // ignore: cast_nullable_to_non_nullable
-as String?,redactedToken: freezed == redactedToken ? _self.redactedToken : redactedToken // ignore: cast_nullable_to_non_nullable
-as String?,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
+as String,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
 as String,lastUsedAt: freezed == lastUsedAt ? _self.lastUsedAt : lastUsedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,createdBy: null == createdBy ? _self.createdBy : createdBy // ignore: cast_nullable_to_non_nullable
 as String,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime,revokedBy: freezed == revokedBy ? _self.revokedBy : revokedBy // ignore: cast_nullable_to_non_nullable
+as String?,revokedAt: freezed == revokedAt ? _self.revokedAt : revokedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
 as DateTime,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
-as DateTime?,revokedAt: freezed == revokedAt ? _self.revokedAt : revokedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,
   ));
 }
@@ -163,10 +164,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String title,  String? token, @JsonKey(name: 'redacted_token')  String? redactedToken,  String type, @JsonKey(name: 'last_used_at')  DateTime? lastUsedAt, @JsonKey(name: 'created_by')  String createdBy,  DateTime createdAt,  DateTime updatedAt,  DateTime? deletedAt, @JsonKey(name: 'revoked_at')  DateTime? revokedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String token,  String redacted,  String title,  String type, @JsonKey(name: 'last_used_at')  DateTime? lastUsedAt, @JsonKey(name: 'created_by')  String createdBy, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'revoked_by')  String? revokedBy, @JsonKey(name: 'revoked_at')  DateTime? revokedAt, @JsonKey(name: 'updated_at')  DateTime updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ApiKey() when $default != null:
-return $default(_that.id,_that.title,_that.token,_that.redactedToken,_that.type,_that.lastUsedAt,_that.createdBy,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.revokedAt);case _:
+return $default(_that.id,_that.token,_that.redacted,_that.title,_that.type,_that.lastUsedAt,_that.createdBy,_that.createdAt,_that.revokedBy,_that.revokedAt,_that.updatedAt,_that.deletedAt);case _:
   return orElse();
 
 }
@@ -184,10 +185,10 @@ return $default(_that.id,_that.title,_that.token,_that.redactedToken,_that.type,
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String title,  String? token, @JsonKey(name: 'redacted_token')  String? redactedToken,  String type, @JsonKey(name: 'last_used_at')  DateTime? lastUsedAt, @JsonKey(name: 'created_by')  String createdBy,  DateTime createdAt,  DateTime updatedAt,  DateTime? deletedAt, @JsonKey(name: 'revoked_at')  DateTime? revokedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String token,  String redacted,  String title,  String type, @JsonKey(name: 'last_used_at')  DateTime? lastUsedAt, @JsonKey(name: 'created_by')  String createdBy, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'revoked_by')  String? revokedBy, @JsonKey(name: 'revoked_at')  DateTime? revokedAt, @JsonKey(name: 'updated_at')  DateTime updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)  $default,) {final _that = this;
 switch (_that) {
 case _ApiKey():
-return $default(_that.id,_that.title,_that.token,_that.redactedToken,_that.type,_that.lastUsedAt,_that.createdBy,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.revokedAt);case _:
+return $default(_that.id,_that.token,_that.redacted,_that.title,_that.type,_that.lastUsedAt,_that.createdBy,_that.createdAt,_that.revokedBy,_that.revokedAt,_that.updatedAt,_that.deletedAt);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -204,10 +205,10 @@ return $default(_that.id,_that.title,_that.token,_that.redactedToken,_that.type,
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String title,  String? token, @JsonKey(name: 'redacted_token')  String? redactedToken,  String type, @JsonKey(name: 'last_used_at')  DateTime? lastUsedAt, @JsonKey(name: 'created_by')  String createdBy,  DateTime createdAt,  DateTime updatedAt,  DateTime? deletedAt, @JsonKey(name: 'revoked_at')  DateTime? revokedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String token,  String redacted,  String title,  String type, @JsonKey(name: 'last_used_at')  DateTime? lastUsedAt, @JsonKey(name: 'created_by')  String createdBy, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'revoked_by')  String? revokedBy, @JsonKey(name: 'revoked_at')  DateTime? revokedAt, @JsonKey(name: 'updated_at')  DateTime updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _ApiKey() when $default != null:
-return $default(_that.id,_that.title,_that.token,_that.redactedToken,_that.type,_that.lastUsedAt,_that.createdBy,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.revokedAt);case _:
+return $default(_that.id,_that.token,_that.redacted,_that.title,_that.type,_that.lastUsedAt,_that.createdBy,_that.createdAt,_that.revokedBy,_that.revokedAt,_that.updatedAt,_that.deletedAt);case _:
   return null;
 
 }
@@ -219,20 +220,21 @@ return $default(_that.id,_that.title,_that.token,_that.redactedToken,_that.type,
 @JsonSerializable()
 
 class _ApiKey implements ApiKey {
-  const _ApiKey({required this.id, required this.title, this.token, @JsonKey(name: 'redacted_token') this.redactedToken, required this.type, @JsonKey(name: 'last_used_at') this.lastUsedAt, @JsonKey(name: 'created_by') required this.createdBy, required this.createdAt, required this.updatedAt, this.deletedAt, @JsonKey(name: 'revoked_at') this.revokedAt});
+  const _ApiKey({required this.id, required this.token, required this.redacted, required this.title, required this.type, @JsonKey(name: 'last_used_at') this.lastUsedAt, @JsonKey(name: 'created_by') required this.createdBy, @JsonKey(name: 'created_at') required this.createdAt, @JsonKey(name: 'revoked_by') this.revokedBy, @JsonKey(name: 'revoked_at') this.revokedAt, @JsonKey(name: 'updated_at') required this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt});
   factory _ApiKey.fromJson(Map<String, dynamic> json) => _$ApiKeyFromJson(json);
 
 @override final  String id;
+@override final  String token;
+@override final  String redacted;
 @override final  String title;
-@override final  String? token;
-@override@JsonKey(name: 'redacted_token') final  String? redactedToken;
 @override final  String type;
 @override@JsonKey(name: 'last_used_at') final  DateTime? lastUsedAt;
 @override@JsonKey(name: 'created_by') final  String createdBy;
-@override final  DateTime createdAt;
-@override final  DateTime updatedAt;
-@override final  DateTime? deletedAt;
+@override@JsonKey(name: 'created_at') final  DateTime createdAt;
+@override@JsonKey(name: 'revoked_by') final  String? revokedBy;
 @override@JsonKey(name: 'revoked_at') final  DateTime? revokedAt;
+@override@JsonKey(name: 'updated_at') final  DateTime updatedAt;
+@override@JsonKey(name: 'deleted_at') final  DateTime? deletedAt;
 
 /// Create a copy of ApiKey
 /// with the given fields replaced by the non-null parameter values.
@@ -247,16 +249,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ApiKey&&(identical(other.id, id) || other.id == id)&&(identical(other.title, title) || other.title == title)&&(identical(other.token, token) || other.token == token)&&(identical(other.redactedToken, redactedToken) || other.redactedToken == redactedToken)&&(identical(other.type, type) || other.type == type)&&(identical(other.lastUsedAt, lastUsedAt) || other.lastUsedAt == lastUsedAt)&&(identical(other.createdBy, createdBy) || other.createdBy == createdBy)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.deletedAt, deletedAt) || other.deletedAt == deletedAt)&&(identical(other.revokedAt, revokedAt) || other.revokedAt == revokedAt));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ApiKey&&(identical(other.id, id) || other.id == id)&&(identical(other.token, token) || other.token == token)&&(identical(other.redacted, redacted) || other.redacted == redacted)&&(identical(other.title, title) || other.title == title)&&(identical(other.type, type) || other.type == type)&&(identical(other.lastUsedAt, lastUsedAt) || other.lastUsedAt == lastUsedAt)&&(identical(other.createdBy, createdBy) || other.createdBy == createdBy)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.revokedBy, revokedBy) || other.revokedBy == revokedBy)&&(identical(other.revokedAt, revokedAt) || other.revokedAt == revokedAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.deletedAt, deletedAt) || other.deletedAt == deletedAt));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,title,token,redactedToken,type,lastUsedAt,createdBy,createdAt,updatedAt,deletedAt,revokedAt);
+int get hashCode => Object.hash(runtimeType,id,token,redacted,title,type,lastUsedAt,createdBy,createdAt,revokedBy,revokedAt,updatedAt,deletedAt);
 
 @override
 String toString() {
-  return 'ApiKey(id: $id, title: $title, token: $token, redactedToken: $redactedToken, type: $type, lastUsedAt: $lastUsedAt, createdBy: $createdBy, createdAt: $createdAt, updatedAt: $updatedAt, deletedAt: $deletedAt, revokedAt: $revokedAt)';
+  return 'ApiKey(id: $id, token: $token, redacted: $redacted, title: $title, type: $type, lastUsedAt: $lastUsedAt, createdBy: $createdBy, createdAt: $createdAt, revokedBy: $revokedBy, revokedAt: $revokedAt, updatedAt: $updatedAt, deletedAt: $deletedAt)';
 }
 
 
@@ -267,7 +269,7 @@ abstract mixin class _$ApiKeyCopyWith<$Res> implements $ApiKeyCopyWith<$Res> {
   factory _$ApiKeyCopyWith(_ApiKey value, $Res Function(_ApiKey) _then) = __$ApiKeyCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String title, String? token,@JsonKey(name: 'redacted_token') String? redactedToken, String type,@JsonKey(name: 'last_used_at') DateTime? lastUsedAt,@JsonKey(name: 'created_by') String createdBy, DateTime createdAt, DateTime updatedAt, DateTime? deletedAt,@JsonKey(name: 'revoked_at') DateTime? revokedAt
+ String id, String token, String redacted, String title, String type,@JsonKey(name: 'last_used_at') DateTime? lastUsedAt,@JsonKey(name: 'created_by') String createdBy,@JsonKey(name: 'created_at') DateTime createdAt,@JsonKey(name: 'revoked_by') String? revokedBy,@JsonKey(name: 'revoked_at') DateTime? revokedAt,@JsonKey(name: 'updated_at') DateTime updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
 });
 
 
@@ -284,19 +286,20 @@ class __$ApiKeyCopyWithImpl<$Res>
 
 /// Create a copy of ApiKey
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? title = null,Object? token = freezed,Object? redactedToken = freezed,Object? type = null,Object? lastUsedAt = freezed,Object? createdBy = null,Object? createdAt = null,Object? updatedAt = null,Object? deletedAt = freezed,Object? revokedAt = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? token = null,Object? redacted = null,Object? title = null,Object? type = null,Object? lastUsedAt = freezed,Object? createdBy = null,Object? createdAt = null,Object? revokedBy = freezed,Object? revokedAt = freezed,Object? updatedAt = null,Object? deletedAt = freezed,}) {
   return _then(_ApiKey(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,token: null == token ? _self.token : token // ignore: cast_nullable_to_non_nullable
+as String,redacted: null == redacted ? _self.redacted : redacted // ignore: cast_nullable_to_non_nullable
 as String,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
-as String,token: freezed == token ? _self.token : token // ignore: cast_nullable_to_non_nullable
-as String?,redactedToken: freezed == redactedToken ? _self.redactedToken : redactedToken // ignore: cast_nullable_to_non_nullable
-as String?,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
+as String,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
 as String,lastUsedAt: freezed == lastUsedAt ? _self.lastUsedAt : lastUsedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,createdBy: null == createdBy ? _self.createdBy : createdBy // ignore: cast_nullable_to_non_nullable
 as String,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime,revokedBy: freezed == revokedBy ? _self.revokedBy : revokedBy // ignore: cast_nullable_to_non_nullable
+as String?,revokedAt: freezed == revokedAt ? _self.revokedAt : revokedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
 as DateTime,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
-as DateTime?,revokedAt: freezed == revokedAt ? _self.revokedAt : revokedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,
   ));
 }

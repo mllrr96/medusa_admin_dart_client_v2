@@ -1,29 +1,47 @@
 
-import '../api/campaigns_api.dart';
-import '../models/campaign.dart';
+
+import 'package:medusa_admin_dart_client/src/features/campaigns/data/api/campaigns_api.dart';
+import 'package:medusa_admin_dart_client/src/features/campaigns/data/models/campaign_delete_res.dart';
+import 'package:medusa_admin_dart_client/src/features/campaigns/data/models/campaign_res.dart';
+import 'package:medusa_admin_dart_client/src/features/campaigns/data/models/campaigns_list_res.dart';
+import 'package:medusa_admin_dart_client/src/features/campaigns/data/models/create_campaign_req.dart';
+import 'package:medusa_admin_dart_client/src/features/campaigns/data/models/manage_promotions_req.dart';
+import 'package:medusa_admin_dart_client/src/features/campaigns/data/models/update_campaign_req.dart';
 
 class CampaignsRepository {
   CampaignsRepository(this._campaignsApi);
 
   final CampaignsApi _campaignsApi;
 
-  Future<List<Campaign>> list({Map<String, dynamic>? queryParameters}) {
+  Future<CampaignsListRes> list({
+    Map<String, dynamic>? queryParameters,
+  }) {
     return _campaignsApi.list(queryParameters: queryParameters);
   }
 
-  Future<Campaign> create(Map<String, dynamic> body) {
+  Future<CampaignRes> create(CreateCampaignReq body) {
     return _campaignsApi.create(body);
   }
 
-  Future<Campaign> retrieve(String id) {
+  Future<CampaignRes> retrieve(String id) {
     return _campaignsApi.retrieve(id);
   }
 
-  Future<Campaign> update(String id, Map<String, dynamic> body) {
+  Future<CampaignRes> update(
+    String id,
+    UpdateCampaignReq body,
+  ) {
     return _campaignsApi.update(id, body);
   }
 
-  Future<void> delete(String id) {
+  Future<CampaignDeleteRes> delete(String id) {
     return _campaignsApi.delete(id);
+  }
+
+  Future<CampaignRes> managePromotions(
+    String id,
+    ManagePromotionsReq body,
+  ) {
+    return _campaignsApi.managePromotions(id, body);
   }
 }
