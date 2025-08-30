@@ -110,6 +110,7 @@ Each of the following features has been migrated to the new v2 structure, includ
 - `currencies`
 - `plugins`
 - `uploads`
+- `transaction_groups`
 
 ## Development Process
 
@@ -120,3 +121,4 @@ We are using the `summery` text files as the source of truth and comparing it to
 - When creating a class with the `@freezed` annotation, it must be declared as `abstract`.
 - For any query parameters, add a `Map<String, dynamic>? queryParameters` to the method signature and pass it to the API call.
 - **NEVER** add `Admin` to a class name. All classes should be named normally, without the `Admin` prefix.
+- When creating a new file do NOT add import 'package:medusa_admin_dart_client/medusa_admin.dart';
