@@ -108,6 +108,8 @@ Each of the following features has been migrated to the new v2 structure, includ
 - `api_keys`
 - `campaigns`
 - `currencies`
+- `plugins`
+- `uploads`
 
 ## Development Process
 

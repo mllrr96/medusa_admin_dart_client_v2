@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Upload {
 
- String get id; String get url; String get mimeType; String get key; DateTime get createdAt; DateTime get updatedAt; DateTime? get deletedAt;
+ String get id; String get url;
 /// Create a copy of Upload
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $UploadCopyWith<Upload> get copyWith => _$UploadCopyWithImpl<Upload>(this as Upl
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Upload&&(identical(other.id, id) || other.id == id)&&(identical(other.url, url) || other.url == url)&&(identical(other.mimeType, mimeType) || other.mimeType == mimeType)&&(identical(other.key, key) || other.key == key)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.deletedAt, deletedAt) || other.deletedAt == deletedAt));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Upload&&(identical(other.id, id) || other.id == id)&&(identical(other.url, url) || other.url == url));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,url,mimeType,key,createdAt,updatedAt,deletedAt);
+int get hashCode => Object.hash(runtimeType,id,url);
 
 @override
 String toString() {
-  return 'Upload(id: $id, url: $url, mimeType: $mimeType, key: $key, createdAt: $createdAt, updatedAt: $updatedAt, deletedAt: $deletedAt)';
+  return 'Upload(id: $id, url: $url)';
 }
 
 
@@ -48,7 +48,7 @@ abstract mixin class $UploadCopyWith<$Res>  {
   factory $UploadCopyWith(Upload value, $Res Function(Upload) _then) = _$UploadCopyWithImpl;
 @useResult
 $Res call({
- String id, String url, String mimeType, String key, DateTime createdAt, DateTime updatedAt, DateTime? deletedAt
+ String id, String url
 });
 
 
@@ -65,16 +65,11 @@ class _$UploadCopyWithImpl<$Res>
 
 /// Create a copy of Upload
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? url = null,Object? mimeType = null,Object? key = null,Object? createdAt = null,Object? updatedAt = null,Object? deletedAt = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? url = null,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,url: null == url ? _self.url : url // ignore: cast_nullable_to_non_nullable
-as String,mimeType: null == mimeType ? _self.mimeType : mimeType // ignore: cast_nullable_to_non_nullable
-as String,key: null == key ? _self.key : key // ignore: cast_nullable_to_non_nullable
-as String,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
-as DateTime?,
+as String,
   ));
 }
 
@@ -159,10 +154,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String url,  String mimeType,  String key,  DateTime createdAt,  DateTime updatedAt,  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String url)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Upload() when $default != null:
-return $default(_that.id,_that.url,_that.mimeType,_that.key,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
+return $default(_that.id,_that.url);case _:
   return orElse();
 
 }
@@ -180,10 +175,10 @@ return $default(_that.id,_that.url,_that.mimeType,_that.key,_that.createdAt,_tha
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String url,  String mimeType,  String key,  DateTime createdAt,  DateTime updatedAt,  DateTime? deletedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String url)  $default,) {final _that = this;
 switch (_that) {
 case _Upload():
-return $default(_that.id,_that.url,_that.mimeType,_that.key,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
+return $default(_that.id,_that.url);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -200,10 +195,10 @@ return $default(_that.id,_that.url,_that.mimeType,_that.key,_that.createdAt,_tha
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String url,  String mimeType,  String key,  DateTime createdAt,  DateTime updatedAt,  DateTime? deletedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String url)?  $default,) {final _that = this;
 switch (_that) {
 case _Upload() when $default != null:
-return $default(_that.id,_that.url,_that.mimeType,_that.key,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
+return $default(_that.id,_that.url);case _:
   return null;
 
 }
@@ -215,16 +210,11 @@ return $default(_that.id,_that.url,_that.mimeType,_that.key,_that.createdAt,_tha
 @JsonSerializable()
 
 class _Upload implements Upload {
-  const _Upload({required this.id, required this.url, required this.mimeType, required this.key, required this.createdAt, required this.updatedAt, this.deletedAt});
+  const _Upload({required this.id, required this.url});
   factory _Upload.fromJson(Map<String, dynamic> json) => _$UploadFromJson(json);
 
 @override final  String id;
 @override final  String url;
-@override final  String mimeType;
-@override final  String key;
-@override final  DateTime createdAt;
-@override final  DateTime updatedAt;
-@override final  DateTime? deletedAt;
 
 /// Create a copy of Upload
 /// with the given fields replaced by the non-null parameter values.
@@ -239,16 +229,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Upload&&(identical(other.id, id) || other.id == id)&&(identical(other.url, url) || other.url == url)&&(identical(other.mimeType, mimeType) || other.mimeType == mimeType)&&(identical(other.key, key) || other.key == key)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.deletedAt, deletedAt) || other.deletedAt == deletedAt));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Upload&&(identical(other.id, id) || other.id == id)&&(identical(other.url, url) || other.url == url));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,url,mimeType,key,createdAt,updatedAt,deletedAt);
+int get hashCode => Object.hash(runtimeType,id,url);
 
 @override
 String toString() {
-  return 'Upload(id: $id, url: $url, mimeType: $mimeType, key: $key, createdAt: $createdAt, updatedAt: $updatedAt, deletedAt: $deletedAt)';
+  return 'Upload(id: $id, url: $url)';
 }
 
 
@@ -259,7 +249,7 @@ abstract mixin class _$UploadCopyWith<$Res> implements $UploadCopyWith<$Res> {
   factory _$UploadCopyWith(_Upload value, $Res Function(_Upload) _then) = __$UploadCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String url, String mimeType, String key, DateTime createdAt, DateTime updatedAt, DateTime? deletedAt
+ String id, String url
 });
 
 
@@ -276,16 +266,11 @@ class __$UploadCopyWithImpl<$Res>
 
 /// Create a copy of Upload
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? url = null,Object? mimeType = null,Object? key = null,Object? createdAt = null,Object? updatedAt = null,Object? deletedAt = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? url = null,}) {
   return _then(_Upload(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,url: null == url ? _self.url : url // ignore: cast_nullable_to_non_nullable
-as String,mimeType: null == mimeType ? _self.mimeType : mimeType // ignore: cast_nullable_to_non_nullable
-as String,key: null == key ? _self.key : key // ignore: cast_nullable_to_non_nullable
-as String,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
-as DateTime?,
+as String,
   ));
 }
 
