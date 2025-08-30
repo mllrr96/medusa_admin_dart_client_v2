@@ -112,6 +112,8 @@ Each of the following features has been migrated to the new v2 structure, includ
 - `uploads`
 - `transaction_groups`
 - `tax_providers`
+- `products`
+- `collections`
 
 ## Development Process
 

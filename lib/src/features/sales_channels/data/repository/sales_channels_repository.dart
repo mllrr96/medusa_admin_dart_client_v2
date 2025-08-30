@@ -28,4 +28,8 @@ class SalesChannelsRepository {
   Future<void> delete(String id) {
     return _salesChannelsApi.delete(id);
   }
+
+  Future<SalesChannel> manageProducts(String id, Map<String, dynamic> body) {
+    return _salesChannelsApi.manageProducts(id, body);
+  }
 }

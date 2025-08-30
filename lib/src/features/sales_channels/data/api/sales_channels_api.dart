@@ -27,4 +27,10 @@ abstract class SalesChannelsApi {
 
   @DELETE('/admin/sales-channels/{id}')
   Future<void> delete(@Path('id') String id);
+
+  @POST('/admin/sales-channels/{id}/products')
+  Future<SalesChannel> manageProducts(
+    @Path('id') String id,
+    @Body() ManageProductsReq body,
+  );
 }
