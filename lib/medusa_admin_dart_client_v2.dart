@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:medusa_admin_dart_client/src/features/auth/data/repository/auth_repository.dart';
 import 'package:medusa_admin_dart_client/src/core/di/di.dart';
 import 'package:medusa_admin_dart_client/src/features/sales_channels/data/repository/sales_channels_repository.dart';
@@ -46,12 +47,12 @@ export 'package:medusa_admin_dart_client/src/features/uploads/data/models/models
 export 'package:medusa_admin_dart_client/src/features/users/data/models/models.dart';
 
 class MedusaAdminV2 {
-  MedusaAdminV2._({String? baseUrl}) {
-    configureDependencies(baseUrl: baseUrl);
+  MedusaAdminV2._({String? baseUrl, List<Interceptor>? interceptors}) {
+    configureDependencies(baseUrl: baseUrl, interceptors: interceptors);
   }
 
-  static MedusaAdminV2 initialize({String? baseUrl}) {
-    return MedusaAdminV2._(baseUrl: baseUrl);
+  static MedusaAdminV2 initialize({String? baseUrl, List<Interceptor>? interceptors}) {
+    return MedusaAdminV2._(baseUrl: baseUrl, interceptors: interceptors);
   }
 
   static final MedusaAdminV2 _instance = MedusaAdminV2._();
