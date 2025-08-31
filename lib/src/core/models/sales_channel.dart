@@ -9,11 +9,11 @@ abstract class SalesChannel with _$SalesChannel {
     required String id,
     required String name,
     String? description,
-    @JsonKey(name: 'is_disabled') required bool isDisabled,
-    @JsonKey(name: 'created_at') DateTime? createdAt,
-    @JsonKey(name: 'updated_at') DateTime? updatedAt,
-    @JsonKey(name: 'deleted_at') DateTime? deletedAt,
+    required bool isDisabled,
     Map<String, dynamic>? metadata,
+    required DateTime createdAt,
+    required DateTime updatedAt,
+    DateTime? deletedAt,
   }) = _SalesChannel;
 
   factory SalesChannel.fromJson(Map<String, dynamic> json) =>

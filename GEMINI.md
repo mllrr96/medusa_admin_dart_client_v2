@@ -114,6 +114,8 @@ Each of the following features has been migrated to the new v2 structure, includ
 - `refund_reasons`
 - `product_categories`
 - `workflows_executions`
+- `fulfillment_sets`
+- `stock_locations`
 
 ## Development Process
 

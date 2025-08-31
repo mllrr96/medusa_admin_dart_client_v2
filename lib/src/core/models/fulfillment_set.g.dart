@@ -1,18 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'sales_channel.dart';
+part of 'fulfillment_set.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_SalesChannel _$SalesChannelFromJson(Map<String, dynamic> json) =>
-    _SalesChannel(
+_FulfillmentSet _$FulfillmentSetFromJson(Map<String, dynamic> json) =>
+    _FulfillmentSet(
       id: json['id'] as String,
       name: json['name'] as String,
-      description: json['description'] as String?,
-      isDisabled: json['isDisabled'] as bool,
-      metadata: json['metadata'] as Map<String, dynamic>?,
+      type: json['type'] as String,
+      location: StockLocation.fromJson(
+        json['location'] as Map<String, dynamic>,
+      ),
+      serviceZones: (json['serviceZones'] as List<dynamic>)
+          .map((e) => ServiceZone.fromJson(e as Map<String, dynamic>))
+          .toList(),
       createdAt: DateTime.parse(json['createdAt'] as String),
       updatedAt: DateTime.parse(json['updatedAt'] as String),
       deletedAt: json['deletedAt'] == null
@@ -20,13 +24,13 @@ _SalesChannel _$SalesChannelFromJson(Map<String, dynamic> json) =>
           : DateTime.parse(json['deletedAt'] as String),
     );
 
-Map<String, dynamic> _$SalesChannelToJson(_SalesChannel instance) =>
+Map<String, dynamic> _$FulfillmentSetToJson(_FulfillmentSet instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'description': instance.description,
-      'isDisabled': instance.isDisabled,
-      'metadata': instance.metadata,
+      'type': instance.type,
+      'location': instance.location,
+      'serviceZones': instance.serviceZones,
       'createdAt': instance.createdAt.toIso8601String(),
       'updatedAt': instance.updatedAt.toIso8601String(),
       'deletedAt': instance.deletedAt?.toIso8601String(),
