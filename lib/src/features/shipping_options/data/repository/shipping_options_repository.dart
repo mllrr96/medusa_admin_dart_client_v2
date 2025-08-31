@@ -1,30 +1,66 @@
-import 'package:medusa_admin_dart_client/medusa_admin_dart_client_v2.dart';
+
 import 'package:medusa_admin_dart_client/src/features/shipping_options/data/api/shipping_options_api.dart';
+import 'package:medusa_admin_dart_client/src/features/shipping_options/data/models/batch_update_shipping_option_rules_req.dart';
+import 'package:medusa_admin_dart_client/src/features/shipping_options/data/models/batch_update_shipping_option_rules_res.dart';
+import 'package:medusa_admin_dart_client/src/features/shipping_options/data/models/create_shipping_option_req.dart';
+import 'package:medusa_admin_dart_client/src/features/shipping_options/data/models/shipping_option_delete_res.dart';
+import 'package:medusa_admin_dart_client/src/features/shipping_options/data/models/shipping_option_list_res.dart';
+import 'package:medusa_admin_dart_client/src/features/shipping_options/data/models/shipping_option_res.dart';
+import 'package:medusa_admin_dart_client/src/features/shipping_options/data/models/update_shipping_option_req.dart';
 
 class ShippingOptionsRepository {
-  ShippingOptionsRepository(this._shippingOptionsApi);
-
   final ShippingOptionsApi _shippingOptionsApi;
 
-  Future<List<ShippingOption>> retrieveAll({
-    Map<String, dynamic>? queryParameters,
-  }) {
-    return _shippingOptionsApi.retrieveAll(query: queryParameters);
+  ShippingOptionsRepository(this._shippingOptionsApi);
+
+  Future<ShippingOptionListRes> list({
+    Map<String, dynamic>? query,
+  }) async {
+    return await _shippingOptionsApi.getShippingOptions(query: query);
   }
 
-  Future<ShippingOption> retrieve(String id) {
-    return _shippingOptionsApi.retrieve(id);
+  Future<ShippingOptionRes> create({
+    required CreateShippingOptionReq body,
+    Map<String, dynamic>? query,
+  }) async {
+    return await _shippingOptionsApi.createShippingOption(body: body, query: query);
   }
 
-  Future<ShippingOption> create(Map<String, dynamic> body) {
-    return _shippingOptionsApi.create(body);
+  Future<ShippingOptionRes> retrieve({
+    required String id,
+    Map<String, dynamic>? query,
+  }) async {
+    return await _shippingOptionsApi.getShippingOption(id: id, query: query);
   }
 
-  Future<ShippingOption> update(String id, Map<String, dynamic> body) {
-    return _shippingOptionsApi.update(id, body);
+  Future<ShippingOptionRes> update({
+    required String id,
+    required UpdateShippingOptionReq body,
+    Map<String, dynamic>? query,
+  }) async {
+    return await _shippingOptionsApi.updateShippingOption(
+      id: id,
+      body: body,
+      query: query,
+    );
   }
 
-  Future<void> delete(String id) {
-    return _shippingOptionsApi.delete(id);
+  Future<ShippingOptionDeleteRes> delete({
+    required String id,
+    Map<String, dynamic>? query,
+  }) async {
+    return await _shippingOptionsApi.deleteShippingOption(id: id, query: query);
+  }
+
+  Future<BatchUpdateShippingOptionRulesRes> batchUpdateRules({
+    required String id,
+    required BatchUpdateShippingOptionRulesReq body,
+    Map<String, dynamic>? query,
+  }) async {
+    return await _shippingOptionsApi.batchUpdateShippingOptionRules(
+      id: id,
+      body: body,
+      query: query,
+    );
   }
 }

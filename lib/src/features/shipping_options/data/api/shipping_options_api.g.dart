@@ -18,7 +18,7 @@ class _ShippingOptionsApi implements ShippingOptionsApi {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<List<ShippingOption>> retrieveAll({
+  Future<ShippingOptionListRes> getShippingOptions({
     Map<String, dynamic>? query,
   }) async {
     final _extra = <String, dynamic>{};
@@ -27,7 +27,7 @@ class _ShippingOptionsApi implements ShippingOptionsApi {
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<List<ShippingOption>>(
+    final _options = _setStreamType<ShippingOptionListRes>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -37,41 +37,10 @@ class _ShippingOptionsApi implements ShippingOptionsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<List<dynamic>>(_options);
-    late List<ShippingOption> _value;
-    try {
-      _value = _result.data!
-          .map(
-            (dynamic i) => ShippingOption.fromJson(i as Map<String, dynamic>),
-          )
-          .toList();
-    } on Object catch (e, s) {
-      errorLogger?.logError(e, s, _options);
-      rethrow;
-    }
-    return _value;
-  }
-
-  @override
-  Future<ShippingOption> retrieve(String id) async {
-    final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
-    const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<ShippingOption>(
-      Options(method: 'GET', headers: _headers, extra: _extra)
-          .compose(
-            _dio.options,
-            '/admin/shipping-options/${id}',
-            queryParameters: queryParameters,
-            data: _data,
-          )
-          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
-    );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late ShippingOption _value;
+    late ShippingOptionListRes _value;
     try {
-      _value = ShippingOption.fromJson(_result.data!);
+      _value = ShippingOptionListRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -80,13 +49,17 @@ class _ShippingOptionsApi implements ShippingOptionsApi {
   }
 
   @override
-  Future<ShippingOption> create(Map<String, dynamic> body) async {
+  Future<ShippingOptionRes> createShippingOption({
+    required CreateShippingOptionReq body,
+    Map<String, dynamic>? query,
+  }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(query ?? <String, dynamic>{});
+    queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(body);
-    final _options = _setStreamType<ShippingOption>(
+    final _data = body;
+    final _options = _setStreamType<ShippingOptionRes>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -97,9 +70,9 @@ class _ShippingOptionsApi implements ShippingOptionsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late ShippingOption _value;
+    late ShippingOptionRes _value;
     try {
-      _value = ShippingOption.fromJson(_result.data!);
+      _value = ShippingOptionRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -108,13 +81,50 @@ class _ShippingOptionsApi implements ShippingOptionsApi {
   }
 
   @override
-  Future<ShippingOption> update(String id, Map<String, dynamic> body) async {
+  Future<ShippingOptionRes> getShippingOption({
+    required String id,
+    Map<String, dynamic>? query,
+  }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(query ?? <String, dynamic>{});
+    queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(body);
-    final _options = _setStreamType<ShippingOption>(
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<ShippingOptionRes>(
+      Options(method: 'GET', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            '/admin/shipping-options/${id}',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late ShippingOptionRes _value;
+    try {
+      _value = ShippingOptionRes.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<ShippingOptionRes> updateShippingOption({
+    required String id,
+    required UpdateShippingOptionReq body,
+    Map<String, dynamic>? query,
+  }) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(query ?? <String, dynamic>{});
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    final _data = body;
+    final _options = _setStreamType<ShippingOptionRes>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -125,9 +135,9 @@ class _ShippingOptionsApi implements ShippingOptionsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late ShippingOption _value;
+    late ShippingOptionRes _value;
     try {
-      _value = ShippingOption.fromJson(_result.data!);
+      _value = ShippingOptionRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -136,12 +146,17 @@ class _ShippingOptionsApi implements ShippingOptionsApi {
   }
 
   @override
-  Future<void> delete(String id) async {
+  Future<ShippingOptionDeleteRes> deleteShippingOption({
+    required String id,
+    Map<String, dynamic>? query,
+  }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(query ?? <String, dynamic>{});
+    queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<void>(
+    final _options = _setStreamType<ShippingOptionDeleteRes>(
       Options(method: 'DELETE', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -151,7 +166,48 @@ class _ShippingOptionsApi implements ShippingOptionsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    await _dio.fetch<void>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late ShippingOptionDeleteRes _value;
+    try {
+      _value = ShippingOptionDeleteRes.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<BatchUpdateShippingOptionRulesRes> batchUpdateShippingOptionRules({
+    required String id,
+    required BatchUpdateShippingOptionRulesReq body,
+    Map<String, dynamic>? query,
+  }) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(query ?? <String, dynamic>{});
+    queryParameters.removeWhere((k, v) => v == null);
+    final _headers = <String, dynamic>{};
+    final _data = body;
+    final _options = _setStreamType<BatchUpdateShippingOptionRulesRes>(
+      Options(method: 'POST', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            '/admin/shipping-options/${id}/rules/batch',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late BatchUpdateShippingOptionRulesRes _value;
+    try {
+      _value = BatchUpdateShippingOptionRulesRes.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
   }
 
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {

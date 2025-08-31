@@ -6,19 +6,6 @@ Endpoint: GET /admin/claims
   Security: api_token, cookie_auth, jwt_token
   Query Parameters:
     - fields, in=query, type=string, optional
-    - offset, in=query, type=number, optional
-    - limit, in=query, type=number, optional
-    - order, in=query, type=string, optional
-    - deleted_at, in=query, type=object, optional
-    - q, in=query, type=string, optional
-    - id, in=query, type=oneOf, optional
-    - order_id, in=query, type=oneOf, optional
-    - status, in=query, type=oneOf, optional
-    - created_at, in=query, type=object, optional
-    - updated_at, in=query, type=object, optional
-    - $and, in=query, type=array, optional
-    - $or, in=query, type=array, optional
-    - with_deleted, in=query, type=boolean, optional
   Responses:
     - Status: 200 - OK
       Content-Type: application/json

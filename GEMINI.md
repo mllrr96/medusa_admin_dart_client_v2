@@ -108,6 +108,7 @@ Each of the following features has been migrated to the new v2 structure, includ
 - `payments`
 - `price_preferences`
 - `order_edits`
+- `shipping_options`
 
 ## Development Process
 

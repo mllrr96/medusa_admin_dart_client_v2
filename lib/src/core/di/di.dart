@@ -32,6 +32,8 @@ import 'package:medusa_admin_dart_client/src/features/price_preferences/data/api
 import 'package:medusa_admin_dart_client/src/features/price_preferences/data/repository/price_preferences_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/order_edits/data/api/order_edits_api.dart';
 import 'package:medusa_admin_dart_client/src/features/order_edits/data/repository/order_edits_repository.dart';
+import 'package:medusa_admin_dart_client/src/features/shipping_options/data/api/shipping_options_api.dart';
+import 'package:medusa_admin_dart_client/src/features/shipping_options/data/repository/shipping_options_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/products/data/api/products_api.dart';
 import 'package:medusa_admin_dart_client/src/features/regions/data/api/regions_api.dart';
 import 'package:medusa_admin_dart_client/src/features/return_reasons/data/api/return_reasons_api.dart';
@@ -297,5 +299,13 @@ void configureDependencies({String? baseUrl, List<Interceptor>? interceptors}) {
   );
   getIt.registerLazySingleton<OrderEditsRepository>(
     () => OrderEditsRepository(getIt<OrderEditsApi>()),
+  );
+
+  // Shipping Options
+  getIt.registerLazySingleton<ShippingOptionsApi>(
+    () => ShippingOptionsApi(getIt<Dio>()),
+  );
+  getIt.registerLazySingleton<ShippingOptionsRepository>(
+    () => ShippingOptionsRepository(getIt<ShippingOptionsApi>()),
   );
 }
