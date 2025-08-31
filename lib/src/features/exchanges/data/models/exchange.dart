@@ -1,93 +1,46 @@
-import 'package:medusa_admin_dart_client/src/core/models/return.dart';
-import 'package:medusa_admin_dart_client/src/core/models/order_shipping_method.dart';
-import 'package:medusa_admin_dart_client/src/features/orders/data/models/order.dart';
-import 'base_exchange_item.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:medusa_admin_dart_client_v2/medusa_admin.dart';
 
-class Exchange {
-  final String? orderId;
-  final List<ReturnItem>? returnItems;
-  final List<BaseExchangeItem>? additionalItems;
-  final bool? noNotification;
-  final num? differenceDue;
-  final Return? returnOrder;
-  final String? returnId;
-  final String? id;
-  final String? displayId;
-  final List<OrderShippingMethod>? shippingMethods;
-  final List<OrderTransaction>? transactions;
-  final Map<String, dynamic>? metadata;
-  final DateTime? createdAt;
-  final DateTime? updatedAt;
-  final String? orderVersion;
-  final String? createdBy;
-  final DateTime? canceledAt;
-  final DateTime? deletedAt;
-  final Order? order;
-  final bool? allowBackorder;
+part 'exchange.freezed.dart';
+part 'exchange.g.dart';
 
-  Exchange({
-    this.orderId,
-    this.returnItems,
-    this.additionalItems,
-    this.noNotification,
-    this.differenceDue,
-    this.returnOrder,
-    this.returnId,
-    this.id,
-    this.displayId,
-    this.shippingMethods,
-    this.transactions,
-    this.metadata,
-    this.createdAt,
-    this.updatedAt,
-    this.orderVersion,
-    this.createdBy,
-    this.canceledAt,
-    this.deletedAt,
-    this.order,
-    this.allowBackorder,
-  });
+@freezed
+class Exchange with _$Exchange {
+  const factory Exchange({
+    required String id,
+    @JsonKey(name: 'created_at') required DateTime createdAt,
+    @JsonKey(name: 'updated_at') required DateTime updatedAt,
+    @JsonKey(name: 'deleted_at') DateTime? deletedAt,
+    @JsonKey(name: 'order_id') required String orderId,
+    required Order order,
+    required List<LineItem> items,
+    required List<Fulfillment> fulfillments,
+    required List<Return> returns,
+    @JsonKey(name: 'shipping_methods') required List<ShippingMethod> shippingMethods,
+  }) = _Exchange;
 
-  factory Exchange.fromJson(Map<String, dynamic> json) {
-    return Exchange(
-      orderId: json['order_id'],
-      returnItems: json['return_items'] != null
-          ? List<ReturnItem>.from(
-              json['return_items'].map((x) => ReturnItem.fromJson(x)))
-          : null,
-      additionalItems: json['additional_items'] != null
-          ? List<BaseExchangeItem>.from(json['additional_items']
-              .map((x) => BaseExchangeItem.fromJson(x)))
-          : null,
-      noNotification: json['no_notification'],
-      differenceDue: json['difference_due'],
-      returnOrder:
-          json['return'] != null ? Return.fromJson(json['return']) : null,
-      returnId: json['return_id'],
-      id: json['id'],
-      displayId: json['display_id'],
-      shippingMethods: json['shipping_methods'] != null
-          ? List<BaseOrderShippingMethod>.from(json['shipping_methods']
-              .map((x) => BaseOrderShippingMethod.fromJson(x)))
-          : null,
-      transactions: json['transactions'] != null
-          ? List<BaseOrderTransaction>.from(json['transactions']
-              .map((x) => BaseOrderTransaction.fromJson(x)))
-          : null,
-      metadata: json['metadata'],
-      createdAt:
-          json['created_at'] != null ? DateTime.parse(json['created_at']) : null,
-      updatedAt:
-          json['updated_at'] != null ? DateTime.parse(json['updated_at']) : null,
-      orderVersion: json['order_version'],
-      createdBy: json['created_by'],
-      canceledAt: json['canceled_at'] != null
-          ? DateTime.parse(json['canceled_at'])
-          : null,
-      deletedAt:
-          json['deleted_at'] != null ? DateTime.parse(json['deleted_at']) : null,
-      order: json['order'] != null ? BaseOrder.fromJson(json['order']) : null,
-      allowBackorder: json['allow_backorder'],
-    );
-  }
+  factory Exchange.fromJson(Map<String, dynamic> json) => _$ExchangeFromJson(json);
+}
+
+@freezed
+class AdminExchangesRes with _$AdminExchangesRes {
+  const factory AdminExchangesRes({
+    required Exchange exchange,
+  }) = _AdminExchangesRes;
+
+  factory AdminExchangesRes.fromJson(Map<String, dynamic> json) =>
+      _$AdminExchangesResFromJson(json);
+}
+
+@freezed
+class AdminExchangesListRes with _$AdminExchangesListRes {
+  const factory AdminExchangesListRes({
+    required List<Exchange> exchanges,
+    required int count,
+    required int offset,
+    required int limit,
+  }) = _AdminExchangesListRes;
+
+  factory AdminExchangesListRes.fromJson(Map<String, dynamic> json) =>
+      _$AdminExchangesListResFromJson(json);
 }

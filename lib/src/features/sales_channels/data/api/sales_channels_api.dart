@@ -1,7 +1,8 @@
 import 'package:dio/dio.dart';
-import 'package:medusa_admin_dart_client/medusa_admin_dart_client_v2.dart';
 import 'package:medusa_admin_dart_client/src/features/sales_channels/data/models/manage_products_req.dart';
 import 'package:retrofit/retrofit.dart';
+
+import '../models/sales_channel.dart';
 
 part 'sales_channels_api.g.dart';
 

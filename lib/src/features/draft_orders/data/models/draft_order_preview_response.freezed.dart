@@ -28,12 +28,12 @@ $DraftOrderPreviewResponseCopyWith<DraftOrderPreviewResponse> get copyWith => _$
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is DraftOrderPreviewResponse&&const DeepCollectionEquality().equals(other.draftOrderPreview, draftOrderPreview));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DraftOrderPreviewResponse&&(identical(other.draftOrderPreview, draftOrderPreview) || other.draftOrderPreview == draftOrderPreview));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(draftOrderPreview));
+int get hashCode => Object.hash(runtimeType,draftOrderPreview);
 
 @override
 String toString() {
@@ -52,7 +52,7 @@ $Res call({
 });
 
 
-
+$DraftOrderPreviewCopyWith<$Res> get draftOrderPreview;
 
 }
 /// @nodoc
@@ -65,13 +65,22 @@ class _$DraftOrderPreviewResponseCopyWithImpl<$Res>
 
 /// Create a copy of DraftOrderPreviewResponse
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? draftOrderPreview = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? draftOrderPreview = null,}) {
   return _then(_self.copyWith(
-draftOrderPreview: freezed == draftOrderPreview ? _self.draftOrderPreview : draftOrderPreview // ignore: cast_nullable_to_non_nullable
+draftOrderPreview: null == draftOrderPreview ? _self.draftOrderPreview : draftOrderPreview // ignore: cast_nullable_to_non_nullable
 as DraftOrderPreview,
   ));
 }
-
+/// Create a copy of DraftOrderPreviewResponse
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$DraftOrderPreviewCopyWith<$Res> get draftOrderPreview {
+  
+  return $DraftOrderPreviewCopyWith<$Res>(_self.draftOrderPreview, (value) {
+    return _then(_self.copyWith(draftOrderPreview: value));
+  });
+}
 }
 
 
@@ -227,12 +236,12 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _DraftOrderPreviewResponse&&const DeepCollectionEquality().equals(other.draftOrderPreview, draftOrderPreview));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _DraftOrderPreviewResponse&&(identical(other.draftOrderPreview, draftOrderPreview) || other.draftOrderPreview == draftOrderPreview));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,const DeepCollectionEquality().hash(draftOrderPreview));
+int get hashCode => Object.hash(runtimeType,draftOrderPreview);
 
 @override
 String toString() {
@@ -251,7 +260,7 @@ $Res call({
 });
 
 
-
+@override $DraftOrderPreviewCopyWith<$Res> get draftOrderPreview;
 
 }
 /// @nodoc
@@ -264,14 +273,23 @@ class __$DraftOrderPreviewResponseCopyWithImpl<$Res>
 
 /// Create a copy of DraftOrderPreviewResponse
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? draftOrderPreview = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? draftOrderPreview = null,}) {
   return _then(_DraftOrderPreviewResponse(
-draftOrderPreview: freezed == draftOrderPreview ? _self.draftOrderPreview : draftOrderPreview // ignore: cast_nullable_to_non_nullable
+draftOrderPreview: null == draftOrderPreview ? _self.draftOrderPreview : draftOrderPreview // ignore: cast_nullable_to_non_nullable
 as DraftOrderPreview,
   ));
 }
 
-
+/// Create a copy of DraftOrderPreviewResponse
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$DraftOrderPreviewCopyWith<$Res> get draftOrderPreview {
+  
+  return $DraftOrderPreviewCopyWith<$Res>(_self.draftOrderPreview, (value) {
+    return _then(_self.copyWith(draftOrderPreview: value));
+  });
+}
 }
 
 // dart format on

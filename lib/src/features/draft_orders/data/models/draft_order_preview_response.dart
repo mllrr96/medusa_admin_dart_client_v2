@@ -1,6 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:medusa_admin_dart_client/medusa_admin_dart_client_v2.dart';
 
+import 'draft_order_preview.dart';
+
 part 'draft_order_preview_response.freezed.dart';
 part 'draft_order_preview_response.g.dart';
 

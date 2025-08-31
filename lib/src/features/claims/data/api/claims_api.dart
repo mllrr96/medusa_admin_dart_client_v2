@@ -1,5 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:medusa_admin_dart_client/src/features/claims/data/models/models.dart';
+import 'package:medusa_admin_dart_client/src/features/claims/data/models/post_claims_add_items_req.dart';
+import 'package:medusa_admin_dart_client/src/features/claims/data/models/post_claims_shipping_req.dart';
+import 'package:medusa_admin_dart_client/src/features/claims/data/models/post_returns_request_items_action_req.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'claims_api.g.dart';

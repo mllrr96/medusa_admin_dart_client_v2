@@ -1,5 +1,8 @@
 import 'package:medusa_admin_dart_client/src/features/claims/data/api/claims_api.dart';
 import 'package:medusa_admin_dart_client/src/features/claims/data/models/models.dart';
+import 'package:medusa_admin_dart_client/src/features/claims/data/models/post_claims_add_items_req.dart';
+import 'package:medusa_admin_dart_client/src/features/claims/data/models/post_claims_shipping_req.dart';
+import 'package:medusa_admin_dart_client/src/features/claims/data/models/post_returns_request_items_action_req.dart';
 
 class ClaimsRepository {
   final ClaimsApi _claimsApi;

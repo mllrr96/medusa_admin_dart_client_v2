@@ -2,6 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:medusa_admin_dart_client/src/core/models/product_collection.dart';
 import 'package:medusa_admin_dart_client/src/core/models/sales_channel.dart';
 
+import '../../features/sales_channels/data/models/sales_channel.dart';
 import 'image.dart';
 import 'product_option.dart';
 import 'product_tag.dart';
