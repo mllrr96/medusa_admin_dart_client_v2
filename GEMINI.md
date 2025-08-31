@@ -93,6 +93,7 @@ Each of the following features has been migrated to the new v2 structure, includ
 - `customer_groups`
 - `fulfillment_providers`
 - `fulfillments`
+- `invites`
 
 ## Development Process
 

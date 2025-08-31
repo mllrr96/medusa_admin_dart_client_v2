@@ -56,6 +56,8 @@ import '../../features/fulfillment_providers/data/api/fulfillment_providers_api.
 import '../../features/fulfillment_providers/data/repository/fulfillment_providers_repository.dart';
 import '../../features/fulfillments/data/api/fulfillments_api.dart';
 import '../../features/fulfillments/data/repository/fulfillments_repository.dart';
+import '../../features/invites/data/api/invites_api.dart';
+import '../../features/invites/data/repository/invites_repository.dart';
 
 final getIt = GetIt.instance;
 
@@ -255,5 +257,13 @@ void configureDependencies({String? baseUrl, List<Interceptor>? interceptors}) {
   );
   getIt.registerLazySingleton<FulfillmentsRepository>(
     () => FulfillmentsRepository(getIt<FulfillmentsApi>()),
+  );
+
+  // Invites
+  getIt.registerLazySingleton<InvitesApi>(
+    () => InvitesApi(getIt<Dio>()),
+  );
+  getIt.registerLazySingleton<InvitesRepository>(
+    () => InvitesRepository(getIt<InvitesApi>()),
   );
 }
