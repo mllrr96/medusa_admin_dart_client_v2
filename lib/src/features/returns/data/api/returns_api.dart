@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
-import 'package:medusa_admin_dart_client/medusa_admin_dart_client_v2.dart';
 import 'package:retrofit/retrofit.dart';
+
+import '../../../core/models/return.dart';
 
 part 'returns_api.g.dart';
 
@@ -8,23 +9,23 @@ part 'returns_api.g.dart';
 abstract class ReturnsApi {
   factory ReturnsApi(Dio dio, {String baseUrl}) = _ReturnsApi;
 
-  @GET('/admin/returns')
+  @GET('/returns')
   Future<List<Return>> retrieveAll({
     @Queries() Map<String, dynamic>? query,
   });
 
-  @GET('/admin/returns/{id}')
+  @GET('/returns/{id}')
   Future<Return> retrieve(@Path('id') String id);
 
-  @POST('/admin/returns')
+  @POST('/returns')
   Future<Return> create(@Body() Map<String, dynamic> body);
 
-  @POST('/admin/returns/{id}')
+  @POST('/returns/{id}')
   Future<Return> update(
     @Path('id') String id,
     @Body() Map<String, dynamic> body,
   );
 
-  @DELETE('/admin/returns/{id}')
+  @DELETE('/returns/{id}')
   Future<void> delete(@Path('id') String id);
 }
