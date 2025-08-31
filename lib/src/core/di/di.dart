@@ -52,6 +52,8 @@ import '../../features/return_reasons/data/api/return_reasons_api.dart';
 import '../../features/return_reasons/data/repository/return_reasons_repository.dart';
 import '../../features/campaigns/data/api/campaigns_api.dart';
 import '../../features/campaigns/data/repository/campaigns_repository.dart';
+import '../../features/fulfillment_providers/data/api/fulfillment_providers_api.dart';
+import '../../features/fulfillment_providers/data/repository/fulfillment_providers_repository.dart';
 
 final getIt = GetIt.instance;
 
@@ -235,5 +237,13 @@ void configureDependencies({String? baseUrl, List<Interceptor>? interceptors}) {
   );
   getIt.registerLazySingleton<ReturnReasonsRepository>(
     () => ReturnReasonsRepository(getIt<ReturnReasonsApi>()),
+  );
+
+  // Fulfillment Providers
+  getIt.registerLazySingleton<FulfillmentProvidersApi>(
+    () => FulfillmentProvidersApi(getIt<Dio>()),
+  );
+  getIt.registerLazySingleton<FulfillmentProvidersRepository>(
+    () => FulfillmentProvidersRepository(getIt<FulfillmentProvidersApi>()),
   );
 }
