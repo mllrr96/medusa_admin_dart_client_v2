@@ -105,6 +105,7 @@ Each of the following features has been migrated to the new v2 structure, includ
 - `product_types`
 - `product_variants`
 - `notifications`
+- `payments`
 
 ## Development Process
 
