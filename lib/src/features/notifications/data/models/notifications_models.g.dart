@@ -1,10 +1,44 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'notification.dart';
+part of 'notifications_models.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
+
+_NotificationListResponse _$NotificationListResponseFromJson(
+  Map<String, dynamic> json,
+) => _NotificationListResponse(
+  limit: (json['limit'] as num).toInt(),
+  offset: (json['offset'] as num).toInt(),
+  count: (json['count'] as num).toInt(),
+  notifications: (json['notifications'] as List<dynamic>)
+      .map((e) => Notification.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  estimateCount: (json['estimate_count'] as num?)?.toInt(),
+);
+
+Map<String, dynamic> _$NotificationListResponseToJson(
+  _NotificationListResponse instance,
+) => <String, dynamic>{
+  'limit': instance.limit,
+  'offset': instance.offset,
+  'count': instance.count,
+  'notifications': instance.notifications,
+  'estimate_count': instance.estimateCount,
+};
+
+_NotificationResponse _$NotificationResponseFromJson(
+  Map<String, dynamic> json,
+) => _NotificationResponse(
+  notification: Notification.fromJson(
+    json['notification'] as Map<String, dynamic>,
+  ),
+);
+
+Map<String, dynamic> _$NotificationResponseToJson(
+  _NotificationResponse instance,
+) => <String, dynamic>{'notification': instance.notification};
 
 _Notification _$NotificationFromJson(Map<String, dynamic> json) =>
     _Notification(

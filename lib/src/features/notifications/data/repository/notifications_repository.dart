@@ -1,48 +1,22 @@
-import 'package:medusa_admin_dart_client/src/features/notifications/data/models/notification.dart';
+import 'package:medusa_admin_dart_client/medusa_admin_dart_client_v2.dart';
 import 'package:medusa_admin_dart_client/src/features/notifications/data/api/notifications_api.dart';
+import 'package:medusa_admin_dart_client/src/features/notifications/data/models/notification_list_res.dart';
 
 class NotificationsRepository {
   final NotificationsApi _notificationsApi;
 
   NotificationsRepository(this._notificationsApi);
 
-  Future<Notification> retrieve(String id) async {
-    try {
-      return await _notificationsApi.retrieve(id);
-    } catch (e) {
-      rethrow;
-    }
+  Future<NotificationListRes> list({
+    Map<String, dynamic>? query,
+  }) async {
+    return await _notificationsApi.getNotifications(query: query);
   }
 
-  Future<List<Notification>> list() async {
-    try {
-      return await _notificationsApi.list();
-    } catch (e) {
-      rethrow;
-    }
-  }
-
-  Future<Notification> create(Notification notification) async {
-    try {
-      return await _notificationsApi.create(notification);
-    } catch (e) {
-      rethrow;
-    }
-  }
-
-  Future<Notification> update(String id, Notification notification) async {
-    try {
-      return await _notificationsApi.update(id, notification);
-    } catch (e) {
-      rethrow;
-    }
-  }
-
-  Future<void> delete(String id) async {
-    try {
-      await _notificationsApi.delete(id);
-    } catch (e) {
-      rethrow;
-    }
+  Future<NotificationRes> retrieve({
+    required String id,
+    Map<String, dynamic>? query,
+  }) async {
+    return await _notificationsApi.getNotification(id: id, query: query);
   }
 }

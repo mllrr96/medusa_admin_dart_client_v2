@@ -26,6 +26,10 @@ import 'package:medusa_admin_dart_client/src/features/return_reasons/data/reposi
 import 'package:medusa_admin_dart_client/src/features/swaps/data/repository/swaps_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/api_keys/data/repository/api_keys_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/tax_providers/data/repository/tax_providers_repository.dart';
+
+import 'src/features/product_tags/data/repository/product_tags_repository.dart';
+import 'src/features/product_types/data/repository/product_types_repository.dart';
+import 'src/features/product_variants/data/repository/product_variants_repository.dart';
 export 'package:medusa_admin_dart_client/src/core/models/models.dart';
 export 'package:medusa_admin_dart_client/src/features/api_keys/data/models/models.dart';
 export 'package:medusa_admin_dart_client/src/features/auth/data/models/models.dart';
@@ -41,6 +45,8 @@ export 'package:medusa_admin_dart_client/src/features/notifications/data/models/
 export 'package:medusa_admin_dart_client/src/features/orders/data/models/models.dart';
 export 'package:medusa_admin_dart_client/src/features/plugins/data/models/models.dart';
 export 'package:medusa_admin_dart_client/src/features/price_lists/data/models/models.dart';
+export 'package:medusa_admin_dart_client/src/features/product_tags/data/models/product_tags_models.dart';
+export 'package:medusa_admin_dart_client/src/features/product_types/data/models/product_types_models.dart';
 export 'package:medusa_admin_dart_client/src/features/store/data/models/models.dart';
 export 'package:medusa_admin_dart_client/src/features/tax_providers/data/models/models.dart';
 export 'package:medusa_admin_dart_client/src/features/transaction_groups/data/models/models.dart';
@@ -156,4 +162,10 @@ class MedusaAdminV2 {
   ApiKeysRepository get apiKeys => getIt<ApiKeysRepository>();
 
   ReturnReasonsRepository get returnReasons => getIt<ReturnReasonsRepository>();
+
+  ProductTagsRepository get productTags => getIt<ProductTagsRepository>();
+
+  ProductTypesRepository get productTypes => getIt<ProductTypesRepository>();
+
+  ProductVariantsRepository get productVariants => getIt<ProductVariantsRepository>();
 }

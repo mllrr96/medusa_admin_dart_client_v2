@@ -104,6 +104,7 @@ Each of the following features has been migrated to the new v2 structure, includ
 - `product_tags`
 - `product_types`
 - `product_variants`
+- `notifications`
 
 ## Development Process
 
