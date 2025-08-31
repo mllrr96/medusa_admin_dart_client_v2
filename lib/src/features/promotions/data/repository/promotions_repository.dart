@@ -1,135 +1,151 @@
-import '../../../../core/datasource/remote/dio_client.dart';
-import '../models/promotions_list_response.dart';
-import '../models/promotion_response.dart';
-import '../models/post_promotion_req.dart';
-import '../models/rule_attribute_options_res.dart';
-import '../models/rule_value_options_res.dart';
-import '../models/delete_promotion_res.dart';
-import '../models/post_promotions_rules_batch_req.dart';
-import '../models/post_promotions_rules_batch_res.dart';
-import '../models/list_promotion_rules_res.dart';
-import '../api/promotions_api.dart';
+import 'package:medusa_admin_dart_client/src/features/promotions/data/api/promotions_api.dart';
+import 'package:medusa_admin_dart_client/src/features/promotions/data/models/delete_promotion_res.dart';
+import 'package:medusa_admin_dart_client/src/features/promotions/data/models/list_promotion_rules_res.dart';
+import 'package:medusa_admin_dart_client/src/features/promotions/data/models/post_promotion_req.dart';
+import 'package:medusa_admin_dart_client/src/features/promotions/data/models/post_promotions_rules_batch_req.dart';
+import 'package:medusa_admin_dart_client/src/features/promotions/data/models/post_promotions_rules_batch_res.dart';
+import 'package:medusa_admin_dart_client/src/features/promotions/data/models/promotion_response.dart';
+import 'package:medusa_admin_dart_client/src/features/promotions/data/models/promotions_list_response.dart';
+import 'package:medusa_admin_dart_client/src/features/promotions/data/models/rule_attribute_options_res.dart';
+import 'package:medusa_admin_dart_client/src/features/promotions/data/models/rule_value_options_res.dart';
 
+/// A repository for handling promotion-related API calls.
+///
+/// This class abstracts the data source and provides clean, unwrapped models
+/// to the rest of the application.
 class PromotionsRepository {
   final PromotionsApi _promotionsApi;
 
   PromotionsRepository(this._promotionsApi);
 
-  Future<PromotionsListResponse?> listPromotions({
+  /// Retrieves a paginated list of promotions.
+  Future<PromotionsListResponse> list({
     Map<String, dynamic>? queryParameters,
   }) async {
-    return _promotionsApi.listPromotions(queryParameters: queryParameters);
+    return await _promotionsApi.list(query: queryParameters);
   }
 
-  Future<PromotionResponse?> createPromotion({
+  /// Creates a promotion.
+  Future<PromotionResponse> create({
     required PostPromotionReq payload,
     Map<String, dynamic>? queryParameters,
   }) async {
-    return _promotionsApi.createPromotion(
+    return await _promotionsApi.create(
       payload: payload,
-      queryParameters: queryParameters,
+      query: queryParameters,
     );
   }
 
-  Future<RuleAttributeOptionsRes?> listRuleAttributeOptions({
+  /// Lists rule attribute options for a promotion.
+  Future<RuleAttributeOptionsRes> listRuleAttributeOptions({
     required String ruleType,
     Map<String, dynamic>? queryParameters,
-  }) async {
+  }) {
+    // This response is often used directly, so we pass it through
     return _promotionsApi.listRuleAttributeOptions(
       ruleType: ruleType,
-      queryParameters: queryParameters,
+      query: queryParameters,
     );
   }
 
-  Future<RuleValueOptionsRes?> listRuleValueOptions({
+  /// Lists rule value options for a promotion.
+  Future<RuleValueOptionsRes> listRuleValueOptions({
     required String ruleType,
     required String ruleAttributeId,
     Map<String, dynamic>? queryParameters,
-  }) async {
+  }) {
+    // This paginated response is often used directly, so we pass it through
     return _promotionsApi.listRuleValueOptions(
       ruleType: ruleType,
       ruleAttributeId: ruleAttributeId,
-      queryParameters: queryParameters,
+      query: queryParameters,
     );
   }
 
-  Future<DeletePromotionRes?> deletePromotion({
+  /// Deletes a promotion by its ID.
+  Future<DeletePromotionRes> delete({
+    required String id,
+    Map<String, dynamic>? queryParameters,
+  }) {
+    return _promotionsApi.delete(
+      id: id,
+      query: queryParameters,
+    );
+  }
+
+  /// Retrieves a specific promotion by its ID.
+  Future<PromotionResponse> retrieve({
     required String id,
     Map<String, dynamic>? queryParameters,
   }) async {
-    return _promotionsApi.deletePromotion(
+    return await _promotionsApi.retrieve(
       id: id,
-      queryParameters: queryParameters,
+      query: queryParameters,
     );
   }
 
-  Future<PromotionResponse?> retrievePromotion({
-    required String id,
-    Map<String, dynamic>? queryParameters,
-  }) async {
-    return _promotionsApi.retrievePromotion(
-      id: id,
-      queryParameters: queryParameters,
-    );
-  }
-
-  Future<PromotionResponse?> updatePromotion({
+  /// Updates a promotion.
+  Future<PromotionResponse> update({
     required String id,
     required PostPromotionReq payload,
     Map<String, dynamic>? queryParameters,
   }) async {
-    return _promotionsApi.updatePromotion(
+    return await _promotionsApi.update(
       id: id,
       payload: payload,
-      queryParameters: queryParameters,
+      query: queryParameters,
     );
   }
 
-  Future<PostPromotionsRulesBatchRes?> manageBuyRules({
+  /// Manages buy rules for a promotion in a batch.
+  Future<PostPromotionsRulesBatchRes> manageBuyRules({
     required String id,
     required PostPromotionsRulesBatchReq payload,
     Map<String, dynamic>? queryParameters,
-  }) async {
+  }) {
     return _promotionsApi.manageBuyRules(
       id: id,
       payload: payload,
-      queryParameters: queryParameters,
+      query: queryParameters,
     );
   }
 
-  Future<PostPromotionsRulesBatchRes?> manageRules({
+  /// Manages rules for a promotion in a batch.
+  Future<PostPromotionsRulesBatchRes> manageRules({
     required String id,
     required PostPromotionsRulesBatchReq payload,
     Map<String, dynamic>? queryParameters,
-  }) async {
+  }) {
     return _promotionsApi.manageRules(
       id: id,
       payload: payload,
-      queryParameters: queryParameters,
+      query: queryParameters,
     );
   }
 
-  Future<PostPromotionsRulesBatchRes?> manageTargetRules({
+  /// Manages target rules for a promotion in a batch.
+  Future<PostPromotionsRulesBatchRes> manageTargetRules({
     required String id,
     required PostPromotionsRulesBatchReq payload,
     Map<String, dynamic>? queryParameters,
-  }) async {
+  }) {
     return _promotionsApi.manageTargetRules(
       id: id,
       payload: payload,
-      queryParameters: queryParameters,
+      query: queryParameters,
     );
   }
 
-  Future<ListPromotionRulesRes?> listPromotionRules({
+  /// Retrieves a list of promotion rules.
+  Future<ListPromotionRulesRes> listPromotionRules({
     required String id,
     required String ruleType,
     Map<String, dynamic>? queryParameters,
   }) async {
-    return _promotionsApi.listPromotionRules(
+    return await _promotionsApi.listPromotionRules(
       id: id,
       ruleType: ruleType,
-      queryParameters: queryParameters,
+      query: queryParameters,
     );
   }
 }

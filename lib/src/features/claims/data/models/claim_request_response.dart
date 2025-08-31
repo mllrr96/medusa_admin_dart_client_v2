@@ -1,11 +1,13 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:medusa_admin_dart_client/medusa_admin_dart_client_v2.dart';
 
+import 'claim.dart';
+
 part 'claim_request_response.freezed.dart';
 part 'claim_request_response.g.dart';
 
 @freezed
-class ClaimRequestResponse with _$ClaimRequestResponse {
+abstract class ClaimRequestResponse with _$ClaimRequestResponse {
   const factory ClaimRequestResponse({
     required Return aReturn,
     @JsonKey(name: 'order_preview') required OrderPreview orderPreview,

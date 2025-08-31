@@ -1,5 +1,15 @@
 import 'package:dio/dio.dart';
-import 'package:medusa_admin_dart_client/src/features/draft_orders/data/models/models.dart';
+import 'package:medusa_admin_dart_client/src/features/draft_orders/data/models/add_draft_order_items.dart';
+import 'package:medusa_admin_dart_client/src/features/draft_orders/data/models/add_draft_order_shipping_method.dart';
+import 'package:medusa_admin_dart_client/src/features/draft_orders/data/models/draft_order_list_response.dart';
+import 'package:medusa_admin_dart_client/src/features/draft_orders/data/models/draft_order_preview_response.dart';
+import 'package:medusa_admin_dart_client/src/features/draft_orders/data/models/draft_order_response.dart';
+import 'package:medusa_admin_dart_client/src/features/draft_orders/data/models/post_draft_orders_req.dart';
+import 'package:medusa_admin_dart_client/src/features/draft_orders/data/models/remove_draft_order_promotions.dart';
+import 'package:medusa_admin_dart_client/src/features/draft_orders/data/models/update_draft_order.dart';
+import 'package:medusa_admin_dart_client/src/features/draft_orders/data/models/update_draft_order_action_shipping_method.dart';
+import 'package:medusa_admin_dart_client/src/features/draft_orders/data/models/update_draft_order_item.dart';
+import 'package:medusa_admin_dart_client/src/features/draft_orders/data/models/update_draft_order_shipping_method.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'draft_orders_api.g.dart';

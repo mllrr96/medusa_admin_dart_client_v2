@@ -5,7 +5,7 @@ part 'post_draft_orders_req.freezed.dart';
 part 'post_draft_orders_req.g.dart';
 
 @freezed
-class PostDraftOrdersReq with _$PostDraftOrdersReq {
+abstract class PostDraftOrdersReq with _$PostDraftOrdersReq {
   const factory PostDraftOrdersReq({
     String? status,
     @JsonKey(name: 'sales_channel_id') required String salesChannelId,

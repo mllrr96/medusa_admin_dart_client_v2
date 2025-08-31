@@ -4,7 +4,7 @@ part 'update_draft_order_item.freezed.dart';
 part 'update_draft_order_item.g.dart';
 
 @freezed
-class UpdateDraftOrderItem with _$UpdateDraftOrderItem {
+abstract class UpdateDraftOrderItem with _$UpdateDraftOrderItem {
   const factory UpdateDraftOrderItem({
     required int quantity,
     @JsonKey(name: 'unit_price') int? unitPrice,

@@ -4,7 +4,7 @@ part 'add_draft_order_shipping_method.freezed.dart';
 part 'add_draft_order_shipping_method.g.dart';
 
 @freezed
-class AddDraftOrderShippingMethod with _$AddDraftOrderShippingMethod {
+abstract class AddDraftOrderShippingMethod with _$AddDraftOrderShippingMethod {
   const factory AddDraftOrderShippingMethod({
     @JsonKey(name: 'shipping_option_id') required String shippingOptionId,
     @JsonKey(name: 'custom_amount') int? customAmount,

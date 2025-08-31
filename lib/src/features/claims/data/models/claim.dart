@@ -1,11 +1,14 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:medusa_admin_dart_client/medusa_admin_dart_client_v2.dart';
+import 'package:medusa_admin_dart_client/src/core/models/transaction.dart';
+
+import 'claim_item.dart';
 
 part 'claim.freezed.dart';
 part 'claim.g.dart';
 
 @freezed
-class Claim with _$Claim {
+abstract class Claim with _$Claim {
   const factory Claim({
     required String id,
     @JsonKey(name: 'order_id') required String orderId,
@@ -32,21 +35,3 @@ class Claim with _$Claim {
   factory Claim.fromJson(Map<String, dynamic> json) => _$ClaimFromJson(json);
 }
 
-@freezed
-class ClaimItem with _$ClaimItem {
-  const factory ClaimItem({
-    required String id,
-    @JsonKey(name: 'claim_id') required String claimId,
-    @JsonKey(name: 'order_id') required String orderId,
-    @JsonKey(name: 'item_id') required String itemId,
-    required int quantity,
-    required String reason,
-    @JsonKey(name: 'raw_quantity') required Map<String, dynamic> rawQuantity,
-    Map<String, dynamic>? metadata,
-    @JsonKey(name: 'created_at') DateTime? createdAt,
-    @JsonKey(name: 'updated_at') DateTime? updatedAt,
-  }) = _ClaimItem;
-
-  factory ClaimItem.fromJson(Map<String, dynamic> json) =>
-      _$ClaimItemFromJson(json);
-}

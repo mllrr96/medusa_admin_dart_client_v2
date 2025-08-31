@@ -5,7 +5,7 @@ part 'draft_order_response.freezed.dart';
 part 'draft_order_response.g.dart';
 
 @freezed
-class DraftOrderResponse with _$DraftOrderResponse {
+abstract class DraftOrderResponse with _$DraftOrderResponse {
   const factory DraftOrderResponse({
     @JsonKey(name: 'draft_order') required DraftOrder draftOrder,
   }) = _DraftOrderResponse;

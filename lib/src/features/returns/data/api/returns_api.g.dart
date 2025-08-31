@@ -29,7 +29,7 @@ class _ReturnsApi implements ReturnsApi {
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/admin/returns',
+            '/returns',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -58,7 +58,7 @@ class _ReturnsApi implements ReturnsApi {
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/admin/returns/${id}',
+            '/returns/${id}',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -86,7 +86,7 @@ class _ReturnsApi implements ReturnsApi {
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/admin/returns',
+            '/returns',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -114,7 +114,7 @@ class _ReturnsApi implements ReturnsApi {
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/admin/returns/${id}',
+            '/returns/${id}',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -141,7 +141,7 @@ class _ReturnsApi implements ReturnsApi {
       Options(method: 'DELETE', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/admin/returns/${id}',
+            '/returns/${id}',
             queryParameters: queryParameters,
             data: _data,
           )

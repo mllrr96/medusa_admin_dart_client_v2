@@ -1,42 +1,30 @@
-class RuleValueOptionsRes {
-  final int? limit;
-  final int? offset;
-  final int? count;
-  final List<RuleValueOption>? values;
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  RuleValueOptionsRes({
-    this.limit,
-    this.offset,
-    this.count,
-    this.values,
-  });
+import 'rule_value_option.dart';
 
-  factory RuleValueOptionsRes.fromJson(Map<String, dynamic> json) {
-    return RuleValueOptionsRes(
-      limit: json['limit'],
-      offset: json['offset'],
-      count: json['count'],
-      values: json['values'] != null
-          ? List<RuleValueOption>.from(
-              json['values'].map((x) => RuleValueOption.fromJson(x)))
-          : null,
-    );
-  }
+// Generated part files for the classes in this file.
+part 'rule_value_options_res.freezed.dart';
+part 'rule_value_options_res.g.dart';
+
+@freezed
+abstract class RuleValueOptionsRes with _$RuleValueOptionsRes {
+  /// A paginated response wrapper for a list of rule value options.
+  const factory RuleValueOptionsRes({
+    /// The maximum number of items returned.
+    required int limit,
+
+    /// The number of items skipped.
+    required int offset,
+
+    /// The total number of items available.
+    required int count,
+
+    /// The list of rule value options.
+    required List<RuleValueOption> values,
+  }) = _RuleValueOptionsRes;
+
+  /// Creates an instance of this class from a JSON map.
+  factory RuleValueOptionsRes.fromJson(Map<String, Object?> json) =>
+      _$RuleValueOptionsResFromJson(json);
 }
 
-class RuleValueOption {
-  final String? value;
-  final String? label;
-
-  RuleValueOption({
-    this.value,
-    this.label,
-  });
-
-  factory RuleValueOption.fromJson(Map<String, dynamic> json) {
-    return RuleValueOption(
-      value: json['value'],
-      label: json['label'],
-    );
-  }
-}

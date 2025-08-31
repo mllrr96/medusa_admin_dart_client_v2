@@ -5,7 +5,7 @@ part 'draft_order_list_response.freezed.dart';
 part 'draft_order_list_response.g.dart';
 
 @freezed
-class DraftOrderListResponse with _$DraftOrderListResponse {
+abstract class DraftOrderListResponse with _$DraftOrderListResponse {
   const factory DraftOrderListResponse({
     required int limit,
     required int offset,

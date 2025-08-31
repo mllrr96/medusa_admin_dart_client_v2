@@ -5,7 +5,7 @@ part 'claim_return_preview_response.freezed.dart';
 part 'claim_return_preview_response.g.dart';
 
 @freezed
-class ClaimReturnPreviewResponse with _$ClaimReturnPreviewResponse {
+abstract class ClaimReturnPreviewResponse with _$ClaimReturnPreviewResponse {
   const factory ClaimReturnPreviewResponse({
     @JsonKey(name: 'order_preview') required OrderPreview orderPreview,
     required Return aReturn,

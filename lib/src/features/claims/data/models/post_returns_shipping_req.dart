@@ -4,7 +4,7 @@ part 'post_returns_shipping_req.freezed.dart';
 part 'post_returns_shipping_req.g.dart';
 
 @freezed
-class PostReturnsShippingReq with _$PostReturnsShippingReq {
+abstract class PostReturnsShippingReq with _$PostReturnsShippingReq {
   const factory PostReturnsShippingReq({
     @JsonKey(name: 'shipping_option_id') required String shippingOptionId,
     @JsonKey(name: 'custom_amount') int? customAmount,

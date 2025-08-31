@@ -5,7 +5,7 @@ part 'claim_list_response.freezed.dart';
 part 'claim_list_response.g.dart';
 
 @freezed
-class ClaimListResponse with _$ClaimListResponse {
+abstract class ClaimListResponse with _$ClaimListResponse {
   const factory ClaimListResponse({
     required int limit,
     required int offset,

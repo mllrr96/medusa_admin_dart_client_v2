@@ -4,7 +4,7 @@ part 'post_claim_items_req.freezed.dart';
 part 'post_claim_items_req.g.dart';
 
 @freezed
-class PostClaimItemsReq with _$PostClaimItemsReq {
+abstract class PostClaimItemsReq with _$PostClaimItemsReq {
   const factory PostClaimItemsReq({
     List<Map<String, dynamic>>? items,
   }) = _PostClaimItemsReq;

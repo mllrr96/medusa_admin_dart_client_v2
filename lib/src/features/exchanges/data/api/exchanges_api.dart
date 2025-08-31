@@ -15,7 +15,7 @@ import '../models/exchange_request_response.dart';
 import '../models/exchange_delete_response.dart';
 
 class ExchangesApi {
-  final DioClient _dioClient;
+  final Dio _dioClient;
 
   ExchangesApi(this._dioClient);
 

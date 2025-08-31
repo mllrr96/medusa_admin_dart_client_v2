@@ -1,5 +1,7 @@
 import 'package:dio/dio.dart';
-import 'package:medusa_admin/app/data/datasource/remote/dio_client.dart';
+import 'package:retrofit/retrofit.dart';
+
+// Import all necessary request and response models
 import '../models/promotions_list_response.dart';
 import '../models/promotion_response.dart';
 import '../models/post_promotion_req.dart';
@@ -10,139 +12,93 @@ import '../models/post_promotions_rules_batch_req.dart';
 import '../models/post_promotions_rules_batch_res.dart';
 import '../models/list_promotion_rules_res.dart';
 
-class PromotionsApi {
-  final DioClient _dioClient;
+// The generated file for this interface
+part 'promotions_api.g.dart';
 
-  PromotionsApi(this._dioClient);
+@RestApi()
+abstract class PromotionsApi {
+  /// The factory constructor for the Retrofit-generated implementation
+  factory PromotionsApi(Dio dio, {String baseUrl}) = _PromotionsApi;
 
-  Future<PromotionsListResponse?> listPromotions({
-    Map<String, dynamic>? queryParameters,
-  }) async {
-    final response = await _dioClient.get(
-      '/admin/promotions',
-      queryParameters: queryParameters,
-    );
-    return PromotionsListResponse.fromJson(response.data);
-  }
+  /// List and count promotions
+  @GET('/admin/promotions')
+  Future<PromotionsListResponse> list({
+    @Queries() Map<String, dynamic>? query,
+  });
 
-  Future<PromotionResponse?> createPromotion({
-    required PostPromotionReq payload,
-    Map<String, dynamic>? queryParameters,
-  }) async {
-    final response = await _dioClient.post(
-      '/admin/promotions',
-      data: payload.toJson(),
-      queryParameters: queryParameters,
-    );
-    return PromotionResponse.fromJson(response.data);
-  }
+  /// Create a promotion
+  @POST('/admin/promotions')
+  Future<PromotionResponse> create({
+    @Body() required PostPromotionReq payload,
+    @Queries() Map<String, dynamic>? query,
+  });
 
-  Future<RuleAttributeOptionsRes?> listRuleAttributeOptions({
-    required String ruleType,
-    Map<String, dynamic>? queryParameters,
-  }) async {
-    final response = await _dioClient.get(
-      '/admin/promotions/rule-attribute-options/$ruleType',
-      queryParameters: queryParameters,
-    );
-    return RuleAttributeOptionsRes.fromJson(response.data);
-  }
+  /// Get rule attribute options for a promotion
+  @GET('/admin/promotions/rule-attribute-options/{rule_type}')
+  Future<RuleAttributeOptionsRes> listRuleAttributeOptions({
+    @Path('rule_type') required String ruleType,
+    @Queries() Map<String, dynamic>? query,
+  });
 
-  Future<RuleValueOptionsRes?> listRuleValueOptions({
-    required String ruleType,
-    required String ruleAttributeId,
-    Map<String, dynamic>? queryParameters,
-  }) async {
-    final response = await _dioClient.get(
-      '/admin/promotions/rule-value-options/$ruleType/$ruleAttributeId',
-      queryParameters: queryParameters,
-    );
-    return RuleValueOptionsRes.fromJson(response.data);
-  }
+  /// Get rule value options for a promotion
+  @GET('/admin/promotions/rule-value-options/{rule_type}/{rule_attribute_id}')
+  Future<RuleValueOptionsRes> listRuleValueOptions({
+    @Path('rule_type') required String ruleType,
+    @Path('rule_attribute_id') required String ruleAttributeId,
+    @Queries() Map<String, dynamic>? query,
+  });
 
-  Future<DeletePromotionRes?> deletePromotion({
-    required String id,
-    Map<String, dynamic>? queryParameters,
-  }) async {
-    final response = await _dioClient.delete(
-      '/admin/promotions/$id',
-      queryParameters: queryParameters,
-    );
-    return DeletePromotionRes.fromJson(response.data);
-  }
+  /// Delete a promotion
+  @DELETE('/admin/promotions/{id}')
+  Future<DeletePromotionRes> delete({
+    @Path('id') required String id,
+    @Queries() Map<String, dynamic>? query,
+  });
 
-  Future<PromotionResponse?> retrievePromotion({
-    required String id,
-    Map<String, dynamic>? queryParameters,
-  }) async {
-    final response = await _dioClient.get(
-      '/admin/promotions/$id',
-      queryParameters: queryParameters,
-    );
-    return PromotionResponse.fromJson(response.data);
-  }
+  /// Retrieve a promotion by its ID
+  @GET('/admin/promotions/{id}')
+  Future<PromotionResponse> retrieve({
+    @Path('id') required String id,
+    @Queries() Map<String, dynamic>? query,
+  });
 
-  Future<PromotionResponse?> updatePromotion({
-    required String id,
-    required PostPromotionReq payload,
-    Map<String, dynamic>? queryParameters,
-  }) async {
-    final response = await _dioClient.post(
-      '/admin/promotions/$id',
-      data: payload.toJson(),
-      queryParameters: queryParameters,
-    );
-    return PromotionResponse.fromJson(response.data);
-  }
+  /// Update a promotion
+  @POST('/admin/promotions/{id}')
+  Future<PromotionResponse> update({
+    @Path('id') required String id,
+    @Body() required PostPromotionReq payload,
+    @Queries() Map<String, dynamic>? query,
+  });
 
-  Future<PostPromotionsRulesBatchRes?> manageBuyRules({
-    required String id,
-    required PostPromotionsRulesBatchReq payload,
-    Map<String, dynamic>? queryParameters,
-  }) async {
-    final response = await _dioClient.post(
-      '/admin/promotions/$id/buy-rules/batch',
-      data: payload.toJson(),
-      queryParameters: queryParameters,
-    );
-    return PostPromotionsRulesBatchRes.fromJson(response.data);
-  }
+  /// Add or update buy rules for a promotion
+  @POST('/admin/promotions/{id}/buy-rules/batch')
+  Future<PostPromotionsRulesBatchRes> manageBuyRules({
+    @Path('id') required String id,
+    @Body() required PostPromotionsRulesBatchReq payload,
+    @Queries() Map<String, dynamic>? query,
+  });
 
-  Future<PostPromotionsRulesBatchRes?> manageRules({
-    required String id,
-    required PostPromotionsRulesBatchReq payload,
-    Map<String, dynamic>? queryParameters,
-  }) async {
-    final response = await _dioClient.post(
-      '/admin/promotions/$id/rules/batch',
-      data: payload.toJson(),
-      queryParameters: queryParameters,
-    );
-    return PostPromotionsRulesBatchRes.fromJson(response.data);
-  }
+  /// Add or update rules for a promotion
+  @POST('/admin/promotions/{id}/rules/batch')
+  Future<PostPromotionsRulesBatchRes> manageRules({
+    @Path('id') required String id,
+    @Body() required PostPromotionsRulesBatchReq payload,
+    @Queries() Map<String, dynamic>? query,
+  });
 
-  Future<PostPromotionsRulesBatchRes?> manageTargetRules({
-    required String id,
-    required PostPromotionsRulesBatchReq payload,
-    Map<String, dynamic>? queryParameters,
-  }) async {
-    final response = await _dioClient.post(
-      '/admin/promotions/$id/target-rules/batch',
-      data: payload.toJson(),
-      queryParameters: queryParameters,
-    );
-    return PostPromotionsRulesBatchRes.fromJson(response.data);
-  }
+  /// Add or update target rules for a promotion
+  @POST('/admin/promotions/{id}/target-rules/batch')
+  Future<PostPromotionsRulesBatchRes> manageTargetRules({
+    @Path('id') required String id,
+    @Body() required PostPromotionsRulesBatchReq payload,
+    @Queries() Map<String, dynamic>? query,
+  });
 
-  Future<ListPromotionRulesRes?> listPromotionRules({
-    required String id,
-    required String ruleType,
-    Map<String, dynamic>? queryParameters,
-  }) async {
-    final response = await _dioClient.get(
-      '/admin/promotions/$id/$ruleType',
-      queryParameters: queryParameters,
-    );
-    return ListPromotionRulesRes.fromJson(response.data);
-  }
+  /// List promotion rules
+  @GET('/admin/promotions/{id}/{rule_type}')
+  Future<ListPromotionRulesRes> listPromotionRules({
+    @Path('id') required String id,
+    @Path('rule_type') required String ruleType,
+    @Queries() Map<String, dynamic>? query,
+  });
 }

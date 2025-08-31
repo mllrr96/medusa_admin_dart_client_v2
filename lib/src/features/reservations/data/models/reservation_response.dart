@@ -1,17 +1,15 @@
-import '../../../../core/models/reservation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'reservation.dart';
 
-class ReservationResponse {
-  final Reservation? reservation;
+part 'reservation_response.freezed.dart';
+part 'reservation_response.g.dart';
 
-  ReservationResponse({
-    this.reservation,
-  });
+@freezed
+abstract class ReservationResponse with _$ReservationResponse {
+  const factory ReservationResponse({
+    required Reservation reservation,
+  }) = _ReservationResponse;
 
-  factory ReservationResponse.fromJson(Map<String, dynamic> json) {
-    return ReservationResponse(
-      reservation: json['reservation'] != null
-          ? Reservation.fromJson(json['reservation'])
-          : null,
-    );
-  }
+  factory ReservationResponse.fromJson(Map<String, Object?> json) =>
+      _$ReservationResponseFromJson(json);
 }

@@ -1,5 +1,5 @@
-import 'api/returns_api.dart';
-import '../../../core/models/return.dart';
+import 'package:medusa_admin_dart_client/src/features/returns/data/api/returns_api.dart';
+import 'package:medusa_admin_dart_client/src/core/models/return.dart';
 
 class ReturnsRepository {
   ReturnsRepository(this._returnsApi);

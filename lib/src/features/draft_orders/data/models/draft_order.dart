@@ -5,7 +5,7 @@ part 'draft_order.freezed.dart';
 part 'draft_order.g.dart';
 
 @freezed
-class DraftOrder with _$DraftOrder {
+abstract class DraftOrder with _$DraftOrder {
   const factory DraftOrder({
     @JsonKey(name: 'payment_collections')
         required List<PaymentCollection> paymentCollections,

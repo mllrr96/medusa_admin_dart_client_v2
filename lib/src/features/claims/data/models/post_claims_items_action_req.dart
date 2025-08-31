@@ -4,7 +4,7 @@ part 'post_claims_items_action_req.freezed.dart';
 part 'post_claims_items_action_req.g.dart';
 
 @freezed
-class PostClaimsItemsActionReq with _$PostClaimsItemsActionReq {
+abstract class PostClaimsItemsActionReq with _$PostClaimsItemsActionReq {
   const factory PostClaimsItemsActionReq({
     int? quantity,
     @JsonKey(name: 'reason_id') String? reasonId,

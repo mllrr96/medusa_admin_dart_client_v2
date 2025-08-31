@@ -1,10 +1,10 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:medusa_admin_dart_client/src/core/models/return_reason.dart';
+import 'package:medusa_admin_dart_client/src/core/models/line_item.dart';
+import 'package:medusa_admin_dart_client/src/features/payments/data/models/refund.dart';
 import 'package:medusa_admin_dart_client/src/core/models/swap.dart';
 import 'package:medusa_admin_dart_client/src/features/orders/data/models/order.dart';
 
-import 'line_item.dart';
-import 'refund.dart';
 
 part 'return.freezed.dart';
 part 'return.g.dart';

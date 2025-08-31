@@ -1,8 +1,6 @@
-import '../../../../core/models/base_order.dart';
-import '../../../../core/models/base_order_shipping_method.dart';
-import '../../../../core/models/base_order_transaction.dart';
-import '../../../../core/models/return.dart';
-import '../../../../core/models/return_item.dart';
+import 'package:medusa_admin_dart_client/src/core/models/return.dart';
+import 'package:medusa_admin_dart_client/src/core/models/order_shipping_method.dart';
+import 'package:medusa_admin_dart_client/src/features/orders/data/models/order.dart';
 import 'base_exchange_item.dart';
 
 class Exchange {
@@ -15,8 +13,8 @@ class Exchange {
   final String? returnId;
   final String? id;
   final String? displayId;
-  final List<BaseOrderShippingMethod>? shippingMethods;
-  final List<BaseOrderTransaction>? transactions;
+  final List<OrderShippingMethod>? shippingMethods;
+  final List<OrderTransaction>? transactions;
   final Map<String, dynamic>? metadata;
   final DateTime? createdAt;
   final DateTime? updatedAt;
@@ -24,7 +22,7 @@ class Exchange {
   final String? createdBy;
   final DateTime? canceledAt;
   final DateTime? deletedAt;
-  final BaseOrder? order;
+  final Order? order;
   final bool? allowBackorder;
 
   Exchange({

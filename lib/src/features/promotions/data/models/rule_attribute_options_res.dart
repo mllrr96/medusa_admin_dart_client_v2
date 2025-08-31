@@ -1,62 +1,20 @@
-class RuleAttributeOptionsRes {
-  final List<RuleAttributeOption>? attributes;
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  RuleAttributeOptionsRes({
-    this.attributes,
-  });
+import 'rule_attribute_option.dart';
 
-  factory RuleAttributeOptionsRes.fromJson(Map<String, dynamic> json) {
-    return RuleAttributeOptionsRes(
-      attributes: json['attributes'] != null
-          ? List<RuleAttributeOption>.from(
-              json['attributes'].map((x) => RuleAttributeOption.fromJson(x)))
-          : null,
-    );
-  }
-}
+// Generated part files for the classes in this file.
+part 'rule_attribute_options_res.freezed.dart';
+part 'rule_attribute_options_res.g.dart';
 
-class RuleAttributeOption {
-  final String? id;
-  final String? value;
-  final String? label;
-  final List<BaseRuleOperatorOptions>? operators;
+@freezed
+abstract class RuleAttributeOptionsRes with _$RuleAttributeOptionsRes {
+  /// A response wrapper for a list of rule attribute options.
+  const factory RuleAttributeOptionsRes({
+    /// The list of attribute options.
+    required List<RuleAttributeOption> attributes,
+  }) = _RuleAttributeOptionsRes;
 
-  RuleAttributeOption({
-    this.id,
-    this.value,
-    this.label,
-    this.operators,
-  });
-
-  factory RuleAttributeOption.fromJson(Map<String, dynamic> json) {
-    return RuleAttributeOption(
-      id: json['id'],
-      value: json['value'],
-      label: json['label'],
-      operators: json['operators'] != null
-          ? List<BaseRuleOperatorOptions>.from(json['operators']
-              .map((x) => BaseRuleOperatorOptions.fromJson(x)))
-          : null,
-    );
-  }
-}
-
-class BaseRuleOperatorOptions {
-  final String? id;
-  final String? value;
-  final String? label;
-
-  BaseRuleOperatorOptions({
-    this.id,
-    this.value,
-    this.label,
-  });
-
-  factory BaseRuleOperatorOptions.fromJson(Map<String, dynamic> json) {
-    return BaseRuleOperatorOptions(
-      id: json['id'],
-      value: json['value'],
-      label: json['label'],
-    );
-  }
+  /// Creates an instance of this class from a JSON map.
+  factory RuleAttributeOptionsRes.fromJson(Map<String, Object?> json) =>
+      _$RuleAttributeOptionsResFromJson(json);
 }

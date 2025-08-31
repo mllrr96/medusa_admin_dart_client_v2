@@ -1,7 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
-
-import '../../../core/models/return.dart';
+import 'package:medusa_admin_dart_client/src/core/models/return.dart';
 
 part 'returns_api.g.dart';
 

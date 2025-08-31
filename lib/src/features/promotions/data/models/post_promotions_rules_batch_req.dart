@@ -1,27 +1,27 @@
-import '../../../../core/models/promotion.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-class PostPromotionsRulesBatchReq {
-  final List<PromotionRule>? create;
-  final List<PromotionRule>? update;
-  final List<String>? delete;
+import 'promotion_rule.dart';
 
-  PostPromotionsRulesBatchReq({
-    this.create,
-    this.update,
-    this.delete,
-  });
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    if (create != null) {
-      data['create'] = create!.map((v) => v.toJson()).toList();
-    }
-    if (update != null) {
-      data['update'] = update!.map((v) => v.toJson()).toList();
-    }
-    if (delete != null) {
-      data['delete'] = delete;
-    }
-    return data;
-  }
+// Generated part files.
+part 'post_promotions_rules_batch_req.freezed.dart';
+part 'post_promotions_rules_batch_req.g.dart';
+
+@freezed
+abstract class PostPromotionsRulesBatchReq with _$PostPromotionsRulesBatchReq {
+  /// Defines the request body for batch managing promotion rules.
+  const factory PostPromotionsRulesBatchReq({
+    /// A list of promotion rules to create.
+    List<PromotionRule>? create,
+
+    /// A list of promotion rules to update.
+    List<PromotionRule>? update,
+
+    /// A list of IDs of promotion rules to delete.
+    List<String>? delete,
+  }) = _PostPromotionsRulesBatchReq;
+
+  /// Creates an instance of this class from a JSON map.
+  factory PostPromotionsRulesBatchReq.fromJson(Map<String, Object?> json) =>
+      _$PostPromotionsRulesBatchReqFromJson(json);
 }

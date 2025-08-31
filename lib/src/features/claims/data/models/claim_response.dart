@@ -5,7 +5,7 @@ part 'claim_response.freezed.dart';
 part 'claim_response.g.dart';
 
 @freezed
-class ClaimResponse with _$ClaimResponse {
+abstract class ClaimResponse with _$ClaimResponse {
   const factory ClaimResponse({
     required Claim claim,
   }) = _ClaimResponse;

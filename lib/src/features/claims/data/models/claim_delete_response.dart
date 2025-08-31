@@ -4,7 +4,7 @@ part 'claim_delete_response.freezed.dart';
 part 'claim_delete_response.g.dart';
 
 @freezed
-class ClaimDeleteResponse with _$ClaimDeleteResponse {
+abstract class ClaimDeleteResponse with _$ClaimDeleteResponse {
   const factory ClaimDeleteResponse({
     required String id,
     required String object,

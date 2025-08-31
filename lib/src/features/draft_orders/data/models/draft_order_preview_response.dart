@@ -5,7 +5,7 @@ part 'draft_order_preview_response.freezed.dart';
 part 'draft_order_preview_response.g.dart';
 
 @freezed
-class DraftOrderPreviewResponse with _$DraftOrderPreviewResponse {
+abstract class DraftOrderPreviewResponse with _$DraftOrderPreviewResponse {
   const factory DraftOrderPreviewResponse({
     @JsonKey(name: 'draft_order_preview')
         required DraftOrderPreview draftOrderPreview,

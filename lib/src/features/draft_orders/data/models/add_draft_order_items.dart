@@ -4,7 +4,7 @@ part 'add_draft_order_items.freezed.dart';
 part 'add_draft_order_items.g.dart';
 
 @freezed
-class AddDraftOrderItems with _$AddDraftOrderItems {
+abstract class AddDraftOrderItems with _$AddDraftOrderItems {
   const factory AddDraftOrderItems({
     List<Map<String, dynamic>>? items,
   }) = _AddDraftOrderItems;

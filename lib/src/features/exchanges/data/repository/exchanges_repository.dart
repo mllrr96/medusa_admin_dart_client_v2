@@ -84,7 +84,7 @@ class ExchangesRepository {
     required String actionId,
     required PostExchangesRequestItemsReturnActionReq payload,
     Map<String, dynamic>? queryParameters,
-  }) async {.
+  }) async {
     return _exchangesApi.updateInboundItem(
       id: id,
       actionId: actionId,

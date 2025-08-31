@@ -5,7 +5,7 @@ part 'update_draft_order.freezed.dart';
 part 'update_draft_order.g.dart';
 
 @freezed
-class UpdateDraftOrder with _$UpdateDraftOrder {
+abstract class UpdateDraftOrder with _$UpdateDraftOrder {
   const factory UpdateDraftOrder({
     String? email,
     @JsonKey(name: 'shipping_address') Address? shippingAddress,

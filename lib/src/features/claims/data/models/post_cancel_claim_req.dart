@@ -4,7 +4,7 @@ part 'post_cancel_claim_req.freezed.dart';
 part 'post_cancel_claim_req.g.dart';
 
 @freezed
-class PostCancelClaimReq with _$PostCancelClaimReq {
+abstract class PostCancelClaimReq with _$PostCancelClaimReq {
   const factory PostCancelClaimReq({
     @JsonKey(name: 'no_notification') bool? noNotification,
   }) = _PostCancelClaimReq;
