@@ -95,6 +95,7 @@ Each of the following features has been migrated to the new v2 structure, includ
 - `fulfillments`
 - `invites`
 - `stores`
+- `regions`
 
 ## Development Process
 
@@ -108,4 +109,4 @@ We are using the `summery` text files as the source of truth and comparing it to
 - When creating a new file do NOT add import 'package:medusa_admin_dart_client/medusa_admin.dart';
 - When creating a model, make sure to add `@JsonKey(name: '...')` for fields that are snake_case in the JSON and camelCase in the Dart model.
 - Any Datetime field should be nullable.
-- In api file name the @Queries as quey not queryParameters so instead of this  @Queries() Map<String, dynamic>? queryParameters, make it this  @Queries() Map<String, dynamic>? query,
+- In api file name the `@Queries` as query not queryParameters so instead of this  `@Queries() Map<String, dynamic>? queryParameters`, make it this  `@Queries() Map<String, dynamic>? query,`

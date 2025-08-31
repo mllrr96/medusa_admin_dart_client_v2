@@ -1,28 +1,50 @@
-import 'package:medusa_admin_dart_client/medusa_admin_dart_client_v2.dart';
+
 import 'package:medusa_admin_dart_client/src/features/regions/data/api/regions_api.dart';
+import 'package:medusa_admin_dart_client/src/features/regions/data/models/region_res.dart';
 
 class RegionsRepository {
-  RegionsRepository(this._regionsApi);
-
   final RegionsApi _regionsApi;
 
-  Future<List<Region>> retrieveAll({Map<String, dynamic>? queryParameters}) {
-    return _regionsApi.retrieveAll(query: queryParameters);
+  RegionsRepository(this._regionsApi);
+
+  Future<RegionsRes> retrieveAll({
+    Map<String, dynamic>? query,
+  }) async {
+    final response = await _regionsApi.retrieveAll(query: query);
+    return RegionsRes.fromJson(response.data);
   }
 
-  Future<Region> retrieve(String id) {
-    return _regionsApi.retrieve(id);
+  Future<RegionRes> create(
+    Map<String, dynamic> body,
+    {
+    Map<String, dynamic>? query,
+  }
+  ) async {
+    final response = await _regionsApi.create(body, query);
+    return RegionRes.fromJson(response.data);
   }
 
-  Future<Region> create(Map<String, dynamic> body) {
-    return _regionsApi.create(body);
+  Future<RegionRes> retrieve(
+    String id, {
+    Map<String, dynamic>? query,
+  }) async {
+    final response = await _regionsApi.retrieve(id, query);
+    return RegionRes.fromJson(response.data);
   }
 
-  Future<Region> update(String id, Map<String, dynamic> body) {
-    return _regionsApi.update(id, body);
+  Future<RegionRes> update(
+    String id,
+    Map<String, dynamic> body,
+    {
+    Map<String, dynamic>? query,
+  }
+  ) async {
+    final response = await _regionsApi.update(id, body, query);
+    return RegionRes.fromJson(response.data);
   }
 
-  Future<void> delete(String id) {
-    return _regionsApi.delete(id);
+  Future<RegionDeleteRes> delete(String id) async {
+    final response = await _regionsApi.delete(id);
+    return RegionDeleteRes.fromJson(response.data);
   }
 }
