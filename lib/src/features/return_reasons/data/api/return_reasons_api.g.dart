@@ -18,14 +18,14 @@ class _ReturnReasonsApi implements ReturnReasonsApi {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<List<ReturnReason>> retrieveAll({Map<String, dynamic>? query}) async {
+  Future<ReturnReasonListRes> retrieveAll({Map<String, dynamic>? query}) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     queryParameters.addAll(query ?? <String, dynamic>{});
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<List<ReturnReason>>(
+    final _options = _setStreamType<ReturnReasonListRes>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -35,12 +35,10 @@ class _ReturnReasonsApi implements ReturnReasonsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<List<dynamic>>(_options);
-    late List<ReturnReason> _value;
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late ReturnReasonListRes _value;
     try {
-      _value = _result.data!
-          .map((dynamic i) => ReturnReason.fromJson(i as Map<String, dynamic>))
-          .toList();
+      _value = ReturnReasonListRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -49,12 +47,12 @@ class _ReturnReasonsApi implements ReturnReasonsApi {
   }
 
   @override
-  Future<ReturnReason> retrieve(String id) async {
+  Future<ReturnReasonRes> retrieve(String id) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<ReturnReason>(
+    final _options = _setStreamType<ReturnReasonRes>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -65,9 +63,9 @@ class _ReturnReasonsApi implements ReturnReasonsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late ReturnReason _value;
+    late ReturnReasonRes _value;
     try {
-      _value = ReturnReason.fromJson(_result.data!);
+      _value = ReturnReasonRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -76,13 +74,12 @@ class _ReturnReasonsApi implements ReturnReasonsApi {
   }
 
   @override
-  Future<ReturnReason> create(Map<String, dynamic> body) async {
+  Future<ReturnReasonRes> create(CreateReturnReason body) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(body);
-    final _options = _setStreamType<ReturnReason>(
+    final _data = body;
+    final _options = _setStreamType<ReturnReasonRes>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -93,9 +90,9 @@ class _ReturnReasonsApi implements ReturnReasonsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late ReturnReason _value;
+    late ReturnReasonRes _value;
     try {
-      _value = ReturnReason.fromJson(_result.data!);
+      _value = ReturnReasonRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -104,13 +101,12 @@ class _ReturnReasonsApi implements ReturnReasonsApi {
   }
 
   @override
-  Future<ReturnReason> update(String id, Map<String, dynamic> body) async {
+  Future<ReturnReasonRes> update(String id, UpdateReturnReason body) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(body);
-    final _options = _setStreamType<ReturnReason>(
+    final _data = body;
+    final _options = _setStreamType<ReturnReasonRes>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -121,9 +117,9 @@ class _ReturnReasonsApi implements ReturnReasonsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late ReturnReason _value;
+    late ReturnReasonRes _value;
     try {
-      _value = ReturnReason.fromJson(_result.data!);
+      _value = ReturnReasonRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -132,12 +128,12 @@ class _ReturnReasonsApi implements ReturnReasonsApi {
   }
 
   @override
-  Future<void> delete(String id) async {
+  Future<ReturnReasonDeleteRes> delete(String id) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<void>(
+    final _options = _setStreamType<ReturnReasonDeleteRes>(
       Options(method: 'DELETE', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -147,7 +143,15 @@ class _ReturnReasonsApi implements ReturnReasonsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    await _dio.fetch<void>(_options);
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late ReturnReasonDeleteRes _value;
+    try {
+      _value = ReturnReasonDeleteRes.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
   }
 
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {
