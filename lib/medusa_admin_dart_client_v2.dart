@@ -84,6 +84,9 @@ export 'package:medusa_admin_dart_client/src/features/tax_regions/data/models/ta
 export 'package:medusa_admin_dart_client/src/features/tax_regions/data/models/tax_region_res.dart';
 export 'package:medusa_admin_dart_client/src/features/tax_regions/data/repository/tax_regions_repository.dart';
 
+export 'package:medusa_admin_dart_client/src/features/customers/data/models/customer_req.dart';
+export 'package:medusa_admin_dart_client/src/features/customers/data/models/customer_res.dart';
+
 class MedusaAdminV2 {
   MedusaAdminV2._({String? baseUrl, List<Interceptor>? interceptors}) {
     configureDependencies(baseUrl: baseUrl, interceptors: interceptors);
