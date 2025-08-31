@@ -15,6 +15,7 @@ import 'package:medusa_admin_dart_client/src/features/fulfillment_providers/data
 import 'package:medusa_admin_dart_client/src/features/fulfillments/data/api/fulfillments_api.dart';
 import 'package:medusa_admin_dart_client/src/features/fulfillments/data/repository/fulfillments_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/gift_cards/data/api/gift_cards_api.dart';
+import 'package:medusa_admin_dart_client/src/features/inventory_items/data/api/inventory_items_api.dart';
 import 'package:medusa_admin_dart_client/src/features/invites/data/api/invites_api.dart';
 import 'package:medusa_admin_dart_client/src/features/invites/data/repository/invites_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/notes/data/api/notes_api.dart';
@@ -248,5 +249,11 @@ void configureDependencies({String? baseUrl, List<Interceptor>? interceptors}) {
   getIt.registerLazySingleton<TaxRegionsApi>(() => TaxRegionsApi(getIt<Dio>()));
   getIt.registerLazySingleton<TaxRegionsRepository>(
     () => TaxRegionsRepository(getIt<TaxRegionsApi>()),
+  );
+
+  // Inventory Items
+  getIt.registerLazySingleton<InventoryItemsApi>(() => InventoryItemsApi(getIt<Dio>()));
+  getIt.registerLazySingleton<InventoryItemsRepository>(
+    () => InventoryItemsRepository(getIt<InventoryItemsApi>()),
   );
 }

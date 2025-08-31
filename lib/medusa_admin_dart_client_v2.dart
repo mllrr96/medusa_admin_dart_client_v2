@@ -89,6 +89,9 @@ export 'package:medusa_admin_dart_client/src/features/tax_rates/data/models/tax_
 export 'package:medusa_admin_dart_client/src/features/tax_rates/data/models/tax_rate_res.dart';
 export 'package:medusa_admin_dart_client/src/features/tax_rates/data/models/tax_rate_rule.dart';
 
+export 'package:medusa_admin_dart_client/src/features/inventory_items/data/models/inventory_req.dart';
+export 'package:medusa_admin_dart_client/src/features/inventory_items/data/models/inventory_res.dart';
+
 class MedusaAdminV2 {
   MedusaAdminV2._({String? baseUrl, List<Interceptor>? interceptors}) {
     configureDependencies(baseUrl: baseUrl, interceptors: interceptors);

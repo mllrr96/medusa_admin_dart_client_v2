@@ -99,6 +99,8 @@ Each of the following features has been migrated to the new v2 structure, includ
 - `tax_regions`
 - `customers`
 - `tax_rates`
+- `tax_rates`
+- `inventory_items`
 
 ## Development Process
 
