@@ -112,6 +112,7 @@ Each of the following features has been migrated to the new v2 structure, includ
 - `payment_collections`
 - `return_reasons`
 - `refund_reasons`
+- `product_categories`
 
 ## Development Process
 
