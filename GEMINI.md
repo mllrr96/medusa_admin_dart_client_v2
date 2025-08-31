@@ -116,6 +116,7 @@ Each of the following features has been migrated to the new v2 structure, includ
 - `workflows_executions`
 - `fulfillment_sets`
 - `stock_locations`
+- `store_credit_accounts`
 
 ## Development Process
 
