@@ -111,6 +111,7 @@ Each of the following features has been migrated to the new v2 structure, includ
 - `shipping_options`
 - `payment_collections`
 - `return_reasons`
+- `refund_reasons`
 
 ## Development Process
 
