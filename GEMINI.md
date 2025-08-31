@@ -106,6 +106,8 @@ Each of the following features has been migrated to the new v2 structure, includ
 - `product_variants`
 - `notifications`
 - `payments`
+- `price_preferences`
+- `order_edits`
 
 ## Development Process
 

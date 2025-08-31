@@ -28,6 +28,10 @@ import 'package:medusa_admin_dart_client/src/features/product_types/data/api/pro
 import 'package:medusa_admin_dart_client/src/features/product_types/data/repository/product_types_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/product_variants/data/api/product_variants_api.dart';
 import 'package:medusa_admin_dart_client/src/features/product_variants/data/repository/product_variants_repository.dart';
+import 'package:medusa_admin_dart_client/src/features/price_preferences/data/api/price_preferences_api.dart';
+import 'package:medusa_admin_dart_client/src/features/price_preferences/data/repository/price_preferences_repository.dart';
+import 'package:medusa_admin_dart_client/src/features/order_edits/data/api/order_edits_api.dart';
+import 'package:medusa_admin_dart_client/src/features/order_edits/data/repository/order_edits_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/products/data/api/products_api.dart';
 import 'package:medusa_admin_dart_client/src/features/regions/data/api/regions_api.dart';
 import 'package:medusa_admin_dart_client/src/features/return_reasons/data/api/return_reasons_api.dart';
@@ -277,5 +281,21 @@ void configureDependencies({String? baseUrl, List<Interceptor>? interceptors}) {
   getIt.registerLazySingleton<ProductVariantsApi>(() => ProductVariantsApi(getIt<Dio>()));
   getIt.registerLazySingleton<ProductVariantsRepository>(
     () => ProductVariantsRepository(getIt<ProductVariantsApi>()),
+  );
+
+  // Price Preferences
+  getIt.registerLazySingleton<PricePreferencesApi>(
+    () => PricePreferencesApi(getIt<Dio>()),
+  );
+  getIt.registerLazySingleton<PricePreferencesRepository>(
+    () => PricePreferencesRepository(getIt<PricePreferencesApi>()),
+  );
+
+  // Order Edits
+  getIt.registerLazySingleton<OrderEditsApi>(
+    () => OrderEditsApi(getIt<Dio>()),
+  );
+  getIt.registerLazySingleton<OrderEditsRepository>(
+    () => OrderEditsRepository(getIt<OrderEditsApi>()),
   );
 }
