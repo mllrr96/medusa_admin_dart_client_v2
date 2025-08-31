@@ -101,6 +101,8 @@ Each of the following features has been migrated to the new v2 structure, includ
 - `tax_rates`
 - `tax_rates`
 - `inventory_items`
+- `product_tags`
+- `product_types`
 
 ## Development Process
 
