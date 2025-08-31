@@ -1,5 +1,19 @@
 import 'package:medusa_admin_dart_client/src/features/products/data/api/products_api.dart';
+import 'package:medusa_admin_dart_client/src/features/products/data/models/associate_inventory_item_req.dart';
+import 'package:medusa_admin_dart_client/src/features/products/data/models/batch_product_req.dart';
+import 'package:medusa_admin_dart_client/src/features/products/data/models/batch_product_res.dart';
+import 'package:medusa_admin_dart_client/src/features/products/data/models/create_product_option_req.dart';
+import 'package:medusa_admin_dart_client/src/features/products/data/models/create_product_req.dart';
+import 'package:medusa_admin_dart_client/src/features/products/data/models/create_product_variant_req.dart';
+import 'package:medusa_admin_dart_client/src/features/products/data/models/export_product_res.dart';
+import 'package:medusa_admin_dart_client/src/features/products/data/models/import_product_req.dart';
+import 'package:medusa_admin_dart_client/src/features/products/data/models/import_product_res.dart';
+import 'package:medusa_admin_dart_client/src/features/products/data/models/import_products_req.dart';
 import 'package:medusa_admin_dart_client/src/features/products/data/models/models.dart';
+import 'package:medusa_admin_dart_client/src/features/products/data/models/update_inventory_item_req.dart';
+import 'package:medusa_admin_dart_client/src/features/products/data/models/update_product_option_req.dart';
+import 'package:medusa_admin_dart_client/src/features/products/data/models/update_product_req.dart';
+import 'package:medusa_admin_dart_client/src/features/products/data/models/update_product_variant_req.dart';
 
 class ProductsRepository {
   ProductsRepository(this._productsApi);
@@ -86,11 +100,11 @@ class ProductsRepository {
     return _productsApi.retrieveVariant(id, variantId);
   }
 
-  Future<Product> updateVariant(String id, String variantId, CreateProductVariantReq body) {
+  Future<Product> updateVariant(String id, String variantId, UpdateProductVariantReq body) {
     return _productsApi.updateVariant(id, variantId, body);
   }
 
-  Future<ProductVariant> associateInventoryItem(String id, String variantId, Map<String, dynamic> body) {
+  Future<ProductVariant> associateInventoryItem(String id, String variantId, AssociateInventoryItemReq body) {
     return _productsApi.associateInventoryItem(id, variantId, body);
   }
 
@@ -98,7 +112,7 @@ class ProductsRepository {
     return _productsApi.deleteInventoryItem(id, variantId, inventoryItemId);
   }
 
-  Future<ProductVariant> updateInventoryItem(String id, String variantId, String inventoryItemId, Map<String, dynamic> body) {
+  Future<ProductVariant> updateInventoryItem(String id, String variantId, String inventoryItemId, UpdateInventoryItemReq body) {
     return _productsApi.updateInventoryItem(id, variantId, inventoryItemId, body);
   }
 }
