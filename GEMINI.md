@@ -94,6 +94,7 @@ Each of the following features has been migrated to the new v2 structure, includ
 - `fulfillment_providers`
 - `fulfillments`
 - `invites`
+- `stores`
 
 ## Development Process
 
