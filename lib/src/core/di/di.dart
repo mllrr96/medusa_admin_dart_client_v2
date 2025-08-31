@@ -33,13 +33,11 @@ import 'package:medusa_admin_dart_client/src/features/price_preferences/data/rep
 import 'package:medusa_admin_dart_client/src/features/order_edits/data/api/order_edits_api.dart';
 import 'package:medusa_admin_dart_client/src/features/order_edits/data/repository/order_edits_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/shipping_options/data/api/shipping_options_api.dart';
-import 'package:medusa_admin_dart_client/src/features/shipping_options/data/repository/shipping_options_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/products/data/api/products_api.dart';
 import 'package:medusa_admin_dart_client/src/features/regions/data/api/regions_api.dart';
 import 'package:medusa_admin_dart_client/src/features/return_reasons/data/api/return_reasons_api.dart';
 import 'package:medusa_admin_dart_client/src/features/returns/data/api/returns_api.dart';
 import 'package:medusa_admin_dart_client/src/features/sales_channels/data/api/sales_channels_api.dart';
-import 'package:medusa_admin_dart_client/src/features/shipping_options/data/api/shipping_options_api.dart';
 import 'package:medusa_admin_dart_client/src/features/shipping_profiles/data/api/shipping_profiles_api.dart';
 import 'package:medusa_admin_dart_client/src/features/store/data/api/store_api.dart';
 import 'package:medusa_admin_dart_client/src/features/swaps/data/api/swaps_api.dart';
