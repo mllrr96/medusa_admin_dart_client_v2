@@ -71,32 +71,6 @@ Each of the following features has been migrated to the new v2 structure, includ
 -   **Repositories**: Implement the business logic and interact with the API interfaces.
 -   **DI Integration**: Registered in `di.dart` for easy access throughout the application.
 
-**Migrated Features:**
-
--   `auth`
--   `products`
--   `orders`
--   `customers`
--   `regions`
--   `collections`
--   `discounts`
--   `gift_cards`
--   `price_lists`
--   `shipping_options`
--   `shipping_profiles`
--   `users`
--   `uploads`
--   `store`
--   `tax_rates`
--   `currencies`
--   `draft_orders`
--   `customer_groups`
--   `notes`
--   `notifications`
--   `returns`
--   `sales_channels`
--   `swaps`
-
 ## Verified Features (against new openapi.yaml)
 
 - `discounts`
@@ -118,6 +92,7 @@ Each of the following features has been migrated to the new v2 structure, includ
 - `sales_channels`
 - `customer_groups`
 - `fulfillment_providers`
+- `fulfillments`
 
 ## Development Process
 
