@@ -103,6 +103,7 @@ Each of the following features has been migrated to the new v2 structure, includ
 - `inventory_items`
 - `product_tags`
 - `product_types`
+- `product_variants`
 
 ## Development Process
 
