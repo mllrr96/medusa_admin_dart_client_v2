@@ -26,8 +26,6 @@ import 'package:medusa_admin_dart_client/src/features/return_reasons/data/reposi
 import 'package:medusa_admin_dart_client/src/features/swaps/data/repository/swaps_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/api_keys/data/repository/api_keys_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/tax_providers/data/repository/tax_providers_repository.dart';
-import 'package:medusa_admin_dart_client/src/features/tax_regions/data/repository/tax_regions_repository.dart';
-
 export 'package:medusa_admin_dart_client/src/core/models/models.dart';
 export 'package:medusa_admin_dart_client/src/features/api_keys/data/models/models.dart';
 export 'package:medusa_admin_dart_client/src/features/auth/data/models/models.dart';
@@ -86,6 +84,10 @@ export 'package:medusa_admin_dart_client/src/features/tax_regions/data/repositor
 
 export 'package:medusa_admin_dart_client/src/features/customers/data/models/customer_req.dart';
 export 'package:medusa_admin_dart_client/src/features/customers/data/models/customer_res.dart';
+
+export 'package:medusa_admin_dart_client/src/features/tax_rates/data/models/tax_rate_req.dart';
+export 'package:medusa_admin_dart_client/src/features/tax_rates/data/models/tax_rate_res.dart';
+export 'package:medusa_admin_dart_client/src/features/tax_rates/data/models/tax_rate_rule.dart';
 
 class MedusaAdminV2 {
   MedusaAdminV2._({String? baseUrl, List<Interceptor>? interceptors}) {
