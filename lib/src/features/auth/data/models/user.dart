@@ -12,8 +12,8 @@ abstract class User with _$User {
     required String email,
     @JsonKey(name: 'avatar_url') String? avatarUrl,
     required String role,
-    @JsonKey(name: 'created_at') required DateTime createdAt,
-    @JsonKey(name: 'updated_at') required DateTime updatedAt,
+    @JsonKey(name: 'created_at') DateTime? createdAt,
+    @JsonKey(name: 'updated_at') DateTime? updatedAt,
     @JsonKey(name: 'deleted_at') DateTime? deletedAt,
   }) = _User;
 

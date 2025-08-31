@@ -9,6 +9,6 @@ class PluginsRepository {
   Future<PluginsListRes> list({
     Map<String, dynamic>? queryParameters,
   }) {
-    return _pluginsApi.list(queryParameters: queryParameters);
+    return _pluginsApi.list(query: queryParameters);
   }
 }

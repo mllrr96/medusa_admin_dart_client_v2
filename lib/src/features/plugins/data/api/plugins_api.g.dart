@@ -18,10 +18,10 @@ class _PluginsApi implements PluginsApi {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<PluginsListRes> list({Map<String, dynamic>? queryParameters}) async {
+  Future<PluginsListRes> list({Map<String, dynamic>? query}) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    queryParameters.addAll(queryParameters ?? <String, dynamic>{});
+    queryParameters.addAll(query ?? <String, dynamic>{});
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;

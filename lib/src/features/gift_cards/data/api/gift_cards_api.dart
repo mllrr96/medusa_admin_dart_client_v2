@@ -13,31 +13,31 @@ abstract class GiftCardsApi {
 
   @GET('/gift-cards')
   Future<GiftCardsListResponse> retrieveAll({
-    @Queries() Map<String, dynamic>? queryParameters,
+    @Queries() Map<String, dynamic>? query,
   });
 
   @POST('/gift-cards')
   Future<GiftCardResponse> create(
     @Body() CreateGiftCardRequest payload, {
-    @Queries() Map<String, dynamic>? queryParameters,
+    @Queries() Map<String, dynamic>? query,
   });
 
   @GET('/gift-cards/{id}')
   Future<GiftCardResponse> retrieve({
     @Path('id') required String id,
-    @Queries() Map<String, dynamic>? queryParameters,
+    @Queries() Map<String, dynamic>? query,
   });
 
   @POST('/gift-cards/{id}')
   Future<GiftCardResponse> update({
     @Path('id') required String id,
     @Body() required UpdateGiftCardRequest payload,
-    @Queries() Map<String, dynamic>? queryParameters,
+    @Queries() Map<String, dynamic>? query,
   });
 
   @DELETE('/gift-cards/{id}')
   Future<void> delete({
     @Path('id') required String id,
-    @Queries() Map<String, dynamic>? queryParameters,
+    @Queries() Map<String, dynamic>? query,
   });
 }

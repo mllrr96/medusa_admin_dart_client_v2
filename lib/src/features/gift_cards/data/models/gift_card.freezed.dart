@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$GiftCard {
 
- String get id; String get code; String get status; int get value; String get currencyCode; String get customerId; Customer get customer; String get referenceId; String get note; String get reference; DateTime get expiresAt; DateTime get createdAt; DateTime get updatedAt; LineItem get lineItem;
+ String get id; String get code; String get status; int get value; String get currencyCode; String get customerId; Customer get customer; String get referenceId; String get note; String get reference; DateTime? get expiresAt; DateTime? get createdAt; DateTime? get updatedAt; LineItem get lineItem;
 /// Create a copy of GiftCard
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $GiftCardCopyWith<$Res>  {
   factory $GiftCardCopyWith(GiftCard value, $Res Function(GiftCard) _then) = _$GiftCardCopyWithImpl;
 @useResult
 $Res call({
- String id, String code, String status, int value, String currencyCode, String customerId, Customer customer, String referenceId, String note, String reference, DateTime expiresAt, DateTime createdAt, DateTime updatedAt, LineItem lineItem
+ String id, String code, String status, int value, String currencyCode, String customerId, Customer customer, String referenceId, String note, String reference, DateTime? expiresAt, DateTime? createdAt, DateTime? updatedAt, LineItem lineItem
 });
 
 
@@ -65,7 +65,7 @@ class _$GiftCardCopyWithImpl<$Res>
 
 /// Create a copy of GiftCard
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? code = null,Object? status = null,Object? value = null,Object? currencyCode = null,Object? customerId = null,Object? customer = null,Object? referenceId = null,Object? note = null,Object? reference = null,Object? expiresAt = null,Object? createdAt = null,Object? updatedAt = null,Object? lineItem = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? code = null,Object? status = null,Object? value = null,Object? currencyCode = null,Object? customerId = null,Object? customer = null,Object? referenceId = null,Object? note = null,Object? reference = null,Object? expiresAt = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? lineItem = null,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,code: null == code ? _self.code : code // ignore: cast_nullable_to_non_nullable
@@ -77,10 +77,10 @@ as String,customer: null == customer ? _self.customer : customer // ignore: cast
 as Customer,referenceId: null == referenceId ? _self.referenceId : referenceId // ignore: cast_nullable_to_non_nullable
 as String,note: null == note ? _self.note : note // ignore: cast_nullable_to_non_nullable
 as String,reference: null == reference ? _self.reference : reference // ignore: cast_nullable_to_non_nullable
-as String,expiresAt: null == expiresAt ? _self.expiresAt : expiresAt // ignore: cast_nullable_to_non_nullable
-as DateTime,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,lineItem: null == lineItem ? _self.lineItem : lineItem // ignore: cast_nullable_to_non_nullable
+as String,expiresAt: freezed == expiresAt ? _self.expiresAt : expiresAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,lineItem: null == lineItem ? _self.lineItem : lineItem // ignore: cast_nullable_to_non_nullable
 as LineItem,
   ));
 }
@@ -184,7 +184,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String code,  String status,  int value,  String currencyCode,  String customerId,  Customer customer,  String referenceId,  String note,  String reference,  DateTime expiresAt,  DateTime createdAt,  DateTime updatedAt,  LineItem lineItem)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String code,  String status,  int value,  String currencyCode,  String customerId,  Customer customer,  String referenceId,  String note,  String reference,  DateTime? expiresAt,  DateTime? createdAt,  DateTime? updatedAt,  LineItem lineItem)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _GiftCard() when $default != null:
 return $default(_that.id,_that.code,_that.status,_that.value,_that.currencyCode,_that.customerId,_that.customer,_that.referenceId,_that.note,_that.reference,_that.expiresAt,_that.createdAt,_that.updatedAt,_that.lineItem);case _:
@@ -205,7 +205,7 @@ return $default(_that.id,_that.code,_that.status,_that.value,_that.currencyCode,
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String code,  String status,  int value,  String currencyCode,  String customerId,  Customer customer,  String referenceId,  String note,  String reference,  DateTime expiresAt,  DateTime createdAt,  DateTime updatedAt,  LineItem lineItem)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String code,  String status,  int value,  String currencyCode,  String customerId,  Customer customer,  String referenceId,  String note,  String reference,  DateTime? expiresAt,  DateTime? createdAt,  DateTime? updatedAt,  LineItem lineItem)  $default,) {final _that = this;
 switch (_that) {
 case _GiftCard():
 return $default(_that.id,_that.code,_that.status,_that.value,_that.currencyCode,_that.customerId,_that.customer,_that.referenceId,_that.note,_that.reference,_that.expiresAt,_that.createdAt,_that.updatedAt,_that.lineItem);case _:
@@ -225,7 +225,7 @@ return $default(_that.id,_that.code,_that.status,_that.value,_that.currencyCode,
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String code,  String status,  int value,  String currencyCode,  String customerId,  Customer customer,  String referenceId,  String note,  String reference,  DateTime expiresAt,  DateTime createdAt,  DateTime updatedAt,  LineItem lineItem)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String code,  String status,  int value,  String currencyCode,  String customerId,  Customer customer,  String referenceId,  String note,  String reference,  DateTime? expiresAt,  DateTime? createdAt,  DateTime? updatedAt,  LineItem lineItem)?  $default,) {final _that = this;
 switch (_that) {
 case _GiftCard() when $default != null:
 return $default(_that.id,_that.code,_that.status,_that.value,_that.currencyCode,_that.customerId,_that.customer,_that.referenceId,_that.note,_that.reference,_that.expiresAt,_that.createdAt,_that.updatedAt,_that.lineItem);case _:
@@ -240,7 +240,7 @@ return $default(_that.id,_that.code,_that.status,_that.value,_that.currencyCode,
 @JsonSerializable()
 
 class _GiftCard implements GiftCard {
-  const _GiftCard({required this.id, required this.code, required this.status, required this.value, required this.currencyCode, required this.customerId, required this.customer, required this.referenceId, required this.note, required this.reference, required this.expiresAt, required this.createdAt, required this.updatedAt, required this.lineItem});
+  const _GiftCard({required this.id, required this.code, required this.status, required this.value, required this.currencyCode, required this.customerId, required this.customer, required this.referenceId, required this.note, required this.reference, this.expiresAt, this.createdAt, this.updatedAt, required this.lineItem});
   factory _GiftCard.fromJson(Map<String, dynamic> json) => _$GiftCardFromJson(json);
 
 @override final  String id;
@@ -253,9 +253,9 @@ class _GiftCard implements GiftCard {
 @override final  String referenceId;
 @override final  String note;
 @override final  String reference;
-@override final  DateTime expiresAt;
-@override final  DateTime createdAt;
-@override final  DateTime updatedAt;
+@override final  DateTime? expiresAt;
+@override final  DateTime? createdAt;
+@override final  DateTime? updatedAt;
 @override final  LineItem lineItem;
 
 /// Create a copy of GiftCard
@@ -291,7 +291,7 @@ abstract mixin class _$GiftCardCopyWith<$Res> implements $GiftCardCopyWith<$Res>
   factory _$GiftCardCopyWith(_GiftCard value, $Res Function(_GiftCard) _then) = __$GiftCardCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String code, String status, int value, String currencyCode, String customerId, Customer customer, String referenceId, String note, String reference, DateTime expiresAt, DateTime createdAt, DateTime updatedAt, LineItem lineItem
+ String id, String code, String status, int value, String currencyCode, String customerId, Customer customer, String referenceId, String note, String reference, DateTime? expiresAt, DateTime? createdAt, DateTime? updatedAt, LineItem lineItem
 });
 
 
@@ -308,7 +308,7 @@ class __$GiftCardCopyWithImpl<$Res>
 
 /// Create a copy of GiftCard
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? code = null,Object? status = null,Object? value = null,Object? currencyCode = null,Object? customerId = null,Object? customer = null,Object? referenceId = null,Object? note = null,Object? reference = null,Object? expiresAt = null,Object? createdAt = null,Object? updatedAt = null,Object? lineItem = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? code = null,Object? status = null,Object? value = null,Object? currencyCode = null,Object? customerId = null,Object? customer = null,Object? referenceId = null,Object? note = null,Object? reference = null,Object? expiresAt = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? lineItem = null,}) {
   return _then(_GiftCard(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,code: null == code ? _self.code : code // ignore: cast_nullable_to_non_nullable
@@ -320,10 +320,10 @@ as String,customer: null == customer ? _self.customer : customer // ignore: cast
 as Customer,referenceId: null == referenceId ? _self.referenceId : referenceId // ignore: cast_nullable_to_non_nullable
 as String,note: null == note ? _self.note : note // ignore: cast_nullable_to_non_nullable
 as String,reference: null == reference ? _self.reference : reference // ignore: cast_nullable_to_non_nullable
-as String,expiresAt: null == expiresAt ? _self.expiresAt : expiresAt // ignore: cast_nullable_to_non_nullable
-as DateTime,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,lineItem: null == lineItem ? _self.lineItem : lineItem // ignore: cast_nullable_to_non_nullable
+as String,expiresAt: freezed == expiresAt ? _self.expiresAt : expiresAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,lineItem: null == lineItem ? _self.lineItem : lineItem // ignore: cast_nullable_to_non_nullable
 as LineItem,
   ));
 }

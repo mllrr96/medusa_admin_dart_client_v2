@@ -9,7 +9,7 @@ class DiscountsRepository {
   Future<DiscountsListRes> retrieveAll({
     Map<String, dynamic>? queryParameters,
   }) {
-    return _discountsApi.retrieveAll(queryParameters: queryParameters);
+    return _discountsApi.retrieveAll(query: queryParameters);
   }
 
   Future<DiscountsRes> retrieve(String id) {

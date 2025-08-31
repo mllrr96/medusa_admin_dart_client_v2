@@ -18,12 +18,10 @@ class _UsersApi implements UsersApi {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<UserListResponse> retrieveAll({
-    Map<String, dynamic>? queryParameters,
-  }) async {
+  Future<UserListResponse> retrieveAll({Map<String, dynamic>? query}) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    queryParameters.addAll(queryParameters ?? <String, dynamic>{});
+    queryParameters.addAll(query ?? <String, dynamic>{});
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
@@ -49,12 +47,10 @@ class _UsersApi implements UsersApi {
   }
 
   @override
-  Future<UserResponse> retrieveMe({
-    Map<String, dynamic>? queryParameters,
-  }) async {
+  Future<UserResponse> retrieveMe({Map<String, dynamic>? query}) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    queryParameters.addAll(queryParameters ?? <String, dynamic>{});
+    queryParameters.addAll(query ?? <String, dynamic>{});
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;

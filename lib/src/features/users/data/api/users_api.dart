@@ -12,12 +12,12 @@ abstract class UsersApi {
 
   @GET('/admin/users')
   Future<UserListResponse> retrieveAll({
-    @Queries() Map<String, dynamic>? queryParameters,
+    @Queries() Map<String, dynamic>? query,
   });
 
   @GET('/admin/users/me')
   Future<UserResponse> retrieveMe({
-    @Queries() Map<String, dynamic>? queryParameters,
+    @Queries() Map<String, dynamic>? query,
   });
 
   @GET('/admin/users/{id}')

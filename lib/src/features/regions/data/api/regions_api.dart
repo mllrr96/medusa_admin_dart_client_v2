@@ -10,7 +10,7 @@ abstract class RegionsApi {
 
   @GET('/admin/regions')
   Future<List<Region>> retrieveAll({
-    @Queries() Map<String, dynamic>? queryParameters,
+    @Queries() Map<String, dynamic>? query,
   });
 
   @GET('/admin/regions/{id}')

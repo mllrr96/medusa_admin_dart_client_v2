@@ -10,7 +10,7 @@ abstract class CustomersApi {
 
   @GET('/admin/customers')
   Future<List<Customer>> retrieveAll({
-    @Queries() Map<String, dynamic>? queryParameters,
+    @Queries() Map<String, dynamic>? query,
   });
 
   @GET('/admin/customers/{id}')

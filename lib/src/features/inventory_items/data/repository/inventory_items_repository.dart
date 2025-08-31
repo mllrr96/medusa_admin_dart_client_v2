@@ -7,7 +7,7 @@ class InventoryItemsRepository {
   final InventoryItemsApi _inventoryItemsApi;
 
   Future<List<InventoryItem>> list({Map<String, dynamic>? queryParameters}) {
-    return _inventoryItemsApi.list(queryParameters: queryParameters);
+    return _inventoryItemsApi.list(query: queryParameters);
   }
 
   Future<InventoryItem> retrieve(String id) {

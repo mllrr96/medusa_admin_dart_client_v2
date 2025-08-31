@@ -10,7 +10,7 @@ abstract class SwapsApi {
 
   @GET('/admin/swaps')
   Future<List<Swap>> retrieveAll({
-    @Queries() Map<String, dynamic>? queryParameters,
+    @Queries() Map<String, dynamic>? query,
   });
 
   @GET('/admin/swaps/{id}')

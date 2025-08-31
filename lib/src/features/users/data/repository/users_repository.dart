@@ -11,13 +11,13 @@ class UsersRepository {
   Future<UserListResponse> retrieveAll({
     Map<String, dynamic>? queryParameters,
   }) {
-    return _usersApi.retrieveAll(queryParameters: queryParameters);
+    return _usersApi.retrieveAll(query: queryParameters);
   }
 
   Future<UserResponse> retrieveMe({
     Map<String, dynamic>? queryParameters,
   }) {
-    return _usersApi.retrieveMe(queryParameters: queryParameters);
+    return _usersApi.retrieveMe(query: queryParameters);
   }
 
   Future<UserResponse> retrieve(String id) {

@@ -13,8 +13,12 @@ _DraftOrder _$DraftOrderFromJson(Map<String, dynamic> json) => _DraftOrder(
   cartId: json['cartId'] as String,
   regionId: json['regionId'] as String,
   currencyCode: json['currencyCode'] as String,
-  createdAt: DateTime.parse(json['createdAt'] as String),
-  updatedAt: DateTime.parse(json['updatedAt'] as String),
+  createdAt: json['createdAt'] == null
+      ? null
+      : DateTime.parse(json['createdAt'] as String),
+  updatedAt: json['updatedAt'] == null
+      ? null
+      : DateTime.parse(json['updatedAt'] as String),
   deletedAt: json['deletedAt'] == null
       ? null
       : DateTime.parse(json['deletedAt'] as String),
@@ -28,7 +32,7 @@ Map<String, dynamic> _$DraftOrderToJson(_DraftOrder instance) =>
       'cartId': instance.cartId,
       'regionId': instance.regionId,
       'currencyCode': instance.currencyCode,
-      'createdAt': instance.createdAt.toIso8601String(),
-      'updatedAt': instance.updatedAt.toIso8601String(),
+      'createdAt': instance.createdAt?.toIso8601String(),
+      'updatedAt': instance.updatedAt?.toIso8601String(),
       'deletedAt': instance.deletedAt?.toIso8601String(),
     };

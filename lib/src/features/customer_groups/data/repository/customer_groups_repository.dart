@@ -18,7 +18,7 @@ class CustomerGroupsRepository {
     Map<String, dynamic>? queryParameters,
   }) async {
     final response = await _customerGroupsApi.list(
-      queryParameters: queryParameters,
+      query: queryParameters,
     );
     // Unwrap the response to return only the list of customer groups
     return response.customerGroups;

@@ -14,8 +14,8 @@ abstract class Note with _$Note {
     required String value,
     @JsonKey(name: 'author_id') String? authorId,
     User? author,
-    @JsonKey(name: 'created_at') required DateTime createdAt,
-    @JsonKey(name: 'updated_at') required DateTime updatedAt,
+    @JsonKey(name: 'created_at') DateTime? createdAt,
+    @JsonKey(name: 'updated_at') DateTime? updatedAt,
     @JsonKey(name: 'deleted_at') DateTime? deletedAt,
   }) = _Note;
 

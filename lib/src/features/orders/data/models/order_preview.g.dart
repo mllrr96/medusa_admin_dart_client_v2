@@ -40,8 +40,12 @@ _OrderPreview _$OrderPreviewFromJson(
   fulfillmentStatus: json['fulfillmentStatus'] as String,
   summary: BaseOrderSummary.fromJson(json['summary'] as Map<String, dynamic>),
   metadata: json['metadata'] as Map<String, dynamic>?,
-  createdAt: DateTime.parse(json['createdAt'] as String),
-  updatedAt: DateTime.parse(json['updatedAt'] as String),
+  createdAt: json['createdAt'] == null
+      ? null
+      : DateTime.parse(json['createdAt'] as String),
+  updatedAt: json['updatedAt'] == null
+      ? null
+      : DateTime.parse(json['updatedAt'] as String),
   originalItemTotal: (json['originalItemTotal'] as num).toInt(),
   originalItemSubtotal: (json['originalItemSubtotal'] as num).toInt(),
   originalItemTaxTotal: (json['originalItemTaxTotal'] as num).toInt(),
@@ -89,8 +93,8 @@ Map<String, dynamic> _$OrderPreviewToJson(_OrderPreview instance) =>
       'fulfillmentStatus': instance.fulfillmentStatus,
       'summary': instance.summary,
       'metadata': instance.metadata,
-      'createdAt': instance.createdAt.toIso8601String(),
-      'updatedAt': instance.updatedAt.toIso8601String(),
+      'createdAt': instance.createdAt?.toIso8601String(),
+      'updatedAt': instance.updatedAt?.toIso8601String(),
       'originalItemTotal': instance.originalItemTotal,
       'originalItemSubtotal': instance.originalItemSubtotal,
       'originalItemTaxTotal': instance.originalItemTaxTotal,

@@ -14,7 +14,7 @@ class CampaignsRepository {
   Future<CampaignsListRes> list({
     Map<String, dynamic>? queryParameters,
   }) {
-    return _campaignsApi.list(queryParameters: queryParameters);
+    return _campaignsApi.list(query: queryParameters);
   }
 
   Future<CampaignRes> create(CreateCampaignReq body) {

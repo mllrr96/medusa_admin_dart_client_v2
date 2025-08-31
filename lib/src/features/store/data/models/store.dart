@@ -9,8 +9,8 @@ abstract class Store with _$Store {
     required String id,
     required String name,
     String? defaultCurrencyCode,
-    required DateTime createdAt,
-    required DateTime updatedAt,
+    DateTime? createdAt,
+    DateTime? updatedAt,
     DateTime? deletedAt,
   }) = _Store;
 

@@ -23,17 +23,17 @@ abstract class OrderChange with _$OrderChange {
     required Order order,
     required String status,
     @JsonKey(name: 'requested_by') required String requestedBy,
-    @JsonKey(name: 'requested_at') required DateTime requestedAt,
+    @JsonKey(name: 'requested_at') DateTime? requestedAt,
     @JsonKey(name: 'confirmed_by') required String confirmedBy,
-    @JsonKey(name: 'confirmed_at') required DateTime confirmedAt,
+    @JsonKey(name: 'confirmed_at') DateTime? confirmedAt,
     @JsonKey(name: 'declined_by') required String declinedBy,
     @JsonKey(name: 'declined_reason') required String declinedReason,
     required Map<String, dynamic> metadata,
-    @JsonKey(name: 'declined_at') required DateTime declinedAt,
+    @JsonKey(name: 'declined_at') DateTime? declinedAt,
     @JsonKey(name: 'canceled_by') required String canceledBy,
-    @JsonKey(name: 'canceled_at') required DateTime canceledAt,
-    @JsonKey(name: 'created_at') required DateTime createdAt,
-    @JsonKey(name: 'updated_at') required DateTime updatedAt,
+    @JsonKey(name: 'canceled_at') DateTime? canceledAt,
+    @JsonKey(name: 'created_at') DateTime? createdAt,
+    @JsonKey(name: 'updated_at') DateTime? updatedAt,
   }) = _OrderChange;
 
   factory OrderChange.fromJson(Map<String, dynamic> json) =>

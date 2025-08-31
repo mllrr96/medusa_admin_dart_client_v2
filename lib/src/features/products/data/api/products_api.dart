@@ -24,7 +24,7 @@ abstract class ProductsApi {
 
   @GET('/admin/products')
   Future<ProductsRes> retrieveAll({
-    @Queries() Map<String, dynamic>? queryParameters,
+    @Queries() Map<String, dynamic>? query,
   });
 
   @POST('/admin/products')

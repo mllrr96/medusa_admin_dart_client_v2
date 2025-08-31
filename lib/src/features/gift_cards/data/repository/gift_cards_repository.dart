@@ -21,7 +21,7 @@ class GiftCardsRepository {
     Map<String, dynamic> queryParameters,
   ) async {
     try {
-      return await _giftCardsApi.retrieveAll(queryParameters: queryParameters);
+      return await _giftCardsApi.retrieveAll(query: queryParameters);
     } catch (e) {
       rethrow;
     }

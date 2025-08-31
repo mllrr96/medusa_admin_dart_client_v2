@@ -10,6 +10,6 @@ abstract class PluginsApi {
 
   @GET('/admin/plugins')
   Future<PluginsListRes> list({
-    @Queries() Map<String, dynamic>? queryParameters,
+    @Queries() Map<String, dynamic>? query,
   });
 }

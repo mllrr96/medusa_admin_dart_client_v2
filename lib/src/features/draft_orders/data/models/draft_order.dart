@@ -12,8 +12,8 @@ abstract class DraftOrder with _$DraftOrder {
     required String cartId,
     required String regionId,
     required String currencyCode,
-    required DateTime createdAt,
-    required DateTime updatedAt,
+    DateTime? createdAt,
+    DateTime? updatedAt,
     DateTime? deletedAt,
   }) = _DraftOrder;
 

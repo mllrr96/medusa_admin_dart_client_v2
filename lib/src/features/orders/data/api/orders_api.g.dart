@@ -18,13 +18,10 @@ class _OrdersApi implements OrdersApi {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<OrderRes> retrieve(
-    String id, {
-    Map<String, dynamic>? queryParameters,
-  }) async {
+  Future<OrderRes> retrieve(String id, {Map<String, dynamic>? query}) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    queryParameters.addAll(queryParameters ?? <String, dynamic>{});
+    queryParameters.addAll(query ?? <String, dynamic>{});
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
@@ -50,10 +47,10 @@ class _OrdersApi implements OrdersApi {
   }
 
   @override
-  Future<OrdersListRes> list({Map<String, dynamic>? queryParameters}) async {
+  Future<OrdersListRes> list({Map<String, dynamic>? query}) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    queryParameters.addAll(queryParameters ?? <String, dynamic>{});
+    queryParameters.addAll(query ?? <String, dynamic>{});
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
@@ -82,11 +79,11 @@ class _OrdersApi implements OrdersApi {
   Future<OrderRes> update(
     String id,
     PostOrdersOrderReq body, {
-    Map<String, dynamic>? queryParameters,
+    Map<String, dynamic>? query,
   }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    queryParameters.addAll(queryParameters ?? <String, dynamic>{});
+    queryParameters.addAll(query ?? <String, dynamic>{});
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     final _data = body;

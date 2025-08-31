@@ -7,7 +7,7 @@ class SwapsRepository {
   final SwapsApi _swapsApi;
 
   Future<List<Swap>> retrieveAll({Map<String, dynamic>? queryParameters}) {
-    return _swapsApi.retrieveAll(queryParameters: queryParameters);
+    return _swapsApi.retrieveAll(query: queryParameters);
   }
 
   Future<Swap> retrieve(String id) {

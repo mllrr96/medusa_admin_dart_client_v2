@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ProductCategory {
 
- String get id; String get name; String? get description; String get handle;@JsonKey(name: 'is_active') bool get isActive;@JsonKey(name: 'is_internal') bool get isInternal;@JsonKey(name: 'parent_category_id') String? get parentCategoryId; ProductCategory? get parentCategory;@JsonKey(name: 'category_children') List<ProductCategory> get categoryChildren; int? get rank; List<Product>? get products; Map<String, dynamic>? get metadata;@JsonKey(name: 'created_at') DateTime get createdAt;@JsonKey(name: 'updated_at') DateTime get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt;
+ String get id; String get name; String? get description; String get handle;@JsonKey(name: 'is_active') bool get isActive;@JsonKey(name: 'is_internal') bool get isInternal;@JsonKey(name: 'parent_category_id') String? get parentCategoryId; ProductCategory? get parentCategory;@JsonKey(name: 'category_children') List<ProductCategory> get categoryChildren; int? get rank; List<Product>? get products; Map<String, dynamic>? get metadata;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt;
 /// Create a copy of ProductCategory
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $ProductCategoryCopyWith<$Res>  {
   factory $ProductCategoryCopyWith(ProductCategory value, $Res Function(ProductCategory) _then) = _$ProductCategoryCopyWithImpl;
 @useResult
 $Res call({
- String id, String name, String? description, String handle,@JsonKey(name: 'is_active') bool isActive,@JsonKey(name: 'is_internal') bool isInternal,@JsonKey(name: 'parent_category_id') String? parentCategoryId, ProductCategory? parentCategory,@JsonKey(name: 'category_children') List<ProductCategory> categoryChildren, int? rank, List<Product>? products, Map<String, dynamic>? metadata,@JsonKey(name: 'created_at') DateTime createdAt,@JsonKey(name: 'updated_at') DateTime updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
+ String id, String name, String? description, String handle,@JsonKey(name: 'is_active') bool isActive,@JsonKey(name: 'is_internal') bool isInternal,@JsonKey(name: 'parent_category_id') String? parentCategoryId, ProductCategory? parentCategory,@JsonKey(name: 'category_children') List<ProductCategory> categoryChildren, int? rank, List<Product>? products, Map<String, dynamic>? metadata,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
 });
 
 
@@ -65,7 +65,7 @@ class _$ProductCategoryCopyWithImpl<$Res>
 
 /// Create a copy of ProductCategory
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? description = freezed,Object? handle = null,Object? isActive = null,Object? isInternal = null,Object? parentCategoryId = freezed,Object? parentCategory = freezed,Object? categoryChildren = null,Object? rank = freezed,Object? products = freezed,Object? metadata = freezed,Object? createdAt = null,Object? updatedAt = null,Object? deletedAt = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? description = freezed,Object? handle = null,Object? isActive = null,Object? isInternal = null,Object? parentCategoryId = freezed,Object? parentCategory = freezed,Object? categoryChildren = null,Object? rank = freezed,Object? products = freezed,Object? metadata = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -79,9 +79,9 @@ as ProductCategory?,categoryChildren: null == categoryChildren ? _self.categoryC
 as List<ProductCategory>,rank: freezed == rank ? _self.rank : rank // ignore: cast_nullable_to_non_nullable
 as int?,products: freezed == products ? _self.products : products // ignore: cast_nullable_to_non_nullable
 as List<Product>?,metadata: freezed == metadata ? _self.metadata : metadata // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,
   ));
 }
@@ -179,7 +179,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  String? description,  String handle, @JsonKey(name: 'is_active')  bool isActive, @JsonKey(name: 'is_internal')  bool isInternal, @JsonKey(name: 'parent_category_id')  String? parentCategoryId,  ProductCategory? parentCategory, @JsonKey(name: 'category_children')  List<ProductCategory> categoryChildren,  int? rank,  List<Product>? products,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'updated_at')  DateTime updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  String? description,  String handle, @JsonKey(name: 'is_active')  bool isActive, @JsonKey(name: 'is_internal')  bool isInternal, @JsonKey(name: 'parent_category_id')  String? parentCategoryId,  ProductCategory? parentCategory, @JsonKey(name: 'category_children')  List<ProductCategory> categoryChildren,  int? rank,  List<Product>? products,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ProductCategory() when $default != null:
 return $default(_that.id,_that.name,_that.description,_that.handle,_that.isActive,_that.isInternal,_that.parentCategoryId,_that.parentCategory,_that.categoryChildren,_that.rank,_that.products,_that.metadata,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -200,7 +200,7 @@ return $default(_that.id,_that.name,_that.description,_that.handle,_that.isActiv
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  String? description,  String handle, @JsonKey(name: 'is_active')  bool isActive, @JsonKey(name: 'is_internal')  bool isInternal, @JsonKey(name: 'parent_category_id')  String? parentCategoryId,  ProductCategory? parentCategory, @JsonKey(name: 'category_children')  List<ProductCategory> categoryChildren,  int? rank,  List<Product>? products,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'updated_at')  DateTime updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  String? description,  String handle, @JsonKey(name: 'is_active')  bool isActive, @JsonKey(name: 'is_internal')  bool isInternal, @JsonKey(name: 'parent_category_id')  String? parentCategoryId,  ProductCategory? parentCategory, @JsonKey(name: 'category_children')  List<ProductCategory> categoryChildren,  int? rank,  List<Product>? products,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)  $default,) {final _that = this;
 switch (_that) {
 case _ProductCategory():
 return $default(_that.id,_that.name,_that.description,_that.handle,_that.isActive,_that.isInternal,_that.parentCategoryId,_that.parentCategory,_that.categoryChildren,_that.rank,_that.products,_that.metadata,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -220,7 +220,7 @@ return $default(_that.id,_that.name,_that.description,_that.handle,_that.isActiv
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  String? description,  String handle, @JsonKey(name: 'is_active')  bool isActive, @JsonKey(name: 'is_internal')  bool isInternal, @JsonKey(name: 'parent_category_id')  String? parentCategoryId,  ProductCategory? parentCategory, @JsonKey(name: 'category_children')  List<ProductCategory> categoryChildren,  int? rank,  List<Product>? products,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'updated_at')  DateTime updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  String? description,  String handle, @JsonKey(name: 'is_active')  bool isActive, @JsonKey(name: 'is_internal')  bool isInternal, @JsonKey(name: 'parent_category_id')  String? parentCategoryId,  ProductCategory? parentCategory, @JsonKey(name: 'category_children')  List<ProductCategory> categoryChildren,  int? rank,  List<Product>? products,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _ProductCategory() when $default != null:
 return $default(_that.id,_that.name,_that.description,_that.handle,_that.isActive,_that.isInternal,_that.parentCategoryId,_that.parentCategory,_that.categoryChildren,_that.rank,_that.products,_that.metadata,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -235,7 +235,7 @@ return $default(_that.id,_that.name,_that.description,_that.handle,_that.isActiv
 @JsonSerializable()
 
 class _ProductCategory implements ProductCategory {
-  const _ProductCategory({required this.id, required this.name, this.description, required this.handle, @JsonKey(name: 'is_active') required this.isActive, @JsonKey(name: 'is_internal') required this.isInternal, @JsonKey(name: 'parent_category_id') this.parentCategoryId, this.parentCategory, @JsonKey(name: 'category_children') required final  List<ProductCategory> categoryChildren, this.rank, final  List<Product>? products, final  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at') required this.createdAt, @JsonKey(name: 'updated_at') required this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt}): _categoryChildren = categoryChildren,_products = products,_metadata = metadata;
+  const _ProductCategory({required this.id, required this.name, this.description, required this.handle, @JsonKey(name: 'is_active') required this.isActive, @JsonKey(name: 'is_internal') required this.isInternal, @JsonKey(name: 'parent_category_id') this.parentCategoryId, this.parentCategory, @JsonKey(name: 'category_children') required final  List<ProductCategory> categoryChildren, this.rank, final  List<Product>? products, final  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt}): _categoryChildren = categoryChildren,_products = products,_metadata = metadata;
   factory _ProductCategory.fromJson(Map<String, dynamic> json) => _$ProductCategoryFromJson(json);
 
 @override final  String id;
@@ -272,8 +272,8 @@ class _ProductCategory implements ProductCategory {
   return EqualUnmodifiableMapView(value);
 }
 
-@override@JsonKey(name: 'created_at') final  DateTime createdAt;
-@override@JsonKey(name: 'updated_at') final  DateTime updatedAt;
+@override@JsonKey(name: 'created_at') final  DateTime? createdAt;
+@override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
 @override@JsonKey(name: 'deleted_at') final  DateTime? deletedAt;
 
 /// Create a copy of ProductCategory
@@ -309,7 +309,7 @@ abstract mixin class _$ProductCategoryCopyWith<$Res> implements $ProductCategory
   factory _$ProductCategoryCopyWith(_ProductCategory value, $Res Function(_ProductCategory) _then) = __$ProductCategoryCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String name, String? description, String handle,@JsonKey(name: 'is_active') bool isActive,@JsonKey(name: 'is_internal') bool isInternal,@JsonKey(name: 'parent_category_id') String? parentCategoryId, ProductCategory? parentCategory,@JsonKey(name: 'category_children') List<ProductCategory> categoryChildren, int? rank, List<Product>? products, Map<String, dynamic>? metadata,@JsonKey(name: 'created_at') DateTime createdAt,@JsonKey(name: 'updated_at') DateTime updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
+ String id, String name, String? description, String handle,@JsonKey(name: 'is_active') bool isActive,@JsonKey(name: 'is_internal') bool isInternal,@JsonKey(name: 'parent_category_id') String? parentCategoryId, ProductCategory? parentCategory,@JsonKey(name: 'category_children') List<ProductCategory> categoryChildren, int? rank, List<Product>? products, Map<String, dynamic>? metadata,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
 });
 
 
@@ -326,7 +326,7 @@ class __$ProductCategoryCopyWithImpl<$Res>
 
 /// Create a copy of ProductCategory
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? description = freezed,Object? handle = null,Object? isActive = null,Object? isInternal = null,Object? parentCategoryId = freezed,Object? parentCategory = freezed,Object? categoryChildren = null,Object? rank = freezed,Object? products = freezed,Object? metadata = freezed,Object? createdAt = null,Object? updatedAt = null,Object? deletedAt = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? description = freezed,Object? handle = null,Object? isActive = null,Object? isInternal = null,Object? parentCategoryId = freezed,Object? parentCategory = freezed,Object? categoryChildren = null,Object? rank = freezed,Object? products = freezed,Object? metadata = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
   return _then(_ProductCategory(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -340,9 +340,9 @@ as ProductCategory?,categoryChildren: null == categoryChildren ? _self._category
 as List<ProductCategory>,rank: freezed == rank ? _self.rank : rank // ignore: cast_nullable_to_non_nullable
 as int?,products: freezed == products ? _self._products : products // ignore: cast_nullable_to_non_nullable
 as List<Product>?,metadata: freezed == metadata ? _self._metadata : metadata // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,
   ));
 }

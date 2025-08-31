@@ -13,7 +13,7 @@ class OrdersRepository {
     Map<String, dynamic>? queryParameters,
   }) async {
     try {
-      return await _ordersApi.retrieve(id, queryParameters: queryParameters);
+      return await _ordersApi.retrieve(id, query: queryParameters);
     } catch (e) {
       rethrow;
     }
@@ -21,7 +21,7 @@ class OrdersRepository {
 
   Future<OrdersListRes> list({Map<String, dynamic>? queryParameters}) async {
     try {
-      return await _ordersApi.list(queryParameters: queryParameters);
+      return await _ordersApi.list(query: queryParameters);
     } catch (e) {
       rethrow;
     }
@@ -36,7 +36,7 @@ class OrdersRepository {
       return await _ordersApi.update(
         id,
         payload,
-        queryParameters: queryParameters,
+        query: queryParameters,
       );
     } catch (e) {
       rethrow;

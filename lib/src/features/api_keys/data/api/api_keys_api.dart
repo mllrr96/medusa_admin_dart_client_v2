@@ -13,7 +13,7 @@ abstract class ApiKeysApi {
 
   @GET('/admin/api-keys')
   Future<ApiKeysListRes> list({
-    @Queries() Map<String, dynamic>? queryParameters,
+    @Queries() Map<String, dynamic>? query,
   });
 
   @POST('/admin/api-keys')

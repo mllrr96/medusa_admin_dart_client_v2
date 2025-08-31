@@ -18,17 +18,29 @@ _OrderChange _$OrderChangeFromJson(Map<String, dynamic> json) => _OrderChange(
   order: Order.fromJson(json['order'] as Map<String, dynamic>),
   status: json['status'] as String,
   requestedBy: json['requested_by'] as String,
-  requestedAt: DateTime.parse(json['requested_at'] as String),
+  requestedAt: json['requested_at'] == null
+      ? null
+      : DateTime.parse(json['requested_at'] as String),
   confirmedBy: json['confirmed_by'] as String,
-  confirmedAt: DateTime.parse(json['confirmed_at'] as String),
+  confirmedAt: json['confirmed_at'] == null
+      ? null
+      : DateTime.parse(json['confirmed_at'] as String),
   declinedBy: json['declined_by'] as String,
   declinedReason: json['declined_reason'] as String,
   metadata: json['metadata'] as Map<String, dynamic>,
-  declinedAt: DateTime.parse(json['declined_at'] as String),
+  declinedAt: json['declined_at'] == null
+      ? null
+      : DateTime.parse(json['declined_at'] as String),
   canceledBy: json['canceled_by'] as String,
-  canceledAt: DateTime.parse(json['canceled_at'] as String),
-  createdAt: DateTime.parse(json['created_at'] as String),
-  updatedAt: DateTime.parse(json['updated_at'] as String),
+  canceledAt: json['canceled_at'] == null
+      ? null
+      : DateTime.parse(json['canceled_at'] as String),
+  createdAt: json['created_at'] == null
+      ? null
+      : DateTime.parse(json['created_at'] as String),
+  updatedAt: json['updated_at'] == null
+      ? null
+      : DateTime.parse(json['updated_at'] as String),
 );
 
 Map<String, dynamic> _$OrderChangeToJson(_OrderChange instance) =>
@@ -44,15 +56,15 @@ Map<String, dynamic> _$OrderChangeToJson(_OrderChange instance) =>
       'order': instance.order,
       'status': instance.status,
       'requested_by': instance.requestedBy,
-      'requested_at': instance.requestedAt.toIso8601String(),
+      'requested_at': instance.requestedAt?.toIso8601String(),
       'confirmed_by': instance.confirmedBy,
-      'confirmed_at': instance.confirmedAt.toIso8601String(),
+      'confirmed_at': instance.confirmedAt?.toIso8601String(),
       'declined_by': instance.declinedBy,
       'declined_reason': instance.declinedReason,
       'metadata': instance.metadata,
-      'declined_at': instance.declinedAt.toIso8601String(),
+      'declined_at': instance.declinedAt?.toIso8601String(),
       'canceled_by': instance.canceledBy,
-      'canceled_at': instance.canceledAt.toIso8601String(),
-      'created_at': instance.createdAt.toIso8601String(),
-      'updated_at': instance.updatedAt.toIso8601String(),
+      'canceled_at': instance.canceledAt?.toIso8601String(),
+      'created_at': instance.createdAt?.toIso8601String(),
+      'updated_at': instance.updatedAt?.toIso8601String(),
     };

@@ -12,8 +12,8 @@ abstract class ProductCollection with _$ProductCollection {
     String? handle,
     List<Product>? products,
     Map<String, dynamic>? metadata,
-    @JsonKey(name: 'created_at') required DateTime createdAt,
-    @JsonKey(name: 'updated_at') required DateTime updatedAt,
+    @JsonKey(name: 'created_at') DateTime? createdAt,
+    @JsonKey(name: 'updated_at') DateTime? updatedAt,
     @JsonKey(name: 'deleted_at') DateTime? deletedAt,
   }) = _ProductCollection;
 

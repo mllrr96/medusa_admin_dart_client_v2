@@ -26,8 +26,12 @@ _Order _$OrderFromJson(Map<String, dynamic> json) => _Order(
   transactions: json['transactions'] as List<dynamic>?,
   summary: BaseOrderSummary.fromJson(json['summary'] as Map<String, dynamic>),
   metadata: json['metadata'] as Map<String, dynamic>?,
-  createdAt: DateTime.parse(json['created_at'] as String),
-  updatedAt: DateTime.parse(json['updated_at'] as String),
+  createdAt: json['created_at'] == null
+      ? null
+      : DateTime.parse(json['created_at'] as String),
+  updatedAt: json['updated_at'] == null
+      ? null
+      : DateTime.parse(json['updated_at'] as String),
   originalItemTotal: json['original_item_total'] as num,
   originalItemSubtotal: json['original_item_subtotal'] as num,
   originalItemTaxTotal: json['original_item_tax_total'] as num,
@@ -94,8 +98,8 @@ Map<String, dynamic> _$OrderToJson(_Order instance) => <String, dynamic>{
   'transactions': instance.transactions,
   'summary': instance.summary,
   'metadata': instance.metadata,
-  'created_at': instance.createdAt.toIso8601String(),
-  'updated_at': instance.updatedAt.toIso8601String(),
+  'created_at': instance.createdAt?.toIso8601String(),
+  'updated_at': instance.updatedAt?.toIso8601String(),
   'original_item_total': instance.originalItemTotal,
   'original_item_subtotal': instance.originalItemSubtotal,
   'original_item_tax_total': instance.originalItemTaxTotal,

@@ -9,6 +9,6 @@ class TaxProvidersRepository {
   Future<TaxProvidersListRes> list({
     Map<String, dynamic>? queryParameters,
   }) {
-    return _taxProvidersApi.list(queryParameters: queryParameters);
+    return _taxProvidersApi.list(query: queryParameters);
   }
 }

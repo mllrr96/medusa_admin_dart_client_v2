@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$CreateCampaignReq {
 
- String get name;@JsonKey(name: 'campaign_identifier') String get campaignIdentifier; String get description; Budget get budget;@JsonKey(name: 'starts_at') DateTime get startsAt;@JsonKey(name: 'ends_at') DateTime get endsAt; List<String>? get promotions;
+ String get name;@JsonKey(name: 'campaign_identifier') String get campaignIdentifier; String get description; Budget get budget;@JsonKey(name: 'starts_at') DateTime? get startsAt;@JsonKey(name: 'ends_at') DateTime? get endsAt; List<String>? get promotions;
 /// Create a copy of CreateCampaignReq
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $CreateCampaignReqCopyWith<$Res>  {
   factory $CreateCampaignReqCopyWith(CreateCampaignReq value, $Res Function(CreateCampaignReq) _then) = _$CreateCampaignReqCopyWithImpl;
 @useResult
 $Res call({
- String name,@JsonKey(name: 'campaign_identifier') String campaignIdentifier, String description, Budget budget,@JsonKey(name: 'starts_at') DateTime startsAt,@JsonKey(name: 'ends_at') DateTime endsAt, List<String>? promotions
+ String name,@JsonKey(name: 'campaign_identifier') String campaignIdentifier, String description, Budget budget,@JsonKey(name: 'starts_at') DateTime? startsAt,@JsonKey(name: 'ends_at') DateTime? endsAt, List<String>? promotions
 });
 
 
@@ -65,15 +65,15 @@ class _$CreateCampaignReqCopyWithImpl<$Res>
 
 /// Create a copy of CreateCampaignReq
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? name = null,Object? campaignIdentifier = null,Object? description = null,Object? budget = null,Object? startsAt = null,Object? endsAt = null,Object? promotions = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? name = null,Object? campaignIdentifier = null,Object? description = null,Object? budget = null,Object? startsAt = freezed,Object? endsAt = freezed,Object? promotions = freezed,}) {
   return _then(_self.copyWith(
 name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,campaignIdentifier: null == campaignIdentifier ? _self.campaignIdentifier : campaignIdentifier // ignore: cast_nullable_to_non_nullable
 as String,description: null == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
 as String,budget: null == budget ? _self.budget : budget // ignore: cast_nullable_to_non_nullable
-as Budget,startsAt: null == startsAt ? _self.startsAt : startsAt // ignore: cast_nullable_to_non_nullable
-as DateTime,endsAt: null == endsAt ? _self.endsAt : endsAt // ignore: cast_nullable_to_non_nullable
-as DateTime,promotions: freezed == promotions ? _self.promotions : promotions // ignore: cast_nullable_to_non_nullable
+as Budget,startsAt: freezed == startsAt ? _self.startsAt : startsAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,endsAt: freezed == endsAt ? _self.endsAt : endsAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,promotions: freezed == promotions ? _self.promotions : promotions // ignore: cast_nullable_to_non_nullable
 as List<String>?,
   ));
 }
@@ -168,7 +168,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String name, @JsonKey(name: 'campaign_identifier')  String campaignIdentifier,  String description,  Budget budget, @JsonKey(name: 'starts_at')  DateTime startsAt, @JsonKey(name: 'ends_at')  DateTime endsAt,  List<String>? promotions)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String name, @JsonKey(name: 'campaign_identifier')  String campaignIdentifier,  String description,  Budget budget, @JsonKey(name: 'starts_at')  DateTime? startsAt, @JsonKey(name: 'ends_at')  DateTime? endsAt,  List<String>? promotions)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _CreateCampaignReq() when $default != null:
 return $default(_that.name,_that.campaignIdentifier,_that.description,_that.budget,_that.startsAt,_that.endsAt,_that.promotions);case _:
@@ -189,7 +189,7 @@ return $default(_that.name,_that.campaignIdentifier,_that.description,_that.budg
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String name, @JsonKey(name: 'campaign_identifier')  String campaignIdentifier,  String description,  Budget budget, @JsonKey(name: 'starts_at')  DateTime startsAt, @JsonKey(name: 'ends_at')  DateTime endsAt,  List<String>? promotions)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String name, @JsonKey(name: 'campaign_identifier')  String campaignIdentifier,  String description,  Budget budget, @JsonKey(name: 'starts_at')  DateTime? startsAt, @JsonKey(name: 'ends_at')  DateTime? endsAt,  List<String>? promotions)  $default,) {final _that = this;
 switch (_that) {
 case _CreateCampaignReq():
 return $default(_that.name,_that.campaignIdentifier,_that.description,_that.budget,_that.startsAt,_that.endsAt,_that.promotions);case _:
@@ -209,7 +209,7 @@ return $default(_that.name,_that.campaignIdentifier,_that.description,_that.budg
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String name, @JsonKey(name: 'campaign_identifier')  String campaignIdentifier,  String description,  Budget budget, @JsonKey(name: 'starts_at')  DateTime startsAt, @JsonKey(name: 'ends_at')  DateTime endsAt,  List<String>? promotions)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String name, @JsonKey(name: 'campaign_identifier')  String campaignIdentifier,  String description,  Budget budget, @JsonKey(name: 'starts_at')  DateTime? startsAt, @JsonKey(name: 'ends_at')  DateTime? endsAt,  List<String>? promotions)?  $default,) {final _that = this;
 switch (_that) {
 case _CreateCampaignReq() when $default != null:
 return $default(_that.name,_that.campaignIdentifier,_that.description,_that.budget,_that.startsAt,_that.endsAt,_that.promotions);case _:
@@ -224,15 +224,15 @@ return $default(_that.name,_that.campaignIdentifier,_that.description,_that.budg
 @JsonSerializable()
 
 class _CreateCampaignReq implements CreateCampaignReq {
-  const _CreateCampaignReq({required this.name, @JsonKey(name: 'campaign_identifier') required this.campaignIdentifier, required this.description, required this.budget, @JsonKey(name: 'starts_at') required this.startsAt, @JsonKey(name: 'ends_at') required this.endsAt, final  List<String>? promotions}): _promotions = promotions;
+  const _CreateCampaignReq({required this.name, @JsonKey(name: 'campaign_identifier') required this.campaignIdentifier, required this.description, required this.budget, @JsonKey(name: 'starts_at') this.startsAt, @JsonKey(name: 'ends_at') this.endsAt, final  List<String>? promotions}): _promotions = promotions;
   factory _CreateCampaignReq.fromJson(Map<String, dynamic> json) => _$CreateCampaignReqFromJson(json);
 
 @override final  String name;
 @override@JsonKey(name: 'campaign_identifier') final  String campaignIdentifier;
 @override final  String description;
 @override final  Budget budget;
-@override@JsonKey(name: 'starts_at') final  DateTime startsAt;
-@override@JsonKey(name: 'ends_at') final  DateTime endsAt;
+@override@JsonKey(name: 'starts_at') final  DateTime? startsAt;
+@override@JsonKey(name: 'ends_at') final  DateTime? endsAt;
  final  List<String>? _promotions;
 @override List<String>? get promotions {
   final value = _promotions;
@@ -276,7 +276,7 @@ abstract mixin class _$CreateCampaignReqCopyWith<$Res> implements $CreateCampaig
   factory _$CreateCampaignReqCopyWith(_CreateCampaignReq value, $Res Function(_CreateCampaignReq) _then) = __$CreateCampaignReqCopyWithImpl;
 @override @useResult
 $Res call({
- String name,@JsonKey(name: 'campaign_identifier') String campaignIdentifier, String description, Budget budget,@JsonKey(name: 'starts_at') DateTime startsAt,@JsonKey(name: 'ends_at') DateTime endsAt, List<String>? promotions
+ String name,@JsonKey(name: 'campaign_identifier') String campaignIdentifier, String description, Budget budget,@JsonKey(name: 'starts_at') DateTime? startsAt,@JsonKey(name: 'ends_at') DateTime? endsAt, List<String>? promotions
 });
 
 
@@ -293,15 +293,15 @@ class __$CreateCampaignReqCopyWithImpl<$Res>
 
 /// Create a copy of CreateCampaignReq
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? name = null,Object? campaignIdentifier = null,Object? description = null,Object? budget = null,Object? startsAt = null,Object? endsAt = null,Object? promotions = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? name = null,Object? campaignIdentifier = null,Object? description = null,Object? budget = null,Object? startsAt = freezed,Object? endsAt = freezed,Object? promotions = freezed,}) {
   return _then(_CreateCampaignReq(
 name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,campaignIdentifier: null == campaignIdentifier ? _self.campaignIdentifier : campaignIdentifier // ignore: cast_nullable_to_non_nullable
 as String,description: null == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
 as String,budget: null == budget ? _self.budget : budget // ignore: cast_nullable_to_non_nullable
-as Budget,startsAt: null == startsAt ? _self.startsAt : startsAt // ignore: cast_nullable_to_non_nullable
-as DateTime,endsAt: null == endsAt ? _self.endsAt : endsAt // ignore: cast_nullable_to_non_nullable
-as DateTime,promotions: freezed == promotions ? _self._promotions : promotions // ignore: cast_nullable_to_non_nullable
+as Budget,startsAt: freezed == startsAt ? _self.startsAt : startsAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,endsAt: freezed == endsAt ? _self.endsAt : endsAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,promotions: freezed == promotions ? _self._promotions : promotions // ignore: cast_nullable_to_non_nullable
 as List<String>?,
   ));
 }

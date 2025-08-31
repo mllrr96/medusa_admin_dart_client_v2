@@ -9,7 +9,7 @@ class ReturnReasonsRepository {
   Future<List<ReturnReason>> retrieveAll({
     Map<String, dynamic>? queryParameters,
   }) {
-    return _returnReasonsApi.retrieveAll(queryParameters: queryParameters);
+    return _returnReasonsApi.retrieveAll(query: queryParameters);
   }
 
   Future<ReturnReason> retrieve(String id) {

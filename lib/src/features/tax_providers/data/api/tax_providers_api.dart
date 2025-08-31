@@ -10,6 +10,6 @@ abstract class TaxProvidersApi {
 
   @GET('/admin/tax-providers')
   Future<TaxProvidersListRes> list({
-    @Queries() Map<String, dynamic>? queryParameters,
+    @Queries() Map<String, dynamic>? query,
   });
 }

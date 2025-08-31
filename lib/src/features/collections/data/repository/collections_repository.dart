@@ -9,7 +9,7 @@ class CollectionsRepository {
   Future<List<ProductCollection>> retrieveAll({
     Map<String, dynamic>? queryParameters,
   }) {
-    return _collectionsApi.retrieveAll(queryParameters: queryParameters);
+    return _collectionsApi.retrieveAll(query: queryParameters);
   }
 
   Future<ProductCollection> retrieve(String id) {

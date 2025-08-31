@@ -17,8 +17,8 @@ abstract class Notification with _$Notification {
     Map<String, dynamic>? data,
     @JsonKey(name: 'parent_id') String? parentId,
     Notification? parent,
-    @JsonKey(name: 'created_at') required DateTime createdAt,
-    @JsonKey(name: 'updated_at') required DateTime updatedAt,
+    @JsonKey(name: 'created_at') DateTime? createdAt,
+    @JsonKey(name: 'updated_at') DateTime? updatedAt,
     @JsonKey(name: 'deleted_at') DateTime? deletedAt,
   }) = _Notification;
 

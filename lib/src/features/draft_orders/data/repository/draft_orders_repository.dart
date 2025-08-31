@@ -9,7 +9,7 @@ class DraftOrdersRepository {
   Future<List<DraftOrder>> retrieveAll({
     Map<String, dynamic>? queryParameters,
   }) {
-    return _draftOrdersApi.retrieveAll(queryParameters: queryParameters);
+    return _draftOrdersApi.retrieveAll(query: queryParameters);
   }
 
   Future<DraftOrder> retrieve(String id) {

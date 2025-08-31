@@ -10,7 +10,7 @@ abstract class CollectionsApi {
 
   @GET('/admin/collections')
   Future<List<ProductCollection>> retrieveAll({
-    @Queries() Map<String, dynamic>? queryParameters,
+    @Queries() Map<String, dynamic>? query,
   });
 
   @GET('/admin/collections/{id}')

@@ -11,7 +11,7 @@ abstract class SalesChannelsApi {
 
   @GET('/admin/sales-channels')
   Future<List<SalesChannel>> retrieveAll({
-    @Queries() Map<String, dynamic>? queryParameters,
+    @Queries() Map<String, dynamic>? query,
   });
 
   @GET('/admin/sales-channels/{id}')

@@ -18,12 +18,10 @@ class _CustomersApi implements CustomersApi {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<List<Customer>> retrieveAll({
-    Map<String, dynamic>? queryParameters,
-  }) async {
+  Future<List<Customer>> retrieveAll({Map<String, dynamic>? query}) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    queryParameters.addAll(queryParameters ?? <String, dynamic>{});
+    queryParameters.addAll(query ?? <String, dynamic>{});
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;

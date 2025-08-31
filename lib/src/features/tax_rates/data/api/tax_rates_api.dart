@@ -10,7 +10,7 @@ abstract class TaxRatesApi {
 
   @GET('/admin/tax-rates')
   Future<List<TaxRate>> retrieveAll({
-    @Queries() Map<String, dynamic>? queryParameters,
+    @Queries() Map<String, dynamic>? query,
   });
 
   @GET('/admin/tax-rates/{id}')

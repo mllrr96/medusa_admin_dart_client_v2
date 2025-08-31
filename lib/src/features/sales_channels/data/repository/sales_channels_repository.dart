@@ -10,7 +10,7 @@ class SalesChannelsRepository {
   Future<List<SalesChannel>> retrieveAll({
     Map<String, dynamic>? queryParameters,
   }) {
-    return _salesChannelsApi.retrieveAll(queryParameters: queryParameters);
+    return _salesChannelsApi.retrieveAll(query: queryParameters);
   }
 
   Future<SalesChannel> retrieve(String id) {

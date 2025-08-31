@@ -10,7 +10,7 @@ abstract class ReturnReasonsApi {
 
   @GET('/admin/return-reasons')
   Future<List<ReturnReason>> retrieveAll({
-    @Queries() Map<String, dynamic>? queryParameters,
+    @Queries() Map<String, dynamic>? query,
   });
 
   @GET('/admin/return-reasons/{id}')

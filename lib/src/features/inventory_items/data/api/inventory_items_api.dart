@@ -10,7 +10,7 @@ abstract class InventoryItemsApi {
 
   @GET('/admin/inventory-items')
   Future<List<InventoryItem>> list({
-    @Queries() Map<String, dynamic>? queryParameters,
+    @Queries() Map<String, dynamic>? query,
   });
 
   @GET('/admin/inventory-items/{id}')

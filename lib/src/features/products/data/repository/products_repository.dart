@@ -21,7 +21,7 @@ class ProductsRepository {
   final ProductsApi _productsApi;
 
   Future<ProductsRes> retrieveAll({Map<String, dynamic>? queryParameters}) {
-    return _productsApi.retrieveAll(queryParameters: queryParameters);
+    return _productsApi.retrieveAll(query: queryParameters);
   }
 
   Future<Product> create(CreateProductReq body) {

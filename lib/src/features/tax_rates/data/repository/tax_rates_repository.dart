@@ -7,7 +7,7 @@ class TaxRatesRepository {
   final TaxRatesApi _taxRatesApi;
 
   Future<List<TaxRate>> retrieveAll({Map<String, dynamic>? queryParameters}) {
-    return _taxRatesApi.retrieveAll(queryParameters: queryParameters);
+    return _taxRatesApi.retrieveAll(query: queryParameters);
   }
 
   Future<TaxRate> retrieve(String id) {

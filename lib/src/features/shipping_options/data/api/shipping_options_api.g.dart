@@ -19,11 +19,11 @@ class _ShippingOptionsApi implements ShippingOptionsApi {
 
   @override
   Future<List<ShippingOption>> retrieveAll({
-    Map<String, dynamic>? queryParameters,
+    Map<String, dynamic>? query,
   }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    queryParameters.addAll(queryParameters ?? <String, dynamic>{});
+    queryParameters.addAll(query ?? <String, dynamic>{});
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;

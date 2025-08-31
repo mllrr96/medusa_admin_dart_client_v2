@@ -10,7 +10,7 @@ abstract class ShippingProfilesApi {
 
   @GET('/admin/shipping-profiles')
   Future<List<ShippingProfile>> retrieveAll({
-    @Queries() Map<String, dynamic>? queryParameters,
+    @Queries() Map<String, dynamic>? query,
   });
 
   @GET('/admin/shipping-profiles/{id}')

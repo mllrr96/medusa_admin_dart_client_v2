@@ -8,7 +8,7 @@ class ReturnsRepository {
   final ReturnsApi _returnsApi;
 
   Future<List<Return>> retrieveAll({Map<String, dynamic>? queryParameters}) {
-    return _returnsApi.retrieveAll(queryParameters: queryParameters);
+    return _returnsApi.retrieveAll(query: queryParameters);
   }
 
   Future<Return> retrieve(String id) {

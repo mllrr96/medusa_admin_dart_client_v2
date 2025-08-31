@@ -10,7 +10,7 @@ abstract class ReturnsApi {
 
   @GET('/admin/returns')
   Future<List<Return>> retrieveAll({
-    @Queries() Map<String, dynamic>? queryParameters,
+    @Queries() Map<String, dynamic>? query,
   });
 
   @GET('/admin/returns/{id}')

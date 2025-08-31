@@ -7,7 +7,7 @@ class RegionsRepository {
   final RegionsApi _regionsApi;
 
   Future<List<Region>> retrieveAll({Map<String, dynamic>? queryParameters}) {
-    return _regionsApi.retrieveAll(queryParameters: queryParameters);
+    return _regionsApi.retrieveAll(query: queryParameters);
   }
 
   Future<Region> retrieve(String id) {

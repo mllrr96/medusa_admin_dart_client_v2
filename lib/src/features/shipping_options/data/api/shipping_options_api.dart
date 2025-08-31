@@ -10,7 +10,7 @@ abstract class ShippingOptionsApi {
 
   @GET('/admin/shipping-options')
   Future<List<ShippingOption>> retrieveAll({
-    @Queries() Map<String, dynamic>? queryParameters,
+    @Queries() Map<String, dynamic>? query,
   });
 
   @GET('/admin/shipping-options/{id}')

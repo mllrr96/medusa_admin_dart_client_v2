@@ -19,11 +19,11 @@ class _GiftCardsApi implements GiftCardsApi {
 
   @override
   Future<GiftCardsListResponse> retrieveAll({
-    Map<String, dynamic>? queryParameters,
+    Map<String, dynamic>? query,
   }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    queryParameters.addAll(queryParameters ?? <String, dynamic>{});
+    queryParameters.addAll(query ?? <String, dynamic>{});
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
@@ -51,11 +51,11 @@ class _GiftCardsApi implements GiftCardsApi {
   @override
   Future<GiftCardResponse> create(
     CreateGiftCardRequest payload, {
-    Map<String, dynamic>? queryParameters,
+    Map<String, dynamic>? query,
   }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    queryParameters.addAll(queryParameters ?? <String, dynamic>{});
+    queryParameters.addAll(query ?? <String, dynamic>{});
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     final _data = payload;
@@ -83,11 +83,11 @@ class _GiftCardsApi implements GiftCardsApi {
   @override
   Future<GiftCardResponse> retrieve({
     required String id,
-    Map<String, dynamic>? queryParameters,
+    Map<String, dynamic>? query,
   }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    queryParameters.addAll(queryParameters ?? <String, dynamic>{});
+    queryParameters.addAll(query ?? <String, dynamic>{});
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
@@ -116,11 +116,11 @@ class _GiftCardsApi implements GiftCardsApi {
   Future<GiftCardResponse> update({
     required String id,
     required UpdateGiftCardRequest payload,
-    Map<String, dynamic>? queryParameters,
+    Map<String, dynamic>? query,
   }) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    queryParameters.addAll(queryParameters ?? <String, dynamic>{});
+    queryParameters.addAll(query ?? <String, dynamic>{});
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     final _data = payload;
@@ -146,13 +146,10 @@ class _GiftCardsApi implements GiftCardsApi {
   }
 
   @override
-  Future<void> delete({
-    required String id,
-    Map<String, dynamic>? queryParameters,
-  }) async {
+  Future<void> delete({required String id, Map<String, dynamic>? query}) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    queryParameters.addAll(queryParameters ?? <String, dynamic>{});
+    queryParameters.addAll(query ?? <String, dynamic>{});
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;

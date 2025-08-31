@@ -10,7 +10,7 @@ abstract class DraftOrdersApi {
 
   @GET('/admin/draft-orders')
   Future<List<DraftOrder>> retrieveAll({
-    @Queries() Map<String, dynamic>? queryParameters,
+    @Queries() Map<String, dynamic>? query,
   });
 
   @GET('/admin/draft-orders/{id}')

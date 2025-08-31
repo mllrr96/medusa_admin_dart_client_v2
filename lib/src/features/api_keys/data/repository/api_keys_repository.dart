@@ -10,7 +10,7 @@ class ApiKeysRepository {
   final ApiKeysApi _apiKeysApi;
 
   Future<ApiKeysListRes> list({Map<String, dynamic>? queryParameters}) {
-    return _apiKeysApi.list(queryParameters: queryParameters);
+    return _apiKeysApi.list(query: queryParameters);
   }
 
   Future<ApiKeyRes> create(CreateApiKeyReq body) {

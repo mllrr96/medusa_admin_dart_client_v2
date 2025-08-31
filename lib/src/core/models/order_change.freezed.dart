@@ -19,7 +19,7 @@ mixin _$OrderChange {
 // required Exchange exchange,
 // required Claim claim,
 // required List<OrderChangeAction> actions,
- Order get order; String get status;@JsonKey(name: 'requested_by') String get requestedBy;@JsonKey(name: 'requested_at') DateTime get requestedAt;@JsonKey(name: 'confirmed_by') String get confirmedBy;@JsonKey(name: 'confirmed_at') DateTime get confirmedAt;@JsonKey(name: 'declined_by') String get declinedBy;@JsonKey(name: 'declined_reason') String get declinedReason; Map<String, dynamic> get metadata;@JsonKey(name: 'declined_at') DateTime get declinedAt;@JsonKey(name: 'canceled_by') String get canceledBy;@JsonKey(name: 'canceled_at') DateTime get canceledAt;@JsonKey(name: 'created_at') DateTime get createdAt;@JsonKey(name: 'updated_at') DateTime get updatedAt;
+ Order get order; String get status;@JsonKey(name: 'requested_by') String get requestedBy;@JsonKey(name: 'requested_at') DateTime? get requestedAt;@JsonKey(name: 'confirmed_by') String get confirmedBy;@JsonKey(name: 'confirmed_at') DateTime? get confirmedAt;@JsonKey(name: 'declined_by') String get declinedBy;@JsonKey(name: 'declined_reason') String get declinedReason; Map<String, dynamic> get metadata;@JsonKey(name: 'declined_at') DateTime? get declinedAt;@JsonKey(name: 'canceled_by') String get canceledBy;@JsonKey(name: 'canceled_at') DateTime? get canceledAt;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;
 /// Create a copy of OrderChange
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -52,7 +52,7 @@ abstract mixin class $OrderChangeCopyWith<$Res>  {
   factory $OrderChangeCopyWith(OrderChange value, $Res Function(OrderChange) _then) = _$OrderChangeCopyWithImpl;
 @useResult
 $Res call({
- String id, int version,@JsonKey(name: 'change_type') String? changeType,@JsonKey(name: 'order_id') String orderId,@JsonKey(name: 'return_id') String returnId,@JsonKey(name: 'exchange_id') String exchangeId,@JsonKey(name: 'claim_id') String claimId,@JsonKey(name: 'return_order') Return returnOrder, Order order, String status,@JsonKey(name: 'requested_by') String requestedBy,@JsonKey(name: 'requested_at') DateTime requestedAt,@JsonKey(name: 'confirmed_by') String confirmedBy,@JsonKey(name: 'confirmed_at') DateTime confirmedAt,@JsonKey(name: 'declined_by') String declinedBy,@JsonKey(name: 'declined_reason') String declinedReason, Map<String, dynamic> metadata,@JsonKey(name: 'declined_at') DateTime declinedAt,@JsonKey(name: 'canceled_by') String canceledBy,@JsonKey(name: 'canceled_at') DateTime canceledAt,@JsonKey(name: 'created_at') DateTime createdAt,@JsonKey(name: 'updated_at') DateTime updatedAt
+ String id, int version,@JsonKey(name: 'change_type') String? changeType,@JsonKey(name: 'order_id') String orderId,@JsonKey(name: 'return_id') String returnId,@JsonKey(name: 'exchange_id') String exchangeId,@JsonKey(name: 'claim_id') String claimId,@JsonKey(name: 'return_order') Return returnOrder, Order order, String status,@JsonKey(name: 'requested_by') String requestedBy,@JsonKey(name: 'requested_at') DateTime? requestedAt,@JsonKey(name: 'confirmed_by') String confirmedBy,@JsonKey(name: 'confirmed_at') DateTime? confirmedAt,@JsonKey(name: 'declined_by') String declinedBy,@JsonKey(name: 'declined_reason') String declinedReason, Map<String, dynamic> metadata,@JsonKey(name: 'declined_at') DateTime? declinedAt,@JsonKey(name: 'canceled_by') String canceledBy,@JsonKey(name: 'canceled_at') DateTime? canceledAt,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt
 });
 
 
@@ -69,7 +69,7 @@ class _$OrderChangeCopyWithImpl<$Res>
 
 /// Create a copy of OrderChange
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? version = null,Object? changeType = freezed,Object? orderId = null,Object? returnId = null,Object? exchangeId = null,Object? claimId = null,Object? returnOrder = null,Object? order = null,Object? status = null,Object? requestedBy = null,Object? requestedAt = null,Object? confirmedBy = null,Object? confirmedAt = null,Object? declinedBy = null,Object? declinedReason = null,Object? metadata = null,Object? declinedAt = null,Object? canceledBy = null,Object? canceledAt = null,Object? createdAt = null,Object? updatedAt = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? version = null,Object? changeType = freezed,Object? orderId = null,Object? returnId = null,Object? exchangeId = null,Object? claimId = null,Object? returnOrder = null,Object? order = null,Object? status = null,Object? requestedBy = null,Object? requestedAt = freezed,Object? confirmedBy = null,Object? confirmedAt = freezed,Object? declinedBy = null,Object? declinedReason = null,Object? metadata = null,Object? declinedAt = freezed,Object? canceledBy = null,Object? canceledAt = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,version: null == version ? _self.version : version // ignore: cast_nullable_to_non_nullable
@@ -82,18 +82,18 @@ as String,returnOrder: null == returnOrder ? _self.returnOrder : returnOrder // 
 as Return,order: null == order ? _self.order : order // ignore: cast_nullable_to_non_nullable
 as Order,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as String,requestedBy: null == requestedBy ? _self.requestedBy : requestedBy // ignore: cast_nullable_to_non_nullable
-as String,requestedAt: null == requestedAt ? _self.requestedAt : requestedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,confirmedBy: null == confirmedBy ? _self.confirmedBy : confirmedBy // ignore: cast_nullable_to_non_nullable
-as String,confirmedAt: null == confirmedAt ? _self.confirmedAt : confirmedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,declinedBy: null == declinedBy ? _self.declinedBy : declinedBy // ignore: cast_nullable_to_non_nullable
+as String,requestedAt: freezed == requestedAt ? _self.requestedAt : requestedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,confirmedBy: null == confirmedBy ? _self.confirmedBy : confirmedBy // ignore: cast_nullable_to_non_nullable
+as String,confirmedAt: freezed == confirmedAt ? _self.confirmedAt : confirmedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,declinedBy: null == declinedBy ? _self.declinedBy : declinedBy // ignore: cast_nullable_to_non_nullable
 as String,declinedReason: null == declinedReason ? _self.declinedReason : declinedReason // ignore: cast_nullable_to_non_nullable
 as String,metadata: null == metadata ? _self.metadata : metadata // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>,declinedAt: null == declinedAt ? _self.declinedAt : declinedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,canceledBy: null == canceledBy ? _self.canceledBy : canceledBy // ignore: cast_nullable_to_non_nullable
-as String,canceledAt: null == canceledAt ? _self.canceledAt : canceledAt // ignore: cast_nullable_to_non_nullable
-as DateTime,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,
+as Map<String, dynamic>,declinedAt: freezed == declinedAt ? _self.declinedAt : declinedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,canceledBy: null == canceledBy ? _self.canceledBy : canceledBy // ignore: cast_nullable_to_non_nullable
+as String,canceledAt: freezed == canceledAt ? _self.canceledAt : canceledAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,
   ));
 }
 /// Create a copy of OrderChange
@@ -196,7 +196,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  int version, @JsonKey(name: 'change_type')  String? changeType, @JsonKey(name: 'order_id')  String orderId, @JsonKey(name: 'return_id')  String returnId, @JsonKey(name: 'exchange_id')  String exchangeId, @JsonKey(name: 'claim_id')  String claimId, @JsonKey(name: 'return_order')  Return returnOrder,  Order order,  String status, @JsonKey(name: 'requested_by')  String requestedBy, @JsonKey(name: 'requested_at')  DateTime requestedAt, @JsonKey(name: 'confirmed_by')  String confirmedBy, @JsonKey(name: 'confirmed_at')  DateTime confirmedAt, @JsonKey(name: 'declined_by')  String declinedBy, @JsonKey(name: 'declined_reason')  String declinedReason,  Map<String, dynamic> metadata, @JsonKey(name: 'declined_at')  DateTime declinedAt, @JsonKey(name: 'canceled_by')  String canceledBy, @JsonKey(name: 'canceled_at')  DateTime canceledAt, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'updated_at')  DateTime updatedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  int version, @JsonKey(name: 'change_type')  String? changeType, @JsonKey(name: 'order_id')  String orderId, @JsonKey(name: 'return_id')  String returnId, @JsonKey(name: 'exchange_id')  String exchangeId, @JsonKey(name: 'claim_id')  String claimId, @JsonKey(name: 'return_order')  Return returnOrder,  Order order,  String status, @JsonKey(name: 'requested_by')  String requestedBy, @JsonKey(name: 'requested_at')  DateTime? requestedAt, @JsonKey(name: 'confirmed_by')  String confirmedBy, @JsonKey(name: 'confirmed_at')  DateTime? confirmedAt, @JsonKey(name: 'declined_by')  String declinedBy, @JsonKey(name: 'declined_reason')  String declinedReason,  Map<String, dynamic> metadata, @JsonKey(name: 'declined_at')  DateTime? declinedAt, @JsonKey(name: 'canceled_by')  String canceledBy, @JsonKey(name: 'canceled_at')  DateTime? canceledAt, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _OrderChange() when $default != null:
 return $default(_that.id,_that.version,_that.changeType,_that.orderId,_that.returnId,_that.exchangeId,_that.claimId,_that.returnOrder,_that.order,_that.status,_that.requestedBy,_that.requestedAt,_that.confirmedBy,_that.confirmedAt,_that.declinedBy,_that.declinedReason,_that.metadata,_that.declinedAt,_that.canceledBy,_that.canceledAt,_that.createdAt,_that.updatedAt);case _:
@@ -217,7 +217,7 @@ return $default(_that.id,_that.version,_that.changeType,_that.orderId,_that.retu
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  int version, @JsonKey(name: 'change_type')  String? changeType, @JsonKey(name: 'order_id')  String orderId, @JsonKey(name: 'return_id')  String returnId, @JsonKey(name: 'exchange_id')  String exchangeId, @JsonKey(name: 'claim_id')  String claimId, @JsonKey(name: 'return_order')  Return returnOrder,  Order order,  String status, @JsonKey(name: 'requested_by')  String requestedBy, @JsonKey(name: 'requested_at')  DateTime requestedAt, @JsonKey(name: 'confirmed_by')  String confirmedBy, @JsonKey(name: 'confirmed_at')  DateTime confirmedAt, @JsonKey(name: 'declined_by')  String declinedBy, @JsonKey(name: 'declined_reason')  String declinedReason,  Map<String, dynamic> metadata, @JsonKey(name: 'declined_at')  DateTime declinedAt, @JsonKey(name: 'canceled_by')  String canceledBy, @JsonKey(name: 'canceled_at')  DateTime canceledAt, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'updated_at')  DateTime updatedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  int version, @JsonKey(name: 'change_type')  String? changeType, @JsonKey(name: 'order_id')  String orderId, @JsonKey(name: 'return_id')  String returnId, @JsonKey(name: 'exchange_id')  String exchangeId, @JsonKey(name: 'claim_id')  String claimId, @JsonKey(name: 'return_order')  Return returnOrder,  Order order,  String status, @JsonKey(name: 'requested_by')  String requestedBy, @JsonKey(name: 'requested_at')  DateTime? requestedAt, @JsonKey(name: 'confirmed_by')  String confirmedBy, @JsonKey(name: 'confirmed_at')  DateTime? confirmedAt, @JsonKey(name: 'declined_by')  String declinedBy, @JsonKey(name: 'declined_reason')  String declinedReason,  Map<String, dynamic> metadata, @JsonKey(name: 'declined_at')  DateTime? declinedAt, @JsonKey(name: 'canceled_by')  String canceledBy, @JsonKey(name: 'canceled_at')  DateTime? canceledAt, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt)  $default,) {final _that = this;
 switch (_that) {
 case _OrderChange():
 return $default(_that.id,_that.version,_that.changeType,_that.orderId,_that.returnId,_that.exchangeId,_that.claimId,_that.returnOrder,_that.order,_that.status,_that.requestedBy,_that.requestedAt,_that.confirmedBy,_that.confirmedAt,_that.declinedBy,_that.declinedReason,_that.metadata,_that.declinedAt,_that.canceledBy,_that.canceledAt,_that.createdAt,_that.updatedAt);case _:
@@ -237,7 +237,7 @@ return $default(_that.id,_that.version,_that.changeType,_that.orderId,_that.retu
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  int version, @JsonKey(name: 'change_type')  String? changeType, @JsonKey(name: 'order_id')  String orderId, @JsonKey(name: 'return_id')  String returnId, @JsonKey(name: 'exchange_id')  String exchangeId, @JsonKey(name: 'claim_id')  String claimId, @JsonKey(name: 'return_order')  Return returnOrder,  Order order,  String status, @JsonKey(name: 'requested_by')  String requestedBy, @JsonKey(name: 'requested_at')  DateTime requestedAt, @JsonKey(name: 'confirmed_by')  String confirmedBy, @JsonKey(name: 'confirmed_at')  DateTime confirmedAt, @JsonKey(name: 'declined_by')  String declinedBy, @JsonKey(name: 'declined_reason')  String declinedReason,  Map<String, dynamic> metadata, @JsonKey(name: 'declined_at')  DateTime declinedAt, @JsonKey(name: 'canceled_by')  String canceledBy, @JsonKey(name: 'canceled_at')  DateTime canceledAt, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'updated_at')  DateTime updatedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  int version, @JsonKey(name: 'change_type')  String? changeType, @JsonKey(name: 'order_id')  String orderId, @JsonKey(name: 'return_id')  String returnId, @JsonKey(name: 'exchange_id')  String exchangeId, @JsonKey(name: 'claim_id')  String claimId, @JsonKey(name: 'return_order')  Return returnOrder,  Order order,  String status, @JsonKey(name: 'requested_by')  String requestedBy, @JsonKey(name: 'requested_at')  DateTime? requestedAt, @JsonKey(name: 'confirmed_by')  String confirmedBy, @JsonKey(name: 'confirmed_at')  DateTime? confirmedAt, @JsonKey(name: 'declined_by')  String declinedBy, @JsonKey(name: 'declined_reason')  String declinedReason,  Map<String, dynamic> metadata, @JsonKey(name: 'declined_at')  DateTime? declinedAt, @JsonKey(name: 'canceled_by')  String canceledBy, @JsonKey(name: 'canceled_at')  DateTime? canceledAt, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _OrderChange() when $default != null:
 return $default(_that.id,_that.version,_that.changeType,_that.orderId,_that.returnId,_that.exchangeId,_that.claimId,_that.returnOrder,_that.order,_that.status,_that.requestedBy,_that.requestedAt,_that.confirmedBy,_that.confirmedAt,_that.declinedBy,_that.declinedReason,_that.metadata,_that.declinedAt,_that.canceledBy,_that.canceledAt,_that.createdAt,_that.updatedAt);case _:
@@ -252,7 +252,7 @@ return $default(_that.id,_that.version,_that.changeType,_that.orderId,_that.retu
 @JsonSerializable()
 
 class _OrderChange implements OrderChange {
-  const _OrderChange({required this.id, required this.version, @JsonKey(name: 'change_type') this.changeType, @JsonKey(name: 'order_id') required this.orderId, @JsonKey(name: 'return_id') required this.returnId, @JsonKey(name: 'exchange_id') required this.exchangeId, @JsonKey(name: 'claim_id') required this.claimId, @JsonKey(name: 'return_order') required this.returnOrder, required this.order, required this.status, @JsonKey(name: 'requested_by') required this.requestedBy, @JsonKey(name: 'requested_at') required this.requestedAt, @JsonKey(name: 'confirmed_by') required this.confirmedBy, @JsonKey(name: 'confirmed_at') required this.confirmedAt, @JsonKey(name: 'declined_by') required this.declinedBy, @JsonKey(name: 'declined_reason') required this.declinedReason, required final  Map<String, dynamic> metadata, @JsonKey(name: 'declined_at') required this.declinedAt, @JsonKey(name: 'canceled_by') required this.canceledBy, @JsonKey(name: 'canceled_at') required this.canceledAt, @JsonKey(name: 'created_at') required this.createdAt, @JsonKey(name: 'updated_at') required this.updatedAt}): _metadata = metadata;
+  const _OrderChange({required this.id, required this.version, @JsonKey(name: 'change_type') this.changeType, @JsonKey(name: 'order_id') required this.orderId, @JsonKey(name: 'return_id') required this.returnId, @JsonKey(name: 'exchange_id') required this.exchangeId, @JsonKey(name: 'claim_id') required this.claimId, @JsonKey(name: 'return_order') required this.returnOrder, required this.order, required this.status, @JsonKey(name: 'requested_by') required this.requestedBy, @JsonKey(name: 'requested_at') this.requestedAt, @JsonKey(name: 'confirmed_by') required this.confirmedBy, @JsonKey(name: 'confirmed_at') this.confirmedAt, @JsonKey(name: 'declined_by') required this.declinedBy, @JsonKey(name: 'declined_reason') required this.declinedReason, required final  Map<String, dynamic> metadata, @JsonKey(name: 'declined_at') this.declinedAt, @JsonKey(name: 'canceled_by') required this.canceledBy, @JsonKey(name: 'canceled_at') this.canceledAt, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt}): _metadata = metadata;
   factory _OrderChange.fromJson(Map<String, dynamic> json) => _$OrderChangeFromJson(json);
 
 @override final  String id;
@@ -270,9 +270,9 @@ class _OrderChange implements OrderChange {
 @override final  Order order;
 @override final  String status;
 @override@JsonKey(name: 'requested_by') final  String requestedBy;
-@override@JsonKey(name: 'requested_at') final  DateTime requestedAt;
+@override@JsonKey(name: 'requested_at') final  DateTime? requestedAt;
 @override@JsonKey(name: 'confirmed_by') final  String confirmedBy;
-@override@JsonKey(name: 'confirmed_at') final  DateTime confirmedAt;
+@override@JsonKey(name: 'confirmed_at') final  DateTime? confirmedAt;
 @override@JsonKey(name: 'declined_by') final  String declinedBy;
 @override@JsonKey(name: 'declined_reason') final  String declinedReason;
  final  Map<String, dynamic> _metadata;
@@ -282,11 +282,11 @@ class _OrderChange implements OrderChange {
   return EqualUnmodifiableMapView(_metadata);
 }
 
-@override@JsonKey(name: 'declined_at') final  DateTime declinedAt;
+@override@JsonKey(name: 'declined_at') final  DateTime? declinedAt;
 @override@JsonKey(name: 'canceled_by') final  String canceledBy;
-@override@JsonKey(name: 'canceled_at') final  DateTime canceledAt;
-@override@JsonKey(name: 'created_at') final  DateTime createdAt;
-@override@JsonKey(name: 'updated_at') final  DateTime updatedAt;
+@override@JsonKey(name: 'canceled_at') final  DateTime? canceledAt;
+@override@JsonKey(name: 'created_at') final  DateTime? createdAt;
+@override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
 
 /// Create a copy of OrderChange
 /// with the given fields replaced by the non-null parameter values.
@@ -321,7 +321,7 @@ abstract mixin class _$OrderChangeCopyWith<$Res> implements $OrderChangeCopyWith
   factory _$OrderChangeCopyWith(_OrderChange value, $Res Function(_OrderChange) _then) = __$OrderChangeCopyWithImpl;
 @override @useResult
 $Res call({
- String id, int version,@JsonKey(name: 'change_type') String? changeType,@JsonKey(name: 'order_id') String orderId,@JsonKey(name: 'return_id') String returnId,@JsonKey(name: 'exchange_id') String exchangeId,@JsonKey(name: 'claim_id') String claimId,@JsonKey(name: 'return_order') Return returnOrder, Order order, String status,@JsonKey(name: 'requested_by') String requestedBy,@JsonKey(name: 'requested_at') DateTime requestedAt,@JsonKey(name: 'confirmed_by') String confirmedBy,@JsonKey(name: 'confirmed_at') DateTime confirmedAt,@JsonKey(name: 'declined_by') String declinedBy,@JsonKey(name: 'declined_reason') String declinedReason, Map<String, dynamic> metadata,@JsonKey(name: 'declined_at') DateTime declinedAt,@JsonKey(name: 'canceled_by') String canceledBy,@JsonKey(name: 'canceled_at') DateTime canceledAt,@JsonKey(name: 'created_at') DateTime createdAt,@JsonKey(name: 'updated_at') DateTime updatedAt
+ String id, int version,@JsonKey(name: 'change_type') String? changeType,@JsonKey(name: 'order_id') String orderId,@JsonKey(name: 'return_id') String returnId,@JsonKey(name: 'exchange_id') String exchangeId,@JsonKey(name: 'claim_id') String claimId,@JsonKey(name: 'return_order') Return returnOrder, Order order, String status,@JsonKey(name: 'requested_by') String requestedBy,@JsonKey(name: 'requested_at') DateTime? requestedAt,@JsonKey(name: 'confirmed_by') String confirmedBy,@JsonKey(name: 'confirmed_at') DateTime? confirmedAt,@JsonKey(name: 'declined_by') String declinedBy,@JsonKey(name: 'declined_reason') String declinedReason, Map<String, dynamic> metadata,@JsonKey(name: 'declined_at') DateTime? declinedAt,@JsonKey(name: 'canceled_by') String canceledBy,@JsonKey(name: 'canceled_at') DateTime? canceledAt,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt
 });
 
 
@@ -338,7 +338,7 @@ class __$OrderChangeCopyWithImpl<$Res>
 
 /// Create a copy of OrderChange
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? version = null,Object? changeType = freezed,Object? orderId = null,Object? returnId = null,Object? exchangeId = null,Object? claimId = null,Object? returnOrder = null,Object? order = null,Object? status = null,Object? requestedBy = null,Object? requestedAt = null,Object? confirmedBy = null,Object? confirmedAt = null,Object? declinedBy = null,Object? declinedReason = null,Object? metadata = null,Object? declinedAt = null,Object? canceledBy = null,Object? canceledAt = null,Object? createdAt = null,Object? updatedAt = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? version = null,Object? changeType = freezed,Object? orderId = null,Object? returnId = null,Object? exchangeId = null,Object? claimId = null,Object? returnOrder = null,Object? order = null,Object? status = null,Object? requestedBy = null,Object? requestedAt = freezed,Object? confirmedBy = null,Object? confirmedAt = freezed,Object? declinedBy = null,Object? declinedReason = null,Object? metadata = null,Object? declinedAt = freezed,Object? canceledBy = null,Object? canceledAt = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,}) {
   return _then(_OrderChange(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,version: null == version ? _self.version : version // ignore: cast_nullable_to_non_nullable
@@ -351,18 +351,18 @@ as String,returnOrder: null == returnOrder ? _self.returnOrder : returnOrder // 
 as Return,order: null == order ? _self.order : order // ignore: cast_nullable_to_non_nullable
 as Order,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as String,requestedBy: null == requestedBy ? _self.requestedBy : requestedBy // ignore: cast_nullable_to_non_nullable
-as String,requestedAt: null == requestedAt ? _self.requestedAt : requestedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,confirmedBy: null == confirmedBy ? _self.confirmedBy : confirmedBy // ignore: cast_nullable_to_non_nullable
-as String,confirmedAt: null == confirmedAt ? _self.confirmedAt : confirmedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,declinedBy: null == declinedBy ? _self.declinedBy : declinedBy // ignore: cast_nullable_to_non_nullable
+as String,requestedAt: freezed == requestedAt ? _self.requestedAt : requestedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,confirmedBy: null == confirmedBy ? _self.confirmedBy : confirmedBy // ignore: cast_nullable_to_non_nullable
+as String,confirmedAt: freezed == confirmedAt ? _self.confirmedAt : confirmedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,declinedBy: null == declinedBy ? _self.declinedBy : declinedBy // ignore: cast_nullable_to_non_nullable
 as String,declinedReason: null == declinedReason ? _self.declinedReason : declinedReason // ignore: cast_nullable_to_non_nullable
 as String,metadata: null == metadata ? _self._metadata : metadata // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>,declinedAt: null == declinedAt ? _self.declinedAt : declinedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,canceledBy: null == canceledBy ? _self.canceledBy : canceledBy // ignore: cast_nullable_to_non_nullable
-as String,canceledAt: null == canceledAt ? _self.canceledAt : canceledAt // ignore: cast_nullable_to_non_nullable
-as DateTime,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,
+as Map<String, dynamic>,declinedAt: freezed == declinedAt ? _self.declinedAt : declinedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,canceledBy: null == canceledBy ? _self.canceledBy : canceledBy // ignore: cast_nullable_to_non_nullable
+as String,canceledAt: freezed == canceledAt ? _self.canceledAt : canceledAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,
   ));
 }
 

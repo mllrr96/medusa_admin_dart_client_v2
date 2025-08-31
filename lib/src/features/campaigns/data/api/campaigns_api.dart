@@ -15,7 +15,7 @@ abstract class CampaignsApi {
 
   @GET('/admin/campaigns')
   Future<CampaignsListRes> list({
-    @Queries() Map<String, dynamic>? queryParameters,
+    @Queries() Map<String, dynamic>? query,
   });
 
   @POST('/admin/campaigns')

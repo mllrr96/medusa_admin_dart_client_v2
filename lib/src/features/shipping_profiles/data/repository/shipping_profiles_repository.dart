@@ -9,7 +9,7 @@ class ShippingProfilesRepository {
   Future<List<ShippingProfile>> retrieveAll({
     Map<String, dynamic>? queryParameters,
   }) {
-    return _shippingProfilesApi.retrieveAll(queryParameters: queryParameters);
+    return _shippingProfilesApi.retrieveAll(query: queryParameters);
   }
 
   Future<ShippingProfile> retrieve(String id) {
