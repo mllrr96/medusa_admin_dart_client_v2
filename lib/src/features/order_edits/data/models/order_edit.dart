@@ -28,5 +28,6 @@ abstract class OrderEdit with _$OrderEdit {
     @JsonKey(name: 'updated_at') DateTime? updatedAt,
   }) = _OrderEdit;
 
-  factory OrderEdit.fromJson(Map<String, dynamic> json) => _$OrderEditFromJson(json);
+  factory OrderEdit.fromJson(Map<String, dynamic> json) =>
+      _$OrderEditFromJson(json);
 }

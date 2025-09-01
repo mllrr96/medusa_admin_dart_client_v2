@@ -1,4 +1,3 @@
-
 import 'package:medusa_admin_dart_client/src/features/shipping_options/data/api/shipping_options_api.dart';
 import 'package:medusa_admin_dart_client/src/features/shipping_options/data/models/batch_update_shipping_option_rules_req.dart';
 import 'package:medusa_admin_dart_client/src/features/shipping_options/data/models/batch_update_shipping_option_rules_res.dart';
@@ -23,7 +22,10 @@ class ShippingOptionsRepository {
     required CreateShippingOptionReq body,
     Map<String, dynamic>? query,
   }) async {
-    return await _shippingOptionsApi.createShippingOption(body: body, query: query);
+    return await _shippingOptionsApi.createShippingOption(
+      body: body,
+      query: query,
+    );
   }
 
   Future<ShippingOptionRes> retrieve({

@@ -15,5 +15,6 @@ abstract class ShippingProfile with _$ShippingProfile {
     @JsonKey(name: 'deleted_at') DateTime? deletedAt,
   }) = _ShippingProfile;
 
-  factory ShippingProfile.fromJson(Map<String, dynamic> json) => _$ShippingProfileFromJson(json);
+  factory ShippingProfile.fromJson(Map<String, dynamic> json) =>
+      _$ShippingProfileFromJson(json);
 }

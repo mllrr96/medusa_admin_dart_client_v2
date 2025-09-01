@@ -14,7 +14,8 @@ abstract class ProductCategory with _$ProductCategory {
     @JsonKey(name: 'is_active') required bool isActive,
     required int rank,
     @JsonKey(name: 'parent_category_id') required String parentCategoryId,
-    @JsonKey(name: 'category_children') required List<ProductCategory> categoryChildren,
+    @JsonKey(name: 'category_children')
+    required List<ProductCategory> categoryChildren,
     @JsonKey(name: 'parent_category') ProductCategory? parentCategory,
     List<Product>? products,
     @JsonKey(name: 'created_at') DateTime? createdAt,

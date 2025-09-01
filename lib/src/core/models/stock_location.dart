@@ -14,7 +14,8 @@ abstract class StockLocation with _$StockLocation {
     @JsonKey(name: 'address_id') required String addressId,
     StockLocationAddress? address,
     @JsonKey(name: 'sales_channels') List<SalesChannel>? salesChannels,
-    @JsonKey(name: 'fulfillment_providers') List<FulfillmentProvider>? fulfillmentProviders,
+    @JsonKey(name: 'fulfillment_providers')
+    List<FulfillmentProvider>? fulfillmentProviders,
     Map<String, dynamic>? metadata,
     @JsonKey(name: 'created_at') DateTime? createdAt,
     @JsonKey(name: 'updated_at') DateTime? updatedAt,

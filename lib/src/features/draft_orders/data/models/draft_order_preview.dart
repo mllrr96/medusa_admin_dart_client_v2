@@ -36,8 +36,10 @@ abstract class DraftOrderPreview with _$DraftOrderPreview {
     // Nested Objects and Lists
     @JsonKey(name: 'order_change') OrderChange? orderChange,
     List<DraftOrderPreviewItem>? items,
-    @JsonKey(name: 'shipping_methods') List<DraftOrderPreviewShippingMethod>? shippingMethods,
-    @JsonKey(name: 'payment_collections') required List<PaymentCollection> paymentCollections,
+    @JsonKey(name: 'shipping_methods')
+    List<DraftOrderPreviewShippingMethod>? shippingMethods,
+    @JsonKey(name: 'payment_collections')
+    required List<PaymentCollection> paymentCollections,
     List<OrderFulfillment>? fulfillments,
     List<OrderTransaction>? transactions,
     @JsonKey(name: 'credit_lines') List<OrderCreditLine>? creditLines,
@@ -67,9 +69,12 @@ abstract class DraftOrderPreview with _$DraftOrderPreview {
     @JsonKey(name: 'shipping_total') required int shippingTotal,
     @JsonKey(name: 'shipping_subtotal') required int shippingSubtotal,
     @JsonKey(name: 'shipping_tax_total') required int shippingTaxTotal,
-    @JsonKey(name: 'original_shipping_total') required int originalShippingTotal,
-    @JsonKey(name: 'original_shipping_subtotal') required int originalShippingSubtotal,
-    @JsonKey(name: 'original_shipping_tax_total') required int originalShippingTaxTotal,
+    @JsonKey(name: 'original_shipping_total')
+    required int originalShippingTotal,
+    @JsonKey(name: 'original_shipping_subtotal')
+    required int originalShippingSubtotal,
+    @JsonKey(name: 'original_shipping_tax_total')
+    required int originalShippingTaxTotal,
     @JsonKey(name: 'credit_line_total') required int creditLineTotal,
 
     // Timestamps
@@ -85,10 +90,8 @@ abstract class DraftOrderPreview with _$DraftOrderPreview {
 
     // Metadata
     Map<String, dynamic>? metadata,
-
   }) = _DraftOrderPreview;
 
   factory DraftOrderPreview.fromJson(Map<String, dynamic> json) =>
       _$DraftOrderPreviewFromJson(json);
 }
-

@@ -7,7 +7,8 @@ part 'product_categories_api.g.dart';
 
 @RestApi()
 abstract class ProductCategoriesApi {
-  factory ProductCategoriesApi(Dio dio, {String baseUrl}) = _ProductCategoriesApi;
+  factory ProductCategoriesApi(Dio dio, {String baseUrl}) =
+      _ProductCategoriesApi;
 
   @GET('/admin/product-categories')
   Future<ProductCategoryListRes> retrieveAll({

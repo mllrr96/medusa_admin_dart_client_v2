@@ -1,4 +1,3 @@
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'invite.freezed.dart';
@@ -17,6 +16,5 @@ abstract class Invite with _$Invite {
     @JsonKey(name: 'updated_at') DateTime? updatedAt,
   }) = _Invite;
 
-  factory Invite.fromJson(Map<String, dynamic> json) =>
-      _$InviteFromJson(json);
+  factory Invite.fromJson(Map<String, dynamic> json) => _$InviteFromJson(json);
 }

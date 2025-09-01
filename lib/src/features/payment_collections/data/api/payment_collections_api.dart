@@ -7,7 +7,8 @@ part 'payment_collections_api.g.dart';
 
 @RestApi()
 abstract class PaymentCollectionsApi {
-  factory PaymentCollectionsApi(Dio dio, {String baseUrl}) = _PaymentCollectionsApi;
+  factory PaymentCollectionsApi(Dio dio, {String baseUrl}) =
+      _PaymentCollectionsApi;
 
   @POST('/admin/payment-collections')
   Future<PaymentCollectionRes> create(

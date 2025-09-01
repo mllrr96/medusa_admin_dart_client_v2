@@ -11,5 +11,6 @@ abstract class OrderEditRes with _$OrderEditRes {
     required OrderEdit orderEdit,
   }) = _OrderEditRes;
 
-  factory OrderEditRes.fromJson(Map<String, dynamic> json) => _$OrderEditResFromJson(json);
+  factory OrderEditRes.fromJson(Map<String, dynamic> json) =>
+      _$OrderEditResFromJson(json);
 }

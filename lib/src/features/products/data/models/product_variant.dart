@@ -34,12 +34,14 @@ abstract class ProductVariant with _$ProductVariant {
     int? width,
     List<ProductOptionValue>? options,
     @JsonKey(name: 'calculated_price') CalculatedPriceSet? calculatedPrice,
-    @JsonKey(name: 'inventory_items') List<ProductVariantInventoryItem>? inventoryItems,
+    @JsonKey(name: 'inventory_items')
+    List<ProductVariantInventoryItem>? inventoryItems,
     Map<String, dynamic>? metadata,
     @JsonKey(name: 'created_at') DateTime? createdAt,
     @JsonKey(name: 'updated_at') DateTime? updatedAt,
     @JsonKey(name: 'deleted_at') DateTime? deletedAt,
   }) = _ProductVariant;
 
-  factory ProductVariant.fromJson(Map<String, dynamic> json) => _$ProductVariantFromJson(json);
+  factory ProductVariant.fromJson(Map<String, dynamic> json) =>
+      _$ProductVariantFromJson(json);
 }

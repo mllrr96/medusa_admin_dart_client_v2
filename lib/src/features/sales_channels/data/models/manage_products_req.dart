@@ -10,5 +10,6 @@ abstract class ManageProductsReq with _$ManageProductsReq {
     List<String>? remove,
   }) = _ManageProductsReq;
 
-  factory ManageProductsReq.fromJson(Map<String, dynamic> json) => _$ManageProductsReqFromJson(json);
+  factory ManageProductsReq.fromJson(Map<String, dynamic> json) =>
+      _$ManageProductsReqFromJson(json);
 }

@@ -13,5 +13,6 @@ abstract class BatchProductReq with _$BatchProductReq {
     List<String>? delete,
   }) = _BatchProductReq;
 
-  factory BatchProductReq.fromJson(Map<String, dynamic> json) => _$BatchProductReqFromJson(json);
+  factory BatchProductReq.fromJson(Map<String, dynamic> json) =>
+      _$BatchProductReqFromJson(json);
 }

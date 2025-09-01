@@ -20,7 +20,10 @@ class PricePreferencesRepository {
     required CreatePricePreferenceReq body,
     Map<String, dynamic>? query,
   }) async {
-    return await _pricePreferencesApi.createPricePreference(body: body, query: query);
+    return await _pricePreferencesApi.createPricePreference(
+      body: body,
+      query: query,
+    );
   }
 
   Future<PricePreferenceRes> retrieve({
@@ -46,6 +49,9 @@ class PricePreferencesRepository {
     required String id,
     Map<String, dynamic>? query,
   }) async {
-    return await _pricePreferencesApi.deletePricePreference(id: id, query: query);
+    return await _pricePreferencesApi.deletePricePreference(
+      id: id,
+      query: query,
+    );
   }
 }

@@ -37,5 +37,6 @@ abstract class BatchUpdateProductReq with _$BatchUpdateProductReq {
     @JsonKey(name: 'shipping_profile_id') String? shippingProfileId,
   }) = _BatchUpdateProductReq;
 
-  factory BatchUpdateProductReq.fromJson(Map<String, dynamic> json) => _$BatchUpdateProductReqFromJson(json);
+  factory BatchUpdateProductReq.fromJson(Map<String, dynamic> json) =>
+      _$BatchUpdateProductReqFromJson(json);
 }

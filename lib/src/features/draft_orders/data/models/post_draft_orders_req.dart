@@ -19,7 +19,7 @@ abstract class PostDraftOrdersReq with _$PostDraftOrdersReq {
     @JsonKey(name: 'currency_code') required String currencyCode,
     @JsonKey(name: 'no_notification_order') bool? noNotificationOrder,
     @JsonKey(name: 'shipping_methods')
-        required List<Map<String, dynamic>> shippingMethods,
+    required List<Map<String, dynamic>> shippingMethods,
     required Map<String, dynamic> metadata,
     @JsonKey(name: 'additional_data') Map<String, dynamic>? additionalData,
   }) = _PostDraftOrdersReq;

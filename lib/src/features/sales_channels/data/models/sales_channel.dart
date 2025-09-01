@@ -16,5 +16,6 @@ abstract class SalesChannel with _$SalesChannel {
     @JsonKey(name: 'deleted_at') DateTime? deletedAt,
   }) = _SalesChannel;
 
-  factory SalesChannel.fromJson(Map<String, dynamic> json) => _$SalesChannelFromJson(json);
+  factory SalesChannel.fromJson(Map<String, dynamic> json) =>
+      _$SalesChannelFromJson(json);
 }

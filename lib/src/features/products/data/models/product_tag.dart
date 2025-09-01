@@ -14,5 +14,6 @@ abstract class ProductTag with _$ProductTag {
     @JsonKey(name: 'deleted_at') DateTime? deletedAt,
   }) = _ProductTag;
 
-  factory ProductTag.fromJson(Map<String, dynamic> json) => _$ProductTagFromJson(json);
+  factory ProductTag.fromJson(Map<String, dynamic> json) =>
+      _$ProductTagFromJson(json);
 }

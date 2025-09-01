@@ -1,4 +1,3 @@
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:medusa_admin_dart_client/src/core/models/transaction.dart';
 import 'package:medusa_admin_dart_client/src/features/orders/data/models/order.dart';

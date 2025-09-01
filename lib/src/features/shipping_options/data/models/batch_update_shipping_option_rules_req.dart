@@ -1,4 +1,3 @@
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:medusa_admin_dart_client/src/features/shipping_options/data/models/create_shipping_option_rule.dart';
 
@@ -17,6 +16,6 @@ abstract class BatchUpdateShippingOptionRulesReq
   }) = _BatchUpdateShippingOptionRulesReq;
 
   factory BatchUpdateShippingOptionRulesReq.fromJson(
-          Map<String, dynamic> json) =>
-      _$BatchUpdateShippingOptionRulesReqFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$BatchUpdateShippingOptionRulesReqFromJson(json);
 }

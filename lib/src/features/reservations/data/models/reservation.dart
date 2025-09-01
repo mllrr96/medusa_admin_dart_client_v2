@@ -41,5 +41,6 @@ abstract class Reservation with _$Reservation {
   }) = _Reservation;
 
   /// Creates a Reservation instance from a JSON map.
-  factory Reservation.fromJson(Map<String, Object?> json) => _$ReservationFromJson(json);
+  factory Reservation.fromJson(Map<String, Object?> json) =>
+      _$ReservationFromJson(json);
 }

@@ -17,5 +17,6 @@ abstract class ProductOptionValue with _$ProductOptionValue {
     @JsonKey(name: 'deleted_at') DateTime? deletedAt,
   }) = _ProductOptionValue;
 
-  factory ProductOptionValue.fromJson(Map<String, dynamic> json) => _$ProductOptionValueFromJson(json);
+  factory ProductOptionValue.fromJson(Map<String, dynamic> json) =>
+      _$ProductOptionValueFromJson(json);
 }

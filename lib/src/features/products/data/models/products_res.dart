@@ -13,5 +13,6 @@ abstract class ProductsRes with _$ProductsRes {
     required int count,
   }) = _ProductsRes;
 
-  factory ProductsRes.fromJson(Map<String, dynamic> json) => _$ProductsResFromJson(json);
+  factory ProductsRes.fromJson(Map<String, dynamic> json) =>
+      _$ProductsResFromJson(json);
 }

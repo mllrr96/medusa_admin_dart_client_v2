@@ -7,8 +7,7 @@ part 'return_reason_list_res.g.dart';
 @freezed
 abstract class ReturnReasonListRes with _$ReturnReasonListRes {
   const factory ReturnReasonListRes({
-    @JsonKey(name: 'return_reasons')
-    required List<ReturnReason> returnReasons,
+    @JsonKey(name: 'return_reasons') required List<ReturnReason> returnReasons,
     required int limit,
     required int offset,
     required int count,

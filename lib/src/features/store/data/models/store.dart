@@ -9,8 +9,10 @@ abstract class Store with _$Store {
   const factory Store({
     required String id,
     required String name,
-    @JsonKey(name: 'supported_currencies') required List<StoreCurrency> supportedCurrencies,
-    @JsonKey(name: 'default_sales_channel_id') required String defaultSalesChannelId,
+    @JsonKey(name: 'supported_currencies')
+    required List<StoreCurrency> supportedCurrencies,
+    @JsonKey(name: 'default_sales_channel_id')
+    required String defaultSalesChannelId,
     @JsonKey(name: 'default_region_id') required String defaultRegionId,
     @JsonKey(name: 'default_location_id') required String defaultLocationId,
     required Map<String, dynamic> metadata,
@@ -18,8 +20,7 @@ abstract class Store with _$Store {
     @JsonKey(name: 'updated_at') DateTime? updatedAt,
   }) = _Store;
 
-  factory Store.fromJson(Map<String, dynamic> json) =>
-      _$StoreFromJson(json);
+  factory Store.fromJson(Map<String, dynamic> json) => _$StoreFromJson(json);
 }
 
 @freezed

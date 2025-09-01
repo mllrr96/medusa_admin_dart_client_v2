@@ -11,6 +11,7 @@ abstract class CreateFulfillmentSetServiceZones
     List<Map<String, dynamic>>? geoZones,
   }) = _CreateFulfillmentSetServiceZones;
 
-  factory CreateFulfillmentSetServiceZones.fromJson(Map<String, dynamic> json) =>
-      _$CreateFulfillmentSetServiceZonesFromJson(json);
+  factory CreateFulfillmentSetServiceZones.fromJson(
+    Map<String, dynamic> json,
+  ) => _$CreateFulfillmentSetServiceZonesFromJson(json);
 }

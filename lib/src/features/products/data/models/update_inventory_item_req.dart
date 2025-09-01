@@ -9,5 +9,6 @@ abstract class UpdateInventoryItemReq with _$UpdateInventoryItemReq {
     @JsonKey(name: 'required_quantity') required int requiredQuantity,
   }) = _UpdateInventoryItemReq;
 
-  factory UpdateInventoryItemReq.fromJson(Map<String, dynamic> json) => _$UpdateInventoryItemReqFromJson(json);
+  factory UpdateInventoryItemReq.fromJson(Map<String, dynamic> json) =>
+      _$UpdateInventoryItemReqFromJson(json);
 }

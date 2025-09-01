@@ -25,7 +25,6 @@ abstract class PromotionRule with _$PromotionRule {
 
     /// The rule's values.
     required List<BasePromotionRuleValue> values,
-
   }) = _PromotionRule;
 
   /// Creates a PromotionRule instance from a JSON map.

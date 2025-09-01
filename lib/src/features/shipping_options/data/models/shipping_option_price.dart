@@ -1,4 +1,3 @@
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'shipping_option_price_rule.dart';
 
@@ -9,7 +8,7 @@ part 'shipping_option_price.g.dart';
 abstract class ShippingOptionPrice with _$ShippingOptionPrice {
   const factory ShippingOptionPrice({
     @JsonKey(name: 'price_rules')
-        required List<ShippingOptionPriceRule> priceRules,
+    required List<ShippingOptionPriceRule> priceRules,
     @JsonKey(name: 'rules_count') required int rulesCount,
     required String id,
     required String title,

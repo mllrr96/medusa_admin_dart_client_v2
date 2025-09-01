@@ -1,4 +1,3 @@
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'exchange.dart';
@@ -15,4 +14,3 @@ abstract class ExchangeResponse with _$ExchangeResponse {
   factory ExchangeResponse.fromJson(Map<String, dynamic> json) =>
       _$ExchangeResponseFromJson(json);
 }
-

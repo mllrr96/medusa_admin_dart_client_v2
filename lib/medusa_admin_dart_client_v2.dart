@@ -104,7 +104,10 @@ class MedusaAdminV2 {
     configureDependencies(baseUrl: baseUrl, interceptors: interceptors);
   }
 
-  static MedusaAdminV2 initialize({String? baseUrl, List<Interceptor>? interceptors}) {
+  static MedusaAdminV2 initialize({
+    String? baseUrl,
+    List<Interceptor>? interceptors,
+  }) {
     return MedusaAdminV2._(baseUrl: baseUrl, interceptors: interceptors);
   }
 
@@ -130,9 +133,11 @@ class MedusaAdminV2 {
 
   PriceListsRepository get priceLists => getIt<PriceListsRepository>();
 
-  ShippingOptionsRepository get shippingOptions => getIt<ShippingOptionsRepository>();
+  ShippingOptionsRepository get shippingOptions =>
+      getIt<ShippingOptionsRepository>();
 
-  ShippingProfilesRepository get shippingProfiles => getIt<ShippingProfilesRepository>();
+  ShippingProfilesRepository get shippingProfiles =>
+      getIt<ShippingProfilesRepository>();
 
   UsersRepository get users => getIt<UsersRepository>();
 
@@ -146,7 +151,8 @@ class MedusaAdminV2 {
 
   DraftOrdersRepository get draftOrders => getIt<DraftOrdersRepository>();
 
-  CustomerGroupsRepository get customerGroups => getIt<CustomerGroupsRepository>();
+  CustomerGroupsRepository get customerGroups =>
+      getIt<CustomerGroupsRepository>();
 
   NotesRepository get notes => getIt<NotesRepository>();
 
@@ -168,7 +174,8 @@ class MedusaAdminV2 {
 
   ProductTypesRepository get productTypes => getIt<ProductTypesRepository>();
 
-  ProductVariantsRepository get productVariants => getIt<ProductVariantsRepository>();
+  ProductVariantsRepository get productVariants =>
+      getIt<ProductVariantsRepository>();
 
   ExchangesRepository get exchanges => getIt<ExchangesRepository>();
 }

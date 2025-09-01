@@ -14,5 +14,6 @@ abstract class OrderEditListRes with _$OrderEditListRes {
     required int count,
   }) = _OrderEditListRes;
 
-  factory OrderEditListRes.fromJson(Map<String, dynamic> json) => _$OrderEditListResFromJson(json);
+  factory OrderEditListRes.fromJson(Map<String, dynamic> json) =>
+      _$OrderEditListResFromJson(json);
 }

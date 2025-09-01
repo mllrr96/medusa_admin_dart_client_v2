@@ -46,7 +46,7 @@ class CustomerGroupsRepository {
   /// Returns the updated [CustomerGroup].
   Future<CustomerGroup> update(
     String id,
-      UpdateCustomerGroupReq payload,
+    UpdateCustomerGroupReq payload,
   ) async {
     final response = await _customerGroupsApi.update(id, payload);
     return response.customerGroup;

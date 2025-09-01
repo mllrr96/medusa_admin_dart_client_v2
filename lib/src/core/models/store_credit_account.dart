@@ -14,7 +14,8 @@ abstract class StoreCreditAccount with _$StoreCreditAccount {
     required double debits,
     required double balance,
     required Customer customer,
-    @JsonKey(name: 'transaction_groups') required List<TransactionGroup> transactionGroups,
+    @JsonKey(name: 'transaction_groups')
+    required List<TransactionGroup> transactionGroups,
     Map<String, dynamic>? metadata,
     @JsonKey(name: 'created_at') DateTime? createdAt,
     @JsonKey(name: 'updated_at') DateTime? updatedAt,

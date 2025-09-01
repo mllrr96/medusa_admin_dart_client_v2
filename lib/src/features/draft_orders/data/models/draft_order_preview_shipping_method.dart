@@ -8,7 +8,8 @@ part 'draft_order_preview_shipping_method.freezed.dart';
 part 'draft_order_preview_shipping_method.g.dart';
 
 @freezed
-abstract class DraftOrderPreviewShippingMethod with _$DraftOrderPreviewShippingMethod {
+abstract class DraftOrderPreviewShippingMethod
+    with _$DraftOrderPreviewShippingMethod {
   /// Represents a shipping method within a DraftOrderPreview.
   const factory DraftOrderPreviewShippingMethod({
     required String id,

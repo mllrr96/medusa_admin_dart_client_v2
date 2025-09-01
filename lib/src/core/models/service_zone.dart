@@ -13,7 +13,8 @@ abstract class ServiceZone with _$ServiceZone {
     @JsonKey(name: 'fulfillment_set_id') required String fulfillmentSetId,
     @JsonKey(name: 'fulfillment_set') required FulfillmentSet fulfillmentSet,
     @JsonKey(name: 'geo_zones') required List<GeoZone> geoZones,
-    @JsonKey(name: 'shipping_options') required List<ShippingOption> shippingOptions,
+    @JsonKey(name: 'shipping_options')
+    required List<ShippingOption> shippingOptions,
     @JsonKey(name: 'created_at') DateTime? createdAt,
     @JsonKey(name: 'updated_at') DateTime? updatedAt,
     @JsonKey(name: 'deleted_at') DateTime? deletedAt,

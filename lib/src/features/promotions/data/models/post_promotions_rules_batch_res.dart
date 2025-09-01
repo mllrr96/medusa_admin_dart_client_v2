@@ -2,7 +2,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'promotion_rule.dart';
 
-
 // Generated part files for this file.
 part 'post_promotions_rules_batch_res.freezed.dart';
 part 'post_promotions_rules_batch_res.g.dart';
@@ -38,5 +37,6 @@ abstract class Deleted with _$Deleted {
   }) = _Deleted;
 
   /// Creates an instance of this class from a JSON map.
-  factory Deleted.fromJson(Map<String, Object?> json) => _$DeletedFromJson(json);
+  factory Deleted.fromJson(Map<String, Object?> json) =>
+      _$DeletedFromJson(json);
 }

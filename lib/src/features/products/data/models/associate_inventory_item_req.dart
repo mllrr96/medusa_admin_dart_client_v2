@@ -10,5 +10,6 @@ abstract class AssociateInventoryItemReq with _$AssociateInventoryItemReq {
     @JsonKey(name: 'required_quantity') required int requiredQuantity,
   }) = _AssociateInventoryItemReq;
 
-  factory AssociateInventoryItemReq.fromJson(Map<String, dynamic> json) => _$AssociateInventoryItemReqFromJson(json);
+  factory AssociateInventoryItemReq.fromJson(Map<String, dynamic> json) =>
+      _$AssociateInventoryItemReqFromJson(json);
 }

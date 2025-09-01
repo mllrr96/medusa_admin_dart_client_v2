@@ -4,7 +4,8 @@ part 'post_returns_request_items_action_req.freezed.dart';
 part 'post_returns_request_items_action_req.g.dart';
 
 @freezed
-abstract class PostReturnsRequestItemsActionReq with _$PostReturnsRequestItemsActionReq {
+abstract class PostReturnsRequestItemsActionReq
+    with _$PostReturnsRequestItemsActionReq {
   /// Defines the details of an action to be performed on a return's line item.
   const factory PostReturnsRequestItemsActionReq({
     /// The quantity of the item to be returned.
@@ -21,6 +22,7 @@ abstract class PostReturnsRequestItemsActionReq with _$PostReturnsRequestItemsAc
   }) = _PostReturnsRequestItemsActionReq;
 
   /// Creates an instance of this class from a JSON map.
-  factory PostReturnsRequestItemsActionReq.fromJson(Map<String, Object?> json) =>
-      _$PostReturnsRequestItemsActionReqFromJson(json);
+  factory PostReturnsRequestItemsActionReq.fromJson(
+    Map<String, Object?> json,
+  ) => _$PostReturnsRequestItemsActionReqFromJson(json);
 }

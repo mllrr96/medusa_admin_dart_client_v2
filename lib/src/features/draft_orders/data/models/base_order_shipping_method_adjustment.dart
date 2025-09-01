@@ -10,7 +10,7 @@ abstract class BaseOrderShippingMethodAdjustment
     with _$BaseOrderShippingMethodAdjustment {
   const factory BaseOrderShippingMethodAdjustment({
     @JsonKey(name: 'shipping_method')
-        DraftOrderPreviewShippingMethod? shippingMethod,
+    DraftOrderPreviewShippingMethod? shippingMethod,
     @JsonKey(name: 'shipping_method_id') required String shippingMethodId,
     required String id,
     String? code,
@@ -23,6 +23,7 @@ abstract class BaseOrderShippingMethodAdjustment
     @JsonKey(name: 'updated_at') DateTime? updatedAt,
   }) = _BaseOrderShippingMethodAdjustment;
 
-  factory BaseOrderShippingMethodAdjustment.fromJson(Map<String, dynamic> json) =>
-      _$BaseOrderShippingMethodAdjustmentFromJson(json);
+  factory BaseOrderShippingMethodAdjustment.fromJson(
+    Map<String, dynamic> json,
+  ) => _$BaseOrderShippingMethodAdjustmentFromJson(json);
 }

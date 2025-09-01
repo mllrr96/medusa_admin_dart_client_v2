@@ -7,7 +7,8 @@ part 'fulfillment_provider_list_res.g.dart';
 @freezed
 abstract class FulfillmentProviderListRes with _$FulfillmentProviderListRes {
   const factory FulfillmentProviderListRes({
-    @JsonKey(name: 'fulfillment_providers') required List<FulfillmentProvider> fulfillmentProviders,
+    @JsonKey(name: 'fulfillment_providers')
+    required List<FulfillmentProvider> fulfillmentProviders,
     required int limit,
     required int offset,
     required int count,

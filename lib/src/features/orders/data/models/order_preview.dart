@@ -18,7 +18,7 @@ abstract class OrderPreview with _$OrderPreview {
     @JsonKey(name: 'return_requested_total') required int returnRequestedTotal,
     @JsonKey(name: 'order_change') required OrderChange orderChange,
     @JsonKey(name: 'shipping_methods')
-        required List<OrderShippingMethod> shippingMethods,
+    required List<OrderShippingMethod> shippingMethods,
     required List<OrderLineItem> items,
     @JsonKey(name: 'currency_code') required String currencyCode,
     required int version,
@@ -31,7 +31,7 @@ abstract class OrderPreview with _$OrderPreview {
     @JsonKey(name: 'shipping_address') required OrderAddress shippingAddress,
     @JsonKey(name: 'billing_address') required OrderAddress billingAddress,
     @JsonKey(name: 'payment_collections')
-        required List<PaymentCollection> paymentCollections,
+    required List<PaymentCollection> paymentCollections,
     @JsonKey(name: 'payment_status') required String paymentStatus,
     required List<OrderFulfillment> fulfillments,
     @JsonKey(name: 'fulfillment_status') required String fulfillmentStatus,
@@ -59,11 +59,12 @@ abstract class OrderPreview with _$OrderPreview {
     @JsonKey(name: 'shipping_total') required int shippingTotal,
     @JsonKey(name: 'shipping_subtotal') required int shippingSubtotal,
     @JsonKey(name: 'shipping_tax_total') required int shippingTaxTotal,
-    @JsonKey(name: 'original_shipping_total') required int originalShippingTotal,
+    @JsonKey(name: 'original_shipping_total')
+    required int originalShippingTotal,
     @JsonKey(name: 'original_shipping_subtotal')
-        required int originalShippingSubtotal,
+    required int originalShippingSubtotal,
     @JsonKey(name: 'original_shipping_tax_total')
-        required int originalShippingTaxTotal,
+    required int originalShippingTaxTotal,
     // required Customer customer,
     // required AdminSalesChannel salesChannel,
     required String status,

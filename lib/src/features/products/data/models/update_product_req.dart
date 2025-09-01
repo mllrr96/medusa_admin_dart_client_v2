@@ -36,5 +36,6 @@ abstract class UpdateProductReq with _$UpdateProductReq {
     @JsonKey(name: 'shipping_profile_id') String? shippingProfileId,
   }) = _UpdateProductReq;
 
-  factory UpdateProductReq.fromJson(Map<String, dynamic> json) => _$UpdateProductReqFromJson(json);
+  factory UpdateProductReq.fromJson(Map<String, dynamic> json) =>
+      _$UpdateProductReqFromJson(json);
 }

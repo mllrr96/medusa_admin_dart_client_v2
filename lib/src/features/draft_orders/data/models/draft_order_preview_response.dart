@@ -8,7 +8,7 @@ part 'draft_order_preview_response.g.dart';
 abstract class DraftOrderPreviewResponse with _$DraftOrderPreviewResponse {
   const factory DraftOrderPreviewResponse({
     @JsonKey(name: 'draft_order_preview')
-        required DraftOrderPreview draftOrderPreview,
+    required DraftOrderPreview draftOrderPreview,
   }) = _DraftOrderPreviewResponse;
 
   factory DraftOrderPreviewResponse.fromJson(Map<String, dynamic> json) =>

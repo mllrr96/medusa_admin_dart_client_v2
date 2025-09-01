@@ -13,5 +13,6 @@ abstract class ImportProductsReq with _$ImportProductsReq {
     @JsonKey(name: 'mime_type') required String mimeType,
   }) = _ImportProductsReq;
 
-  factory ImportProductsReq.fromJson(Map<String, dynamic> json) => _$ImportProductsReqFromJson(json);
+  factory ImportProductsReq.fromJson(Map<String, dynamic> json) =>
+      _$ImportProductsReqFromJson(json);
 }

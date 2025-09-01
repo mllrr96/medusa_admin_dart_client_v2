@@ -9,5 +9,6 @@ abstract class ExportProductRes with _$ExportProductRes {
     @JsonKey(name: 'transaction_id') required String transactionId,
   }) = _ExportProductRes;
 
-  factory ExportProductRes.fromJson(Map<String, dynamic> json) => _$ExportProductResFromJson(json);
+  factory ExportProductRes.fromJson(Map<String, dynamic> json) =>
+      _$ExportProductResFromJson(json);
 }

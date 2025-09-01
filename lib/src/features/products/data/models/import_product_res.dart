@@ -10,5 +10,6 @@ abstract class ImportProductRes with _$ImportProductRes {
     required Map<String, dynamic> summary,
   }) = _ImportProductRes;
 
-  factory ImportProductRes.fromJson(Map<String, dynamic> json) => _$ImportProductResFromJson(json);
+  factory ImportProductRes.fromJson(Map<String, dynamic> json) =>
+      _$ImportProductResFromJson(json);
 }

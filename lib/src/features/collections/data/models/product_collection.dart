@@ -17,5 +17,6 @@ abstract class ProductCollection with _$ProductCollection {
     @JsonKey(name: 'deleted_at') DateTime? deletedAt,
   }) = _ProductCollection;
 
-  factory ProductCollection.fromJson(Map<String, dynamic> json) => _$ProductCollectionFromJson(json);
+  factory ProductCollection.fromJson(Map<String, dynamic> json) =>
+      _$ProductCollectionFromJson(json);
 }

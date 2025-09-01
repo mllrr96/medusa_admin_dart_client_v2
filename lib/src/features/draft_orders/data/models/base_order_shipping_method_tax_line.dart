@@ -10,7 +10,7 @@ abstract class BaseOrderShippingMethodTaxLine
     with _$BaseOrderShippingMethodTaxLine {
   const factory BaseOrderShippingMethodTaxLine({
     @JsonKey(name: 'shipping_method')
-        DraftOrderPreviewShippingMethod? shippingMethod,
+    DraftOrderPreviewShippingMethod? shippingMethod,
     @JsonKey(name: 'shipping_method_id') required String shippingMethodId,
     required int total,
     required int subtotal,

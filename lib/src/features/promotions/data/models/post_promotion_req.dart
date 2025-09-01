@@ -5,7 +5,6 @@ import 'package:medusa_admin_dart_client/src/features/campaigns/data/models/camp
 import 'application_method.dart';
 import 'promotion_rule.dart';
 
-
 // Generated part files for this class.
 part 'post_promotion_req.freezed.dart';
 part 'post_promotion_req.g.dart';
@@ -37,7 +36,6 @@ abstract class PostPromotionReq with _$PostPromotionReq {
 
     /// Additional data for the promotion.
     @JsonKey(name: 'additional_data') Map<String, dynamic>? additionalData,
-
   }) = _PostPromotionReq;
 
   /// Creates an instance of this class from a JSON map.

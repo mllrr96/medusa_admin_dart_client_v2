@@ -1,4 +1,3 @@
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:medusa_admin_dart_client/src/features/inventory_items/data/models/inventory_item.dart';
 import 'package:medusa_admin_dart_client/src/features/inventory_items/data/models/inventory_level.dart';
@@ -43,13 +42,15 @@ abstract class InventoryItemDeleteRes with _$InventoryItemDeleteRes {
 }
 
 @freezed
-abstract class BatchInventoryItemsLocationLevelsRes with _$BatchInventoryItemsLocationLevelsRes {
+abstract class BatchInventoryItemsLocationLevelsRes
+    with _$BatchInventoryItemsLocationLevelsRes {
   const factory BatchInventoryItemsLocationLevelsRes({
     List<InventoryLevel>? created,
     List<InventoryLevel>? updated,
     List<String>? deleted,
   }) = _BatchInventoryItemsLocationLevelsRes;
 
-  factory BatchInventoryItemsLocationLevelsRes.fromJson(Map<String, dynamic> json) =>
-      _$BatchInventoryItemsLocationLevelsResFromJson(json);
+  factory BatchInventoryItemsLocationLevelsRes.fromJson(
+    Map<String, dynamic> json,
+  ) => _$BatchInventoryItemsLocationLevelsResFromJson(json);
 }

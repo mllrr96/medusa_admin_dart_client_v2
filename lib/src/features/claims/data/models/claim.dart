@@ -34,4 +34,3 @@ abstract class Claim with _$Claim {
 
   factory Claim.fromJson(Map<String, dynamic> json) => _$ClaimFromJson(json);
 }
-

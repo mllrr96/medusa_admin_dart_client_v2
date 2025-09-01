@@ -2,7 +2,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'promotion_rule.dart';
 
-
 // Generated part files.
 part 'post_promotions_rules_batch_req.freezed.dart';
 part 'post_promotions_rules_batch_req.g.dart';

@@ -27,8 +27,10 @@ abstract class CreateProductVariantReq with _$CreateProductVariantReq {
     Map<String, dynamic>? metadata,
     required List<CreateProductVariantPriceReq> prices,
     Map<String, String>? options,
-    @JsonKey(name: 'inventory_items') List<CreateProductVariantInventoryKitReq>? inventoryItems,
+    @JsonKey(name: 'inventory_items')
+    List<CreateProductVariantInventoryKitReq>? inventoryItems,
   }) = _CreateProductVariantReq;
 
-  factory CreateProductVariantReq.fromJson(Map<String, dynamic> json) => _$CreateProductVariantReqFromJson(json);
+  factory CreateProductVariantReq.fromJson(Map<String, dynamic> json) =>
+      _$CreateProductVariantReqFromJson(json);
 }

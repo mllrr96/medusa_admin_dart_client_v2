@@ -7,7 +7,8 @@ part 'fulfillment_providers_api.g.dart';
 
 @RestApi()
 abstract class FulfillmentProvidersApi {
-  factory FulfillmentProvidersApi(Dio dio, {String baseUrl}) = _FulfillmentProvidersApi;
+  factory FulfillmentProvidersApi(Dio dio, {String baseUrl}) =
+      _FulfillmentProvidersApi;
 
   @GET('/admin/fulfillment-providers')
   Future<FulfillmentProviderListRes> list({

@@ -19,7 +19,8 @@ abstract class ShippingOption with _$ShippingOption {
     required Map<String, dynamic> serviceZone,
     @JsonKey(name: 'provider_id') required String providerId,
     required FulfillmentProvider provider,
-    @JsonKey(name: 'shipping_option_type_id') required String shippingOptionTypeId,
+    @JsonKey(name: 'shipping_option_type_id')
+    required String shippingOptionTypeId,
     required ShippingOptionType type,
     @JsonKey(name: 'shipping_profile_id') required String shippingProfileId,
     required ShippingProfile shippingProfile,
@@ -32,5 +33,6 @@ abstract class ShippingOption with _$ShippingOption {
     @JsonKey(name: 'deleted_at') DateTime? deletedAt,
   }) = _ShippingOption;
 
-  factory ShippingOption.fromJson(Map<String, dynamic> json) => _$ShippingOptionFromJson(json);
+  factory ShippingOption.fromJson(Map<String, dynamic> json) =>
+      _$ShippingOptionFromJson(json);
 }

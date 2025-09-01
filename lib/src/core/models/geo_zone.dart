@@ -17,5 +17,6 @@ abstract class GeoZone with _$GeoZone {
     @JsonKey(name: 'deleted_at') DateTime? deletedAt,
   }) = _GeoZone;
 
-  factory GeoZone.fromJson(Map<String, dynamic> json) => _$GeoZoneFromJson(json);
+  factory GeoZone.fromJson(Map<String, dynamic> json) =>
+      _$GeoZoneFromJson(json);
 }

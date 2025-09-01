@@ -126,14 +126,18 @@ abstract class ProductsApi {
     @Body() AssociateInventoryItemReq body,
   );
 
-  @DELETE('/admin/products/{id}/variants/{variant_id}/inventory-items/{inventory_item_id}')
+  @DELETE(
+    '/admin/products/{id}/variants/{variant_id}/inventory-items/{inventory_item_id}',
+  )
   Future<void> deleteInventoryItem(
     @Path('id') String id,
     @Path('variant_id') String variantId,
     @Path('inventory_item_id') String inventoryItemId,
   );
 
-  @POST('/admin/products/{id}/variants/{variant_id}/inventory-items/{inventory_item_id}')
+  @POST(
+    '/admin/products/{id}/variants/{variant_id}/inventory-items/{inventory_item_id}',
+  )
   Future<ProductVariant> updateInventoryItem(
     @Path('id') String id,
     @Path('variant_id') String variantId,

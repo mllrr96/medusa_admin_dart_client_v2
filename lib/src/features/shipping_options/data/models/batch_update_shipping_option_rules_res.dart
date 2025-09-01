@@ -15,6 +15,6 @@ abstract class BatchUpdateShippingOptionRulesRes
   }) = _BatchUpdateShippingOptionRulesRes;
 
   factory BatchUpdateShippingOptionRulesRes.fromJson(
-          Map<String, dynamic> json) =>
-      _$BatchUpdateShippingOptionRulesResFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$BatchUpdateShippingOptionRulesResFromJson(json);
 }

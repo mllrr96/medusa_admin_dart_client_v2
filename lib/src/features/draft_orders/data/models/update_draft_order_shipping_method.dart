@@ -4,7 +4,8 @@ part 'update_draft_order_shipping_method.freezed.dart';
 part 'update_draft_order_shipping_method.g.dart';
 
 @freezed
-abstract class UpdateDraftOrderShippingMethod with _$UpdateDraftOrderShippingMethod {
+abstract class UpdateDraftOrderShippingMethod
+    with _$UpdateDraftOrderShippingMethod {
   const factory UpdateDraftOrderShippingMethod({
     @JsonKey(name: 'shipping_option_id') String? shippingOptionId,
     @JsonKey(name: 'custom_amount') int? customAmount,

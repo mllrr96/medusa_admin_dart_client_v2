@@ -3,7 +3,6 @@ import 'package:medusa_admin_dart_client/src/core/models/models.dart';
 import 'package:medusa_admin_dart_client/src/features/sales_channels/data/models/sales_channel.dart';
 import 'package:medusa_admin_dart_client/src/features/draft_orders/data/models/order_transaction.dart';
 
-
 part 'order_preview.freezed.dart';
 part 'order_preview.g.dart';
 
@@ -13,7 +12,8 @@ abstract class OrderPreview with _$OrderPreview {
     @JsonKey(name: 'return_requested_total') required int returnRequestedTotal,
     @JsonKey(name: 'order_change') required OrderChange orderChange,
     List<LineItem>? items,
-    @JsonKey(name: 'shipping_methods') List<OrderShippingMethod>? shippingMethods,
+    @JsonKey(name: 'shipping_methods')
+    List<OrderShippingMethod>? shippingMethods,
     @JsonKey(name: 'currency_code') required String currencyCode,
     required int version,
     required String id,
@@ -24,7 +24,8 @@ abstract class OrderPreview with _$OrderPreview {
     @JsonKey(name: 'display_id') int? displayId,
     @JsonKey(name: 'shipping_address') OrderAddress? shippingAddress,
     @JsonKey(name: 'billing_address') OrderAddress? billingAddress,
-    @JsonKey(name: 'payment_collections') required List<PaymentCollection> paymentCollections,
+    @JsonKey(name: 'payment_collections')
+    required List<PaymentCollection> paymentCollections,
     @JsonKey(name: 'payment_status') required String paymentStatus,
     List<Fulfillment>? fulfillments,
     @JsonKey(name: 'fulfillment_status') required String fulfillmentStatus,
@@ -52,9 +53,12 @@ abstract class OrderPreview with _$OrderPreview {
     @JsonKey(name: 'shipping_total') required int shippingTotal,
     @JsonKey(name: 'shipping_subtotal') required int shippingSubtotal,
     @JsonKey(name: 'shipping_tax_total') required int shippingTaxTotal,
-    @JsonKey(name: 'original_shipping_total') required int originalShippingTotal,
-    @JsonKey(name: 'original_shipping_subtotal') required int originalShippingSubtotal,
-    @JsonKey(name: 'original_shipping_tax_total') required int originalShippingTaxTotal,
+    @JsonKey(name: 'original_shipping_total')
+    required int originalShippingTotal,
+    @JsonKey(name: 'original_shipping_subtotal')
+    required int originalShippingSubtotal,
+    @JsonKey(name: 'original_shipping_tax_total')
+    required int originalShippingTaxTotal,
     Customer? customer,
     @JsonKey(name: 'sales_channel') SalesChannel? salesChannel,
     required String status,

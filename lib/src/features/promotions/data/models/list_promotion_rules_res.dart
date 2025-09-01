@@ -1,5 +1,3 @@
-
-
 // Generated part files for this class.
 import 'package:freezed_annotation/freezed_annotation.dart';
 

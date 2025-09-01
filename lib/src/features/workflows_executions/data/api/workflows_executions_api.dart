@@ -52,7 +52,8 @@ abstract class WorkflowsExecutionsApi {
   );
 
   @GET(
-      '/admin/workflows-executions/{workflow_id}/{transaction_id}/{step_id}/subscribe')
+    '/admin/workflows-executions/{workflow_id}/{transaction_id}/{step_id}/subscribe',
+  )
   Future<String> subscribeToStep(
     @Path('workflow_id') String workflowId,
     @Path('transaction_id') String transactionId,

@@ -10,5 +10,6 @@ abstract class CreateProductOptionReq with _$CreateProductOptionReq {
     required List<String> values,
   }) = _CreateProductOptionReq;
 
-  factory CreateProductOptionReq.fromJson(Map<String, dynamic> json) => _$CreateProductOptionReqFromJson(json);
+  factory CreateProductOptionReq.fromJson(Map<String, dynamic> json) =>
+      _$CreateProductOptionReqFromJson(json);
 }

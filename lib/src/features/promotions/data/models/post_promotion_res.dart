@@ -2,7 +2,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 import 'promotion.dart';
 
-
 // Generated part files. The filenames are based on your source file name.
 part 'post_promotion_res.freezed.dart';
 part 'post_promotion_res.g.dart';

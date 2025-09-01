@@ -37,5 +37,6 @@ abstract class CreateProductReq with _$CreateProductReq {
     @JsonKey(name: 'shipping_profile_id') String? shippingProfileId,
   }) = _CreateProductReq;
 
-  factory CreateProductReq.fromJson(Map<String, dynamic> json) => _$CreateProductReqFromJson(json);
+  factory CreateProductReq.fromJson(Map<String, dynamic> json) =>
+      _$CreateProductReqFromJson(json);
 }

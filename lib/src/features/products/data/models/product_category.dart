@@ -15,7 +15,8 @@ abstract class ProductCategory with _$ProductCategory {
     @JsonKey(name: 'is_internal') required bool isInternal,
     @JsonKey(name: 'parent_category_id') String? parentCategoryId,
     ProductCategory? parentCategory,
-    @JsonKey(name: 'category_children') required List<ProductCategory> categoryChildren,
+    @JsonKey(name: 'category_children')
+    required List<ProductCategory> categoryChildren,
     int? rank,
     List<Product>? products,
     Map<String, dynamic>? metadata,
@@ -24,5 +25,6 @@ abstract class ProductCategory with _$ProductCategory {
     @JsonKey(name: 'deleted_at') DateTime? deletedAt,
   }) = _ProductCategory;
 
-  factory ProductCategory.fromJson(Map<String, dynamic> json) => _$ProductCategoryFromJson(json);
+  factory ProductCategory.fromJson(Map<String, dynamic> json) =>
+      _$ProductCategoryFromJson(json);
 }

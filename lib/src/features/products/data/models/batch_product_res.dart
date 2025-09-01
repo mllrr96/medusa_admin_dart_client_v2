@@ -12,5 +12,6 @@ abstract class BatchProductRes with _$BatchProductRes {
     required Map<String, dynamic> deleted,
   }) = _BatchProductRes;
 
-  factory BatchProductRes.fromJson(Map<String, dynamic> json) => _$BatchProductResFromJson(json);
+  factory BatchProductRes.fromJson(Map<String, dynamic> json) =>
+      _$BatchProductResFromJson(json);
 }

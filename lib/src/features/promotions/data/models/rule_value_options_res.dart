@@ -27,4 +27,3 @@ abstract class RuleValueOptionsRes with _$RuleValueOptionsRes {
   factory RuleValueOptionsRes.fromJson(Map<String, Object?> json) =>
       _$RuleValueOptionsResFromJson(json);
 }
-

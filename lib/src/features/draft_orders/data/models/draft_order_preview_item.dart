@@ -1,7 +1,7 @@
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 part 'draft_order_preview_item.freezed.dart';
 part 'draft_order_preview_item.g.dart';
+
 @freezed
 abstract class DraftOrderPreviewItem with _$DraftOrderPreviewItem {
   /// Represents an item within a DraftOrderPreview.
@@ -21,7 +21,8 @@ abstract class DraftOrderPreviewItem with _$DraftOrderPreviewItem {
     @JsonKey(name: 'variant_sku') String? variantSku,
     @JsonKey(name: 'variant_barcode') String? variantBarcode,
     @JsonKey(name: 'variant_title') String? variantTitle,
-    @JsonKey(name: 'variant_option_values') Map<String, dynamic>? variantOptionValues,
+    @JsonKey(name: 'variant_option_values')
+    Map<String, dynamic>? variantOptionValues,
     @JsonKey(name: 'requires_shipping') required bool requiresShipping,
     @JsonKey(name: 'is_discountable') required bool isDiscountable,
     @JsonKey(name: 'is_tax_inclusive') required bool isTaxInclusive,
@@ -45,7 +46,8 @@ abstract class DraftOrderPreviewItem with _$DraftOrderPreviewItem {
     @JsonKey(name: 'discount_total') required int discountTotal,
     @JsonKey(name: 'discount_tax_total') required int discountTaxTotal,
     @JsonKey(name: 'refundable_total') required int refundableTotal,
-    @JsonKey(name: 'refundable_total_per_unit') required int refundableTotalPerUnit,
+    @JsonKey(name: 'refundable_total_per_unit')
+    required int refundableTotalPerUnit,
   }) = _DraftOrderPreviewItem;
 
   factory DraftOrderPreviewItem.fromJson(Map<String, Object?> json) =>

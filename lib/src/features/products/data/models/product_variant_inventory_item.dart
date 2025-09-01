@@ -15,5 +15,6 @@ abstract class ProductVariantInventoryItem with _$ProductVariantInventoryItem {
     InventoryItem? inventory,
   }) = _ProductVariantInventoryItem;
 
-  factory ProductVariantInventoryItem.fromJson(Map<String, dynamic> json) => _$ProductVariantInventoryItemFromJson(json);
+  factory ProductVariantInventoryItem.fromJson(Map<String, dynamic> json) =>
+      _$ProductVariantInventoryItemFromJson(json);
 }

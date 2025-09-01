@@ -15,6 +15,6 @@ abstract class UpdateDraftOrderActionShippingMethod
   }) = _UpdateDraftOrderActionShippingMethod;
 
   factory UpdateDraftOrderActionShippingMethod.fromJson(
-          Map<String, dynamic> json) =>
-      _$UpdateDraftOrderActionShippingMethodFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$UpdateDraftOrderActionShippingMethodFromJson(json);
 }

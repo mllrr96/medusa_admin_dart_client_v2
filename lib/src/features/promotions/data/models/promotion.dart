@@ -49,7 +49,6 @@ abstract class Promotion with _$Promotion {
     List<PromotionRule>? rules,
 
     Campaign? campaign,
-
   }) = _Promotion;
 
   /// Creates a Promotion instance from a JSON map.

@@ -15,5 +15,6 @@ abstract class ProductImage with _$ProductImage {
     int? rank,
   }) = _ProductImage;
 
-  factory ProductImage.fromJson(Map<String, dynamic> json) => _$ProductImageFromJson(json);
+  factory ProductImage.fromJson(Map<String, dynamic> json) =>
+      _$ProductImageFromJson(json);
 }

@@ -1,4 +1,3 @@
-
 import 'package:medusa_admin_dart_client/medusa_admin_dart_client_v2.dart';
 import 'package:medusa_admin_dart_client/src/features/notifications/data/models/notification_list_res.dart';
 import 'package:retrofit/retrofit.dart';

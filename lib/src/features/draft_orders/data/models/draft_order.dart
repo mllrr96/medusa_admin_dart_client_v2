@@ -19,7 +19,7 @@ part 'draft_order.g.dart';
 abstract class DraftOrder with _$DraftOrder {
   const factory DraftOrder({
     @JsonKey(name: 'payment_collections')
-        required List<PaymentCollection> paymentCollections,
+    required List<PaymentCollection> paymentCollections,
     List<OrderFulfillment>? fulfillments,
     @JsonKey(name: 'sales_channel') SalesChannel? salesChannel,
     Customer? customer,
@@ -27,7 +27,7 @@ abstract class DraftOrder with _$DraftOrder {
     @JsonKey(name: 'billing_address') OrderAddress? billingAddress,
     required List<OrderLineItem> items,
     @JsonKey(name: 'shipping_methods')
-        required List<OrderShippingMethod> shippingMethods,
+    required List<OrderShippingMethod> shippingMethods,
     required String status,
     @JsonKey(name: 'currency_code') required String currencyCode,
     required String id,
@@ -45,10 +45,8 @@ abstract class DraftOrder with _$DraftOrder {
     @JsonKey(name: 'created_at') DateTime? createdAt,
     @JsonKey(name: 'updated_at') DateTime? updatedAt,
     @JsonKey(name: 'original_item_total') required int originalItemTotal,
-    @JsonKey(name: 'original_item_subtotal')
-        required int originalItemSubtotal,
-    @JsonKey(name: 'original_item_tax_total')
-        required int originalItemTaxTotal,
+    @JsonKey(name: 'original_item_subtotal') required int originalItemSubtotal,
+    @JsonKey(name: 'original_item_tax_total') required int originalItemTaxTotal,
     @JsonKey(name: 'item_total') required int itemTotal,
     @JsonKey(name: 'item_subtotal') required int itemSubtotal,
     @JsonKey(name: 'item_tax_total') required int itemTaxTotal,
@@ -66,11 +64,11 @@ abstract class DraftOrder with _$DraftOrder {
     @JsonKey(name: 'shipping_subtotal') required int shippingSubtotal,
     @JsonKey(name: 'shipping_tax_total') required int shippingTaxTotal,
     @JsonKey(name: 'original_shipping_total')
-        required int originalShippingTotal,
+    required int originalShippingTotal,
     @JsonKey(name: 'original_shipping_subtotal')
-        required int originalShippingSubtotal,
+    required int originalShippingSubtotal,
     @JsonKey(name: 'original_shipping_tax_total')
-        required int originalShippingTaxTotal,
+    required int originalShippingTaxTotal,
     Region? region,
     @JsonKey(name: 'credit_lines') List<OrderCreditLine>? creditLines,
     @JsonKey(name: 'credit_line_total') required int creditLineTotal,

@@ -1,4 +1,3 @@
-
 import 'package:medusa_admin_dart_client/src/features/fulfillments/data/api/fulfillments_api.dart';
 import 'package:medusa_admin_dart_client/src/features/fulfillments/data/models/create_fulfillment_req.dart';
 import 'package:medusa_admin_dart_client/src/features/fulfillments/data/models/create_shipment_req.dart';

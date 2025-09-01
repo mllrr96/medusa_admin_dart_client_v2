@@ -1,4 +1,3 @@
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'inventory_req.freezed.dart';
@@ -51,7 +50,8 @@ abstract class InventoryItemUpdateReq with _$InventoryItemUpdateReq {
 }
 
 @freezed
-abstract class BatchCreateInventoryItemsLocationLevelsReq with _$BatchCreateInventoryItemsLocationLevelsReq {
+abstract class BatchCreateInventoryItemsLocationLevelsReq
+    with _$BatchCreateInventoryItemsLocationLevelsReq {
   const factory BatchCreateInventoryItemsLocationLevelsReq({
     @JsonKey(name: 'location_id') required String locationId,
     @JsonKey(name: 'inventory_item_id') required String inventoryItemId,
@@ -59,12 +59,14 @@ abstract class BatchCreateInventoryItemsLocationLevelsReq with _$BatchCreateInve
     @JsonKey(name: 'incoming_quantity') double? incomingQuantity,
   }) = _BatchCreateInventoryItemsLocationLevelsReq;
 
-  factory BatchCreateInventoryItemsLocationLevelsReq.fromJson(Map<String, dynamic> json) =>
-      _$BatchCreateInventoryItemsLocationLevelsReqFromJson(json);
+  factory BatchCreateInventoryItemsLocationLevelsReq.fromJson(
+    Map<String, dynamic> json,
+  ) => _$BatchCreateInventoryItemsLocationLevelsReqFromJson(json);
 }
 
 @freezed
-abstract class BatchUpdateInventoryItemsLocationLevelsReq with _$BatchUpdateInventoryItemsLocationLevelsReq {
+abstract class BatchUpdateInventoryItemsLocationLevelsReq
+    with _$BatchUpdateInventoryItemsLocationLevelsReq {
   const factory BatchUpdateInventoryItemsLocationLevelsReq({
     @JsonKey(name: 'location_id') required String locationId,
     @JsonKey(name: 'inventory_item_id') required String inventoryItemId,
@@ -73,12 +75,14 @@ abstract class BatchUpdateInventoryItemsLocationLevelsReq with _$BatchUpdateInve
     String? id,
   }) = _BatchUpdateInventoryItemsLocationLevelsReq;
 
-  factory BatchUpdateInventoryItemsLocationLevelsReq.fromJson(Map<String, dynamic> json) =>
-      _$BatchUpdateInventoryItemsLocationLevelsReqFromJson(json);
+  factory BatchUpdateInventoryItemsLocationLevelsReq.fromJson(
+    Map<String, dynamic> json,
+  ) => _$BatchUpdateInventoryItemsLocationLevelsReqFromJson(json);
 }
 
 @freezed
-abstract class CreateInventoryLocationLevelReq with _$CreateInventoryLocationLevelReq {
+abstract class CreateInventoryLocationLevelReq
+    with _$CreateInventoryLocationLevelReq {
   const factory CreateInventoryLocationLevelReq({
     @JsonKey(name: 'location_id') required String locationId,
     @JsonKey(name: 'stocked_quantity') double? stockedQuantity,
@@ -90,7 +94,8 @@ abstract class CreateInventoryLocationLevelReq with _$CreateInventoryLocationLev
 }
 
 @freezed
-abstract class UpdateInventoryLocationLevelReq with _$UpdateInventoryLocationLevelReq {
+abstract class UpdateInventoryLocationLevelReq
+    with _$UpdateInventoryLocationLevelReq {
   const factory UpdateInventoryLocationLevelReq({
     @JsonKey(name: 'stocked_quantity') double? stockedQuantity,
     @JsonKey(name: 'incoming_quantity') double? incomingQuantity,
@@ -101,7 +106,8 @@ abstract class UpdateInventoryLocationLevelReq with _$UpdateInventoryLocationLev
 }
 
 @freezed
-abstract class BatchInventoryItemLocationsLevelReq with _$BatchInventoryItemLocationsLevelReq {
+abstract class BatchInventoryItemLocationsLevelReq
+    with _$BatchInventoryItemLocationsLevelReq {
   const factory BatchInventoryItemLocationsLevelReq({
     List<BatchCreateInventoryItemsLocationLevelsReq>? create,
     List<BatchUpdateInventoryItemsLocationLevelsReq>? update,
@@ -109,6 +115,7 @@ abstract class BatchInventoryItemLocationsLevelReq with _$BatchInventoryItemLoca
     bool? force,
   }) = _BatchInventoryItemLocationsLevelReq;
 
-  factory BatchInventoryItemLocationsLevelReq.fromJson(Map<String, dynamic> json) =>
-      _$BatchInventoryItemLocationsLevelReqFromJson(json);
+  factory BatchInventoryItemLocationsLevelReq.fromJson(
+    Map<String, dynamic> json,
+  ) => _$BatchInventoryItemLocationsLevelReqFromJson(json);
 }

@@ -10,5 +10,6 @@ abstract class UpdateProductOptionReq with _$UpdateProductOptionReq {
     List<String>? values,
   }) = _UpdateProductOptionReq;
 
-  factory UpdateProductOptionReq.fromJson(Map<String, dynamic> json) => _$UpdateProductOptionReqFromJson(json);
+  factory UpdateProductOptionReq.fromJson(Map<String, dynamic> json) =>
+      _$UpdateProductOptionReqFromJson(json);
 }

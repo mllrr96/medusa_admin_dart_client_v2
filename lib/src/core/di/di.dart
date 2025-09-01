@@ -286,24 +286,32 @@ void configureDependencies({String? baseUrl, List<Interceptor>? interceptors}) {
   );
 
   // Inventory Items
-  getIt.registerLazySingleton<InventoryItemsApi>(() => InventoryItemsApi(getIt<Dio>()));
+  getIt.registerLazySingleton<InventoryItemsApi>(
+    () => InventoryItemsApi(getIt<Dio>()),
+  );
   getIt.registerLazySingleton<InventoryItemsRepository>(
     () => InventoryItemsRepository(getIt<InventoryItemsApi>()),
   );
   // Product Tags
-  getIt.registerLazySingleton<ProductTagsApi>(() => ProductTagsApi(getIt<Dio>()));
+  getIt.registerLazySingleton<ProductTagsApi>(
+    () => ProductTagsApi(getIt<Dio>()),
+  );
   getIt.registerLazySingleton<ProductTagsRepository>(
     () => ProductTagsRepository(getIt<ProductTagsApi>()),
   );
 
   // Product Types
-  getIt.registerLazySingleton<ProductTypesApi>(() => ProductTypesApi(getIt<Dio>()));
+  getIt.registerLazySingleton<ProductTypesApi>(
+    () => ProductTypesApi(getIt<Dio>()),
+  );
   getIt.registerLazySingleton<ProductTypesRepository>(
     () => ProductTypesRepository(getIt<ProductTypesApi>()),
   );
 
   // Product Variants
-  getIt.registerLazySingleton<ProductVariantsApi>(() => ProductVariantsApi(getIt<Dio>()));
+  getIt.registerLazySingleton<ProductVariantsApi>(
+    () => ProductVariantsApi(getIt<Dio>()),
+  );
   getIt.registerLazySingleton<ProductVariantsRepository>(
     () => ProductVariantsRepository(getIt<ProductVariantsApi>()),
   );

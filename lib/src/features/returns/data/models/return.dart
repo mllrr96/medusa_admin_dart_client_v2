@@ -23,6 +23,5 @@ abstract class Return with _$Return {
     @JsonKey(name: 'received_at') DateTime? receivedAt,
   }) = _Return;
 
-  factory Return.fromJson(Map<String, dynamic> json) =>
-      _$ReturnFromJson(json);
+  factory Return.fromJson(Map<String, dynamic> json) => _$ReturnFromJson(json);
 }

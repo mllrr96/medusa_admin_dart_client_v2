@@ -17,5 +17,6 @@ abstract class CustomerGroup with _$CustomerGroup {
     Map<String, dynamic>? metadata,
   }) = _CustomerGroup;
 
-  factory CustomerGroup.fromJson(Map<String, Object?> json) => _$CustomerGroupFromJson(json);
+  factory CustomerGroup.fromJson(Map<String, Object?> json) =>
+      _$CustomerGroupFromJson(json);
 }

@@ -1,4 +1,3 @@
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'create_exchange_inbound_shipment_req.freezed.dart';
@@ -14,6 +13,6 @@ abstract class CreateExchangeInboundShipmentReq
   }) = _CreateExchangeInboundShipmentReq;
 
   factory CreateExchangeInboundShipmentReq.fromJson(
-          Map<String, dynamic> json) =>
-      _$CreateExchangeInboundShipmentReqFromJson(json);
+    Map<String, dynamic> json,
+  ) => _$CreateExchangeInboundShipmentReqFromJson(json);
 }

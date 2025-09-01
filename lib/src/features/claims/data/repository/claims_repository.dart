@@ -103,8 +103,12 @@ class ClaimsRepository {
     PostClaimsShippingActionReq body, {
     String? fields,
   }) {
-    return _claimsApi.updateInboundShippingMethod(id, actionId, body,
-        fields: fields);
+    return _claimsApi.updateInboundShippingMethod(
+      id,
+      actionId,
+      body,
+      fields: fields,
+    );
   }
 
   Future<ClaimPreviewResponse> addOutboundItems(
@@ -145,7 +149,11 @@ class ClaimsRepository {
     String actionId, {
     String? fields,
   }) {
-    return _claimsApi.deleteOutboundShippingMethod(id, actionId, fields: fields);
+    return _claimsApi.deleteOutboundShippingMethod(
+      id,
+      actionId,
+      fields: fields,
+    );
   }
 
   Future<ClaimPreviewResponse> updateOutboundShippingMethod(
@@ -154,8 +162,12 @@ class ClaimsRepository {
     PostClaimsShippingActionReq body, {
     String? fields,
   }) {
-    return _claimsApi.updateOutboundShippingMethod(id, actionId, body,
-        fields: fields);
+    return _claimsApi.updateOutboundShippingMethod(
+      id,
+      actionId,
+      body,
+      fields: fields,
+    );
   }
 
   Future<ClaimDeleteResponse> cancelClaimRequest(

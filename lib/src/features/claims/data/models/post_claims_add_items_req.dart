@@ -17,4 +17,3 @@ abstract class PostClaimsAddItemsReq with _$PostClaimsAddItemsReq {
   factory PostClaimsAddItemsReq.fromJson(Map<String, Object?> json) =>
       _$PostClaimsAddItemsReqFromJson(json);
 }
-

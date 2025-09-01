@@ -28,7 +28,11 @@ class PaymentsRepository {
     CreatePaymentCaptureReq? payload,
     Map<String, dynamic>? query,
   }) async {
-    return await _paymentsApi.capturePayment(id: id, body: payload, query: query);
+    return await _paymentsApi.capturePayment(
+      id: id,
+      body: payload,
+      query: query,
+    );
   }
 
   Future<PaymentRes> refund({
@@ -36,7 +40,11 @@ class PaymentsRepository {
     CreatePaymentRefundReq? payload,
     Map<String, dynamic>? query,
   }) async {
-    return await _paymentsApi.refundPayment(id: id, body: payload, query: query);
+    return await _paymentsApi.refundPayment(
+      id: id,
+      body: payload,
+      query: query,
+    );
   }
 
   Future<PaymentProviderListRes> listPaymentProviders({

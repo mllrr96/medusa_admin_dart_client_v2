@@ -10,10 +10,8 @@ abstract class ProductTagListResponse with _$ProductTagListResponse {
     required int limit,
     required int offset,
     required int count,
-    @JsonKey(name: 'product_tags')
-    required List<ProductTag> productTags,
-    @JsonKey(name: 'estimate_count')
-    int? estimateCount,
+    @JsonKey(name: 'product_tags') required List<ProductTag> productTags,
+    @JsonKey(name: 'estimate_count') int? estimateCount,
   }) = _ProductTagListResponse;
 
   factory ProductTagListResponse.fromJson(Map<String, dynamic> json) =>
@@ -34,8 +32,7 @@ abstract class CreateProductTag with _$CreateProductTag {
 @freezed
 abstract class ProductTagResponse with _$ProductTagResponse {
   const factory ProductTagResponse({
-    @JsonKey(name: 'product_tag')
-    required ProductTag productTag,
+    @JsonKey(name: 'product_tag') required ProductTag productTag,
   }) = _ProductTagResponse;
 
   factory ProductTagResponse.fromJson(Map<String, dynamic> json) =>

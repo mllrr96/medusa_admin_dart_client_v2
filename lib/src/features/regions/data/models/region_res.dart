@@ -14,7 +14,8 @@ abstract class RegionsRes with _$RegionsRes {
     required int count,
   }) = _RegionsRes;
 
-  factory RegionsRes.fromJson(Map<String, dynamic> json) => _$RegionsResFromJson(json);
+  factory RegionsRes.fromJson(Map<String, dynamic> json) =>
+      _$RegionsResFromJson(json);
 }
 
 @freezed
@@ -23,7 +24,8 @@ abstract class RegionRes with _$RegionRes {
     required Region region,
   }) = _RegionRes;
 
-  factory RegionRes.fromJson(Map<String, dynamic> json) => _$RegionResFromJson(json);
+  factory RegionRes.fromJson(Map<String, dynamic> json) =>
+      _$RegionResFromJson(json);
 }
 
 @freezed
@@ -34,5 +36,6 @@ abstract class RegionDeleteRes with _$RegionDeleteRes {
     required bool deleted,
   }) = _RegionDeleteRes;
 
-  factory RegionDeleteRes.fromJson(Map<String, dynamic> json) => _$RegionDeleteResFromJson(json);
+  factory RegionDeleteRes.fromJson(Map<String, dynamic> json) =>
+      _$RegionDeleteResFromJson(json);
 }

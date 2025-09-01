@@ -60,7 +60,6 @@ abstract class ApplicationMethod with _$ApplicationMethod {
     // It's safest to model it as a nullable map or a specific partial class if needed.
     // For simplicity, it can be omitted if not used, or included as:
     // Map<String, dynamic>? promotion,
-
   }) = _ApplicationMethod;
 
   /// Creates an ApplicationMethod instance from a JSON map.

@@ -1,4 +1,3 @@
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'shipping_option.dart';
 part 'shipping_option_res.freezed.dart';

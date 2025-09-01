@@ -43,7 +43,6 @@ abstract class OrderTransaction with _$OrderTransaction {
 
     /// The associated order object. May be a partial representation.
     Map<String, dynamic>? order,
-
   }) = _OrderTransaction;
 
   /// Creates an OrderTransaction instance from a JSON map.
