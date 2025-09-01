@@ -1,6 +1,6 @@
-# Medusa Admin Dart Client
+# Medusa Admin Dart Client V2
 
-This is a Dart client for the Medusa Admin API. It provides a convenient way to interact with a Medusa server from a Dart or Flutter environment.
+This is a Dart client for the Medusa Admin API V2. It provides a convenient way to interact with a Medusa server from a Dart or Flutter environment.
 
 ## Getting started
 
@@ -22,7 +22,7 @@ import 'package:medusa_admin_dart_client/medusa_admin.dart';
 
 void main() async {
   // Create a new client.
-  final client = MedusaAdmin.initialize(
+  final client = MedusaAdminV2.initialize(
     baseUrl: 'http://localhost:9000',
   );
 
