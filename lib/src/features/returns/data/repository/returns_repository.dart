@@ -1,11 +1,5 @@
 import 'package:medusa_admin_dart_client/src/features/returns/data/api/returns_api.dart';
-import 'package:medusa_admin_dart_client/src/features/returns/data/models/get_returns_body.dart';
-import 'package:medusa_admin_dart_client/src/features/returns/data/models/post_cancel_return_res.dart';
-import 'package:medusa_admin_dart_client/src/features/returns/data/models/post_returns_receive_items_res.dart';
-import 'package:medusa_admin_dart_client/src/features/returns/data/models/post_returns_req.dart';
-import 'package:medusa_admin_dart_client/src/features/returns/data/models/post_returns_res.dart';
-import 'package:medusa_admin_dart_client/src/features/returns/data/models/post_returns_return_req.dart';
-import 'package:medusa_admin_dart_client/src/features/returns/data/models/post_returns_return_res.dart';
+import 'package:medusa_admin_dart_client/src/features/returns/data/models/models.dart';
 
 class ReturnsRepository {
   ReturnsRepository(this._returnsApi);
@@ -37,7 +31,7 @@ class ReturnsRepository {
 
   Future<PostReturnsReceiveItemsRes> dismissItems(
     String id,
-    Map<String, dynamic> body,
+    PostReturnsReceiveItemsReq body,
   ) {
     return _returnsApi.dismissItems(id, body);
   }

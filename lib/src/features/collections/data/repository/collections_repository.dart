@@ -18,11 +18,11 @@ class CollectionsRepository {
   }
 
   Future<ProductCollection> create(CreateCollectionReq body) {
-    return _collectionsApi.create(body.toJson());
+    return _collectionsApi.create(body);
   }
 
   Future<ProductCollection> update(String id, UpdateCollectionReq body) {
-    return _collectionsApi.update(id, body.toJson());
+    return _collectionsApi.update(id, body);
   }
 
   Future<void> delete(String id) {

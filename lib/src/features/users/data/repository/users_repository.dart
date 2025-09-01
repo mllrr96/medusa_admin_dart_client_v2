@@ -2,6 +2,7 @@ import 'package:medusa_admin_dart_client/src/features/users/data/api/users_api.d
 import 'package:medusa_admin_dart_client/src/features/users/data/models/user_delete_res.dart';
 import 'package:medusa_admin_dart_client/src/features/users/data/models/user_res.dart';
 import 'package:medusa_admin_dart_client/src/features/users/data/models/users_list_res.dart';
+import 'package:medusa_admin_dart_client/src/features/users/data/models/user_update_req.dart';
 
 class UsersRepository {
   UsersRepository(this._usersApi);
@@ -24,7 +25,7 @@ class UsersRepository {
     return _usersApi.retrieve(id);
   }
 
-  Future<UserResponse> update(String id, Map<String, dynamic> body) {
+  Future<UserResponse> update(String id, UserUpdateReq body) {
     return _usersApi.update(id, body);
   }
 

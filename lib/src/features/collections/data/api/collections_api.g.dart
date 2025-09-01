@@ -74,12 +74,11 @@ class _CollectionsApi implements CollectionsApi {
   }
 
   @override
-  Future<ProductCollection> create(Map<String, dynamic> body) async {
+  Future<ProductCollection> create(CreateCollectionReq body) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(body);
+    final _data = body;
     final _options = _setStreamType<ProductCollection>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
@@ -102,12 +101,11 @@ class _CollectionsApi implements CollectionsApi {
   }
 
   @override
-  Future<ProductCollection> update(String id, Map<String, dynamic> body) async {
+  Future<ProductCollection> update(String id, UpdateCollectionReq body) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(body);
+    final _data = body;
     final _options = _setStreamType<ProductCollection>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
@@ -190,7 +188,7 @@ class _CollectionsApi implements CollectionsApi {
     final _data = <String, dynamic>{};
     _data.addAll(body);
     final _options = _setStreamType<ProductCollection>(
-      Options(method: 'DELETE', headers: _headers, extra: _extra)
+      Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
             '/admin/collections/${id}/products',
