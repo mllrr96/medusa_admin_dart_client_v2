@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$WorkflowExecution {
 
- String get id; String get workflowId; String get transactionId; Map<String, dynamic> get execution; Map<String, dynamic> get context; String get state; DateTime? get createdAt; DateTime? get updatedAt; DateTime? get deletedAt;
+ String get id;@JsonKey(name: 'workflow_id') String get workflowId;@JsonKey(name: 'transaction_id') String get transactionId; Map<String, dynamic> get execution; Map<String, dynamic> get context; String get state;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt;
 /// Create a copy of WorkflowExecution
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $WorkflowExecutionCopyWith<$Res>  {
   factory $WorkflowExecutionCopyWith(WorkflowExecution value, $Res Function(WorkflowExecution) _then) = _$WorkflowExecutionCopyWithImpl;
 @useResult
 $Res call({
- String id, String workflowId, String transactionId, Map<String, dynamic> execution, Map<String, dynamic> context, String state, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt
+ String id,@JsonKey(name: 'workflow_id') String workflowId,@JsonKey(name: 'transaction_id') String transactionId, Map<String, dynamic> execution, Map<String, dynamic> context, String state,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
 });
 
 
@@ -161,7 +161,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String workflowId,  String transactionId,  Map<String, dynamic> execution,  Map<String, dynamic> context,  String state,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'workflow_id')  String workflowId, @JsonKey(name: 'transaction_id')  String transactionId,  Map<String, dynamic> execution,  Map<String, dynamic> context,  String state, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _WorkflowExecution() when $default != null:
 return $default(_that.id,_that.workflowId,_that.transactionId,_that.execution,_that.context,_that.state,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -182,7 +182,7 @@ return $default(_that.id,_that.workflowId,_that.transactionId,_that.execution,_t
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String workflowId,  String transactionId,  Map<String, dynamic> execution,  Map<String, dynamic> context,  String state,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'workflow_id')  String workflowId, @JsonKey(name: 'transaction_id')  String transactionId,  Map<String, dynamic> execution,  Map<String, dynamic> context,  String state, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)  $default,) {final _that = this;
 switch (_that) {
 case _WorkflowExecution():
 return $default(_that.id,_that.workflowId,_that.transactionId,_that.execution,_that.context,_that.state,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -202,7 +202,7 @@ return $default(_that.id,_that.workflowId,_that.transactionId,_that.execution,_t
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String workflowId,  String transactionId,  Map<String, dynamic> execution,  Map<String, dynamic> context,  String state,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'workflow_id')  String workflowId, @JsonKey(name: 'transaction_id')  String transactionId,  Map<String, dynamic> execution,  Map<String, dynamic> context,  String state, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _WorkflowExecution() when $default != null:
 return $default(_that.id,_that.workflowId,_that.transactionId,_that.execution,_that.context,_that.state,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -217,12 +217,12 @@ return $default(_that.id,_that.workflowId,_that.transactionId,_that.execution,_t
 @JsonSerializable()
 
 class _WorkflowExecution implements WorkflowExecution {
-  const _WorkflowExecution({required this.id, required this.workflowId, required this.transactionId, required final  Map<String, dynamic> execution, required final  Map<String, dynamic> context, required this.state, this.createdAt, this.updatedAt, this.deletedAt}): _execution = execution,_context = context;
+  const _WorkflowExecution({required this.id, @JsonKey(name: 'workflow_id') required this.workflowId, @JsonKey(name: 'transaction_id') required this.transactionId, required final  Map<String, dynamic> execution, required final  Map<String, dynamic> context, required this.state, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt}): _execution = execution,_context = context;
   factory _WorkflowExecution.fromJson(Map<String, dynamic> json) => _$WorkflowExecutionFromJson(json);
 
 @override final  String id;
-@override final  String workflowId;
-@override final  String transactionId;
+@override@JsonKey(name: 'workflow_id') final  String workflowId;
+@override@JsonKey(name: 'transaction_id') final  String transactionId;
  final  Map<String, dynamic> _execution;
 @override Map<String, dynamic> get execution {
   if (_execution is EqualUnmodifiableMapView) return _execution;
@@ -238,9 +238,9 @@ class _WorkflowExecution implements WorkflowExecution {
 }
 
 @override final  String state;
-@override final  DateTime? createdAt;
-@override final  DateTime? updatedAt;
-@override final  DateTime? deletedAt;
+@override@JsonKey(name: 'created_at') final  DateTime? createdAt;
+@override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
+@override@JsonKey(name: 'deleted_at') final  DateTime? deletedAt;
 
 /// Create a copy of WorkflowExecution
 /// with the given fields replaced by the non-null parameter values.
@@ -275,7 +275,7 @@ abstract mixin class _$WorkflowExecutionCopyWith<$Res> implements $WorkflowExecu
   factory _$WorkflowExecutionCopyWith(_WorkflowExecution value, $Res Function(_WorkflowExecution) _then) = __$WorkflowExecutionCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String workflowId, String transactionId, Map<String, dynamic> execution, Map<String, dynamic> context, String state, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt
+ String id,@JsonKey(name: 'workflow_id') String workflowId,@JsonKey(name: 'transaction_id') String transactionId, Map<String, dynamic> execution, Map<String, dynamic> context, String state,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
 });
 
 

@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$GeoZone {
 
- String get id; String get type; String get countryCode; String? get provinceCode; String? get city; Map<String, dynamic>? get postalExpression; DateTime? get createdAt; DateTime? get updatedAt; DateTime? get deletedAt;
+ String get id; String get type;@JsonKey(name: 'country_code') String get countryCode;@JsonKey(name: 'province_code') String? get provinceCode; String? get city;@JsonKey(name: 'postal_expression') Map<String, dynamic>? get postalExpression;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt;
 /// Create a copy of GeoZone
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $GeoZoneCopyWith<$Res>  {
   factory $GeoZoneCopyWith(GeoZone value, $Res Function(GeoZone) _then) = _$GeoZoneCopyWithImpl;
 @useResult
 $Res call({
- String id, String type, String countryCode, String? provinceCode, String? city, Map<String, dynamic>? postalExpression, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt
+ String id, String type,@JsonKey(name: 'country_code') String countryCode,@JsonKey(name: 'province_code') String? provinceCode, String? city,@JsonKey(name: 'postal_expression') Map<String, dynamic>? postalExpression,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
 });
 
 
@@ -161,7 +161,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String type,  String countryCode,  String? provinceCode,  String? city,  Map<String, dynamic>? postalExpression,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String type, @JsonKey(name: 'country_code')  String countryCode, @JsonKey(name: 'province_code')  String? provinceCode,  String? city, @JsonKey(name: 'postal_expression')  Map<String, dynamic>? postalExpression, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _GeoZone() when $default != null:
 return $default(_that.id,_that.type,_that.countryCode,_that.provinceCode,_that.city,_that.postalExpression,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -182,7 +182,7 @@ return $default(_that.id,_that.type,_that.countryCode,_that.provinceCode,_that.c
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String type,  String countryCode,  String? provinceCode,  String? city,  Map<String, dynamic>? postalExpression,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String type, @JsonKey(name: 'country_code')  String countryCode, @JsonKey(name: 'province_code')  String? provinceCode,  String? city, @JsonKey(name: 'postal_expression')  Map<String, dynamic>? postalExpression, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)  $default,) {final _that = this;
 switch (_that) {
 case _GeoZone():
 return $default(_that.id,_that.type,_that.countryCode,_that.provinceCode,_that.city,_that.postalExpression,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -202,7 +202,7 @@ return $default(_that.id,_that.type,_that.countryCode,_that.provinceCode,_that.c
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String type,  String countryCode,  String? provinceCode,  String? city,  Map<String, dynamic>? postalExpression,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String type, @JsonKey(name: 'country_code')  String countryCode, @JsonKey(name: 'province_code')  String? provinceCode,  String? city, @JsonKey(name: 'postal_expression')  Map<String, dynamic>? postalExpression, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _GeoZone() when $default != null:
 return $default(_that.id,_that.type,_that.countryCode,_that.provinceCode,_that.city,_that.postalExpression,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -217,16 +217,16 @@ return $default(_that.id,_that.type,_that.countryCode,_that.provinceCode,_that.c
 @JsonSerializable()
 
 class _GeoZone implements GeoZone {
-  const _GeoZone({required this.id, required this.type, required this.countryCode, this.provinceCode, this.city, final  Map<String, dynamic>? postalExpression, this.createdAt, this.updatedAt, this.deletedAt}): _postalExpression = postalExpression;
+  const _GeoZone({required this.id, required this.type, @JsonKey(name: 'country_code') required this.countryCode, @JsonKey(name: 'province_code') this.provinceCode, this.city, @JsonKey(name: 'postal_expression') final  Map<String, dynamic>? postalExpression, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt}): _postalExpression = postalExpression;
   factory _GeoZone.fromJson(Map<String, dynamic> json) => _$GeoZoneFromJson(json);
 
 @override final  String id;
 @override final  String type;
-@override final  String countryCode;
-@override final  String? provinceCode;
+@override@JsonKey(name: 'country_code') final  String countryCode;
+@override@JsonKey(name: 'province_code') final  String? provinceCode;
 @override final  String? city;
  final  Map<String, dynamic>? _postalExpression;
-@override Map<String, dynamic>? get postalExpression {
+@override@JsonKey(name: 'postal_expression') Map<String, dynamic>? get postalExpression {
   final value = _postalExpression;
   if (value == null) return null;
   if (_postalExpression is EqualUnmodifiableMapView) return _postalExpression;
@@ -234,9 +234,9 @@ class _GeoZone implements GeoZone {
   return EqualUnmodifiableMapView(value);
 }
 
-@override final  DateTime? createdAt;
-@override final  DateTime? updatedAt;
-@override final  DateTime? deletedAt;
+@override@JsonKey(name: 'created_at') final  DateTime? createdAt;
+@override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
+@override@JsonKey(name: 'deleted_at') final  DateTime? deletedAt;
 
 /// Create a copy of GeoZone
 /// with the given fields replaced by the non-null parameter values.
@@ -271,7 +271,7 @@ abstract mixin class _$GeoZoneCopyWith<$Res> implements $GeoZoneCopyWith<$Res> {
   factory _$GeoZoneCopyWith(_GeoZone value, $Res Function(_GeoZone) _then) = __$GeoZoneCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String type, String countryCode, String? provinceCode, String? city, Map<String, dynamic>? postalExpression, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt
+ String id, String type,@JsonKey(name: 'country_code') String countryCode,@JsonKey(name: 'province_code') String? provinceCode, String? city,@JsonKey(name: 'postal_expression') Map<String, dynamic>? postalExpression,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
 });
 
 

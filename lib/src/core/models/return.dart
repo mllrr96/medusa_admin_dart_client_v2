@@ -7,7 +7,6 @@ import 'package:medusa_admin_dart_client/src/features/orders/data/models/order.d
 
 import '../../features/exchanges/data/models/exchanges.dart';
 
-
 part 'return.freezed.dart';
 part 'return.g.dart';
 
@@ -34,7 +33,7 @@ abstract class Return with _$Return {
     @JsonKey(name: 'received_at') DateTime? receivedAt,
     @JsonKey(name: 'created_at') DateTime? createdAt,
     @JsonKey(name: 'updated_at') DateTime? updatedAt,
-    @JsonKey(name: 'deleted_at') DateTime? deletedAt,
+    @JsonKey(name: 'canceled_at') DateTime? canceledAt,
     Map<String, dynamic>? metadata,
   }) = _Return;
 

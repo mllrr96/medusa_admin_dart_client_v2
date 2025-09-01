@@ -7,14 +7,14 @@ part 'workflow_execution.g.dart';
 abstract class WorkflowExecution with _$WorkflowExecution {
   const factory WorkflowExecution({
     required String id,
-    required String workflowId,
-    required String transactionId,
+    @JsonKey(name: 'workflow_id') required String workflowId,
+    @JsonKey(name: 'transaction_id') required String transactionId,
     required Map<String, dynamic> execution,
     required Map<String, dynamic> context,
     required String state,
-     DateTime? createdAt,
-     DateTime? updatedAt,
-    DateTime? deletedAt,
+    @JsonKey(name: 'created_at') DateTime? createdAt,
+    @JsonKey(name: 'updated_at') DateTime? updatedAt,
+    @JsonKey(name: 'deleted_at') DateTime? deletedAt,
   }) = _WorkflowExecution;
 
   factory WorkflowExecution.fromJson(Map<String, dynamic> json) =>

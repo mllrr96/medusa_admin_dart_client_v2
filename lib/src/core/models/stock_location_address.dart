@@ -7,17 +7,17 @@ part 'stock_location_address.g.dart';
 abstract class StockLocationAddress with _$StockLocationAddress {
   const factory StockLocationAddress({
     required String id,
-    required String address1,
-    String? address2,
+    @JsonKey(name: 'address_1') required String address1,
+    @JsonKey(name: 'address_2') String? address2,
     String? company,
-    required String countryCode,
+    @JsonKey(name: 'country_code') required String countryCode,
     String? city,
     String? phone,
-    String? postalCode,
+    @JsonKey(name: 'postal_code') String? postalCode,
     String? province,
-     DateTime? createdAt,
-     DateTime? updatedAt,
-    DateTime? deletedAt,
+    @JsonKey(name: 'created_at') DateTime? createdAt,
+    @JsonKey(name: 'updated_at') DateTime? updatedAt,
+    @JsonKey(name: 'deleted_at') DateTime? deletedAt,
   }) = _StockLocationAddress;
 
   factory StockLocationAddress.fromJson(Map<String, dynamic> json) =>

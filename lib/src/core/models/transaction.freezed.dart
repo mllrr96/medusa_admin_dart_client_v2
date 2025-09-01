@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Transaction {
 
- String get id; String get accountId; String get transactionGroupId; String get type; double get amount; StoreCreditAccount get account; String? get note; String? get reference; String? get referenceId; Map<String, dynamic>? get metadata; DateTime? get createdAt; DateTime? get updatedAt;
+ String get id;@JsonKey(name: 'account_id') String get accountId;@JsonKey(name: 'transaction_group_id') String get transactionGroupId; String get type; double get amount; StoreCreditAccount get account; String? get note; String? get reference;@JsonKey(name: 'reference_id') String? get referenceId; Map<String, dynamic>? get metadata;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;
 /// Create a copy of Transaction
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $TransactionCopyWith<$Res>  {
   factory $TransactionCopyWith(Transaction value, $Res Function(Transaction) _then) = _$TransactionCopyWithImpl;
 @useResult
 $Res call({
- String id, String accountId, String transactionGroupId, String type, double amount, StoreCreditAccount account, String? note, String? reference, String? referenceId, Map<String, dynamic>? metadata, DateTime? createdAt, DateTime? updatedAt
+ String id,@JsonKey(name: 'account_id') String accountId,@JsonKey(name: 'transaction_group_id') String transactionGroupId, String type, double amount, StoreCreditAccount account, String? note, String? reference,@JsonKey(name: 'reference_id') String? referenceId, Map<String, dynamic>? metadata,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt
 });
 
 
@@ -173,7 +173,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String accountId,  String transactionGroupId,  String type,  double amount,  StoreCreditAccount account,  String? note,  String? reference,  String? referenceId,  Map<String, dynamic>? metadata,  DateTime? createdAt,  DateTime? updatedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'account_id')  String accountId, @JsonKey(name: 'transaction_group_id')  String transactionGroupId,  String type,  double amount,  StoreCreditAccount account,  String? note,  String? reference, @JsonKey(name: 'reference_id')  String? referenceId,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Transaction() when $default != null:
 return $default(_that.id,_that.accountId,_that.transactionGroupId,_that.type,_that.amount,_that.account,_that.note,_that.reference,_that.referenceId,_that.metadata,_that.createdAt,_that.updatedAt);case _:
@@ -194,7 +194,7 @@ return $default(_that.id,_that.accountId,_that.transactionGroupId,_that.type,_th
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String accountId,  String transactionGroupId,  String type,  double amount,  StoreCreditAccount account,  String? note,  String? reference,  String? referenceId,  Map<String, dynamic>? metadata,  DateTime? createdAt,  DateTime? updatedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'account_id')  String accountId, @JsonKey(name: 'transaction_group_id')  String transactionGroupId,  String type,  double amount,  StoreCreditAccount account,  String? note,  String? reference, @JsonKey(name: 'reference_id')  String? referenceId,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt)  $default,) {final _that = this;
 switch (_that) {
 case _Transaction():
 return $default(_that.id,_that.accountId,_that.transactionGroupId,_that.type,_that.amount,_that.account,_that.note,_that.reference,_that.referenceId,_that.metadata,_that.createdAt,_that.updatedAt);case _:
@@ -214,7 +214,7 @@ return $default(_that.id,_that.accountId,_that.transactionGroupId,_that.type,_th
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String accountId,  String transactionGroupId,  String type,  double amount,  StoreCreditAccount account,  String? note,  String? reference,  String? referenceId,  Map<String, dynamic>? metadata,  DateTime? createdAt,  DateTime? updatedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'account_id')  String accountId, @JsonKey(name: 'transaction_group_id')  String transactionGroupId,  String type,  double amount,  StoreCreditAccount account,  String? note,  String? reference, @JsonKey(name: 'reference_id')  String? referenceId,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _Transaction() when $default != null:
 return $default(_that.id,_that.accountId,_that.transactionGroupId,_that.type,_that.amount,_that.account,_that.note,_that.reference,_that.referenceId,_that.metadata,_that.createdAt,_that.updatedAt);case _:
@@ -229,18 +229,18 @@ return $default(_that.id,_that.accountId,_that.transactionGroupId,_that.type,_th
 @JsonSerializable()
 
 class _Transaction implements Transaction {
-  const _Transaction({required this.id, required this.accountId, required this.transactionGroupId, required this.type, required this.amount, required this.account, this.note, this.reference, this.referenceId, final  Map<String, dynamic>? metadata, this.createdAt, this.updatedAt}): _metadata = metadata;
+  const _Transaction({required this.id, @JsonKey(name: 'account_id') required this.accountId, @JsonKey(name: 'transaction_group_id') required this.transactionGroupId, required this.type, required this.amount, required this.account, this.note, this.reference, @JsonKey(name: 'reference_id') this.referenceId, final  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt}): _metadata = metadata;
   factory _Transaction.fromJson(Map<String, dynamic> json) => _$TransactionFromJson(json);
 
 @override final  String id;
-@override final  String accountId;
-@override final  String transactionGroupId;
+@override@JsonKey(name: 'account_id') final  String accountId;
+@override@JsonKey(name: 'transaction_group_id') final  String transactionGroupId;
 @override final  String type;
 @override final  double amount;
 @override final  StoreCreditAccount account;
 @override final  String? note;
 @override final  String? reference;
-@override final  String? referenceId;
+@override@JsonKey(name: 'reference_id') final  String? referenceId;
  final  Map<String, dynamic>? _metadata;
 @override Map<String, dynamic>? get metadata {
   final value = _metadata;
@@ -250,8 +250,8 @@ class _Transaction implements Transaction {
   return EqualUnmodifiableMapView(value);
 }
 
-@override final  DateTime? createdAt;
-@override final  DateTime? updatedAt;
+@override@JsonKey(name: 'created_at') final  DateTime? createdAt;
+@override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
 
 /// Create a copy of Transaction
 /// with the given fields replaced by the non-null parameter values.
@@ -286,7 +286,7 @@ abstract mixin class _$TransactionCopyWith<$Res> implements $TransactionCopyWith
   factory _$TransactionCopyWith(_Transaction value, $Res Function(_Transaction) _then) = __$TransactionCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String accountId, String transactionGroupId, String type, double amount, StoreCreditAccount account, String? note, String? reference, String? referenceId, Map<String, dynamic>? metadata, DateTime? createdAt, DateTime? updatedAt
+ String id,@JsonKey(name: 'account_id') String accountId,@JsonKey(name: 'transaction_group_id') String transactionGroupId, String type, double amount, StoreCreditAccount account, String? note, String? reference,@JsonKey(name: 'reference_id') String? referenceId, Map<String, dynamic>? metadata,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt
 });
 
 

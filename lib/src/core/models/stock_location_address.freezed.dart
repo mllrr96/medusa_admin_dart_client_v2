@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$StockLocationAddress {
 
- String get id; String get address1; String? get address2; String? get company; String get countryCode; String? get city; String? get phone; String? get postalCode; String? get province; DateTime? get createdAt; DateTime? get updatedAt; DateTime? get deletedAt;
+ String get id;@JsonKey(name: 'address_1') String get address1;@JsonKey(name: 'address_2') String? get address2; String? get company;@JsonKey(name: 'country_code') String get countryCode; String? get city; String? get phone;@JsonKey(name: 'postal_code') String? get postalCode; String? get province;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt;
 /// Create a copy of StockLocationAddress
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $StockLocationAddressCopyWith<$Res>  {
   factory $StockLocationAddressCopyWith(StockLocationAddress value, $Res Function(StockLocationAddress) _then) = _$StockLocationAddressCopyWithImpl;
 @useResult
 $Res call({
- String id, String address1, String? address2, String? company, String countryCode, String? city, String? phone, String? postalCode, String? province, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt
+ String id,@JsonKey(name: 'address_1') String address1,@JsonKey(name: 'address_2') String? address2, String? company,@JsonKey(name: 'country_code') String countryCode, String? city, String? phone,@JsonKey(name: 'postal_code') String? postalCode, String? province,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
 });
 
 
@@ -164,7 +164,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String address1,  String? address2,  String? company,  String countryCode,  String? city,  String? phone,  String? postalCode,  String? province,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'address_1')  String address1, @JsonKey(name: 'address_2')  String? address2,  String? company, @JsonKey(name: 'country_code')  String countryCode,  String? city,  String? phone, @JsonKey(name: 'postal_code')  String? postalCode,  String? province, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _StockLocationAddress() when $default != null:
 return $default(_that.id,_that.address1,_that.address2,_that.company,_that.countryCode,_that.city,_that.phone,_that.postalCode,_that.province,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -185,7 +185,7 @@ return $default(_that.id,_that.address1,_that.address2,_that.company,_that.count
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String address1,  String? address2,  String? company,  String countryCode,  String? city,  String? phone,  String? postalCode,  String? province,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'address_1')  String address1, @JsonKey(name: 'address_2')  String? address2,  String? company, @JsonKey(name: 'country_code')  String countryCode,  String? city,  String? phone, @JsonKey(name: 'postal_code')  String? postalCode,  String? province, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)  $default,) {final _that = this;
 switch (_that) {
 case _StockLocationAddress():
 return $default(_that.id,_that.address1,_that.address2,_that.company,_that.countryCode,_that.city,_that.phone,_that.postalCode,_that.province,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -205,7 +205,7 @@ return $default(_that.id,_that.address1,_that.address2,_that.company,_that.count
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String address1,  String? address2,  String? company,  String countryCode,  String? city,  String? phone,  String? postalCode,  String? province,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'address_1')  String address1, @JsonKey(name: 'address_2')  String? address2,  String? company, @JsonKey(name: 'country_code')  String countryCode,  String? city,  String? phone, @JsonKey(name: 'postal_code')  String? postalCode,  String? province, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _StockLocationAddress() when $default != null:
 return $default(_that.id,_that.address1,_that.address2,_that.company,_that.countryCode,_that.city,_that.phone,_that.postalCode,_that.province,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -220,21 +220,21 @@ return $default(_that.id,_that.address1,_that.address2,_that.company,_that.count
 @JsonSerializable()
 
 class _StockLocationAddress implements StockLocationAddress {
-  const _StockLocationAddress({required this.id, required this.address1, this.address2, this.company, required this.countryCode, this.city, this.phone, this.postalCode, this.province, this.createdAt, this.updatedAt, this.deletedAt});
+  const _StockLocationAddress({required this.id, @JsonKey(name: 'address_1') required this.address1, @JsonKey(name: 'address_2') this.address2, this.company, @JsonKey(name: 'country_code') required this.countryCode, this.city, this.phone, @JsonKey(name: 'postal_code') this.postalCode, this.province, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt});
   factory _StockLocationAddress.fromJson(Map<String, dynamic> json) => _$StockLocationAddressFromJson(json);
 
 @override final  String id;
-@override final  String address1;
-@override final  String? address2;
+@override@JsonKey(name: 'address_1') final  String address1;
+@override@JsonKey(name: 'address_2') final  String? address2;
 @override final  String? company;
-@override final  String countryCode;
+@override@JsonKey(name: 'country_code') final  String countryCode;
 @override final  String? city;
 @override final  String? phone;
-@override final  String? postalCode;
+@override@JsonKey(name: 'postal_code') final  String? postalCode;
 @override final  String? province;
-@override final  DateTime? createdAt;
-@override final  DateTime? updatedAt;
-@override final  DateTime? deletedAt;
+@override@JsonKey(name: 'created_at') final  DateTime? createdAt;
+@override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
+@override@JsonKey(name: 'deleted_at') final  DateTime? deletedAt;
 
 /// Create a copy of StockLocationAddress
 /// with the given fields replaced by the non-null parameter values.
@@ -269,7 +269,7 @@ abstract mixin class _$StockLocationAddressCopyWith<$Res> implements $StockLocat
   factory _$StockLocationAddressCopyWith(_StockLocationAddress value, $Res Function(_StockLocationAddress) _then) = __$StockLocationAddressCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String address1, String? address2, String? company, String countryCode, String? city, String? phone, String? postalCode, String? province, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt
+ String id,@JsonKey(name: 'address_1') String address1,@JsonKey(name: 'address_2') String? address2, String? company,@JsonKey(name: 'country_code') String countryCode, String? city, String? phone,@JsonKey(name: 'postal_code') String? postalCode, String? province,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
 });
 
 

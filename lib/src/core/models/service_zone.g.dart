@@ -9,36 +9,36 @@ part of 'service_zone.dart';
 _ServiceZone _$ServiceZoneFromJson(Map<String, dynamic> json) => _ServiceZone(
   id: json['id'] as String,
   name: json['name'] as String,
-  fulfillmentSetId: json['fulfillmentSetId'] as String,
+  fulfillmentSetId: json['fulfillment_set_id'] as String,
   fulfillmentSet: FulfillmentSet.fromJson(
-    json['fulfillmentSet'] as Map<String, dynamic>,
+    json['fulfillment_set'] as Map<String, dynamic>,
   ),
-  geoZones: (json['geoZones'] as List<dynamic>)
+  geoZones: (json['geo_zones'] as List<dynamic>)
       .map((e) => GeoZone.fromJson(e as Map<String, dynamic>))
       .toList(),
-  shippingOptions: (json['shippingOptions'] as List<dynamic>)
+  shippingOptions: (json['shipping_options'] as List<dynamic>)
       .map((e) => ShippingOption.fromJson(e as Map<String, dynamic>))
       .toList(),
-  createdAt: json['createdAt'] == null
+  createdAt: json['created_at'] == null
       ? null
-      : DateTime.parse(json['createdAt'] as String),
-  updatedAt: json['updatedAt'] == null
+      : DateTime.parse(json['created_at'] as String),
+  updatedAt: json['updated_at'] == null
       ? null
-      : DateTime.parse(json['updatedAt'] as String),
-  deletedAt: json['deletedAt'] == null
+      : DateTime.parse(json['updated_at'] as String),
+  deletedAt: json['deleted_at'] == null
       ? null
-      : DateTime.parse(json['deletedAt'] as String),
+      : DateTime.parse(json['deleted_at'] as String),
 );
 
 Map<String, dynamic> _$ServiceZoneToJson(_ServiceZone instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'fulfillmentSetId': instance.fulfillmentSetId,
-      'fulfillmentSet': instance.fulfillmentSet,
-      'geoZones': instance.geoZones,
-      'shippingOptions': instance.shippingOptions,
-      'createdAt': instance.createdAt?.toIso8601String(),
-      'updatedAt': instance.updatedAt?.toIso8601String(),
-      'deletedAt': instance.deletedAt?.toIso8601String(),
+      'fulfillment_set_id': instance.fulfillmentSetId,
+      'fulfillment_set': instance.fulfillmentSet,
+      'geo_zones': instance.geoZones,
+      'shipping_options': instance.shippingOptions,
+      'created_at': instance.createdAt?.toIso8601String(),
+      'updated_at': instance.updatedAt?.toIso8601String(),
+      'deleted_at': instance.deletedAt?.toIso8601String(),
     };

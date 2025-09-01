@@ -14,18 +14,18 @@ _FulfillmentSet _$FulfillmentSetFromJson(Map<String, dynamic> json) =>
       location: StockLocation.fromJson(
         json['location'] as Map<String, dynamic>,
       ),
-      serviceZones: (json['serviceZones'] as List<dynamic>)
+      serviceZones: (json['service_zones'] as List<dynamic>)
           .map((e) => ServiceZone.fromJson(e as Map<String, dynamic>))
           .toList(),
-      createdAt: json['createdAt'] == null
+      createdAt: json['created_at'] == null
           ? null
-          : DateTime.parse(json['createdAt'] as String),
-      updatedAt: json['updatedAt'] == null
+          : DateTime.parse(json['created_at'] as String),
+      updatedAt: json['updated_at'] == null
           ? null
-          : DateTime.parse(json['updatedAt'] as String),
-      deletedAt: json['deletedAt'] == null
+          : DateTime.parse(json['updated_at'] as String),
+      deletedAt: json['deleted_at'] == null
           ? null
-          : DateTime.parse(json['deletedAt'] as String),
+          : DateTime.parse(json['deleted_at'] as String),
     );
 
 Map<String, dynamic> _$FulfillmentSetToJson(_FulfillmentSet instance) =>
@@ -34,8 +34,8 @@ Map<String, dynamic> _$FulfillmentSetToJson(_FulfillmentSet instance) =>
       'name': instance.name,
       'type': instance.type,
       'location': instance.location,
-      'serviceZones': instance.serviceZones,
-      'createdAt': instance.createdAt?.toIso8601String(),
-      'updatedAt': instance.updatedAt?.toIso8601String(),
-      'deletedAt': instance.deletedAt?.toIso8601String(),
+      'service_zones': instance.serviceZones,
+      'created_at': instance.createdAt?.toIso8601String(),
+      'updated_at': instance.updatedAt?.toIso8601String(),
+      'deleted_at': instance.deletedAt?.toIso8601String(),
     };

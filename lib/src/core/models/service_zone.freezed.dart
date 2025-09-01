@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ServiceZone {
 
- String get id; String get name; String get fulfillmentSetId; FulfillmentSet get fulfillmentSet; List<GeoZone> get geoZones; List<ShippingOption> get shippingOptions; DateTime? get createdAt; DateTime? get updatedAt; DateTime? get deletedAt;
+ String get id; String get name;@JsonKey(name: 'fulfillment_set_id') String get fulfillmentSetId;@JsonKey(name: 'fulfillment_set') FulfillmentSet get fulfillmentSet;@JsonKey(name: 'geo_zones') List<GeoZone> get geoZones;@JsonKey(name: 'shipping_options') List<ShippingOption> get shippingOptions;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt;
 /// Create a copy of ServiceZone
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $ServiceZoneCopyWith<$Res>  {
   factory $ServiceZoneCopyWith(ServiceZone value, $Res Function(ServiceZone) _then) = _$ServiceZoneCopyWithImpl;
 @useResult
 $Res call({
- String id, String name, String fulfillmentSetId, FulfillmentSet fulfillmentSet, List<GeoZone> geoZones, List<ShippingOption> shippingOptions, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt
+ String id, String name,@JsonKey(name: 'fulfillment_set_id') String fulfillmentSetId,@JsonKey(name: 'fulfillment_set') FulfillmentSet fulfillmentSet,@JsonKey(name: 'geo_zones') List<GeoZone> geoZones,@JsonKey(name: 'shipping_options') List<ShippingOption> shippingOptions,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
 });
 
 
@@ -170,7 +170,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  String fulfillmentSetId,  FulfillmentSet fulfillmentSet,  List<GeoZone> geoZones,  List<ShippingOption> shippingOptions,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(name: 'fulfillment_set_id')  String fulfillmentSetId, @JsonKey(name: 'fulfillment_set')  FulfillmentSet fulfillmentSet, @JsonKey(name: 'geo_zones')  List<GeoZone> geoZones, @JsonKey(name: 'shipping_options')  List<ShippingOption> shippingOptions, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ServiceZone() when $default != null:
 return $default(_that.id,_that.name,_that.fulfillmentSetId,_that.fulfillmentSet,_that.geoZones,_that.shippingOptions,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -191,7 +191,7 @@ return $default(_that.id,_that.name,_that.fulfillmentSetId,_that.fulfillmentSet,
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  String fulfillmentSetId,  FulfillmentSet fulfillmentSet,  List<GeoZone> geoZones,  List<ShippingOption> shippingOptions,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(name: 'fulfillment_set_id')  String fulfillmentSetId, @JsonKey(name: 'fulfillment_set')  FulfillmentSet fulfillmentSet, @JsonKey(name: 'geo_zones')  List<GeoZone> geoZones, @JsonKey(name: 'shipping_options')  List<ShippingOption> shippingOptions, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)  $default,) {final _that = this;
 switch (_that) {
 case _ServiceZone():
 return $default(_that.id,_that.name,_that.fulfillmentSetId,_that.fulfillmentSet,_that.geoZones,_that.shippingOptions,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -211,7 +211,7 @@ return $default(_that.id,_that.name,_that.fulfillmentSetId,_that.fulfillmentSet,
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  String fulfillmentSetId,  FulfillmentSet fulfillmentSet,  List<GeoZone> geoZones,  List<ShippingOption> shippingOptions,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name, @JsonKey(name: 'fulfillment_set_id')  String fulfillmentSetId, @JsonKey(name: 'fulfillment_set')  FulfillmentSet fulfillmentSet, @JsonKey(name: 'geo_zones')  List<GeoZone> geoZones, @JsonKey(name: 'shipping_options')  List<ShippingOption> shippingOptions, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _ServiceZone() when $default != null:
 return $default(_that.id,_that.name,_that.fulfillmentSetId,_that.fulfillmentSet,_that.geoZones,_that.shippingOptions,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -226,30 +226,30 @@ return $default(_that.id,_that.name,_that.fulfillmentSetId,_that.fulfillmentSet,
 @JsonSerializable()
 
 class _ServiceZone implements ServiceZone {
-  const _ServiceZone({required this.id, required this.name, required this.fulfillmentSetId, required this.fulfillmentSet, required final  List<GeoZone> geoZones, required final  List<ShippingOption> shippingOptions, this.createdAt, this.updatedAt, this.deletedAt}): _geoZones = geoZones,_shippingOptions = shippingOptions;
+  const _ServiceZone({required this.id, required this.name, @JsonKey(name: 'fulfillment_set_id') required this.fulfillmentSetId, @JsonKey(name: 'fulfillment_set') required this.fulfillmentSet, @JsonKey(name: 'geo_zones') required final  List<GeoZone> geoZones, @JsonKey(name: 'shipping_options') required final  List<ShippingOption> shippingOptions, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt}): _geoZones = geoZones,_shippingOptions = shippingOptions;
   factory _ServiceZone.fromJson(Map<String, dynamic> json) => _$ServiceZoneFromJson(json);
 
 @override final  String id;
 @override final  String name;
-@override final  String fulfillmentSetId;
-@override final  FulfillmentSet fulfillmentSet;
+@override@JsonKey(name: 'fulfillment_set_id') final  String fulfillmentSetId;
+@override@JsonKey(name: 'fulfillment_set') final  FulfillmentSet fulfillmentSet;
  final  List<GeoZone> _geoZones;
-@override List<GeoZone> get geoZones {
+@override@JsonKey(name: 'geo_zones') List<GeoZone> get geoZones {
   if (_geoZones is EqualUnmodifiableListView) return _geoZones;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_geoZones);
 }
 
  final  List<ShippingOption> _shippingOptions;
-@override List<ShippingOption> get shippingOptions {
+@override@JsonKey(name: 'shipping_options') List<ShippingOption> get shippingOptions {
   if (_shippingOptions is EqualUnmodifiableListView) return _shippingOptions;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_shippingOptions);
 }
 
-@override final  DateTime? createdAt;
-@override final  DateTime? updatedAt;
-@override final  DateTime? deletedAt;
+@override@JsonKey(name: 'created_at') final  DateTime? createdAt;
+@override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
+@override@JsonKey(name: 'deleted_at') final  DateTime? deletedAt;
 
 /// Create a copy of ServiceZone
 /// with the given fields replaced by the non-null parameter values.
@@ -284,7 +284,7 @@ abstract mixin class _$ServiceZoneCopyWith<$Res> implements $ServiceZoneCopyWith
   factory _$ServiceZoneCopyWith(_ServiceZone value, $Res Function(_ServiceZone) _then) = __$ServiceZoneCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String name, String fulfillmentSetId, FulfillmentSet fulfillmentSet, List<GeoZone> geoZones, List<ShippingOption> shippingOptions, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt
+ String id, String name,@JsonKey(name: 'fulfillment_set_id') String fulfillmentSetId,@JsonKey(name: 'fulfillment_set') FulfillmentSet fulfillmentSet,@JsonKey(name: 'geo_zones') List<GeoZone> geoZones,@JsonKey(name: 'shipping_options') List<ShippingOption> shippingOptions,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
 });
 
 

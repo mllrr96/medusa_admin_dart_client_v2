@@ -10,40 +10,40 @@ _StockLocation _$StockLocationFromJson(Map<String, dynamic> json) =>
     _StockLocation(
       id: json['id'] as String,
       name: json['name'] as String,
-      addressId: json['addressId'] as String,
+      addressId: json['address_id'] as String,
       address: json['address'] == null
           ? null
           : StockLocationAddress.fromJson(
               json['address'] as Map<String, dynamic>,
             ),
-      salesChannels: (json['salesChannels'] as List<dynamic>?)
+      salesChannels: (json['sales_channels'] as List<dynamic>?)
           ?.map((e) => SalesChannel.fromJson(e as Map<String, dynamic>))
           .toList(),
-      fulfillmentProviders: (json['fulfillmentProviders'] as List<dynamic>?)
+      fulfillmentProviders: (json['fulfillment_providers'] as List<dynamic>?)
           ?.map((e) => FulfillmentProvider.fromJson(e as Map<String, dynamic>))
           .toList(),
       metadata: json['metadata'] as Map<String, dynamic>?,
-      createdAt: json['createdAt'] == null
+      createdAt: json['created_at'] == null
           ? null
-          : DateTime.parse(json['createdAt'] as String),
-      updatedAt: json['updatedAt'] == null
+          : DateTime.parse(json['created_at'] as String),
+      updatedAt: json['updated_at'] == null
           ? null
-          : DateTime.parse(json['updatedAt'] as String),
-      deletedAt: json['deletedAt'] == null
+          : DateTime.parse(json['updated_at'] as String),
+      deletedAt: json['deleted_at'] == null
           ? null
-          : DateTime.parse(json['deletedAt'] as String),
+          : DateTime.parse(json['deleted_at'] as String),
     );
 
 Map<String, dynamic> _$StockLocationToJson(_StockLocation instance) =>
     <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'addressId': instance.addressId,
+      'address_id': instance.addressId,
       'address': instance.address,
-      'salesChannels': instance.salesChannels,
-      'fulfillmentProviders': instance.fulfillmentProviders,
+      'sales_channels': instance.salesChannels,
+      'fulfillment_providers': instance.fulfillmentProviders,
       'metadata': instance.metadata,
-      'createdAt': instance.createdAt?.toIso8601String(),
-      'updatedAt': instance.updatedAt?.toIso8601String(),
-      'deletedAt': instance.deletedAt?.toIso8601String(),
+      'created_at': instance.createdAt?.toIso8601String(),
+      'updated_at': instance.updatedAt?.toIso8601String(),
+      'deleted_at': instance.deletedAt?.toIso8601String(),
     };

@@ -11,14 +11,14 @@ abstract class StockLocation with _$StockLocation {
   const factory StockLocation({
     required String id,
     required String name,
-    required String addressId,
+    @JsonKey(name: 'address_id') required String addressId,
     StockLocationAddress? address,
-    List<SalesChannel>? salesChannels,
-    List<FulfillmentProvider>? fulfillmentProviders,
+    @JsonKey(name: 'sales_channels') List<SalesChannel>? salesChannels,
+    @JsonKey(name: 'fulfillment_providers') List<FulfillmentProvider>? fulfillmentProviders,
     Map<String, dynamic>? metadata,
-     DateTime? createdAt,
-     DateTime? updatedAt,
-    DateTime? deletedAt,
+    @JsonKey(name: 'created_at') DateTime? createdAt,
+    @JsonKey(name: 'updated_at') DateTime? updatedAt,
+    @JsonKey(name: 'deleted_at') DateTime? deletedAt,
   }) = _StockLocation;
 
   factory StockLocation.fromJson(Map<String, dynamic> json) =>

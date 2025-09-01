@@ -10,13 +10,13 @@ abstract class ServiceZone with _$ServiceZone {
   const factory ServiceZone({
     required String id,
     required String name,
-    required String fulfillmentSetId,
-    required FulfillmentSet fulfillmentSet,
-    required List<GeoZone> geoZones,
-    required List<ShippingOption> shippingOptions,
-     DateTime? createdAt,
-     DateTime? updatedAt,
-    DateTime? deletedAt,
+    @JsonKey(name: 'fulfillment_set_id') required String fulfillmentSetId,
+    @JsonKey(name: 'fulfillment_set') required FulfillmentSet fulfillmentSet,
+    @JsonKey(name: 'geo_zones') required List<GeoZone> geoZones,
+    @JsonKey(name: 'shipping_options') required List<ShippingOption> shippingOptions,
+    @JsonKey(name: 'created_at') DateTime? createdAt,
+    @JsonKey(name: 'updated_at') DateTime? updatedAt,
+    @JsonKey(name: 'deleted_at') DateTime? deletedAt,
   }) = _ServiceZone;
 
   factory ServiceZone.fromJson(Map<String, dynamic> json) =>

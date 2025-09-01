@@ -8,16 +8,16 @@ part 'store_credit_account.g.dart';
 abstract class StoreCreditAccount with _$StoreCreditAccount {
   const factory StoreCreditAccount({
     required String id,
-    required String customerId,
-    required String currencyCode,
+    @JsonKey(name: 'customer_id') required String customerId,
+    @JsonKey(name: 'currency_code') required String currencyCode,
     required double credits,
     required double debits,
     required double balance,
     required Customer customer,
-    required List<TransactionGroup> transactionGroups,
+    @JsonKey(name: 'transaction_groups') required List<TransactionGroup> transactionGroups,
     Map<String, dynamic>? metadata,
-     DateTime? createdAt,
-     DateTime? updatedAt,
+    @JsonKey(name: 'created_at') DateTime? createdAt,
+    @JsonKey(name: 'updated_at') DateTime? updatedAt,
   }) = _StoreCreditAccount;
 
   factory StoreCreditAccount.fromJson(Map<String, dynamic> json) =>

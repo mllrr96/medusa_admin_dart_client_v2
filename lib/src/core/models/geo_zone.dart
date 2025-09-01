@@ -8,13 +8,13 @@ abstract class GeoZone with _$GeoZone {
   const factory GeoZone({
     required String id,
     required String type,
-    required String countryCode,
-    String? provinceCode,
+    @JsonKey(name: 'country_code') required String countryCode,
+    @JsonKey(name: 'province_code') String? provinceCode,
     String? city,
-    Map<String, dynamic>? postalExpression,
-     DateTime? createdAt,
-     DateTime? updatedAt,
-    DateTime? deletedAt,
+    @JsonKey(name: 'postal_expression') Map<String, dynamic>? postalExpression,
+    @JsonKey(name: 'created_at') DateTime? createdAt,
+    @JsonKey(name: 'updated_at') DateTime? updatedAt,
+    @JsonKey(name: 'deleted_at') DateTime? deletedAt,
   }) = _GeoZone;
 
   factory GeoZone.fromJson(Map<String, dynamic> json) => _$GeoZoneFromJson(json);

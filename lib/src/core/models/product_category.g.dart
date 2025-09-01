@@ -12,30 +12,30 @@ _ProductCategory _$ProductCategoryFromJson(Map<String, dynamic> json) =>
       name: json['name'] as String,
       handle: json['handle'] as String,
       description: json['description'] as String,
-      isInternal: json['isInternal'] as bool,
-      isActive: json['isActive'] as bool,
+      isInternal: json['is_internal'] as bool,
+      isActive: json['is_active'] as bool,
       rank: (json['rank'] as num).toInt(),
-      parentCategoryId: json['parentCategoryId'] as String,
-      categoryChildren: (json['categoryChildren'] as List<dynamic>)
+      parentCategoryId: json['parent_category_id'] as String,
+      categoryChildren: (json['category_children'] as List<dynamic>)
           .map((e) => ProductCategory.fromJson(e as Map<String, dynamic>))
           .toList(),
-      parentCategory: json['parentCategory'] == null
+      parentCategory: json['parent_category'] == null
           ? null
           : ProductCategory.fromJson(
-              json['parentCategory'] as Map<String, dynamic>,
+              json['parent_category'] as Map<String, dynamic>,
             ),
       products: (json['products'] as List<dynamic>?)
           ?.map((e) => Product.fromJson(e as Map<String, dynamic>))
           .toList(),
-      createdAt: json['createdAt'] == null
+      createdAt: json['created_at'] == null
           ? null
-          : DateTime.parse(json['createdAt'] as String),
-      updatedAt: json['updatedAt'] == null
+          : DateTime.parse(json['created_at'] as String),
+      updatedAt: json['updated_at'] == null
           ? null
-          : DateTime.parse(json['updatedAt'] as String),
-      deletedAt: json['deletedAt'] == null
+          : DateTime.parse(json['updated_at'] as String),
+      deletedAt: json['deleted_at'] == null
           ? null
-          : DateTime.parse(json['deletedAt'] as String),
+          : DateTime.parse(json['deleted_at'] as String),
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
@@ -45,15 +45,15 @@ Map<String, dynamic> _$ProductCategoryToJson(_ProductCategory instance) =>
       'name': instance.name,
       'handle': instance.handle,
       'description': instance.description,
-      'isInternal': instance.isInternal,
-      'isActive': instance.isActive,
+      'is_internal': instance.isInternal,
+      'is_active': instance.isActive,
       'rank': instance.rank,
-      'parentCategoryId': instance.parentCategoryId,
-      'categoryChildren': instance.categoryChildren,
-      'parentCategory': instance.parentCategory,
+      'parent_category_id': instance.parentCategoryId,
+      'category_children': instance.categoryChildren,
+      'parent_category': instance.parentCategory,
       'products': instance.products,
-      'createdAt': instance.createdAt?.toIso8601String(),
-      'updatedAt': instance.updatedAt?.toIso8601String(),
-      'deletedAt': instance.deletedAt?.toIso8601String(),
+      'created_at': instance.createdAt?.toIso8601String(),
+      'updated_at': instance.updatedAt?.toIso8601String(),
+      'deleted_at': instance.deletedAt?.toIso8601String(),
       'metadata': instance.metadata,
     };

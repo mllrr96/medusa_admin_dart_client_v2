@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$StockLocation {
 
- String get id; String get name; String get addressId; StockLocationAddress? get address; List<SalesChannel>? get salesChannels; List<FulfillmentProvider>? get fulfillmentProviders; Map<String, dynamic>? get metadata; DateTime? get createdAt; DateTime? get updatedAt; DateTime? get deletedAt;
+ String get id; String get name;@JsonKey(name: 'address_id') String get addressId; StockLocationAddress? get address;@JsonKey(name: 'sales_channels') List<SalesChannel>? get salesChannels;@JsonKey(name: 'fulfillment_providers') List<FulfillmentProvider>? get fulfillmentProviders; Map<String, dynamic>? get metadata;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt;
 /// Create a copy of StockLocation
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $StockLocationCopyWith<$Res>  {
   factory $StockLocationCopyWith(StockLocation value, $Res Function(StockLocation) _then) = _$StockLocationCopyWithImpl;
 @useResult
 $Res call({
- String id, String name, String addressId, StockLocationAddress? address, List<SalesChannel>? salesChannels, List<FulfillmentProvider>? fulfillmentProviders, Map<String, dynamic>? metadata, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt
+ String id, String name,@JsonKey(name: 'address_id') String addressId, StockLocationAddress? address,@JsonKey(name: 'sales_channels') List<SalesChannel>? salesChannels,@JsonKey(name: 'fulfillment_providers') List<FulfillmentProvider>? fulfillmentProviders, Map<String, dynamic>? metadata,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
 });
 
 
@@ -174,7 +174,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  String addressId,  StockLocationAddress? address,  List<SalesChannel>? salesChannels,  List<FulfillmentProvider>? fulfillmentProviders,  Map<String, dynamic>? metadata,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(name: 'address_id')  String addressId,  StockLocationAddress? address, @JsonKey(name: 'sales_channels')  List<SalesChannel>? salesChannels, @JsonKey(name: 'fulfillment_providers')  List<FulfillmentProvider>? fulfillmentProviders,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _StockLocation() when $default != null:
 return $default(_that.id,_that.name,_that.addressId,_that.address,_that.salesChannels,_that.fulfillmentProviders,_that.metadata,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -195,7 +195,7 @@ return $default(_that.id,_that.name,_that.addressId,_that.address,_that.salesCha
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  String addressId,  StockLocationAddress? address,  List<SalesChannel>? salesChannels,  List<FulfillmentProvider>? fulfillmentProviders,  Map<String, dynamic>? metadata,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(name: 'address_id')  String addressId,  StockLocationAddress? address, @JsonKey(name: 'sales_channels')  List<SalesChannel>? salesChannels, @JsonKey(name: 'fulfillment_providers')  List<FulfillmentProvider>? fulfillmentProviders,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)  $default,) {final _that = this;
 switch (_that) {
 case _StockLocation():
 return $default(_that.id,_that.name,_that.addressId,_that.address,_that.salesChannels,_that.fulfillmentProviders,_that.metadata,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -215,7 +215,7 @@ return $default(_that.id,_that.name,_that.addressId,_that.address,_that.salesCha
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  String addressId,  StockLocationAddress? address,  List<SalesChannel>? salesChannels,  List<FulfillmentProvider>? fulfillmentProviders,  Map<String, dynamic>? metadata,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name, @JsonKey(name: 'address_id')  String addressId,  StockLocationAddress? address, @JsonKey(name: 'sales_channels')  List<SalesChannel>? salesChannels, @JsonKey(name: 'fulfillment_providers')  List<FulfillmentProvider>? fulfillmentProviders,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _StockLocation() when $default != null:
 return $default(_that.id,_that.name,_that.addressId,_that.address,_that.salesChannels,_that.fulfillmentProviders,_that.metadata,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -230,15 +230,15 @@ return $default(_that.id,_that.name,_that.addressId,_that.address,_that.salesCha
 @JsonSerializable()
 
 class _StockLocation implements StockLocation {
-  const _StockLocation({required this.id, required this.name, required this.addressId, this.address, final  List<SalesChannel>? salesChannels, final  List<FulfillmentProvider>? fulfillmentProviders, final  Map<String, dynamic>? metadata, this.createdAt, this.updatedAt, this.deletedAt}): _salesChannels = salesChannels,_fulfillmentProviders = fulfillmentProviders,_metadata = metadata;
+  const _StockLocation({required this.id, required this.name, @JsonKey(name: 'address_id') required this.addressId, this.address, @JsonKey(name: 'sales_channels') final  List<SalesChannel>? salesChannels, @JsonKey(name: 'fulfillment_providers') final  List<FulfillmentProvider>? fulfillmentProviders, final  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt}): _salesChannels = salesChannels,_fulfillmentProviders = fulfillmentProviders,_metadata = metadata;
   factory _StockLocation.fromJson(Map<String, dynamic> json) => _$StockLocationFromJson(json);
 
 @override final  String id;
 @override final  String name;
-@override final  String addressId;
+@override@JsonKey(name: 'address_id') final  String addressId;
 @override final  StockLocationAddress? address;
  final  List<SalesChannel>? _salesChannels;
-@override List<SalesChannel>? get salesChannels {
+@override@JsonKey(name: 'sales_channels') List<SalesChannel>? get salesChannels {
   final value = _salesChannels;
   if (value == null) return null;
   if (_salesChannels is EqualUnmodifiableListView) return _salesChannels;
@@ -247,7 +247,7 @@ class _StockLocation implements StockLocation {
 }
 
  final  List<FulfillmentProvider>? _fulfillmentProviders;
-@override List<FulfillmentProvider>? get fulfillmentProviders {
+@override@JsonKey(name: 'fulfillment_providers') List<FulfillmentProvider>? get fulfillmentProviders {
   final value = _fulfillmentProviders;
   if (value == null) return null;
   if (_fulfillmentProviders is EqualUnmodifiableListView) return _fulfillmentProviders;
@@ -264,9 +264,9 @@ class _StockLocation implements StockLocation {
   return EqualUnmodifiableMapView(value);
 }
 
-@override final  DateTime? createdAt;
-@override final  DateTime? updatedAt;
-@override final  DateTime? deletedAt;
+@override@JsonKey(name: 'created_at') final  DateTime? createdAt;
+@override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
+@override@JsonKey(name: 'deleted_at') final  DateTime? deletedAt;
 
 /// Create a copy of StockLocation
 /// with the given fields replaced by the non-null parameter values.
@@ -301,7 +301,7 @@ abstract mixin class _$StockLocationCopyWith<$Res> implements $StockLocationCopy
   factory _$StockLocationCopyWith(_StockLocation value, $Res Function(_StockLocation) _then) = __$StockLocationCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String name, String addressId, StockLocationAddress? address, List<SalesChannel>? salesChannels, List<FulfillmentProvider>? fulfillmentProviders, Map<String, dynamic>? metadata, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt
+ String id, String name,@JsonKey(name: 'address_id') String addressId, StockLocationAddress? address,@JsonKey(name: 'sales_channels') List<SalesChannel>? salesChannels,@JsonKey(name: 'fulfillment_providers') List<FulfillmentProvider>? fulfillmentProviders, Map<String, dynamic>? metadata,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
 });
 
 

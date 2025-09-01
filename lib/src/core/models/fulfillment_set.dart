@@ -12,10 +12,10 @@ abstract class FulfillmentSet with _$FulfillmentSet {
     required String name,
     required String type,
     required StockLocation location,
-    required List<ServiceZone> serviceZones,
-     DateTime? createdAt,
-     DateTime? updatedAt,
-    DateTime? deletedAt,
+    @JsonKey(name: 'service_zones') required List<ServiceZone> serviceZones,
+    @JsonKey(name: 'created_at') DateTime? createdAt,
+    @JsonKey(name: 'updated_at') DateTime? updatedAt,
+    @JsonKey(name: 'deleted_at') DateTime? deletedAt,
   }) = _FulfillmentSet;
 
   factory FulfillmentSet.fromJson(Map<String, dynamic> json) =>

@@ -8,35 +8,35 @@ part of 'transaction.dart';
 
 _Transaction _$TransactionFromJson(Map<String, dynamic> json) => _Transaction(
   id: json['id'] as String,
-  accountId: json['accountId'] as String,
-  transactionGroupId: json['transactionGroupId'] as String,
+  accountId: json['account_id'] as String,
+  transactionGroupId: json['transaction_group_id'] as String,
   type: json['type'] as String,
   amount: (json['amount'] as num).toDouble(),
   account: StoreCreditAccount.fromJson(json['account'] as Map<String, dynamic>),
   note: json['note'] as String?,
   reference: json['reference'] as String?,
-  referenceId: json['referenceId'] as String?,
+  referenceId: json['reference_id'] as String?,
   metadata: json['metadata'] as Map<String, dynamic>?,
-  createdAt: json['createdAt'] == null
+  createdAt: json['created_at'] == null
       ? null
-      : DateTime.parse(json['createdAt'] as String),
-  updatedAt: json['updatedAt'] == null
+      : DateTime.parse(json['created_at'] as String),
+  updatedAt: json['updated_at'] == null
       ? null
-      : DateTime.parse(json['updatedAt'] as String),
+      : DateTime.parse(json['updated_at'] as String),
 );
 
 Map<String, dynamic> _$TransactionToJson(_Transaction instance) =>
     <String, dynamic>{
       'id': instance.id,
-      'accountId': instance.accountId,
-      'transactionGroupId': instance.transactionGroupId,
+      'account_id': instance.accountId,
+      'transaction_group_id': instance.transactionGroupId,
       'type': instance.type,
       'amount': instance.amount,
       'account': instance.account,
       'note': instance.note,
       'reference': instance.reference,
-      'referenceId': instance.referenceId,
+      'reference_id': instance.referenceId,
       'metadata': instance.metadata,
-      'createdAt': instance.createdAt?.toIso8601String(),
-      'updatedAt': instance.updatedAt?.toIso8601String(),
+      'created_at': instance.createdAt?.toIso8601String(),
+      'updated_at': instance.updatedAt?.toIso8601String(),
     };
