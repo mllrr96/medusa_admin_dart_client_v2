@@ -80,12 +80,11 @@ class _ShippingProfilesApi implements ShippingProfilesApi {
   }
 
   @override
-  Future<ShippingProfile> create(Map<String, dynamic> body) async {
+  Future<ShippingProfile> create(CreateShippingProfileReq body) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(body);
+    final _data = body;
     final _options = _setStreamType<ShippingProfile>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
@@ -108,12 +107,14 @@ class _ShippingProfilesApi implements ShippingProfilesApi {
   }
 
   @override
-  Future<ShippingProfile> update(String id, Map<String, dynamic> body) async {
+  Future<ShippingProfile> update(
+    String id,
+    UpdateShippingProfileReq body,
+  ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(body);
+    final _data = body;
     final _options = _setStreamType<ShippingProfile>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
