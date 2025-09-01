@@ -7,7 +7,7 @@ import 'package:medusa_admin_dart_client/src/core/models/base_order_summary.dart
 import 'package:medusa_admin_dart_client/src/core/models/customer.dart';
 import 'package:medusa_admin_dart_client/src/core/models/order_credit_line.dart';
 import 'package:medusa_admin_dart_client/src/core/models/order_line_item.dart';
-import 'package:medusa_admin_dart_client/src/core/models/region.dart';
+import 'package:medusa_admin_dart_client/src/features/regions/data/models/region.dart';
 
 import '../../../sales_channels/data/models/sales_channel.dart';
 

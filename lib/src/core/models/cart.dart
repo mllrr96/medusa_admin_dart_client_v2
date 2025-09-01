@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:medusa_admin_dart_client/src/core/models/payment.dart';
-import 'package:medusa_admin_dart_client/src/core/models/region.dart';
+import 'package:medusa_admin_dart_client/src/features/regions/data/models/region.dart';
 import 'package:medusa_admin_dart_client/src/features/gift_cards/data/models/gift_card.dart';
 import 'address.dart';
 import 'customer.dart';

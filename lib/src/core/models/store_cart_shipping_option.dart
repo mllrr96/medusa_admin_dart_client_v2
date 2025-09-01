@@ -1,17 +1,17 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:medusa_admin_dart_client/src/core/models/fulfillment_provider.dart';
-import 'package:medusa_admin_dart_client/src/core/models/region.dart';
+import 'package:medusa_admin_dart_client/src/features/regions/data/models/region.dart';
 import 'package:medusa_admin_dart_client/src/core/models/shipping_profile.dart';
 import 'package:medusa_admin_dart_client/src/features/tax_rates/data/models/tax_rate.dart';
 
 import 'requirement.dart';
 
-part 'shipping_option.freezed.dart';
-part 'shipping_option.g.dart';
+part 'store_cart_shipping_option.freezed.dart';
+part 'store_cart_shipping_option.g.dart';
 
 @freezed
-abstract class ShippingOption with _$ShippingOption {
-  const factory ShippingOption({
+abstract class StoreCartShippingOption with _$StoreCartShippingOption {
+  const factory StoreCartShippingOption({
     required String id,
     required String name,
     @JsonKey(name: 'region_id') required String regionId,
@@ -30,8 +30,8 @@ abstract class ShippingOption with _$ShippingOption {
     @JsonKey(name: 'updated_at') DateTime? updatedAt,
     @JsonKey(name: 'deleted_at') DateTime? deletedAt,
     Map<String, dynamic>? metadata,
-  }) = _ShippingOption;
+  }) = _StoreCartShippingOption;
 
-  factory ShippingOption.fromJson(Map<String, dynamic> json) =>
-      _$ShippingOptionFromJson(json);
+  factory StoreCartShippingOption.fromJson(Map<String, dynamic> json) =>
+      _$StoreCartShippingOptionFromJson(json);
 }

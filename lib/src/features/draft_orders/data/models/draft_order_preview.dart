@@ -5,7 +5,7 @@ import 'package:medusa_admin_dart_client/src/core/models/order_change.dart';
 import 'package:medusa_admin_dart_client/src/core/models/order_address.dart';
 import 'package:medusa_admin_dart_client/src/core/models/customer.dart';
 import 'package:medusa_admin_dart_client/src/features/sales_channels/data/models/sales_channel.dart';
-import 'package:medusa_admin_dart_client/src/core/models/region.dart';
+import 'package:medusa_admin_dart_client/src/features/regions/data/models/region.dart';
 import 'package:medusa_admin_dart_client/src/core/models/order_fulfillment.dart';
 import 'draft_order_preview_item.dart';
 import 'draft_order_preview_shipping_method.dart';

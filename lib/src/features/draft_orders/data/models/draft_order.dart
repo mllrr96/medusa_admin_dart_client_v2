@@ -6,7 +6,7 @@ import 'package:medusa_admin_dart_client/src/core/models/order_fulfillment.dart'
 import 'package:medusa_admin_dart_client/src/core/models/order_address.dart';
 import 'package:medusa_admin_dart_client/src/core/models/order_line_item.dart';
 import 'package:medusa_admin_dart_client/src/core/models/order_shipping_method.dart';
-import 'package:medusa_admin_dart_client/src/core/models/region.dart';
+import 'package:medusa_admin_dart_client/src/features/regions/data/models/region.dart';
 import 'package:medusa_admin_dart_client/src/core/models/order_credit_line.dart';
 
 import 'order_summary.dart';

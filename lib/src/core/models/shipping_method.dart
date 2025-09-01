@@ -1,9 +1,9 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:medusa_admin_dart_client/src/core/models/shipping_option.dart';
 import 'package:medusa_admin_dart_client/src/features/swaps/data/models/swap.dart';
 import 'package:medusa_admin_dart_client/src/features/orders/data/models/order.dart';
 
 import 'cart.dart';
+import 'package:medusa_admin_dart_client/src/features/shipping_options/data/models/shipping_option.dart';
 
 part 'shipping_method.freezed.dart';
 part 'shipping_method.g.dart';

@@ -96,11 +96,13 @@ export 'package:medusa_admin_dart_client/src/features/tax_regions/data/models/ta
 export 'package:medusa_admin_dart_client/src/features/tax_regions/data/models/tax_region_req.dart';
 export 'package:medusa_admin_dart_client/src/features/tax_regions/data/models/tax_region_res.dart';
 export 'package:medusa_admin_dart_client/src/features/tax_regions/data/repository/tax_regions_repository.dart';
-
+export 'package:medusa_admin_dart_client/src/features/product_tags/data/models/models.dart';
 export 'package:medusa_admin_dart_client/src/features/customers/data/models/customer_req.dart';
 export 'package:medusa_admin_dart_client/src/features/customers/data/models/customer_res.dart';
 
+export 'package:medusa_admin_dart_client/src/features/shipping_options/data/models/models.dart';
 export 'package:medusa_admin_dart_client/src/features/tax_rates/data/models/tax_rate_req.dart';
+export 'package:medusa_admin_dart_client/src/features/regions/data/models/models.dart';
 export 'package:medusa_admin_dart_client/src/features/tax_rates/data/models/tax_rate_res.dart';
 export 'package:medusa_admin_dart_client/src/features/tax_rates/data/models/tax_rate_rule.dart';
 
