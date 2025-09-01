@@ -173,7 +173,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'account_id')  String accountId, @JsonKey(name: 'transaction_group_id')  String transactionGroupId,  String type,  double amount,  StoreCreditAccount account,  String? note,  String? reference, @JsonKey(name: 'reference_id')  String? referenceId,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'account_id')  String accountId, @JsonKey(name: 'transaction_group_id')  String transactionGroupId,  String type,  double amount,  StoreCreditAccount account,  String? note,  String? reference, @JsonKey(name: 'reference_id')  String? referenceId,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Transaction() when $default != null:
 return $default(_that.id,_that.accountId,_that.transactionGroupId,_that.type,_that.amount,_that.account,_that.note,_that.reference,_that.referenceId,_that.metadata,_that.createdAt,_that.updatedAt);case _:
@@ -194,7 +194,7 @@ return $default(_that.id,_that.accountId,_that.transactionGroupId,_that.type,_th
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'account_id')  String accountId, @JsonKey(name: 'transaction_group_id')  String transactionGroupId,  String type,  double amount,  StoreCreditAccount account,  String? note,  String? reference, @JsonKey(name: 'reference_id')  String? referenceId,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'account_id')  String accountId, @JsonKey(name: 'transaction_group_id')  String transactionGroupId,  String type,  double amount,  StoreCreditAccount account,  String? note,  String? reference, @JsonKey(name: 'reference_id')  String? referenceId,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt)  $default,) {final _that = this;
 switch (_that) {
 case _Transaction():
 return $default(_that.id,_that.accountId,_that.transactionGroupId,_that.type,_that.amount,_that.account,_that.note,_that.reference,_that.referenceId,_that.metadata,_that.createdAt,_that.updatedAt);case _:
@@ -214,7 +214,7 @@ return $default(_that.id,_that.accountId,_that.transactionGroupId,_that.type,_th
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'account_id')  String accountId, @JsonKey(name: 'transaction_group_id')  String transactionGroupId,  String type,  double amount,  StoreCreditAccount account,  String? note,  String? reference, @JsonKey(name: 'reference_id')  String? referenceId,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'account_id')  String accountId, @JsonKey(name: 'transaction_group_id')  String transactionGroupId,  String type,  double amount,  StoreCreditAccount account,  String? note,  String? reference, @JsonKey(name: 'reference_id')  String? referenceId,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _Transaction() when $default != null:
 return $default(_that.id,_that.accountId,_that.transactionGroupId,_that.type,_that.amount,_that.account,_that.note,_that.reference,_that.referenceId,_that.metadata,_that.createdAt,_that.updatedAt);case _:

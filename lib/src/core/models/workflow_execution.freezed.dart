@@ -161,7 +161,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'workflow_id')  String workflowId, @JsonKey(name: 'transaction_id')  String transactionId,  Map<String, dynamic> execution,  Map<String, dynamic> context,  String state, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'workflow_id')  String workflowId, @JsonKey(name: 'transaction_id')  String transactionId,  Map<String, dynamic> execution,  Map<String, dynamic> context,  String state, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt, @JsonKey(name: 'deleted_at') DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _WorkflowExecution() when $default != null:
 return $default(_that.id,_that.workflowId,_that.transactionId,_that.execution,_that.context,_that.state,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -182,7 +182,7 @@ return $default(_that.id,_that.workflowId,_that.transactionId,_that.execution,_t
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'workflow_id')  String workflowId, @JsonKey(name: 'transaction_id')  String transactionId,  Map<String, dynamic> execution,  Map<String, dynamic> context,  String state, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'workflow_id')  String workflowId, @JsonKey(name: 'transaction_id')  String transactionId,  Map<String, dynamic> execution,  Map<String, dynamic> context,  String state, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt, @JsonKey(name: 'deleted_at') DateTime? deletedAt)  $default,) {final _that = this;
 switch (_that) {
 case _WorkflowExecution():
 return $default(_that.id,_that.workflowId,_that.transactionId,_that.execution,_that.context,_that.state,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -202,7 +202,7 @@ return $default(_that.id,_that.workflowId,_that.transactionId,_that.execution,_t
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'workflow_id')  String workflowId, @JsonKey(name: 'transaction_id')  String transactionId,  Map<String, dynamic> execution,  Map<String, dynamic> context,  String state, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'workflow_id')  String workflowId, @JsonKey(name: 'transaction_id')  String transactionId,  Map<String, dynamic> execution,  Map<String, dynamic> context,  String state, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt, @JsonKey(name: 'deleted_at') DateTime? deletedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _WorkflowExecution() when $default != null:
 return $default(_that.id,_that.workflowId,_that.transactionId,_that.execution,_that.context,_that.state,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:

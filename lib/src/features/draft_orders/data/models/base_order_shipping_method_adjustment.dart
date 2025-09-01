@@ -19,8 +19,8 @@ abstract class BaseOrderShippingMethodAdjustment
     String? description,
     @JsonKey(name: 'promotion_id') String? promotionId,
     @JsonKey(name: 'provider_id') String? providerId,
-    @JsonKey(name: 'created_at')  DateTime? createdAt,
-    @JsonKey(name: 'updated_at')  DateTime? updatedAt,
+    @JsonKey(name: 'created_at') DateTime? createdAt,
+    @JsonKey(name: 'updated_at') DateTime? updatedAt,
   }) = _BaseOrderShippingMethodAdjustment;
 
   factory BaseOrderShippingMethodAdjustment.fromJson(Map<String, dynamic> json) =>

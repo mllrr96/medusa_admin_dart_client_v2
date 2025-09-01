@@ -12,12 +12,12 @@ _ClaimReturnPreviewResponse _$ClaimReturnPreviewResponseFromJson(
   orderPreview: OrderPreview.fromJson(
     json['order_preview'] as Map<String, dynamic>,
   ),
-  aReturn: Return.fromJson(json['aReturn'] as Map<String, dynamic>),
+  aReturn: Return.fromJson(json['return'] as Map<String, dynamic>),
 );
 
 Map<String, dynamic> _$ClaimReturnPreviewResponseToJson(
   _ClaimReturnPreviewResponse instance,
 ) => <String, dynamic>{
   'order_preview': instance.orderPreview,
-  'aReturn': instance.aReturn,
+  'return': instance.aReturn,
 };

@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ClaimReturnPreviewResponse {
 
-@JsonKey(name: 'order_preview') OrderPreview get orderPreview; Return get aReturn;
+@JsonKey(name: 'order_preview') OrderPreview get orderPreview;@JsonKey(name: 'return') Return get aReturn;
 /// Create a copy of ClaimReturnPreviewResponse
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $ClaimReturnPreviewResponseCopyWith<$Res>  {
   factory $ClaimReturnPreviewResponseCopyWith(ClaimReturnPreviewResponse value, $Res Function(ClaimReturnPreviewResponse) _then) = _$ClaimReturnPreviewResponseCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'order_preview') OrderPreview orderPreview, Return aReturn
+@JsonKey(name: 'order_preview') OrderPreview orderPreview,@JsonKey(name: 'return') Return aReturn
 });
 
 
@@ -172,7 +172,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'order_preview')  OrderPreview orderPreview,  Return aReturn)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'order_preview')  OrderPreview orderPreview, @JsonKey(name: 'return')  Return aReturn)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ClaimReturnPreviewResponse() when $default != null:
 return $default(_that.orderPreview,_that.aReturn);case _:
@@ -193,7 +193,7 @@ return $default(_that.orderPreview,_that.aReturn);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'order_preview')  OrderPreview orderPreview,  Return aReturn)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'order_preview')  OrderPreview orderPreview, @JsonKey(name: 'return')  Return aReturn)  $default,) {final _that = this;
 switch (_that) {
 case _ClaimReturnPreviewResponse():
 return $default(_that.orderPreview,_that.aReturn);case _:
@@ -213,7 +213,7 @@ return $default(_that.orderPreview,_that.aReturn);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'order_preview')  OrderPreview orderPreview,  Return aReturn)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'order_preview')  OrderPreview orderPreview, @JsonKey(name: 'return')  Return aReturn)?  $default,) {final _that = this;
 switch (_that) {
 case _ClaimReturnPreviewResponse() when $default != null:
 return $default(_that.orderPreview,_that.aReturn);case _:
@@ -228,11 +228,11 @@ return $default(_that.orderPreview,_that.aReturn);case _:
 @JsonSerializable()
 
 class _ClaimReturnPreviewResponse implements ClaimReturnPreviewResponse {
-  const _ClaimReturnPreviewResponse({@JsonKey(name: 'order_preview') required this.orderPreview, required this.aReturn});
+  const _ClaimReturnPreviewResponse({@JsonKey(name: 'order_preview') required this.orderPreview, @JsonKey(name: 'return') required this.aReturn});
   factory _ClaimReturnPreviewResponse.fromJson(Map<String, dynamic> json) => _$ClaimReturnPreviewResponseFromJson(json);
 
 @override@JsonKey(name: 'order_preview') final  OrderPreview orderPreview;
-@override final  Return aReturn;
+@override@JsonKey(name: 'return') final  Return aReturn;
 
 /// Create a copy of ClaimReturnPreviewResponse
 /// with the given fields replaced by the non-null parameter values.
@@ -267,7 +267,7 @@ abstract mixin class _$ClaimReturnPreviewResponseCopyWith<$Res> implements $Clai
   factory _$ClaimReturnPreviewResponseCopyWith(_ClaimReturnPreviewResponse value, $Res Function(_ClaimReturnPreviewResponse) _then) = __$ClaimReturnPreviewResponseCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'order_preview') OrderPreview orderPreview, Return aReturn
+@JsonKey(name: 'order_preview') OrderPreview orderPreview,@JsonKey(name: 'return') Return aReturn
 });
 
 

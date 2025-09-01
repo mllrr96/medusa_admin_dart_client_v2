@@ -11,9 +11,9 @@ abstract class PricePreference with _$PricePreference {
     required String attribute,
     required String value,
     @JsonKey(name: 'is_tax_inclusive') required bool isTaxInclusive,
-    @JsonKey(name: 'created_at')  DateTime? createdAt,
-    @JsonKey(name: 'updated_at')  DateTime? updatedAt,
-    @JsonKey(name: 'deleted_at')  DateTime? deletedAt,
+    @JsonKey(name: 'created_at') DateTime? createdAt,
+    @JsonKey(name: 'updated_at') DateTime? updatedAt,
+    @JsonKey(name: 'deleted_at') DateTime? deletedAt,
   }) = _PricePreference;
 
   factory PricePreference.fromJson(Map<String, dynamic> json) =>

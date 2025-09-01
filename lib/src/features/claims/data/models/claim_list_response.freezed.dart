@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ClaimListResponse {
 
- int get limit; int get offset; int get count; List<Claim> get claims; int? get estimateCount;
+ int get limit; int get offset; int get count; List<Claim> get claims;@JsonKey(name: 'estimate_count') int? get estimateCount;
 /// Create a copy of ClaimListResponse
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $ClaimListResponseCopyWith<$Res>  {
   factory $ClaimListResponseCopyWith(ClaimListResponse value, $Res Function(ClaimListResponse) _then) = _$ClaimListResponseCopyWithImpl;
 @useResult
 $Res call({
- int limit, int offset, int count, List<Claim> claims, int? estimateCount
+ int limit, int offset, int count, List<Claim> claims,@JsonKey(name: 'estimate_count') int? estimateCount
 });
 
 
@@ -157,7 +157,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int limit,  int offset,  int count,  List<Claim> claims,  int? estimateCount)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int limit,  int offset,  int count,  List<Claim> claims, @JsonKey(name: 'estimate_count')  int? estimateCount)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ClaimListResponse() when $default != null:
 return $default(_that.limit,_that.offset,_that.count,_that.claims,_that.estimateCount);case _:
@@ -178,7 +178,7 @@ return $default(_that.limit,_that.offset,_that.count,_that.claims,_that.estimate
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int limit,  int offset,  int count,  List<Claim> claims,  int? estimateCount)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int limit,  int offset,  int count,  List<Claim> claims, @JsonKey(name: 'estimate_count')  int? estimateCount)  $default,) {final _that = this;
 switch (_that) {
 case _ClaimListResponse():
 return $default(_that.limit,_that.offset,_that.count,_that.claims,_that.estimateCount);case _:
@@ -198,7 +198,7 @@ return $default(_that.limit,_that.offset,_that.count,_that.claims,_that.estimate
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int limit,  int offset,  int count,  List<Claim> claims,  int? estimateCount)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int limit,  int offset,  int count,  List<Claim> claims, @JsonKey(name: 'estimate_count')  int? estimateCount)?  $default,) {final _that = this;
 switch (_that) {
 case _ClaimListResponse() when $default != null:
 return $default(_that.limit,_that.offset,_that.count,_that.claims,_that.estimateCount);case _:
@@ -213,7 +213,7 @@ return $default(_that.limit,_that.offset,_that.count,_that.claims,_that.estimate
 @JsonSerializable()
 
 class _ClaimListResponse implements ClaimListResponse {
-  const _ClaimListResponse({required this.limit, required this.offset, required this.count, required final  List<Claim> claims, this.estimateCount}): _claims = claims;
+  const _ClaimListResponse({required this.limit, required this.offset, required this.count, required final  List<Claim> claims, @JsonKey(name: 'estimate_count') this.estimateCount}): _claims = claims;
   factory _ClaimListResponse.fromJson(Map<String, dynamic> json) => _$ClaimListResponseFromJson(json);
 
 @override final  int limit;
@@ -226,7 +226,7 @@ class _ClaimListResponse implements ClaimListResponse {
   return EqualUnmodifiableListView(_claims);
 }
 
-@override final  int? estimateCount;
+@override@JsonKey(name: 'estimate_count') final  int? estimateCount;
 
 /// Create a copy of ClaimListResponse
 /// with the given fields replaced by the non-null parameter values.
@@ -261,7 +261,7 @@ abstract mixin class _$ClaimListResponseCopyWith<$Res> implements $ClaimListResp
   factory _$ClaimListResponseCopyWith(_ClaimListResponse value, $Res Function(_ClaimListResponse) _then) = __$ClaimListResponseCopyWithImpl;
 @override @useResult
 $Res call({
- int limit, int offset, int count, List<Claim> claims, int? estimateCount
+ int limit, int offset, int count, List<Claim> claims,@JsonKey(name: 'estimate_count') int? estimateCount
 });
 
 

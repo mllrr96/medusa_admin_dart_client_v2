@@ -165,7 +165,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String? company, @JsonKey(name: 'address_1')  String address1, @JsonKey(name: 'address_2')  String? address2,  String city, @JsonKey(name: 'country_code')  String countryCode,  String province, @JsonKey(name: 'postal_code')  String postalCode,  String? phone, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String? company, @JsonKey(name: 'address_1')  String address1, @JsonKey(name: 'address_2')  String? address2,  String city, @JsonKey(name: 'country_code')  String countryCode,  String province, @JsonKey(name: 'postal_code')  String postalCode,  String? phone, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt, @JsonKey(name: 'deleted_at') DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Address() when $default != null:
 return $default(_that.id,_that.company,_that.address1,_that.address2,_that.city,_that.countryCode,_that.province,_that.postalCode,_that.phone,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -186,7 +186,7 @@ return $default(_that.id,_that.company,_that.address1,_that.address2,_that.city,
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String? company, @JsonKey(name: 'address_1')  String address1, @JsonKey(name: 'address_2')  String? address2,  String city, @JsonKey(name: 'country_code')  String countryCode,  String province, @JsonKey(name: 'postal_code')  String postalCode,  String? phone, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String? company, @JsonKey(name: 'address_1')  String address1, @JsonKey(name: 'address_2')  String? address2,  String city, @JsonKey(name: 'country_code')  String countryCode,  String province, @JsonKey(name: 'postal_code')  String postalCode,  String? phone, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt, @JsonKey(name: 'deleted_at') DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
 switch (_that) {
 case _Address():
 return $default(_that.id,_that.company,_that.address1,_that.address2,_that.city,_that.countryCode,_that.province,_that.postalCode,_that.phone,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -206,7 +206,7 @@ return $default(_that.id,_that.company,_that.address1,_that.address2,_that.city,
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String? company, @JsonKey(name: 'address_1')  String address1, @JsonKey(name: 'address_2')  String? address2,  String city, @JsonKey(name: 'country_code')  String countryCode,  String province, @JsonKey(name: 'postal_code')  String postalCode,  String? phone, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String? company, @JsonKey(name: 'address_1')  String address1, @JsonKey(name: 'address_2')  String? address2,  String city, @JsonKey(name: 'country_code')  String countryCode,  String province, @JsonKey(name: 'postal_code')  String postalCode,  String? phone, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt, @JsonKey(name: 'deleted_at') DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
 switch (_that) {
 case _Address() when $default != null:
 return $default(_that.id,_that.company,_that.address1,_that.address2,_that.city,_that.countryCode,_that.province,_that.postalCode,_that.phone,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:

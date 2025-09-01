@@ -15,7 +15,7 @@ _DraftOrderListResponse _$DraftOrderListResponseFromJson(
   draftOrders: (json['draft_orders'] as List<dynamic>)
       .map((e) => DraftOrder.fromJson(e as Map<String, dynamic>))
       .toList(),
-  estimateCount: (json['estimateCount'] as num?)?.toInt(),
+  estimateCount: (json['estimate_count'] as num?)?.toInt(),
 );
 
 Map<String, dynamic> _$DraftOrderListResponseToJson(
@@ -25,5 +25,5 @@ Map<String, dynamic> _$DraftOrderListResponseToJson(
   'offset': instance.offset,
   'count': instance.count,
   'draft_orders': instance.draftOrders,
-  'estimateCount': instance.estimateCount,
+  'estimate_count': instance.estimateCount,
 };

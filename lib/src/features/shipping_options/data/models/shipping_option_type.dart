@@ -8,9 +8,9 @@ part 'shipping_option_type.g.dart';
 abstract class ShippingOptionType with _$ShippingOptionType {
   const factory ShippingOptionType({
     required String id,
-    @JsonKey(name: 'created_at')  DateTime? createdAt,
-    @JsonKey(name: 'updated_at')  DateTime? updatedAt,
-    @JsonKey(name: 'deleted_at')  DateTime? deletedAt,
+    @JsonKey(name: 'created_at') DateTime? createdAt,
+    @JsonKey(name: 'updated_at') DateTime? updatedAt,
+    @JsonKey(name: 'deleted_at') DateTime? deletedAt,
     required String label,
     required String description,
     required String code,

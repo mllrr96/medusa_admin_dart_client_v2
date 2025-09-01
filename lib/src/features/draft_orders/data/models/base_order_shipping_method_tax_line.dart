@@ -20,8 +20,8 @@ abstract class BaseOrderShippingMethodTaxLine
     required String code,
     required int rate,
     @JsonKey(name: 'provider_id') String? providerId,
-    @JsonKey(name: 'created_at')  DateTime? createdAt,
-    @JsonKey(name: 'updated_at')  DateTime? updatedAt,
+    @JsonKey(name: 'created_at') DateTime? createdAt,
+    @JsonKey(name: 'updated_at') DateTime? updatedAt,
   }) = _BaseOrderShippingMethodTaxLine;
 
   factory BaseOrderShippingMethodTaxLine.fromJson(Map<String, dynamic> json) =>

@@ -13,7 +13,7 @@ abstract class Refund with _$Refund {
     required int amount,
     @JsonKey(name: 'refund_reason_id') String? refundReasonId,
     String? note,
-    @JsonKey(name: 'created_at')  DateTime? createdAt,
+    @JsonKey(name: 'created_at') DateTime? createdAt,
     @JsonKey(name: 'created_by') String? createdBy,
     required Payment payment,
     @JsonKey(name: 'refund_reason') RefundReason? refundReason,

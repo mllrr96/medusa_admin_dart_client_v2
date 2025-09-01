@@ -1,27 +1,18 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
 import '../../../../core/models/return.dart';
 
-class ReturnsListResponse {
-  final List<Return>? returns;
-  final int? limit;
-  final int? offset;
-  final int? count;
+part 'returns_list_response.freezed.dart';
+part 'returns_list_response.g.dart';
 
-  ReturnsListResponse({
-    this.returns,
-    this.limit,
-    this.offset,
-    this.count,
-  });
+@freezed
+abstract class ReturnsListResponse with _$ReturnsListResponse {
+  const factory ReturnsListResponse({
+    List<Return>? returns,
+    int? limit,
+    int? offset,
+    int? count,
+  }) = _ReturnsListResponse;
 
-  factory ReturnsListResponse.fromJson(Map<String, dynamic> json) {
-    return ReturnsListResponse(
-      returns: json['returns'] != null
-          ? List<Return>.from(
-              json['returns'].map((x) => Return.fromJson(x)))
-          : null,
-      limit: json['limit'],
-      offset: json['offset'],
-      count: json['count'],
-    );
-  }
+  factory ReturnsListResponse.fromJson(Map<String, dynamic> json) =>
+      _$ReturnsListResponseFromJson(json);
 }

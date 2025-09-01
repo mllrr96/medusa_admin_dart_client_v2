@@ -175,7 +175,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  String? description, @JsonKey(name: 'campaign_identifier')  String campaignIdentifier, @JsonKey(name: 'starts_at')  DateTime? startsAt, @JsonKey(name: 'ends_at')  DateTime? endsAt,  CampaignBudget? budget,  List<dynamic> promotions, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  String? description, @JsonKey(name: 'campaign_identifier')  String campaignIdentifier, @JsonKey(name: 'starts_at') DateTime? startsAt, @JsonKey(name: 'ends_at') DateTime? endsAt,  CampaignBudget? budget,  List<dynamic> promotions, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt, @JsonKey(name: 'deleted_at') DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Campaign() when $default != null:
 return $default(_that.id,_that.name,_that.description,_that.campaignIdentifier,_that.startsAt,_that.endsAt,_that.budget,_that.promotions,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -196,7 +196,7 @@ return $default(_that.id,_that.name,_that.description,_that.campaignIdentifier,_
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  String? description, @JsonKey(name: 'campaign_identifier')  String campaignIdentifier, @JsonKey(name: 'starts_at')  DateTime? startsAt, @JsonKey(name: 'ends_at')  DateTime? endsAt,  CampaignBudget? budget,  List<dynamic> promotions, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  String? description, @JsonKey(name: 'campaign_identifier')  String campaignIdentifier, @JsonKey(name: 'starts_at') DateTime? startsAt, @JsonKey(name: 'ends_at') DateTime? endsAt,  CampaignBudget? budget,  List<dynamic> promotions, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt, @JsonKey(name: 'deleted_at') DateTime? deletedAt)  $default,) {final _that = this;
 switch (_that) {
 case _Campaign():
 return $default(_that.id,_that.name,_that.description,_that.campaignIdentifier,_that.startsAt,_that.endsAt,_that.budget,_that.promotions,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -216,7 +216,7 @@ return $default(_that.id,_that.name,_that.description,_that.campaignIdentifier,_
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  String? description, @JsonKey(name: 'campaign_identifier')  String campaignIdentifier, @JsonKey(name: 'starts_at')  DateTime? startsAt, @JsonKey(name: 'ends_at')  DateTime? endsAt,  CampaignBudget? budget,  List<dynamic> promotions, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  String? description, @JsonKey(name: 'campaign_identifier')  String campaignIdentifier, @JsonKey(name: 'starts_at') DateTime? startsAt, @JsonKey(name: 'ends_at') DateTime? endsAt,  CampaignBudget? budget,  List<dynamic> promotions, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt, @JsonKey(name: 'deleted_at') DateTime? deletedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _Campaign() when $default != null:
 return $default(_that.id,_that.name,_that.description,_that.campaignIdentifier,_that.startsAt,_that.endsAt,_that.budget,_that.promotions,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:

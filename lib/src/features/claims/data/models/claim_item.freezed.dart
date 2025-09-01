@@ -162,7 +162,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'claim_id')  String claimId, @JsonKey(name: 'order_id')  String orderId, @JsonKey(name: 'item_id')  String itemId,  int quantity,  String reason, @JsonKey(name: 'raw_quantity')  Map<String, dynamic> rawQuantity,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'claim_id')  String claimId, @JsonKey(name: 'order_id')  String orderId, @JsonKey(name: 'item_id')  String itemId,  int quantity,  String reason, @JsonKey(name: 'raw_quantity')  Map<String, dynamic> rawQuantity,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ClaimItem() when $default != null:
 return $default(_that.id,_that.claimId,_that.orderId,_that.itemId,_that.quantity,_that.reason,_that.rawQuantity,_that.metadata,_that.createdAt,_that.updatedAt);case _:
@@ -183,7 +183,7 @@ return $default(_that.id,_that.claimId,_that.orderId,_that.itemId,_that.quantity
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'claim_id')  String claimId, @JsonKey(name: 'order_id')  String orderId, @JsonKey(name: 'item_id')  String itemId,  int quantity,  String reason, @JsonKey(name: 'raw_quantity')  Map<String, dynamic> rawQuantity,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'claim_id')  String claimId, @JsonKey(name: 'order_id')  String orderId, @JsonKey(name: 'item_id')  String itemId,  int quantity,  String reason, @JsonKey(name: 'raw_quantity')  Map<String, dynamic> rawQuantity,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt)  $default,) {final _that = this;
 switch (_that) {
 case _ClaimItem():
 return $default(_that.id,_that.claimId,_that.orderId,_that.itemId,_that.quantity,_that.reason,_that.rawQuantity,_that.metadata,_that.createdAt,_that.updatedAt);case _:
@@ -203,7 +203,7 @@ return $default(_that.id,_that.claimId,_that.orderId,_that.itemId,_that.quantity
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'claim_id')  String claimId, @JsonKey(name: 'order_id')  String orderId, @JsonKey(name: 'item_id')  String itemId,  int quantity,  String reason, @JsonKey(name: 'raw_quantity')  Map<String, dynamic> rawQuantity,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'claim_id')  String claimId, @JsonKey(name: 'order_id')  String orderId, @JsonKey(name: 'item_id')  String itemId,  int quantity,  String reason, @JsonKey(name: 'raw_quantity')  Map<String, dynamic> rawQuantity,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _ClaimItem() when $default != null:
 return $default(_that.id,_that.claimId,_that.orderId,_that.itemId,_that.quantity,_that.reason,_that.rawQuantity,_that.metadata,_that.createdAt,_that.updatedAt);case _:

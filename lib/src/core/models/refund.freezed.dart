@@ -175,7 +175,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'order_id')  String orderId,  Order? order,  int amount,  String note,  String reason, @JsonKey(name: 'created_by')  String createdBy, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'order_id')  String orderId,  Order? order,  int amount,  String note,  String reason, @JsonKey(name: 'created_by')  String createdBy, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt, @JsonKey(name: 'deleted_at') DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Refund() when $default != null:
 return $default(_that.id,_that.orderId,_that.order,_that.amount,_that.note,_that.reason,_that.createdBy,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -196,7 +196,7 @@ return $default(_that.id,_that.orderId,_that.order,_that.amount,_that.note,_that
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'order_id')  String orderId,  Order? order,  int amount,  String note,  String reason, @JsonKey(name: 'created_by')  String createdBy, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'order_id')  String orderId,  Order? order,  int amount,  String note,  String reason, @JsonKey(name: 'created_by')  String createdBy, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt, @JsonKey(name: 'deleted_at') DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
 switch (_that) {
 case _Refund():
 return $default(_that.id,_that.orderId,_that.order,_that.amount,_that.note,_that.reason,_that.createdBy,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -216,7 +216,7 @@ return $default(_that.id,_that.orderId,_that.order,_that.amount,_that.note,_that
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'order_id')  String orderId,  Order? order,  int amount,  String note,  String reason, @JsonKey(name: 'created_by')  String createdBy, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'order_id')  String orderId,  Order? order,  int amount,  String note,  String reason, @JsonKey(name: 'created_by')  String createdBy, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt, @JsonKey(name: 'deleted_at') DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
 switch (_that) {
 case _Refund() when $default != null:
 return $default(_that.id,_that.orderId,_that.order,_that.amount,_that.note,_that.reason,_that.createdBy,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:

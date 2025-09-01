@@ -163,7 +163,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? title, @JsonKey(name: 'currency_code')  String? currencyCode,  int? amount, @JsonKey(name: 'raw_amount')  Map<String, dynamic>? rawAmount, @JsonKey(name: 'min_quantity')  int? minQuantity, @JsonKey(name: 'max_quantity')  int? maxQuantity, @JsonKey(name: 'price_set_id')  String? priceSetId, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? title, @JsonKey(name: 'currency_code')  String? currencyCode,  int? amount, @JsonKey(name: 'raw_amount')  Map<String, dynamic>? rawAmount, @JsonKey(name: 'min_quantity')  int? minQuantity, @JsonKey(name: 'max_quantity')  int? maxQuantity, @JsonKey(name: 'price_set_id')  String? priceSetId, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt, @JsonKey(name: 'deleted_at') DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Price() when $default != null:
 return $default(_that.id,_that.title,_that.currencyCode,_that.amount,_that.rawAmount,_that.minQuantity,_that.maxQuantity,_that.priceSetId,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -184,7 +184,7 @@ return $default(_that.id,_that.title,_that.currencyCode,_that.amount,_that.rawAm
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? title, @JsonKey(name: 'currency_code')  String? currencyCode,  int? amount, @JsonKey(name: 'raw_amount')  Map<String, dynamic>? rawAmount, @JsonKey(name: 'min_quantity')  int? minQuantity, @JsonKey(name: 'max_quantity')  int? maxQuantity, @JsonKey(name: 'price_set_id')  String? priceSetId, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? title, @JsonKey(name: 'currency_code')  String? currencyCode,  int? amount, @JsonKey(name: 'raw_amount')  Map<String, dynamic>? rawAmount, @JsonKey(name: 'min_quantity')  int? minQuantity, @JsonKey(name: 'max_quantity')  int? maxQuantity, @JsonKey(name: 'price_set_id')  String? priceSetId, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt, @JsonKey(name: 'deleted_at') DateTime? deletedAt)  $default,) {final _that = this;
 switch (_that) {
 case _Price():
 return $default(_that.id,_that.title,_that.currencyCode,_that.amount,_that.rawAmount,_that.minQuantity,_that.maxQuantity,_that.priceSetId,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -204,7 +204,7 @@ return $default(_that.id,_that.title,_that.currencyCode,_that.amount,_that.rawAm
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? title, @JsonKey(name: 'currency_code')  String? currencyCode,  int? amount, @JsonKey(name: 'raw_amount')  Map<String, dynamic>? rawAmount, @JsonKey(name: 'min_quantity')  int? minQuantity, @JsonKey(name: 'max_quantity')  int? maxQuantity, @JsonKey(name: 'price_set_id')  String? priceSetId, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? title, @JsonKey(name: 'currency_code')  String? currencyCode,  int? amount, @JsonKey(name: 'raw_amount')  Map<String, dynamic>? rawAmount, @JsonKey(name: 'min_quantity')  int? minQuantity, @JsonKey(name: 'max_quantity')  int? maxQuantity, @JsonKey(name: 'price_set_id')  String? priceSetId, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt, @JsonKey(name: 'deleted_at') DateTime? deletedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _Price() when $default != null:
 return $default(_that.id,_that.title,_that.currencyCode,_that.amount,_that.rawAmount,_that.minQuantity,_that.maxQuantity,_that.priceSetId,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:

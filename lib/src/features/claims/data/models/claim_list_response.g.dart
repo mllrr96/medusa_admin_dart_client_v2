@@ -14,7 +14,7 @@ _ClaimListResponse _$ClaimListResponseFromJson(Map<String, dynamic> json) =>
       claims: (json['claims'] as List<dynamic>)
           .map((e) => Claim.fromJson(e as Map<String, dynamic>))
           .toList(),
-      estimateCount: (json['estimateCount'] as num?)?.toInt(),
+      estimateCount: (json['estimate_count'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$ClaimListResponseToJson(_ClaimListResponse instance) =>
@@ -23,5 +23,5 @@ Map<String, dynamic> _$ClaimListResponseToJson(_ClaimListResponse instance) =>
       'offset': instance.offset,
       'count': instance.count,
       'claims': instance.claims,
-      'estimateCount': instance.estimateCount,
+      'estimate_count': instance.estimateCount,
     };

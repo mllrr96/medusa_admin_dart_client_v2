@@ -1,19 +1,16 @@
-class CancelReturnReceiveRes {
-  final String? id;
-  final String? object;
-  final bool? deleted;
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  CancelReturnReceiveRes({
-    this.id,
-    this.object,
-    this.deleted,
-  });
+part 'cancel_return_receive_res.freezed.dart';
+part 'cancel_return_receive_res.g.dart';
 
-  factory CancelReturnReceiveRes.fromJson(Map<String, dynamic> json) {
-    return CancelReturnReceiveRes(
-      id: json['id'],
-      object: json['object'],
-      deleted: json['deleted'],
-    );
-  }
+@freezed
+abstract class CancelReturnReceiveRes with _$CancelReturnReceiveRes {
+  const factory CancelReturnReceiveRes({
+    String? id,
+    String? object,
+    bool? deleted,
+  }) = _CancelReturnReceiveRes;
+
+  factory CancelReturnReceiveRes.fromJson(Map<String, dynamic> json) =>
+      _$CancelReturnReceiveResFromJson(json);
 }

@@ -170,7 +170,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(name: 'fulfillment_set_id')  String fulfillmentSetId, @JsonKey(name: 'fulfillment_set')  FulfillmentSet fulfillmentSet, @JsonKey(name: 'geo_zones')  List<GeoZone> geoZones, @JsonKey(name: 'shipping_options')  List<ShippingOption> shippingOptions, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(name: 'fulfillment_set_id')  String fulfillmentSetId, @JsonKey(name: 'fulfillment_set')  FulfillmentSet fulfillmentSet, @JsonKey(name: 'geo_zones')  List<GeoZone> geoZones, @JsonKey(name: 'shipping_options')  List<ShippingOption> shippingOptions, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt, @JsonKey(name: 'deleted_at') DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ServiceZone() when $default != null:
 return $default(_that.id,_that.name,_that.fulfillmentSetId,_that.fulfillmentSet,_that.geoZones,_that.shippingOptions,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -191,7 +191,7 @@ return $default(_that.id,_that.name,_that.fulfillmentSetId,_that.fulfillmentSet,
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(name: 'fulfillment_set_id')  String fulfillmentSetId, @JsonKey(name: 'fulfillment_set')  FulfillmentSet fulfillmentSet, @JsonKey(name: 'geo_zones')  List<GeoZone> geoZones, @JsonKey(name: 'shipping_options')  List<ShippingOption> shippingOptions, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(name: 'fulfillment_set_id')  String fulfillmentSetId, @JsonKey(name: 'fulfillment_set')  FulfillmentSet fulfillmentSet, @JsonKey(name: 'geo_zones')  List<GeoZone> geoZones, @JsonKey(name: 'shipping_options')  List<ShippingOption> shippingOptions, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt, @JsonKey(name: 'deleted_at') DateTime? deletedAt)  $default,) {final _that = this;
 switch (_that) {
 case _ServiceZone():
 return $default(_that.id,_that.name,_that.fulfillmentSetId,_that.fulfillmentSet,_that.geoZones,_that.shippingOptions,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -211,7 +211,7 @@ return $default(_that.id,_that.name,_that.fulfillmentSetId,_that.fulfillmentSet,
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name, @JsonKey(name: 'fulfillment_set_id')  String fulfillmentSetId, @JsonKey(name: 'fulfillment_set')  FulfillmentSet fulfillmentSet, @JsonKey(name: 'geo_zones')  List<GeoZone> geoZones, @JsonKey(name: 'shipping_options')  List<ShippingOption> shippingOptions, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name, @JsonKey(name: 'fulfillment_set_id')  String fulfillmentSetId, @JsonKey(name: 'fulfillment_set')  FulfillmentSet fulfillmentSet, @JsonKey(name: 'geo_zones')  List<GeoZone> geoZones, @JsonKey(name: 'shipping_options')  List<ShippingOption> shippingOptions, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt, @JsonKey(name: 'deleted_at') DateTime? deletedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _ServiceZone() when $default != null:
 return $default(_that.id,_that.name,_that.fulfillmentSetId,_that.fulfillmentSet,_that.geoZones,_that.shippingOptions,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:

@@ -23,8 +23,8 @@ abstract class OrderChangeAction with _$OrderChangeAction {
     @JsonKey(name: 'action') required OrderChangeActionAction action,
     Map<String, dynamic>? details,
     @JsonKey(name: 'internal_note') String? internalNote,
-    @JsonKey(name: 'created_at')  DateTime? createdAt,
-    @JsonKey(name: 'updated_at')  DateTime? updatedAt,
+    @JsonKey(name: 'created_at') DateTime? createdAt,
+    @JsonKey(name: 'updated_at') DateTime? updatedAt,
   }) = _OrderChangeAction;
 
   factory OrderChangeAction.fromJson(Map<String, dynamic> json) =>

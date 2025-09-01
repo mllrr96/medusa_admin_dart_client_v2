@@ -11,7 +11,7 @@ abstract class DraftOrderListResponse with _$DraftOrderListResponse {
     required int offset,
     required int count,
     @JsonKey(name: 'draft_orders') required List<DraftOrder> draftOrders,
-    int? estimateCount,
+    @JsonKey(name: 'estimate_count') int? estimateCount,
   }) = _DraftOrderListResponse;
 
   factory DraftOrderListResponse.fromJson(Map<String, dynamic> json) =>

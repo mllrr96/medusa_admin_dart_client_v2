@@ -164,7 +164,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String token,  String redacted,  String title,  String type, @JsonKey(name: 'last_used_at')  DateTime? lastUsedAt, @JsonKey(name: 'created_by')  String createdBy, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'revoked_by')  String? revokedBy, @JsonKey(name: 'revoked_at')  DateTime? revokedAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String token,  String redacted,  String title,  String type, @JsonKey(name: 'last_used_at') DateTime? lastUsedAt, @JsonKey(name: 'created_by')  String createdBy, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'revoked_by')  String? revokedBy, @JsonKey(name: 'revoked_at') DateTime? revokedAt, @JsonKey(name: 'updated_at') DateTime? updatedAt, @JsonKey(name: 'deleted_at') DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ApiKey() when $default != null:
 return $default(_that.id,_that.token,_that.redacted,_that.title,_that.type,_that.lastUsedAt,_that.createdBy,_that.createdAt,_that.revokedBy,_that.revokedAt,_that.updatedAt,_that.deletedAt);case _:
@@ -185,7 +185,7 @@ return $default(_that.id,_that.token,_that.redacted,_that.title,_that.type,_that
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String token,  String redacted,  String title,  String type, @JsonKey(name: 'last_used_at')  DateTime? lastUsedAt, @JsonKey(name: 'created_by')  String createdBy, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'revoked_by')  String? revokedBy, @JsonKey(name: 'revoked_at')  DateTime? revokedAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String token,  String redacted,  String title,  String type, @JsonKey(name: 'last_used_at') DateTime? lastUsedAt, @JsonKey(name: 'created_by')  String createdBy, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'revoked_by')  String? revokedBy, @JsonKey(name: 'revoked_at') DateTime? revokedAt, @JsonKey(name: 'updated_at') DateTime? updatedAt, @JsonKey(name: 'deleted_at') DateTime? deletedAt)  $default,) {final _that = this;
 switch (_that) {
 case _ApiKey():
 return $default(_that.id,_that.token,_that.redacted,_that.title,_that.type,_that.lastUsedAt,_that.createdBy,_that.createdAt,_that.revokedBy,_that.revokedAt,_that.updatedAt,_that.deletedAt);case _:
@@ -205,7 +205,7 @@ return $default(_that.id,_that.token,_that.redacted,_that.title,_that.type,_that
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String token,  String redacted,  String title,  String type, @JsonKey(name: 'last_used_at')  DateTime? lastUsedAt, @JsonKey(name: 'created_by')  String createdBy, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'revoked_by')  String? revokedBy, @JsonKey(name: 'revoked_at')  DateTime? revokedAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String token,  String redacted,  String title,  String type, @JsonKey(name: 'last_used_at') DateTime? lastUsedAt, @JsonKey(name: 'created_by')  String createdBy, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'revoked_by')  String? revokedBy, @JsonKey(name: 'revoked_at') DateTime? revokedAt, @JsonKey(name: 'updated_at') DateTime? updatedAt, @JsonKey(name: 'deleted_at') DateTime? deletedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _ApiKey() when $default != null:
 return $default(_that.id,_that.token,_that.redacted,_that.title,_that.type,_that.lastUsedAt,_that.createdBy,_that.createdAt,_that.revokedBy,_that.revokedAt,_that.updatedAt,_that.deletedAt);case _:

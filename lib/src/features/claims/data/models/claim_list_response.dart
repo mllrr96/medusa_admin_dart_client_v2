@@ -11,7 +11,7 @@ abstract class ClaimListResponse with _$ClaimListResponse {
     required int offset,
     required int count,
     required List<Claim> claims,
-    int? estimateCount,
+    @JsonKey(name: 'estimate_count') int? estimateCount,
   }) = _ClaimListResponse;
 
   factory ClaimListResponse.fromJson(Map<String, dynamic> json) =>

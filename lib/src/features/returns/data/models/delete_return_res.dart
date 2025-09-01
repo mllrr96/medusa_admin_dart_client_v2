@@ -1,19 +1,16 @@
-class DeleteReturnRes {
-  final String? id;
-  final String? object;
-  final bool? deleted;
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  DeleteReturnRes({
-    this.id,
-    this.object,
-    this.deleted,
-  });
+part 'delete_return_res.freezed.dart';
+part 'delete_return_res.g.dart';
 
-  factory DeleteReturnRes.fromJson(Map<String, dynamic> json) {
-    return DeleteReturnRes(
-      id: json['id'],
-      object: json['object'],
-      deleted: json['deleted'],
-    );
-  }
+@freezed
+abstract class DeleteReturnRes with _$DeleteReturnRes {
+  const factory DeleteReturnRes({
+    String? id,
+    String? object,
+    bool? deleted,
+  }) = _DeleteReturnRes;
+
+  factory DeleteReturnRes.fromJson(Map<String, dynamic> json) =>
+      _$DeleteReturnResFromJson(json);
 }

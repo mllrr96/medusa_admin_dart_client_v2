@@ -8,7 +8,7 @@ part 'claim_return_preview_response.g.dart';
 abstract class ClaimReturnPreviewResponse with _$ClaimReturnPreviewResponse {
   const factory ClaimReturnPreviewResponse({
     @JsonKey(name: 'order_preview') required OrderPreview orderPreview,
-    required Return aReturn,
+    @JsonKey(name: 'return') required Return aReturn,
   }) = _ClaimReturnPreviewResponse;
 
   factory ClaimReturnPreviewResponse.fromJson(Map<String, dynamic> json) =>

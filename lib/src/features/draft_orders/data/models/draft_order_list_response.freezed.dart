@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$DraftOrderListResponse {
 
- int get limit; int get offset; int get count;@JsonKey(name: 'draft_orders') List<DraftOrder> get draftOrders; int? get estimateCount;
+ int get limit; int get offset; int get count;@JsonKey(name: 'draft_orders') List<DraftOrder> get draftOrders;@JsonKey(name: 'estimate_count') int? get estimateCount;
 /// Create a copy of DraftOrderListResponse
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $DraftOrderListResponseCopyWith<$Res>  {
   factory $DraftOrderListResponseCopyWith(DraftOrderListResponse value, $Res Function(DraftOrderListResponse) _then) = _$DraftOrderListResponseCopyWithImpl;
 @useResult
 $Res call({
- int limit, int offset, int count,@JsonKey(name: 'draft_orders') List<DraftOrder> draftOrders, int? estimateCount
+ int limit, int offset, int count,@JsonKey(name: 'draft_orders') List<DraftOrder> draftOrders,@JsonKey(name: 'estimate_count') int? estimateCount
 });
 
 
@@ -157,7 +157,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int limit,  int offset,  int count, @JsonKey(name: 'draft_orders')  List<DraftOrder> draftOrders,  int? estimateCount)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int limit,  int offset,  int count, @JsonKey(name: 'draft_orders')  List<DraftOrder> draftOrders, @JsonKey(name: 'estimate_count')  int? estimateCount)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _DraftOrderListResponse() when $default != null:
 return $default(_that.limit,_that.offset,_that.count,_that.draftOrders,_that.estimateCount);case _:
@@ -178,7 +178,7 @@ return $default(_that.limit,_that.offset,_that.count,_that.draftOrders,_that.est
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int limit,  int offset,  int count, @JsonKey(name: 'draft_orders')  List<DraftOrder> draftOrders,  int? estimateCount)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int limit,  int offset,  int count, @JsonKey(name: 'draft_orders')  List<DraftOrder> draftOrders, @JsonKey(name: 'estimate_count')  int? estimateCount)  $default,) {final _that = this;
 switch (_that) {
 case _DraftOrderListResponse():
 return $default(_that.limit,_that.offset,_that.count,_that.draftOrders,_that.estimateCount);case _:
@@ -198,7 +198,7 @@ return $default(_that.limit,_that.offset,_that.count,_that.draftOrders,_that.est
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int limit,  int offset,  int count, @JsonKey(name: 'draft_orders')  List<DraftOrder> draftOrders,  int? estimateCount)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int limit,  int offset,  int count, @JsonKey(name: 'draft_orders')  List<DraftOrder> draftOrders, @JsonKey(name: 'estimate_count')  int? estimateCount)?  $default,) {final _that = this;
 switch (_that) {
 case _DraftOrderListResponse() when $default != null:
 return $default(_that.limit,_that.offset,_that.count,_that.draftOrders,_that.estimateCount);case _:
@@ -213,7 +213,7 @@ return $default(_that.limit,_that.offset,_that.count,_that.draftOrders,_that.est
 @JsonSerializable()
 
 class _DraftOrderListResponse implements DraftOrderListResponse {
-  const _DraftOrderListResponse({required this.limit, required this.offset, required this.count, @JsonKey(name: 'draft_orders') required final  List<DraftOrder> draftOrders, this.estimateCount}): _draftOrders = draftOrders;
+  const _DraftOrderListResponse({required this.limit, required this.offset, required this.count, @JsonKey(name: 'draft_orders') required final  List<DraftOrder> draftOrders, @JsonKey(name: 'estimate_count') this.estimateCount}): _draftOrders = draftOrders;
   factory _DraftOrderListResponse.fromJson(Map<String, dynamic> json) => _$DraftOrderListResponseFromJson(json);
 
 @override final  int limit;
@@ -226,7 +226,7 @@ class _DraftOrderListResponse implements DraftOrderListResponse {
   return EqualUnmodifiableListView(_draftOrders);
 }
 
-@override final  int? estimateCount;
+@override@JsonKey(name: 'estimate_count') final  int? estimateCount;
 
 /// Create a copy of DraftOrderListResponse
 /// with the given fields replaced by the non-null parameter values.
@@ -261,7 +261,7 @@ abstract mixin class _$DraftOrderListResponseCopyWith<$Res> implements $DraftOrd
   factory _$DraftOrderListResponseCopyWith(_DraftOrderListResponse value, $Res Function(_DraftOrderListResponse) _then) = __$DraftOrderListResponseCopyWithImpl;
 @override @useResult
 $Res call({
- int limit, int offset, int count,@JsonKey(name: 'draft_orders') List<DraftOrder> draftOrders, int? estimateCount
+ int limit, int offset, int count,@JsonKey(name: 'draft_orders') List<DraftOrder> draftOrders,@JsonKey(name: 'estimate_count') int? estimateCount
 });
 
 

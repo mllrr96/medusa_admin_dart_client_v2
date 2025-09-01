@@ -13,9 +13,9 @@ abstract class ShippingOptionPriceRule with _$ShippingOptionPriceRule {
     required String attribute,
     @JsonKey(name: 'price_id') required String priceId,
     required int priority,
-    @JsonKey(name: 'created_at')  DateTime? createdAt,
-    @JsonKey(name: 'updated_at')  DateTime? updatedAt,
-    @JsonKey(name: 'deleted_at')  DateTime? deletedAt,
+    @JsonKey(name: 'created_at') DateTime? createdAt,
+    @JsonKey(name: 'updated_at') DateTime? updatedAt,
+    @JsonKey(name: 'deleted_at') DateTime? deletedAt,
   }) = _ShippingOptionPriceRule;
 
   factory ShippingOptionPriceRule.fromJson(Map<String, dynamic> json) =>

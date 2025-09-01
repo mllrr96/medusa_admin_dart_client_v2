@@ -178,7 +178,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id, @JsonKey(name: 'order_id')  String? orderId,  int? amount, @JsonKey(name: 'currency_code')  String? currencyCode,  String? reference, @JsonKey(name: 'reference_id')  String? referenceId,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt,  int? version,  Map<String, dynamic>? order)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id, @JsonKey(name: 'order_id')  String? orderId,  int? amount, @JsonKey(name: 'currency_code')  String? currencyCode,  String? reference, @JsonKey(name: 'reference_id')  String? referenceId,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt,  int? version,  Map<String, dynamic>? order)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _OrderTransaction() when $default != null:
 return $default(_that.id,_that.orderId,_that.amount,_that.currencyCode,_that.reference,_that.referenceId,_that.metadata,_that.createdAt,_that.updatedAt,_that.version,_that.order);case _:
@@ -199,7 +199,7 @@ return $default(_that.id,_that.orderId,_that.amount,_that.currencyCode,_that.ref
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id, @JsonKey(name: 'order_id')  String? orderId,  int? amount, @JsonKey(name: 'currency_code')  String? currencyCode,  String? reference, @JsonKey(name: 'reference_id')  String? referenceId,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt,  int? version,  Map<String, dynamic>? order)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id, @JsonKey(name: 'order_id')  String? orderId,  int? amount, @JsonKey(name: 'currency_code')  String? currencyCode,  String? reference, @JsonKey(name: 'reference_id')  String? referenceId,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt,  int? version,  Map<String, dynamic>? order)  $default,) {final _that = this;
 switch (_that) {
 case _OrderTransaction():
 return $default(_that.id,_that.orderId,_that.amount,_that.currencyCode,_that.reference,_that.referenceId,_that.metadata,_that.createdAt,_that.updatedAt,_that.version,_that.order);case _:
@@ -219,7 +219,7 @@ return $default(_that.id,_that.orderId,_that.amount,_that.currencyCode,_that.ref
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id, @JsonKey(name: 'order_id')  String? orderId,  int? amount, @JsonKey(name: 'currency_code')  String? currencyCode,  String? reference, @JsonKey(name: 'reference_id')  String? referenceId,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt,  int? version,  Map<String, dynamic>? order)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id, @JsonKey(name: 'order_id')  String? orderId,  int? amount, @JsonKey(name: 'currency_code')  String? currencyCode,  String? reference, @JsonKey(name: 'reference_id')  String? referenceId,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt,  int? version,  Map<String, dynamic>? order)?  $default,) {final _that = this;
 switch (_that) {
 case _OrderTransaction() when $default != null:
 return $default(_that.id,_that.orderId,_that.amount,_that.currencyCode,_that.reference,_that.referenceId,_that.metadata,_that.createdAt,_that.updatedAt,_that.version,_that.order);case _:

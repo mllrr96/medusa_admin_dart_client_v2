@@ -73,8 +73,8 @@ abstract class DraftOrderPreview with _$DraftOrderPreview {
     @JsonKey(name: 'credit_line_total') required int creditLineTotal,
 
     // Timestamps
-    @JsonKey(name: 'created_at')  DateTime? createdAt,
-    @JsonKey(name: 'updated_at')  DateTime? updatedAt,
+    @JsonKey(name: 'created_at') DateTime? createdAt,
+    @JsonKey(name: 'updated_at') DateTime? updatedAt,
 
     // Expandable Relations
     @JsonKey(name: 'shipping_address') OrderAddress? shippingAddress,
