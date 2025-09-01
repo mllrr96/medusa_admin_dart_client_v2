@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:retrofit/retrofit.dart';
-
+import 'package:medusa_admin_dart_client/src/features/regions/data/models/models.dart';
 part 'regions_api.g.dart';
 
 @RestApi()
@@ -14,7 +14,7 @@ abstract class RegionsApi {
 
   @POST('/admin/regions')
   Future<HttpResponse> create(
-    @Body() Map<String, dynamic> body,
+    @Body() CreateRegionReq body,
     @Queries() Map<String, dynamic>? query,
   );
 
@@ -27,7 +27,7 @@ abstract class RegionsApi {
   @POST('/admin/regions/{id}')
   Future<HttpResponse> update(
     @Path('id') String id,
-    @Body() Map<String, dynamic> body,
+    @Body() UpdateRegionReq body,
     @Queries() Map<String, dynamic>? query,
   );
 

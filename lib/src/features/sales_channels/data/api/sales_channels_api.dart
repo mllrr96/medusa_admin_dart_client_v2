@@ -1,8 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:medusa_admin_dart_client/src/features/sales_channels/data/models/manage_products_req.dart';
 import 'package:retrofit/retrofit.dart';
-
-import '../models/sales_channel.dart';
+import 'package:medusa_admin_dart_client/src/features/sales_channels/data/models/models.dart';
 
 part 'sales_channels_api.g.dart';
 
@@ -19,12 +17,12 @@ abstract class SalesChannelsApi {
   Future<SalesChannel> retrieve(@Path('id') String id);
 
   @POST('/admin/sales-channels')
-  Future<SalesChannel> create(@Body() Map<String, dynamic> body);
+  Future<SalesChannel> create(@Body() CreateSalesChannel body);
 
   @POST('/admin/sales-channels/{id}')
   Future<SalesChannel> update(
     @Path('id') String id,
-    @Body() Map<String, dynamic> body,
+    @Body() UpdateSalesChannel body,
   );
 
   @DELETE('/admin/sales-channels/{id}')

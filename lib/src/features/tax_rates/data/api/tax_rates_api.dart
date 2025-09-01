@@ -1,7 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:medusa_admin_dart_client/src/features/tax_rates/data/models/tax_rate_req.dart';
-import 'package:medusa_admin_dart_client/src/features/tax_rates/data/models/tax_rate_res.dart';
-import 'package:medusa_admin_dart_client/src/features/tax_rates/data/models/tax_rate_rule.dart';
+import 'package:medusa_admin_dart_client/src/features/tax_rates/data/models/models.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'tax_rates_api.g.dart';

@@ -1,7 +1,5 @@
-import 'package:medusa_admin_dart_client/src/features/sales_channels/data/models/manage_products_req.dart';
 import 'package:medusa_admin_dart_client/src/features/sales_channels/data/api/sales_channels_api.dart';
-
-import '../models/sales_channel.dart';
+import 'package:medusa_admin_dart_client/src/features/sales_channels/data/models/models.dart';
 
 class SalesChannelsRepository {
   SalesChannelsRepository(this._salesChannelsApi);
@@ -18,11 +16,11 @@ class SalesChannelsRepository {
     return _salesChannelsApi.retrieve(id);
   }
 
-  Future<SalesChannel> create(Map<String, dynamic> body) {
+  Future<SalesChannel> create(CreateSalesChannel body) {
     return _salesChannelsApi.create(body);
   }
 
-  Future<SalesChannel> update(String id, Map<String, dynamic> body) {
+  Future<SalesChannel> update(String id, UpdateSalesChannel body) {
     return _salesChannelsApi.update(id, body);
   }
 

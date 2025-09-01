@@ -1,5 +1,5 @@
 import 'package:medusa_admin_dart_client/src/features/regions/data/api/regions_api.dart';
-import 'package:medusa_admin_dart_client/src/features/regions/data/models/region_res.dart';
+import 'package:medusa_admin_dart_client/src/features/regions/data/models/models.dart';
 
 class RegionsRepository {
   final RegionsApi _regionsApi;
@@ -14,7 +14,7 @@ class RegionsRepository {
   }
 
   Future<RegionRes> create(
-    Map<String, dynamic> body, {
+    CreateRegionReq body, {
     Map<String, dynamic>? query,
   }) async {
     final response = await _regionsApi.create(body, query);
@@ -31,7 +31,7 @@ class RegionsRepository {
 
   Future<RegionRes> update(
     String id,
-    Map<String, dynamic> body, {
+    UpdateRegionReq body, {
     Map<String, dynamic>? query,
   }) async {
     final response = await _regionsApi.update(id, body, query);

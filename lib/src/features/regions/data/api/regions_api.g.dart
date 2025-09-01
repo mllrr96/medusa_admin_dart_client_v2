@@ -45,7 +45,7 @@ class _RegionsApi implements RegionsApi {
 
   @override
   Future<HttpResponse<dynamic>> create(
-    Map<String, dynamic> body,
+    CreateRegionReq body,
     Map<String, dynamic>? query,
   ) async {
     final _extra = <String, dynamic>{};
@@ -53,8 +53,7 @@ class _RegionsApi implements RegionsApi {
     queryParameters.addAll(query ?? <String, dynamic>{});
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(body);
+    final _data = body;
     final _options = _setStreamType<HttpResponse<dynamic>>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
@@ -101,7 +100,7 @@ class _RegionsApi implements RegionsApi {
   @override
   Future<HttpResponse<dynamic>> update(
     String id,
-    Map<String, dynamic> body,
+    UpdateRegionReq body,
     Map<String, dynamic>? query,
   ) async {
     final _extra = <String, dynamic>{};
@@ -109,8 +108,7 @@ class _RegionsApi implements RegionsApi {
     queryParameters.addAll(query ?? <String, dynamic>{});
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(body);
+    final _data = body;
     final _options = _setStreamType<HttpResponse<dynamic>>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(

@@ -76,12 +76,11 @@ class _SalesChannelsApi implements SalesChannelsApi {
   }
 
   @override
-  Future<SalesChannel> create(Map<String, dynamic> body) async {
+  Future<SalesChannel> create(CreateSalesChannel body) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(body);
+    final _data = body;
     final _options = _setStreamType<SalesChannel>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
@@ -104,12 +103,11 @@ class _SalesChannelsApi implements SalesChannelsApi {
   }
 
   @override
-  Future<SalesChannel> update(String id, Map<String, dynamic> body) async {
+  Future<SalesChannel> update(String id, UpdateSalesChannel body) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(body);
+    final _data = body;
     final _options = _setStreamType<SalesChannel>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
