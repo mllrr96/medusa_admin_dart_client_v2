@@ -174,7 +174,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(name: 'address_id')  String addressId,  StockLocationAddress? address, @JsonKey(name: 'sales_channels')  List<SalesChannel>? salesChannels, @JsonKey(name: 'fulfillment_providers')  List<FulfillmentProvider>? fulfillmentProviders,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt, @JsonKey(name: 'deleted_at') DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(name: 'address_id')  String addressId,  StockLocationAddress? address, @JsonKey(name: 'sales_channels')  List<SalesChannel>? salesChannels, @JsonKey(name: 'fulfillment_providers')  List<FulfillmentProvider>? fulfillmentProviders,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _StockLocation() when $default != null:
 return $default(_that.id,_that.name,_that.addressId,_that.address,_that.salesChannels,_that.fulfillmentProviders,_that.metadata,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -195,7 +195,7 @@ return $default(_that.id,_that.name,_that.addressId,_that.address,_that.salesCha
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(name: 'address_id')  String addressId,  StockLocationAddress? address, @JsonKey(name: 'sales_channels')  List<SalesChannel>? salesChannels, @JsonKey(name: 'fulfillment_providers')  List<FulfillmentProvider>? fulfillmentProviders,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt, @JsonKey(name: 'deleted_at') DateTime? deletedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(name: 'address_id')  String addressId,  StockLocationAddress? address, @JsonKey(name: 'sales_channels')  List<SalesChannel>? salesChannels, @JsonKey(name: 'fulfillment_providers')  List<FulfillmentProvider>? fulfillmentProviders,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)  $default,) {final _that = this;
 switch (_that) {
 case _StockLocation():
 return $default(_that.id,_that.name,_that.addressId,_that.address,_that.salesChannels,_that.fulfillmentProviders,_that.metadata,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -215,7 +215,7 @@ return $default(_that.id,_that.name,_that.addressId,_that.address,_that.salesCha
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name, @JsonKey(name: 'address_id')  String addressId,  StockLocationAddress? address, @JsonKey(name: 'sales_channels')  List<SalesChannel>? salesChannels, @JsonKey(name: 'fulfillment_providers')  List<FulfillmentProvider>? fulfillmentProviders,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt, @JsonKey(name: 'deleted_at') DateTime? deletedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name, @JsonKey(name: 'address_id')  String addressId,  StockLocationAddress? address, @JsonKey(name: 'sales_channels')  List<SalesChannel>? salesChannels, @JsonKey(name: 'fulfillment_providers')  List<FulfillmentProvider>? fulfillmentProviders,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _StockLocation() when $default != null:
 return $default(_that.id,_that.name,_that.addressId,_that.address,_that.salesChannels,_that.fulfillmentProviders,_that.metadata,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:

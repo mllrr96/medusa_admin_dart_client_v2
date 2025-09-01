@@ -2,7 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:medusa_admin_dart_client/src/core/models/fulfillment_provider.dart';
 import 'package:medusa_admin_dart_client/src/core/models/region.dart';
 import 'package:medusa_admin_dart_client/src/core/models/shipping_profile.dart';
-import 'package:medusa_admin_dart_client/src/core/models/tax_rate.dart';
+import 'package:medusa_admin_dart_client/src/features/tax_rates/data/models/tax_rate.dart';
 
 import 'requirement.dart';
 

@@ -164,7 +164,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'address_1')  String address1, @JsonKey(name: 'address_2')  String? address2,  String? company, @JsonKey(name: 'country_code')  String countryCode,  String? city,  String? phone, @JsonKey(name: 'postal_code')  String? postalCode,  String? province, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt, @JsonKey(name: 'deleted_at') DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'address_1')  String address1, @JsonKey(name: 'address_2')  String? address2,  String? company, @JsonKey(name: 'country_code')  String countryCode,  String? city,  String? phone, @JsonKey(name: 'postal_code')  String? postalCode,  String? province, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _StockLocationAddress() when $default != null:
 return $default(_that.id,_that.address1,_that.address2,_that.company,_that.countryCode,_that.city,_that.phone,_that.postalCode,_that.province,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -185,7 +185,7 @@ return $default(_that.id,_that.address1,_that.address2,_that.company,_that.count
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'address_1')  String address1, @JsonKey(name: 'address_2')  String? address2,  String? company, @JsonKey(name: 'country_code')  String countryCode,  String? city,  String? phone, @JsonKey(name: 'postal_code')  String? postalCode,  String? province, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt, @JsonKey(name: 'deleted_at') DateTime? deletedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'address_1')  String address1, @JsonKey(name: 'address_2')  String? address2,  String? company, @JsonKey(name: 'country_code')  String countryCode,  String? city,  String? phone, @JsonKey(name: 'postal_code')  String? postalCode,  String? province, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)  $default,) {final _that = this;
 switch (_that) {
 case _StockLocationAddress():
 return $default(_that.id,_that.address1,_that.address2,_that.company,_that.countryCode,_that.city,_that.phone,_that.postalCode,_that.province,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -205,7 +205,7 @@ return $default(_that.id,_that.address1,_that.address2,_that.company,_that.count
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'address_1')  String address1, @JsonKey(name: 'address_2')  String? address2,  String? company, @JsonKey(name: 'country_code')  String countryCode,  String? city,  String? phone, @JsonKey(name: 'postal_code')  String? postalCode,  String? province, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt, @JsonKey(name: 'deleted_at') DateTime? deletedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'address_1')  String address1, @JsonKey(name: 'address_2')  String? address2,  String? company, @JsonKey(name: 'country_code')  String countryCode,  String? city,  String? phone, @JsonKey(name: 'postal_code')  String? postalCode,  String? province, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _StockLocationAddress() when $default != null:
 return $default(_that.id,_that.address1,_that.address2,_that.company,_that.countryCode,_that.city,_that.phone,_that.postalCode,_that.province,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:

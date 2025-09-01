@@ -27,10 +27,18 @@ import 'package:medusa_admin_dart_client/src/features/return_reasons/data/reposi
 import 'package:medusa_admin_dart_client/src/features/swaps/data/repository/swaps_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/api_keys/data/repository/api_keys_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/tax_providers/data/repository/tax_providers_repository.dart';
-
 import 'src/features/product_tags/data/repository/product_tags_repository.dart';
 import 'src/features/product_types/data/repository/product_types_repository.dart';
 import 'src/features/product_variants/data/repository/product_variants_repository.dart';
+import 'src/features/product_categories/data/repository/product_categories_repository.dart';
+
+export 'package:medusa_admin_dart_client/src/features/products/data/models/models.dart';
+export 'package:medusa_admin_dart_client/src/features/product_tags/data/repository/product_tags_repository.dart';
+export 'package:medusa_admin_dart_client/src/features/product_types/data/repository/product_types_repository.dart';
+export 'package:medusa_admin_dart_client/src/features/collections/data/models/models.dart';
+export 'package:medusa_admin_dart_client/src/features/product_categories/data/models/product_categories_models.dart';
+export 'package:medusa_admin_dart_client/src/features/products/data/models/product_category.dart';
+export 'package:medusa_admin_dart_client/src/features/product_categories/data/repository/product_categories_repository.dart';
 export 'package:medusa_admin_dart_client/src/core/models/models.dart';
 export 'package:medusa_admin_dart_client/src/features/api_keys/data/models/models.dart';
 export 'package:medusa_admin_dart_client/src/features/auth/data/models/models.dart';
@@ -118,6 +126,7 @@ class MedusaAdminV2 {
   AuthRepository get auth => getIt<AuthRepository>();
 
   ProductsRepository get products => getIt<ProductsRepository>();
+  ProductCategoriesRepository get categories => getIt<ProductCategoriesRepository>();
 
   OrdersRepository get orders => getIt<OrdersRepository>();
 

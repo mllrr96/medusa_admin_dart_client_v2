@@ -18,16 +18,14 @@ class _CollectionsApi implements CollectionsApi {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<List<ProductCollection>> retrieveAll({
-    Map<String, dynamic>? query,
-  }) async {
+  Future<CollectionListRes> retrieveAll({Map<String, dynamic>? query}) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     queryParameters.addAll(query ?? <String, dynamic>{});
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<List<ProductCollection>>(
+    final _options = _setStreamType<CollectionListRes>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -37,15 +35,10 @@ class _CollectionsApi implements CollectionsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<List<dynamic>>(_options);
-    late List<ProductCollection> _value;
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late CollectionListRes _value;
     try {
-      _value = _result.data!
-          .map(
-            (dynamic i) =>
-                ProductCollection.fromJson(i as Map<String, dynamic>),
-          )
-          .toList();
+      _value = CollectionListRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

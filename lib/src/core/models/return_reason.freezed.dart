@@ -175,7 +175,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String value,  String label,  String? description, @JsonKey(name: 'parent_return_reason_id')  String? parentReturnReasonId, @JsonKey(name: 'parent_return_reason')  ReturnReason? parentReturnReason, @JsonKey(name: 'return_reason_children')  List<ReturnReason>? returnReasonChildren, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt, @JsonKey(name: 'deleted_at') DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String value,  String label,  String? description, @JsonKey(name: 'parent_return_reason_id')  String? parentReturnReasonId, @JsonKey(name: 'parent_return_reason')  ReturnReason? parentReturnReason, @JsonKey(name: 'return_reason_children')  List<ReturnReason>? returnReasonChildren, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ReturnReason() when $default != null:
 return $default(_that.id,_that.value,_that.label,_that.description,_that.parentReturnReasonId,_that.parentReturnReason,_that.returnReasonChildren,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -196,7 +196,7 @@ return $default(_that.id,_that.value,_that.label,_that.description,_that.parentR
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String value,  String label,  String? description, @JsonKey(name: 'parent_return_reason_id')  String? parentReturnReasonId, @JsonKey(name: 'parent_return_reason')  ReturnReason? parentReturnReason, @JsonKey(name: 'return_reason_children')  List<ReturnReason>? returnReasonChildren, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt, @JsonKey(name: 'deleted_at') DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String value,  String label,  String? description, @JsonKey(name: 'parent_return_reason_id')  String? parentReturnReasonId, @JsonKey(name: 'parent_return_reason')  ReturnReason? parentReturnReason, @JsonKey(name: 'return_reason_children')  List<ReturnReason>? returnReasonChildren, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
 switch (_that) {
 case _ReturnReason():
 return $default(_that.id,_that.value,_that.label,_that.description,_that.parentReturnReasonId,_that.parentReturnReason,_that.returnReasonChildren,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -216,7 +216,7 @@ return $default(_that.id,_that.value,_that.label,_that.description,_that.parentR
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String value,  String label,  String? description, @JsonKey(name: 'parent_return_reason_id')  String? parentReturnReasonId, @JsonKey(name: 'parent_return_reason')  ReturnReason? parentReturnReason, @JsonKey(name: 'return_reason_children')  List<ReturnReason>? returnReasonChildren, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt, @JsonKey(name: 'deleted_at') DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String value,  String label,  String? description, @JsonKey(name: 'parent_return_reason_id')  String? parentReturnReasonId, @JsonKey(name: 'parent_return_reason')  ReturnReason? parentReturnReason, @JsonKey(name: 'return_reason_children')  List<ReturnReason>? returnReasonChildren, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
 switch (_that) {
 case _ReturnReason() when $default != null:
 return $default(_that.id,_that.value,_that.label,_that.description,_that.parentReturnReasonId,_that.parentReturnReason,_that.returnReasonChildren,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:

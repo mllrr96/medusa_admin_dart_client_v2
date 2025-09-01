@@ -159,7 +159,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String url, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt, @JsonKey(name: 'deleted_at') DateTime? deletedAt,  Map<String, dynamic>? metadata,  int? rank)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String url, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata,  int? rank)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ProductImage() when $default != null:
 return $default(_that.id,_that.url,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata,_that.rank);case _:
@@ -180,7 +180,7 @@ return $default(_that.id,_that.url,_that.createdAt,_that.updatedAt,_that.deleted
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String url, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt, @JsonKey(name: 'deleted_at') DateTime? deletedAt,  Map<String, dynamic>? metadata,  int? rank)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String url, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata,  int? rank)  $default,) {final _that = this;
 switch (_that) {
 case _ProductImage():
 return $default(_that.id,_that.url,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata,_that.rank);case _:
@@ -200,7 +200,7 @@ return $default(_that.id,_that.url,_that.createdAt,_that.updatedAt,_that.deleted
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String url, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt, @JsonKey(name: 'deleted_at') DateTime? deletedAt,  Map<String, dynamic>? metadata,  int? rank)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String url, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata,  int? rank)?  $default,) {final _that = this;
 switch (_that) {
 case _ProductImage() when $default != null:
 return $default(_that.id,_that.url,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata,_that.rank);case _:

@@ -168,7 +168,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String name, @JsonKey(name: 'campaign_identifier')  String campaignIdentifier,  String description,  Budget budget, @JsonKey(name: 'starts_at') DateTime? startsAt, @JsonKey(name: 'ends_at') DateTime? endsAt,  List<String>? promotions)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String name, @JsonKey(name: 'campaign_identifier')  String campaignIdentifier,  String description,  Budget budget, @JsonKey(name: 'starts_at')  DateTime? startsAt, @JsonKey(name: 'ends_at')  DateTime? endsAt,  List<String>? promotions)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _CreateCampaignReq() when $default != null:
 return $default(_that.name,_that.campaignIdentifier,_that.description,_that.budget,_that.startsAt,_that.endsAt,_that.promotions);case _:
@@ -189,7 +189,7 @@ return $default(_that.name,_that.campaignIdentifier,_that.description,_that.budg
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String name, @JsonKey(name: 'campaign_identifier')  String campaignIdentifier,  String description,  Budget budget, @JsonKey(name: 'starts_at') DateTime? startsAt, @JsonKey(name: 'ends_at') DateTime? endsAt,  List<String>? promotions)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String name, @JsonKey(name: 'campaign_identifier')  String campaignIdentifier,  String description,  Budget budget, @JsonKey(name: 'starts_at')  DateTime? startsAt, @JsonKey(name: 'ends_at')  DateTime? endsAt,  List<String>? promotions)  $default,) {final _that = this;
 switch (_that) {
 case _CreateCampaignReq():
 return $default(_that.name,_that.campaignIdentifier,_that.description,_that.budget,_that.startsAt,_that.endsAt,_that.promotions);case _:
@@ -209,7 +209,7 @@ return $default(_that.name,_that.campaignIdentifier,_that.description,_that.budg
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String name, @JsonKey(name: 'campaign_identifier')  String campaignIdentifier,  String description,  Budget budget, @JsonKey(name: 'starts_at') DateTime? startsAt, @JsonKey(name: 'ends_at') DateTime? endsAt,  List<String>? promotions)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String name, @JsonKey(name: 'campaign_identifier')  String campaignIdentifier,  String description,  Budget budget, @JsonKey(name: 'starts_at')  DateTime? startsAt, @JsonKey(name: 'ends_at')  DateTime? endsAt,  List<String>? promotions)?  $default,) {final _that = this;
 switch (_that) {
 case _CreateCampaignReq() when $default != null:
 return $default(_that.name,_that.campaignIdentifier,_that.description,_that.budget,_that.startsAt,_that.endsAt,_that.promotions);case _:

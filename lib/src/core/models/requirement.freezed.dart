@@ -160,7 +160,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String type,  String value, @JsonKey(name: 'shipping_option_id')  String shippingOptionId, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt, @JsonKey(name: 'deleted_at') DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String type,  String value, @JsonKey(name: 'shipping_option_id')  String shippingOptionId, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Requirement() when $default != null:
 return $default(_that.id,_that.type,_that.value,_that.shippingOptionId,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -181,7 +181,7 @@ return $default(_that.id,_that.type,_that.value,_that.shippingOptionId,_that.cre
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String type,  String value, @JsonKey(name: 'shipping_option_id')  String shippingOptionId, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt, @JsonKey(name: 'deleted_at') DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String type,  String value, @JsonKey(name: 'shipping_option_id')  String shippingOptionId, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
 switch (_that) {
 case _Requirement():
 return $default(_that.id,_that.type,_that.value,_that.shippingOptionId,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -201,7 +201,7 @@ return $default(_that.id,_that.type,_that.value,_that.shippingOptionId,_that.cre
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String type,  String value, @JsonKey(name: 'shipping_option_id')  String shippingOptionId, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt, @JsonKey(name: 'deleted_at') DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String type,  String value, @JsonKey(name: 'shipping_option_id')  String shippingOptionId, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
 switch (_that) {
 case _Requirement() when $default != null:
 return $default(_that.id,_that.type,_that.value,_that.shippingOptionId,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:

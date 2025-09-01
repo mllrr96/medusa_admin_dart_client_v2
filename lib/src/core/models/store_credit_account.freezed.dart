@@ -172,7 +172,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'customer_id')  String customerId, @JsonKey(name: 'currency_code')  String currencyCode,  double credits,  double debits,  double balance,  Customer customer, @JsonKey(name: 'transaction_groups')  List<TransactionGroup> transactionGroups,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'customer_id')  String customerId, @JsonKey(name: 'currency_code')  String currencyCode,  double credits,  double debits,  double balance,  Customer customer, @JsonKey(name: 'transaction_groups')  List<TransactionGroup> transactionGroups,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _StoreCreditAccount() when $default != null:
 return $default(_that.id,_that.customerId,_that.currencyCode,_that.credits,_that.debits,_that.balance,_that.customer,_that.transactionGroups,_that.metadata,_that.createdAt,_that.updatedAt);case _:
@@ -193,7 +193,7 @@ return $default(_that.id,_that.customerId,_that.currencyCode,_that.credits,_that
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'customer_id')  String customerId, @JsonKey(name: 'currency_code')  String currencyCode,  double credits,  double debits,  double balance,  Customer customer, @JsonKey(name: 'transaction_groups')  List<TransactionGroup> transactionGroups,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'customer_id')  String customerId, @JsonKey(name: 'currency_code')  String currencyCode,  double credits,  double debits,  double balance,  Customer customer, @JsonKey(name: 'transaction_groups')  List<TransactionGroup> transactionGroups,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt)  $default,) {final _that = this;
 switch (_that) {
 case _StoreCreditAccount():
 return $default(_that.id,_that.customerId,_that.currencyCode,_that.credits,_that.debits,_that.balance,_that.customer,_that.transactionGroups,_that.metadata,_that.createdAt,_that.updatedAt);case _:
@@ -213,7 +213,7 @@ return $default(_that.id,_that.customerId,_that.currencyCode,_that.credits,_that
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'customer_id')  String customerId, @JsonKey(name: 'currency_code')  String currencyCode,  double credits,  double debits,  double balance,  Customer customer, @JsonKey(name: 'transaction_groups')  List<TransactionGroup> transactionGroups,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'customer_id')  String customerId, @JsonKey(name: 'currency_code')  String currencyCode,  double credits,  double debits,  double balance,  Customer customer, @JsonKey(name: 'transaction_groups')  List<TransactionGroup> transactionGroups,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _StoreCreditAccount() when $default != null:
 return $default(_that.id,_that.customerId,_that.currencyCode,_that.credits,_that.debits,_that.balance,_that.customer,_that.transactionGroups,_that.metadata,_that.createdAt,_that.updatedAt);case _:

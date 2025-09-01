@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:medusa_admin_dart_client/src/core/models/tax_rate.dart';
+import 'package:medusa_admin_dart_client/src/features/tax_rates/data/models/tax_rate.dart';
 
 part 'tax_region.freezed.dart';
 part 'tax_region.g.dart';

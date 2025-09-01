@@ -727,7 +727,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String to,  String channel,  String template,  Map<String, dynamic>? data, @JsonKey(name: 'trigger_type')  String? triggerType, @JsonKey(name: 'resource_id')  String? resourceId, @JsonKey(name: 'resource_type')  String? resourceType, @JsonKey(name: 'receiver_id')  String? receiverId, @JsonKey(name: 'original_notification_id')  String? originalNotificationId, @JsonKey(name: 'external_id')  String? externalId, @JsonKey(name: 'provider_id')  String providerId, @JsonKey(name: 'created_at') DateTime? createdAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String to,  String channel,  String template,  Map<String, dynamic>? data, @JsonKey(name: 'trigger_type')  String? triggerType, @JsonKey(name: 'resource_id')  String? resourceId, @JsonKey(name: 'resource_type')  String? resourceType, @JsonKey(name: 'receiver_id')  String? receiverId, @JsonKey(name: 'original_notification_id')  String? originalNotificationId, @JsonKey(name: 'external_id')  String? externalId, @JsonKey(name: 'provider_id')  String providerId, @JsonKey(name: 'created_at')  DateTime? createdAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Notification() when $default != null:
 return $default(_that.id,_that.to,_that.channel,_that.template,_that.data,_that.triggerType,_that.resourceId,_that.resourceType,_that.receiverId,_that.originalNotificationId,_that.externalId,_that.providerId,_that.createdAt);case _:
@@ -748,7 +748,7 @@ return $default(_that.id,_that.to,_that.channel,_that.template,_that.data,_that.
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String to,  String channel,  String template,  Map<String, dynamic>? data, @JsonKey(name: 'trigger_type')  String? triggerType, @JsonKey(name: 'resource_id')  String? resourceId, @JsonKey(name: 'resource_type')  String? resourceType, @JsonKey(name: 'receiver_id')  String? receiverId, @JsonKey(name: 'original_notification_id')  String? originalNotificationId, @JsonKey(name: 'external_id')  String? externalId, @JsonKey(name: 'provider_id')  String providerId, @JsonKey(name: 'created_at') DateTime? createdAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String to,  String channel,  String template,  Map<String, dynamic>? data, @JsonKey(name: 'trigger_type')  String? triggerType, @JsonKey(name: 'resource_id')  String? resourceId, @JsonKey(name: 'resource_type')  String? resourceType, @JsonKey(name: 'receiver_id')  String? receiverId, @JsonKey(name: 'original_notification_id')  String? originalNotificationId, @JsonKey(name: 'external_id')  String? externalId, @JsonKey(name: 'provider_id')  String providerId, @JsonKey(name: 'created_at')  DateTime? createdAt)  $default,) {final _that = this;
 switch (_that) {
 case _Notification():
 return $default(_that.id,_that.to,_that.channel,_that.template,_that.data,_that.triggerType,_that.resourceId,_that.resourceType,_that.receiverId,_that.originalNotificationId,_that.externalId,_that.providerId,_that.createdAt);case _:
@@ -768,7 +768,7 @@ return $default(_that.id,_that.to,_that.channel,_that.template,_that.data,_that.
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String to,  String channel,  String template,  Map<String, dynamic>? data, @JsonKey(name: 'trigger_type')  String? triggerType, @JsonKey(name: 'resource_id')  String? resourceId, @JsonKey(name: 'resource_type')  String? resourceType, @JsonKey(name: 'receiver_id')  String? receiverId, @JsonKey(name: 'original_notification_id')  String? originalNotificationId, @JsonKey(name: 'external_id')  String? externalId, @JsonKey(name: 'provider_id')  String providerId, @JsonKey(name: 'created_at') DateTime? createdAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String to,  String channel,  String template,  Map<String, dynamic>? data, @JsonKey(name: 'trigger_type')  String? triggerType, @JsonKey(name: 'resource_id')  String? resourceId, @JsonKey(name: 'resource_type')  String? resourceType, @JsonKey(name: 'receiver_id')  String? receiverId, @JsonKey(name: 'original_notification_id')  String? originalNotificationId, @JsonKey(name: 'external_id')  String? externalId, @JsonKey(name: 'provider_id')  String providerId, @JsonKey(name: 'created_at')  DateTime? createdAt)?  $default,) {final _that = this;
 switch (_that) {
 case _Notification() when $default != null:
 return $default(_that.id,_that.to,_that.channel,_that.template,_that.data,_that.triggerType,_that.resourceId,_that.resourceType,_that.receiverId,_that.originalNotificationId,_that.externalId,_that.providerId,_that.createdAt);case _:

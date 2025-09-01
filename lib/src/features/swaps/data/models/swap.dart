@@ -1,12 +1,12 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:medusa_admin_dart_client/src/features/orders/data/models/order.dart';
+import 'package:medusa_admin_dart_client/src/core/models/cart.dart';
+import 'package:medusa_admin_dart_client/src/core/models/address.dart';
+import 'package:medusa_admin_dart_client/src/core/models/line_item.dart';
+import 'package:medusa_admin_dart_client/src/core/models/fulfillment.dart';
+import 'package:medusa_admin_dart_client/src/core/models/payment.dart';
+import 'package:medusa_admin_dart_client/src/core/models/shipping_method.dart';
 
-import 'address.dart';
-import 'cart.dart';
-import 'fulfillment.dart';
-import 'line_item.dart';
-import 'payment.dart';
-import 'shipping_method.dart';
 
 part 'swap.freezed.dart';
 part 'swap.g.dart';

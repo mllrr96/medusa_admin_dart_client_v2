@@ -173,7 +173,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'resource_type')  String resourceType, @JsonKey(name: 'resource_id')  String resourceId,  String value, @JsonKey(name: 'author_id')  String? authorId,  User? author, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt, @JsonKey(name: 'deleted_at') DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'resource_type')  String resourceType, @JsonKey(name: 'resource_id')  String resourceId,  String value, @JsonKey(name: 'author_id')  String? authorId,  User? author, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Note() when $default != null:
 return $default(_that.id,_that.resourceType,_that.resourceId,_that.value,_that.authorId,_that.author,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -194,7 +194,7 @@ return $default(_that.id,_that.resourceType,_that.resourceId,_that.value,_that.a
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'resource_type')  String resourceType, @JsonKey(name: 'resource_id')  String resourceId,  String value, @JsonKey(name: 'author_id')  String? authorId,  User? author, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt, @JsonKey(name: 'deleted_at') DateTime? deletedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'resource_type')  String resourceType, @JsonKey(name: 'resource_id')  String resourceId,  String value, @JsonKey(name: 'author_id')  String? authorId,  User? author, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)  $default,) {final _that = this;
 switch (_that) {
 case _Note():
 return $default(_that.id,_that.resourceType,_that.resourceId,_that.value,_that.authorId,_that.author,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -214,7 +214,7 @@ return $default(_that.id,_that.resourceType,_that.resourceId,_that.value,_that.a
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'resource_type')  String resourceType, @JsonKey(name: 'resource_id')  String resourceId,  String value, @JsonKey(name: 'author_id')  String? authorId,  User? author, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt, @JsonKey(name: 'deleted_at') DateTime? deletedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'resource_type')  String resourceType, @JsonKey(name: 'resource_id')  String resourceId,  String value, @JsonKey(name: 'author_id')  String? authorId,  User? author, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _Note() when $default != null:
 return $default(_that.id,_that.resourceType,_that.resourceId,_that.value,_that.authorId,_that.author,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:

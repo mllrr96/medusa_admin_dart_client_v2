@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:medusa_admin_dart_client/src/core/models/product_variant.dart';
+import 'package:medusa_admin_dart_client/src/features/products/data/models/product_variant.dart';
 import 'package:medusa_admin_dart_client/src/core/models/region.dart';
 
 part 'money_amount.freezed.dart';

@@ -169,7 +169,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  String type,  StockLocation location, @JsonKey(name: 'service_zones')  List<ServiceZone> serviceZones, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt, @JsonKey(name: 'deleted_at') DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  String type,  StockLocation location, @JsonKey(name: 'service_zones')  List<ServiceZone> serviceZones, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _FulfillmentSet() when $default != null:
 return $default(_that.id,_that.name,_that.type,_that.location,_that.serviceZones,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -190,7 +190,7 @@ return $default(_that.id,_that.name,_that.type,_that.location,_that.serviceZones
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  String type,  StockLocation location, @JsonKey(name: 'service_zones')  List<ServiceZone> serviceZones, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt, @JsonKey(name: 'deleted_at') DateTime? deletedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  String type,  StockLocation location, @JsonKey(name: 'service_zones')  List<ServiceZone> serviceZones, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)  $default,) {final _that = this;
 switch (_that) {
 case _FulfillmentSet():
 return $default(_that.id,_that.name,_that.type,_that.location,_that.serviceZones,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -210,7 +210,7 @@ return $default(_that.id,_that.name,_that.type,_that.location,_that.serviceZones
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  String type,  StockLocation location, @JsonKey(name: 'service_zones')  List<ServiceZone> serviceZones, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt, @JsonKey(name: 'deleted_at') DateTime? deletedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  String type,  StockLocation location, @JsonKey(name: 'service_zones')  List<ServiceZone> serviceZones, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _FulfillmentSet() when $default != null:
 return $default(_that.id,_that.name,_that.type,_that.location,_that.serviceZones,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:

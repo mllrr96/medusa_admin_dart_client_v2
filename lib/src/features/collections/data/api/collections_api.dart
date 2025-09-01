@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
-import 'package:medusa_admin_dart_client/medusa_admin_dart_client_v2.dart';
 import 'package:retrofit/retrofit.dart';
+
+import '../models/models.dart';
 
 part 'collections_api.g.dart';
 
@@ -9,7 +10,7 @@ abstract class CollectionsApi {
   factory CollectionsApi(Dio dio, {String baseUrl}) = _CollectionsApi;
 
   @GET('/admin/collections')
-  Future<List<ProductCollection>> retrieveAll({
+  Future<CollectionListRes> retrieveAll({
     @Queries() Map<String, dynamic>? query,
   });
 

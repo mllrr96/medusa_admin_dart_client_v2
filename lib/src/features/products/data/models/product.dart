@@ -3,10 +3,10 @@ import 'package:medusa_admin_dart_client/src/features/collections/data/models/pr
 import 'package:medusa_admin_dart_client/src/features/products/data/models/product_category.dart';
 import 'package:medusa_admin_dart_client/src/features/products/data/models/product_image.dart';
 import 'package:medusa_admin_dart_client/src/features/products/data/models/product_option.dart';
-import 'package:medusa_admin_dart_client/src/features/products/data/models/product_tag.dart';
-import 'package:medusa_admin_dart_client/src/features/products/data/models/product_type.dart';
+import 'package:medusa_admin_dart_client/src/features/product_tags/data/models/product_tag.dart';
 import 'package:medusa_admin_dart_client/src/features/products/data/models/product_variant.dart';
 import 'package:medusa_admin_dart_client/src/features/sales_channels/data/models/sales_channel.dart';
+import 'package:medusa_admin_dart_client/src/core/models/product_type.dart';
 import 'package:medusa_admin_dart_client/src/features/shipping_profiles/data/models/shipping_profile.dart';
 
 part 'product.freezed.dart';

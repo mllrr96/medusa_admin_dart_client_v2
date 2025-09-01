@@ -182,7 +182,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'line_item_id')  String? lineItemId,  String locationId,  int quantity,  String inventoryItemId,  String? description,  Map<String, dynamic>? metadata, @JsonKey(name: 'external_id')  String? externalId, @JsonKey(name: 'created_by')  String? createdBy, @JsonKey(name: 'deleted_at') DateTime? deletedAt, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt, @JsonKey(name: 'inventory_item')  InventoryItem? inventoryItem)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'line_item_id')  String? lineItemId,  String locationId,  int quantity,  String inventoryItemId,  String? description,  Map<String, dynamic>? metadata, @JsonKey(name: 'external_id')  String? externalId, @JsonKey(name: 'created_by')  String? createdBy, @JsonKey(name: 'deleted_at')  DateTime? deletedAt, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'inventory_item')  InventoryItem? inventoryItem)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Reservation() when $default != null:
 return $default(_that.id,_that.lineItemId,_that.locationId,_that.quantity,_that.inventoryItemId,_that.description,_that.metadata,_that.externalId,_that.createdBy,_that.deletedAt,_that.createdAt,_that.updatedAt,_that.inventoryItem);case _:
@@ -203,7 +203,7 @@ return $default(_that.id,_that.lineItemId,_that.locationId,_that.quantity,_that.
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'line_item_id')  String? lineItemId,  String locationId,  int quantity,  String inventoryItemId,  String? description,  Map<String, dynamic>? metadata, @JsonKey(name: 'external_id')  String? externalId, @JsonKey(name: 'created_by')  String? createdBy, @JsonKey(name: 'deleted_at') DateTime? deletedAt, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt, @JsonKey(name: 'inventory_item')  InventoryItem? inventoryItem)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'line_item_id')  String? lineItemId,  String locationId,  int quantity,  String inventoryItemId,  String? description,  Map<String, dynamic>? metadata, @JsonKey(name: 'external_id')  String? externalId, @JsonKey(name: 'created_by')  String? createdBy, @JsonKey(name: 'deleted_at')  DateTime? deletedAt, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'inventory_item')  InventoryItem? inventoryItem)  $default,) {final _that = this;
 switch (_that) {
 case _Reservation():
 return $default(_that.id,_that.lineItemId,_that.locationId,_that.quantity,_that.inventoryItemId,_that.description,_that.metadata,_that.externalId,_that.createdBy,_that.deletedAt,_that.createdAt,_that.updatedAt,_that.inventoryItem);case _:
@@ -223,7 +223,7 @@ return $default(_that.id,_that.lineItemId,_that.locationId,_that.quantity,_that.
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'line_item_id')  String? lineItemId,  String locationId,  int quantity,  String inventoryItemId,  String? description,  Map<String, dynamic>? metadata, @JsonKey(name: 'external_id')  String? externalId, @JsonKey(name: 'created_by')  String? createdBy, @JsonKey(name: 'deleted_at') DateTime? deletedAt, @JsonKey(name: 'created_at') DateTime? createdAt, @JsonKey(name: 'updated_at') DateTime? updatedAt, @JsonKey(name: 'inventory_item')  InventoryItem? inventoryItem)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'line_item_id')  String? lineItemId,  String locationId,  int quantity,  String inventoryItemId,  String? description,  Map<String, dynamic>? metadata, @JsonKey(name: 'external_id')  String? externalId, @JsonKey(name: 'created_by')  String? createdBy, @JsonKey(name: 'deleted_at')  DateTime? deletedAt, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'inventory_item')  InventoryItem? inventoryItem)?  $default,) {final _that = this;
 switch (_that) {
 case _Reservation() when $default != null:
 return $default(_that.id,_that.lineItemId,_that.locationId,_that.quantity,_that.inventoryItemId,_that.description,_that.metadata,_that.externalId,_that.createdBy,_that.deletedAt,_that.createdAt,_that.updatedAt,_that.inventoryItem);case _:
