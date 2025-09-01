@@ -38,11 +38,8 @@ import 'package:medusa_admin_dart_client/src/features/price_lists/data/api/price
 import 'package:medusa_admin_dart_client/src/features/price_preferences/data/api/price_preferences_api.dart';
 import 'package:medusa_admin_dart_client/src/features/price_preferences/data/repository/price_preferences_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/product_categories/data/api/product_categories_api.dart';
-import 'package:medusa_admin_dart_client/src/features/product_categories/data/repository/product_categories_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/product_tags/data/api/product_tags_api.dart';
-import 'package:medusa_admin_dart_client/src/features/product_tags/data/repository/product_tags_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/product_types/data/api/product_types_api.dart';
-import 'package:medusa_admin_dart_client/src/features/product_types/data/repository/product_types_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/product_variants/data/api/product_variants_api.dart';
 import 'package:medusa_admin_dart_client/src/features/product_variants/data/repository/product_variants_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/products/data/api/products_api.dart';
