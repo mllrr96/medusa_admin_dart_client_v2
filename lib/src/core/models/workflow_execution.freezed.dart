@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$WorkflowExecution {
 
- String get id; String get workflowId; String get transactionId; Map<String, dynamic> get execution; Map<String, dynamic> get context; String get state; DateTime get createdAt; DateTime get updatedAt; DateTime? get deletedAt;
+ String get id; String get workflowId; String get transactionId; Map<String, dynamic> get execution; Map<String, dynamic> get context; String get state; DateTime? get createdAt; DateTime? get updatedAt; DateTime? get deletedAt;
 /// Create a copy of WorkflowExecution
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $WorkflowExecutionCopyWith<$Res>  {
   factory $WorkflowExecutionCopyWith(WorkflowExecution value, $Res Function(WorkflowExecution) _then) = _$WorkflowExecutionCopyWithImpl;
 @useResult
 $Res call({
- String id, String workflowId, String transactionId, Map<String, dynamic> execution, Map<String, dynamic> context, String state, DateTime createdAt, DateTime updatedAt, DateTime? deletedAt
+ String id, String workflowId, String transactionId, Map<String, dynamic> execution, Map<String, dynamic> context, String state, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt
 });
 
 
@@ -65,7 +65,7 @@ class _$WorkflowExecutionCopyWithImpl<$Res>
 
 /// Create a copy of WorkflowExecution
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? workflowId = null,Object? transactionId = null,Object? execution = null,Object? context = null,Object? state = null,Object? createdAt = null,Object? updatedAt = null,Object? deletedAt = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? workflowId = null,Object? transactionId = null,Object? execution = null,Object? context = null,Object? state = null,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,workflowId: null == workflowId ? _self.workflowId : workflowId // ignore: cast_nullable_to_non_nullable
@@ -73,9 +73,9 @@ as String,transactionId: null == transactionId ? _self.transactionId : transacti
 as String,execution: null == execution ? _self.execution : execution // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>,context: null == context ? _self.context : context // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>,state: null == state ? _self.state : state // ignore: cast_nullable_to_non_nullable
-as String,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
+as String,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,
   ));
 }
@@ -161,7 +161,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String workflowId,  String transactionId,  Map<String, dynamic> execution,  Map<String, dynamic> context,  String state,  DateTime createdAt,  DateTime updatedAt,  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String workflowId,  String transactionId,  Map<String, dynamic> execution,  Map<String, dynamic> context,  String state,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _WorkflowExecution() when $default != null:
 return $default(_that.id,_that.workflowId,_that.transactionId,_that.execution,_that.context,_that.state,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -182,7 +182,7 @@ return $default(_that.id,_that.workflowId,_that.transactionId,_that.execution,_t
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String workflowId,  String transactionId,  Map<String, dynamic> execution,  Map<String, dynamic> context,  String state,  DateTime createdAt,  DateTime updatedAt,  DateTime? deletedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String workflowId,  String transactionId,  Map<String, dynamic> execution,  Map<String, dynamic> context,  String state,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt)  $default,) {final _that = this;
 switch (_that) {
 case _WorkflowExecution():
 return $default(_that.id,_that.workflowId,_that.transactionId,_that.execution,_that.context,_that.state,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -202,7 +202,7 @@ return $default(_that.id,_that.workflowId,_that.transactionId,_that.execution,_t
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String workflowId,  String transactionId,  Map<String, dynamic> execution,  Map<String, dynamic> context,  String state,  DateTime createdAt,  DateTime updatedAt,  DateTime? deletedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String workflowId,  String transactionId,  Map<String, dynamic> execution,  Map<String, dynamic> context,  String state,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _WorkflowExecution() when $default != null:
 return $default(_that.id,_that.workflowId,_that.transactionId,_that.execution,_that.context,_that.state,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -217,7 +217,7 @@ return $default(_that.id,_that.workflowId,_that.transactionId,_that.execution,_t
 @JsonSerializable()
 
 class _WorkflowExecution implements WorkflowExecution {
-  const _WorkflowExecution({required this.id, required this.workflowId, required this.transactionId, required final  Map<String, dynamic> execution, required final  Map<String, dynamic> context, required this.state, required this.createdAt, required this.updatedAt, this.deletedAt}): _execution = execution,_context = context;
+  const _WorkflowExecution({required this.id, required this.workflowId, required this.transactionId, required final  Map<String, dynamic> execution, required final  Map<String, dynamic> context, required this.state, this.createdAt, this.updatedAt, this.deletedAt}): _execution = execution,_context = context;
   factory _WorkflowExecution.fromJson(Map<String, dynamic> json) => _$WorkflowExecutionFromJson(json);
 
 @override final  String id;
@@ -238,8 +238,8 @@ class _WorkflowExecution implements WorkflowExecution {
 }
 
 @override final  String state;
-@override final  DateTime createdAt;
-@override final  DateTime updatedAt;
+@override final  DateTime? createdAt;
+@override final  DateTime? updatedAt;
 @override final  DateTime? deletedAt;
 
 /// Create a copy of WorkflowExecution
@@ -275,7 +275,7 @@ abstract mixin class _$WorkflowExecutionCopyWith<$Res> implements $WorkflowExecu
   factory _$WorkflowExecutionCopyWith(_WorkflowExecution value, $Res Function(_WorkflowExecution) _then) = __$WorkflowExecutionCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String workflowId, String transactionId, Map<String, dynamic> execution, Map<String, dynamic> context, String state, DateTime createdAt, DateTime updatedAt, DateTime? deletedAt
+ String id, String workflowId, String transactionId, Map<String, dynamic> execution, Map<String, dynamic> context, String state, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt
 });
 
 
@@ -292,7 +292,7 @@ class __$WorkflowExecutionCopyWithImpl<$Res>
 
 /// Create a copy of WorkflowExecution
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? workflowId = null,Object? transactionId = null,Object? execution = null,Object? context = null,Object? state = null,Object? createdAt = null,Object? updatedAt = null,Object? deletedAt = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? workflowId = null,Object? transactionId = null,Object? execution = null,Object? context = null,Object? state = null,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
   return _then(_WorkflowExecution(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,workflowId: null == workflowId ? _self.workflowId : workflowId // ignore: cast_nullable_to_non_nullable
@@ -300,9 +300,9 @@ as String,transactionId: null == transactionId ? _self.transactionId : transacti
 as String,execution: null == execution ? _self._execution : execution // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>,context: null == context ? _self._context : context // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>,state: null == state ? _self.state : state // ignore: cast_nullable_to_non_nullable
-as String,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
+as String,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,
   ));
 }

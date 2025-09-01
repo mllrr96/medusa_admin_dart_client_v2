@@ -18,8 +18,12 @@ _DraftOrderPreviewShippingMethod _$DraftOrderPreviewShippingMethodFromJson(
   shippingOptionId: json['shipping_option_id'] as String,
   data: json['data'] as Map<String, dynamic>,
   metadata: json['metadata'] as Map<String, dynamic>?,
-  createdAt: DateTime.parse(json['created_at'] as String),
-  updatedAt: DateTime.parse(json['updated_at'] as String),
+  createdAt: json['created_at'] == null
+      ? null
+      : DateTime.parse(json['created_at'] as String),
+  updatedAt: json['updated_at'] == null
+      ? null
+      : DateTime.parse(json['updated_at'] as String),
   originalTotal: json['original_total'],
   originalSubtotal: json['original_subtotal'],
   originalTaxTotal: json['original_tax_total'],
@@ -28,6 +32,22 @@ _DraftOrderPreviewShippingMethod _$DraftOrderPreviewShippingMethodFromJson(
   taxTotal: json['tax_total'],
   discountTotal: json['discount_total'],
   discountTaxTotal: json['discount_tax_total'],
+  taxLines: (json['tax_lines'] as List<dynamic>?)
+      ?.map(
+        (e) =>
+            BaseOrderShippingMethodTaxLine.fromJson(e as Map<String, dynamic>),
+      )
+      .toList(),
+  adjustments: (json['adjustments'] as List<dynamic>?)
+      ?.map(
+        (e) => BaseOrderShippingMethodAdjustment.fromJson(
+          e as Map<String, dynamic>,
+        ),
+      )
+      .toList(),
+  actions: (json['actions'] as List<dynamic>?)
+      ?.map((e) => OrderChangeAction.fromJson(e as Map<String, dynamic>))
+      .toList(),
 );
 
 Map<String, dynamic> _$DraftOrderPreviewShippingMethodToJson(
@@ -42,8 +62,8 @@ Map<String, dynamic> _$DraftOrderPreviewShippingMethodToJson(
   'shipping_option_id': instance.shippingOptionId,
   'data': instance.data,
   'metadata': instance.metadata,
-  'created_at': instance.createdAt.toIso8601String(),
-  'updated_at': instance.updatedAt.toIso8601String(),
+  'created_at': instance.createdAt?.toIso8601String(),
+  'updated_at': instance.updatedAt?.toIso8601String(),
   'original_total': instance.originalTotal,
   'original_subtotal': instance.originalSubtotal,
   'original_tax_total': instance.originalTaxTotal,
@@ -52,4 +72,7 @@ Map<String, dynamic> _$DraftOrderPreviewShippingMethodToJson(
   'tax_total': instance.taxTotal,
   'discount_total': instance.discountTotal,
   'discount_tax_total': instance.discountTaxTotal,
+  'tax_lines': instance.taxLines,
+  'adjustments': instance.adjustments,
+  'actions': instance.actions,
 };

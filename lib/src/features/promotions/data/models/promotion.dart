@@ -36,10 +36,10 @@ abstract class Promotion with _$Promotion {
     @JsonKey(name: 'is_tax_inclusive') bool? isTaxInclusive,
 
     /// The date the promotion was created.
-    @JsonKey(name: 'created_at') required DateTime createdAt,
+    @JsonKey(name: 'created_at')  DateTime? createdAt,
 
     /// The date the promotion was updated.
-    @JsonKey(name: 'updated_at') required DateTime updatedAt,
+    @JsonKey(name: 'updated_at')  DateTime? updatedAt,
 
     /// The date the promotion was deleted.
     @JsonKey(name: 'deleted_at') DateTime? deletedAt,

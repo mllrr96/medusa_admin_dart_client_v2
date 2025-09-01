@@ -1,16 +1,18 @@
-import './exchange.dart';
 
-class ExchangeResponse {
-  final Exchange? exchange;
+import 'package:freezed_annotation/freezed_annotation.dart';
 
-  ExchangeResponse({
-    this.exchange,
-  });
+import 'exchange.dart';
 
-  factory ExchangeResponse.fromJson(Map<String, dynamic> json) {
-    return ExchangeResponse(
-      exchange:
-          json['exchange'] != null ? Exchange.fromJson(json['exchange']) : null,
-    );
-  }
+part 'exchange_response.freezed.dart';
+part 'exchange_response.g.dart';
+
+@freezed
+abstract class ExchangeResponse with _$ExchangeResponse {
+  const factory ExchangeResponse({
+    required Exchange exchange,
+  }) = _ExchangeResponse;
+
+  factory ExchangeResponse.fromJson(Map<String, dynamic> json) =>
+      _$ExchangeResponseFromJson(json);
 }
+

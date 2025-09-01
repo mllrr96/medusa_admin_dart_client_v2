@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$FulfillmentSet {
 
- String get id; String get name; String get type; StockLocation get location; List<ServiceZone> get serviceZones; DateTime get createdAt; DateTime get updatedAt; DateTime? get deletedAt;
+ String get id; String get name; String get type; StockLocation get location; List<ServiceZone> get serviceZones; DateTime? get createdAt; DateTime? get updatedAt; DateTime? get deletedAt;
 /// Create a copy of FulfillmentSet
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $FulfillmentSetCopyWith<$Res>  {
   factory $FulfillmentSetCopyWith(FulfillmentSet value, $Res Function(FulfillmentSet) _then) = _$FulfillmentSetCopyWithImpl;
 @useResult
 $Res call({
- String id, String name, String type, StockLocation location, List<ServiceZone> serviceZones, DateTime createdAt, DateTime updatedAt, DateTime? deletedAt
+ String id, String name, String type, StockLocation location, List<ServiceZone> serviceZones, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt
 });
 
 
@@ -65,16 +65,16 @@ class _$FulfillmentSetCopyWithImpl<$Res>
 
 /// Create a copy of FulfillmentSet
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? type = null,Object? location = null,Object? serviceZones = null,Object? createdAt = null,Object? updatedAt = null,Object? deletedAt = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? type = null,Object? location = null,Object? serviceZones = null,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
 as String,location: null == location ? _self.location : location // ignore: cast_nullable_to_non_nullable
 as StockLocation,serviceZones: null == serviceZones ? _self.serviceZones : serviceZones // ignore: cast_nullable_to_non_nullable
-as List<ServiceZone>,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
+as List<ServiceZone>,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,
   ));
 }
@@ -169,7 +169,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  String type,  StockLocation location,  List<ServiceZone> serviceZones,  DateTime createdAt,  DateTime updatedAt,  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  String type,  StockLocation location,  List<ServiceZone> serviceZones,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _FulfillmentSet() when $default != null:
 return $default(_that.id,_that.name,_that.type,_that.location,_that.serviceZones,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -190,7 +190,7 @@ return $default(_that.id,_that.name,_that.type,_that.location,_that.serviceZones
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  String type,  StockLocation location,  List<ServiceZone> serviceZones,  DateTime createdAt,  DateTime updatedAt,  DateTime? deletedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  String type,  StockLocation location,  List<ServiceZone> serviceZones,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt)  $default,) {final _that = this;
 switch (_that) {
 case _FulfillmentSet():
 return $default(_that.id,_that.name,_that.type,_that.location,_that.serviceZones,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -210,7 +210,7 @@ return $default(_that.id,_that.name,_that.type,_that.location,_that.serviceZones
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  String type,  StockLocation location,  List<ServiceZone> serviceZones,  DateTime createdAt,  DateTime updatedAt,  DateTime? deletedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  String type,  StockLocation location,  List<ServiceZone> serviceZones,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _FulfillmentSet() when $default != null:
 return $default(_that.id,_that.name,_that.type,_that.location,_that.serviceZones,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -225,7 +225,7 @@ return $default(_that.id,_that.name,_that.type,_that.location,_that.serviceZones
 @JsonSerializable()
 
 class _FulfillmentSet implements FulfillmentSet {
-  const _FulfillmentSet({required this.id, required this.name, required this.type, required this.location, required final  List<ServiceZone> serviceZones, required this.createdAt, required this.updatedAt, this.deletedAt}): _serviceZones = serviceZones;
+  const _FulfillmentSet({required this.id, required this.name, required this.type, required this.location, required final  List<ServiceZone> serviceZones, this.createdAt, this.updatedAt, this.deletedAt}): _serviceZones = serviceZones;
   factory _FulfillmentSet.fromJson(Map<String, dynamic> json) => _$FulfillmentSetFromJson(json);
 
 @override final  String id;
@@ -239,8 +239,8 @@ class _FulfillmentSet implements FulfillmentSet {
   return EqualUnmodifiableListView(_serviceZones);
 }
 
-@override final  DateTime createdAt;
-@override final  DateTime updatedAt;
+@override final  DateTime? createdAt;
+@override final  DateTime? updatedAt;
 @override final  DateTime? deletedAt;
 
 /// Create a copy of FulfillmentSet
@@ -276,7 +276,7 @@ abstract mixin class _$FulfillmentSetCopyWith<$Res> implements $FulfillmentSetCo
   factory _$FulfillmentSetCopyWith(_FulfillmentSet value, $Res Function(_FulfillmentSet) _then) = __$FulfillmentSetCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String name, String type, StockLocation location, List<ServiceZone> serviceZones, DateTime createdAt, DateTime updatedAt, DateTime? deletedAt
+ String id, String name, String type, StockLocation location, List<ServiceZone> serviceZones, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt
 });
 
 
@@ -293,16 +293,16 @@ class __$FulfillmentSetCopyWithImpl<$Res>
 
 /// Create a copy of FulfillmentSet
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? type = null,Object? location = null,Object? serviceZones = null,Object? createdAt = null,Object? updatedAt = null,Object? deletedAt = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? type = null,Object? location = null,Object? serviceZones = null,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
   return _then(_FulfillmentSet(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
 as String,location: null == location ? _self.location : location // ignore: cast_nullable_to_non_nullable
 as StockLocation,serviceZones: null == serviceZones ? _self._serviceZones : serviceZones // ignore: cast_nullable_to_non_nullable
-as List<ServiceZone>,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
+as List<ServiceZone>,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,
   ));
 }

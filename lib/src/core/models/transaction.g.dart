@@ -17,8 +17,12 @@ _Transaction _$TransactionFromJson(Map<String, dynamic> json) => _Transaction(
   reference: json['reference'] as String?,
   referenceId: json['referenceId'] as String?,
   metadata: json['metadata'] as Map<String, dynamic>?,
-  createdAt: DateTime.parse(json['createdAt'] as String),
-  updatedAt: DateTime.parse(json['updatedAt'] as String),
+  createdAt: json['createdAt'] == null
+      ? null
+      : DateTime.parse(json['createdAt'] as String),
+  updatedAt: json['updatedAt'] == null
+      ? null
+      : DateTime.parse(json['updatedAt'] as String),
 );
 
 Map<String, dynamic> _$TransactionToJson(_Transaction instance) =>
@@ -33,6 +37,6 @@ Map<String, dynamic> _$TransactionToJson(_Transaction instance) =>
       'reference': instance.reference,
       'referenceId': instance.referenceId,
       'metadata': instance.metadata,
-      'createdAt': instance.createdAt.toIso8601String(),
-      'updatedAt': instance.updatedAt.toIso8601String(),
+      'createdAt': instance.createdAt?.toIso8601String(),
+      'updatedAt': instance.updatedAt?.toIso8601String(),
     };

@@ -1,20 +1,19 @@
-import './exchange.dart';
-import '../../../../core/models/order.dart';
 
-class ExchangeOrderResponse {
-  final Order? order;
-  final Exchange? exchange;
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:medusa_admin_dart_client/src/features/orders/data/models/order.dart';
 
-  ExchangeOrderResponse({
-    this.order,
-    this.exchange,
-  });
+import 'exchange.dart';
 
-  factory ExchangeOrderResponse.fromJson(Map<String, dynamic> json) {
-    return ExchangeOrderResponse(
-      order: json['order'] != null ? Order.fromJson(json['order']) : null,
-      exchange:
-          json['exchange'] != null ? Exchange.fromJson(json['exchange']) : null,
-    );
-  }
+part 'exchange_order_response.freezed.dart';
+part 'exchange_order_response.g.dart';
+
+@freezed
+abstract class ExchangeOrderResponse with _$ExchangeOrderResponse {
+  const factory ExchangeOrderResponse({
+    required Order order,
+    required Exchange exchange,
+  }) = _ExchangeOrderResponse;
+
+  factory ExchangeOrderResponse.fromJson(Map<String, dynamic> json) =>
+      _$ExchangeOrderResponseFromJson(json);
 }

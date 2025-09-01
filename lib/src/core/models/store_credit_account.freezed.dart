@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$StoreCreditAccount {
 
- String get id; String get customerId; String get currencyCode; double get credits; double get debits; double get balance; Customer get customer; List<TransactionGroup> get transactionGroups; Map<String, dynamic>? get metadata; DateTime get createdAt; DateTime get updatedAt;
+ String get id; String get customerId; String get currencyCode; double get credits; double get debits; double get balance; Customer get customer; List<TransactionGroup> get transactionGroups; Map<String, dynamic>? get metadata; DateTime? get createdAt; DateTime? get updatedAt;
 /// Create a copy of StoreCreditAccount
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $StoreCreditAccountCopyWith<$Res>  {
   factory $StoreCreditAccountCopyWith(StoreCreditAccount value, $Res Function(StoreCreditAccount) _then) = _$StoreCreditAccountCopyWithImpl;
 @useResult
 $Res call({
- String id, String customerId, String currencyCode, double credits, double debits, double balance, Customer customer, List<TransactionGroup> transactionGroups, Map<String, dynamic>? metadata, DateTime createdAt, DateTime updatedAt
+ String id, String customerId, String currencyCode, double credits, double debits, double balance, Customer customer, List<TransactionGroup> transactionGroups, Map<String, dynamic>? metadata, DateTime? createdAt, DateTime? updatedAt
 });
 
 
@@ -65,7 +65,7 @@ class _$StoreCreditAccountCopyWithImpl<$Res>
 
 /// Create a copy of StoreCreditAccount
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? customerId = null,Object? currencyCode = null,Object? credits = null,Object? debits = null,Object? balance = null,Object? customer = null,Object? transactionGroups = null,Object? metadata = freezed,Object? createdAt = null,Object? updatedAt = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? customerId = null,Object? currencyCode = null,Object? credits = null,Object? debits = null,Object? balance = null,Object? customer = null,Object? transactionGroups = null,Object? metadata = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,customerId: null == customerId ? _self.customerId : customerId // ignore: cast_nullable_to_non_nullable
@@ -76,9 +76,9 @@ as double,balance: null == balance ? _self.balance : balance // ignore: cast_nul
 as double,customer: null == customer ? _self.customer : customer // ignore: cast_nullable_to_non_nullable
 as Customer,transactionGroups: null == transactionGroups ? _self.transactionGroups : transactionGroups // ignore: cast_nullable_to_non_nullable
 as List<TransactionGroup>,metadata: freezed == metadata ? _self.metadata : metadata // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,
+as Map<String, dynamic>?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,
   ));
 }
 /// Create a copy of StoreCreditAccount
@@ -172,7 +172,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String customerId,  String currencyCode,  double credits,  double debits,  double balance,  Customer customer,  List<TransactionGroup> transactionGroups,  Map<String, dynamic>? metadata,  DateTime createdAt,  DateTime updatedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String customerId,  String currencyCode,  double credits,  double debits,  double balance,  Customer customer,  List<TransactionGroup> transactionGroups,  Map<String, dynamic>? metadata,  DateTime? createdAt,  DateTime? updatedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _StoreCreditAccount() when $default != null:
 return $default(_that.id,_that.customerId,_that.currencyCode,_that.credits,_that.debits,_that.balance,_that.customer,_that.transactionGroups,_that.metadata,_that.createdAt,_that.updatedAt);case _:
@@ -193,7 +193,7 @@ return $default(_that.id,_that.customerId,_that.currencyCode,_that.credits,_that
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String customerId,  String currencyCode,  double credits,  double debits,  double balance,  Customer customer,  List<TransactionGroup> transactionGroups,  Map<String, dynamic>? metadata,  DateTime createdAt,  DateTime updatedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String customerId,  String currencyCode,  double credits,  double debits,  double balance,  Customer customer,  List<TransactionGroup> transactionGroups,  Map<String, dynamic>? metadata,  DateTime? createdAt,  DateTime? updatedAt)  $default,) {final _that = this;
 switch (_that) {
 case _StoreCreditAccount():
 return $default(_that.id,_that.customerId,_that.currencyCode,_that.credits,_that.debits,_that.balance,_that.customer,_that.transactionGroups,_that.metadata,_that.createdAt,_that.updatedAt);case _:
@@ -213,7 +213,7 @@ return $default(_that.id,_that.customerId,_that.currencyCode,_that.credits,_that
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String customerId,  String currencyCode,  double credits,  double debits,  double balance,  Customer customer,  List<TransactionGroup> transactionGroups,  Map<String, dynamic>? metadata,  DateTime createdAt,  DateTime updatedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String customerId,  String currencyCode,  double credits,  double debits,  double balance,  Customer customer,  List<TransactionGroup> transactionGroups,  Map<String, dynamic>? metadata,  DateTime? createdAt,  DateTime? updatedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _StoreCreditAccount() when $default != null:
 return $default(_that.id,_that.customerId,_that.currencyCode,_that.credits,_that.debits,_that.balance,_that.customer,_that.transactionGroups,_that.metadata,_that.createdAt,_that.updatedAt);case _:
@@ -228,7 +228,7 @@ return $default(_that.id,_that.customerId,_that.currencyCode,_that.credits,_that
 @JsonSerializable()
 
 class _StoreCreditAccount implements StoreCreditAccount {
-  const _StoreCreditAccount({required this.id, required this.customerId, required this.currencyCode, required this.credits, required this.debits, required this.balance, required this.customer, required final  List<TransactionGroup> transactionGroups, final  Map<String, dynamic>? metadata, required this.createdAt, required this.updatedAt}): _transactionGroups = transactionGroups,_metadata = metadata;
+  const _StoreCreditAccount({required this.id, required this.customerId, required this.currencyCode, required this.credits, required this.debits, required this.balance, required this.customer, required final  List<TransactionGroup> transactionGroups, final  Map<String, dynamic>? metadata, this.createdAt, this.updatedAt}): _transactionGroups = transactionGroups,_metadata = metadata;
   factory _StoreCreditAccount.fromJson(Map<String, dynamic> json) => _$StoreCreditAccountFromJson(json);
 
 @override final  String id;
@@ -254,8 +254,8 @@ class _StoreCreditAccount implements StoreCreditAccount {
   return EqualUnmodifiableMapView(value);
 }
 
-@override final  DateTime createdAt;
-@override final  DateTime updatedAt;
+@override final  DateTime? createdAt;
+@override final  DateTime? updatedAt;
 
 /// Create a copy of StoreCreditAccount
 /// with the given fields replaced by the non-null parameter values.
@@ -290,7 +290,7 @@ abstract mixin class _$StoreCreditAccountCopyWith<$Res> implements $StoreCreditA
   factory _$StoreCreditAccountCopyWith(_StoreCreditAccount value, $Res Function(_StoreCreditAccount) _then) = __$StoreCreditAccountCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String customerId, String currencyCode, double credits, double debits, double balance, Customer customer, List<TransactionGroup> transactionGroups, Map<String, dynamic>? metadata, DateTime createdAt, DateTime updatedAt
+ String id, String customerId, String currencyCode, double credits, double debits, double balance, Customer customer, List<TransactionGroup> transactionGroups, Map<String, dynamic>? metadata, DateTime? createdAt, DateTime? updatedAt
 });
 
 
@@ -307,7 +307,7 @@ class __$StoreCreditAccountCopyWithImpl<$Res>
 
 /// Create a copy of StoreCreditAccount
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? customerId = null,Object? currencyCode = null,Object? credits = null,Object? debits = null,Object? balance = null,Object? customer = null,Object? transactionGroups = null,Object? metadata = freezed,Object? createdAt = null,Object? updatedAt = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? customerId = null,Object? currencyCode = null,Object? credits = null,Object? debits = null,Object? balance = null,Object? customer = null,Object? transactionGroups = null,Object? metadata = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,}) {
   return _then(_StoreCreditAccount(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,customerId: null == customerId ? _self.customerId : customerId // ignore: cast_nullable_to_non_nullable
@@ -318,9 +318,9 @@ as double,balance: null == balance ? _self.balance : balance // ignore: cast_nul
 as double,customer: null == customer ? _self.customer : customer // ignore: cast_nullable_to_non_nullable
 as Customer,transactionGroups: null == transactionGroups ? _self._transactionGroups : transactionGroups // ignore: cast_nullable_to_non_nullable
 as List<TransactionGroup>,metadata: freezed == metadata ? _self._metadata : metadata // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,
+as Map<String, dynamic>?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,
   ));
 }
 

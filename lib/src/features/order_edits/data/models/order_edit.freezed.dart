@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$OrderEdit {
 
- String get id; int get version;@JsonKey(name: 'change_type') String? get changeType;@JsonKey(name: 'order_id') String get orderId; Order? get order; List<OrderChange>? get changes; String? get status;@JsonKey(name: 'requested_by') String? get requestedBy;@JsonKey(name: 'requested_at') DateTime? get requestedAt;@JsonKey(name: 'confirmed_by') String? get confirmedBy;@JsonKey(name: 'confirmed_at') DateTime? get confirmedAt;@JsonKey(name: 'declined_by') String? get declinedBy;@JsonKey(name: 'declined_reason') String? get declinedReason;@JsonKey(name: 'declined_at') DateTime? get declinedAt;@JsonKey(name: 'canceled_by') String? get canceledBy;@JsonKey(name: 'canceled_at') DateTime? get canceledAt;@JsonKey(name: 'created_at') DateTime get createdAt;@JsonKey(name: 'updated_at') DateTime get updatedAt;
+ String get id; int get version;@JsonKey(name: 'change_type') String? get changeType;@JsonKey(name: 'order_id') String get orderId; Order? get order; List<OrderChange>? get changes; String? get status;@JsonKey(name: 'requested_by') String? get requestedBy;@JsonKey(name: 'requested_at') DateTime? get requestedAt;@JsonKey(name: 'confirmed_by') String? get confirmedBy;@JsonKey(name: 'confirmed_at') DateTime? get confirmedAt;@JsonKey(name: 'declined_by') String? get declinedBy;@JsonKey(name: 'declined_reason') String? get declinedReason;@JsonKey(name: 'declined_at') DateTime? get declinedAt;@JsonKey(name: 'canceled_by') String? get canceledBy;@JsonKey(name: 'canceled_at') DateTime? get canceledAt;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;
 /// Create a copy of OrderEdit
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $OrderEditCopyWith<$Res>  {
   factory $OrderEditCopyWith(OrderEdit value, $Res Function(OrderEdit) _then) = _$OrderEditCopyWithImpl;
 @useResult
 $Res call({
- String id, int version,@JsonKey(name: 'change_type') String? changeType,@JsonKey(name: 'order_id') String orderId, Order? order, List<OrderChange>? changes, String? status,@JsonKey(name: 'requested_by') String? requestedBy,@JsonKey(name: 'requested_at') DateTime? requestedAt,@JsonKey(name: 'confirmed_by') String? confirmedBy,@JsonKey(name: 'confirmed_at') DateTime? confirmedAt,@JsonKey(name: 'declined_by') String? declinedBy,@JsonKey(name: 'declined_reason') String? declinedReason,@JsonKey(name: 'declined_at') DateTime? declinedAt,@JsonKey(name: 'canceled_by') String? canceledBy,@JsonKey(name: 'canceled_at') DateTime? canceledAt,@JsonKey(name: 'created_at') DateTime createdAt,@JsonKey(name: 'updated_at') DateTime updatedAt
+ String id, int version,@JsonKey(name: 'change_type') String? changeType,@JsonKey(name: 'order_id') String orderId, Order? order, List<OrderChange>? changes, String? status,@JsonKey(name: 'requested_by') String? requestedBy,@JsonKey(name: 'requested_at') DateTime? requestedAt,@JsonKey(name: 'confirmed_by') String? confirmedBy,@JsonKey(name: 'confirmed_at') DateTime? confirmedAt,@JsonKey(name: 'declined_by') String? declinedBy,@JsonKey(name: 'declined_reason') String? declinedReason,@JsonKey(name: 'declined_at') DateTime? declinedAt,@JsonKey(name: 'canceled_by') String? canceledBy,@JsonKey(name: 'canceled_at') DateTime? canceledAt,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt
 });
 
 
@@ -65,7 +65,7 @@ class _$OrderEditCopyWithImpl<$Res>
 
 /// Create a copy of OrderEdit
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? version = null,Object? changeType = freezed,Object? orderId = null,Object? order = freezed,Object? changes = freezed,Object? status = freezed,Object? requestedBy = freezed,Object? requestedAt = freezed,Object? confirmedBy = freezed,Object? confirmedAt = freezed,Object? declinedBy = freezed,Object? declinedReason = freezed,Object? declinedAt = freezed,Object? canceledBy = freezed,Object? canceledAt = freezed,Object? createdAt = null,Object? updatedAt = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? version = null,Object? changeType = freezed,Object? orderId = null,Object? order = freezed,Object? changes = freezed,Object? status = freezed,Object? requestedBy = freezed,Object? requestedAt = freezed,Object? confirmedBy = freezed,Object? confirmedAt = freezed,Object? declinedBy = freezed,Object? declinedReason = freezed,Object? declinedAt = freezed,Object? canceledBy = freezed,Object? canceledAt = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,version: null == version ? _self.version : version // ignore: cast_nullable_to_non_nullable
@@ -83,9 +83,9 @@ as String?,declinedReason: freezed == declinedReason ? _self.declinedReason : de
 as String?,declinedAt: freezed == declinedAt ? _self.declinedAt : declinedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,canceledBy: freezed == canceledBy ? _self.canceledBy : canceledBy // ignore: cast_nullable_to_non_nullable
 as String?,canceledAt: freezed == canceledAt ? _self.canceledAt : canceledAt // ignore: cast_nullable_to_non_nullable
-as DateTime?,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,
+as DateTime?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,
   ));
 }
 /// Create a copy of OrderEdit
@@ -182,7 +182,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  int version, @JsonKey(name: 'change_type')  String? changeType, @JsonKey(name: 'order_id')  String orderId,  Order? order,  List<OrderChange>? changes,  String? status, @JsonKey(name: 'requested_by')  String? requestedBy, @JsonKey(name: 'requested_at')  DateTime? requestedAt, @JsonKey(name: 'confirmed_by')  String? confirmedBy, @JsonKey(name: 'confirmed_at')  DateTime? confirmedAt, @JsonKey(name: 'declined_by')  String? declinedBy, @JsonKey(name: 'declined_reason')  String? declinedReason, @JsonKey(name: 'declined_at')  DateTime? declinedAt, @JsonKey(name: 'canceled_by')  String? canceledBy, @JsonKey(name: 'canceled_at')  DateTime? canceledAt, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'updated_at')  DateTime updatedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  int version, @JsonKey(name: 'change_type')  String? changeType, @JsonKey(name: 'order_id')  String orderId,  Order? order,  List<OrderChange>? changes,  String? status, @JsonKey(name: 'requested_by')  String? requestedBy, @JsonKey(name: 'requested_at')  DateTime? requestedAt, @JsonKey(name: 'confirmed_by')  String? confirmedBy, @JsonKey(name: 'confirmed_at')  DateTime? confirmedAt, @JsonKey(name: 'declined_by')  String? declinedBy, @JsonKey(name: 'declined_reason')  String? declinedReason, @JsonKey(name: 'declined_at')  DateTime? declinedAt, @JsonKey(name: 'canceled_by')  String? canceledBy, @JsonKey(name: 'canceled_at')  DateTime? canceledAt, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _OrderEdit() when $default != null:
 return $default(_that.id,_that.version,_that.changeType,_that.orderId,_that.order,_that.changes,_that.status,_that.requestedBy,_that.requestedAt,_that.confirmedBy,_that.confirmedAt,_that.declinedBy,_that.declinedReason,_that.declinedAt,_that.canceledBy,_that.canceledAt,_that.createdAt,_that.updatedAt);case _:
@@ -203,7 +203,7 @@ return $default(_that.id,_that.version,_that.changeType,_that.orderId,_that.orde
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  int version, @JsonKey(name: 'change_type')  String? changeType, @JsonKey(name: 'order_id')  String orderId,  Order? order,  List<OrderChange>? changes,  String? status, @JsonKey(name: 'requested_by')  String? requestedBy, @JsonKey(name: 'requested_at')  DateTime? requestedAt, @JsonKey(name: 'confirmed_by')  String? confirmedBy, @JsonKey(name: 'confirmed_at')  DateTime? confirmedAt, @JsonKey(name: 'declined_by')  String? declinedBy, @JsonKey(name: 'declined_reason')  String? declinedReason, @JsonKey(name: 'declined_at')  DateTime? declinedAt, @JsonKey(name: 'canceled_by')  String? canceledBy, @JsonKey(name: 'canceled_at')  DateTime? canceledAt, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'updated_at')  DateTime updatedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  int version, @JsonKey(name: 'change_type')  String? changeType, @JsonKey(name: 'order_id')  String orderId,  Order? order,  List<OrderChange>? changes,  String? status, @JsonKey(name: 'requested_by')  String? requestedBy, @JsonKey(name: 'requested_at')  DateTime? requestedAt, @JsonKey(name: 'confirmed_by')  String? confirmedBy, @JsonKey(name: 'confirmed_at')  DateTime? confirmedAt, @JsonKey(name: 'declined_by')  String? declinedBy, @JsonKey(name: 'declined_reason')  String? declinedReason, @JsonKey(name: 'declined_at')  DateTime? declinedAt, @JsonKey(name: 'canceled_by')  String? canceledBy, @JsonKey(name: 'canceled_at')  DateTime? canceledAt, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt)  $default,) {final _that = this;
 switch (_that) {
 case _OrderEdit():
 return $default(_that.id,_that.version,_that.changeType,_that.orderId,_that.order,_that.changes,_that.status,_that.requestedBy,_that.requestedAt,_that.confirmedBy,_that.confirmedAt,_that.declinedBy,_that.declinedReason,_that.declinedAt,_that.canceledBy,_that.canceledAt,_that.createdAt,_that.updatedAt);case _:
@@ -223,7 +223,7 @@ return $default(_that.id,_that.version,_that.changeType,_that.orderId,_that.orde
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  int version, @JsonKey(name: 'change_type')  String? changeType, @JsonKey(name: 'order_id')  String orderId,  Order? order,  List<OrderChange>? changes,  String? status, @JsonKey(name: 'requested_by')  String? requestedBy, @JsonKey(name: 'requested_at')  DateTime? requestedAt, @JsonKey(name: 'confirmed_by')  String? confirmedBy, @JsonKey(name: 'confirmed_at')  DateTime? confirmedAt, @JsonKey(name: 'declined_by')  String? declinedBy, @JsonKey(name: 'declined_reason')  String? declinedReason, @JsonKey(name: 'declined_at')  DateTime? declinedAt, @JsonKey(name: 'canceled_by')  String? canceledBy, @JsonKey(name: 'canceled_at')  DateTime? canceledAt, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'updated_at')  DateTime updatedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  int version, @JsonKey(name: 'change_type')  String? changeType, @JsonKey(name: 'order_id')  String orderId,  Order? order,  List<OrderChange>? changes,  String? status, @JsonKey(name: 'requested_by')  String? requestedBy, @JsonKey(name: 'requested_at')  DateTime? requestedAt, @JsonKey(name: 'confirmed_by')  String? confirmedBy, @JsonKey(name: 'confirmed_at')  DateTime? confirmedAt, @JsonKey(name: 'declined_by')  String? declinedBy, @JsonKey(name: 'declined_reason')  String? declinedReason, @JsonKey(name: 'declined_at')  DateTime? declinedAt, @JsonKey(name: 'canceled_by')  String? canceledBy, @JsonKey(name: 'canceled_at')  DateTime? canceledAt, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _OrderEdit() when $default != null:
 return $default(_that.id,_that.version,_that.changeType,_that.orderId,_that.order,_that.changes,_that.status,_that.requestedBy,_that.requestedAt,_that.confirmedBy,_that.confirmedAt,_that.declinedBy,_that.declinedReason,_that.declinedAt,_that.canceledBy,_that.canceledAt,_that.createdAt,_that.updatedAt);case _:
@@ -238,7 +238,7 @@ return $default(_that.id,_that.version,_that.changeType,_that.orderId,_that.orde
 @JsonSerializable()
 
 class _OrderEdit implements OrderEdit {
-  const _OrderEdit({required this.id, required this.version, @JsonKey(name: 'change_type') this.changeType, @JsonKey(name: 'order_id') required this.orderId, this.order, final  List<OrderChange>? changes, this.status, @JsonKey(name: 'requested_by') this.requestedBy, @JsonKey(name: 'requested_at') this.requestedAt, @JsonKey(name: 'confirmed_by') this.confirmedBy, @JsonKey(name: 'confirmed_at') this.confirmedAt, @JsonKey(name: 'declined_by') this.declinedBy, @JsonKey(name: 'declined_reason') this.declinedReason, @JsonKey(name: 'declined_at') this.declinedAt, @JsonKey(name: 'canceled_by') this.canceledBy, @JsonKey(name: 'canceled_at') this.canceledAt, @JsonKey(name: 'created_at') required this.createdAt, @JsonKey(name: 'updated_at') required this.updatedAt}): _changes = changes;
+  const _OrderEdit({required this.id, required this.version, @JsonKey(name: 'change_type') this.changeType, @JsonKey(name: 'order_id') required this.orderId, this.order, final  List<OrderChange>? changes, this.status, @JsonKey(name: 'requested_by') this.requestedBy, @JsonKey(name: 'requested_at') this.requestedAt, @JsonKey(name: 'confirmed_by') this.confirmedBy, @JsonKey(name: 'confirmed_at') this.confirmedAt, @JsonKey(name: 'declined_by') this.declinedBy, @JsonKey(name: 'declined_reason') this.declinedReason, @JsonKey(name: 'declined_at') this.declinedAt, @JsonKey(name: 'canceled_by') this.canceledBy, @JsonKey(name: 'canceled_at') this.canceledAt, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt}): _changes = changes;
   factory _OrderEdit.fromJson(Map<String, dynamic> json) => _$OrderEditFromJson(json);
 
 @override final  String id;
@@ -265,8 +265,8 @@ class _OrderEdit implements OrderEdit {
 @override@JsonKey(name: 'declined_at') final  DateTime? declinedAt;
 @override@JsonKey(name: 'canceled_by') final  String? canceledBy;
 @override@JsonKey(name: 'canceled_at') final  DateTime? canceledAt;
-@override@JsonKey(name: 'created_at') final  DateTime createdAt;
-@override@JsonKey(name: 'updated_at') final  DateTime updatedAt;
+@override@JsonKey(name: 'created_at') final  DateTime? createdAt;
+@override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
 
 /// Create a copy of OrderEdit
 /// with the given fields replaced by the non-null parameter values.
@@ -301,7 +301,7 @@ abstract mixin class _$OrderEditCopyWith<$Res> implements $OrderEditCopyWith<$Re
   factory _$OrderEditCopyWith(_OrderEdit value, $Res Function(_OrderEdit) _then) = __$OrderEditCopyWithImpl;
 @override @useResult
 $Res call({
- String id, int version,@JsonKey(name: 'change_type') String? changeType,@JsonKey(name: 'order_id') String orderId, Order? order, List<OrderChange>? changes, String? status,@JsonKey(name: 'requested_by') String? requestedBy,@JsonKey(name: 'requested_at') DateTime? requestedAt,@JsonKey(name: 'confirmed_by') String? confirmedBy,@JsonKey(name: 'confirmed_at') DateTime? confirmedAt,@JsonKey(name: 'declined_by') String? declinedBy,@JsonKey(name: 'declined_reason') String? declinedReason,@JsonKey(name: 'declined_at') DateTime? declinedAt,@JsonKey(name: 'canceled_by') String? canceledBy,@JsonKey(name: 'canceled_at') DateTime? canceledAt,@JsonKey(name: 'created_at') DateTime createdAt,@JsonKey(name: 'updated_at') DateTime updatedAt
+ String id, int version,@JsonKey(name: 'change_type') String? changeType,@JsonKey(name: 'order_id') String orderId, Order? order, List<OrderChange>? changes, String? status,@JsonKey(name: 'requested_by') String? requestedBy,@JsonKey(name: 'requested_at') DateTime? requestedAt,@JsonKey(name: 'confirmed_by') String? confirmedBy,@JsonKey(name: 'confirmed_at') DateTime? confirmedAt,@JsonKey(name: 'declined_by') String? declinedBy,@JsonKey(name: 'declined_reason') String? declinedReason,@JsonKey(name: 'declined_at') DateTime? declinedAt,@JsonKey(name: 'canceled_by') String? canceledBy,@JsonKey(name: 'canceled_at') DateTime? canceledAt,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt
 });
 
 
@@ -318,7 +318,7 @@ class __$OrderEditCopyWithImpl<$Res>
 
 /// Create a copy of OrderEdit
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? version = null,Object? changeType = freezed,Object? orderId = null,Object? order = freezed,Object? changes = freezed,Object? status = freezed,Object? requestedBy = freezed,Object? requestedAt = freezed,Object? confirmedBy = freezed,Object? confirmedAt = freezed,Object? declinedBy = freezed,Object? declinedReason = freezed,Object? declinedAt = freezed,Object? canceledBy = freezed,Object? canceledAt = freezed,Object? createdAt = null,Object? updatedAt = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? version = null,Object? changeType = freezed,Object? orderId = null,Object? order = freezed,Object? changes = freezed,Object? status = freezed,Object? requestedBy = freezed,Object? requestedAt = freezed,Object? confirmedBy = freezed,Object? confirmedAt = freezed,Object? declinedBy = freezed,Object? declinedReason = freezed,Object? declinedAt = freezed,Object? canceledBy = freezed,Object? canceledAt = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,}) {
   return _then(_OrderEdit(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,version: null == version ? _self.version : version // ignore: cast_nullable_to_non_nullable
@@ -336,9 +336,9 @@ as String?,declinedReason: freezed == declinedReason ? _self.declinedReason : de
 as String?,declinedAt: freezed == declinedAt ? _self.declinedAt : declinedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,canceledBy: freezed == canceledBy ? _self.canceledBy : canceledBy // ignore: cast_nullable_to_non_nullable
 as String?,canceledAt: freezed == canceledAt ? _self.canceledAt : canceledAt // ignore: cast_nullable_to_non_nullable
-as DateTime?,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,
+as DateTime?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,
   ));
 }
 

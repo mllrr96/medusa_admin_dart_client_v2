@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ShippingOptionType {
 
- String get id;@JsonKey(name: 'created_at') DateTime get createdAt;@JsonKey(name: 'updated_at') DateTime get updatedAt;@JsonKey(name: 'deleted_at') DateTime get deletedAt; String get label; String get description; String get code;@JsonKey(name: 'shipping_option_id') String get shippingOptionId;
+ String get id;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt; String get label; String get description; String get code;@JsonKey(name: 'shipping_option_id') String get shippingOptionId;
 /// Create a copy of ShippingOptionType
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $ShippingOptionTypeCopyWith<$Res>  {
   factory $ShippingOptionTypeCopyWith(ShippingOptionType value, $Res Function(ShippingOptionType) _then) = _$ShippingOptionTypeCopyWithImpl;
 @useResult
 $Res call({
- String id,@JsonKey(name: 'created_at') DateTime createdAt,@JsonKey(name: 'updated_at') DateTime updatedAt,@JsonKey(name: 'deleted_at') DateTime deletedAt, String label, String description, String code,@JsonKey(name: 'shipping_option_id') String shippingOptionId
+ String id,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, String label, String description, String code,@JsonKey(name: 'shipping_option_id') String shippingOptionId
 });
 
 
@@ -65,13 +65,13 @@ class _$ShippingOptionTypeCopyWithImpl<$Res>
 
 /// Create a copy of ShippingOptionType
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? createdAt = null,Object? updatedAt = null,Object? deletedAt = null,Object? label = null,Object? description = null,Object? code = null,Object? shippingOptionId = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,Object? label = null,Object? description = null,Object? code = null,Object? shippingOptionId = null,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,deletedAt: null == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,label: null == label ? _self.label : label // ignore: cast_nullable_to_non_nullable
+as String,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,label: null == label ? _self.label : label // ignore: cast_nullable_to_non_nullable
 as String,description: null == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
 as String,code: null == code ? _self.code : code // ignore: cast_nullable_to_non_nullable
 as String,shippingOptionId: null == shippingOptionId ? _self.shippingOptionId : shippingOptionId // ignore: cast_nullable_to_non_nullable
@@ -160,7 +160,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'updated_at')  DateTime updatedAt, @JsonKey(name: 'deleted_at')  DateTime deletedAt,  String label,  String description,  String code, @JsonKey(name: 'shipping_option_id')  String shippingOptionId)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  String label,  String description,  String code, @JsonKey(name: 'shipping_option_id')  String shippingOptionId)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ShippingOptionType() when $default != null:
 return $default(_that.id,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.label,_that.description,_that.code,_that.shippingOptionId);case _:
@@ -181,7 +181,7 @@ return $default(_that.id,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.l
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'updated_at')  DateTime updatedAt, @JsonKey(name: 'deleted_at')  DateTime deletedAt,  String label,  String description,  String code, @JsonKey(name: 'shipping_option_id')  String shippingOptionId)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  String label,  String description,  String code, @JsonKey(name: 'shipping_option_id')  String shippingOptionId)  $default,) {final _that = this;
 switch (_that) {
 case _ShippingOptionType():
 return $default(_that.id,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.label,_that.description,_that.code,_that.shippingOptionId);case _:
@@ -201,7 +201,7 @@ return $default(_that.id,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.l
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'updated_at')  DateTime updatedAt, @JsonKey(name: 'deleted_at')  DateTime deletedAt,  String label,  String description,  String code, @JsonKey(name: 'shipping_option_id')  String shippingOptionId)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  String label,  String description,  String code, @JsonKey(name: 'shipping_option_id')  String shippingOptionId)?  $default,) {final _that = this;
 switch (_that) {
 case _ShippingOptionType() when $default != null:
 return $default(_that.id,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.label,_that.description,_that.code,_that.shippingOptionId);case _:
@@ -216,13 +216,13 @@ return $default(_that.id,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.l
 @JsonSerializable()
 
 class _ShippingOptionType implements ShippingOptionType {
-  const _ShippingOptionType({required this.id, @JsonKey(name: 'created_at') required this.createdAt, @JsonKey(name: 'updated_at') required this.updatedAt, @JsonKey(name: 'deleted_at') required this.deletedAt, required this.label, required this.description, required this.code, @JsonKey(name: 'shipping_option_id') required this.shippingOptionId});
+  const _ShippingOptionType({required this.id, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt, required this.label, required this.description, required this.code, @JsonKey(name: 'shipping_option_id') required this.shippingOptionId});
   factory _ShippingOptionType.fromJson(Map<String, dynamic> json) => _$ShippingOptionTypeFromJson(json);
 
 @override final  String id;
-@override@JsonKey(name: 'created_at') final  DateTime createdAt;
-@override@JsonKey(name: 'updated_at') final  DateTime updatedAt;
-@override@JsonKey(name: 'deleted_at') final  DateTime deletedAt;
+@override@JsonKey(name: 'created_at') final  DateTime? createdAt;
+@override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
+@override@JsonKey(name: 'deleted_at') final  DateTime? deletedAt;
 @override final  String label;
 @override final  String description;
 @override final  String code;
@@ -261,7 +261,7 @@ abstract mixin class _$ShippingOptionTypeCopyWith<$Res> implements $ShippingOpti
   factory _$ShippingOptionTypeCopyWith(_ShippingOptionType value, $Res Function(_ShippingOptionType) _then) = __$ShippingOptionTypeCopyWithImpl;
 @override @useResult
 $Res call({
- String id,@JsonKey(name: 'created_at') DateTime createdAt,@JsonKey(name: 'updated_at') DateTime updatedAt,@JsonKey(name: 'deleted_at') DateTime deletedAt, String label, String description, String code,@JsonKey(name: 'shipping_option_id') String shippingOptionId
+ String id,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, String label, String description, String code,@JsonKey(name: 'shipping_option_id') String shippingOptionId
 });
 
 
@@ -278,13 +278,13 @@ class __$ShippingOptionTypeCopyWithImpl<$Res>
 
 /// Create a copy of ShippingOptionType
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? createdAt = null,Object? updatedAt = null,Object? deletedAt = null,Object? label = null,Object? description = null,Object? code = null,Object? shippingOptionId = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,Object? label = null,Object? description = null,Object? code = null,Object? shippingOptionId = null,}) {
   return _then(_ShippingOptionType(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,deletedAt: null == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,label: null == label ? _self.label : label // ignore: cast_nullable_to_non_nullable
+as String,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,label: null == label ? _self.label : label // ignore: cast_nullable_to_non_nullable
 as String,description: null == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
 as String,code: null == code ? _self.code : code // ignore: cast_nullable_to_non_nullable
 as String,shippingOptionId: null == shippingOptionId ? _self.shippingOptionId : shippingOptionId // ignore: cast_nullable_to_non_nullable

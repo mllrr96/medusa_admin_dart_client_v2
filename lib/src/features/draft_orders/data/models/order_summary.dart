@@ -31,6 +31,5 @@ abstract class OrderSummary with _$OrderSummary {
   }) = _OrderSummary;
 
   /// Creates an OrderSummary instance from a JSON map.
-  factory OrderSummary.fromJson(Map<String, Object?> json) =>
-      _$OrderSummaryFromJson(json);
+  factory OrderSummary.fromJson(Map<String, dynamic> json) => _$OrderSummaryFromJson(json);
 }

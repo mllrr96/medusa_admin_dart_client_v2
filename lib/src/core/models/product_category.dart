@@ -17,8 +17,8 @@ abstract class ProductCategory with _$ProductCategory {
     required List<ProductCategory> categoryChildren,
     ProductCategory? parentCategory,
     List<Product>? products,
-    required DateTime createdAt,
-    required DateTime updatedAt,
+     DateTime? createdAt,
+     DateTime? updatedAt,
     DateTime? deletedAt,
     Map<String, dynamic>? metadata,
   }) = _ProductCategory;

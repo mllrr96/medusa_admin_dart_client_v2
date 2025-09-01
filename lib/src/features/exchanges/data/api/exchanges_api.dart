@@ -1,229 +1,77 @@
 import 'package:dio/dio.dart';
-import 'package:medusa_admin/app/data/datasource/remote/dio_client.dart';
-import '../models/exchange.dart';
-import '../models/exchange_list_response.dart';
-import '../models/post_exchanges_req.dart';
-import '../models/exchange_return_response.dart';
-import '../models/post_exchanges_return_request_items_req.dart';
-import '../models/post_exchanges_request_items_return_action_req.dart';
-import '../models/post_exchanges_shipping_req.dart';
-import '../models/exchange_preview_response.dart';
-import '../models/post_exchanges_shipping_action_req.dart';
-import '../models/post_exchanges_add_items_req.dart';
-import '../models/post_exchanges_items_action_req.dart';
-import '../models/exchange_request_response.dart';
-import '../models/exchange_delete_response.dart';
+import 'package:retrofit/retrofit.dart';
 
-class ExchangesApi {
-  final Dio _dioClient;
+import '../models/exchanges.dart';
 
-  ExchangesApi(this._dioClient);
+part 'exchanges_api.g.dart';
 
-  Future<ExchangeListResponse?> listExchanges({
-    Map<String, dynamic>? queryParameters,
-  }) async {
-    final response = await _dioClient.get(
-      '/admin/exchanges',
-      queryParameters: queryParameters,
-    );
-    return ExchangeListResponse.fromJson(response.data);
-  }
+@RestApi()
+abstract class ExchangesApi {
+  factory ExchangesApi(Dio dio, {String baseUrl}) = _ExchangesApi;
 
-  Future<Exchange?> createExchange({
-    required PostExchangesReq payload,
-    Map<String, dynamic>? queryParameters,
-  }) async {
-    final response = await _dioClient.post(
-      '/admin/exchanges',
-      data: payload.toJson(),
-      queryParameters: queryParameters,
-    );
-    return Exchange.fromJson(response.data['exchange']);
-  }
+  @GET('/admin/exchanges')
+  Future<ExchangesListRes> getExchanges({
+    @Queries() Map<String, dynamic>? query,
+  });
 
-  Future<Exchange?> retrieveExchange({
-    required String id,
-    Map<String, dynamic>? queryParameters,
-  }) async {
-    final response = await _dioClient.get(
-      '/admin/exchanges/$id',
-      queryParameters: queryParameters,
-    );
-    return Exchange.fromJson(response.data['exchange']);
-  }
+  @POST('/admin/exchanges')
+  Future<ExchangeOrderResponse> createExchange(
+    @Body() PostOrderExchangesReq payload,
+    @Queries() Map<String, dynamic>? query,
+  );
 
-  Future<Exchange?> cancelExchange({
-    required String id,
-    Map<String, dynamic>? queryParameters,
-  }) async {
-    final response = await _dioClient.post(
-      '/admin/exchanges/$id/cancel',
-      queryParameters: queryParameters,
-    );
-    return Exchange.fromJson(response.data['exchange']);
-  }
+  @GET('/admin/exchanges/{id}')
+  Future<ExchangeResponse> getExchange(
+    @Path('id') String id,
+    @Queries() Map<String, dynamic>? query,
+  );
 
-  Future<ExchangeReturnResponse?> addInboundItems({
-    required String id,
-    required PostExchangesReturnRequestItemsReq payload,
-    Map<String, dynamic>? queryParameters,
-  }) async {
-    final response = await _dioClient.post(
-      '/admin/exchanges/$id/inbound/items',
-      data: payload.toJson(),
-      queryParameters: queryParameters,
-    );
-    return ExchangeReturnResponse.fromJson(response.data);
-  }
+  @POST('/admin/exchanges/{id}/cancel')
+  Future<ExchangeOrderResponse> cancelExchange(
+    @Path('id') String id,
+    @Body() CancelExchangeReq payload,
+    @Queries() Map<String, dynamic>? query,
+  );
 
-  Future<ExchangeReturnResponse?> removeInboundItem({
-    required String id,
-    required String actionId,
-    Map<String, dynamic>? queryParameters,
-  }) async {
-    final response = await _dioClient.delete(
-      '/admin/exchanges/$id/inbound/items/$actionId',
-      queryParameters: queryParameters,
-    );
-    return ExchangeReturnResponse.fromJson(response.data);
-  }
+  @POST('/admin/exchanges/{id}/inbound')
+  Future<ExchangeOrderResponse> createInbound(
+    @Path('id') String id,
+    @Body() CreateExchangeInboundReq payload,
+    @Queries() Map<String, dynamic>? query,
+  );
 
-  Future<ExchangeReturnResponse?> updateInboundItem({
-    required String id,
-    required String actionId,
-    required PostExchangesRequestItemsReturnActionReq payload,
-    Map<String, dynamic>? queryParameters,
-  }) async {
-    final response = await _dioClient.post(
-      '/admin/exchanges/$id/inbound/items/$actionId',
-      data: payload.toJson(),
-      queryParameters: queryParameters,
-    );
-    return ExchangeReturnResponse.fromJson(response.data);
-  }
+  @POST('/admin/exchanges/{id}/inbound/shipment')
+  Future<ExchangeOrderResponse> createInboundShipment(
+    @Path('id') String id,
+    @Body() CreateExchangeInboundShipmentReq payload,
+    @Queries() Map<String, dynamic>? query,
+  );
 
-  Future<ExchangeReturnResponse?> addInboundShippingMethod({
-    required String id,
-    required PostExchangesShippingReq payload,
-    Map<String, dynamic>? queryParameters,
-  }) async {
-    final response = await _dioClient.post(
-      '/admin/exchanges/$id/inbound/shipping-method',
-      data: payload.toJson(),
-      queryParameters: queryParameters,
-    );
-    return ExchangeReturnResponse.fromJson(response.data);
-  }
+  @POST('/admin/exchanges/{id}/items')
+  Future<ExchangeOrderResponse> addItems(
+    @Path('id') String id,
+    @Body() AddExchangeItemsReq payload,
+    @Queries() Map<String, dynamic>? query,
+  );
 
-  Future<ExchangeReturnResponse?> removeInboundShippingMethod({
-    required String id,
-    required String actionId,
-    Map<String, dynamic>? queryParameters,
-  }) async {
-    final response = await _dioClient.delete(
-      '/admin/exchanges/$id/inbound/shipping-method/$actionId',
-      queryParameters: queryParameters,
-    );
-    return ExchangeReturnResponse.fromJson(response.data);
-  }
+  @DELETE('/admin/exchanges/{id}/items/{itemId}')
+  Future<ExchangeOrderResponse> deleteItem(
+    @Path('id') String id,
+    @Path('itemId') String itemId,
+    @Queries() Map<String, dynamic>? query,
+  );
 
-  Future<ExchangePreviewResponse?> updateInboundShippingMethod({
-    required String id,
-    required String actionId,
-    required PostExchangesShippingActionReq payload,
-    Map<String, dynamic>? queryParameters,
-  }) async {
-    final response = await _dioClient.post(
-      '/admin/exchanges/$id/inbound/shipping-method/$actionId',
-      data: payload.toJson(),
-      queryParameters: queryParameters,
-    );
-    return ExchangePreviewResponse.fromJson(response.data);
-  }
+  @POST('/admin/exchanges/{id}/payment')
+  Future<ExchangeOrderResponse> createPayment(
+    @Path('id') String id,
+    @Body() CreateExchangePaymentReq payload,
+    @Queries() Map<String, dynamic>? query,
+  );
 
-  Future<ExchangePreviewResponse?> addOutboundItems({
-    required String id,
-    required PostExchangesAddItemsReq payload,
-    Map<String, dynamic>? queryParameters,
-  }) async {
-    final response = await _dioClient.post(
-      '/admin/exchanges/$id/outbound/items',
-      data: payload.toJson(),
-      queryParameters: queryParameters,
-    );
-    return ExchangePreviewResponse.fromJson(response.data);
-  }
-
-  Future<ExchangePreviewResponse?> removeOutboundItem({
-    required String id,
-    required String actionId,
-    Map<String, dynamic>? queryParameters,
-  }) async {
-    final response = await _dioClient.delete(
-      '/admin/exchanges/$id/outbound/items/$actionId',
-      queryParameters: queryParameters,
-    );
-    return ExchangePreviewResponse.fromJson(response.data);
-  }
-
-  Future<ExchangePreviewResponse?> updateOutboundItem({
-    required String id,
-    required String actionId,
-    required PostExchangesItemsActionReq payload,
-    Map<String, dynamic>? queryParameters,
-  }) async {
-    final response = await _dioClient.post(
-      '/admin/exchanges/$id/outbound/items/$actionId',
-      data: payload.toJson(),
-      queryParameters: queryParameters,
-    );
-    return ExchangePreviewResponse.fromJson(response.data);
-  }
-
-  Future<ExchangePreviewResponse?> addOutboundShippingMethod({
-    required String id,
-    required PostExchangesShippingReq payload,
-    Map<String, dynamic>? queryParameters,
-  }) async {
-    final response = await _dioClient.post(
-      '/admin/exchanges/$id/outbound/shipping-method',
-      data: payload.toJson(),
-      queryParameters: queryParameters,
-    );
-    return ExchangePreviewResponse.fromJson(response.data);
-  }
-
-  Future<ExchangePreviewResponse?> removeOutboundShippingMethod({
-    required String id,
-    required String actionId,
-    Map<String, dynamic>? queryParameters,
-  }) async {
-    final response = await _dioClient.delete(
-      '/admin/exchanges/$id/outbound/shipping-method/$actionId',
-      queryParameters: queryParameters,
-    );
-    return ExchangePreviewResponse.fromJson(response.data);
-  }
-
-  Future<ExchangeRequestResponse?> confirmExchangeRequest({
-    required String id,
-    Map<String, dynamic>? queryParameters,
-  }) async {
-    final response = await _dioClient.post(
-      '/admin/exchanges/$id/request',
-      queryParameters: queryParameters,
-    );
-    return ExchangeRequestResponse.fromJson(response.data);
-  }
-
-  Future<ExchangeDeleteResponse?> cancelExchangeRequest({
-    required String id,
-    Map<String, dynamic>? queryParameters,
-  }) async {
-    final response = await _dioClient.delete(
-      '/admin/exchanges/$id/request',
-      queryParameters: queryParameters,
-    );
-    return ExchangeDeleteResponse.fromJson(response.data);
-  }
+  @POST('/admin/exchanges/{id}/shipment')
+  Future<ExchangeOrderResponse> createShipment(
+    @Path('id') String id,
+    @Body() CreateExchangeShipmentReq payload,
+    @Queries() Map<String, dynamic>? query,
+  );
 }

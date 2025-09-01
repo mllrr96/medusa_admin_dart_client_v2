@@ -2,8 +2,9 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:medusa_admin_dart_client/src/core/models/return.dart';
 import 'package:medusa_admin_dart_client/src/features/exchanges/data/models/exchange.dart';
 import 'package:medusa_admin_dart_client/src/features/orders/data/models/order.dart';
+import 'package:medusa_admin_dart_client/src/features/claims/data/models/claim.dart';
 
-import '../../features/claims/data/models/models.dart';
+import 'order_change_action.dart';
 
 part 'order_change.freezed.dart';
 part 'order_change.g.dart';
@@ -21,8 +22,7 @@ abstract class OrderChange with _$OrderChange {
     @JsonKey(name: 'return_order') required Return returnOrder,
     required Exchange exchange,
     required Claim claim,
-    // TODO: Add order, return_order, exchange, claim, actions
-    // required List<OrderChangeAction> actions,
+    required List<OrderChangeAction> actions,
     required Order order,
     required String status,
     @JsonKey(name: 'requested_by') required String requestedBy,

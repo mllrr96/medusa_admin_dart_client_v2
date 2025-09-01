@@ -14,8 +14,8 @@ abstract class ServiceZone with _$ServiceZone {
     required FulfillmentSet fulfillmentSet,
     required List<GeoZone> geoZones,
     required List<ShippingOption> shippingOptions,
-    required DateTime createdAt,
-    required DateTime updatedAt,
+     DateTime? createdAt,
+     DateTime? updatedAt,
     DateTime? deletedAt,
   }) = _ServiceZone;
 

@@ -8,7 +8,7 @@ part of 'return.dart';
 
 _Return _$ReturnFromJson(Map<String, dynamic> json) => _Return(
   id: json['id'] as String,
-  status: json['status'] as String,
+  status: $enumDecode(_$ReturnStatusEnumMap, json['status']),
   orderId: json['order_id'] as String,
   order: json['order'] == null
       ? null
@@ -51,7 +51,7 @@ _Return _$ReturnFromJson(Map<String, dynamic> json) => _Return(
 
 Map<String, dynamic> _$ReturnToJson(_Return instance) => <String, dynamic>{
   'id': instance.id,
-  'status': instance.status,
+  'status': _$ReturnStatusEnumMap[instance.status]!,
   'order_id': instance.orderId,
   'order': instance.order,
   'swap_id': instance.swapId,
@@ -72,4 +72,11 @@ Map<String, dynamic> _$ReturnToJson(_Return instance) => <String, dynamic>{
   'updated_at': instance.updatedAt?.toIso8601String(),
   'deleted_at': instance.deletedAt?.toIso8601String(),
   'metadata': instance.metadata,
+};
+
+const _$ReturnStatusEnumMap = {
+  ReturnStatus.canceled: 'canceled',
+  ReturnStatus.requested: 'requested',
+  ReturnStatus.received: 'received',
+  ReturnStatus.partiallyReceived: 'partially_received',
 };

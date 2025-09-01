@@ -54,7 +54,9 @@ _Notification _$NotificationFromJson(Map<String, dynamic> json) =>
       originalNotificationId: json['original_notification_id'] as String?,
       externalId: json['external_id'] as String?,
       providerId: json['provider_id'] as String,
-      createdAt: DateTime.parse(json['created_at'] as String),
+      createdAt: json['created_at'] == null
+          ? null
+          : DateTime.parse(json['created_at'] as String),
     );
 
 Map<String, dynamic> _$NotificationToJson(_Notification instance) =>
@@ -71,5 +73,5 @@ Map<String, dynamic> _$NotificationToJson(_Notification instance) =>
       'original_notification_id': instance.originalNotificationId,
       'external_id': instance.externalId,
       'provider_id': instance.providerId,
-      'created_at': instance.createdAt.toIso8601String(),
+      'created_at': instance.createdAt?.toIso8601String(),
     };

@@ -1,8 +1,15 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:medusa_admin_dart_client/medusa_admin_dart_client_v2.dart';
+import 'package:medusa_admin_dart_client/src/features/sales_channels/data/models/sales_channel.dart';
+import 'package:medusa_admin_dart_client/src/core/models/payment_collection.dart';
+import 'package:medusa_admin_dart_client/src/core/models/customer.dart';
+import 'package:medusa_admin_dart_client/src/core/models/order_fulfillment.dart';
+import 'package:medusa_admin_dart_client/src/core/models/order_address.dart';
+import 'package:medusa_admin_dart_client/src/core/models/order_line_item.dart';
+import 'package:medusa_admin_dart_client/src/core/models/order_shipping_method.dart';
+import 'package:medusa_admin_dart_client/src/core/models/region.dart';
+import 'package:medusa_admin_dart_client/src/core/models/order_credit_line.dart';
 
-import '../../../sales_channels/data/models/sales_channel.dart';
-import 'order_summery.dart';
+import 'order_summary.dart';
 import 'order_transaction.dart';
 
 part 'draft_order.freezed.dart';

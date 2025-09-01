@@ -19,8 +19,12 @@ _StoreCreditAccount _$StoreCreditAccountFromJson(Map<String, dynamic> json) =>
           .map((e) => TransactionGroup.fromJson(e as Map<String, dynamic>))
           .toList(),
       metadata: json['metadata'] as Map<String, dynamic>?,
-      createdAt: DateTime.parse(json['createdAt'] as String),
-      updatedAt: DateTime.parse(json['updatedAt'] as String),
+      createdAt: json['createdAt'] == null
+          ? null
+          : DateTime.parse(json['createdAt'] as String),
+      updatedAt: json['updatedAt'] == null
+          ? null
+          : DateTime.parse(json['updatedAt'] as String),
     );
 
 Map<String, dynamic> _$StoreCreditAccountToJson(_StoreCreditAccount instance) =>
@@ -34,6 +38,6 @@ Map<String, dynamic> _$StoreCreditAccountToJson(_StoreCreditAccount instance) =>
       'customer': instance.customer,
       'transactionGroups': instance.transactionGroups,
       'metadata': instance.metadata,
-      'createdAt': instance.createdAt.toIso8601String(),
-      'updatedAt': instance.updatedAt.toIso8601String(),
+      'createdAt': instance.createdAt?.toIso8601String(),
+      'updatedAt': instance.updatedAt?.toIso8601String(),
     };

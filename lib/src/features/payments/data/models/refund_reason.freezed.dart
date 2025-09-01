@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$RefundReason {
 
- String get id; String get label; String? get description; Map<String, dynamic> get metadata;@JsonKey(name: 'created_at') DateTime get createdAt;@JsonKey(name: 'updated_at') DateTime get updatedAt;
+ String get id; String get label; String? get description; Map<String, dynamic> get metadata;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;
 /// Create a copy of RefundReason
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $RefundReasonCopyWith<$Res>  {
   factory $RefundReasonCopyWith(RefundReason value, $Res Function(RefundReason) _then) = _$RefundReasonCopyWithImpl;
 @useResult
 $Res call({
- String id, String label, String? description, Map<String, dynamic> metadata,@JsonKey(name: 'created_at') DateTime createdAt,@JsonKey(name: 'updated_at') DateTime updatedAt
+ String id, String label, String? description, Map<String, dynamic> metadata,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt
 });
 
 
@@ -65,15 +65,15 @@ class _$RefundReasonCopyWithImpl<$Res>
 
 /// Create a copy of RefundReason
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? label = null,Object? description = freezed,Object? metadata = null,Object? createdAt = null,Object? updatedAt = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? label = null,Object? description = freezed,Object? metadata = null,Object? createdAt = freezed,Object? updatedAt = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,label: null == label ? _self.label : label // ignore: cast_nullable_to_non_nullable
 as String,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
 as String?,metadata: null == metadata ? _self.metadata : metadata // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,
+as Map<String, dynamic>,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,
   ));
 }
 
@@ -158,7 +158,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String label,  String? description,  Map<String, dynamic> metadata, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'updated_at')  DateTime updatedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String label,  String? description,  Map<String, dynamic> metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _RefundReason() when $default != null:
 return $default(_that.id,_that.label,_that.description,_that.metadata,_that.createdAt,_that.updatedAt);case _:
@@ -179,7 +179,7 @@ return $default(_that.id,_that.label,_that.description,_that.metadata,_that.crea
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String label,  String? description,  Map<String, dynamic> metadata, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'updated_at')  DateTime updatedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String label,  String? description,  Map<String, dynamic> metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt)  $default,) {final _that = this;
 switch (_that) {
 case _RefundReason():
 return $default(_that.id,_that.label,_that.description,_that.metadata,_that.createdAt,_that.updatedAt);case _:
@@ -199,7 +199,7 @@ return $default(_that.id,_that.label,_that.description,_that.metadata,_that.crea
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String label,  String? description,  Map<String, dynamic> metadata, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'updated_at')  DateTime updatedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String label,  String? description,  Map<String, dynamic> metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _RefundReason() when $default != null:
 return $default(_that.id,_that.label,_that.description,_that.metadata,_that.createdAt,_that.updatedAt);case _:
@@ -214,7 +214,7 @@ return $default(_that.id,_that.label,_that.description,_that.metadata,_that.crea
 @JsonSerializable()
 
 class _RefundReason implements RefundReason {
-  const _RefundReason({required this.id, required this.label, this.description, required final  Map<String, dynamic> metadata, @JsonKey(name: 'created_at') required this.createdAt, @JsonKey(name: 'updated_at') required this.updatedAt}): _metadata = metadata;
+  const _RefundReason({required this.id, required this.label, this.description, required final  Map<String, dynamic> metadata, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt}): _metadata = metadata;
   factory _RefundReason.fromJson(Map<String, dynamic> json) => _$RefundReasonFromJson(json);
 
 @override final  String id;
@@ -227,8 +227,8 @@ class _RefundReason implements RefundReason {
   return EqualUnmodifiableMapView(_metadata);
 }
 
-@override@JsonKey(name: 'created_at') final  DateTime createdAt;
-@override@JsonKey(name: 'updated_at') final  DateTime updatedAt;
+@override@JsonKey(name: 'created_at') final  DateTime? createdAt;
+@override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
 
 /// Create a copy of RefundReason
 /// with the given fields replaced by the non-null parameter values.
@@ -263,7 +263,7 @@ abstract mixin class _$RefundReasonCopyWith<$Res> implements $RefundReasonCopyWi
   factory _$RefundReasonCopyWith(_RefundReason value, $Res Function(_RefundReason) _then) = __$RefundReasonCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String label, String? description, Map<String, dynamic> metadata,@JsonKey(name: 'created_at') DateTime createdAt,@JsonKey(name: 'updated_at') DateTime updatedAt
+ String id, String label, String? description, Map<String, dynamic> metadata,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt
 });
 
 
@@ -280,15 +280,15 @@ class __$RefundReasonCopyWithImpl<$Res>
 
 /// Create a copy of RefundReason
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? label = null,Object? description = freezed,Object? metadata = null,Object? createdAt = null,Object? updatedAt = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? label = null,Object? description = freezed,Object? metadata = null,Object? createdAt = freezed,Object? updatedAt = freezed,}) {
   return _then(_RefundReason(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,label: null == label ? _self.label : label // ignore: cast_nullable_to_non_nullable
 as String,description: freezed == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
 as String?,metadata: null == metadata ? _self._metadata : metadata // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,
+as Map<String, dynamic>,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,
   ));
 }
 

@@ -1,46 +1,42 @@
+
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:medusa_admin_dart_client_v2/medusa_admin.dart';
+import 'package:medusa_admin_dart_client/src/core/models/transaction.dart';
+import 'package:medusa_admin_dart_client/src/features/orders/data/models/order.dart';
+import 'package:medusa_admin_dart_client/src/core/models/return.dart';
+import 'package:medusa_admin_dart_client/src/core/models/order_shipping_method.dart';
+import 'base_exchange_item.dart';
+import 'return_item.dart';
 
 part 'exchange.freezed.dart';
 part 'exchange.g.dart';
 
 @freezed
-class Exchange with _$Exchange {
+abstract class Exchange with _$Exchange {
   const factory Exchange({
     required String id,
-    @JsonKey(name: 'created_at') required DateTime createdAt,
-    @JsonKey(name: 'updated_at') required DateTime updatedAt,
-    @JsonKey(name: 'deleted_at') DateTime? deletedAt,
     @JsonKey(name: 'order_id') required String orderId,
-    required Order order,
-    required List<LineItem> items,
-    required List<Fulfillment> fulfillments,
-    required List<Return> returns,
-    @JsonKey(name: 'shipping_methods') required List<ShippingMethod> shippingMethods,
+    Order? order,
+    @JsonKey(name: 'return_items') required List<ReturnItem> returnItems,
+    @JsonKey(name: 'additional_items')
+    required List<BaseExchangeItem> additionalItems,
+    @JsonKey(name: 'no_notification') bool? noNotification,
+    @JsonKey(name: 'difference_due') int? differenceDue,
+    Return? result,
+    @JsonKey(name: 'return_id') String? returnId,
+    @JsonKey(name: 'display_id') String? displayId,
+    @JsonKey(name: 'shipping_methods')
+    List<OrderShippingMethod>? shippingMethods,
+    List<Transaction>? transactions,
+    Map<String, dynamic>? metadata,
+    @JsonKey(name: 'created_at') DateTime? createdAt,
+    @JsonKey(name: 'updated_at') DateTime? updatedAt,
+    @JsonKey(name: 'order_version') String? orderVersion,
+    @JsonKey(name: 'created_by') String? createdBy,
+    @JsonKey(name: 'canceled_at') DateTime? canceledAt,
+    @JsonKey(name: 'deleted_at') DateTime? deletedAt,
+    @JsonKey(name: 'allow_backorder') bool? allowBackorder,
   }) = _Exchange;
 
-  factory Exchange.fromJson(Map<String, dynamic> json) => _$ExchangeFromJson(json);
-}
-
-@freezed
-class AdminExchangesRes with _$AdminExchangesRes {
-  const factory AdminExchangesRes({
-    required Exchange exchange,
-  }) = _AdminExchangesRes;
-
-  factory AdminExchangesRes.fromJson(Map<String, dynamic> json) =>
-      _$AdminExchangesResFromJson(json);
-}
-
-@freezed
-class AdminExchangesListRes with _$AdminExchangesListRes {
-  const factory AdminExchangesListRes({
-    required List<Exchange> exchanges,
-    required int count,
-    required int offset,
-    required int limit,
-  }) = _AdminExchangesListRes;
-
-  factory AdminExchangesListRes.fromJson(Map<String, dynamic> json) =>
-      _$AdminExchangesListResFromJson(json);
+  factory Exchange.fromJson(Map<String, dynamic> json) =>
+      _$ExchangeFromJson(json);
 }

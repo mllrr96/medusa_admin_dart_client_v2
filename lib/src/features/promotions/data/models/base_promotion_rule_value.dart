@@ -15,7 +15,7 @@ abstract class BasePromotionRuleValue with _$BasePromotionRuleValue {
 
     /// An optional label for the value.
     String? label,
-  }) = _BasePromotion_rule_value;
+  }) = _BasePromotionRuleValue;
 
   /// Creates a BasePromotionRuleValue instance from a JSON map.
   factory BasePromotionRuleValue.fromJson(Map<String, Object?> json) =>

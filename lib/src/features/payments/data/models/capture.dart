@@ -9,7 +9,7 @@ abstract class Capture with _$Capture {
   const factory Capture({
     required String id,
     required int amount,
-    @JsonKey(name: 'created_at') required DateTime createdAt,
+    @JsonKey(name: 'created_at')  DateTime? createdAt,
     @JsonKey(name: 'created_by') String? createdBy,
     required Payment payment,
   }) = _Capture;

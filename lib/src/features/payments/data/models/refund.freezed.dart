@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Refund {
 
- String get id; int get amount;@JsonKey(name: 'refund_reason_id') String? get refundReasonId; String? get note;@JsonKey(name: 'created_at') DateTime get createdAt;@JsonKey(name: 'created_by') String? get createdBy; Payment get payment;@JsonKey(name: 'refund_reason') RefundReason? get refundReason;
+ String get id; int get amount;@JsonKey(name: 'refund_reason_id') String? get refundReasonId; String? get note;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'created_by') String? get createdBy; Payment get payment;@JsonKey(name: 'refund_reason') RefundReason? get refundReason;
 /// Create a copy of Refund
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $RefundCopyWith<$Res>  {
   factory $RefundCopyWith(Refund value, $Res Function(Refund) _then) = _$RefundCopyWithImpl;
 @useResult
 $Res call({
- String id, int amount,@JsonKey(name: 'refund_reason_id') String? refundReasonId, String? note,@JsonKey(name: 'created_at') DateTime createdAt,@JsonKey(name: 'created_by') String? createdBy, Payment payment,@JsonKey(name: 'refund_reason') RefundReason? refundReason
+ String id, int amount,@JsonKey(name: 'refund_reason_id') String? refundReasonId, String? note,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'created_by') String? createdBy, Payment payment,@JsonKey(name: 'refund_reason') RefundReason? refundReason
 });
 
 
@@ -65,14 +65,14 @@ class _$RefundCopyWithImpl<$Res>
 
 /// Create a copy of Refund
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? amount = null,Object? refundReasonId = freezed,Object? note = freezed,Object? createdAt = null,Object? createdBy = freezed,Object? payment = null,Object? refundReason = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? amount = null,Object? refundReasonId = freezed,Object? note = freezed,Object? createdAt = freezed,Object? createdBy = freezed,Object? payment = null,Object? refundReason = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,amount: null == amount ? _self.amount : amount // ignore: cast_nullable_to_non_nullable
 as int,refundReasonId: freezed == refundReasonId ? _self.refundReasonId : refundReasonId // ignore: cast_nullable_to_non_nullable
 as String?,note: freezed == note ? _self.note : note // ignore: cast_nullable_to_non_nullable
-as String?,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as DateTime,createdBy: freezed == createdBy ? _self.createdBy : createdBy // ignore: cast_nullable_to_non_nullable
+as String?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,createdBy: freezed == createdBy ? _self.createdBy : createdBy // ignore: cast_nullable_to_non_nullable
 as String?,payment: null == payment ? _self.payment : payment // ignore: cast_nullable_to_non_nullable
 as Payment,refundReason: freezed == refundReason ? _self.refundReason : refundReason // ignore: cast_nullable_to_non_nullable
 as RefundReason?,
@@ -181,7 +181,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  int amount, @JsonKey(name: 'refund_reason_id')  String? refundReasonId,  String? note, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'created_by')  String? createdBy,  Payment payment, @JsonKey(name: 'refund_reason')  RefundReason? refundReason)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  int amount, @JsonKey(name: 'refund_reason_id')  String? refundReasonId,  String? note, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'created_by')  String? createdBy,  Payment payment, @JsonKey(name: 'refund_reason')  RefundReason? refundReason)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Refund() when $default != null:
 return $default(_that.id,_that.amount,_that.refundReasonId,_that.note,_that.createdAt,_that.createdBy,_that.payment,_that.refundReason);case _:
@@ -202,7 +202,7 @@ return $default(_that.id,_that.amount,_that.refundReasonId,_that.note,_that.crea
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  int amount, @JsonKey(name: 'refund_reason_id')  String? refundReasonId,  String? note, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'created_by')  String? createdBy,  Payment payment, @JsonKey(name: 'refund_reason')  RefundReason? refundReason)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  int amount, @JsonKey(name: 'refund_reason_id')  String? refundReasonId,  String? note, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'created_by')  String? createdBy,  Payment payment, @JsonKey(name: 'refund_reason')  RefundReason? refundReason)  $default,) {final _that = this;
 switch (_that) {
 case _Refund():
 return $default(_that.id,_that.amount,_that.refundReasonId,_that.note,_that.createdAt,_that.createdBy,_that.payment,_that.refundReason);case _:
@@ -222,7 +222,7 @@ return $default(_that.id,_that.amount,_that.refundReasonId,_that.note,_that.crea
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  int amount, @JsonKey(name: 'refund_reason_id')  String? refundReasonId,  String? note, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'created_by')  String? createdBy,  Payment payment, @JsonKey(name: 'refund_reason')  RefundReason? refundReason)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  int amount, @JsonKey(name: 'refund_reason_id')  String? refundReasonId,  String? note, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'created_by')  String? createdBy,  Payment payment, @JsonKey(name: 'refund_reason')  RefundReason? refundReason)?  $default,) {final _that = this;
 switch (_that) {
 case _Refund() when $default != null:
 return $default(_that.id,_that.amount,_that.refundReasonId,_that.note,_that.createdAt,_that.createdBy,_that.payment,_that.refundReason);case _:
@@ -237,14 +237,14 @@ return $default(_that.id,_that.amount,_that.refundReasonId,_that.note,_that.crea
 @JsonSerializable()
 
 class _Refund implements Refund {
-  const _Refund({required this.id, required this.amount, @JsonKey(name: 'refund_reason_id') this.refundReasonId, this.note, @JsonKey(name: 'created_at') required this.createdAt, @JsonKey(name: 'created_by') this.createdBy, required this.payment, @JsonKey(name: 'refund_reason') this.refundReason});
+  const _Refund({required this.id, required this.amount, @JsonKey(name: 'refund_reason_id') this.refundReasonId, this.note, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'created_by') this.createdBy, required this.payment, @JsonKey(name: 'refund_reason') this.refundReason});
   factory _Refund.fromJson(Map<String, dynamic> json) => _$RefundFromJson(json);
 
 @override final  String id;
 @override final  int amount;
 @override@JsonKey(name: 'refund_reason_id') final  String? refundReasonId;
 @override final  String? note;
-@override@JsonKey(name: 'created_at') final  DateTime createdAt;
+@override@JsonKey(name: 'created_at') final  DateTime? createdAt;
 @override@JsonKey(name: 'created_by') final  String? createdBy;
 @override final  Payment payment;
 @override@JsonKey(name: 'refund_reason') final  RefundReason? refundReason;
@@ -282,7 +282,7 @@ abstract mixin class _$RefundCopyWith<$Res> implements $RefundCopyWith<$Res> {
   factory _$RefundCopyWith(_Refund value, $Res Function(_Refund) _then) = __$RefundCopyWithImpl;
 @override @useResult
 $Res call({
- String id, int amount,@JsonKey(name: 'refund_reason_id') String? refundReasonId, String? note,@JsonKey(name: 'created_at') DateTime createdAt,@JsonKey(name: 'created_by') String? createdBy, Payment payment,@JsonKey(name: 'refund_reason') RefundReason? refundReason
+ String id, int amount,@JsonKey(name: 'refund_reason_id') String? refundReasonId, String? note,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'created_by') String? createdBy, Payment payment,@JsonKey(name: 'refund_reason') RefundReason? refundReason
 });
 
 
@@ -299,14 +299,14 @@ class __$RefundCopyWithImpl<$Res>
 
 /// Create a copy of Refund
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? amount = null,Object? refundReasonId = freezed,Object? note = freezed,Object? createdAt = null,Object? createdBy = freezed,Object? payment = null,Object? refundReason = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? amount = null,Object? refundReasonId = freezed,Object? note = freezed,Object? createdAt = freezed,Object? createdBy = freezed,Object? payment = null,Object? refundReason = freezed,}) {
   return _then(_Refund(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,amount: null == amount ? _self.amount : amount // ignore: cast_nullable_to_non_nullable
 as int,refundReasonId: freezed == refundReasonId ? _self.refundReasonId : refundReasonId // ignore: cast_nullable_to_non_nullable
 as String?,note: freezed == note ? _self.note : note // ignore: cast_nullable_to_non_nullable
-as String?,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as DateTime,createdBy: freezed == createdBy ? _self.createdBy : createdBy // ignore: cast_nullable_to_non_nullable
+as String?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,createdBy: freezed == createdBy ? _self.createdBy : createdBy // ignore: cast_nullable_to_non_nullable
 as String?,payment: null == payment ? _self.payment : payment // ignore: cast_nullable_to_non_nullable
 as Payment,refundReason: freezed == refundReason ? _self.refundReason : refundReason // ignore: cast_nullable_to_non_nullable
 as RefundReason?,

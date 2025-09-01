@@ -15,8 +15,8 @@ abstract class StockLocationAddress with _$StockLocationAddress {
     String? phone,
     String? postalCode,
     String? province,
-    required DateTime createdAt,
-    required DateTime updatedAt,
+     DateTime? createdAt,
+     DateTime? updatedAt,
     DateTime? deletedAt,
   }) = _StockLocationAddress;
 

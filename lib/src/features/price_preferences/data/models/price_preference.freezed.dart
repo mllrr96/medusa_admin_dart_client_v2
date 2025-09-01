@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$PricePreference {
 
- String get id; String get attribute; String get value;@JsonKey(name: 'is_tax_inclusive') bool get isTaxInclusive;@JsonKey(name: 'created_at') DateTime get createdAt;@JsonKey(name: 'updated_at') DateTime get updatedAt;@JsonKey(name: 'deleted_at') DateTime get deletedAt;
+ String get id; String get attribute; String get value;@JsonKey(name: 'is_tax_inclusive') bool get isTaxInclusive;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt;
 /// Create a copy of PricePreference
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $PricePreferenceCopyWith<$Res>  {
   factory $PricePreferenceCopyWith(PricePreference value, $Res Function(PricePreference) _then) = _$PricePreferenceCopyWithImpl;
 @useResult
 $Res call({
- String id, String attribute, String value,@JsonKey(name: 'is_tax_inclusive') bool isTaxInclusive,@JsonKey(name: 'created_at') DateTime createdAt,@JsonKey(name: 'updated_at') DateTime updatedAt,@JsonKey(name: 'deleted_at') DateTime deletedAt
+ String id, String attribute, String value,@JsonKey(name: 'is_tax_inclusive') bool isTaxInclusive,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
 });
 
 
@@ -65,16 +65,16 @@ class _$PricePreferenceCopyWithImpl<$Res>
 
 /// Create a copy of PricePreference
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? attribute = null,Object? value = null,Object? isTaxInclusive = null,Object? createdAt = null,Object? updatedAt = null,Object? deletedAt = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? attribute = null,Object? value = null,Object? isTaxInclusive = null,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,attribute: null == attribute ? _self.attribute : attribute // ignore: cast_nullable_to_non_nullable
 as String,value: null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
 as String,isTaxInclusive: null == isTaxInclusive ? _self.isTaxInclusive : isTaxInclusive // ignore: cast_nullable_to_non_nullable
-as bool,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,deletedAt: null == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,
+as bool,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,
   ));
 }
 
@@ -159,7 +159,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String attribute,  String value, @JsonKey(name: 'is_tax_inclusive')  bool isTaxInclusive, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'updated_at')  DateTime updatedAt, @JsonKey(name: 'deleted_at')  DateTime deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String attribute,  String value, @JsonKey(name: 'is_tax_inclusive')  bool isTaxInclusive, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _PricePreference() when $default != null:
 return $default(_that.id,_that.attribute,_that.value,_that.isTaxInclusive,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -180,7 +180,7 @@ return $default(_that.id,_that.attribute,_that.value,_that.isTaxInclusive,_that.
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String attribute,  String value, @JsonKey(name: 'is_tax_inclusive')  bool isTaxInclusive, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'updated_at')  DateTime updatedAt, @JsonKey(name: 'deleted_at')  DateTime deletedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String attribute,  String value, @JsonKey(name: 'is_tax_inclusive')  bool isTaxInclusive, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)  $default,) {final _that = this;
 switch (_that) {
 case _PricePreference():
 return $default(_that.id,_that.attribute,_that.value,_that.isTaxInclusive,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -200,7 +200,7 @@ return $default(_that.id,_that.attribute,_that.value,_that.isTaxInclusive,_that.
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String attribute,  String value, @JsonKey(name: 'is_tax_inclusive')  bool isTaxInclusive, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'updated_at')  DateTime updatedAt, @JsonKey(name: 'deleted_at')  DateTime deletedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String attribute,  String value, @JsonKey(name: 'is_tax_inclusive')  bool isTaxInclusive, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _PricePreference() when $default != null:
 return $default(_that.id,_that.attribute,_that.value,_that.isTaxInclusive,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -215,16 +215,16 @@ return $default(_that.id,_that.attribute,_that.value,_that.isTaxInclusive,_that.
 @JsonSerializable()
 
 class _PricePreference implements PricePreference {
-  const _PricePreference({required this.id, required this.attribute, required this.value, @JsonKey(name: 'is_tax_inclusive') required this.isTaxInclusive, @JsonKey(name: 'created_at') required this.createdAt, @JsonKey(name: 'updated_at') required this.updatedAt, @JsonKey(name: 'deleted_at') required this.deletedAt});
+  const _PricePreference({required this.id, required this.attribute, required this.value, @JsonKey(name: 'is_tax_inclusive') required this.isTaxInclusive, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt});
   factory _PricePreference.fromJson(Map<String, dynamic> json) => _$PricePreferenceFromJson(json);
 
 @override final  String id;
 @override final  String attribute;
 @override final  String value;
 @override@JsonKey(name: 'is_tax_inclusive') final  bool isTaxInclusive;
-@override@JsonKey(name: 'created_at') final  DateTime createdAt;
-@override@JsonKey(name: 'updated_at') final  DateTime updatedAt;
-@override@JsonKey(name: 'deleted_at') final  DateTime deletedAt;
+@override@JsonKey(name: 'created_at') final  DateTime? createdAt;
+@override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
+@override@JsonKey(name: 'deleted_at') final  DateTime? deletedAt;
 
 /// Create a copy of PricePreference
 /// with the given fields replaced by the non-null parameter values.
@@ -259,7 +259,7 @@ abstract mixin class _$PricePreferenceCopyWith<$Res> implements $PricePreference
   factory _$PricePreferenceCopyWith(_PricePreference value, $Res Function(_PricePreference) _then) = __$PricePreferenceCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String attribute, String value,@JsonKey(name: 'is_tax_inclusive') bool isTaxInclusive,@JsonKey(name: 'created_at') DateTime createdAt,@JsonKey(name: 'updated_at') DateTime updatedAt,@JsonKey(name: 'deleted_at') DateTime deletedAt
+ String id, String attribute, String value,@JsonKey(name: 'is_tax_inclusive') bool isTaxInclusive,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
 });
 
 
@@ -276,16 +276,16 @@ class __$PricePreferenceCopyWithImpl<$Res>
 
 /// Create a copy of PricePreference
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? attribute = null,Object? value = null,Object? isTaxInclusive = null,Object? createdAt = null,Object? updatedAt = null,Object? deletedAt = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? attribute = null,Object? value = null,Object? isTaxInclusive = null,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
   return _then(_PricePreference(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,attribute: null == attribute ? _self.attribute : attribute // ignore: cast_nullable_to_non_nullable
 as String,value: null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
 as String,isTaxInclusive: null == isTaxInclusive ? _self.isTaxInclusive : isTaxInclusive // ignore: cast_nullable_to_non_nullable
-as bool,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,deletedAt: null == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,
+as bool,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,
   ));
 }
 

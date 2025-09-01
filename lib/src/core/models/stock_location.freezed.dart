@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$StockLocation {
 
- String get id; String get name; String get addressId; StockLocationAddress? get address; List<SalesChannel>? get salesChannels; List<FulfillmentProvider>? get fulfillmentProviders; Map<String, dynamic>? get metadata; DateTime get createdAt; DateTime get updatedAt; DateTime? get deletedAt;
+ String get id; String get name; String get addressId; StockLocationAddress? get address; List<SalesChannel>? get salesChannels; List<FulfillmentProvider>? get fulfillmentProviders; Map<String, dynamic>? get metadata; DateTime? get createdAt; DateTime? get updatedAt; DateTime? get deletedAt;
 /// Create a copy of StockLocation
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $StockLocationCopyWith<$Res>  {
   factory $StockLocationCopyWith(StockLocation value, $Res Function(StockLocation) _then) = _$StockLocationCopyWithImpl;
 @useResult
 $Res call({
- String id, String name, String addressId, StockLocationAddress? address, List<SalesChannel>? salesChannels, List<FulfillmentProvider>? fulfillmentProviders, Map<String, dynamic>? metadata, DateTime createdAt, DateTime updatedAt, DateTime? deletedAt
+ String id, String name, String addressId, StockLocationAddress? address, List<SalesChannel>? salesChannels, List<FulfillmentProvider>? fulfillmentProviders, Map<String, dynamic>? metadata, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt
 });
 
 
@@ -65,7 +65,7 @@ class _$StockLocationCopyWithImpl<$Res>
 
 /// Create a copy of StockLocation
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? addressId = null,Object? address = freezed,Object? salesChannels = freezed,Object? fulfillmentProviders = freezed,Object? metadata = freezed,Object? createdAt = null,Object? updatedAt = null,Object? deletedAt = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? addressId = null,Object? address = freezed,Object? salesChannels = freezed,Object? fulfillmentProviders = freezed,Object? metadata = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -74,9 +74,9 @@ as String,address: freezed == address ? _self.address : address // ignore: cast_
 as StockLocationAddress?,salesChannels: freezed == salesChannels ? _self.salesChannels : salesChannels // ignore: cast_nullable_to_non_nullable
 as List<SalesChannel>?,fulfillmentProviders: freezed == fulfillmentProviders ? _self.fulfillmentProviders : fulfillmentProviders // ignore: cast_nullable_to_non_nullable
 as List<FulfillmentProvider>?,metadata: freezed == metadata ? _self.metadata : metadata // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,
   ));
 }
@@ -174,7 +174,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  String addressId,  StockLocationAddress? address,  List<SalesChannel>? salesChannels,  List<FulfillmentProvider>? fulfillmentProviders,  Map<String, dynamic>? metadata,  DateTime createdAt,  DateTime updatedAt,  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name,  String addressId,  StockLocationAddress? address,  List<SalesChannel>? salesChannels,  List<FulfillmentProvider>? fulfillmentProviders,  Map<String, dynamic>? metadata,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _StockLocation() when $default != null:
 return $default(_that.id,_that.name,_that.addressId,_that.address,_that.salesChannels,_that.fulfillmentProviders,_that.metadata,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -195,7 +195,7 @@ return $default(_that.id,_that.name,_that.addressId,_that.address,_that.salesCha
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  String addressId,  StockLocationAddress? address,  List<SalesChannel>? salesChannels,  List<FulfillmentProvider>? fulfillmentProviders,  Map<String, dynamic>? metadata,  DateTime createdAt,  DateTime updatedAt,  DateTime? deletedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name,  String addressId,  StockLocationAddress? address,  List<SalesChannel>? salesChannels,  List<FulfillmentProvider>? fulfillmentProviders,  Map<String, dynamic>? metadata,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt)  $default,) {final _that = this;
 switch (_that) {
 case _StockLocation():
 return $default(_that.id,_that.name,_that.addressId,_that.address,_that.salesChannels,_that.fulfillmentProviders,_that.metadata,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -215,7 +215,7 @@ return $default(_that.id,_that.name,_that.addressId,_that.address,_that.salesCha
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  String addressId,  StockLocationAddress? address,  List<SalesChannel>? salesChannels,  List<FulfillmentProvider>? fulfillmentProviders,  Map<String, dynamic>? metadata,  DateTime createdAt,  DateTime updatedAt,  DateTime? deletedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name,  String addressId,  StockLocationAddress? address,  List<SalesChannel>? salesChannels,  List<FulfillmentProvider>? fulfillmentProviders,  Map<String, dynamic>? metadata,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _StockLocation() when $default != null:
 return $default(_that.id,_that.name,_that.addressId,_that.address,_that.salesChannels,_that.fulfillmentProviders,_that.metadata,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -230,7 +230,7 @@ return $default(_that.id,_that.name,_that.addressId,_that.address,_that.salesCha
 @JsonSerializable()
 
 class _StockLocation implements StockLocation {
-  const _StockLocation({required this.id, required this.name, required this.addressId, this.address, final  List<SalesChannel>? salesChannels, final  List<FulfillmentProvider>? fulfillmentProviders, final  Map<String, dynamic>? metadata, required this.createdAt, required this.updatedAt, this.deletedAt}): _salesChannels = salesChannels,_fulfillmentProviders = fulfillmentProviders,_metadata = metadata;
+  const _StockLocation({required this.id, required this.name, required this.addressId, this.address, final  List<SalesChannel>? salesChannels, final  List<FulfillmentProvider>? fulfillmentProviders, final  Map<String, dynamic>? metadata, this.createdAt, this.updatedAt, this.deletedAt}): _salesChannels = salesChannels,_fulfillmentProviders = fulfillmentProviders,_metadata = metadata;
   factory _StockLocation.fromJson(Map<String, dynamic> json) => _$StockLocationFromJson(json);
 
 @override final  String id;
@@ -264,8 +264,8 @@ class _StockLocation implements StockLocation {
   return EqualUnmodifiableMapView(value);
 }
 
-@override final  DateTime createdAt;
-@override final  DateTime updatedAt;
+@override final  DateTime? createdAt;
+@override final  DateTime? updatedAt;
 @override final  DateTime? deletedAt;
 
 /// Create a copy of StockLocation
@@ -301,7 +301,7 @@ abstract mixin class _$StockLocationCopyWith<$Res> implements $StockLocationCopy
   factory _$StockLocationCopyWith(_StockLocation value, $Res Function(_StockLocation) _then) = __$StockLocationCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String name, String addressId, StockLocationAddress? address, List<SalesChannel>? salesChannels, List<FulfillmentProvider>? fulfillmentProviders, Map<String, dynamic>? metadata, DateTime createdAt, DateTime updatedAt, DateTime? deletedAt
+ String id, String name, String addressId, StockLocationAddress? address, List<SalesChannel>? salesChannels, List<FulfillmentProvider>? fulfillmentProviders, Map<String, dynamic>? metadata, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt
 });
 
 
@@ -318,7 +318,7 @@ class __$StockLocationCopyWithImpl<$Res>
 
 /// Create a copy of StockLocation
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? addressId = null,Object? address = freezed,Object? salesChannels = freezed,Object? fulfillmentProviders = freezed,Object? metadata = freezed,Object? createdAt = null,Object? updatedAt = null,Object? deletedAt = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? addressId = null,Object? address = freezed,Object? salesChannels = freezed,Object? fulfillmentProviders = freezed,Object? metadata = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
   return _then(_StockLocation(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -327,9 +327,9 @@ as String,address: freezed == address ? _self.address : address // ignore: cast_
 as StockLocationAddress?,salesChannels: freezed == salesChannels ? _self._salesChannels : salesChannels // ignore: cast_nullable_to_non_nullable
 as List<SalesChannel>?,fulfillmentProviders: freezed == fulfillmentProviders ? _self._fulfillmentProviders : fulfillmentProviders // ignore: cast_nullable_to_non_nullable
 as List<FulfillmentProvider>?,metadata: freezed == metadata ? _self._metadata : metadata // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,
   ));
 }

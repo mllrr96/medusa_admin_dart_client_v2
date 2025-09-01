@@ -13,8 +13,8 @@ abstract class FulfillmentSet with _$FulfillmentSet {
     required String type,
     required StockLocation location,
     required List<ServiceZone> serviceZones,
-    required DateTime createdAt,
-    required DateTime updatedAt,
+     DateTime? createdAt,
+     DateTime? updatedAt,
     DateTime? deletedAt,
   }) = _FulfillmentSet;
 

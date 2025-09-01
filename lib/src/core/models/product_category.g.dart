@@ -27,8 +27,12 @@ _ProductCategory _$ProductCategoryFromJson(Map<String, dynamic> json) =>
       products: (json['products'] as List<dynamic>?)
           ?.map((e) => Product.fromJson(e as Map<String, dynamic>))
           .toList(),
-      createdAt: DateTime.parse(json['createdAt'] as String),
-      updatedAt: DateTime.parse(json['updatedAt'] as String),
+      createdAt: json['createdAt'] == null
+          ? null
+          : DateTime.parse(json['createdAt'] as String),
+      updatedAt: json['updatedAt'] == null
+          ? null
+          : DateTime.parse(json['updatedAt'] as String),
       deletedAt: json['deletedAt'] == null
           ? null
           : DateTime.parse(json['deletedAt'] as String),
@@ -48,8 +52,8 @@ Map<String, dynamic> _$ProductCategoryToJson(_ProductCategory instance) =>
       'categoryChildren': instance.categoryChildren,
       'parentCategory': instance.parentCategory,
       'products': instance.products,
-      'createdAt': instance.createdAt.toIso8601String(),
-      'updatedAt': instance.updatedAt.toIso8601String(),
+      'createdAt': instance.createdAt?.toIso8601String(),
+      'updatedAt': instance.updatedAt?.toIso8601String(),
       'deletedAt': instance.deletedAt?.toIso8601String(),
       'metadata': instance.metadata,
     };

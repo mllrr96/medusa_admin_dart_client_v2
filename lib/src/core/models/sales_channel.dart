@@ -11,8 +11,8 @@
 //     String? description,
 //     required bool isDisabled,
 //     Map<String, dynamic>? metadata,
-//     required DateTime createdAt,
-//     required DateTime updatedAt,
+//      DateTime? createdAt,
+//      DateTime? updatedAt,
 //     DateTime? deletedAt,
 //   }) = _SalesChannel;
 //

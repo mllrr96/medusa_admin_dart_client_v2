@@ -28,8 +28,8 @@ abstract class DraftOrderPreviewItem with _$DraftOrderPreviewItem {
     @JsonKey(name: 'compare_at_unit_price') int? compareAtUnitPrice,
     @JsonKey(name: 'unit_price') required int unitPrice,
     required int quantity,
-    @JsonKey(name: 'created_at') required DateTime createdAt,
-    @JsonKey(name: 'updated_at') required DateTime updatedAt,
+    @JsonKey(name: 'created_at')  DateTime? createdAt,
+    @JsonKey(name: 'updated_at')  DateTime? updatedAt,
     Map<String, dynamic>? metadata,
 
     // Financials

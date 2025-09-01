@@ -14,8 +14,12 @@ _Promotion _$PromotionFromJson(Map<String, dynamic> json) => _Promotion(
   campaignId: json['campaign_id'] as String?,
   status: json['status'] as String?,
   isTaxInclusive: json['is_tax_inclusive'] as bool?,
-  createdAt: DateTime.parse(json['created_at'] as String),
-  updatedAt: DateTime.parse(json['updated_at'] as String),
+  createdAt: json['created_at'] == null
+      ? null
+      : DateTime.parse(json['created_at'] as String),
+  updatedAt: json['updated_at'] == null
+      ? null
+      : DateTime.parse(json['updated_at'] as String),
   deletedAt: json['deleted_at'] == null
       ? null
       : DateTime.parse(json['deleted_at'] as String),
@@ -41,8 +45,8 @@ Map<String, dynamic> _$PromotionToJson(_Promotion instance) =>
       'campaign_id': instance.campaignId,
       'status': instance.status,
       'is_tax_inclusive': instance.isTaxInclusive,
-      'created_at': instance.createdAt.toIso8601String(),
-      'updated_at': instance.updatedAt.toIso8601String(),
+      'created_at': instance.createdAt?.toIso8601String(),
+      'updated_at': instance.updatedAt?.toIso8601String(),
       'deleted_at': instance.deletedAt?.toIso8601String(),
       'application_method': instance.applicationMethod,
       'rules': instance.rules,

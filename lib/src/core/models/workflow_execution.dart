@@ -12,8 +12,8 @@ abstract class WorkflowExecution with _$WorkflowExecution {
     required Map<String, dynamic> execution,
     required Map<String, dynamic> context,
     required String state,
-    required DateTime createdAt,
-    required DateTime updatedAt,
+     DateTime? createdAt,
+     DateTime? updatedAt,
     DateTime? deletedAt,
   }) = _WorkflowExecution;
 

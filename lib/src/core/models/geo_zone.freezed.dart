@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$GeoZone {
 
- String get id; String get type; String get countryCode; String? get provinceCode; String? get city; Map<String, dynamic>? get postalExpression; DateTime get createdAt; DateTime get updatedAt; DateTime? get deletedAt;
+ String get id; String get type; String get countryCode; String? get provinceCode; String? get city; Map<String, dynamic>? get postalExpression; DateTime? get createdAt; DateTime? get updatedAt; DateTime? get deletedAt;
 /// Create a copy of GeoZone
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $GeoZoneCopyWith<$Res>  {
   factory $GeoZoneCopyWith(GeoZone value, $Res Function(GeoZone) _then) = _$GeoZoneCopyWithImpl;
 @useResult
 $Res call({
- String id, String type, String countryCode, String? provinceCode, String? city, Map<String, dynamic>? postalExpression, DateTime createdAt, DateTime updatedAt, DateTime? deletedAt
+ String id, String type, String countryCode, String? provinceCode, String? city, Map<String, dynamic>? postalExpression, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt
 });
 
 
@@ -65,7 +65,7 @@ class _$GeoZoneCopyWithImpl<$Res>
 
 /// Create a copy of GeoZone
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? type = null,Object? countryCode = null,Object? provinceCode = freezed,Object? city = freezed,Object? postalExpression = freezed,Object? createdAt = null,Object? updatedAt = null,Object? deletedAt = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? type = null,Object? countryCode = null,Object? provinceCode = freezed,Object? city = freezed,Object? postalExpression = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
@@ -73,9 +73,9 @@ as String,countryCode: null == countryCode ? _self.countryCode : countryCode // 
 as String,provinceCode: freezed == provinceCode ? _self.provinceCode : provinceCode // ignore: cast_nullable_to_non_nullable
 as String?,city: freezed == city ? _self.city : city // ignore: cast_nullable_to_non_nullable
 as String?,postalExpression: freezed == postalExpression ? _self.postalExpression : postalExpression // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,
   ));
 }
@@ -161,7 +161,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String type,  String countryCode,  String? provinceCode,  String? city,  Map<String, dynamic>? postalExpression,  DateTime createdAt,  DateTime updatedAt,  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String type,  String countryCode,  String? provinceCode,  String? city,  Map<String, dynamic>? postalExpression,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _GeoZone() when $default != null:
 return $default(_that.id,_that.type,_that.countryCode,_that.provinceCode,_that.city,_that.postalExpression,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -182,7 +182,7 @@ return $default(_that.id,_that.type,_that.countryCode,_that.provinceCode,_that.c
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String type,  String countryCode,  String? provinceCode,  String? city,  Map<String, dynamic>? postalExpression,  DateTime createdAt,  DateTime updatedAt,  DateTime? deletedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String type,  String countryCode,  String? provinceCode,  String? city,  Map<String, dynamic>? postalExpression,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt)  $default,) {final _that = this;
 switch (_that) {
 case _GeoZone():
 return $default(_that.id,_that.type,_that.countryCode,_that.provinceCode,_that.city,_that.postalExpression,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -202,7 +202,7 @@ return $default(_that.id,_that.type,_that.countryCode,_that.provinceCode,_that.c
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String type,  String countryCode,  String? provinceCode,  String? city,  Map<String, dynamic>? postalExpression,  DateTime createdAt,  DateTime updatedAt,  DateTime? deletedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String type,  String countryCode,  String? provinceCode,  String? city,  Map<String, dynamic>? postalExpression,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _GeoZone() when $default != null:
 return $default(_that.id,_that.type,_that.countryCode,_that.provinceCode,_that.city,_that.postalExpression,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -217,7 +217,7 @@ return $default(_that.id,_that.type,_that.countryCode,_that.provinceCode,_that.c
 @JsonSerializable()
 
 class _GeoZone implements GeoZone {
-  const _GeoZone({required this.id, required this.type, required this.countryCode, this.provinceCode, this.city, final  Map<String, dynamic>? postalExpression, required this.createdAt, required this.updatedAt, this.deletedAt}): _postalExpression = postalExpression;
+  const _GeoZone({required this.id, required this.type, required this.countryCode, this.provinceCode, this.city, final  Map<String, dynamic>? postalExpression, this.createdAt, this.updatedAt, this.deletedAt}): _postalExpression = postalExpression;
   factory _GeoZone.fromJson(Map<String, dynamic> json) => _$GeoZoneFromJson(json);
 
 @override final  String id;
@@ -234,8 +234,8 @@ class _GeoZone implements GeoZone {
   return EqualUnmodifiableMapView(value);
 }
 
-@override final  DateTime createdAt;
-@override final  DateTime updatedAt;
+@override final  DateTime? createdAt;
+@override final  DateTime? updatedAt;
 @override final  DateTime? deletedAt;
 
 /// Create a copy of GeoZone
@@ -271,7 +271,7 @@ abstract mixin class _$GeoZoneCopyWith<$Res> implements $GeoZoneCopyWith<$Res> {
   factory _$GeoZoneCopyWith(_GeoZone value, $Res Function(_GeoZone) _then) = __$GeoZoneCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String type, String countryCode, String? provinceCode, String? city, Map<String, dynamic>? postalExpression, DateTime createdAt, DateTime updatedAt, DateTime? deletedAt
+ String id, String type, String countryCode, String? provinceCode, String? city, Map<String, dynamic>? postalExpression, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt
 });
 
 
@@ -288,7 +288,7 @@ class __$GeoZoneCopyWithImpl<$Res>
 
 /// Create a copy of GeoZone
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? type = null,Object? countryCode = null,Object? provinceCode = freezed,Object? city = freezed,Object? postalExpression = freezed,Object? createdAt = null,Object? updatedAt = null,Object? deletedAt = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? type = null,Object? countryCode = null,Object? provinceCode = freezed,Object? city = freezed,Object? postalExpression = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
   return _then(_GeoZone(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
@@ -296,9 +296,9 @@ as String,countryCode: null == countryCode ? _self.countryCode : countryCode // 
 as String,provinceCode: freezed == provinceCode ? _self.provinceCode : provinceCode // ignore: cast_nullable_to_non_nullable
 as String?,city: freezed == city ? _self.city : city // ignore: cast_nullable_to_non_nullable
 as String?,postalExpression: freezed == postalExpression ? _self._postalExpression : postalExpression // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,
   ));
 }

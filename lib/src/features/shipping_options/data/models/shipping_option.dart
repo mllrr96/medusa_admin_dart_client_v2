@@ -27,9 +27,9 @@ abstract class ShippingOption with _$ShippingOption {
     required List<ShippingOptionPrice> prices,
     required Map<String, dynamic> data,
     required Map<String, dynamic> metadata,
-    @JsonKey(name: 'created_at') required DateTime createdAt,
-    @JsonKey(name: 'updated_at') required DateTime updatedAt,
-    @JsonKey(name: 'deleted_at') required DateTime deletedAt,
+    @JsonKey(name: 'created_at')  DateTime? createdAt,
+    @JsonKey(name: 'updated_at')  DateTime? updatedAt,
+    @JsonKey(name: 'deleted_at')  DateTime? deletedAt,
   }) = _ShippingOption;
 
   factory ShippingOption.fromJson(Map<String, dynamic> json) => _$ShippingOptionFromJson(json);

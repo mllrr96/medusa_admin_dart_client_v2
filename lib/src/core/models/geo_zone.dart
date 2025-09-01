@@ -12,8 +12,8 @@ abstract class GeoZone with _$GeoZone {
     String? provinceCode,
     String? city,
     Map<String, dynamic>? postalExpression,
-    required DateTime createdAt,
-    required DateTime updatedAt,
+     DateTime? createdAt,
+     DateTime? updatedAt,
     DateTime? deletedAt,
   }) = _GeoZone;
 

@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Notification {
 
- String get id; String get to; String get channel; String get template; Map<String, dynamic>? get data;@JsonKey(name: 'trigger_type') String? get triggerType;@JsonKey(name: 'resource_id') String? get resourceId;@JsonKey(name: 'resource_type') String? get resourceType;@JsonKey(name: 'receiver_id') String? get receiverId;@JsonKey(name: 'original_notification_id') String? get originalNotificationId;@JsonKey(name: 'external_id') String? get externalId;@JsonKey(name: 'provider_id') String get providerId;@JsonKey(name: 'created_at') DateTime get createdAt;
+ String get id; String get to; String get channel; String get template; Map<String, dynamic>? get data;@JsonKey(name: 'trigger_type') String? get triggerType;@JsonKey(name: 'resource_id') String? get resourceId;@JsonKey(name: 'resource_type') String? get resourceType;@JsonKey(name: 'receiver_id') String? get receiverId;@JsonKey(name: 'original_notification_id') String? get originalNotificationId;@JsonKey(name: 'external_id') String? get externalId;@JsonKey(name: 'provider_id') String get providerId;@JsonKey(name: 'created_at') DateTime? get createdAt;
 /// Create a copy of Notification
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $NotificationCopyWith<$Res>  {
   factory $NotificationCopyWith(Notification value, $Res Function(Notification) _then) = _$NotificationCopyWithImpl;
 @useResult
 $Res call({
- String id, String to, String channel, String template, Map<String, dynamic>? data,@JsonKey(name: 'trigger_type') String? triggerType,@JsonKey(name: 'resource_id') String? resourceId,@JsonKey(name: 'resource_type') String? resourceType,@JsonKey(name: 'receiver_id') String? receiverId,@JsonKey(name: 'original_notification_id') String? originalNotificationId,@JsonKey(name: 'external_id') String? externalId,@JsonKey(name: 'provider_id') String providerId,@JsonKey(name: 'created_at') DateTime createdAt
+ String id, String to, String channel, String template, Map<String, dynamic>? data,@JsonKey(name: 'trigger_type') String? triggerType,@JsonKey(name: 'resource_id') String? resourceId,@JsonKey(name: 'resource_type') String? resourceType,@JsonKey(name: 'receiver_id') String? receiverId,@JsonKey(name: 'original_notification_id') String? originalNotificationId,@JsonKey(name: 'external_id') String? externalId,@JsonKey(name: 'provider_id') String providerId,@JsonKey(name: 'created_at') DateTime? createdAt
 });
 
 
@@ -65,7 +65,7 @@ class _$NotificationCopyWithImpl<$Res>
 
 /// Create a copy of Notification
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? to = null,Object? channel = null,Object? template = null,Object? data = freezed,Object? triggerType = freezed,Object? resourceId = freezed,Object? resourceType = freezed,Object? receiverId = freezed,Object? originalNotificationId = freezed,Object? externalId = freezed,Object? providerId = null,Object? createdAt = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? to = null,Object? channel = null,Object? template = null,Object? data = freezed,Object? triggerType = freezed,Object? resourceId = freezed,Object? resourceType = freezed,Object? receiverId = freezed,Object? originalNotificationId = freezed,Object? externalId = freezed,Object? providerId = null,Object? createdAt = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,to: null == to ? _self.to : to // ignore: cast_nullable_to_non_nullable
@@ -79,8 +79,8 @@ as String?,receiverId: freezed == receiverId ? _self.receiverId : receiverId // 
 as String?,originalNotificationId: freezed == originalNotificationId ? _self.originalNotificationId : originalNotificationId // ignore: cast_nullable_to_non_nullable
 as String?,externalId: freezed == externalId ? _self.externalId : externalId // ignore: cast_nullable_to_non_nullable
 as String?,providerId: null == providerId ? _self.providerId : providerId // ignore: cast_nullable_to_non_nullable
-as String,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as DateTime,
+as String,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,
   ));
 }
 
@@ -165,7 +165,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String to,  String channel,  String template,  Map<String, dynamic>? data, @JsonKey(name: 'trigger_type')  String? triggerType, @JsonKey(name: 'resource_id')  String? resourceId, @JsonKey(name: 'resource_type')  String? resourceType, @JsonKey(name: 'receiver_id')  String? receiverId, @JsonKey(name: 'original_notification_id')  String? originalNotificationId, @JsonKey(name: 'external_id')  String? externalId, @JsonKey(name: 'provider_id')  String providerId, @JsonKey(name: 'created_at')  DateTime createdAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String to,  String channel,  String template,  Map<String, dynamic>? data, @JsonKey(name: 'trigger_type')  String? triggerType, @JsonKey(name: 'resource_id')  String? resourceId, @JsonKey(name: 'resource_type')  String? resourceType, @JsonKey(name: 'receiver_id')  String? receiverId, @JsonKey(name: 'original_notification_id')  String? originalNotificationId, @JsonKey(name: 'external_id')  String? externalId, @JsonKey(name: 'provider_id')  String providerId, @JsonKey(name: 'created_at')  DateTime? createdAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Notification() when $default != null:
 return $default(_that.id,_that.to,_that.channel,_that.template,_that.data,_that.triggerType,_that.resourceId,_that.resourceType,_that.receiverId,_that.originalNotificationId,_that.externalId,_that.providerId,_that.createdAt);case _:
@@ -186,7 +186,7 @@ return $default(_that.id,_that.to,_that.channel,_that.template,_that.data,_that.
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String to,  String channel,  String template,  Map<String, dynamic>? data, @JsonKey(name: 'trigger_type')  String? triggerType, @JsonKey(name: 'resource_id')  String? resourceId, @JsonKey(name: 'resource_type')  String? resourceType, @JsonKey(name: 'receiver_id')  String? receiverId, @JsonKey(name: 'original_notification_id')  String? originalNotificationId, @JsonKey(name: 'external_id')  String? externalId, @JsonKey(name: 'provider_id')  String providerId, @JsonKey(name: 'created_at')  DateTime createdAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String to,  String channel,  String template,  Map<String, dynamic>? data, @JsonKey(name: 'trigger_type')  String? triggerType, @JsonKey(name: 'resource_id')  String? resourceId, @JsonKey(name: 'resource_type')  String? resourceType, @JsonKey(name: 'receiver_id')  String? receiverId, @JsonKey(name: 'original_notification_id')  String? originalNotificationId, @JsonKey(name: 'external_id')  String? externalId, @JsonKey(name: 'provider_id')  String providerId, @JsonKey(name: 'created_at')  DateTime? createdAt)  $default,) {final _that = this;
 switch (_that) {
 case _Notification():
 return $default(_that.id,_that.to,_that.channel,_that.template,_that.data,_that.triggerType,_that.resourceId,_that.resourceType,_that.receiverId,_that.originalNotificationId,_that.externalId,_that.providerId,_that.createdAt);case _:
@@ -206,7 +206,7 @@ return $default(_that.id,_that.to,_that.channel,_that.template,_that.data,_that.
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String to,  String channel,  String template,  Map<String, dynamic>? data, @JsonKey(name: 'trigger_type')  String? triggerType, @JsonKey(name: 'resource_id')  String? resourceId, @JsonKey(name: 'resource_type')  String? resourceType, @JsonKey(name: 'receiver_id')  String? receiverId, @JsonKey(name: 'original_notification_id')  String? originalNotificationId, @JsonKey(name: 'external_id')  String? externalId, @JsonKey(name: 'provider_id')  String providerId, @JsonKey(name: 'created_at')  DateTime createdAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String to,  String channel,  String template,  Map<String, dynamic>? data, @JsonKey(name: 'trigger_type')  String? triggerType, @JsonKey(name: 'resource_id')  String? resourceId, @JsonKey(name: 'resource_type')  String? resourceType, @JsonKey(name: 'receiver_id')  String? receiverId, @JsonKey(name: 'original_notification_id')  String? originalNotificationId, @JsonKey(name: 'external_id')  String? externalId, @JsonKey(name: 'provider_id')  String providerId, @JsonKey(name: 'created_at')  DateTime? createdAt)?  $default,) {final _that = this;
 switch (_that) {
 case _Notification() when $default != null:
 return $default(_that.id,_that.to,_that.channel,_that.template,_that.data,_that.triggerType,_that.resourceId,_that.resourceType,_that.receiverId,_that.originalNotificationId,_that.externalId,_that.providerId,_that.createdAt);case _:
@@ -221,7 +221,7 @@ return $default(_that.id,_that.to,_that.channel,_that.template,_that.data,_that.
 @JsonSerializable()
 
 class _Notification implements Notification {
-  const _Notification({required this.id, required this.to, required this.channel, required this.template, final  Map<String, dynamic>? data, @JsonKey(name: 'trigger_type') this.triggerType, @JsonKey(name: 'resource_id') this.resourceId, @JsonKey(name: 'resource_type') this.resourceType, @JsonKey(name: 'receiver_id') this.receiverId, @JsonKey(name: 'original_notification_id') this.originalNotificationId, @JsonKey(name: 'external_id') this.externalId, @JsonKey(name: 'provider_id') required this.providerId, @JsonKey(name: 'created_at') required this.createdAt}): _data = data;
+  const _Notification({required this.id, required this.to, required this.channel, required this.template, final  Map<String, dynamic>? data, @JsonKey(name: 'trigger_type') this.triggerType, @JsonKey(name: 'resource_id') this.resourceId, @JsonKey(name: 'resource_type') this.resourceType, @JsonKey(name: 'receiver_id') this.receiverId, @JsonKey(name: 'original_notification_id') this.originalNotificationId, @JsonKey(name: 'external_id') this.externalId, @JsonKey(name: 'provider_id') required this.providerId, @JsonKey(name: 'created_at') this.createdAt}): _data = data;
   factory _Notification.fromJson(Map<String, dynamic> json) => _$NotificationFromJson(json);
 
 @override final  String id;
@@ -244,7 +244,7 @@ class _Notification implements Notification {
 @override@JsonKey(name: 'original_notification_id') final  String? originalNotificationId;
 @override@JsonKey(name: 'external_id') final  String? externalId;
 @override@JsonKey(name: 'provider_id') final  String providerId;
-@override@JsonKey(name: 'created_at') final  DateTime createdAt;
+@override@JsonKey(name: 'created_at') final  DateTime? createdAt;
 
 /// Create a copy of Notification
 /// with the given fields replaced by the non-null parameter values.
@@ -279,7 +279,7 @@ abstract mixin class _$NotificationCopyWith<$Res> implements $NotificationCopyWi
   factory _$NotificationCopyWith(_Notification value, $Res Function(_Notification) _then) = __$NotificationCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String to, String channel, String template, Map<String, dynamic>? data,@JsonKey(name: 'trigger_type') String? triggerType,@JsonKey(name: 'resource_id') String? resourceId,@JsonKey(name: 'resource_type') String? resourceType,@JsonKey(name: 'receiver_id') String? receiverId,@JsonKey(name: 'original_notification_id') String? originalNotificationId,@JsonKey(name: 'external_id') String? externalId,@JsonKey(name: 'provider_id') String providerId,@JsonKey(name: 'created_at') DateTime createdAt
+ String id, String to, String channel, String template, Map<String, dynamic>? data,@JsonKey(name: 'trigger_type') String? triggerType,@JsonKey(name: 'resource_id') String? resourceId,@JsonKey(name: 'resource_type') String? resourceType,@JsonKey(name: 'receiver_id') String? receiverId,@JsonKey(name: 'original_notification_id') String? originalNotificationId,@JsonKey(name: 'external_id') String? externalId,@JsonKey(name: 'provider_id') String providerId,@JsonKey(name: 'created_at') DateTime? createdAt
 });
 
 
@@ -296,7 +296,7 @@ class __$NotificationCopyWithImpl<$Res>
 
 /// Create a copy of Notification
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? to = null,Object? channel = null,Object? template = null,Object? data = freezed,Object? triggerType = freezed,Object? resourceId = freezed,Object? resourceType = freezed,Object? receiverId = freezed,Object? originalNotificationId = freezed,Object? externalId = freezed,Object? providerId = null,Object? createdAt = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? to = null,Object? channel = null,Object? template = null,Object? data = freezed,Object? triggerType = freezed,Object? resourceId = freezed,Object? resourceType = freezed,Object? receiverId = freezed,Object? originalNotificationId = freezed,Object? externalId = freezed,Object? providerId = null,Object? createdAt = freezed,}) {
   return _then(_Notification(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,to: null == to ? _self.to : to // ignore: cast_nullable_to_non_nullable
@@ -310,8 +310,8 @@ as String?,receiverId: freezed == receiverId ? _self.receiverId : receiverId // 
 as String?,originalNotificationId: freezed == originalNotificationId ? _self.originalNotificationId : originalNotificationId // ignore: cast_nullable_to_non_nullable
 as String?,externalId: freezed == externalId ? _self.externalId : externalId // ignore: cast_nullable_to_non_nullable
 as String?,providerId: null == providerId ? _self.providerId : providerId // ignore: cast_nullable_to_non_nullable
-as String,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as DateTime,
+as String,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,
   ));
 }
 

@@ -31,8 +31,12 @@ _DraftOrderPreviewItem _$DraftOrderPreviewItemFromJson(
   compareAtUnitPrice: (json['compare_at_unit_price'] as num?)?.toInt(),
   unitPrice: (json['unit_price'] as num).toInt(),
   quantity: (json['quantity'] as num).toInt(),
-  createdAt: DateTime.parse(json['created_at'] as String),
-  updatedAt: DateTime.parse(json['updated_at'] as String),
+  createdAt: json['created_at'] == null
+      ? null
+      : DateTime.parse(json['created_at'] as String),
+  updatedAt: json['updated_at'] == null
+      ? null
+      : DateTime.parse(json['updated_at'] as String),
   metadata: json['metadata'] as Map<String, dynamic>?,
   originalTotal: (json['original_total'] as num).toInt(),
   originalSubtotal: (json['original_subtotal'] as num).toInt(),
@@ -74,8 +78,8 @@ Map<String, dynamic> _$DraftOrderPreviewItemToJson(
   'compare_at_unit_price': instance.compareAtUnitPrice,
   'unit_price': instance.unitPrice,
   'quantity': instance.quantity,
-  'created_at': instance.createdAt.toIso8601String(),
-  'updated_at': instance.updatedAt.toIso8601String(),
+  'created_at': instance.createdAt?.toIso8601String(),
+  'updated_at': instance.updatedAt?.toIso8601String(),
   'metadata': instance.metadata,
   'original_total': instance.originalTotal,
   'original_subtotal': instance.originalSubtotal,

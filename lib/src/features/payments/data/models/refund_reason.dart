@@ -11,8 +11,8 @@ abstract class RefundReason with _$RefundReason {
     required String label,
     String? description,
     required Map<String, dynamic> metadata,
-    @JsonKey(name: 'created_at') required DateTime createdAt,
-    @JsonKey(name: 'updated_at') required DateTime updatedAt,
+    @JsonKey(name: 'created_at')  DateTime? createdAt,
+    @JsonKey(name: 'updated_at')  DateTime? updatedAt,
   }) = _RefundReason;
 
   factory RefundReason.fromJson(Map<String, dynamic> json) =>

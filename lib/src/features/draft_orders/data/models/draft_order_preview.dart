@@ -9,7 +9,7 @@ import 'package:medusa_admin_dart_client/src/core/models/region.dart';
 import 'package:medusa_admin_dart_client/src/core/models/order_fulfillment.dart';
 import 'draft_order_preview_item.dart';
 import 'draft_order_preview_shipping_method.dart';
-import 'order_summery.dart';
+import 'order_summary.dart';
 import 'order_transaction.dart';
 
 part 'draft_order_preview.freezed.dart';
@@ -73,8 +73,8 @@ abstract class DraftOrderPreview with _$DraftOrderPreview {
     @JsonKey(name: 'credit_line_total') required int creditLineTotal,
 
     // Timestamps
-    @JsonKey(name: 'created_at') required DateTime createdAt,
-    @JsonKey(name: 'updated_at') required DateTime updatedAt,
+    @JsonKey(name: 'created_at')  DateTime? createdAt,
+    @JsonKey(name: 'updated_at')  DateTime? updatedAt,
 
     // Expandable Relations
     @JsonKey(name: 'shipping_address') OrderAddress? shippingAddress,
@@ -88,7 +88,7 @@ abstract class DraftOrderPreview with _$DraftOrderPreview {
 
   }) = _DraftOrderPreview;
 
-  factory DraftOrderPreview.fromJson(Map<String, Object?> json) =>
+  factory DraftOrderPreview.fromJson(Map<String, dynamic> json) =>
       _$DraftOrderPreviewFromJson(json);
 }
 

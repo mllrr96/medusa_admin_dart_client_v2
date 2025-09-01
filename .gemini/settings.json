@@ -1,0 +1,13 @@
+{
+  "theme": "Default",
+  "selectedAuthType": "oauth-personal",
+  "preferredEditor": "vscode",
+  "mcpServers": {
+  "dart": {
+    "command": "dart",
+    "args": [
+      "mcp-server"
+    ]
+  }
+}
+}

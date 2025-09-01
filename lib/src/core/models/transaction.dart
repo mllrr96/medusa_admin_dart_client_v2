@@ -17,8 +17,8 @@ abstract class Transaction with _$Transaction {
     String? reference,
     String? referenceId,
     Map<String, dynamic>? metadata,
-    required DateTime createdAt,
-    required DateTime updatedAt,
+     DateTime? createdAt,
+     DateTime? updatedAt,
   }) = _Transaction;
 
   factory Transaction.fromJson(Map<String, dynamic> json) =>

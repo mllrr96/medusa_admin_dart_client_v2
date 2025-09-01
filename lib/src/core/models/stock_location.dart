@@ -16,8 +16,8 @@ abstract class StockLocation with _$StockLocation {
     List<SalesChannel>? salesChannels,
     List<FulfillmentProvider>? fulfillmentProviders,
     Map<String, dynamic>? metadata,
-    required DateTime createdAt,
-    required DateTime updatedAt,
+     DateTime? createdAt,
+     DateTime? updatedAt,
     DateTime? deletedAt,
   }) = _StockLocation;
 

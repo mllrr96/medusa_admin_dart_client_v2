@@ -16,8 +16,8 @@ abstract class StoreCreditAccount with _$StoreCreditAccount {
     required Customer customer,
     required List<TransactionGroup> transactionGroups,
     Map<String, dynamic>? metadata,
-    required DateTime createdAt,
-    required DateTime updatedAt,
+     DateTime? createdAt,
+     DateTime? updatedAt,
   }) = _StoreCreditAccount;
 
   factory StoreCreditAccount.fromJson(Map<String, dynamic> json) =>

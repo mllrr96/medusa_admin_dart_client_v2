@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ShippingOption {
 
- String get id; String get name;@JsonKey(name: 'price_type') String get priceType;@JsonKey(name: 'service_zone_id') String get serviceZoneId; Map<String, dynamic> get serviceZone;@JsonKey(name: 'provider_id') String get providerId; FulfillmentProvider get provider;@JsonKey(name: 'shipping_option_type_id') String get shippingOptionTypeId; ShippingOptionType get type;@JsonKey(name: 'shipping_profile_id') String get shippingProfileId; ShippingProfile get shippingProfile; List<ShippingOptionRule> get rules; List<ShippingOptionPrice> get prices; Map<String, dynamic> get data; Map<String, dynamic> get metadata;@JsonKey(name: 'created_at') DateTime get createdAt;@JsonKey(name: 'updated_at') DateTime get updatedAt;@JsonKey(name: 'deleted_at') DateTime get deletedAt;
+ String get id; String get name;@JsonKey(name: 'price_type') String get priceType;@JsonKey(name: 'service_zone_id') String get serviceZoneId; Map<String, dynamic> get serviceZone;@JsonKey(name: 'provider_id') String get providerId; FulfillmentProvider get provider;@JsonKey(name: 'shipping_option_type_id') String get shippingOptionTypeId; ShippingOptionType get type;@JsonKey(name: 'shipping_profile_id') String get shippingProfileId; ShippingProfile get shippingProfile; List<ShippingOptionRule> get rules; List<ShippingOptionPrice> get prices; Map<String, dynamic> get data; Map<String, dynamic> get metadata;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt;
 /// Create a copy of ShippingOption
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $ShippingOptionCopyWith<$Res>  {
   factory $ShippingOptionCopyWith(ShippingOption value, $Res Function(ShippingOption) _then) = _$ShippingOptionCopyWithImpl;
 @useResult
 $Res call({
- String id, String name,@JsonKey(name: 'price_type') String priceType,@JsonKey(name: 'service_zone_id') String serviceZoneId, Map<String, dynamic> serviceZone,@JsonKey(name: 'provider_id') String providerId, FulfillmentProvider provider,@JsonKey(name: 'shipping_option_type_id') String shippingOptionTypeId, ShippingOptionType type,@JsonKey(name: 'shipping_profile_id') String shippingProfileId, ShippingProfile shippingProfile, List<ShippingOptionRule> rules, List<ShippingOptionPrice> prices, Map<String, dynamic> data, Map<String, dynamic> metadata,@JsonKey(name: 'created_at') DateTime createdAt,@JsonKey(name: 'updated_at') DateTime updatedAt,@JsonKey(name: 'deleted_at') DateTime deletedAt
+ String id, String name,@JsonKey(name: 'price_type') String priceType,@JsonKey(name: 'service_zone_id') String serviceZoneId, Map<String, dynamic> serviceZone,@JsonKey(name: 'provider_id') String providerId, FulfillmentProvider provider,@JsonKey(name: 'shipping_option_type_id') String shippingOptionTypeId, ShippingOptionType type,@JsonKey(name: 'shipping_profile_id') String shippingProfileId, ShippingProfile shippingProfile, List<ShippingOptionRule> rules, List<ShippingOptionPrice> prices, Map<String, dynamic> data, Map<String, dynamic> metadata,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
 });
 
 
@@ -65,7 +65,7 @@ class _$ShippingOptionCopyWithImpl<$Res>
 
 /// Create a copy of ShippingOption
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? priceType = null,Object? serviceZoneId = null,Object? serviceZone = null,Object? providerId = null,Object? provider = null,Object? shippingOptionTypeId = null,Object? type = null,Object? shippingProfileId = null,Object? shippingProfile = null,Object? rules = null,Object? prices = null,Object? data = null,Object? metadata = null,Object? createdAt = null,Object? updatedAt = null,Object? deletedAt = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? priceType = null,Object? serviceZoneId = null,Object? serviceZone = null,Object? providerId = null,Object? provider = null,Object? shippingOptionTypeId = null,Object? type = null,Object? shippingProfileId = null,Object? shippingProfile = null,Object? rules = null,Object? prices = null,Object? data = null,Object? metadata = null,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -82,10 +82,10 @@ as ShippingProfile,rules: null == rules ? _self.rules : rules // ignore: cast_nu
 as List<ShippingOptionRule>,prices: null == prices ? _self.prices : prices // ignore: cast_nullable_to_non_nullable
 as List<ShippingOptionPrice>,data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>,metadata: null == metadata ? _self.metadata : metadata // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,deletedAt: null == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,
+as Map<String, dynamic>,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,
   ));
 }
 /// Create a copy of ShippingOption
@@ -197,7 +197,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(name: 'price_type')  String priceType, @JsonKey(name: 'service_zone_id')  String serviceZoneId,  Map<String, dynamic> serviceZone, @JsonKey(name: 'provider_id')  String providerId,  FulfillmentProvider provider, @JsonKey(name: 'shipping_option_type_id')  String shippingOptionTypeId,  ShippingOptionType type, @JsonKey(name: 'shipping_profile_id')  String shippingProfileId,  ShippingProfile shippingProfile,  List<ShippingOptionRule> rules,  List<ShippingOptionPrice> prices,  Map<String, dynamic> data,  Map<String, dynamic> metadata, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'updated_at')  DateTime updatedAt, @JsonKey(name: 'deleted_at')  DateTime deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(name: 'price_type')  String priceType, @JsonKey(name: 'service_zone_id')  String serviceZoneId,  Map<String, dynamic> serviceZone, @JsonKey(name: 'provider_id')  String providerId,  FulfillmentProvider provider, @JsonKey(name: 'shipping_option_type_id')  String shippingOptionTypeId,  ShippingOptionType type, @JsonKey(name: 'shipping_profile_id')  String shippingProfileId,  ShippingProfile shippingProfile,  List<ShippingOptionRule> rules,  List<ShippingOptionPrice> prices,  Map<String, dynamic> data,  Map<String, dynamic> metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ShippingOption() when $default != null:
 return $default(_that.id,_that.name,_that.priceType,_that.serviceZoneId,_that.serviceZone,_that.providerId,_that.provider,_that.shippingOptionTypeId,_that.type,_that.shippingProfileId,_that.shippingProfile,_that.rules,_that.prices,_that.data,_that.metadata,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -218,7 +218,7 @@ return $default(_that.id,_that.name,_that.priceType,_that.serviceZoneId,_that.se
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(name: 'price_type')  String priceType, @JsonKey(name: 'service_zone_id')  String serviceZoneId,  Map<String, dynamic> serviceZone, @JsonKey(name: 'provider_id')  String providerId,  FulfillmentProvider provider, @JsonKey(name: 'shipping_option_type_id')  String shippingOptionTypeId,  ShippingOptionType type, @JsonKey(name: 'shipping_profile_id')  String shippingProfileId,  ShippingProfile shippingProfile,  List<ShippingOptionRule> rules,  List<ShippingOptionPrice> prices,  Map<String, dynamic> data,  Map<String, dynamic> metadata, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'updated_at')  DateTime updatedAt, @JsonKey(name: 'deleted_at')  DateTime deletedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(name: 'price_type')  String priceType, @JsonKey(name: 'service_zone_id')  String serviceZoneId,  Map<String, dynamic> serviceZone, @JsonKey(name: 'provider_id')  String providerId,  FulfillmentProvider provider, @JsonKey(name: 'shipping_option_type_id')  String shippingOptionTypeId,  ShippingOptionType type, @JsonKey(name: 'shipping_profile_id')  String shippingProfileId,  ShippingProfile shippingProfile,  List<ShippingOptionRule> rules,  List<ShippingOptionPrice> prices,  Map<String, dynamic> data,  Map<String, dynamic> metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)  $default,) {final _that = this;
 switch (_that) {
 case _ShippingOption():
 return $default(_that.id,_that.name,_that.priceType,_that.serviceZoneId,_that.serviceZone,_that.providerId,_that.provider,_that.shippingOptionTypeId,_that.type,_that.shippingProfileId,_that.shippingProfile,_that.rules,_that.prices,_that.data,_that.metadata,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -238,7 +238,7 @@ return $default(_that.id,_that.name,_that.priceType,_that.serviceZoneId,_that.se
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name, @JsonKey(name: 'price_type')  String priceType, @JsonKey(name: 'service_zone_id')  String serviceZoneId,  Map<String, dynamic> serviceZone, @JsonKey(name: 'provider_id')  String providerId,  FulfillmentProvider provider, @JsonKey(name: 'shipping_option_type_id')  String shippingOptionTypeId,  ShippingOptionType type, @JsonKey(name: 'shipping_profile_id')  String shippingProfileId,  ShippingProfile shippingProfile,  List<ShippingOptionRule> rules,  List<ShippingOptionPrice> prices,  Map<String, dynamic> data,  Map<String, dynamic> metadata, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'updated_at')  DateTime updatedAt, @JsonKey(name: 'deleted_at')  DateTime deletedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name, @JsonKey(name: 'price_type')  String priceType, @JsonKey(name: 'service_zone_id')  String serviceZoneId,  Map<String, dynamic> serviceZone, @JsonKey(name: 'provider_id')  String providerId,  FulfillmentProvider provider, @JsonKey(name: 'shipping_option_type_id')  String shippingOptionTypeId,  ShippingOptionType type, @JsonKey(name: 'shipping_profile_id')  String shippingProfileId,  ShippingProfile shippingProfile,  List<ShippingOptionRule> rules,  List<ShippingOptionPrice> prices,  Map<String, dynamic> data,  Map<String, dynamic> metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _ShippingOption() when $default != null:
 return $default(_that.id,_that.name,_that.priceType,_that.serviceZoneId,_that.serviceZone,_that.providerId,_that.provider,_that.shippingOptionTypeId,_that.type,_that.shippingProfileId,_that.shippingProfile,_that.rules,_that.prices,_that.data,_that.metadata,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -253,7 +253,7 @@ return $default(_that.id,_that.name,_that.priceType,_that.serviceZoneId,_that.se
 @JsonSerializable()
 
 class _ShippingOption implements ShippingOption {
-  const _ShippingOption({required this.id, required this.name, @JsonKey(name: 'price_type') required this.priceType, @JsonKey(name: 'service_zone_id') required this.serviceZoneId, required final  Map<String, dynamic> serviceZone, @JsonKey(name: 'provider_id') required this.providerId, required this.provider, @JsonKey(name: 'shipping_option_type_id') required this.shippingOptionTypeId, required this.type, @JsonKey(name: 'shipping_profile_id') required this.shippingProfileId, required this.shippingProfile, required final  List<ShippingOptionRule> rules, required final  List<ShippingOptionPrice> prices, required final  Map<String, dynamic> data, required final  Map<String, dynamic> metadata, @JsonKey(name: 'created_at') required this.createdAt, @JsonKey(name: 'updated_at') required this.updatedAt, @JsonKey(name: 'deleted_at') required this.deletedAt}): _serviceZone = serviceZone,_rules = rules,_prices = prices,_data = data,_metadata = metadata;
+  const _ShippingOption({required this.id, required this.name, @JsonKey(name: 'price_type') required this.priceType, @JsonKey(name: 'service_zone_id') required this.serviceZoneId, required final  Map<String, dynamic> serviceZone, @JsonKey(name: 'provider_id') required this.providerId, required this.provider, @JsonKey(name: 'shipping_option_type_id') required this.shippingOptionTypeId, required this.type, @JsonKey(name: 'shipping_profile_id') required this.shippingProfileId, required this.shippingProfile, required final  List<ShippingOptionRule> rules, required final  List<ShippingOptionPrice> prices, required final  Map<String, dynamic> data, required final  Map<String, dynamic> metadata, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt}): _serviceZone = serviceZone,_rules = rules,_prices = prices,_data = data,_metadata = metadata;
   factory _ShippingOption.fromJson(Map<String, dynamic> json) => _$ShippingOptionFromJson(json);
 
 @override final  String id;
@@ -301,9 +301,9 @@ class _ShippingOption implements ShippingOption {
   return EqualUnmodifiableMapView(_metadata);
 }
 
-@override@JsonKey(name: 'created_at') final  DateTime createdAt;
-@override@JsonKey(name: 'updated_at') final  DateTime updatedAt;
-@override@JsonKey(name: 'deleted_at') final  DateTime deletedAt;
+@override@JsonKey(name: 'created_at') final  DateTime? createdAt;
+@override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
+@override@JsonKey(name: 'deleted_at') final  DateTime? deletedAt;
 
 /// Create a copy of ShippingOption
 /// with the given fields replaced by the non-null parameter values.
@@ -338,7 +338,7 @@ abstract mixin class _$ShippingOptionCopyWith<$Res> implements $ShippingOptionCo
   factory _$ShippingOptionCopyWith(_ShippingOption value, $Res Function(_ShippingOption) _then) = __$ShippingOptionCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String name,@JsonKey(name: 'price_type') String priceType,@JsonKey(name: 'service_zone_id') String serviceZoneId, Map<String, dynamic> serviceZone,@JsonKey(name: 'provider_id') String providerId, FulfillmentProvider provider,@JsonKey(name: 'shipping_option_type_id') String shippingOptionTypeId, ShippingOptionType type,@JsonKey(name: 'shipping_profile_id') String shippingProfileId, ShippingProfile shippingProfile, List<ShippingOptionRule> rules, List<ShippingOptionPrice> prices, Map<String, dynamic> data, Map<String, dynamic> metadata,@JsonKey(name: 'created_at') DateTime createdAt,@JsonKey(name: 'updated_at') DateTime updatedAt,@JsonKey(name: 'deleted_at') DateTime deletedAt
+ String id, String name,@JsonKey(name: 'price_type') String priceType,@JsonKey(name: 'service_zone_id') String serviceZoneId, Map<String, dynamic> serviceZone,@JsonKey(name: 'provider_id') String providerId, FulfillmentProvider provider,@JsonKey(name: 'shipping_option_type_id') String shippingOptionTypeId, ShippingOptionType type,@JsonKey(name: 'shipping_profile_id') String shippingProfileId, ShippingProfile shippingProfile, List<ShippingOptionRule> rules, List<ShippingOptionPrice> prices, Map<String, dynamic> data, Map<String, dynamic> metadata,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
 });
 
 
@@ -355,7 +355,7 @@ class __$ShippingOptionCopyWithImpl<$Res>
 
 /// Create a copy of ShippingOption
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? priceType = null,Object? serviceZoneId = null,Object? serviceZone = null,Object? providerId = null,Object? provider = null,Object? shippingOptionTypeId = null,Object? type = null,Object? shippingProfileId = null,Object? shippingProfile = null,Object? rules = null,Object? prices = null,Object? data = null,Object? metadata = null,Object? createdAt = null,Object? updatedAt = null,Object? deletedAt = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? priceType = null,Object? serviceZoneId = null,Object? serviceZone = null,Object? providerId = null,Object? provider = null,Object? shippingOptionTypeId = null,Object? type = null,Object? shippingProfileId = null,Object? shippingProfile = null,Object? rules = null,Object? prices = null,Object? data = null,Object? metadata = null,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
   return _then(_ShippingOption(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -372,10 +372,10 @@ as ShippingProfile,rules: null == rules ? _self._rules : rules // ignore: cast_n
 as List<ShippingOptionRule>,prices: null == prices ? _self._prices : prices // ignore: cast_nullable_to_non_nullable
 as List<ShippingOptionPrice>,data: null == data ? _self._data : data // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>,metadata: null == metadata ? _self._metadata : metadata // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,deletedAt: null == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,
+as Map<String, dynamic>,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,
   ));
 }
 

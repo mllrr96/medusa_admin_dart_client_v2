@@ -76,11 +76,11 @@ abstract class InventoryLevel with _$InventoryLevel {
   const factory InventoryLevel({
     required String id,
     @JsonKey(name: 'created_at')
-    required DateTime createdAt,
+     DateTime? createdAt,
     @JsonKey(name: 'updated_at')
-    required DateTime updatedAt,
+     DateTime? updatedAt,
     @JsonKey(name: 'deleted_at')
-    required DateTime deletedAt,
+     DateTime? deletedAt,
     @JsonKey(name: 'inventory_item_id')
     required String inventoryItemId,
     @JsonKey(name: 'location_id')

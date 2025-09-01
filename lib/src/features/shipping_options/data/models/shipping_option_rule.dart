@@ -12,9 +12,9 @@ abstract class ShippingOptionRule with _$ShippingOptionRule {
     required String operator,
     required dynamic value,
     @JsonKey(name: 'shipping_option_id') required String shippingOptionId,
-    @JsonKey(name: 'created_at') required DateTime createdAt,
-    @JsonKey(name: 'updated_at') required DateTime updatedAt,
-    @JsonKey(name: 'deleted_at') required DateTime deletedAt,
+    @JsonKey(name: 'created_at')  DateTime? createdAt,
+    @JsonKey(name: 'updated_at')  DateTime? updatedAt,
+    @JsonKey(name: 'deleted_at')  DateTime? deletedAt,
   }) = _ShippingOptionRule;
 
   factory ShippingOptionRule.fromJson(Map<String, dynamic> json) =>

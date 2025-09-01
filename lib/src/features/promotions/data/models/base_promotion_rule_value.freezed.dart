@@ -11,13 +11,6 @@ part of 'base_promotion_rule_value.dart';
 
 // dart format off
 T _$identity<T>(T value) => value;
-BasePromotionRuleValue _$BasePromotionRuleValueFromJson(
-  Map<String, dynamic> json
-) {
-    return _BasePromotion_rule_value.fromJson(
-      json
-    );
-}
 
 /// @nodoc
 mixin _$BasePromotionRuleValue {
@@ -101,10 +94,10 @@ extension BasePromotionRuleValuePatterns on BasePromotionRuleValue {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _BasePromotion_rule_value value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _BasePromotionRuleValue value)?  $default,{required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _BasePromotion_rule_value() when $default != null:
+case _BasePromotionRuleValue() when $default != null:
 return $default(_that);case _:
   return orElse();
 
@@ -123,10 +116,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _BasePromotion_rule_value value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _BasePromotionRuleValue value)  $default,){
 final _that = this;
 switch (_that) {
-case _BasePromotion_rule_value():
+case _BasePromotionRuleValue():
 return $default(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -144,10 +137,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _BasePromotion_rule_value value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _BasePromotionRuleValue value)?  $default,){
 final _that = this;
 switch (_that) {
-case _BasePromotion_rule_value() when $default != null:
+case _BasePromotionRuleValue() when $default != null:
 return $default(_that);case _:
   return null;
 
@@ -167,7 +160,7 @@ return $default(_that);case _:
 
 @optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String value,  String? label)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _BasePromotion_rule_value() when $default != null:
+case _BasePromotionRuleValue() when $default != null:
 return $default(_that.id,_that.value,_that.label);case _:
   return orElse();
 
@@ -188,7 +181,7 @@ return $default(_that.id,_that.value,_that.label);case _:
 
 @optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String value,  String? label)  $default,) {final _that = this;
 switch (_that) {
-case _BasePromotion_rule_value():
+case _BasePromotionRuleValue():
 return $default(_that.id,_that.value,_that.label);case _:
   throw StateError('Unexpected subclass');
 
@@ -208,7 +201,7 @@ return $default(_that.id,_that.value,_that.label);case _:
 
 @optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String value,  String? label)?  $default,) {final _that = this;
 switch (_that) {
-case _BasePromotion_rule_value() when $default != null:
+case _BasePromotionRuleValue() when $default != null:
 return $default(_that.id,_that.value,_that.label);case _:
   return null;
 
@@ -220,9 +213,9 @@ return $default(_that.id,_that.value,_that.label);case _:
 /// @nodoc
 @JsonSerializable()
 
-class _BasePromotion_rule_value implements BasePromotionRuleValue {
-  const _BasePromotion_rule_value({this.id, required this.value, this.label});
-  factory _BasePromotion_rule_value.fromJson(Map<String, dynamic> json) => _$BasePromotion_rule_valueFromJson(json);
+class _BasePromotionRuleValue implements BasePromotionRuleValue {
+  const _BasePromotionRuleValue({this.id, required this.value, this.label});
+  factory _BasePromotionRuleValue.fromJson(Map<String, dynamic> json) => _$BasePromotionRuleValueFromJson(json);
 
 /// The ID of the value.
 @override final  String? id;
@@ -235,16 +228,16 @@ class _BasePromotion_rule_value implements BasePromotionRuleValue {
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$BasePromotion_rule_valueCopyWith<_BasePromotion_rule_value> get copyWith => __$BasePromotion_rule_valueCopyWithImpl<_BasePromotion_rule_value>(this, _$identity);
+_$BasePromotionRuleValueCopyWith<_BasePromotionRuleValue> get copyWith => __$BasePromotionRuleValueCopyWithImpl<_BasePromotionRuleValue>(this, _$identity);
 
 @override
 Map<String, dynamic> toJson() {
-  return _$BasePromotion_rule_valueToJson(this, );
+  return _$BasePromotionRuleValueToJson(this, );
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BasePromotion_rule_value&&(identical(other.id, id) || other.id == id)&&(identical(other.value, value) || other.value == value)&&(identical(other.label, label) || other.label == label));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _BasePromotionRuleValue&&(identical(other.id, id) || other.id == id)&&(identical(other.value, value) || other.value == value)&&(identical(other.label, label) || other.label == label));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -260,8 +253,8 @@ String toString() {
 }
 
 /// @nodoc
-abstract mixin class _$BasePromotion_rule_valueCopyWith<$Res> implements $BasePromotionRuleValueCopyWith<$Res> {
-  factory _$BasePromotion_rule_valueCopyWith(_BasePromotion_rule_value value, $Res Function(_BasePromotion_rule_value) _then) = __$BasePromotion_rule_valueCopyWithImpl;
+abstract mixin class _$BasePromotionRuleValueCopyWith<$Res> implements $BasePromotionRuleValueCopyWith<$Res> {
+  factory _$BasePromotionRuleValueCopyWith(_BasePromotionRuleValue value, $Res Function(_BasePromotionRuleValue) _then) = __$BasePromotionRuleValueCopyWithImpl;
 @override @useResult
 $Res call({
  String? id, String value, String? label
@@ -272,17 +265,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$BasePromotion_rule_valueCopyWithImpl<$Res>
-    implements _$BasePromotion_rule_valueCopyWith<$Res> {
-  __$BasePromotion_rule_valueCopyWithImpl(this._self, this._then);
+class __$BasePromotionRuleValueCopyWithImpl<$Res>
+    implements _$BasePromotionRuleValueCopyWith<$Res> {
+  __$BasePromotionRuleValueCopyWithImpl(this._self, this._then);
 
-  final _BasePromotion_rule_value _self;
-  final $Res Function(_BasePromotion_rule_value) _then;
+  final _BasePromotionRuleValue _self;
+  final $Res Function(_BasePromotionRuleValue) _then;
 
 /// Create a copy of BasePromotionRuleValue
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? value = null,Object? label = freezed,}) {
-  return _then(_BasePromotion_rule_value(
+  return _then(_BasePromotionRuleValue(
 id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String?,value: null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
 as String,label: freezed == label ? _self.label : label // ignore: cast_nullable_to_non_nullable

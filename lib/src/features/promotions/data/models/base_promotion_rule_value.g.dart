@@ -6,16 +6,16 @@ part of 'base_promotion_rule_value.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_BasePromotion_rule_value _$BasePromotion_rule_valueFromJson(
+_BasePromotionRuleValue _$BasePromotionRuleValueFromJson(
   Map<String, dynamic> json,
-) => _BasePromotion_rule_value(
+) => _BasePromotionRuleValue(
   id: json['id'] as String?,
   value: json['value'] as String,
   label: json['label'] as String?,
 );
 
-Map<String, dynamic> _$BasePromotion_rule_valueToJson(
-  _BasePromotion_rule_value instance,
+Map<String, dynamic> _$BasePromotionRuleValueToJson(
+  _BasePromotionRuleValue instance,
 ) => <String, dynamic>{
   'id': instance.id,
   'value': instance.value,

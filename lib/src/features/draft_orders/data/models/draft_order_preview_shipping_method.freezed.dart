@@ -15,8 +15,8 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$DraftOrderPreviewShippingMethod {
 
- String get id;@JsonKey(name: 'order_id') String get orderId; String get name; String? get description; int get amount;@JsonKey(name: 'is_tax_inclusive') bool get isTaxInclusive;@JsonKey(name: 'shipping_option_id') String get shippingOptionId; Map<String, dynamic> get data; Map<String, dynamic>? get metadata;@JsonKey(name: 'created_at') DateTime get createdAt;@JsonKey(name: 'updated_at') DateTime get updatedAt;// Financials - using 'dynamic' because schema is oneOf: [string, number]
-@JsonKey(name: 'original_total') dynamic get originalTotal;@JsonKey(name: 'original_subtotal') dynamic get originalSubtotal;@JsonKey(name: 'original_tax_total') dynamic get originalTaxTotal; dynamic get total; dynamic get subtotal;@JsonKey(name: 'tax_total') dynamic get taxTotal;@JsonKey(name: 'discount_total') dynamic get discountTotal;@JsonKey(name: 'discount_tax_total') dynamic get discountTaxTotal;
+ String get id;@JsonKey(name: 'order_id') String get orderId; String get name; String? get description; int get amount;@JsonKey(name: 'is_tax_inclusive') bool get isTaxInclusive;@JsonKey(name: 'shipping_option_id') String get shippingOptionId; Map<String, dynamic> get data; Map<String, dynamic>? get metadata;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;// Financials - using 'dynamic' because schema is oneOf: [string, number]
+@JsonKey(name: 'original_total') dynamic get originalTotal;@JsonKey(name: 'original_subtotal') dynamic get originalSubtotal;@JsonKey(name: 'original_tax_total') dynamic get originalTaxTotal; dynamic get total; dynamic get subtotal;@JsonKey(name: 'tax_total') dynamic get taxTotal;@JsonKey(name: 'discount_total') dynamic get discountTotal;@JsonKey(name: 'discount_tax_total') dynamic get discountTaxTotal;@JsonKey(name: 'tax_lines') List<BaseOrderShippingMethodTaxLine>? get taxLines; List<BaseOrderShippingMethodAdjustment>? get adjustments; List<OrderChangeAction>? get actions;
 /// Create a copy of DraftOrderPreviewShippingMethod
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -29,16 +29,16 @@ $DraftOrderPreviewShippingMethodCopyWith<DraftOrderPreviewShippingMethod> get co
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is DraftOrderPreviewShippingMethod&&(identical(other.id, id) || other.id == id)&&(identical(other.orderId, orderId) || other.orderId == orderId)&&(identical(other.name, name) || other.name == name)&&(identical(other.description, description) || other.description == description)&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.isTaxInclusive, isTaxInclusive) || other.isTaxInclusive == isTaxInclusive)&&(identical(other.shippingOptionId, shippingOptionId) || other.shippingOptionId == shippingOptionId)&&const DeepCollectionEquality().equals(other.data, data)&&const DeepCollectionEquality().equals(other.metadata, metadata)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&const DeepCollectionEquality().equals(other.originalTotal, originalTotal)&&const DeepCollectionEquality().equals(other.originalSubtotal, originalSubtotal)&&const DeepCollectionEquality().equals(other.originalTaxTotal, originalTaxTotal)&&const DeepCollectionEquality().equals(other.total, total)&&const DeepCollectionEquality().equals(other.subtotal, subtotal)&&const DeepCollectionEquality().equals(other.taxTotal, taxTotal)&&const DeepCollectionEquality().equals(other.discountTotal, discountTotal)&&const DeepCollectionEquality().equals(other.discountTaxTotal, discountTaxTotal));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is DraftOrderPreviewShippingMethod&&(identical(other.id, id) || other.id == id)&&(identical(other.orderId, orderId) || other.orderId == orderId)&&(identical(other.name, name) || other.name == name)&&(identical(other.description, description) || other.description == description)&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.isTaxInclusive, isTaxInclusive) || other.isTaxInclusive == isTaxInclusive)&&(identical(other.shippingOptionId, shippingOptionId) || other.shippingOptionId == shippingOptionId)&&const DeepCollectionEquality().equals(other.data, data)&&const DeepCollectionEquality().equals(other.metadata, metadata)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&const DeepCollectionEquality().equals(other.originalTotal, originalTotal)&&const DeepCollectionEquality().equals(other.originalSubtotal, originalSubtotal)&&const DeepCollectionEquality().equals(other.originalTaxTotal, originalTaxTotal)&&const DeepCollectionEquality().equals(other.total, total)&&const DeepCollectionEquality().equals(other.subtotal, subtotal)&&const DeepCollectionEquality().equals(other.taxTotal, taxTotal)&&const DeepCollectionEquality().equals(other.discountTotal, discountTotal)&&const DeepCollectionEquality().equals(other.discountTaxTotal, discountTaxTotal)&&const DeepCollectionEquality().equals(other.taxLines, taxLines)&&const DeepCollectionEquality().equals(other.adjustments, adjustments)&&const DeepCollectionEquality().equals(other.actions, actions));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,orderId,name,description,amount,isTaxInclusive,shippingOptionId,const DeepCollectionEquality().hash(data),const DeepCollectionEquality().hash(metadata),createdAt,updatedAt,const DeepCollectionEquality().hash(originalTotal),const DeepCollectionEquality().hash(originalSubtotal),const DeepCollectionEquality().hash(originalTaxTotal),const DeepCollectionEquality().hash(total),const DeepCollectionEquality().hash(subtotal),const DeepCollectionEquality().hash(taxTotal),const DeepCollectionEquality().hash(discountTotal),const DeepCollectionEquality().hash(discountTaxTotal)]);
+int get hashCode => Object.hashAll([runtimeType,id,orderId,name,description,amount,isTaxInclusive,shippingOptionId,const DeepCollectionEquality().hash(data),const DeepCollectionEquality().hash(metadata),createdAt,updatedAt,const DeepCollectionEquality().hash(originalTotal),const DeepCollectionEquality().hash(originalSubtotal),const DeepCollectionEquality().hash(originalTaxTotal),const DeepCollectionEquality().hash(total),const DeepCollectionEquality().hash(subtotal),const DeepCollectionEquality().hash(taxTotal),const DeepCollectionEquality().hash(discountTotal),const DeepCollectionEquality().hash(discountTaxTotal),const DeepCollectionEquality().hash(taxLines),const DeepCollectionEquality().hash(adjustments),const DeepCollectionEquality().hash(actions)]);
 
 @override
 String toString() {
-  return 'DraftOrderPreviewShippingMethod(id: $id, orderId: $orderId, name: $name, description: $description, amount: $amount, isTaxInclusive: $isTaxInclusive, shippingOptionId: $shippingOptionId, data: $data, metadata: $metadata, createdAt: $createdAt, updatedAt: $updatedAt, originalTotal: $originalTotal, originalSubtotal: $originalSubtotal, originalTaxTotal: $originalTaxTotal, total: $total, subtotal: $subtotal, taxTotal: $taxTotal, discountTotal: $discountTotal, discountTaxTotal: $discountTaxTotal)';
+  return 'DraftOrderPreviewShippingMethod(id: $id, orderId: $orderId, name: $name, description: $description, amount: $amount, isTaxInclusive: $isTaxInclusive, shippingOptionId: $shippingOptionId, data: $data, metadata: $metadata, createdAt: $createdAt, updatedAt: $updatedAt, originalTotal: $originalTotal, originalSubtotal: $originalSubtotal, originalTaxTotal: $originalTaxTotal, total: $total, subtotal: $subtotal, taxTotal: $taxTotal, discountTotal: $discountTotal, discountTaxTotal: $discountTaxTotal, taxLines: $taxLines, adjustments: $adjustments, actions: $actions)';
 }
 
 
@@ -49,7 +49,7 @@ abstract mixin class $DraftOrderPreviewShippingMethodCopyWith<$Res>  {
   factory $DraftOrderPreviewShippingMethodCopyWith(DraftOrderPreviewShippingMethod value, $Res Function(DraftOrderPreviewShippingMethod) _then) = _$DraftOrderPreviewShippingMethodCopyWithImpl;
 @useResult
 $Res call({
- String id,@JsonKey(name: 'order_id') String orderId, String name, String? description, int amount,@JsonKey(name: 'is_tax_inclusive') bool isTaxInclusive,@JsonKey(name: 'shipping_option_id') String shippingOptionId, Map<String, dynamic> data, Map<String, dynamic>? metadata,@JsonKey(name: 'created_at') DateTime createdAt,@JsonKey(name: 'updated_at') DateTime updatedAt,@JsonKey(name: 'original_total') dynamic originalTotal,@JsonKey(name: 'original_subtotal') dynamic originalSubtotal,@JsonKey(name: 'original_tax_total') dynamic originalTaxTotal, dynamic total, dynamic subtotal,@JsonKey(name: 'tax_total') dynamic taxTotal,@JsonKey(name: 'discount_total') dynamic discountTotal,@JsonKey(name: 'discount_tax_total') dynamic discountTaxTotal
+ String id,@JsonKey(name: 'order_id') String orderId, String name, String? description, int amount,@JsonKey(name: 'is_tax_inclusive') bool isTaxInclusive,@JsonKey(name: 'shipping_option_id') String shippingOptionId, Map<String, dynamic> data, Map<String, dynamic>? metadata,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'original_total') dynamic originalTotal,@JsonKey(name: 'original_subtotal') dynamic originalSubtotal,@JsonKey(name: 'original_tax_total') dynamic originalTaxTotal, dynamic total, dynamic subtotal,@JsonKey(name: 'tax_total') dynamic taxTotal,@JsonKey(name: 'discount_total') dynamic discountTotal,@JsonKey(name: 'discount_tax_total') dynamic discountTaxTotal,@JsonKey(name: 'tax_lines') List<BaseOrderShippingMethodTaxLine>? taxLines, List<BaseOrderShippingMethodAdjustment>? adjustments, List<OrderChangeAction>? actions
 });
 
 
@@ -66,7 +66,7 @@ class _$DraftOrderPreviewShippingMethodCopyWithImpl<$Res>
 
 /// Create a copy of DraftOrderPreviewShippingMethod
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? orderId = null,Object? name = null,Object? description = freezed,Object? amount = null,Object? isTaxInclusive = null,Object? shippingOptionId = null,Object? data = null,Object? metadata = freezed,Object? createdAt = null,Object? updatedAt = null,Object? originalTotal = freezed,Object? originalSubtotal = freezed,Object? originalTaxTotal = freezed,Object? total = freezed,Object? subtotal = freezed,Object? taxTotal = freezed,Object? discountTotal = freezed,Object? discountTaxTotal = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? orderId = null,Object? name = null,Object? description = freezed,Object? amount = null,Object? isTaxInclusive = null,Object? shippingOptionId = null,Object? data = null,Object? metadata = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? originalTotal = freezed,Object? originalSubtotal = freezed,Object? originalTaxTotal = freezed,Object? total = freezed,Object? subtotal = freezed,Object? taxTotal = freezed,Object? discountTotal = freezed,Object? discountTaxTotal = freezed,Object? taxLines = freezed,Object? adjustments = freezed,Object? actions = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,orderId: null == orderId ? _self.orderId : orderId // ignore: cast_nullable_to_non_nullable
@@ -77,9 +77,9 @@ as int,isTaxInclusive: null == isTaxInclusive ? _self.isTaxInclusive : isTaxIncl
 as bool,shippingOptionId: null == shippingOptionId ? _self.shippingOptionId : shippingOptionId // ignore: cast_nullable_to_non_nullable
 as String,data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>,metadata: freezed == metadata ? _self.metadata : metadata // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,originalTotal: freezed == originalTotal ? _self.originalTotal : originalTotal // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,originalTotal: freezed == originalTotal ? _self.originalTotal : originalTotal // ignore: cast_nullable_to_non_nullable
 as dynamic,originalSubtotal: freezed == originalSubtotal ? _self.originalSubtotal : originalSubtotal // ignore: cast_nullable_to_non_nullable
 as dynamic,originalTaxTotal: freezed == originalTaxTotal ? _self.originalTaxTotal : originalTaxTotal // ignore: cast_nullable_to_non_nullable
 as dynamic,total: freezed == total ? _self.total : total // ignore: cast_nullable_to_non_nullable
@@ -87,7 +87,10 @@ as dynamic,subtotal: freezed == subtotal ? _self.subtotal : subtotal // ignore: 
 as dynamic,taxTotal: freezed == taxTotal ? _self.taxTotal : taxTotal // ignore: cast_nullable_to_non_nullable
 as dynamic,discountTotal: freezed == discountTotal ? _self.discountTotal : discountTotal // ignore: cast_nullable_to_non_nullable
 as dynamic,discountTaxTotal: freezed == discountTaxTotal ? _self.discountTaxTotal : discountTaxTotal // ignore: cast_nullable_to_non_nullable
-as dynamic,
+as dynamic,taxLines: freezed == taxLines ? _self.taxLines : taxLines // ignore: cast_nullable_to_non_nullable
+as List<BaseOrderShippingMethodTaxLine>?,adjustments: freezed == adjustments ? _self.adjustments : adjustments // ignore: cast_nullable_to_non_nullable
+as List<BaseOrderShippingMethodAdjustment>?,actions: freezed == actions ? _self.actions : actions // ignore: cast_nullable_to_non_nullable
+as List<OrderChangeAction>?,
   ));
 }
 
@@ -172,10 +175,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'order_id')  String orderId,  String name,  String? description,  int amount, @JsonKey(name: 'is_tax_inclusive')  bool isTaxInclusive, @JsonKey(name: 'shipping_option_id')  String shippingOptionId,  Map<String, dynamic> data,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'updated_at')  DateTime updatedAt, @JsonKey(name: 'original_total')  dynamic originalTotal, @JsonKey(name: 'original_subtotal')  dynamic originalSubtotal, @JsonKey(name: 'original_tax_total')  dynamic originalTaxTotal,  dynamic total,  dynamic subtotal, @JsonKey(name: 'tax_total')  dynamic taxTotal, @JsonKey(name: 'discount_total')  dynamic discountTotal, @JsonKey(name: 'discount_tax_total')  dynamic discountTaxTotal)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'order_id')  String orderId,  String name,  String? description,  int amount, @JsonKey(name: 'is_tax_inclusive')  bool isTaxInclusive, @JsonKey(name: 'shipping_option_id')  String shippingOptionId,  Map<String, dynamic> data,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'original_total')  dynamic originalTotal, @JsonKey(name: 'original_subtotal')  dynamic originalSubtotal, @JsonKey(name: 'original_tax_total')  dynamic originalTaxTotal,  dynamic total,  dynamic subtotal, @JsonKey(name: 'tax_total')  dynamic taxTotal, @JsonKey(name: 'discount_total')  dynamic discountTotal, @JsonKey(name: 'discount_tax_total')  dynamic discountTaxTotal, @JsonKey(name: 'tax_lines')  List<BaseOrderShippingMethodTaxLine>? taxLines,  List<BaseOrderShippingMethodAdjustment>? adjustments,  List<OrderChangeAction>? actions)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _DraftOrderPreviewShippingMethod() when $default != null:
-return $default(_that.id,_that.orderId,_that.name,_that.description,_that.amount,_that.isTaxInclusive,_that.shippingOptionId,_that.data,_that.metadata,_that.createdAt,_that.updatedAt,_that.originalTotal,_that.originalSubtotal,_that.originalTaxTotal,_that.total,_that.subtotal,_that.taxTotal,_that.discountTotal,_that.discountTaxTotal);case _:
+return $default(_that.id,_that.orderId,_that.name,_that.description,_that.amount,_that.isTaxInclusive,_that.shippingOptionId,_that.data,_that.metadata,_that.createdAt,_that.updatedAt,_that.originalTotal,_that.originalSubtotal,_that.originalTaxTotal,_that.total,_that.subtotal,_that.taxTotal,_that.discountTotal,_that.discountTaxTotal,_that.taxLines,_that.adjustments,_that.actions);case _:
   return orElse();
 
 }
@@ -193,10 +196,10 @@ return $default(_that.id,_that.orderId,_that.name,_that.description,_that.amount
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'order_id')  String orderId,  String name,  String? description,  int amount, @JsonKey(name: 'is_tax_inclusive')  bool isTaxInclusive, @JsonKey(name: 'shipping_option_id')  String shippingOptionId,  Map<String, dynamic> data,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'updated_at')  DateTime updatedAt, @JsonKey(name: 'original_total')  dynamic originalTotal, @JsonKey(name: 'original_subtotal')  dynamic originalSubtotal, @JsonKey(name: 'original_tax_total')  dynamic originalTaxTotal,  dynamic total,  dynamic subtotal, @JsonKey(name: 'tax_total')  dynamic taxTotal, @JsonKey(name: 'discount_total')  dynamic discountTotal, @JsonKey(name: 'discount_tax_total')  dynamic discountTaxTotal)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'order_id')  String orderId,  String name,  String? description,  int amount, @JsonKey(name: 'is_tax_inclusive')  bool isTaxInclusive, @JsonKey(name: 'shipping_option_id')  String shippingOptionId,  Map<String, dynamic> data,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'original_total')  dynamic originalTotal, @JsonKey(name: 'original_subtotal')  dynamic originalSubtotal, @JsonKey(name: 'original_tax_total')  dynamic originalTaxTotal,  dynamic total,  dynamic subtotal, @JsonKey(name: 'tax_total')  dynamic taxTotal, @JsonKey(name: 'discount_total')  dynamic discountTotal, @JsonKey(name: 'discount_tax_total')  dynamic discountTaxTotal, @JsonKey(name: 'tax_lines')  List<BaseOrderShippingMethodTaxLine>? taxLines,  List<BaseOrderShippingMethodAdjustment>? adjustments,  List<OrderChangeAction>? actions)  $default,) {final _that = this;
 switch (_that) {
 case _DraftOrderPreviewShippingMethod():
-return $default(_that.id,_that.orderId,_that.name,_that.description,_that.amount,_that.isTaxInclusive,_that.shippingOptionId,_that.data,_that.metadata,_that.createdAt,_that.updatedAt,_that.originalTotal,_that.originalSubtotal,_that.originalTaxTotal,_that.total,_that.subtotal,_that.taxTotal,_that.discountTotal,_that.discountTaxTotal);case _:
+return $default(_that.id,_that.orderId,_that.name,_that.description,_that.amount,_that.isTaxInclusive,_that.shippingOptionId,_that.data,_that.metadata,_that.createdAt,_that.updatedAt,_that.originalTotal,_that.originalSubtotal,_that.originalTaxTotal,_that.total,_that.subtotal,_that.taxTotal,_that.discountTotal,_that.discountTaxTotal,_that.taxLines,_that.adjustments,_that.actions);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -213,10 +216,10 @@ return $default(_that.id,_that.orderId,_that.name,_that.description,_that.amount
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'order_id')  String orderId,  String name,  String? description,  int amount, @JsonKey(name: 'is_tax_inclusive')  bool isTaxInclusive, @JsonKey(name: 'shipping_option_id')  String shippingOptionId,  Map<String, dynamic> data,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'updated_at')  DateTime updatedAt, @JsonKey(name: 'original_total')  dynamic originalTotal, @JsonKey(name: 'original_subtotal')  dynamic originalSubtotal, @JsonKey(name: 'original_tax_total')  dynamic originalTaxTotal,  dynamic total,  dynamic subtotal, @JsonKey(name: 'tax_total')  dynamic taxTotal, @JsonKey(name: 'discount_total')  dynamic discountTotal, @JsonKey(name: 'discount_tax_total')  dynamic discountTaxTotal)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'order_id')  String orderId,  String name,  String? description,  int amount, @JsonKey(name: 'is_tax_inclusive')  bool isTaxInclusive, @JsonKey(name: 'shipping_option_id')  String shippingOptionId,  Map<String, dynamic> data,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'original_total')  dynamic originalTotal, @JsonKey(name: 'original_subtotal')  dynamic originalSubtotal, @JsonKey(name: 'original_tax_total')  dynamic originalTaxTotal,  dynamic total,  dynamic subtotal, @JsonKey(name: 'tax_total')  dynamic taxTotal, @JsonKey(name: 'discount_total')  dynamic discountTotal, @JsonKey(name: 'discount_tax_total')  dynamic discountTaxTotal, @JsonKey(name: 'tax_lines')  List<BaseOrderShippingMethodTaxLine>? taxLines,  List<BaseOrderShippingMethodAdjustment>? adjustments,  List<OrderChangeAction>? actions)?  $default,) {final _that = this;
 switch (_that) {
 case _DraftOrderPreviewShippingMethod() when $default != null:
-return $default(_that.id,_that.orderId,_that.name,_that.description,_that.amount,_that.isTaxInclusive,_that.shippingOptionId,_that.data,_that.metadata,_that.createdAt,_that.updatedAt,_that.originalTotal,_that.originalSubtotal,_that.originalTaxTotal,_that.total,_that.subtotal,_that.taxTotal,_that.discountTotal,_that.discountTaxTotal);case _:
+return $default(_that.id,_that.orderId,_that.name,_that.description,_that.amount,_that.isTaxInclusive,_that.shippingOptionId,_that.data,_that.metadata,_that.createdAt,_that.updatedAt,_that.originalTotal,_that.originalSubtotal,_that.originalTaxTotal,_that.total,_that.subtotal,_that.taxTotal,_that.discountTotal,_that.discountTaxTotal,_that.taxLines,_that.adjustments,_that.actions);case _:
   return null;
 
 }
@@ -228,7 +231,7 @@ return $default(_that.id,_that.orderId,_that.name,_that.description,_that.amount
 @JsonSerializable()
 
 class _DraftOrderPreviewShippingMethod implements DraftOrderPreviewShippingMethod {
-  const _DraftOrderPreviewShippingMethod({required this.id, @JsonKey(name: 'order_id') required this.orderId, required this.name, this.description, required this.amount, @JsonKey(name: 'is_tax_inclusive') required this.isTaxInclusive, @JsonKey(name: 'shipping_option_id') required this.shippingOptionId, required final  Map<String, dynamic> data, final  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at') required this.createdAt, @JsonKey(name: 'updated_at') required this.updatedAt, @JsonKey(name: 'original_total') this.originalTotal, @JsonKey(name: 'original_subtotal') this.originalSubtotal, @JsonKey(name: 'original_tax_total') this.originalTaxTotal, this.total, this.subtotal, @JsonKey(name: 'tax_total') this.taxTotal, @JsonKey(name: 'discount_total') this.discountTotal, @JsonKey(name: 'discount_tax_total') this.discountTaxTotal}): _data = data,_metadata = metadata;
+  const _DraftOrderPreviewShippingMethod({required this.id, @JsonKey(name: 'order_id') required this.orderId, required this.name, this.description, required this.amount, @JsonKey(name: 'is_tax_inclusive') required this.isTaxInclusive, @JsonKey(name: 'shipping_option_id') required this.shippingOptionId, required final  Map<String, dynamic> data, final  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'original_total') this.originalTotal, @JsonKey(name: 'original_subtotal') this.originalSubtotal, @JsonKey(name: 'original_tax_total') this.originalTaxTotal, this.total, this.subtotal, @JsonKey(name: 'tax_total') this.taxTotal, @JsonKey(name: 'discount_total') this.discountTotal, @JsonKey(name: 'discount_tax_total') this.discountTaxTotal, @JsonKey(name: 'tax_lines') final  List<BaseOrderShippingMethodTaxLine>? taxLines, final  List<BaseOrderShippingMethodAdjustment>? adjustments, final  List<OrderChangeAction>? actions}): _data = data,_metadata = metadata,_taxLines = taxLines,_adjustments = adjustments,_actions = actions;
   factory _DraftOrderPreviewShippingMethod.fromJson(Map<String, dynamic> json) => _$DraftOrderPreviewShippingMethodFromJson(json);
 
 @override final  String id;
@@ -254,8 +257,8 @@ class _DraftOrderPreviewShippingMethod implements DraftOrderPreviewShippingMetho
   return EqualUnmodifiableMapView(value);
 }
 
-@override@JsonKey(name: 'created_at') final  DateTime createdAt;
-@override@JsonKey(name: 'updated_at') final  DateTime updatedAt;
+@override@JsonKey(name: 'created_at') final  DateTime? createdAt;
+@override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
 // Financials - using 'dynamic' because schema is oneOf: [string, number]
 @override@JsonKey(name: 'original_total') final  dynamic originalTotal;
 @override@JsonKey(name: 'original_subtotal') final  dynamic originalSubtotal;
@@ -265,6 +268,33 @@ class _DraftOrderPreviewShippingMethod implements DraftOrderPreviewShippingMetho
 @override@JsonKey(name: 'tax_total') final  dynamic taxTotal;
 @override@JsonKey(name: 'discount_total') final  dynamic discountTotal;
 @override@JsonKey(name: 'discount_tax_total') final  dynamic discountTaxTotal;
+ final  List<BaseOrderShippingMethodTaxLine>? _taxLines;
+@override@JsonKey(name: 'tax_lines') List<BaseOrderShippingMethodTaxLine>? get taxLines {
+  final value = _taxLines;
+  if (value == null) return null;
+  if (_taxLines is EqualUnmodifiableListView) return _taxLines;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(value);
+}
+
+ final  List<BaseOrderShippingMethodAdjustment>? _adjustments;
+@override List<BaseOrderShippingMethodAdjustment>? get adjustments {
+  final value = _adjustments;
+  if (value == null) return null;
+  if (_adjustments is EqualUnmodifiableListView) return _adjustments;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(value);
+}
+
+ final  List<OrderChangeAction>? _actions;
+@override List<OrderChangeAction>? get actions {
+  final value = _actions;
+  if (value == null) return null;
+  if (_actions is EqualUnmodifiableListView) return _actions;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(value);
+}
+
 
 /// Create a copy of DraftOrderPreviewShippingMethod
 /// with the given fields replaced by the non-null parameter values.
@@ -279,16 +309,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _DraftOrderPreviewShippingMethod&&(identical(other.id, id) || other.id == id)&&(identical(other.orderId, orderId) || other.orderId == orderId)&&(identical(other.name, name) || other.name == name)&&(identical(other.description, description) || other.description == description)&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.isTaxInclusive, isTaxInclusive) || other.isTaxInclusive == isTaxInclusive)&&(identical(other.shippingOptionId, shippingOptionId) || other.shippingOptionId == shippingOptionId)&&const DeepCollectionEquality().equals(other._data, _data)&&const DeepCollectionEquality().equals(other._metadata, _metadata)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&const DeepCollectionEquality().equals(other.originalTotal, originalTotal)&&const DeepCollectionEquality().equals(other.originalSubtotal, originalSubtotal)&&const DeepCollectionEquality().equals(other.originalTaxTotal, originalTaxTotal)&&const DeepCollectionEquality().equals(other.total, total)&&const DeepCollectionEquality().equals(other.subtotal, subtotal)&&const DeepCollectionEquality().equals(other.taxTotal, taxTotal)&&const DeepCollectionEquality().equals(other.discountTotal, discountTotal)&&const DeepCollectionEquality().equals(other.discountTaxTotal, discountTaxTotal));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _DraftOrderPreviewShippingMethod&&(identical(other.id, id) || other.id == id)&&(identical(other.orderId, orderId) || other.orderId == orderId)&&(identical(other.name, name) || other.name == name)&&(identical(other.description, description) || other.description == description)&&(identical(other.amount, amount) || other.amount == amount)&&(identical(other.isTaxInclusive, isTaxInclusive) || other.isTaxInclusive == isTaxInclusive)&&(identical(other.shippingOptionId, shippingOptionId) || other.shippingOptionId == shippingOptionId)&&const DeepCollectionEquality().equals(other._data, _data)&&const DeepCollectionEquality().equals(other._metadata, _metadata)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&const DeepCollectionEquality().equals(other.originalTotal, originalTotal)&&const DeepCollectionEquality().equals(other.originalSubtotal, originalSubtotal)&&const DeepCollectionEquality().equals(other.originalTaxTotal, originalTaxTotal)&&const DeepCollectionEquality().equals(other.total, total)&&const DeepCollectionEquality().equals(other.subtotal, subtotal)&&const DeepCollectionEquality().equals(other.taxTotal, taxTotal)&&const DeepCollectionEquality().equals(other.discountTotal, discountTotal)&&const DeepCollectionEquality().equals(other.discountTaxTotal, discountTaxTotal)&&const DeepCollectionEquality().equals(other._taxLines, _taxLines)&&const DeepCollectionEquality().equals(other._adjustments, _adjustments)&&const DeepCollectionEquality().equals(other._actions, _actions));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hashAll([runtimeType,id,orderId,name,description,amount,isTaxInclusive,shippingOptionId,const DeepCollectionEquality().hash(_data),const DeepCollectionEquality().hash(_metadata),createdAt,updatedAt,const DeepCollectionEquality().hash(originalTotal),const DeepCollectionEquality().hash(originalSubtotal),const DeepCollectionEquality().hash(originalTaxTotal),const DeepCollectionEquality().hash(total),const DeepCollectionEquality().hash(subtotal),const DeepCollectionEquality().hash(taxTotal),const DeepCollectionEquality().hash(discountTotal),const DeepCollectionEquality().hash(discountTaxTotal)]);
+int get hashCode => Object.hashAll([runtimeType,id,orderId,name,description,amount,isTaxInclusive,shippingOptionId,const DeepCollectionEquality().hash(_data),const DeepCollectionEquality().hash(_metadata),createdAt,updatedAt,const DeepCollectionEquality().hash(originalTotal),const DeepCollectionEquality().hash(originalSubtotal),const DeepCollectionEquality().hash(originalTaxTotal),const DeepCollectionEquality().hash(total),const DeepCollectionEquality().hash(subtotal),const DeepCollectionEquality().hash(taxTotal),const DeepCollectionEquality().hash(discountTotal),const DeepCollectionEquality().hash(discountTaxTotal),const DeepCollectionEquality().hash(_taxLines),const DeepCollectionEquality().hash(_adjustments),const DeepCollectionEquality().hash(_actions)]);
 
 @override
 String toString() {
-  return 'DraftOrderPreviewShippingMethod(id: $id, orderId: $orderId, name: $name, description: $description, amount: $amount, isTaxInclusive: $isTaxInclusive, shippingOptionId: $shippingOptionId, data: $data, metadata: $metadata, createdAt: $createdAt, updatedAt: $updatedAt, originalTotal: $originalTotal, originalSubtotal: $originalSubtotal, originalTaxTotal: $originalTaxTotal, total: $total, subtotal: $subtotal, taxTotal: $taxTotal, discountTotal: $discountTotal, discountTaxTotal: $discountTaxTotal)';
+  return 'DraftOrderPreviewShippingMethod(id: $id, orderId: $orderId, name: $name, description: $description, amount: $amount, isTaxInclusive: $isTaxInclusive, shippingOptionId: $shippingOptionId, data: $data, metadata: $metadata, createdAt: $createdAt, updatedAt: $updatedAt, originalTotal: $originalTotal, originalSubtotal: $originalSubtotal, originalTaxTotal: $originalTaxTotal, total: $total, subtotal: $subtotal, taxTotal: $taxTotal, discountTotal: $discountTotal, discountTaxTotal: $discountTaxTotal, taxLines: $taxLines, adjustments: $adjustments, actions: $actions)';
 }
 
 
@@ -299,7 +329,7 @@ abstract mixin class _$DraftOrderPreviewShippingMethodCopyWith<$Res> implements 
   factory _$DraftOrderPreviewShippingMethodCopyWith(_DraftOrderPreviewShippingMethod value, $Res Function(_DraftOrderPreviewShippingMethod) _then) = __$DraftOrderPreviewShippingMethodCopyWithImpl;
 @override @useResult
 $Res call({
- String id,@JsonKey(name: 'order_id') String orderId, String name, String? description, int amount,@JsonKey(name: 'is_tax_inclusive') bool isTaxInclusive,@JsonKey(name: 'shipping_option_id') String shippingOptionId, Map<String, dynamic> data, Map<String, dynamic>? metadata,@JsonKey(name: 'created_at') DateTime createdAt,@JsonKey(name: 'updated_at') DateTime updatedAt,@JsonKey(name: 'original_total') dynamic originalTotal,@JsonKey(name: 'original_subtotal') dynamic originalSubtotal,@JsonKey(name: 'original_tax_total') dynamic originalTaxTotal, dynamic total, dynamic subtotal,@JsonKey(name: 'tax_total') dynamic taxTotal,@JsonKey(name: 'discount_total') dynamic discountTotal,@JsonKey(name: 'discount_tax_total') dynamic discountTaxTotal
+ String id,@JsonKey(name: 'order_id') String orderId, String name, String? description, int amount,@JsonKey(name: 'is_tax_inclusive') bool isTaxInclusive,@JsonKey(name: 'shipping_option_id') String shippingOptionId, Map<String, dynamic> data, Map<String, dynamic>? metadata,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'original_total') dynamic originalTotal,@JsonKey(name: 'original_subtotal') dynamic originalSubtotal,@JsonKey(name: 'original_tax_total') dynamic originalTaxTotal, dynamic total, dynamic subtotal,@JsonKey(name: 'tax_total') dynamic taxTotal,@JsonKey(name: 'discount_total') dynamic discountTotal,@JsonKey(name: 'discount_tax_total') dynamic discountTaxTotal,@JsonKey(name: 'tax_lines') List<BaseOrderShippingMethodTaxLine>? taxLines, List<BaseOrderShippingMethodAdjustment>? adjustments, List<OrderChangeAction>? actions
 });
 
 
@@ -316,7 +346,7 @@ class __$DraftOrderPreviewShippingMethodCopyWithImpl<$Res>
 
 /// Create a copy of DraftOrderPreviewShippingMethod
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? orderId = null,Object? name = null,Object? description = freezed,Object? amount = null,Object? isTaxInclusive = null,Object? shippingOptionId = null,Object? data = null,Object? metadata = freezed,Object? createdAt = null,Object? updatedAt = null,Object? originalTotal = freezed,Object? originalSubtotal = freezed,Object? originalTaxTotal = freezed,Object? total = freezed,Object? subtotal = freezed,Object? taxTotal = freezed,Object? discountTotal = freezed,Object? discountTaxTotal = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? orderId = null,Object? name = null,Object? description = freezed,Object? amount = null,Object? isTaxInclusive = null,Object? shippingOptionId = null,Object? data = null,Object? metadata = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? originalTotal = freezed,Object? originalSubtotal = freezed,Object? originalTaxTotal = freezed,Object? total = freezed,Object? subtotal = freezed,Object? taxTotal = freezed,Object? discountTotal = freezed,Object? discountTaxTotal = freezed,Object? taxLines = freezed,Object? adjustments = freezed,Object? actions = freezed,}) {
   return _then(_DraftOrderPreviewShippingMethod(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,orderId: null == orderId ? _self.orderId : orderId // ignore: cast_nullable_to_non_nullable
@@ -327,9 +357,9 @@ as int,isTaxInclusive: null == isTaxInclusive ? _self.isTaxInclusive : isTaxIncl
 as bool,shippingOptionId: null == shippingOptionId ? _self.shippingOptionId : shippingOptionId // ignore: cast_nullable_to_non_nullable
 as String,data: null == data ? _self._data : data // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>,metadata: freezed == metadata ? _self._metadata : metadata // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,originalTotal: freezed == originalTotal ? _self.originalTotal : originalTotal // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,originalTotal: freezed == originalTotal ? _self.originalTotal : originalTotal // ignore: cast_nullable_to_non_nullable
 as dynamic,originalSubtotal: freezed == originalSubtotal ? _self.originalSubtotal : originalSubtotal // ignore: cast_nullable_to_non_nullable
 as dynamic,originalTaxTotal: freezed == originalTaxTotal ? _self.originalTaxTotal : originalTaxTotal // ignore: cast_nullable_to_non_nullable
 as dynamic,total: freezed == total ? _self.total : total // ignore: cast_nullable_to_non_nullable
@@ -337,7 +367,10 @@ as dynamic,subtotal: freezed == subtotal ? _self.subtotal : subtotal // ignore: 
 as dynamic,taxTotal: freezed == taxTotal ? _self.taxTotal : taxTotal // ignore: cast_nullable_to_non_nullable
 as dynamic,discountTotal: freezed == discountTotal ? _self.discountTotal : discountTotal // ignore: cast_nullable_to_non_nullable
 as dynamic,discountTaxTotal: freezed == discountTaxTotal ? _self.discountTaxTotal : discountTaxTotal // ignore: cast_nullable_to_non_nullable
-as dynamic,
+as dynamic,taxLines: freezed == taxLines ? _self._taxLines : taxLines // ignore: cast_nullable_to_non_nullable
+as List<BaseOrderShippingMethodTaxLine>?,adjustments: freezed == adjustments ? _self._adjustments : adjustments // ignore: cast_nullable_to_non_nullable
+as List<BaseOrderShippingMethodAdjustment>?,actions: freezed == actions ? _self._actions : actions // ignore: cast_nullable_to_non_nullable
+as List<OrderChangeAction>?,
   ));
 }
 

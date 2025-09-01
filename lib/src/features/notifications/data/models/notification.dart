@@ -19,7 +19,7 @@ abstract class Notification with _$Notification {
     @JsonKey(name: 'original_notification_id') String? originalNotificationId,
     @JsonKey(name: 'external_id') String? externalId,
     @JsonKey(name: 'provider_id') required String providerId,
-    @JsonKey(name: 'created_at') required DateTime createdAt,
+    @JsonKey(name: 'created_at')  DateTime? createdAt,
   }) = _Notification;
 
   factory Notification.fromJson(Map<String, dynamic> json) =>

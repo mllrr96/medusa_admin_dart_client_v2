@@ -19,8 +19,12 @@ _ServiceZone _$ServiceZoneFromJson(Map<String, dynamic> json) => _ServiceZone(
   shippingOptions: (json['shippingOptions'] as List<dynamic>)
       .map((e) => ShippingOption.fromJson(e as Map<String, dynamic>))
       .toList(),
-  createdAt: DateTime.parse(json['createdAt'] as String),
-  updatedAt: DateTime.parse(json['updatedAt'] as String),
+  createdAt: json['createdAt'] == null
+      ? null
+      : DateTime.parse(json['createdAt'] as String),
+  updatedAt: json['updatedAt'] == null
+      ? null
+      : DateTime.parse(json['updatedAt'] as String),
   deletedAt: json['deletedAt'] == null
       ? null
       : DateTime.parse(json['deletedAt'] as String),
@@ -34,7 +38,7 @@ Map<String, dynamic> _$ServiceZoneToJson(_ServiceZone instance) =>
       'fulfillmentSet': instance.fulfillmentSet,
       'geoZones': instance.geoZones,
       'shippingOptions': instance.shippingOptions,
-      'createdAt': instance.createdAt.toIso8601String(),
-      'updatedAt': instance.updatedAt.toIso8601String(),
+      'createdAt': instance.createdAt?.toIso8601String(),
+      'updatedAt': instance.updatedAt?.toIso8601String(),
       'deletedAt': instance.deletedAt?.toIso8601String(),
     };

@@ -26,8 +26,8 @@ mixin _$Promotion {
 /// Enum: "draft", "active", "inactive"
  String? get status;/// Whether the promotion is tax inclusive. If enabled, the promotion is applied after tax is calculated.
 @JsonKey(name: 'is_tax_inclusive') bool? get isTaxInclusive;/// The date the promotion was created.
-@JsonKey(name: 'created_at') DateTime get createdAt;/// The date the promotion was updated.
-@JsonKey(name: 'updated_at') DateTime get updatedAt;/// The date the promotion was deleted.
+@JsonKey(name: 'created_at') DateTime? get createdAt;/// The date the promotion was updated.
+@JsonKey(name: 'updated_at') DateTime? get updatedAt;/// The date the promotion was deleted.
 @JsonKey(name: 'deleted_at') DateTime? get deletedAt;@JsonKey(name: 'application_method') ApplicationMethod? get applicationMethod; List<PromotionRule>? get rules; Campaign? get campaign;
 /// Create a copy of Promotion
 /// with the given fields replaced by the non-null parameter values.
@@ -61,7 +61,7 @@ abstract mixin class $PromotionCopyWith<$Res>  {
   factory $PromotionCopyWith(Promotion value, $Res Function(Promotion) _then) = _$PromotionCopyWithImpl;
 @useResult
 $Res call({
- String id, String? code,@JsonKey(name: 'is_automatic') bool? isAutomatic, String? type,@JsonKey(name: 'campaign_id') String? campaignId, String? status,@JsonKey(name: 'is_tax_inclusive') bool? isTaxInclusive,@JsonKey(name: 'created_at') DateTime createdAt,@JsonKey(name: 'updated_at') DateTime updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt,@JsonKey(name: 'application_method') ApplicationMethod? applicationMethod, List<PromotionRule>? rules, Campaign? campaign
+ String id, String? code,@JsonKey(name: 'is_automatic') bool? isAutomatic, String? type,@JsonKey(name: 'campaign_id') String? campaignId, String? status,@JsonKey(name: 'is_tax_inclusive') bool? isTaxInclusive,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt,@JsonKey(name: 'application_method') ApplicationMethod? applicationMethod, List<PromotionRule>? rules, Campaign? campaign
 });
 
 
@@ -78,7 +78,7 @@ class _$PromotionCopyWithImpl<$Res>
 
 /// Create a copy of Promotion
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? code = freezed,Object? isAutomatic = freezed,Object? type = freezed,Object? campaignId = freezed,Object? status = freezed,Object? isTaxInclusive = freezed,Object? createdAt = null,Object? updatedAt = null,Object? deletedAt = freezed,Object? applicationMethod = freezed,Object? rules = freezed,Object? campaign = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? code = freezed,Object? isAutomatic = freezed,Object? type = freezed,Object? campaignId = freezed,Object? status = freezed,Object? isTaxInclusive = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,Object? applicationMethod = freezed,Object? rules = freezed,Object? campaign = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,code: freezed == code ? _self.code : code // ignore: cast_nullable_to_non_nullable
@@ -87,9 +87,9 @@ as bool?,type: freezed == type ? _self.type : type // ignore: cast_nullable_to_n
 as String?,campaignId: freezed == campaignId ? _self.campaignId : campaignId // ignore: cast_nullable_to_non_nullable
 as String?,status: freezed == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as String?,isTaxInclusive: freezed == isTaxInclusive ? _self.isTaxInclusive : isTaxInclusive // ignore: cast_nullable_to_non_nullable
-as bool?,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
+as bool?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,applicationMethod: freezed == applicationMethod ? _self.applicationMethod : applicationMethod // ignore: cast_nullable_to_non_nullable
 as ApplicationMethod?,rules: freezed == rules ? _self.rules : rules // ignore: cast_nullable_to_non_nullable
 as List<PromotionRule>?,campaign: freezed == campaign ? _self.campaign : campaign // ignore: cast_nullable_to_non_nullable
@@ -202,7 +202,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String? code, @JsonKey(name: 'is_automatic')  bool? isAutomatic,  String? type, @JsonKey(name: 'campaign_id')  String? campaignId,  String? status, @JsonKey(name: 'is_tax_inclusive')  bool? isTaxInclusive, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'updated_at')  DateTime updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt, @JsonKey(name: 'application_method')  ApplicationMethod? applicationMethod,  List<PromotionRule>? rules,  Campaign? campaign)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String? code, @JsonKey(name: 'is_automatic')  bool? isAutomatic,  String? type, @JsonKey(name: 'campaign_id')  String? campaignId,  String? status, @JsonKey(name: 'is_tax_inclusive')  bool? isTaxInclusive, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt, @JsonKey(name: 'application_method')  ApplicationMethod? applicationMethod,  List<PromotionRule>? rules,  Campaign? campaign)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Promotion() when $default != null:
 return $default(_that.id,_that.code,_that.isAutomatic,_that.type,_that.campaignId,_that.status,_that.isTaxInclusive,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.applicationMethod,_that.rules,_that.campaign);case _:
@@ -223,7 +223,7 @@ return $default(_that.id,_that.code,_that.isAutomatic,_that.type,_that.campaignI
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String? code, @JsonKey(name: 'is_automatic')  bool? isAutomatic,  String? type, @JsonKey(name: 'campaign_id')  String? campaignId,  String? status, @JsonKey(name: 'is_tax_inclusive')  bool? isTaxInclusive, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'updated_at')  DateTime updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt, @JsonKey(name: 'application_method')  ApplicationMethod? applicationMethod,  List<PromotionRule>? rules,  Campaign? campaign)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String? code, @JsonKey(name: 'is_automatic')  bool? isAutomatic,  String? type, @JsonKey(name: 'campaign_id')  String? campaignId,  String? status, @JsonKey(name: 'is_tax_inclusive')  bool? isTaxInclusive, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt, @JsonKey(name: 'application_method')  ApplicationMethod? applicationMethod,  List<PromotionRule>? rules,  Campaign? campaign)  $default,) {final _that = this;
 switch (_that) {
 case _Promotion():
 return $default(_that.id,_that.code,_that.isAutomatic,_that.type,_that.campaignId,_that.status,_that.isTaxInclusive,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.applicationMethod,_that.rules,_that.campaign);case _:
@@ -243,7 +243,7 @@ return $default(_that.id,_that.code,_that.isAutomatic,_that.type,_that.campaignI
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String? code, @JsonKey(name: 'is_automatic')  bool? isAutomatic,  String? type, @JsonKey(name: 'campaign_id')  String? campaignId,  String? status, @JsonKey(name: 'is_tax_inclusive')  bool? isTaxInclusive, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'updated_at')  DateTime updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt, @JsonKey(name: 'application_method')  ApplicationMethod? applicationMethod,  List<PromotionRule>? rules,  Campaign? campaign)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String? code, @JsonKey(name: 'is_automatic')  bool? isAutomatic,  String? type, @JsonKey(name: 'campaign_id')  String? campaignId,  String? status, @JsonKey(name: 'is_tax_inclusive')  bool? isTaxInclusive, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt, @JsonKey(name: 'application_method')  ApplicationMethod? applicationMethod,  List<PromotionRule>? rules,  Campaign? campaign)?  $default,) {final _that = this;
 switch (_that) {
 case _Promotion() when $default != null:
 return $default(_that.id,_that.code,_that.isAutomatic,_that.type,_that.campaignId,_that.status,_that.isTaxInclusive,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.applicationMethod,_that.rules,_that.campaign);case _:
@@ -258,7 +258,7 @@ return $default(_that.id,_that.code,_that.isAutomatic,_that.type,_that.campaignI
 @JsonSerializable()
 
 class _Promotion implements Promotion {
-  const _Promotion({required this.id, this.code, @JsonKey(name: 'is_automatic') this.isAutomatic, this.type, @JsonKey(name: 'campaign_id') this.campaignId, this.status, @JsonKey(name: 'is_tax_inclusive') this.isTaxInclusive, @JsonKey(name: 'created_at') required this.createdAt, @JsonKey(name: 'updated_at') required this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt, @JsonKey(name: 'application_method') this.applicationMethod, final  List<PromotionRule>? rules, this.campaign}): _rules = rules;
+  const _Promotion({required this.id, this.code, @JsonKey(name: 'is_automatic') this.isAutomatic, this.type, @JsonKey(name: 'campaign_id') this.campaignId, this.status, @JsonKey(name: 'is_tax_inclusive') this.isTaxInclusive, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt, @JsonKey(name: 'application_method') this.applicationMethod, final  List<PromotionRule>? rules, this.campaign}): _rules = rules;
   factory _Promotion.fromJson(Map<String, dynamic> json) => _$PromotionFromJson(json);
 
 /// The promotion's ID.
@@ -279,9 +279,9 @@ class _Promotion implements Promotion {
 /// Whether the promotion is tax inclusive. If enabled, the promotion is applied after tax is calculated.
 @override@JsonKey(name: 'is_tax_inclusive') final  bool? isTaxInclusive;
 /// The date the promotion was created.
-@override@JsonKey(name: 'created_at') final  DateTime createdAt;
+@override@JsonKey(name: 'created_at') final  DateTime? createdAt;
 /// The date the promotion was updated.
-@override@JsonKey(name: 'updated_at') final  DateTime updatedAt;
+@override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
 /// The date the promotion was deleted.
 @override@JsonKey(name: 'deleted_at') final  DateTime? deletedAt;
 @override@JsonKey(name: 'application_method') final  ApplicationMethod? applicationMethod;
@@ -329,7 +329,7 @@ abstract mixin class _$PromotionCopyWith<$Res> implements $PromotionCopyWith<$Re
   factory _$PromotionCopyWith(_Promotion value, $Res Function(_Promotion) _then) = __$PromotionCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String? code,@JsonKey(name: 'is_automatic') bool? isAutomatic, String? type,@JsonKey(name: 'campaign_id') String? campaignId, String? status,@JsonKey(name: 'is_tax_inclusive') bool? isTaxInclusive,@JsonKey(name: 'created_at') DateTime createdAt,@JsonKey(name: 'updated_at') DateTime updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt,@JsonKey(name: 'application_method') ApplicationMethod? applicationMethod, List<PromotionRule>? rules, Campaign? campaign
+ String id, String? code,@JsonKey(name: 'is_automatic') bool? isAutomatic, String? type,@JsonKey(name: 'campaign_id') String? campaignId, String? status,@JsonKey(name: 'is_tax_inclusive') bool? isTaxInclusive,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt,@JsonKey(name: 'application_method') ApplicationMethod? applicationMethod, List<PromotionRule>? rules, Campaign? campaign
 });
 
 
@@ -346,7 +346,7 @@ class __$PromotionCopyWithImpl<$Res>
 
 /// Create a copy of Promotion
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? code = freezed,Object? isAutomatic = freezed,Object? type = freezed,Object? campaignId = freezed,Object? status = freezed,Object? isTaxInclusive = freezed,Object? createdAt = null,Object? updatedAt = null,Object? deletedAt = freezed,Object? applicationMethod = freezed,Object? rules = freezed,Object? campaign = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? code = freezed,Object? isAutomatic = freezed,Object? type = freezed,Object? campaignId = freezed,Object? status = freezed,Object? isTaxInclusive = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,Object? applicationMethod = freezed,Object? rules = freezed,Object? campaign = freezed,}) {
   return _then(_Promotion(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,code: freezed == code ? _self.code : code // ignore: cast_nullable_to_non_nullable
@@ -355,9 +355,9 @@ as bool?,type: freezed == type ? _self.type : type // ignore: cast_nullable_to_n
 as String?,campaignId: freezed == campaignId ? _self.campaignId : campaignId // ignore: cast_nullable_to_non_nullable
 as String?,status: freezed == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as String?,isTaxInclusive: freezed == isTaxInclusive ? _self.isTaxInclusive : isTaxInclusive // ignore: cast_nullable_to_non_nullable
-as bool?,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
+as bool?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,applicationMethod: freezed == applicationMethod ? _self.applicationMethod : applicationMethod // ignore: cast_nullable_to_non_nullable
 as ApplicationMethod?,rules: freezed == rules ? _self._rules : rules // ignore: cast_nullable_to_non_nullable
 as List<PromotionRule>?,campaign: freezed == campaign ? _self.campaign : campaign // ignore: cast_nullable_to_non_nullable

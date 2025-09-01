@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:medusa_admin_dart_client/src/features/auth/data/repository/auth_repository.dart';
 import 'package:medusa_admin_dart_client/src/core/di/di.dart';
+import 'package:medusa_admin_dart_client/src/features/exchanges/data/repository/exchanges_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/sales_channels/data/repository/sales_channels_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/returns/data/repository/returns_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/notifications/data/repository/notifications_repository.dart';
@@ -168,4 +169,6 @@ class MedusaAdminV2 {
   ProductTypesRepository get productTypes => getIt<ProductTypesRepository>();
 
   ProductVariantsRepository get productVariants => getIt<ProductVariantsRepository>();
+
+  ExchangesRepository get exchanges => getIt<ExchangesRepository>();
 }

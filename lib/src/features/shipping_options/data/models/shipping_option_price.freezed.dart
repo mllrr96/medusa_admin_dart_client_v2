@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ShippingOptionPrice {
 
-@JsonKey(name: 'price_rules') List<ShippingOptionPriceRule> get priceRules;@JsonKey(name: 'rules_count') int get rulesCount; String get id; String get title;@JsonKey(name: 'currency_code') String get currencyCode; int get amount;@JsonKey(name: 'raw_amount') Map<String, dynamic> get rawAmount;@JsonKey(name: 'min_quantity') int get minQuantity;@JsonKey(name: 'max_quantity') int get maxQuantity;@JsonKey(name: 'price_set_id') String get priceSetId;@JsonKey(name: 'created_at') DateTime get createdAt;@JsonKey(name: 'updated_at') DateTime get updatedAt;@JsonKey(name: 'deleted_at') DateTime get deletedAt;
+@JsonKey(name: 'price_rules') List<ShippingOptionPriceRule> get priceRules;@JsonKey(name: 'rules_count') int get rulesCount; String get id; String get title;@JsonKey(name: 'currency_code') String get currencyCode; int get amount;@JsonKey(name: 'raw_amount') Map<String, dynamic> get rawAmount;@JsonKey(name: 'min_quantity') int get minQuantity;@JsonKey(name: 'max_quantity') int get maxQuantity;@JsonKey(name: 'price_set_id') String get priceSetId;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt;
 /// Create a copy of ShippingOptionPrice
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $ShippingOptionPriceCopyWith<$Res>  {
   factory $ShippingOptionPriceCopyWith(ShippingOptionPrice value, $Res Function(ShippingOptionPrice) _then) = _$ShippingOptionPriceCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'price_rules') List<ShippingOptionPriceRule> priceRules,@JsonKey(name: 'rules_count') int rulesCount, String id, String title,@JsonKey(name: 'currency_code') String currencyCode, int amount,@JsonKey(name: 'raw_amount') Map<String, dynamic> rawAmount,@JsonKey(name: 'min_quantity') int minQuantity,@JsonKey(name: 'max_quantity') int maxQuantity,@JsonKey(name: 'price_set_id') String priceSetId,@JsonKey(name: 'created_at') DateTime createdAt,@JsonKey(name: 'updated_at') DateTime updatedAt,@JsonKey(name: 'deleted_at') DateTime deletedAt
+@JsonKey(name: 'price_rules') List<ShippingOptionPriceRule> priceRules,@JsonKey(name: 'rules_count') int rulesCount, String id, String title,@JsonKey(name: 'currency_code') String currencyCode, int amount,@JsonKey(name: 'raw_amount') Map<String, dynamic> rawAmount,@JsonKey(name: 'min_quantity') int minQuantity,@JsonKey(name: 'max_quantity') int maxQuantity,@JsonKey(name: 'price_set_id') String priceSetId,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
 });
 
 
@@ -65,7 +65,7 @@ class _$ShippingOptionPriceCopyWithImpl<$Res>
 
 /// Create a copy of ShippingOptionPrice
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? priceRules = null,Object? rulesCount = null,Object? id = null,Object? title = null,Object? currencyCode = null,Object? amount = null,Object? rawAmount = null,Object? minQuantity = null,Object? maxQuantity = null,Object? priceSetId = null,Object? createdAt = null,Object? updatedAt = null,Object? deletedAt = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? priceRules = null,Object? rulesCount = null,Object? id = null,Object? title = null,Object? currencyCode = null,Object? amount = null,Object? rawAmount = null,Object? minQuantity = null,Object? maxQuantity = null,Object? priceSetId = null,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
   return _then(_self.copyWith(
 priceRules: null == priceRules ? _self.priceRules : priceRules // ignore: cast_nullable_to_non_nullable
 as List<ShippingOptionPriceRule>,rulesCount: null == rulesCount ? _self.rulesCount : rulesCount // ignore: cast_nullable_to_non_nullable
@@ -77,10 +77,10 @@ as int,rawAmount: null == rawAmount ? _self.rawAmount : rawAmount // ignore: cas
 as Map<String, dynamic>,minQuantity: null == minQuantity ? _self.minQuantity : minQuantity // ignore: cast_nullable_to_non_nullable
 as int,maxQuantity: null == maxQuantity ? _self.maxQuantity : maxQuantity // ignore: cast_nullable_to_non_nullable
 as int,priceSetId: null == priceSetId ? _self.priceSetId : priceSetId // ignore: cast_nullable_to_non_nullable
-as String,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,deletedAt: null == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,
+as String,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,
   ));
 }
 
@@ -165,7 +165,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'price_rules')  List<ShippingOptionPriceRule> priceRules, @JsonKey(name: 'rules_count')  int rulesCount,  String id,  String title, @JsonKey(name: 'currency_code')  String currencyCode,  int amount, @JsonKey(name: 'raw_amount')  Map<String, dynamic> rawAmount, @JsonKey(name: 'min_quantity')  int minQuantity, @JsonKey(name: 'max_quantity')  int maxQuantity, @JsonKey(name: 'price_set_id')  String priceSetId, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'updated_at')  DateTime updatedAt, @JsonKey(name: 'deleted_at')  DateTime deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'price_rules')  List<ShippingOptionPriceRule> priceRules, @JsonKey(name: 'rules_count')  int rulesCount,  String id,  String title, @JsonKey(name: 'currency_code')  String currencyCode,  int amount, @JsonKey(name: 'raw_amount')  Map<String, dynamic> rawAmount, @JsonKey(name: 'min_quantity')  int minQuantity, @JsonKey(name: 'max_quantity')  int maxQuantity, @JsonKey(name: 'price_set_id')  String priceSetId, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ShippingOptionPrice() when $default != null:
 return $default(_that.priceRules,_that.rulesCount,_that.id,_that.title,_that.currencyCode,_that.amount,_that.rawAmount,_that.minQuantity,_that.maxQuantity,_that.priceSetId,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -186,7 +186,7 @@ return $default(_that.priceRules,_that.rulesCount,_that.id,_that.title,_that.cur
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'price_rules')  List<ShippingOptionPriceRule> priceRules, @JsonKey(name: 'rules_count')  int rulesCount,  String id,  String title, @JsonKey(name: 'currency_code')  String currencyCode,  int amount, @JsonKey(name: 'raw_amount')  Map<String, dynamic> rawAmount, @JsonKey(name: 'min_quantity')  int minQuantity, @JsonKey(name: 'max_quantity')  int maxQuantity, @JsonKey(name: 'price_set_id')  String priceSetId, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'updated_at')  DateTime updatedAt, @JsonKey(name: 'deleted_at')  DateTime deletedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'price_rules')  List<ShippingOptionPriceRule> priceRules, @JsonKey(name: 'rules_count')  int rulesCount,  String id,  String title, @JsonKey(name: 'currency_code')  String currencyCode,  int amount, @JsonKey(name: 'raw_amount')  Map<String, dynamic> rawAmount, @JsonKey(name: 'min_quantity')  int minQuantity, @JsonKey(name: 'max_quantity')  int maxQuantity, @JsonKey(name: 'price_set_id')  String priceSetId, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)  $default,) {final _that = this;
 switch (_that) {
 case _ShippingOptionPrice():
 return $default(_that.priceRules,_that.rulesCount,_that.id,_that.title,_that.currencyCode,_that.amount,_that.rawAmount,_that.minQuantity,_that.maxQuantity,_that.priceSetId,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -206,7 +206,7 @@ return $default(_that.priceRules,_that.rulesCount,_that.id,_that.title,_that.cur
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'price_rules')  List<ShippingOptionPriceRule> priceRules, @JsonKey(name: 'rules_count')  int rulesCount,  String id,  String title, @JsonKey(name: 'currency_code')  String currencyCode,  int amount, @JsonKey(name: 'raw_amount')  Map<String, dynamic> rawAmount, @JsonKey(name: 'min_quantity')  int minQuantity, @JsonKey(name: 'max_quantity')  int maxQuantity, @JsonKey(name: 'price_set_id')  String priceSetId, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'updated_at')  DateTime updatedAt, @JsonKey(name: 'deleted_at')  DateTime deletedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'price_rules')  List<ShippingOptionPriceRule> priceRules, @JsonKey(name: 'rules_count')  int rulesCount,  String id,  String title, @JsonKey(name: 'currency_code')  String currencyCode,  int amount, @JsonKey(name: 'raw_amount')  Map<String, dynamic> rawAmount, @JsonKey(name: 'min_quantity')  int minQuantity, @JsonKey(name: 'max_quantity')  int maxQuantity, @JsonKey(name: 'price_set_id')  String priceSetId, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _ShippingOptionPrice() when $default != null:
 return $default(_that.priceRules,_that.rulesCount,_that.id,_that.title,_that.currencyCode,_that.amount,_that.rawAmount,_that.minQuantity,_that.maxQuantity,_that.priceSetId,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -221,7 +221,7 @@ return $default(_that.priceRules,_that.rulesCount,_that.id,_that.title,_that.cur
 @JsonSerializable()
 
 class _ShippingOptionPrice implements ShippingOptionPrice {
-  const _ShippingOptionPrice({@JsonKey(name: 'price_rules') required final  List<ShippingOptionPriceRule> priceRules, @JsonKey(name: 'rules_count') required this.rulesCount, required this.id, required this.title, @JsonKey(name: 'currency_code') required this.currencyCode, required this.amount, @JsonKey(name: 'raw_amount') required final  Map<String, dynamic> rawAmount, @JsonKey(name: 'min_quantity') required this.minQuantity, @JsonKey(name: 'max_quantity') required this.maxQuantity, @JsonKey(name: 'price_set_id') required this.priceSetId, @JsonKey(name: 'created_at') required this.createdAt, @JsonKey(name: 'updated_at') required this.updatedAt, @JsonKey(name: 'deleted_at') required this.deletedAt}): _priceRules = priceRules,_rawAmount = rawAmount;
+  const _ShippingOptionPrice({@JsonKey(name: 'price_rules') required final  List<ShippingOptionPriceRule> priceRules, @JsonKey(name: 'rules_count') required this.rulesCount, required this.id, required this.title, @JsonKey(name: 'currency_code') required this.currencyCode, required this.amount, @JsonKey(name: 'raw_amount') required final  Map<String, dynamic> rawAmount, @JsonKey(name: 'min_quantity') required this.minQuantity, @JsonKey(name: 'max_quantity') required this.maxQuantity, @JsonKey(name: 'price_set_id') required this.priceSetId, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt}): _priceRules = priceRules,_rawAmount = rawAmount;
   factory _ShippingOptionPrice.fromJson(Map<String, dynamic> json) => _$ShippingOptionPriceFromJson(json);
 
  final  List<ShippingOptionPriceRule> _priceRules;
@@ -246,9 +246,9 @@ class _ShippingOptionPrice implements ShippingOptionPrice {
 @override@JsonKey(name: 'min_quantity') final  int minQuantity;
 @override@JsonKey(name: 'max_quantity') final  int maxQuantity;
 @override@JsonKey(name: 'price_set_id') final  String priceSetId;
-@override@JsonKey(name: 'created_at') final  DateTime createdAt;
-@override@JsonKey(name: 'updated_at') final  DateTime updatedAt;
-@override@JsonKey(name: 'deleted_at') final  DateTime deletedAt;
+@override@JsonKey(name: 'created_at') final  DateTime? createdAt;
+@override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
+@override@JsonKey(name: 'deleted_at') final  DateTime? deletedAt;
 
 /// Create a copy of ShippingOptionPrice
 /// with the given fields replaced by the non-null parameter values.
@@ -283,7 +283,7 @@ abstract mixin class _$ShippingOptionPriceCopyWith<$Res> implements $ShippingOpt
   factory _$ShippingOptionPriceCopyWith(_ShippingOptionPrice value, $Res Function(_ShippingOptionPrice) _then) = __$ShippingOptionPriceCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'price_rules') List<ShippingOptionPriceRule> priceRules,@JsonKey(name: 'rules_count') int rulesCount, String id, String title,@JsonKey(name: 'currency_code') String currencyCode, int amount,@JsonKey(name: 'raw_amount') Map<String, dynamic> rawAmount,@JsonKey(name: 'min_quantity') int minQuantity,@JsonKey(name: 'max_quantity') int maxQuantity,@JsonKey(name: 'price_set_id') String priceSetId,@JsonKey(name: 'created_at') DateTime createdAt,@JsonKey(name: 'updated_at') DateTime updatedAt,@JsonKey(name: 'deleted_at') DateTime deletedAt
+@JsonKey(name: 'price_rules') List<ShippingOptionPriceRule> priceRules,@JsonKey(name: 'rules_count') int rulesCount, String id, String title,@JsonKey(name: 'currency_code') String currencyCode, int amount,@JsonKey(name: 'raw_amount') Map<String, dynamic> rawAmount,@JsonKey(name: 'min_quantity') int minQuantity,@JsonKey(name: 'max_quantity') int maxQuantity,@JsonKey(name: 'price_set_id') String priceSetId,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
 });
 
 
@@ -300,7 +300,7 @@ class __$ShippingOptionPriceCopyWithImpl<$Res>
 
 /// Create a copy of ShippingOptionPrice
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? priceRules = null,Object? rulesCount = null,Object? id = null,Object? title = null,Object? currencyCode = null,Object? amount = null,Object? rawAmount = null,Object? minQuantity = null,Object? maxQuantity = null,Object? priceSetId = null,Object? createdAt = null,Object? updatedAt = null,Object? deletedAt = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? priceRules = null,Object? rulesCount = null,Object? id = null,Object? title = null,Object? currencyCode = null,Object? amount = null,Object? rawAmount = null,Object? minQuantity = null,Object? maxQuantity = null,Object? priceSetId = null,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
   return _then(_ShippingOptionPrice(
 priceRules: null == priceRules ? _self._priceRules : priceRules // ignore: cast_nullable_to_non_nullable
 as List<ShippingOptionPriceRule>,rulesCount: null == rulesCount ? _self.rulesCount : rulesCount // ignore: cast_nullable_to_non_nullable
@@ -312,10 +312,10 @@ as int,rawAmount: null == rawAmount ? _self._rawAmount : rawAmount // ignore: ca
 as Map<String, dynamic>,minQuantity: null == minQuantity ? _self.minQuantity : minQuantity // ignore: cast_nullable_to_non_nullable
 as int,maxQuantity: null == maxQuantity ? _self.maxQuantity : maxQuantity // ignore: cast_nullable_to_non_nullable
 as int,priceSetId: null == priceSetId ? _self.priceSetId : priceSetId // ignore: cast_nullable_to_non_nullable
-as String,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,deletedAt: null == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,
+as String,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,
   ));
 }
 

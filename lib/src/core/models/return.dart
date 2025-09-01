@@ -5,6 +5,8 @@ import 'package:medusa_admin_dart_client/src/features/payments/data/models/refun
 import 'package:medusa_admin_dart_client/src/core/models/swap.dart';
 import 'package:medusa_admin_dart_client/src/features/orders/data/models/order.dart';
 
+import '../../features/exchanges/data/models/exchanges.dart';
+
 
 part 'return.freezed.dart';
 part 'return.g.dart';
@@ -13,7 +15,7 @@ part 'return.g.dart';
 abstract class Return with _$Return {
   const factory Return({
     required String id,
-    required String status,
+    required ReturnStatus status,
     @JsonKey(name: 'order_id') required String orderId,
     Order? order,
     @JsonKey(name: 'swap_id') required String swapId,
