@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:medusa_admin_dart_client/src/core/models/models.dart';
+import 'package:medusa_admin_dart_client/src/features/fulfillments/data/models/fulfillment.dart';
 import 'package:medusa_admin_dart_client/src/features/sales_channels/data/models/sales_channel.dart';
 import 'package:medusa_admin_dart_client/src/features/draft_orders/data/models/order_transaction.dart';
 

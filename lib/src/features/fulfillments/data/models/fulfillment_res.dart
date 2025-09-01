@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:medusa_admin_dart_client/medusa_admin_dart_client_v2.dart';
+import 'package:medusa_admin_dart_client/src/features/fulfillments/data/models/fulfillment.dart';
 
 part 'fulfillment_res.freezed.dart';
 part 'fulfillment_res.g.dart';

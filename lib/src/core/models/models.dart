@@ -7,7 +7,6 @@ export 'customer.dart';
 export 'discount_rule.dart';
 export 'discount.dart';
 export 'fulfillment_provider.dart';
-export 'fulfillment.dart';
 export 'image.dart';
 export 'line_item.dart';
 export 'money_amount.dart';

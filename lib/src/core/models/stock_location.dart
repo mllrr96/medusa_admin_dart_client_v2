@@ -1,8 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:medusa_admin_dart_client/src/features/fulfillment_providers/data/models/fulfillment_provider.dart';
 
 import '../../features/sales_channels/data/models/sales_channel.dart';
 import 'stock_location_address.dart';
-import 'fulfillment_provider.dart';
 part 'stock_location.freezed.dart';
 part 'stock_location.g.dart';
 

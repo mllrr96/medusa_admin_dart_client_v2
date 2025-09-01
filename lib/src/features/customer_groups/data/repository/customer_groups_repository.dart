@@ -1,5 +1,4 @@
 import 'package:medusa_admin_dart_client/medusa_admin_dart_client_v2.dart';
-import 'package:medusa_admin_dart_client/src/features/customer_groups/data/models/customer_group.dart';
 import 'package:medusa_admin_dart_client/src/features/customer_groups/data/api/customer_groups_api.dart';
 
 /// A repository that handles all customer group related operations.

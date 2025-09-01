@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:medusa_admin_dart_client/medusa_admin_dart_client_v2.dart';
+import 'package:medusa_admin_dart_client/src/features/fulfillment_providers/data/models/fulfillment_provider.dart';
+import 'package:medusa_admin_dart_client/src/features/shipping_profiles/data/models/shipping_profile.dart';
 
 import 'shipping_option_price.dart';
 import 'shipping_option_rule.dart';
