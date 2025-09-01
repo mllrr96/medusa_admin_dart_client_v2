@@ -7,8 +7,9 @@ import 'package:medusa_admin_dart_client/src/core/models/base_order_summary.dart
 import 'package:medusa_admin_dart_client/src/core/models/customer.dart';
 import 'package:medusa_admin_dart_client/src/core/models/order_credit_line.dart';
 import 'package:medusa_admin_dart_client/src/core/models/order_line_item.dart';
-import 'package:medusa_admin_dart_client/src/core/models/region.dart';
-import 'package:medusa_admin_dart_client/src/core/models/sales_channel.dart';
+import 'package:medusa_admin_dart_client/src/features/regions/data/models/region.dart';
+
+import '../../../sales_channels/data/models/sales_channel.dart';
 
 part 'order.freezed.dart';
 part 'order.g.dart';
@@ -32,8 +33,8 @@ abstract class Order with _$Order {
     List<dynamic>? transactions,
     required BaseOrderSummary summary,
     Map<String, dynamic>? metadata,
-    @JsonKey(name: 'created_at') required DateTime createdAt,
-    @JsonKey(name: 'updated_at') required DateTime updatedAt,
+    @JsonKey(name: 'created_at') DateTime? createdAt,
+    @JsonKey(name: 'updated_at') DateTime? updatedAt,
     @JsonKey(name: 'original_item_total') required num originalItemTotal,
     @JsonKey(name: 'original_item_subtotal') required num originalItemSubtotal,
     @JsonKey(name: 'original_item_tax_total') required num originalItemTaxTotal,

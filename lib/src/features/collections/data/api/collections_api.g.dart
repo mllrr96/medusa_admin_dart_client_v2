@@ -18,16 +18,14 @@ class _CollectionsApi implements CollectionsApi {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<List<ProductCollection>> retrieveAll({
-    Map<String, dynamic>? queryParameters,
-  }) async {
+  Future<CollectionListRes> retrieveAll({Map<String, dynamic>? query}) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    queryParameters.addAll(queryParameters ?? <String, dynamic>{});
+    queryParameters.addAll(query ?? <String, dynamic>{});
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<List<ProductCollection>>(
+    final _options = _setStreamType<CollectionListRes>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -37,15 +35,10 @@ class _CollectionsApi implements CollectionsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<List<dynamic>>(_options);
-    late List<ProductCollection> _value;
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late CollectionListRes _value;
     try {
-      _value = _result.data!
-          .map(
-            (dynamic i) =>
-                ProductCollection.fromJson(i as Map<String, dynamic>),
-          )
-          .toList();
+      _value = CollectionListRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -81,12 +74,11 @@ class _CollectionsApi implements CollectionsApi {
   }
 
   @override
-  Future<ProductCollection> create(Map<String, dynamic> body) async {
+  Future<ProductCollection> create(CreateCollectionReq body) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(body);
+    final _data = body;
     final _options = _setStreamType<ProductCollection>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
@@ -109,12 +101,11 @@ class _CollectionsApi implements CollectionsApi {
   }
 
   @override
-  Future<ProductCollection> update(String id, Map<String, dynamic> body) async {
+  Future<ProductCollection> update(String id, UpdateCollectionReq body) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(body);
+    final _data = body;
     final _options = _setStreamType<ProductCollection>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
@@ -197,7 +188,7 @@ class _CollectionsApi implements CollectionsApi {
     final _data = <String, dynamic>{};
     _data.addAll(body);
     final _options = _setStreamType<ProductCollection>(
-      Options(method: 'DELETE', headers: _headers, extra: _extra)
+      Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
             '/admin/collections/${id}/products',

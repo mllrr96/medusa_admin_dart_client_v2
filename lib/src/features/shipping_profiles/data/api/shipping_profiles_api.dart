@@ -1,6 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:medusa_admin_dart_client/medusa_admin_dart_client_v2.dart';
 import 'package:retrofit/retrofit.dart';
+import 'package:medusa_admin_dart_client/src/features/shipping_profiles/data/models/models.dart';
 
 part 'shipping_profiles_api.g.dart';
 
@@ -10,19 +10,19 @@ abstract class ShippingProfilesApi {
 
   @GET('/admin/shipping-profiles')
   Future<List<ShippingProfile>> retrieveAll({
-    @Queries() Map<String, dynamic>? queryParameters,
+    @Queries() Map<String, dynamic>? query,
   });
 
   @GET('/admin/shipping-profiles/{id}')
   Future<ShippingProfile> retrieve(@Path('id') String id);
 
   @POST('/admin/shipping-profiles')
-  Future<ShippingProfile> create(@Body() Map<String, dynamic> body);
+  Future<ShippingProfile> create(@Body() CreateShippingProfileReq body);
 
   @POST('/admin/shipping-profiles/{id}')
   Future<ShippingProfile> update(
     @Path('id') String id,
-    @Body() Map<String, dynamic> body,
+    @Body() UpdateShippingProfileReq body,
   );
 
   @DELETE('/admin/shipping-profiles/{id}')

@@ -1,0 +1,49 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+part of 'base_order_shipping_method_tax_line.dart';
+
+// **************************************************************************
+// JsonSerializableGenerator
+// **************************************************************************
+
+_BaseOrderShippingMethodTaxLine _$BaseOrderShippingMethodTaxLineFromJson(
+  Map<String, dynamic> json,
+) => _BaseOrderShippingMethodTaxLine(
+  shippingMethod: json['shipping_method'] == null
+      ? null
+      : DraftOrderPreviewShippingMethod.fromJson(
+          json['shipping_method'] as Map<String, dynamic>,
+        ),
+  shippingMethodId: json['shipping_method_id'] as String,
+  total: (json['total'] as num).toInt(),
+  subtotal: (json['subtotal'] as num).toInt(),
+  id: json['id'] as String,
+  description: json['description'] as String?,
+  taxRateId: json['tax_rate_id'] as String?,
+  code: json['code'] as String,
+  rate: (json['rate'] as num).toInt(),
+  providerId: json['provider_id'] as String?,
+  createdAt: json['created_at'] == null
+      ? null
+      : DateTime.parse(json['created_at'] as String),
+  updatedAt: json['updated_at'] == null
+      ? null
+      : DateTime.parse(json['updated_at'] as String),
+);
+
+Map<String, dynamic> _$BaseOrderShippingMethodTaxLineToJson(
+  _BaseOrderShippingMethodTaxLine instance,
+) => <String, dynamic>{
+  'shipping_method': instance.shippingMethod,
+  'shipping_method_id': instance.shippingMethodId,
+  'total': instance.total,
+  'subtotal': instance.subtotal,
+  'id': instance.id,
+  'description': instance.description,
+  'tax_rate_id': instance.taxRateId,
+  'code': instance.code,
+  'rate': instance.rate,
+  'provider_id': instance.providerId,
+  'created_at': instance.createdAt?.toIso8601String(),
+  'updated_at': instance.updatedAt?.toIso8601String(),
+};

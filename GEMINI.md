@@ -71,32 +71,6 @@ Each of the following features has been migrated to the new v2 structure, includ
 -   **Repositories**: Implement the business logic and interact with the API interfaces.
 -   **DI Integration**: Registered in `di.dart` for easy access throughout the application.
 
-**Migrated Features:**
-
--   `auth`
--   `products`
--   `orders`
--   `customers`
--   `regions`
--   `collections`
--   `discounts`
--   `gift_cards`
--   `price_lists`
--   `shipping_options`
--   `shipping_profiles`
--   `users`
--   `uploads`
--   `store`
--   `tax_rates`
--   `currencies`
--   `draft_orders`
--   `customer_groups`
--   `notes`
--   `notifications`
--   `returns`
--   `sales_channels`
--   `swaps`
-
 ## Verified Features (against new openapi.yaml)
 
 - `discounts`
@@ -112,6 +86,37 @@ Each of the following features has been migrated to the new v2 structure, includ
 - `uploads`
 - `transaction_groups`
 - `tax_providers`
+- `products`
+- `collections`
+- `shipping_profiles`
+- `sales_channels`
+- `customer_groups`
+- `fulfillment_providers`
+- `fulfillments`
+- `invites`
+- `stores`
+- `regions`
+- `tax_regions`
+- `customers`
+- `tax_rates`
+- `tax_rates`
+- `inventory_items`
+- `product_tags`
+- `product_types`
+- `product_variants`
+- `notifications`
+- `payments`
+- `price_preferences`
+- `order_edits`
+- `shipping_options`
+- `payment_collections`
+- `return_reasons`
+- `refund_reasons`
+- `product_categories`
+- `workflows_executions`
+- `fulfillment_sets`
+- `stock_locations`
+- `store_credit_accounts`
 
 ## Development Process
 
@@ -124,3 +129,5 @@ We are using the `summery` text files as the source of truth and comparing it to
 - **NEVER** add `Admin` to a class name. All classes should be named normally, without the `Admin` prefix.
 - When creating a new file do NOT add import 'package:medusa_admin_dart_client/medusa_admin.dart';
 - When creating a model, make sure to add `@JsonKey(name: '...')` for fields that are snake_case in the JSON and camelCase in the Dart model.
+- Any Datetime field should be nullable.
+- In api file name the `@Queries` as query not queryParameters so instead of this  `@Queries() Map<String, dynamic>? queryParameters`, make it this  `@Queries() Map<String, dynamic>? query,`

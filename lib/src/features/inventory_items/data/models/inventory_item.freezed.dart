@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$InventoryItem {
 
- String get id; String? get sku; String? get title; String? get description; String? get thumbnail;@JsonKey(name: 'origin_country') String? get originCountry;@JsonKey(name: 'hs_code') String? get hsCode;@JsonKey(name: 'mid_code') String? get midCode; String? get material; int? get weight; int? get height; int? get width; int? get length;@JsonKey(name: 'requires_shipping') bool get requiresShipping;@JsonKey(name: 'stocked_quantity') int get stockedQuantity;@JsonKey(name: 'reserved_quantity') int get reservedQuantity;@JsonKey(name: 'location_levels') List<InventoryLevel>? get locationLevels; List<dynamic> get variants; DateTime get createdAt; DateTime get updatedAt; DateTime? get deletedAt; Map<String, dynamic>? get metadata;
+ String get id; String? get sku; String? get title; String? get description; String? get thumbnail;@JsonKey(name: 'origin_country') String? get originCountry;@JsonKey(name: 'hs_code') String? get hsCode;@JsonKey(name: 'mid_code') String? get midCode; String? get material; int? get weight; int? get height; int? get width; int? get length;@JsonKey(name: 'requires_shipping') bool get requiresShipping;@JsonKey(name: 'stocked_quantity') int get stockedQuantity;@JsonKey(name: 'reserved_quantity') int get reservedQuantity;@JsonKey(name: 'location_levels') List<InventoryLevel>? get locationLevels; List<dynamic> get variants; DateTime? get createdAt; DateTime? get updatedAt; DateTime? get deletedAt; Map<String, dynamic>? get metadata;
 /// Create a copy of InventoryItem
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $InventoryItemCopyWith<$Res>  {
   factory $InventoryItemCopyWith(InventoryItem value, $Res Function(InventoryItem) _then) = _$InventoryItemCopyWithImpl;
 @useResult
 $Res call({
- String id, String? sku, String? title, String? description, String? thumbnail,@JsonKey(name: 'origin_country') String? originCountry,@JsonKey(name: 'hs_code') String? hsCode,@JsonKey(name: 'mid_code') String? midCode, String? material, int? weight, int? height, int? width, int? length,@JsonKey(name: 'requires_shipping') bool requiresShipping,@JsonKey(name: 'stocked_quantity') int stockedQuantity,@JsonKey(name: 'reserved_quantity') int reservedQuantity,@JsonKey(name: 'location_levels') List<InventoryLevel>? locationLevels, List<dynamic> variants, DateTime createdAt, DateTime updatedAt, DateTime? deletedAt, Map<String, dynamic>? metadata
+ String id, String? sku, String? title, String? description, String? thumbnail,@JsonKey(name: 'origin_country') String? originCountry,@JsonKey(name: 'hs_code') String? hsCode,@JsonKey(name: 'mid_code') String? midCode, String? material, int? weight, int? height, int? width, int? length,@JsonKey(name: 'requires_shipping') bool requiresShipping,@JsonKey(name: 'stocked_quantity') int stockedQuantity,@JsonKey(name: 'reserved_quantity') int reservedQuantity,@JsonKey(name: 'location_levels') List<InventoryLevel>? locationLevels, List<dynamic> variants, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt, Map<String, dynamic>? metadata
 });
 
 
@@ -65,7 +65,7 @@ class _$InventoryItemCopyWithImpl<$Res>
 
 /// Create a copy of InventoryItem
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? sku = freezed,Object? title = freezed,Object? description = freezed,Object? thumbnail = freezed,Object? originCountry = freezed,Object? hsCode = freezed,Object? midCode = freezed,Object? material = freezed,Object? weight = freezed,Object? height = freezed,Object? width = freezed,Object? length = freezed,Object? requiresShipping = null,Object? stockedQuantity = null,Object? reservedQuantity = null,Object? locationLevels = freezed,Object? variants = null,Object? createdAt = null,Object? updatedAt = null,Object? deletedAt = freezed,Object? metadata = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? sku = freezed,Object? title = freezed,Object? description = freezed,Object? thumbnail = freezed,Object? originCountry = freezed,Object? hsCode = freezed,Object? midCode = freezed,Object? material = freezed,Object? weight = freezed,Object? height = freezed,Object? width = freezed,Object? length = freezed,Object? requiresShipping = null,Object? stockedQuantity = null,Object? reservedQuantity = null,Object? locationLevels = freezed,Object? variants = null,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,Object? metadata = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,sku: freezed == sku ? _self.sku : sku // ignore: cast_nullable_to_non_nullable
@@ -85,9 +85,9 @@ as bool,stockedQuantity: null == stockedQuantity ? _self.stockedQuantity : stock
 as int,reservedQuantity: null == reservedQuantity ? _self.reservedQuantity : reservedQuantity // ignore: cast_nullable_to_non_nullable
 as int,locationLevels: freezed == locationLevels ? _self.locationLevels : locationLevels // ignore: cast_nullable_to_non_nullable
 as List<InventoryLevel>?,variants: null == variants ? _self.variants : variants // ignore: cast_nullable_to_non_nullable
-as List<dynamic>,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
+as List<dynamic>,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,metadata: freezed == metadata ? _self.metadata : metadata // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,
   ));
@@ -174,7 +174,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String? sku,  String? title,  String? description,  String? thumbnail, @JsonKey(name: 'origin_country')  String? originCountry, @JsonKey(name: 'hs_code')  String? hsCode, @JsonKey(name: 'mid_code')  String? midCode,  String? material,  int? weight,  int? height,  int? width,  int? length, @JsonKey(name: 'requires_shipping')  bool requiresShipping, @JsonKey(name: 'stocked_quantity')  int stockedQuantity, @JsonKey(name: 'reserved_quantity')  int reservedQuantity, @JsonKey(name: 'location_levels')  List<InventoryLevel>? locationLevels,  List<dynamic> variants,  DateTime createdAt,  DateTime updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String? sku,  String? title,  String? description,  String? thumbnail, @JsonKey(name: 'origin_country')  String? originCountry, @JsonKey(name: 'hs_code')  String? hsCode, @JsonKey(name: 'mid_code')  String? midCode,  String? material,  int? weight,  int? height,  int? width,  int? length, @JsonKey(name: 'requires_shipping')  bool requiresShipping, @JsonKey(name: 'stocked_quantity')  int stockedQuantity, @JsonKey(name: 'reserved_quantity')  int reservedQuantity, @JsonKey(name: 'location_levels')  List<InventoryLevel>? locationLevels,  List<dynamic> variants,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _InventoryItem() when $default != null:
 return $default(_that.id,_that.sku,_that.title,_that.description,_that.thumbnail,_that.originCountry,_that.hsCode,_that.midCode,_that.material,_that.weight,_that.height,_that.width,_that.length,_that.requiresShipping,_that.stockedQuantity,_that.reservedQuantity,_that.locationLevels,_that.variants,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -195,7 +195,7 @@ return $default(_that.id,_that.sku,_that.title,_that.description,_that.thumbnail
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String? sku,  String? title,  String? description,  String? thumbnail, @JsonKey(name: 'origin_country')  String? originCountry, @JsonKey(name: 'hs_code')  String? hsCode, @JsonKey(name: 'mid_code')  String? midCode,  String? material,  int? weight,  int? height,  int? width,  int? length, @JsonKey(name: 'requires_shipping')  bool requiresShipping, @JsonKey(name: 'stocked_quantity')  int stockedQuantity, @JsonKey(name: 'reserved_quantity')  int reservedQuantity, @JsonKey(name: 'location_levels')  List<InventoryLevel>? locationLevels,  List<dynamic> variants,  DateTime createdAt,  DateTime updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String? sku,  String? title,  String? description,  String? thumbnail, @JsonKey(name: 'origin_country')  String? originCountry, @JsonKey(name: 'hs_code')  String? hsCode, @JsonKey(name: 'mid_code')  String? midCode,  String? material,  int? weight,  int? height,  int? width,  int? length, @JsonKey(name: 'requires_shipping')  bool requiresShipping, @JsonKey(name: 'stocked_quantity')  int stockedQuantity, @JsonKey(name: 'reserved_quantity')  int reservedQuantity, @JsonKey(name: 'location_levels')  List<InventoryLevel>? locationLevels,  List<dynamic> variants,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
 switch (_that) {
 case _InventoryItem():
 return $default(_that.id,_that.sku,_that.title,_that.description,_that.thumbnail,_that.originCountry,_that.hsCode,_that.midCode,_that.material,_that.weight,_that.height,_that.width,_that.length,_that.requiresShipping,_that.stockedQuantity,_that.reservedQuantity,_that.locationLevels,_that.variants,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -215,7 +215,7 @@ return $default(_that.id,_that.sku,_that.title,_that.description,_that.thumbnail
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String? sku,  String? title,  String? description,  String? thumbnail, @JsonKey(name: 'origin_country')  String? originCountry, @JsonKey(name: 'hs_code')  String? hsCode, @JsonKey(name: 'mid_code')  String? midCode,  String? material,  int? weight,  int? height,  int? width,  int? length, @JsonKey(name: 'requires_shipping')  bool requiresShipping, @JsonKey(name: 'stocked_quantity')  int stockedQuantity, @JsonKey(name: 'reserved_quantity')  int reservedQuantity, @JsonKey(name: 'location_levels')  List<InventoryLevel>? locationLevels,  List<dynamic> variants,  DateTime createdAt,  DateTime updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String? sku,  String? title,  String? description,  String? thumbnail, @JsonKey(name: 'origin_country')  String? originCountry, @JsonKey(name: 'hs_code')  String? hsCode, @JsonKey(name: 'mid_code')  String? midCode,  String? material,  int? weight,  int? height,  int? width,  int? length, @JsonKey(name: 'requires_shipping')  bool requiresShipping, @JsonKey(name: 'stocked_quantity')  int stockedQuantity, @JsonKey(name: 'reserved_quantity')  int reservedQuantity, @JsonKey(name: 'location_levels')  List<InventoryLevel>? locationLevels,  List<dynamic> variants,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
 switch (_that) {
 case _InventoryItem() when $default != null:
 return $default(_that.id,_that.sku,_that.title,_that.description,_that.thumbnail,_that.originCountry,_that.hsCode,_that.midCode,_that.material,_that.weight,_that.height,_that.width,_that.length,_that.requiresShipping,_that.stockedQuantity,_that.reservedQuantity,_that.locationLevels,_that.variants,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -230,7 +230,7 @@ return $default(_that.id,_that.sku,_that.title,_that.description,_that.thumbnail
 @JsonSerializable()
 
 class _InventoryItem implements InventoryItem {
-  const _InventoryItem({required this.id, this.sku, this.title, this.description, this.thumbnail, @JsonKey(name: 'origin_country') this.originCountry, @JsonKey(name: 'hs_code') this.hsCode, @JsonKey(name: 'mid_code') this.midCode, this.material, this.weight, this.height, this.width, this.length, @JsonKey(name: 'requires_shipping') required this.requiresShipping, @JsonKey(name: 'stocked_quantity') required this.stockedQuantity, @JsonKey(name: 'reserved_quantity') required this.reservedQuantity, @JsonKey(name: 'location_levels') final  List<InventoryLevel>? locationLevels, required final  List<dynamic> variants, required this.createdAt, required this.updatedAt, this.deletedAt, final  Map<String, dynamic>? metadata}): _locationLevels = locationLevels,_variants = variants,_metadata = metadata;
+  const _InventoryItem({required this.id, this.sku, this.title, this.description, this.thumbnail, @JsonKey(name: 'origin_country') this.originCountry, @JsonKey(name: 'hs_code') this.hsCode, @JsonKey(name: 'mid_code') this.midCode, this.material, this.weight, this.height, this.width, this.length, @JsonKey(name: 'requires_shipping') required this.requiresShipping, @JsonKey(name: 'stocked_quantity') required this.stockedQuantity, @JsonKey(name: 'reserved_quantity') required this.reservedQuantity, @JsonKey(name: 'location_levels') final  List<InventoryLevel>? locationLevels, required final  List<dynamic> variants, this.createdAt, this.updatedAt, this.deletedAt, final  Map<String, dynamic>? metadata}): _locationLevels = locationLevels,_variants = variants,_metadata = metadata;
   factory _InventoryItem.fromJson(Map<String, dynamic> json) => _$InventoryItemFromJson(json);
 
 @override final  String id;
@@ -265,8 +265,8 @@ class _InventoryItem implements InventoryItem {
   return EqualUnmodifiableListView(_variants);
 }
 
-@override final  DateTime createdAt;
-@override final  DateTime updatedAt;
+@override final  DateTime? createdAt;
+@override final  DateTime? updatedAt;
 @override final  DateTime? deletedAt;
  final  Map<String, dynamic>? _metadata;
 @override Map<String, dynamic>? get metadata {
@@ -311,7 +311,7 @@ abstract mixin class _$InventoryItemCopyWith<$Res> implements $InventoryItemCopy
   factory _$InventoryItemCopyWith(_InventoryItem value, $Res Function(_InventoryItem) _then) = __$InventoryItemCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String? sku, String? title, String? description, String? thumbnail,@JsonKey(name: 'origin_country') String? originCountry,@JsonKey(name: 'hs_code') String? hsCode,@JsonKey(name: 'mid_code') String? midCode, String? material, int? weight, int? height, int? width, int? length,@JsonKey(name: 'requires_shipping') bool requiresShipping,@JsonKey(name: 'stocked_quantity') int stockedQuantity,@JsonKey(name: 'reserved_quantity') int reservedQuantity,@JsonKey(name: 'location_levels') List<InventoryLevel>? locationLevels, List<dynamic> variants, DateTime createdAt, DateTime updatedAt, DateTime? deletedAt, Map<String, dynamic>? metadata
+ String id, String? sku, String? title, String? description, String? thumbnail,@JsonKey(name: 'origin_country') String? originCountry,@JsonKey(name: 'hs_code') String? hsCode,@JsonKey(name: 'mid_code') String? midCode, String? material, int? weight, int? height, int? width, int? length,@JsonKey(name: 'requires_shipping') bool requiresShipping,@JsonKey(name: 'stocked_quantity') int stockedQuantity,@JsonKey(name: 'reserved_quantity') int reservedQuantity,@JsonKey(name: 'location_levels') List<InventoryLevel>? locationLevels, List<dynamic> variants, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt, Map<String, dynamic>? metadata
 });
 
 
@@ -328,7 +328,7 @@ class __$InventoryItemCopyWithImpl<$Res>
 
 /// Create a copy of InventoryItem
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? sku = freezed,Object? title = freezed,Object? description = freezed,Object? thumbnail = freezed,Object? originCountry = freezed,Object? hsCode = freezed,Object? midCode = freezed,Object? material = freezed,Object? weight = freezed,Object? height = freezed,Object? width = freezed,Object? length = freezed,Object? requiresShipping = null,Object? stockedQuantity = null,Object? reservedQuantity = null,Object? locationLevels = freezed,Object? variants = null,Object? createdAt = null,Object? updatedAt = null,Object? deletedAt = freezed,Object? metadata = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? sku = freezed,Object? title = freezed,Object? description = freezed,Object? thumbnail = freezed,Object? originCountry = freezed,Object? hsCode = freezed,Object? midCode = freezed,Object? material = freezed,Object? weight = freezed,Object? height = freezed,Object? width = freezed,Object? length = freezed,Object? requiresShipping = null,Object? stockedQuantity = null,Object? reservedQuantity = null,Object? locationLevels = freezed,Object? variants = null,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,Object? metadata = freezed,}) {
   return _then(_InventoryItem(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,sku: freezed == sku ? _self.sku : sku // ignore: cast_nullable_to_non_nullable
@@ -348,9 +348,9 @@ as bool,stockedQuantity: null == stockedQuantity ? _self.stockedQuantity : stock
 as int,reservedQuantity: null == reservedQuantity ? _self.reservedQuantity : reservedQuantity // ignore: cast_nullable_to_non_nullable
 as int,locationLevels: freezed == locationLevels ? _self._locationLevels : locationLevels // ignore: cast_nullable_to_non_nullable
 as List<InventoryLevel>?,variants: null == variants ? _self._variants : variants // ignore: cast_nullable_to_non_nullable
-as List<dynamic>,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
+as List<dynamic>,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,metadata: freezed == metadata ? _self._metadata : metadata // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,
   ));

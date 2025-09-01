@@ -1,0 +1,20 @@
+import 'package:freezed_annotation/freezed_annotation.dart';
+
+part 'shipping_profile.freezed.dart';
+part 'shipping_profile.g.dart';
+
+@freezed
+abstract class ShippingProfile with _$ShippingProfile {
+  const factory ShippingProfile({
+    required String id,
+    required String name,
+    required String type,
+    Map<String, dynamic>? metadata,
+    @JsonKey(name: 'created_at') DateTime? createdAt,
+    @JsonKey(name: 'updated_at') DateTime? updatedAt,
+    @JsonKey(name: 'deleted_at') DateTime? deletedAt,
+  }) = _ShippingProfile;
+
+  factory ShippingProfile.fromJson(Map<String, dynamic> json) =>
+      _$ShippingProfileFromJson(json);
+}

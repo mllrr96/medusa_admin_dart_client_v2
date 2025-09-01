@@ -18,12 +18,10 @@ class _SalesChannelsApi implements SalesChannelsApi {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<List<SalesChannel>> retrieveAll({
-    Map<String, dynamic>? queryParameters,
-  }) async {
+  Future<List<SalesChannel>> retrieveAll({Map<String, dynamic>? query}) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    queryParameters.addAll(queryParameters ?? <String, dynamic>{});
+    queryParameters.addAll(query ?? <String, dynamic>{});
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
@@ -78,12 +76,11 @@ class _SalesChannelsApi implements SalesChannelsApi {
   }
 
   @override
-  Future<SalesChannel> create(Map<String, dynamic> body) async {
+  Future<SalesChannel> create(CreateSalesChannel body) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(body);
+    final _data = body;
     final _options = _setStreamType<SalesChannel>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
@@ -106,12 +103,11 @@ class _SalesChannelsApi implements SalesChannelsApi {
   }
 
   @override
-  Future<SalesChannel> update(String id, Map<String, dynamic> body) async {
+  Future<SalesChannel> update(String id, UpdateSalesChannel body) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(body);
+    final _data = body;
     final _options = _setStreamType<SalesChannel>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
@@ -150,6 +146,33 @@ class _SalesChannelsApi implements SalesChannelsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     await _dio.fetch<void>(_options);
+  }
+
+  @override
+  Future<SalesChannel> manageProducts(String id, ManageProductsReq body) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{};
+    final _data = body;
+    final _options = _setStreamType<SalesChannel>(
+      Options(method: 'POST', headers: _headers, extra: _extra)
+          .compose(
+            _dio.options,
+            '/admin/sales-channels/${id}/products',
+            queryParameters: queryParameters,
+            data: _data,
+          )
+          .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
+    );
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late SalesChannel _value;
+    try {
+      _value = SalesChannel.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
   }
 
   RequestOptions _setStreamType<T>(RequestOptions requestOptions) {

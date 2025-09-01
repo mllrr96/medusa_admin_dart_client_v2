@@ -9,7 +9,7 @@ class PriceListsRepository {
   Future<PriceListsListRes> retrieveAll({
     Map<String, dynamic>? queryParameters,
   }) async {
-    return _priceListsApi.retrieveAll(queryParameters: queryParameters);
+    return _priceListsApi.retrieveAll(query: queryParameters);
   }
 
   Future<PriceListsRes> create(CreatePriceListReq body) async {
@@ -20,7 +20,7 @@ class PriceListsRepository {
     String id, {
     Map<String, dynamic>? queryParameters,
   }) async {
-    return _priceListsApi.retrieve(id, queryParameters: queryParameters);
+    return _priceListsApi.retrieve(id, query: queryParameters);
   }
 
   Future<PriceListsRes> update(

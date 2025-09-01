@@ -16,6 +16,9 @@ linter:
   rules:
     - avoid_relative_lib_imports
 analyzer:
+  exclude:
+    - "**/*.g.dart"
+    - "**/*.freezed.dart"
   errors:
     invalid_annotation_target: ignore
 formatter:

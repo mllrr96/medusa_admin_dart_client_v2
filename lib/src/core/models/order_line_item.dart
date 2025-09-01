@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:medusa_admin_dart_client/src/core/models/product.dart';
-import 'package:medusa_admin_dart_client/src/core/models/product_variant.dart';
+import 'package:medusa_admin_dart_client/src/features/products/data/models/product_variant.dart';
+import 'package:medusa_admin_dart_client/src/features/products/data/models/product.dart';
 
 part 'order_line_item.freezed.dart';
 part 'order_line_item.g.dart';

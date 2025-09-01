@@ -1,57 +1,71 @@
 import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
+import 'package:medusa_admin_dart_client/medusa_admin_dart_client_v2.dart';
 import 'package:medusa_admin_dart_client/src/features/api_keys/data/api/api_keys_api.dart';
-import 'package:medusa_admin_dart_client/src/features/api_keys/data/repository/api_keys_repository.dart';
-import '../../features/auth/data/api/auth_api.dart';
-import '../../features/auth/data/repository/auth_repository.dart';
-import '../../features/products/data/api/products_api.dart';
-import '../../features/products/data/repository/products_repository.dart';
-import '../../features/orders/data/api/orders_api.dart';
-import '../../features/orders/data/repository/orders_repository.dart';
-import '../../features/customers/data/api/customers_api.dart';
-import '../../features/customers/data/repository/customers_repository.dart';
-import '../../features/regions/data/api/regions_api.dart';
-import '../../features/regions/data/repository/regions_repository.dart';
-import '../../features/collections/data/api/collections_api.dart';
-import '../../features/collections/data/repository/collections_repository.dart';
-import '../../features/discounts/data/api/discounts_api.dart';
-import '../../features/discounts/data/repository/discounts_repository.dart';
-import '../../features/gift_cards/data/api/gift_cards_api.dart';
-import '../../features/gift_cards/data/repository/gift_cards_repository.dart';
-import '../../features/price_lists/data/api/price_lists_api.dart';
-import '../../features/price_lists/data/repository/price_lists_repository.dart';
-import '../../features/shipping_options/data/api/shipping_options_api.dart';
-import '../../features/shipping_options/data/repository/shipping_options_repository.dart';
-import '../../features/shipping_profiles/data/api/shipping_profiles_api.dart';
-import '../../features/shipping_profiles/data/repository/shipping_profiles_repository.dart';
-import '../../features/users/data/api/users_api.dart';
-import '../../features/users/data/repository/users_repository.dart';
-import '../../features/uploads/data/api/uploads_api.dart';
-import '../../features/uploads/data/repository/uploads_repository.dart';
-import '../../features/store/data/api/store_api.dart';
-import '../../features/store/data/repository/store_repository.dart';
-import '../../features/tax_rates/data/api/tax_rates_api.dart';
-import '../../features/tax_rates/data/repository/tax_rates_repository.dart';
-import '../../features/currencies/data/api/currencies_api.dart';
-import '../../features/currencies/data/repository/currencies_repository.dart';
-import '../../features/draft_orders/data/api/draft_orders_api.dart';
-import '../../features/draft_orders/data/repository/draft_orders_repository.dart';
-import '../../features/customer_groups/data/api/customer_groups_api.dart';
-import '../../features/customer_groups/data/repository/customer_groups_repository.dart';
-import '../../features/notes/data/api/notes_api.dart';
-import '../../features/notes/data/repository/notes_repository.dart';
-import '../../features/notifications/data/api/notifications_api.dart';
-import '../../features/notifications/data/repository/notifications_repository.dart';
-import '../../features/returns/data/api/returns_api.dart';
-import '../../features/returns/data/repository/returns_repository.dart';
-import '../../features/sales_channels/data/api/sales_channels_api.dart';
-import '../../features/sales_channels/data/repository/sales_channels_repository.dart';
-import '../../features/swaps/data/api/swaps_api.dart';
-import '../../features/swaps/data/repository/swaps_repository.dart';
-import '../../features/return_reasons/data/api/return_reasons_api.dart';
-import '../../features/return_reasons/data/repository/return_reasons_repository.dart';
-import '../../features/campaigns/data/api/campaigns_api.dart';
-import '../../features/campaigns/data/repository/campaigns_repository.dart';
+import 'package:medusa_admin_dart_client/src/features/auth/data/api/auth_api.dart';
+import 'package:medusa_admin_dart_client/src/features/campaigns/data/api/campaigns_api.dart';
+import 'package:medusa_admin_dart_client/src/features/claims/data/api/claims_api.dart';
+import 'package:medusa_admin_dart_client/src/features/claims/data/repository/claims_repository.dart';
+import 'package:medusa_admin_dart_client/src/features/collections/data/api/collections_api.dart';
+import 'package:medusa_admin_dart_client/src/features/currencies/data/api/currencies_api.dart';
+import 'package:medusa_admin_dart_client/src/features/customer_groups/data/api/customer_groups_api.dart';
+import 'package:medusa_admin_dart_client/src/features/customers/data/api/customers_api.dart';
+import 'package:medusa_admin_dart_client/src/features/discounts/data/api/discounts_api.dart';
+import 'package:medusa_admin_dart_client/src/features/draft_orders/data/api/draft_orders_api.dart';
+import 'package:medusa_admin_dart_client/src/features/exchanges/data/api/exchanges_api.dart';
+import 'package:medusa_admin_dart_client/src/features/exchanges/data/repository/exchanges_repository.dart';
+import 'package:medusa_admin_dart_client/src/features/fulfillment_providers/data/api/fulfillment_providers_api.dart';
+import 'package:medusa_admin_dart_client/src/features/fulfillment_providers/data/repository/fulfillment_providers_repository.dart';
+import 'package:medusa_admin_dart_client/src/features/fulfillment_sets/data/api/fulfillment_sets_api.dart';
+import 'package:medusa_admin_dart_client/src/features/fulfillment_sets/data/repository/fulfillment_sets_repository.dart';
+import 'package:medusa_admin_dart_client/src/features/fulfillments/data/api/fulfillments_api.dart';
+import 'package:medusa_admin_dart_client/src/features/fulfillments/data/repository/fulfillments_repository.dart';
+import 'package:medusa_admin_dart_client/src/features/gift_cards/data/api/gift_cards_api.dart';
+import 'package:medusa_admin_dart_client/src/features/inventory_items/data/api/inventory_items_api.dart';
+import 'package:medusa_admin_dart_client/src/features/invites/data/api/invites_api.dart';
+import 'package:medusa_admin_dart_client/src/features/invites/data/repository/invites_repository.dart';
+import 'package:medusa_admin_dart_client/src/features/notes/data/api/notes_api.dart';
+import 'package:medusa_admin_dart_client/src/features/notifications/data/api/notifications_api.dart';
+import 'package:medusa_admin_dart_client/src/features/order_edits/data/api/order_edits_api.dart';
+import 'package:medusa_admin_dart_client/src/features/order_edits/data/repository/order_edits_repository.dart';
+import 'package:medusa_admin_dart_client/src/features/orders/data/api/orders_api.dart';
+import 'package:medusa_admin_dart_client/src/features/payment_collections/data/api/payment_collections_api.dart';
+import 'package:medusa_admin_dart_client/src/features/payment_collections/data/repository/payment_collections_repository.dart';
+import 'package:medusa_admin_dart_client/src/features/payments/data/api/payments_api.dart';
+import 'package:medusa_admin_dart_client/src/features/payments/data/repository/payments_repository.dart';
+import 'package:medusa_admin_dart_client/src/features/plugins/data/api/plugins_api.dart';
+import 'package:medusa_admin_dart_client/src/features/price_lists/data/api/price_lists_api.dart';
+import 'package:medusa_admin_dart_client/src/features/price_preferences/data/api/price_preferences_api.dart';
+import 'package:medusa_admin_dart_client/src/features/price_preferences/data/repository/price_preferences_repository.dart';
+import 'package:medusa_admin_dart_client/src/features/product_categories/data/api/product_categories_api.dart';
+import 'package:medusa_admin_dart_client/src/features/product_tags/data/api/product_tags_api.dart';
+import 'package:medusa_admin_dart_client/src/features/product_types/data/api/product_types_api.dart';
+import 'package:medusa_admin_dart_client/src/features/product_variants/data/api/product_variants_api.dart';
+import 'package:medusa_admin_dart_client/src/features/product_variants/data/repository/product_variants_repository.dart';
+import 'package:medusa_admin_dart_client/src/features/products/data/api/products_api.dart';
+import 'package:medusa_admin_dart_client/src/features/promotions/data/api/promotions_api.dart';
+import 'package:medusa_admin_dart_client/src/features/promotions/data/repository/promotions_repository.dart';
+import 'package:medusa_admin_dart_client/src/features/refund_reasons/data/api/refund_reasons_api.dart';
+import 'package:medusa_admin_dart_client/src/features/refund_reasons/data/repository/refund_reasons_repository.dart';
+import 'package:medusa_admin_dart_client/src/features/regions/data/api/regions_api.dart';
+import 'package:medusa_admin_dart_client/src/features/reservations/data/api/reservations_api.dart';
+import 'package:medusa_admin_dart_client/src/features/reservations/data/repository/reservations_repository.dart';
+import 'package:medusa_admin_dart_client/src/features/return_reasons/data/api/return_reasons_api.dart';
+import 'package:medusa_admin_dart_client/src/features/returns/data/api/returns_api.dart';
+import 'package:medusa_admin_dart_client/src/features/sales_channels/data/api/sales_channels_api.dart';
+import 'package:medusa_admin_dart_client/src/features/shipping_options/data/api/shipping_options_api.dart';
+import 'package:medusa_admin_dart_client/src/features/shipping_profiles/data/api/shipping_profiles_api.dart';
+import 'package:medusa_admin_dart_client/src/features/store/data/api/store_api.dart';
+import 'package:medusa_admin_dart_client/src/features/store_credit_accounts/data/api/store_credit_accounts_api.dart';
+import 'package:medusa_admin_dart_client/src/features/store_credit_accounts/data/repository/store_credit_accounts_repository.dart';
+import 'package:medusa_admin_dart_client/src/features/tax_providers/data/api/tax_providers_api.dart';
+import 'package:medusa_admin_dart_client/src/features/tax_rates/data/api/tax_rates_api.dart';
+import 'package:medusa_admin_dart_client/src/features/tax_regions/data/api/tax_regions_api.dart';
+import 'package:medusa_admin_dart_client/src/features/transaction_groups/data/api/transaction_groups_api.dart';
+import 'package:medusa_admin_dart_client/src/features/uploads/data/api/uploads_api.dart';
+import 'package:medusa_admin_dart_client/src/features/users/data/api/users_api.dart';
+import 'package:medusa_admin_dart_client/src/features/workflows_executions/data/api/workflows_executions_api.dart';
+import 'package:medusa_admin_dart_client/src/features/workflows_executions/data/repository/workflows_executions_repository.dart';
 
 final getIt = GetIt.instance;
 
@@ -211,12 +225,6 @@ void configureDependencies({String? baseUrl, List<Interceptor>? interceptors}) {
     () => SalesChannelsRepository(getIt<SalesChannelsApi>()),
   );
 
-  // Swaps
-  getIt.registerLazySingleton<SwapsApi>(() => SwapsApi(getIt<Dio>()));
-  getIt.registerLazySingleton<SwapsRepository>(
-    () => SwapsRepository(getIt<SwapsApi>()),
-  );
-
   // Api Keys
   getIt.registerLazySingleton<ApiKeysApi>(() => ApiKeysApi(getIt<Dio>()));
   getIt.registerLazySingleton<ApiKeysRepository>(
@@ -235,5 +243,194 @@ void configureDependencies({String? baseUrl, List<Interceptor>? interceptors}) {
   );
   getIt.registerLazySingleton<ReturnReasonsRepository>(
     () => ReturnReasonsRepository(getIt<ReturnReasonsApi>()),
+  );
+
+  // Fulfillment Providers
+  getIt.registerLazySingleton<FulfillmentProvidersApi>(
+    () => FulfillmentProvidersApi(getIt<Dio>()),
+  );
+  getIt.registerLazySingleton<FulfillmentProvidersRepository>(
+    () => FulfillmentProvidersRepository(getIt<FulfillmentProvidersApi>()),
+  );
+
+  // Fulfillments
+  getIt.registerLazySingleton<FulfillmentsApi>(
+    () => FulfillmentsApi(getIt<Dio>()),
+  );
+  getIt.registerLazySingleton<FulfillmentsRepository>(
+    () => FulfillmentsRepository(getIt<FulfillmentsApi>()),
+  );
+
+  // Invites
+  getIt.registerLazySingleton<InvitesApi>(
+    () => InvitesApi(getIt<Dio>()),
+  );
+  getIt.registerLazySingleton<InvitesRepository>(
+    () => InvitesRepository(getIt<InvitesApi>()),
+  );
+
+  // Tax Regions
+  getIt.registerLazySingleton<TaxRegionsApi>(() => TaxRegionsApi(getIt<Dio>()));
+  getIt.registerLazySingleton<TaxRegionsRepository>(
+    () => TaxRegionsRepository(getIt<TaxRegionsApi>()),
+  );
+
+  // Inventory Items
+  getIt.registerLazySingleton<InventoryItemsApi>(
+    () => InventoryItemsApi(getIt<Dio>()),
+  );
+  getIt.registerLazySingleton<InventoryItemsRepository>(
+    () => InventoryItemsRepository(getIt<InventoryItemsApi>()),
+  );
+  // Product Tags
+  getIt.registerLazySingleton<ProductTagsApi>(
+    () => ProductTagsApi(getIt<Dio>()),
+  );
+  getIt.registerLazySingleton<ProductTagsRepository>(
+    () => ProductTagsRepository(getIt<ProductTagsApi>()),
+  );
+
+  // Product Types
+  getIt.registerLazySingleton<ProductTypesApi>(
+    () => ProductTypesApi(getIt<Dio>()),
+  );
+  getIt.registerLazySingleton<ProductTypesRepository>(
+    () => ProductTypesRepository(getIt<ProductTypesApi>()),
+  );
+
+  // Product Variants
+  getIt.registerLazySingleton<ProductVariantsApi>(
+    () => ProductVariantsApi(getIt<Dio>()),
+  );
+  getIt.registerLazySingleton<ProductVariantsRepository>(
+    () => ProductVariantsRepository(getIt<ProductVariantsApi>()),
+  );
+
+  // Price Preferences
+  getIt.registerLazySingleton<PricePreferencesApi>(
+    () => PricePreferencesApi(getIt<Dio>()),
+  );
+  getIt.registerLazySingleton<PricePreferencesRepository>(
+    () => PricePreferencesRepository(getIt<PricePreferencesApi>()),
+  );
+
+  // Order Edits
+  getIt.registerLazySingleton<OrderEditsApi>(
+    () => OrderEditsApi(getIt<Dio>()),
+  );
+  getIt.registerLazySingleton<OrderEditsRepository>(
+    () => OrderEditsRepository(getIt<OrderEditsApi>()),
+  );
+
+  // Exchanges
+  getIt.registerLazySingleton<ExchangesApi>(
+    () => ExchangesApi(getIt<Dio>()),
+  );
+  getIt.registerLazySingleton<ExchangesRepository>(
+    () => ExchangesRepository(getIt<ExchangesApi>()),
+  );
+
+  // Claims
+  getIt.registerLazySingleton<ClaimsApi>(
+    () => ClaimsApi(getIt<Dio>()),
+  );
+  getIt.registerLazySingleton<ClaimsRepository>(
+    () => ClaimsRepository(getIt<ClaimsApi>()),
+  );
+
+  // Promotions
+  getIt.registerLazySingleton<PromotionsApi>(
+    () => PromotionsApi(getIt<Dio>()),
+  );
+  getIt.registerLazySingleton<PromotionsRepository>(
+    () => PromotionsRepository(getIt<PromotionsApi>()),
+  );
+
+  // Reservations
+  getIt.registerLazySingleton<ReservationsApi>(
+    () => ReservationsApi(getIt<Dio>()),
+  );
+  getIt.registerLazySingleton<ReservationsRepository>(
+    () => ReservationsRepository(getIt<ReservationsApi>()),
+  );
+
+  // Payments
+  getIt.registerLazySingleton<PaymentsApi>(
+    () => PaymentsApi(getIt<Dio>()),
+  );
+  getIt.registerLazySingleton<PaymentsRepository>(
+    () => PaymentsRepository(getIt<PaymentsApi>()),
+  );
+
+  // Store Credit Accounts
+  getIt.registerLazySingleton<StoreCreditAccountsApi>(
+    () => StoreCreditAccountsApi(getIt<Dio>()),
+  );
+  getIt.registerLazySingleton<StoreCreditAccountsRepository>(
+    () => StoreCreditAccountsRepository(getIt<StoreCreditAccountsApi>()),
+  );
+
+  // Fulfillment Sets
+  getIt.registerLazySingleton<FulfillmentSetsApi>(
+    () => FulfillmentSetsApi(getIt<Dio>()),
+  );
+  getIt.registerLazySingleton<FulfillmentSetsRepository>(
+    () => FulfillmentSetsRepository(getIt<FulfillmentSetsApi>()),
+  );
+
+  // Workflows Executions
+  getIt.registerLazySingleton<WorkflowsExecutionsApi>(
+    () => WorkflowsExecutionsApi(getIt<Dio>()),
+  );
+  getIt.registerLazySingleton<WorkflowsExecutionsRepository>(
+    () => WorkflowsExecutionsRepository(getIt<WorkflowsExecutionsApi>()),
+  );
+
+  // Product Categories
+  getIt.registerLazySingleton<ProductCategoriesApi>(
+    () => ProductCategoriesApi(getIt<Dio>()),
+  );
+  getIt.registerLazySingleton<ProductCategoriesRepository>(
+    () => ProductCategoriesRepository(getIt<ProductCategoriesApi>()),
+  );
+
+  // Refund Reasons
+  getIt.registerLazySingleton<RefundReasonsApi>(
+    () => RefundReasonsApi(getIt<Dio>()),
+  );
+  getIt.registerLazySingleton<RefundReasonsRepository>(
+    () => RefundReasonsRepository(getIt<RefundReasonsApi>()),
+  );
+
+  // Payment Collections
+  getIt.registerLazySingleton<PaymentCollectionsApi>(
+    () => PaymentCollectionsApi(getIt<Dio>()),
+  );
+  getIt.registerLazySingleton<PaymentCollectionsRepository>(
+    () => PaymentCollectionsRepository(getIt<PaymentCollectionsApi>()),
+  );
+
+  // Transaction Groups
+  getIt.registerLazySingleton<TransactionGroupsApi>(
+    () => TransactionGroupsApi(getIt<Dio>()),
+  );
+  getIt.registerLazySingleton<TransactionGroupsRepository>(
+    () => TransactionGroupsRepository(getIt<TransactionGroupsApi>()),
+  );
+
+  // Tax Providers
+  getIt.registerLazySingleton<TaxProvidersApi>(
+    () => TaxProvidersApi(getIt<Dio>()),
+  );
+  getIt.registerLazySingleton<TaxProvidersRepository>(
+    () => TaxProvidersRepository(getIt<TaxProvidersApi>()),
+  );
+
+  // Plugins
+  getIt.registerLazySingleton<PluginsApi>(
+    () => PluginsApi(getIt<Dio>()),
+  );
+  getIt.registerLazySingleton<PluginsRepository>(
+    () => PluginsRepository(getIt<PluginsApi>()),
   );
 }

@@ -18,12 +18,10 @@ class _CustomerGroupsApi implements CustomerGroupsApi {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<CustomerGroupsListRes> list({
-    Map<String, dynamic>? queryParameters,
-  }) async {
+  Future<CustomerGroupsListRes> list({Map<String, dynamic>? query}) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    queryParameters.addAll(queryParameters ?? <String, dynamic>{});
+    queryParameters.addAll(query ?? <String, dynamic>{});
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
@@ -103,12 +101,14 @@ class _CustomerGroupsApi implements CustomerGroupsApi {
   }
 
   @override
-  Future<CustomerGroupsRes> update(String id, Map<String, dynamic> body) async {
+  Future<CustomerGroupsRes> update(
+    String id,
+    UpdateCustomerGroupReq body,
+  ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = <String, dynamic>{};
-    _data.addAll(body);
+    final _data = body;
     final _options = _setStreamType<CustomerGroupsRes>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(

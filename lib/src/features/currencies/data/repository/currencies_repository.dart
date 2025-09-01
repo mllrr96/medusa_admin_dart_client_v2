@@ -10,7 +10,7 @@ class CurrenciesRepository {
   Future<CurrenciesListRes> list({
     Map<String, dynamic>? queryParameters,
   }) {
-    return _currenciesApi.list(queryParameters: queryParameters);
+    return _currenciesApi.list(query: queryParameters);
   }
 
   Future<CurrencyRes> retrieve(String code) {

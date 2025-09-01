@@ -1,4 +1,4 @@
-import 'package:medusa_admin_dart_client/src/core/models/customer_group.dart';
+import 'package:medusa_admin_dart_client/src/features/customer_groups/data/models/customer_group.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'customer_groups_res.freezed.dart';

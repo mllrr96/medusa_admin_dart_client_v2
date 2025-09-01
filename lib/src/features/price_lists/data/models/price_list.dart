@@ -16,9 +16,9 @@ abstract class PriceList with _$PriceList {
     required String status,
     required String type,
     required List<Price> prices,
-    required DateTime createdAt,
-    required DateTime updatedAt,
-    required DateTime deletedAt,
+    DateTime? createdAt,
+    DateTime? updatedAt,
+    DateTime? deletedAt,
   }) = _PriceList;
 
   factory PriceList.fromJson(Map<String, dynamic> json) =>

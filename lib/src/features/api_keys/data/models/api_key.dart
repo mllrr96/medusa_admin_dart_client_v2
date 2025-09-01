@@ -13,10 +13,10 @@ abstract class ApiKey with _$ApiKey {
     required String type,
     @JsonKey(name: 'last_used_at') DateTime? lastUsedAt,
     @JsonKey(name: 'created_by') required String createdBy,
-    @JsonKey(name: 'created_at') required DateTime createdAt,
+    @JsonKey(name: 'created_at') DateTime? createdAt,
     @JsonKey(name: 'revoked_by') String? revokedBy,
     @JsonKey(name: 'revoked_at') DateTime? revokedAt,
-    @JsonKey(name: 'updated_at') required DateTime updatedAt,
+    @JsonKey(name: 'updated_at') DateTime? updatedAt,
     @JsonKey(name: 'deleted_at') DateTime? deletedAt,
   }) = _ApiKey;
 

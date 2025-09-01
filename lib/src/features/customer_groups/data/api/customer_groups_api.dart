@@ -10,7 +10,7 @@ abstract class CustomerGroupsApi {
 
   @GET('/admin/customer-groups')
   Future<CustomerGroupsListRes> list({
-    @Queries() Map<String, dynamic>? queryParameters,
+    @Queries() Map<String, dynamic>? query,
   });
 
   @GET('/admin/customer-groups/{id}')
@@ -22,7 +22,7 @@ abstract class CustomerGroupsApi {
   @POST('/admin/customer-groups/{id}')
   Future<CustomerGroupsRes> update(
     @Path('id') String id,
-    @Body() Map<String, dynamic> body,
+    @Body() UpdateCustomerGroupReq body,
   );
 
   @DELETE('/admin/customer-groups/{id}')

@@ -1,10 +1,10 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:medusa_admin_dart_client/src/core/models/product.dart';
 import 'package:medusa_admin_dart_client/src/features/orders/data/models/order.dart';
+import 'package:medusa_admin_dart_client/src/features/products/data/models/product.dart';
 
 import 'adjustment.dart';
 import 'cart.dart';
-import 'product_variant.dart';
+import '../../features/products/data/models/product_variant.dart';
 import 'tax_line.dart';
 
 part 'line_item.freezed.dart';

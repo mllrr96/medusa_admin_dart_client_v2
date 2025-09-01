@@ -1,8 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:medusa_admin_dart_client/src/core/models/product.dart';
-import 'package:medusa_admin_dart_client/src/core/models/product_collection.dart';
+import 'package:medusa_admin_dart_client/src/features/collections/data/models/product_collection.dart';
+import 'package:medusa_admin_dart_client/src/features/products/data/models/product.dart';
+import 'package:medusa_admin_dart_client/src/features/product_tags/data/models/product_tag.dart';
 
-import 'product_tag.dart';
 import 'product_type.dart';
 
 part 'discount_rule.freezed.dart';

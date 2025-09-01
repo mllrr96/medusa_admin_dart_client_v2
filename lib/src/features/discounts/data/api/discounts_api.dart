@@ -10,7 +10,7 @@ abstract class DiscountsApi {
 
   @GET('/admin/discounts')
   Future<DiscountsListRes> retrieveAll({
-    @Queries() Map<String, dynamic>? queryParameters,
+    @Queries() Map<String, dynamic>? query,
   });
 
   @POST('/admin/discounts')
@@ -19,7 +19,7 @@ abstract class DiscountsApi {
   @GET('/admin/discounts/{id}')
   Future<DiscountsRes> retrieve(
     @Path('id') String id, {
-    @Queries() Map<String, dynamic>? queryParameters,
+    @Queries() Map<String, dynamic>? query,
   });
 
   @POST('/admin/discounts/{id}')

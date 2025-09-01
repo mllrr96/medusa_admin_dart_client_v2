@@ -1,8 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:medusa_admin_dart_client/src/features/api_keys/data/models/api_key_res.dart';
-import 'package:medusa_admin_dart_client/src/features/api_keys/data/models/api_keys_list_res.dart';
-import 'package:medusa_admin_dart_client/src/features/api_keys/data/models/create_api_key_req.dart';
-import 'package:medusa_admin_dart_client/src/features/api_keys/data/models/update_api_key_req.dart';
+import 'package:medusa_admin_dart_client/src/features/api_keys/data/models/models.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'api_keys_api.g.dart';
@@ -13,7 +10,7 @@ abstract class ApiKeysApi {
 
   @GET('/admin/api-keys')
   Future<ApiKeysListRes> list({
-    @Queries() Map<String, dynamic>? queryParameters,
+    @Queries() Map<String, dynamic>? query,
   });
 
   @POST('/admin/api-keys')
@@ -34,6 +31,6 @@ abstract class ApiKeysApi {
   @POST('/admin/api-keys/{id}/sales-channels')
   Future<ApiKeyRes> salesChannels(
     @Path('id') String id,
-    @Body() Map<String, dynamic> body,
+    @Body() ApiKeySalesChannelsReq body,
   );
 }

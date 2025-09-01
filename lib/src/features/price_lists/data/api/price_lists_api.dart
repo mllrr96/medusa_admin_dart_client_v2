@@ -12,7 +12,7 @@ abstract class PriceListsApi {
 
   @GET('/admin/price-lists')
   Future<PriceListsListRes> retrieveAll({
-    @Queries() Map<String, dynamic>? queryParameters,
+    @Queries() Map<String, dynamic>? query,
   });
 
   @POST('/admin/price-lists')
@@ -23,7 +23,7 @@ abstract class PriceListsApi {
   @GET('/admin/price-lists/{id}')
   Future<PriceListsRes> retrieve(
     @Path('id') String id, {
-    @Queries() Map<String, dynamic>? queryParameters,
+    @Queries() Map<String, dynamic>? query,
   });
 
   @POST('/admin/price-lists/{id}')

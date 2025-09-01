@@ -1,7 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:medusa_admin_dart_client/medusa_admin_dart_client_v2.dart';
 import 'package:retrofit/retrofit.dart';
-
+import 'package:medusa_admin_dart_client/src/features/regions/data/models/models.dart';
 part 'regions_api.g.dart';
 
 @RestApi()
@@ -9,22 +8,31 @@ abstract class RegionsApi {
   factory RegionsApi(Dio dio, {String baseUrl}) = _RegionsApi;
 
   @GET('/admin/regions')
-  Future<List<Region>> retrieveAll({
-    @Queries() Map<String, dynamic>? queryParameters,
+  Future<HttpResponse> retrieveAll({
+    @Queries() Map<String, dynamic>? query,
   });
 
-  @GET('/admin/regions/{id}')
-  Future<Region> retrieve(@Path('id') String id);
-
   @POST('/admin/regions')
-  Future<Region> create(@Body() Map<String, dynamic> body);
+  Future<HttpResponse> create(
+    @Body() CreateRegionReq body,
+    @Queries() Map<String, dynamic>? query,
+  );
+
+  @GET('/admin/regions/{id}')
+  Future<HttpResponse> retrieve(
+    @Path('id') String id,
+    @Queries() Map<String, dynamic>? query,
+  );
 
   @POST('/admin/regions/{id}')
-  Future<Region> update(
+  Future<HttpResponse> update(
     @Path('id') String id,
-    @Body() Map<String, dynamic> body,
+    @Body() UpdateRegionReq body,
+    @Queries() Map<String, dynamic>? query,
   );
 
   @DELETE('/admin/regions/{id}')
-  Future<void> delete(@Path('id') String id);
+  Future<HttpResponse> delete(
+    @Path('id') String id,
+  );
 }

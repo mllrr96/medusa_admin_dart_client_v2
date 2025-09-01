@@ -1,39 +1,41 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Medusa Admin Dart Client
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages). 
-
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages). 
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
-
-## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+This is a Dart client for the Medusa Admin API. It provides a convenient way to interact with a Medusa server from a Dart or Flutter environment.
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Add the package to your `pubspec.yaml` file:
+
+```yaml
+dependencies:
+  medusa_admin_dart_client: ^1.0.0
+```
+
+Then, run `flutter pub get` to install the package.
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
+Here is a simple example of how to use the client to fetch a list of products:
 
 ```dart
-const like = 'sample';
+import 'package:medusa_admin_dart_client/medusa_admin.dart';
+
+void main() async {
+  // Create a new client.
+  final client = MedusaAdmin.initialize(
+    baseUrl: 'http://localhost:9000',
+  );
+
+  // Fetch a list of products.
+  final products = await client.products.list();
+
+  // Print the products.
+  for (final product in products) {
+    print(product.title);
+  }
+}
 ```
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+This package is still under development. If you find any issues or have any suggestions, please feel free to open an issue on GitHub.

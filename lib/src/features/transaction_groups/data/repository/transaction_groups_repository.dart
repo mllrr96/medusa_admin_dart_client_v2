@@ -9,6 +9,6 @@ class TransactionGroupsRepository {
   Future<TransactionGroupsListRes> list({
     Map<String, dynamic>? queryParameters,
   }) {
-    return _transactionGroupsApi.list(queryParameters: queryParameters);
+    return _transactionGroupsApi.list(query: queryParameters);
   }
 }

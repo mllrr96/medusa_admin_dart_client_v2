@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Note {
 
- String get id;@JsonKey(name: 'resource_type') String get resourceType;@JsonKey(name: 'resource_id') String get resourceId; String get value;@JsonKey(name: 'author_id') String? get authorId; User? get author;@JsonKey(name: 'created_at') DateTime get createdAt;@JsonKey(name: 'updated_at') DateTime get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt;
+ String get id;@JsonKey(name: 'resource_type') String get resourceType;@JsonKey(name: 'resource_id') String get resourceId; String get value;@JsonKey(name: 'author_id') String? get authorId; User? get author;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt;
 /// Create a copy of Note
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $NoteCopyWith<$Res>  {
   factory $NoteCopyWith(Note value, $Res Function(Note) _then) = _$NoteCopyWithImpl;
 @useResult
 $Res call({
- String id,@JsonKey(name: 'resource_type') String resourceType,@JsonKey(name: 'resource_id') String resourceId, String value,@JsonKey(name: 'author_id') String? authorId, User? author,@JsonKey(name: 'created_at') DateTime createdAt,@JsonKey(name: 'updated_at') DateTime updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
+ String id,@JsonKey(name: 'resource_type') String resourceType,@JsonKey(name: 'resource_id') String resourceId, String value,@JsonKey(name: 'author_id') String? authorId, User? author,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
 });
 
 
@@ -65,7 +65,7 @@ class _$NoteCopyWithImpl<$Res>
 
 /// Create a copy of Note
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? resourceType = null,Object? resourceId = null,Object? value = null,Object? authorId = freezed,Object? author = freezed,Object? createdAt = null,Object? updatedAt = null,Object? deletedAt = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? resourceType = null,Object? resourceId = null,Object? value = null,Object? authorId = freezed,Object? author = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,resourceType: null == resourceType ? _self.resourceType : resourceType // ignore: cast_nullable_to_non_nullable
@@ -73,9 +73,9 @@ as String,resourceId: null == resourceId ? _self.resourceId : resourceId // igno
 as String,value: null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
 as String,authorId: freezed == authorId ? _self.authorId : authorId // ignore: cast_nullable_to_non_nullable
 as String?,author: freezed == author ? _self.author : author // ignore: cast_nullable_to_non_nullable
-as User?,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
+as User?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,
   ));
 }
@@ -173,7 +173,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'resource_type')  String resourceType, @JsonKey(name: 'resource_id')  String resourceId,  String value, @JsonKey(name: 'author_id')  String? authorId,  User? author, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'updated_at')  DateTime updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'resource_type')  String resourceType, @JsonKey(name: 'resource_id')  String resourceId,  String value, @JsonKey(name: 'author_id')  String? authorId,  User? author, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Note() when $default != null:
 return $default(_that.id,_that.resourceType,_that.resourceId,_that.value,_that.authorId,_that.author,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -194,7 +194,7 @@ return $default(_that.id,_that.resourceType,_that.resourceId,_that.value,_that.a
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'resource_type')  String resourceType, @JsonKey(name: 'resource_id')  String resourceId,  String value, @JsonKey(name: 'author_id')  String? authorId,  User? author, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'updated_at')  DateTime updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'resource_type')  String resourceType, @JsonKey(name: 'resource_id')  String resourceId,  String value, @JsonKey(name: 'author_id')  String? authorId,  User? author, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)  $default,) {final _that = this;
 switch (_that) {
 case _Note():
 return $default(_that.id,_that.resourceType,_that.resourceId,_that.value,_that.authorId,_that.author,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -214,7 +214,7 @@ return $default(_that.id,_that.resourceType,_that.resourceId,_that.value,_that.a
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'resource_type')  String resourceType, @JsonKey(name: 'resource_id')  String resourceId,  String value, @JsonKey(name: 'author_id')  String? authorId,  User? author, @JsonKey(name: 'created_at')  DateTime createdAt, @JsonKey(name: 'updated_at')  DateTime updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'resource_type')  String resourceType, @JsonKey(name: 'resource_id')  String resourceId,  String value, @JsonKey(name: 'author_id')  String? authorId,  User? author, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _Note() when $default != null:
 return $default(_that.id,_that.resourceType,_that.resourceId,_that.value,_that.authorId,_that.author,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -229,7 +229,7 @@ return $default(_that.id,_that.resourceType,_that.resourceId,_that.value,_that.a
 @JsonSerializable()
 
 class _Note implements Note {
-  const _Note({required this.id, @JsonKey(name: 'resource_type') required this.resourceType, @JsonKey(name: 'resource_id') required this.resourceId, required this.value, @JsonKey(name: 'author_id') this.authorId, this.author, @JsonKey(name: 'created_at') required this.createdAt, @JsonKey(name: 'updated_at') required this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt});
+  const _Note({required this.id, @JsonKey(name: 'resource_type') required this.resourceType, @JsonKey(name: 'resource_id') required this.resourceId, required this.value, @JsonKey(name: 'author_id') this.authorId, this.author, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt});
   factory _Note.fromJson(Map<String, dynamic> json) => _$NoteFromJson(json);
 
 @override final  String id;
@@ -238,8 +238,8 @@ class _Note implements Note {
 @override final  String value;
 @override@JsonKey(name: 'author_id') final  String? authorId;
 @override final  User? author;
-@override@JsonKey(name: 'created_at') final  DateTime createdAt;
-@override@JsonKey(name: 'updated_at') final  DateTime updatedAt;
+@override@JsonKey(name: 'created_at') final  DateTime? createdAt;
+@override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
 @override@JsonKey(name: 'deleted_at') final  DateTime? deletedAt;
 
 /// Create a copy of Note
@@ -275,7 +275,7 @@ abstract mixin class _$NoteCopyWith<$Res> implements $NoteCopyWith<$Res> {
   factory _$NoteCopyWith(_Note value, $Res Function(_Note) _then) = __$NoteCopyWithImpl;
 @override @useResult
 $Res call({
- String id,@JsonKey(name: 'resource_type') String resourceType,@JsonKey(name: 'resource_id') String resourceId, String value,@JsonKey(name: 'author_id') String? authorId, User? author,@JsonKey(name: 'created_at') DateTime createdAt,@JsonKey(name: 'updated_at') DateTime updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
+ String id,@JsonKey(name: 'resource_type') String resourceType,@JsonKey(name: 'resource_id') String resourceId, String value,@JsonKey(name: 'author_id') String? authorId, User? author,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
 });
 
 
@@ -292,7 +292,7 @@ class __$NoteCopyWithImpl<$Res>
 
 /// Create a copy of Note
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? resourceType = null,Object? resourceId = null,Object? value = null,Object? authorId = freezed,Object? author = freezed,Object? createdAt = null,Object? updatedAt = null,Object? deletedAt = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? resourceType = null,Object? resourceId = null,Object? value = null,Object? authorId = freezed,Object? author = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
   return _then(_Note(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,resourceType: null == resourceType ? _self.resourceType : resourceType // ignore: cast_nullable_to_non_nullable
@@ -300,9 +300,9 @@ as String,resourceId: null == resourceId ? _self.resourceId : resourceId // igno
 as String,value: null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
 as String,authorId: freezed == authorId ? _self.authorId : authorId // ignore: cast_nullable_to_non_nullable
 as String?,author: freezed == author ? _self.author : author // ignore: cast_nullable_to_non_nullable
-as User?,createdAt: null == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
-as DateTime,updatedAt: null == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DateTime,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
+as User?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,
   ));
 }

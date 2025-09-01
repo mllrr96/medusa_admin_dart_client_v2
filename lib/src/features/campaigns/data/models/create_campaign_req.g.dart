@@ -12,8 +12,12 @@ _CreateCampaignReq _$CreateCampaignReqFromJson(Map<String, dynamic> json) =>
       campaignIdentifier: json['campaign_identifier'] as String,
       description: json['description'] as String,
       budget: Budget.fromJson(json['budget'] as Map<String, dynamic>),
-      startsAt: DateTime.parse(json['starts_at'] as String),
-      endsAt: DateTime.parse(json['ends_at'] as String),
+      startsAt: json['starts_at'] == null
+          ? null
+          : DateTime.parse(json['starts_at'] as String),
+      endsAt: json['ends_at'] == null
+          ? null
+          : DateTime.parse(json['ends_at'] as String),
       promotions: (json['promotions'] as List<dynamic>?)
           ?.map((e) => e as String)
           .toList(),
@@ -25,7 +29,7 @@ Map<String, dynamic> _$CreateCampaignReqToJson(_CreateCampaignReq instance) =>
       'campaign_identifier': instance.campaignIdentifier,
       'description': instance.description,
       'budget': instance.budget,
-      'starts_at': instance.startsAt.toIso8601String(),
-      'ends_at': instance.endsAt.toIso8601String(),
+      'starts_at': instance.startsAt?.toIso8601String(),
+      'ends_at': instance.endsAt?.toIso8601String(),
       'promotions': instance.promotions,
     };

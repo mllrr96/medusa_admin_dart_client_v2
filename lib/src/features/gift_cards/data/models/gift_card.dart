@@ -18,9 +18,9 @@ abstract class GiftCard with _$GiftCard {
     required String referenceId,
     required String note,
     required String reference,
-    required DateTime expiresAt,
-    required DateTime createdAt,
-    required DateTime updatedAt,
+    DateTime? expiresAt,
+    DateTime? createdAt,
+    DateTime? updatedAt,
     required LineItem lineItem,
   }) = _GiftCard;
 

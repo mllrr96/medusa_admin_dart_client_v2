@@ -1,26 +1,27 @@
-import 'package:medusa_admin_dart_client/medusa_admin_dart_client_v2.dart';
 import 'package:medusa_admin_dart_client/src/features/collections/data/api/collections_api.dart';
+
+import '../models/models.dart';
 
 class CollectionsRepository {
   CollectionsRepository(this._collectionsApi);
 
   final CollectionsApi _collectionsApi;
 
-  Future<List<ProductCollection>> retrieveAll({
+  Future<CollectionListRes> retrieveAll({
     Map<String, dynamic>? queryParameters,
   }) {
-    return _collectionsApi.retrieveAll(queryParameters: queryParameters);
+    return _collectionsApi.retrieveAll(query: queryParameters);
   }
 
   Future<ProductCollection> retrieve(String id) {
     return _collectionsApi.retrieve(id);
   }
 
-  Future<ProductCollection> create(Map<String, dynamic> body) {
+  Future<ProductCollection> create(CreateCollectionReq body) {
     return _collectionsApi.create(body);
   }
 
-  Future<ProductCollection> update(String id, Map<String, dynamic> body) {
+  Future<ProductCollection> update(String id, UpdateCollectionReq body) {
     return _collectionsApi.update(id, body);
   }
 
@@ -29,10 +30,10 @@ class CollectionsRepository {
   }
 
   Future<ProductCollection> addProducts(String id, List<String> productIds) {
-    return _collectionsApi.addProducts(id, {'products': productIds});
+    return _collectionsApi.addProducts(id, {'add': productIds});
   }
 
   Future<ProductCollection> removeProducts(String id, List<String> productIds) {
-    return _collectionsApi.removeProducts(id, {'products': productIds});
+    return _collectionsApi.removeProducts(id, {'remove': productIds});
   }
 }

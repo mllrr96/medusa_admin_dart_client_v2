@@ -1,5 +1,4 @@
 import 'package:medusa_admin_dart_client/medusa_admin_dart_client_v2.dart';
-import 'package:medusa_admin_dart_client/src/core/models/customer_group.dart';
 import 'package:medusa_admin_dart_client/src/features/customer_groups/data/api/customer_groups_api.dart';
 
 /// A repository that handles all customer group related operations.
@@ -14,43 +13,34 @@ class CustomerGroupsRepository {
   /// Retrieves a list of customer groups.
   ///
   /// Returns a list of [CustomerGroup] objects.
-  Future<List<CustomerGroup>> list({
+  Future<CustomerGroupsListRes> list({
     Map<String, dynamic>? queryParameters,
   }) async {
-    final response = await _customerGroupsApi.list(
-      queryParameters: queryParameters,
-    );
-    // Unwrap the response to return only the list of customer groups
-    return response.customerGroups;
+    return await _customerGroupsApi.list(query: queryParameters);
   }
 
   /// Retrieves a specific customer group by its ID.
   ///
   /// Returns a single [CustomerGroup].
-  Future<CustomerGroup> retrieve(String id) async {
-    final response = await _customerGroupsApi.retrieve(id);
-    // Unwrap the response to return the customer group
-    return response.customerGroup;
+  Future<CustomerGroupsRes> retrieve(String id) async {
+    return await _customerGroupsApi.retrieve(id);
   }
 
   /// Creates a new customer group.
   ///
   /// Returns the newly created [CustomerGroup].
-  Future<CustomerGroup> create(CreateCustomerGroupReq payload) async {
-    final response = await _customerGroupsApi.create(payload);
-    return response.customerGroup;
+  Future<CustomerGroupsRes> create(CreateCustomerGroupReq payload) async {
+    return await _customerGroupsApi.create(payload);
   }
 
   /// Updates an existing customer group.
   ///
   /// Returns the updated [CustomerGroup].
-  Future<CustomerGroup> update(
+  Future<CustomerGroupsRes> update(
     String id,
-    // TODO: Create a dedicated AdminUpdateCustomerGroupReq model for type safety
-    Map<String, dynamic> payload,
+    UpdateCustomerGroupReq payload,
   ) async {
-    final response = await _customerGroupsApi.update(id, payload);
-    return response.customerGroup;
+    return await _customerGroupsApi.update(id, payload);
   }
 
   /// Deletes a customer group.
@@ -74,11 +64,10 @@ class CustomerGroupsRepository {
   /// Removes a batch of customers from a customer group.
   ///
   /// Returns the updated [CustomerGroup].
-  Future<CustomerGroup> removeCustomers(
+  Future<CustomerGroupsRes> removeCustomers(
     String id,
     AddCustomersToGroupReq payload,
   ) async {
-    final response = await _customerGroupsApi.removeCustomers(id, payload);
-    return response.customerGroup;
+    return await _customerGroupsApi.removeCustomers(id, payload);
   }
 }

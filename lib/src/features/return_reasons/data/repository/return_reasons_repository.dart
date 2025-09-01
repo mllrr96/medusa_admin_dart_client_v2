@@ -1,30 +1,34 @@
-import 'package:medusa_admin_dart_client/medusa_admin_dart_client_v2.dart';
 import 'package:medusa_admin_dart_client/src/features/return_reasons/data/api/return_reasons_api.dart';
 
+import '../models/return_reasons_models.dart';
+
 class ReturnReasonsRepository {
-  ReturnReasonsRepository(this._returnReasonsApi);
+  final ReturnReasonsApi _api;
 
-  final ReturnReasonsApi _returnReasonsApi;
+  ReturnReasonsRepository(this._api);
 
-  Future<List<ReturnReason>> retrieveAll({
-    Map<String, dynamic>? queryParameters,
-  }) {
-    return _returnReasonsApi.retrieveAll(queryParameters: queryParameters);
+  Future<ReturnReasonListRes> retrieveAll({
+    Map<String, dynamic>? query,
+  }) async {
+    return _api.retrieveAll(query: query);
   }
 
-  Future<ReturnReason> retrieve(String id) {
-    return _returnReasonsApi.retrieve(id);
+  Future<ReturnReasonRes> retrieve(String id) async {
+    return _api.retrieve(id);
   }
 
-  Future<ReturnReason> create(Map<String, dynamic> body) {
-    return _returnReasonsApi.create(body);
+  Future<ReturnReasonRes> create(CreateReturnReason body) async {
+    return _api.create(body);
   }
 
-  Future<ReturnReason> update(String id, Map<String, dynamic> body) {
-    return _returnReasonsApi.update(id, body);
+  Future<ReturnReasonRes> update(
+    String id,
+    UpdateReturnReason body,
+  ) async {
+    return _api.update(id, body);
   }
 
-  Future<void> delete(String id) {
-    return _returnReasonsApi.delete(id);
+  Future<ReturnReasonDeleteRes> delete(String id) async {
+    return _api.delete(id);
   }
 }

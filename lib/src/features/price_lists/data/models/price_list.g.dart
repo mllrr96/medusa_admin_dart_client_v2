@@ -18,9 +18,15 @@ _PriceList _$PriceListFromJson(Map<String, dynamic> json) => _PriceList(
   prices: (json['prices'] as List<dynamic>)
       .map((e) => Price.fromJson(e as Map<String, dynamic>))
       .toList(),
-  createdAt: DateTime.parse(json['createdAt'] as String),
-  updatedAt: DateTime.parse(json['updatedAt'] as String),
-  deletedAt: DateTime.parse(json['deletedAt'] as String),
+  createdAt: json['createdAt'] == null
+      ? null
+      : DateTime.parse(json['createdAt'] as String),
+  updatedAt: json['updatedAt'] == null
+      ? null
+      : DateTime.parse(json['updatedAt'] as String),
+  deletedAt: json['deletedAt'] == null
+      ? null
+      : DateTime.parse(json['deletedAt'] as String),
 );
 
 Map<String, dynamic> _$PriceListToJson(_PriceList instance) =>
@@ -34,7 +40,7 @@ Map<String, dynamic> _$PriceListToJson(_PriceList instance) =>
       'status': instance.status,
       'type': instance.type,
       'prices': instance.prices,
-      'createdAt': instance.createdAt.toIso8601String(),
-      'updatedAt': instance.updatedAt.toIso8601String(),
-      'deletedAt': instance.deletedAt.toIso8601String(),
+      'createdAt': instance.createdAt?.toIso8601String(),
+      'updatedAt': instance.updatedAt?.toIso8601String(),
+      'deletedAt': instance.deletedAt?.toIso8601String(),
     };

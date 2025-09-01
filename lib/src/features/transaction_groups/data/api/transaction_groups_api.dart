@@ -11,6 +11,6 @@ abstract class TransactionGroupsApi {
 
   @GET('/admin/transaction-groups')
   Future<TransactionGroupsListRes> list({
-    @Queries() Map<String, dynamic>? queryParameters,
+    @Queries() Map<String, dynamic>? query,
   });
 }

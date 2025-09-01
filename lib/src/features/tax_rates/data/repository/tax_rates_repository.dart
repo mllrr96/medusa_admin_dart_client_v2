@@ -1,28 +1,57 @@
-import 'package:medusa_admin_dart_client/medusa_admin_dart_client_v2.dart';
 import 'package:medusa_admin_dart_client/src/features/tax_rates/data/api/tax_rates_api.dart';
+import 'package:medusa_admin_dart_client/src/features/tax_rates/data/models/models.dart';
 
 class TaxRatesRepository {
-  TaxRatesRepository(this._taxRatesApi);
-
   final TaxRatesApi _taxRatesApi;
 
-  Future<List<TaxRate>> retrieveAll({Map<String, dynamic>? queryParameters}) {
-    return _taxRatesApi.retrieveAll(queryParameters: queryParameters);
+  TaxRatesRepository(this._taxRatesApi);
+
+  Future<TaxRatesListRes> list({
+    Map<String, dynamic>? query,
+  }) async {
+    return _taxRatesApi.list(query: query);
   }
 
-  Future<TaxRate> retrieve(String id) {
-    return _taxRatesApi.retrieve(id);
+  Future<TaxRateRes> create(
+    TaxRateCreateReq body, {
+    Map<String, dynamic>? query,
+  }) async {
+    return _taxRatesApi.create(body, query);
   }
 
-  Future<TaxRate> create(Map<String, dynamic> body) {
-    return _taxRatesApi.create(body);
+  Future<TaxRateRes> retrieve(
+    String id, {
+    Map<String, dynamic>? query,
+  }) async {
+    return _taxRatesApi.retrieve(id, query);
   }
 
-  Future<TaxRate> update(String id, Map<String, dynamic> body) {
-    return _taxRatesApi.update(id, body);
+  Future<TaxRateRes> update(
+    String id,
+    TaxRateUpdateReq body, {
+    Map<String, dynamic>? query,
+  }) async {
+    return _taxRatesApi.update(id, body, query);
   }
 
-  Future<void> delete(String id) {
+  Future<TaxRateDeleteRes> delete(
+    String id,
+  ) async {
     return _taxRatesApi.delete(id);
+  }
+
+  Future<TaxRateRes> createRule(
+    String id,
+    TaxRateRule body, {
+    Map<String, dynamic>? query,
+  }) async {
+    return _taxRatesApi.createRule(id, body, query);
+  }
+
+  Future<TaxRateDeleteRes> deleteRule(
+    String id,
+    String ruleId,
+  ) async {
+    return _taxRatesApi.deleteRule(id, ruleId);
   }
 }

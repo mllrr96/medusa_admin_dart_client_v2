@@ -11,8 +11,8 @@ abstract class CreateCampaignReq with _$CreateCampaignReq {
     @JsonKey(name: 'campaign_identifier') required String campaignIdentifier,
     required String description,
     required Budget budget,
-    @JsonKey(name: 'starts_at') required DateTime startsAt,
-    @JsonKey(name: 'ends_at') required DateTime endsAt,
+    @JsonKey(name: 'starts_at') DateTime? startsAt,
+    @JsonKey(name: 'ends_at') DateTime? endsAt,
     List<String>? promotions,
   }) = _CreateCampaignReq;
 

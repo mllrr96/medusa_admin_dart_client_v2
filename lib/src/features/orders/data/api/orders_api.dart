@@ -13,18 +13,18 @@ abstract class OrdersApi {
   @GET('/admin/orders/{id}')
   Future<OrderRes> retrieve(
     @Path('id') String id, {
-    @Queries() Map<String, dynamic>? queryParameters,
+    @Queries() Map<String, dynamic>? query,
   });
 
   @GET('/admin/orders')
   Future<OrdersListRes> list({
-    @Queries() Map<String, dynamic>? queryParameters,
+    @Queries() Map<String, dynamic>? query,
   });
 
   @POST('/admin/orders/{id}')
   Future<OrderRes> update(
     @Path('id') String id,
     @Body() PostOrdersOrderReq body, {
-    @Queries() Map<String, dynamic>? queryParameters,
+    @Queries() Map<String, dynamic>? query,
   });
 }

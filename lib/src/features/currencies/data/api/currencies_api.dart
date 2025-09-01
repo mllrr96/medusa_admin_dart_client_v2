@@ -11,7 +11,7 @@ abstract class CurrenciesApi {
 
   @GET('/admin/currencies')
   Future<CurrenciesListRes> list({
-    @Queries() Map<String, dynamic>? queryParameters,
+    @Queries() Map<String, dynamic>? query,
   });
 
   @GET('/admin/currencies/{code}')

@@ -1,4 +1,5 @@
-import 'package:medusa_admin_dart_client/src/features/notifications/data/models/notification.dart';
+import 'package:medusa_admin_dart_client/medusa_admin_dart_client_v2.dart';
+import 'package:medusa_admin_dart_client/src/features/notifications/data/models/notification_list_res.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:dio/dio.dart';
 
@@ -8,21 +9,14 @@ part 'notifications_api.g.dart';
 abstract class NotificationsApi {
   factory NotificationsApi(Dio dio, {String baseUrl}) = _NotificationsApi;
 
-  @GET('/notifications/{id}')
-  Future<Notification> retrieve(@Path('id') String id);
+  @GET('/admin/notifications')
+  Future<NotificationListRes> getNotifications({
+    @Queries() Map<String, dynamic>? query,
+  });
 
-  @GET('/notifications')
-  Future<List<Notification>> list();
-
-  @POST('/notifications')
-  Future<Notification> create(@Body() Notification notification);
-
-  @PUT('/notifications/{id}')
-  Future<Notification> update(
-    @Path('id') String id,
-    @Body() Notification notification,
-  );
-
-  @DELETE('/notifications/{id}')
-  Future<void> delete(@Path('id') String id);
+  @GET('/admin/notifications/{id}')
+  Future<NotificationRes> getNotification({
+    @Path('id') required String id,
+    @Queries() Map<String, dynamic>? query,
+  });
 }

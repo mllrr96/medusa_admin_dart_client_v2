@@ -25,8 +25,8 @@ abstract class InventoryItem with _$InventoryItem {
     @JsonKey(name: 'reserved_quantity') required int reservedQuantity,
     @JsonKey(name: 'location_levels') List<InventoryLevel>? locationLevels,
     required List<dynamic> variants,
-    required DateTime createdAt,
-    required DateTime updatedAt,
+    DateTime? createdAt,
+    DateTime? updatedAt,
     DateTime? deletedAt,
     Map<String, dynamic>? metadata,
   }) = _InventoryItem;
