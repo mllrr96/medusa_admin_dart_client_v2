@@ -10,21 +10,7 @@ abstract class DraftOrdersApi {
 
   @GET('/draft-orders')
   Future<DraftOrderListResponse> getDraftOrders({
-    @Query('fields') String? fields,
-    @Query('offset') int? offset,
-    @Query('limit') int? limit,
-    @Query('order') String? order,
-    @Query('id') String? id,
-    @Query('status') String? status,
-    @Query(r'$and') List<Map<String, dynamic>>? and,
-    @Query(r'$or') List<Map<String, dynamic>>? or,
-    @Query('sales_channel_id') List<String>? salesChannelId,
-    @Query('region_id') String? regionId,
-    @Query('q') String? q,
-    @Query('created_at') Map<String, dynamic>? createdAt,
-    @Query('updated_at') Map<String, dynamic>? updatedAt,
-    @Query('customer_id') String? customerId,
-    @Query('with_deleted') bool? withDeleted,
+    @Queries() GetDraftOrdersQuery? query,
   });
 
   @POST('/draft-orders')

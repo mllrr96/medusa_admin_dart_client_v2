@@ -19,40 +19,11 @@ class _DraftOrdersApi implements DraftOrdersApi {
 
   @override
   Future<DraftOrderListResponse> getDraftOrders({
-    String? fields,
-    int? offset,
-    int? limit,
-    String? order,
-    String? id,
-    String? status,
-    List<Map<String, dynamic>>? and,
-    List<Map<String, dynamic>>? or,
-    List<String>? salesChannelId,
-    String? regionId,
-    String? q,
-    Map<String, dynamic>? createdAt,
-    Map<String, dynamic>? updatedAt,
-    String? customerId,
-    bool? withDeleted,
+    GetDraftOrdersQuery? query,
   }) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{
-      r'fields': fields,
-      r'offset': offset,
-      r'limit': limit,
-      r'order': order,
-      r'id': id,
-      r'status': status,
-      r'$and': and,
-      r'$or': or,
-      r'sales_channel_id': salesChannelId,
-      r'region_id': regionId,
-      r'q': q,
-      r'created_at': createdAt,
-      r'updated_at': updatedAt,
-      r'customer_id': customerId,
-      r'with_deleted': withDeleted,
-    };
+    final queryParameters = <String, dynamic>{};
+    queryParameters.addAll(query?.toJson() ?? <String, dynamic>{});
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;

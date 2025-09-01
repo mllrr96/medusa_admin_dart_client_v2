@@ -9,7 +9,7 @@ abstract class ShippingProfilesApi {
   factory ShippingProfilesApi(Dio dio, {String baseUrl}) = _ShippingProfilesApi;
 
   @GET('/admin/shipping-profiles')
-  Future<List<ShippingProfile>> retrieveAll({
+  Future<ShippingProfileListRes> retrieveAll({
     @Queries() Map<String, dynamic>? query,
   });
 

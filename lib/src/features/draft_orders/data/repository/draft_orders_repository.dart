@@ -7,39 +7,9 @@ class DraftOrdersRepository {
   DraftOrdersRepository(this._draftOrdersApi);
 
   Future<DraftOrderListResponse> getDraftOrders({
-    String? fields,
-    int? offset,
-    int? limit,
-    String? order,
-    String? id,
-    String? status,
-    List<Map<String, dynamic>>? and,
-    List<Map<String, dynamic>>? or,
-    List<String>? salesChannelId,
-    String? regionId,
-    String? q,
-    Map<String, dynamic>? createdAt,
-    Map<String, dynamic>? updatedAt,
-    String? customerId,
-    bool? withDeleted,
+    GetDraftOrdersQuery? queryParameters,
   }) {
-    return _draftOrdersApi.getDraftOrders(
-      fields: fields,
-      offset: offset,
-      limit: limit,
-      order: order,
-      id: id,
-      status: status,
-      and: and,
-      or: or,
-      salesChannelId: salesChannelId,
-      regionId: regionId,
-      q: q,
-      createdAt: createdAt,
-      updatedAt: updatedAt,
-      customerId: customerId,
-      withDeleted: withDeleted,
-    );
+    return _draftOrdersApi.getDraftOrders(query: queryParameters);
   }
 
   Future<DraftOrderResponse> createDraftOrder(

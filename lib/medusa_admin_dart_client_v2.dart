@@ -31,6 +31,8 @@ import 'src/features/product_types/data/repository/product_types_repository.dart
 import 'src/features/product_variants/data/repository/product_variants_repository.dart';
 import 'src/features/product_categories/data/repository/product_categories_repository.dart';
 
+export 'package:medusa_admin_dart_client/src/features/shipping_profiles/data/models/models.dart';
+export 'package:medusa_admin_dart_client/src/features/tax_rates/data/models/models.dart';
 export 'package:medusa_admin_dart_client/src/features/products/data/models/models.dart';
 export 'package:medusa_admin_dart_client/src/features/product_tags/data/repository/product_tags_repository.dart';
 export 'package:medusa_admin_dart_client/src/features/product_types/data/repository/product_types_repository.dart';

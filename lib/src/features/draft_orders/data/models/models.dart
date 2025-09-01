@@ -18,3 +18,4 @@ export 'update_draft_order_action_shipping_method.dart';
 export 'update_draft_order_item.dart';
 export 'update_draft_order_shipping_method.dart';
 export 'update_draft_order.dart';
+export 'get_draft_orders_query.dart';

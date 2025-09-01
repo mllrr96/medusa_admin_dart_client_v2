@@ -18,7 +18,7 @@ class _ShippingProfilesApi implements ShippingProfilesApi {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<List<ShippingProfile>> retrieveAll({
+  Future<ShippingProfileListRes> retrieveAll({
     Map<String, dynamic>? query,
   }) async {
     final _extra = <String, dynamic>{};
@@ -27,7 +27,7 @@ class _ShippingProfilesApi implements ShippingProfilesApi {
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<List<ShippingProfile>>(
+    final _options = _setStreamType<ShippingProfileListRes>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -37,14 +37,10 @@ class _ShippingProfilesApi implements ShippingProfilesApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<List<dynamic>>(_options);
-    late List<ShippingProfile> _value;
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late ShippingProfileListRes _value;
     try {
-      _value = _result.data!
-          .map(
-            (dynamic i) => ShippingProfile.fromJson(i as Map<String, dynamic>),
-          )
-          .toList();
+      _value = ShippingProfileListRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

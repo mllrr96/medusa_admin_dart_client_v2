@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ShippingOptionListRes {
 
- List<ShippingOption> get shippingOptions; int get limit; int get offset; int get count;
+@JsonKey(name: 'shipping_options') List<ShippingOption> get shippingOptions; int get limit; int get offset; int get count;
 /// Create a copy of ShippingOptionListRes
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $ShippingOptionListResCopyWith<$Res>  {
   factory $ShippingOptionListResCopyWith(ShippingOptionListRes value, $Res Function(ShippingOptionListRes) _then) = _$ShippingOptionListResCopyWithImpl;
 @useResult
 $Res call({
- List<ShippingOption> shippingOptions, int limit, int offset, int count
+@JsonKey(name: 'shipping_options') List<ShippingOption> shippingOptions, int limit, int offset, int count
 });
 
 
@@ -156,7 +156,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<ShippingOption> shippingOptions,  int limit,  int offset,  int count)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'shipping_options')  List<ShippingOption> shippingOptions,  int limit,  int offset,  int count)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ShippingOptionListRes() when $default != null:
 return $default(_that.shippingOptions,_that.limit,_that.offset,_that.count);case _:
@@ -177,7 +177,7 @@ return $default(_that.shippingOptions,_that.limit,_that.offset,_that.count);case
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<ShippingOption> shippingOptions,  int limit,  int offset,  int count)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'shipping_options')  List<ShippingOption> shippingOptions,  int limit,  int offset,  int count)  $default,) {final _that = this;
 switch (_that) {
 case _ShippingOptionListRes():
 return $default(_that.shippingOptions,_that.limit,_that.offset,_that.count);case _:
@@ -197,7 +197,7 @@ return $default(_that.shippingOptions,_that.limit,_that.offset,_that.count);case
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<ShippingOption> shippingOptions,  int limit,  int offset,  int count)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'shipping_options')  List<ShippingOption> shippingOptions,  int limit,  int offset,  int count)?  $default,) {final _that = this;
 switch (_that) {
 case _ShippingOptionListRes() when $default != null:
 return $default(_that.shippingOptions,_that.limit,_that.offset,_that.count);case _:
@@ -212,11 +212,11 @@ return $default(_that.shippingOptions,_that.limit,_that.offset,_that.count);case
 @JsonSerializable()
 
 class _ShippingOptionListRes implements ShippingOptionListRes {
-  const _ShippingOptionListRes({required final  List<ShippingOption> shippingOptions, required this.limit, required this.offset, required this.count}): _shippingOptions = shippingOptions;
+  const _ShippingOptionListRes({@JsonKey(name: 'shipping_options') required final  List<ShippingOption> shippingOptions, required this.limit, required this.offset, required this.count}): _shippingOptions = shippingOptions;
   factory _ShippingOptionListRes.fromJson(Map<String, dynamic> json) => _$ShippingOptionListResFromJson(json);
 
  final  List<ShippingOption> _shippingOptions;
-@override List<ShippingOption> get shippingOptions {
+@override@JsonKey(name: 'shipping_options') List<ShippingOption> get shippingOptions {
   if (_shippingOptions is EqualUnmodifiableListView) return _shippingOptions;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_shippingOptions);
@@ -259,7 +259,7 @@ abstract mixin class _$ShippingOptionListResCopyWith<$Res> implements $ShippingO
   factory _$ShippingOptionListResCopyWith(_ShippingOptionListRes value, $Res Function(_ShippingOptionListRes) _then) = __$ShippingOptionListResCopyWithImpl;
 @override @useResult
 $Res call({
- List<ShippingOption> shippingOptions, int limit, int offset, int count
+@JsonKey(name: 'shipping_options') List<ShippingOption> shippingOptions, int limit, int offset, int count
 });
 
 

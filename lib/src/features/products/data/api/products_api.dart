@@ -22,6 +22,7 @@ part 'products_api.g.dart';
 abstract class ProductsApi {
   factory ProductsApi(Dio dio, {String baseUrl}) = _ProductsApi;
 
+  // TODO: all methods need recheck
   @GET('/admin/products')
   Future<ProductsRes> retrieveAll({
     @Queries() Map<String, dynamic>? query,
