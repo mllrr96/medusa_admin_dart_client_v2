@@ -13,10 +13,6 @@ _Return _$ReturnFromJson(Map<String, dynamic> json) => _Return(
   order: json['order'] == null
       ? null
       : Order.fromJson(json['order'] as Map<String, dynamic>),
-  swapId: json['swap_id'] as String,
-  swap: json['swap'] == null
-      ? null
-      : Swap.fromJson(json['swap'] as Map<String, dynamic>),
   refundId: json['refund_id'] as String,
   refund: json['refund'] == null
       ? null
@@ -54,8 +50,6 @@ Map<String, dynamic> _$ReturnToJson(_Return instance) => <String, dynamic>{
   'status': _$ReturnStatusEnumMap[instance.status]!,
   'order_id': instance.orderId,
   'order': instance.order,
-  'swap_id': instance.swapId,
-  'swap': instance.swap,
   'refund_id': instance.refundId,
   'refund': instance.refund,
   'items': instance.items,

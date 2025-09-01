@@ -32,6 +32,5 @@ export 'sales_channel.dart';
 export 'shipping_method.dart';
 export 'store_cart_shipping_option.dart';
 export 'shipping_profile.dart';
-export '../../features/swaps/data/models/swap.dart';
 export 'tax_line.dart';
 export '../../features/tax_rates/data/models/tax_rate.dart';

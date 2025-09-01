@@ -23,10 +23,6 @@ _ShippingMethod _$ShippingMethodFromJson(Map<String, dynamic> json) =>
       cart: json['cart'] == null
           ? null
           : Cart.fromJson(json['cart'] as Map<String, dynamic>),
-      swapId: json['swap_id'] as String,
-      swap: json['swap'] == null
-          ? null
-          : Swap.fromJson(json['swap'] as Map<String, dynamic>),
       price: (json['price'] as num).toInt(),
       data: json['data'] as String,
       taxRate: json['tax_rate'] as String,
@@ -53,8 +49,6 @@ Map<String, dynamic> _$ShippingMethodToJson(_ShippingMethod instance) =>
       'order': instance.order,
       'cart_id': instance.cartId,
       'cart': instance.cart,
-      'swap_id': instance.swapId,
-      'swap': instance.swap,
       'price': instance.price,
       'data': instance.data,
       'tax_rate': instance.taxRate,

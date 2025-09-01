@@ -58,7 +58,6 @@ import 'package:medusa_admin_dart_client/src/features/shipping_profiles/data/api
 import 'package:medusa_admin_dart_client/src/features/store/data/api/store_api.dart';
 import 'package:medusa_admin_dart_client/src/features/store_credit_accounts/data/api/store_credit_accounts_api.dart';
 import 'package:medusa_admin_dart_client/src/features/store_credit_accounts/data/repository/store_credit_accounts_repository.dart';
-import 'package:medusa_admin_dart_client/src/features/swaps/data/api/swaps_api.dart';
 import 'package:medusa_admin_dart_client/src/features/tax_providers/data/api/tax_providers_api.dart';
 import 'package:medusa_admin_dart_client/src/features/tax_rates/data/api/tax_rates_api.dart';
 import 'package:medusa_admin_dart_client/src/features/tax_regions/data/api/tax_regions_api.dart';
@@ -224,12 +223,6 @@ void configureDependencies({String? baseUrl, List<Interceptor>? interceptors}) {
   );
   getIt.registerLazySingleton<SalesChannelsRepository>(
     () => SalesChannelsRepository(getIt<SalesChannelsApi>()),
-  );
-
-  // Swaps
-  getIt.registerLazySingleton<SwapsApi>(() => SwapsApi(getIt<Dio>()));
-  getIt.registerLazySingleton<SwapsRepository>(
-    () => SwapsRepository(getIt<SwapsApi>()),
   );
 
   // Api Keys

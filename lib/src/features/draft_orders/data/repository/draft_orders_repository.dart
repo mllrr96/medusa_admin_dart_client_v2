@@ -1,15 +1,5 @@
 import 'package:medusa_admin_dart_client/src/features/draft_orders/data/api/draft_orders_api.dart';
-import 'package:medusa_admin_dart_client/src/features/draft_orders/data/models/add_draft_order_items.dart';
-import 'package:medusa_admin_dart_client/src/features/draft_orders/data/models/add_draft_order_shipping_method.dart';
-import 'package:medusa_admin_dart_client/src/features/draft_orders/data/models/draft_order_list_response.dart';
-import 'package:medusa_admin_dart_client/src/features/draft_orders/data/models/draft_order_preview_response.dart';
-import 'package:medusa_admin_dart_client/src/features/draft_orders/data/models/draft_order_response.dart';
-import 'package:medusa_admin_dart_client/src/features/draft_orders/data/models/post_draft_orders_req.dart';
-import 'package:medusa_admin_dart_client/src/features/draft_orders/data/models/remove_draft_order_promotions.dart';
-import 'package:medusa_admin_dart_client/src/features/draft_orders/data/models/update_draft_order.dart';
-import 'package:medusa_admin_dart_client/src/features/draft_orders/data/models/update_draft_order_action_shipping_method.dart';
-import 'package:medusa_admin_dart_client/src/features/draft_orders/data/models/update_draft_order_item.dart';
-import 'package:medusa_admin_dart_client/src/features/draft_orders/data/models/update_draft_order_shipping_method.dart';
+import 'package:medusa_admin_dart_client/src/features/draft_orders/data/models/models.dart';
 
 class DraftOrdersRepository {
   final DraftOrdersApi _draftOrdersApi;
@@ -133,7 +123,7 @@ class DraftOrdersRepository {
 
   Future<DraftOrderPreviewResponse> addPromotions(
     String id,
-    Map<String, dynamic> body,
+    AddDraftOrderPromotions body,
   ) {
     return _draftOrdersApi.addPromotions(id, body);
   }

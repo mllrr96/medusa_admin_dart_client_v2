@@ -24,7 +24,6 @@ import 'package:medusa_admin_dart_client/src/features/customers/data/repository/
 import 'package:medusa_admin_dart_client/src/features/orders/data/repository/orders_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/products/data/repository/products_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/return_reasons/data/repository/return_reasons_repository.dart';
-import 'package:medusa_admin_dart_client/src/features/swaps/data/repository/swaps_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/api_keys/data/repository/api_keys_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/tax_providers/data/repository/tax_providers_repository.dart';
 import 'src/features/product_tags/data/repository/product_tags_repository.dart';
@@ -61,7 +60,6 @@ export 'package:medusa_admin_dart_client/src/features/tax_providers/data/models/
 export 'package:medusa_admin_dart_client/src/features/transaction_groups/data/models/models.dart';
 export 'package:medusa_admin_dart_client/src/features/uploads/data/models/models.dart';
 export 'package:medusa_admin_dart_client/src/features/users/data/models/models.dart';
-export 'package:medusa_admin_dart_client/src/features/swaps/data/repository/swaps_repository.dart';
 export 'package:medusa_admin_dart_client/src/features/regions/data/repository/regions_repository.dart';
 export 'package:medusa_admin_dart_client/src/features/shipping_options/data/repository/shipping_options_repository.dart';
 export 'package:medusa_admin_dart_client/src/features/shipping_profiles/data/repository/shipping_profiles_repository.dart';
@@ -172,8 +170,6 @@ class MedusaAdminV2 {
   ReturnsRepository get returns => getIt<ReturnsRepository>();
 
   SalesChannelsRepository get salesChannels => getIt<SalesChannelsRepository>();
-
-  SwapsRepository get swaps => getIt<SwapsRepository>();
 
   TaxProvidersRepository get taxProviders => getIt<TaxProvidersRepository>();
 

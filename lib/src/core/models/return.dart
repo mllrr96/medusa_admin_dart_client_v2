@@ -2,7 +2,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:medusa_admin_dart_client/src/core/models/return_reason.dart';
 import 'package:medusa_admin_dart_client/src/core/models/line_item.dart';
 import 'package:medusa_admin_dart_client/src/features/payments/data/models/refund.dart';
-import 'package:medusa_admin_dart_client/src/features/swaps/data/models/swap.dart';
 import 'package:medusa_admin_dart_client/src/features/orders/data/models/order.dart';
 
 import '../../features/exchanges/data/models/exchanges.dart';
@@ -17,8 +16,6 @@ abstract class Return with _$Return {
     required ReturnStatus status,
     @JsonKey(name: 'order_id') required String orderId,
     Order? order,
-    @JsonKey(name: 'swap_id') required String swapId,
-    Swap? swap,
     @JsonKey(name: 'refund_id') required String refundId,
     Refund? refund,
     required List<LineItem> items,

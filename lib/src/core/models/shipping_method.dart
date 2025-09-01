@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:medusa_admin_dart_client/src/features/swaps/data/models/swap.dart';
 import 'package:medusa_admin_dart_client/src/features/orders/data/models/order.dart';
 
 import 'cart.dart';
@@ -18,8 +17,6 @@ abstract class ShippingMethod with _$ShippingMethod {
     Order? order,
     @JsonKey(name: 'cart_id') required String cartId,
     Cart? cart,
-    @JsonKey(name: 'swap_id') required String swapId,
-    Swap? swap,
     required int price,
     required String data,
     @JsonKey(name: 'tax_rate') required String taxRate,
