@@ -46,8 +46,7 @@ class CustomerGroupsRepository {
   /// Returns the updated [CustomerGroup].
   Future<CustomerGroup> update(
     String id,
-    // TODO: Create a dedicated AdminUpdateCustomerGroupReq model for type safety
-    Map<String, dynamic> payload,
+      UpdateCustomerGroupReq payload,
   ) async {
     final response = await _customerGroupsApi.update(id, payload);
     return response.customerGroup;

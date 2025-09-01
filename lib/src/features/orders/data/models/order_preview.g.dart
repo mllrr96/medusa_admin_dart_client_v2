@@ -13,6 +13,9 @@ _OrderPreview _$OrderPreviewFromJson(
   orderChange: OrderChange.fromJson(
     json['orderChange'] as Map<String, dynamic>,
   ),
+  shippingMethods: (json['shippingMethods'] as List<dynamic>)
+      .map((e) => OrderShippingMethod.fromJson(e as Map<String, dynamic>))
+      .toList(),
   items: (json['items'] as List<dynamic>)
       .map((e) => OrderLineItem.fromJson(e as Map<String, dynamic>))
       .toList(),
@@ -38,6 +41,9 @@ _OrderPreview _$OrderPreviewFromJson(
       .map((e) => OrderFulfillment.fromJson(e as Map<String, dynamic>))
       .toList(),
   fulfillmentStatus: json['fulfillmentStatus'] as String,
+  transactions: (json['transactions'] as List<dynamic>)
+      .map((e) => OrderTransaction.fromJson(e as Map<String, dynamic>))
+      .toList(),
   summary: BaseOrderSummary.fromJson(json['summary'] as Map<String, dynamic>),
   metadata: json['metadata'] as Map<String, dynamic>?,
   createdAt: json['createdAt'] == null
@@ -76,6 +82,7 @@ Map<String, dynamic> _$OrderPreviewToJson(_OrderPreview instance) =>
     <String, dynamic>{
       'returnRequestedTotal': instance.returnRequestedTotal,
       'orderChange': instance.orderChange,
+      'shippingMethods': instance.shippingMethods,
       'items': instance.items,
       'currencyCode': instance.currencyCode,
       'version': instance.version,
@@ -91,6 +98,7 @@ Map<String, dynamic> _$OrderPreviewToJson(_OrderPreview instance) =>
       'paymentStatus': instance.paymentStatus,
       'fulfillments': instance.fulfillments,
       'fulfillmentStatus': instance.fulfillmentStatus,
+      'transactions': instance.transactions,
       'summary': instance.summary,
       'metadata': instance.metadata,
       'createdAt': instance.createdAt?.toIso8601String(),

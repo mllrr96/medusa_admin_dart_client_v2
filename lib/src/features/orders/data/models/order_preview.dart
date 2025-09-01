@@ -4,9 +4,12 @@ import 'package:medusa_admin_dart_client/src/core/models/order_change.dart';
 import 'package:medusa_admin_dart_client/src/core/models/order_fulfillment.dart';
 import 'package:medusa_admin_dart_client/src/core/models/payment_collection.dart';
 import 'package:medusa_admin_dart_client/src/core/models/base_order_summary.dart';
+import 'package:medusa_admin_dart_client/src/core/models/order_shipping_method.dart';
 import 'package:medusa_admin_dart_client/src/core/models/order_line_item.dart';
+import 'package:medusa_admin_dart_client/src/features/draft_orders/data/models/order_transaction.dart';
 
 part 'order_preview.freezed.dart';
+
 part 'order_preview.g.dart';
 
 @freezed
@@ -14,8 +17,7 @@ abstract class OrderPreview with _$OrderPreview {
   const factory OrderPreview({
     required int returnRequestedTotal,
     required OrderChange orderChange,
-    // TODO: Add items and shipping_methods
-    // required List<OrderShippingMethod> shippingMethods,
+    required List<OrderShippingMethod> shippingMethods,
     required List<OrderLineItem> items,
     required String currencyCode,
     required int version,
@@ -31,8 +33,7 @@ abstract class OrderPreview with _$OrderPreview {
     required String paymentStatus,
     required List<OrderFulfillment> fulfillments,
     required String fulfillmentStatus,
-    // TODO: Add shipping_address and billing_address
-    // required List<BaseOrderTransaction> transactions,
+    required List<OrderTransaction> transactions,
     required BaseOrderSummary summary,
     Map<String, dynamic>? metadata,
     DateTime? createdAt,
@@ -67,6 +68,5 @@ abstract class OrderPreview with _$OrderPreview {
     required int creditLineTotal,
   }) = _OrderPreview;
 
-  factory OrderPreview.fromJson(Map<String, dynamic> json) =>
-      _$OrderPreviewFromJson(json);
+  factory OrderPreview.fromJson(Map<String, dynamic> json) => _$OrderPreviewFromJson(json);
 }

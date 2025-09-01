@@ -22,7 +22,7 @@ abstract class CustomerGroupsApi {
   @POST('/admin/customer-groups/{id}')
   Future<CustomerGroupsRes> update(
     @Path('id') String id,
-    @Body() Map<String, dynamic> body,
+    @Body() UpdateCustomerGroupReq body,
   );
 
   @DELETE('/admin/customer-groups/{id}')

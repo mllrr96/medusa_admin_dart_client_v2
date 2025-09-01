@@ -46,13 +46,6 @@ abstract class DraftOrderPreviewItem with _$DraftOrderPreviewItem {
     @JsonKey(name: 'discount_tax_total') required int discountTaxTotal,
     @JsonKey(name: 'refundable_total') required int refundableTotal,
     @JsonKey(name: 'refundable_total_per_unit') required int refundableTotalPerUnit,
-
-    // TODO: Define models for these if needed
-    // detail: BaseOrderItemDetail
-    // tax_lines: List<BaseOrderLineItemTaxLine>
-    // adjustments: List<BaseOrderLineItemAdjustment>
-    // actions: List<BaseOrderChangeAction>
-
   }) = _DraftOrderPreviewItem;
 
   factory DraftOrderPreviewItem.fromJson(Map<String, Object?> json) =>
