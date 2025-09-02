@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:medusa_admin_dart_client/src/core/models/price.dart';
-import 'package:medusa_admin_dart_client/src/features/price_lists/data/models/price_list_status.dart';
-import 'package:medusa_admin_dart_client/src/features/price_lists/data/models/price_list_type.dart';
+import 'price_list_status.dart';
+import 'price_list_type.dart';
 
 part 'price_list.freezed.dart';
 part 'price_list.g.dart';

@@ -1,8 +1,7 @@
 import 'package:dio/dio.dart';
 
 import 'package:retrofit/retrofit.dart';
-
-import '../models/price_lists_models.dart';
+import 'package:medusa_admin_dart_client/src/features/price_lists/data/models/models.dart';
 
 part 'price_lists_api.g.dart';
 

@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:medusa_admin_dart_client/src/features/products/data/models/product_status.dart';
 import 'package:medusa_admin_dart_client/src/features/products/data/models/update_product_option_req.dart';
 
 part 'update_product_req.freezed.dart';
@@ -15,7 +16,7 @@ abstract class UpdateProductReq with _$UpdateProductReq {
     List<String>? images,
     String? thumbnail,
     String? handle,
-    String? status,
+    ProductStatus? status,
     @JsonKey(name: 'type_id') String? typeId,
     @JsonKey(name: 'collection_id') String? collectionId,
     List<Map<String, String>>? categories,

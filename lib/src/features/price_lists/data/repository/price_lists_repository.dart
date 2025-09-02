@@ -1,5 +1,5 @@
-import '../api/price_lists_api.dart';
-import '../models/price_lists_models.dart';
+import 'package:medusa_admin_dart_client/src/features/price_lists/data/models/models.dart';
+import 'package:medusa_admin_dart_client/src/features/price_lists/data/api/price_lists_api.dart';
 
 class PriceListsRepository {
   final PriceListsApi _priceListsApi;

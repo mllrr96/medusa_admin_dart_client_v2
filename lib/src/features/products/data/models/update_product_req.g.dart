@@ -17,7 +17,7 @@ _UpdateProductReq _$UpdateProductReqFromJson(
   images: (json['images'] as List<dynamic>?)?.map((e) => e as String).toList(),
   thumbnail: json['thumbnail'] as String?,
   handle: json['handle'] as String?,
-  status: json['status'] as String?,
+  status: $enumDecodeNullable(_$ProductStatusEnumMap, json['status']),
   typeId: json['type_id'] as String?,
   collectionId: json['collection_id'] as String?,
   categories: (json['categories'] as List<dynamic>?)
@@ -58,7 +58,7 @@ Map<String, dynamic> _$UpdateProductReqToJson(_UpdateProductReq instance) =>
       'images': instance.images,
       'thumbnail': instance.thumbnail,
       'handle': instance.handle,
-      'status': instance.status,
+      'status': _$ProductStatusEnumMap[instance.status],
       'type_id': instance.typeId,
       'collection_id': instance.collectionId,
       'categories': instance.categories,
@@ -78,3 +78,10 @@ Map<String, dynamic> _$UpdateProductReqToJson(_UpdateProductReq instance) =>
       'external_id': instance.externalId,
       'shipping_profile_id': instance.shippingProfileId,
     };
+
+const _$ProductStatusEnumMap = {
+  ProductStatus.draft: 'draft',
+  ProductStatus.proposed: 'proposed',
+  ProductStatus.published: 'published',
+  ProductStatus.rejected: 'rejected',
+};
