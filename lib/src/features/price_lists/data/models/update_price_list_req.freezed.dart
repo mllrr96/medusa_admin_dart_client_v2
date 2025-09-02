@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$UpdatePriceListReq {
 
- String? get title; String? get description; DateTime? get startsAt; DateTime? get endsAt; PriceListStatus? get status; String? get type; Map<String, dynamic>? get rules;
+ String? get title; String? get description; DateTime? get startsAt; DateTime? get endsAt; PriceListStatus? get status; PriceListType? get type; Map<String, dynamic>? get rules;
 /// Create a copy of UpdatePriceListReq
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $UpdatePriceListReqCopyWith<$Res>  {
   factory $UpdatePriceListReqCopyWith(UpdatePriceListReq value, $Res Function(UpdatePriceListReq) _then) = _$UpdatePriceListReqCopyWithImpl;
 @useResult
 $Res call({
- String? title, String? description, DateTime? startsAt, DateTime? endsAt, PriceListStatus? status, String? type, Map<String, dynamic>? rules
+ String? title, String? description, DateTime? startsAt, DateTime? endsAt, PriceListStatus? status, PriceListType? type, Map<String, dynamic>? rules
 });
 
 
@@ -73,7 +73,7 @@ as String?,startsAt: freezed == startsAt ? _self.startsAt : startsAt // ignore: 
 as DateTime?,endsAt: freezed == endsAt ? _self.endsAt : endsAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,status: freezed == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as PriceListStatus?,type: freezed == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
-as String?,rules: freezed == rules ? _self.rules : rules // ignore: cast_nullable_to_non_nullable
+as PriceListType?,rules: freezed == rules ? _self.rules : rules // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,
   ));
 }
@@ -159,7 +159,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? title,  String? description,  DateTime? startsAt,  DateTime? endsAt,  PriceListStatus? status,  String? type,  Map<String, dynamic>? rules)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? title,  String? description,  DateTime? startsAt,  DateTime? endsAt,  PriceListStatus? status,  PriceListType? type,  Map<String, dynamic>? rules)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _UpdatePriceListReq() when $default != null:
 return $default(_that.title,_that.description,_that.startsAt,_that.endsAt,_that.status,_that.type,_that.rules);case _:
@@ -180,7 +180,7 @@ return $default(_that.title,_that.description,_that.startsAt,_that.endsAt,_that.
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? title,  String? description,  DateTime? startsAt,  DateTime? endsAt,  PriceListStatus? status,  String? type,  Map<String, dynamic>? rules)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? title,  String? description,  DateTime? startsAt,  DateTime? endsAt,  PriceListStatus? status,  PriceListType? type,  Map<String, dynamic>? rules)  $default,) {final _that = this;
 switch (_that) {
 case _UpdatePriceListReq():
 return $default(_that.title,_that.description,_that.startsAt,_that.endsAt,_that.status,_that.type,_that.rules);case _:
@@ -200,7 +200,7 @@ return $default(_that.title,_that.description,_that.startsAt,_that.endsAt,_that.
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? title,  String? description,  DateTime? startsAt,  DateTime? endsAt,  PriceListStatus? status,  String? type,  Map<String, dynamic>? rules)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? title,  String? description,  DateTime? startsAt,  DateTime? endsAt,  PriceListStatus? status,  PriceListType? type,  Map<String, dynamic>? rules)?  $default,) {final _that = this;
 switch (_that) {
 case _UpdatePriceListReq() when $default != null:
 return $default(_that.title,_that.description,_that.startsAt,_that.endsAt,_that.status,_that.type,_that.rules);case _:
@@ -223,7 +223,7 @@ class _UpdatePriceListReq implements UpdatePriceListReq {
 @override final  DateTime? startsAt;
 @override final  DateTime? endsAt;
 @override final  PriceListStatus? status;
-@override final  String? type;
+@override final  PriceListType? type;
  final  Map<String, dynamic>? _rules;
 @override Map<String, dynamic>? get rules {
   final value = _rules;
@@ -267,7 +267,7 @@ abstract mixin class _$UpdatePriceListReqCopyWith<$Res> implements $UpdatePriceL
   factory _$UpdatePriceListReqCopyWith(_UpdatePriceListReq value, $Res Function(_UpdatePriceListReq) _then) = __$UpdatePriceListReqCopyWithImpl;
 @override @useResult
 $Res call({
- String? title, String? description, DateTime? startsAt, DateTime? endsAt, PriceListStatus? status, String? type, Map<String, dynamic>? rules
+ String? title, String? description, DateTime? startsAt, DateTime? endsAt, PriceListStatus? status, PriceListType? type, Map<String, dynamic>? rules
 });
 
 
@@ -292,7 +292,7 @@ as String?,startsAt: freezed == startsAt ? _self.startsAt : startsAt // ignore: 
 as DateTime?,endsAt: freezed == endsAt ? _self.endsAt : endsAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,status: freezed == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as PriceListStatus?,type: freezed == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
-as String?,rules: freezed == rules ? _self._rules : rules // ignore: cast_nullable_to_non_nullable
+as PriceListType?,rules: freezed == rules ? _self._rules : rules // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,
   ));
 }

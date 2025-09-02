@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ProductVariant {
 
- String get id; String get title;@JsonKey(name: 'product_id') String get productId; Product? get product; String get sku; String get barcode; String get ean; String get upc;@JsonKey(name: 'inventory_quantity') int get inventoryQuantity;@JsonKey(name: 'allow_backorder') bool get allowBackorder;@JsonKey(name: 'manage_inventory') bool get manageInventory;@JsonKey(name: 'hs_code') int get hsCode;@JsonKey(name: 'origin_country') String get originCountry;@JsonKey(name: 'mid_code') String get midCode; String get material; int get weight; int get length; int get height; int get width; int get gst; int get vat;@JsonKey(name: 'taxable_price') int get taxablePrice;@JsonKey(name: 'original_price') int get originalPrice;@JsonKey(name: 'calculated_price') int get calculatedPrice;@JsonKey(name: 'original_taxable_price') int get originalTaxablePrice;@JsonKey(name: 'calculated_taxable_price') int get calculatedTaxablePrice; List<ProductOptionValue> get options; List<MoneyAmount> get prices;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt; Map<String, dynamic>? get metadata;
+ String? get id; String? get title;@JsonKey(name: 'product_id') String? get productId; Product? get product; String? get sku; String? get barcode; String? get ean; String? get upc;@JsonKey(name: 'inventory_quantity') int? get inventoryQuantity;@JsonKey(name: 'allow_backorder') bool get allowBackorder;@JsonKey(name: 'manage_inventory') bool get manageInventory;@JsonKey(name: 'hs_code') int? get hsCode;@JsonKey(name: 'origin_country') String? get originCountry;@JsonKey(name: 'mid_code') String? get midCode; String? get material; int? get weight; int? get length; int? get height; int? get width; int? get gst; int? get vat;@JsonKey(name: 'taxable_price') int? get taxablePrice;@JsonKey(name: 'original_price') int? get originalPrice;@JsonKey(name: 'calculated_price') int? get calculatedPrice;@JsonKey(name: 'original_taxable_price') int? get originalTaxablePrice;@JsonKey(name: 'calculated_taxable_price') int? get calculatedTaxablePrice; List<ProductOptionValue>? get options; List<MoneyAmount>? get prices;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt; Map<String, dynamic>? get metadata;
 /// Create a copy of ProductVariant
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $ProductVariantCopyWith<$Res>  {
   factory $ProductVariantCopyWith(ProductVariant value, $Res Function(ProductVariant) _then) = _$ProductVariantCopyWithImpl;
 @useResult
 $Res call({
- String id, String title,@JsonKey(name: 'product_id') String productId, Product? product, String sku, String barcode, String ean, String upc,@JsonKey(name: 'inventory_quantity') int inventoryQuantity,@JsonKey(name: 'allow_backorder') bool allowBackorder,@JsonKey(name: 'manage_inventory') bool manageInventory,@JsonKey(name: 'hs_code') int hsCode,@JsonKey(name: 'origin_country') String originCountry,@JsonKey(name: 'mid_code') String midCode, String material, int weight, int length, int height, int width, int gst, int vat,@JsonKey(name: 'taxable_price') int taxablePrice,@JsonKey(name: 'original_price') int originalPrice,@JsonKey(name: 'calculated_price') int calculatedPrice,@JsonKey(name: 'original_taxable_price') int originalTaxablePrice,@JsonKey(name: 'calculated_taxable_price') int calculatedTaxablePrice, List<ProductOptionValue> options, List<MoneyAmount> prices,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
+ String? id, String? title,@JsonKey(name: 'product_id') String? productId, Product? product, String? sku, String? barcode, String? ean, String? upc,@JsonKey(name: 'inventory_quantity') int? inventoryQuantity,@JsonKey(name: 'allow_backorder') bool allowBackorder,@JsonKey(name: 'manage_inventory') bool manageInventory,@JsonKey(name: 'hs_code') int? hsCode,@JsonKey(name: 'origin_country') String? originCountry,@JsonKey(name: 'mid_code') String? midCode, String? material, int? weight, int? length, int? height, int? width, int? gst, int? vat,@JsonKey(name: 'taxable_price') int? taxablePrice,@JsonKey(name: 'original_price') int? originalPrice,@JsonKey(name: 'calculated_price') int? calculatedPrice,@JsonKey(name: 'original_taxable_price') int? originalTaxablePrice,@JsonKey(name: 'calculated_taxable_price') int? calculatedTaxablePrice, List<ProductOptionValue>? options, List<MoneyAmount>? prices,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
 });
 
 
@@ -65,37 +65,37 @@ class _$ProductVariantCopyWithImpl<$Res>
 
 /// Create a copy of ProductVariant
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? title = null,Object? productId = null,Object? product = freezed,Object? sku = null,Object? barcode = null,Object? ean = null,Object? upc = null,Object? inventoryQuantity = null,Object? allowBackorder = null,Object? manageInventory = null,Object? hsCode = null,Object? originCountry = null,Object? midCode = null,Object? material = null,Object? weight = null,Object? length = null,Object? height = null,Object? width = null,Object? gst = null,Object? vat = null,Object? taxablePrice = null,Object? originalPrice = null,Object? calculatedPrice = null,Object? originalTaxablePrice = null,Object? calculatedTaxablePrice = null,Object? options = null,Object? prices = null,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,Object? metadata = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? title = freezed,Object? productId = freezed,Object? product = freezed,Object? sku = freezed,Object? barcode = freezed,Object? ean = freezed,Object? upc = freezed,Object? inventoryQuantity = freezed,Object? allowBackorder = null,Object? manageInventory = null,Object? hsCode = freezed,Object? originCountry = freezed,Object? midCode = freezed,Object? material = freezed,Object? weight = freezed,Object? length = freezed,Object? height = freezed,Object? width = freezed,Object? gst = freezed,Object? vat = freezed,Object? taxablePrice = freezed,Object? originalPrice = freezed,Object? calculatedPrice = freezed,Object? originalTaxablePrice = freezed,Object? calculatedTaxablePrice = freezed,Object? options = freezed,Object? prices = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,Object? metadata = freezed,}) {
   return _then(_self.copyWith(
-id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
-as String,productId: null == productId ? _self.productId : productId // ignore: cast_nullable_to_non_nullable
-as String,product: freezed == product ? _self.product : product // ignore: cast_nullable_to_non_nullable
-as Product?,sku: null == sku ? _self.sku : sku // ignore: cast_nullable_to_non_nullable
-as String,barcode: null == barcode ? _self.barcode : barcode // ignore: cast_nullable_to_non_nullable
-as String,ean: null == ean ? _self.ean : ean // ignore: cast_nullable_to_non_nullable
-as String,upc: null == upc ? _self.upc : upc // ignore: cast_nullable_to_non_nullable
-as String,inventoryQuantity: null == inventoryQuantity ? _self.inventoryQuantity : inventoryQuantity // ignore: cast_nullable_to_non_nullable
-as int,allowBackorder: null == allowBackorder ? _self.allowBackorder : allowBackorder // ignore: cast_nullable_to_non_nullable
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,title: freezed == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
+as String?,productId: freezed == productId ? _self.productId : productId // ignore: cast_nullable_to_non_nullable
+as String?,product: freezed == product ? _self.product : product // ignore: cast_nullable_to_non_nullable
+as Product?,sku: freezed == sku ? _self.sku : sku // ignore: cast_nullable_to_non_nullable
+as String?,barcode: freezed == barcode ? _self.barcode : barcode // ignore: cast_nullable_to_non_nullable
+as String?,ean: freezed == ean ? _self.ean : ean // ignore: cast_nullable_to_non_nullable
+as String?,upc: freezed == upc ? _self.upc : upc // ignore: cast_nullable_to_non_nullable
+as String?,inventoryQuantity: freezed == inventoryQuantity ? _self.inventoryQuantity : inventoryQuantity // ignore: cast_nullable_to_non_nullable
+as int?,allowBackorder: null == allowBackorder ? _self.allowBackorder : allowBackorder // ignore: cast_nullable_to_non_nullable
 as bool,manageInventory: null == manageInventory ? _self.manageInventory : manageInventory // ignore: cast_nullable_to_non_nullable
-as bool,hsCode: null == hsCode ? _self.hsCode : hsCode // ignore: cast_nullable_to_non_nullable
-as int,originCountry: null == originCountry ? _self.originCountry : originCountry // ignore: cast_nullable_to_non_nullable
-as String,midCode: null == midCode ? _self.midCode : midCode // ignore: cast_nullable_to_non_nullable
-as String,material: null == material ? _self.material : material // ignore: cast_nullable_to_non_nullable
-as String,weight: null == weight ? _self.weight : weight // ignore: cast_nullable_to_non_nullable
-as int,length: null == length ? _self.length : length // ignore: cast_nullable_to_non_nullable
-as int,height: null == height ? _self.height : height // ignore: cast_nullable_to_non_nullable
-as int,width: null == width ? _self.width : width // ignore: cast_nullable_to_non_nullable
-as int,gst: null == gst ? _self.gst : gst // ignore: cast_nullable_to_non_nullable
-as int,vat: null == vat ? _self.vat : vat // ignore: cast_nullable_to_non_nullable
-as int,taxablePrice: null == taxablePrice ? _self.taxablePrice : taxablePrice // ignore: cast_nullable_to_non_nullable
-as int,originalPrice: null == originalPrice ? _self.originalPrice : originalPrice // ignore: cast_nullable_to_non_nullable
-as int,calculatedPrice: null == calculatedPrice ? _self.calculatedPrice : calculatedPrice // ignore: cast_nullable_to_non_nullable
-as int,originalTaxablePrice: null == originalTaxablePrice ? _self.originalTaxablePrice : originalTaxablePrice // ignore: cast_nullable_to_non_nullable
-as int,calculatedTaxablePrice: null == calculatedTaxablePrice ? _self.calculatedTaxablePrice : calculatedTaxablePrice // ignore: cast_nullable_to_non_nullable
-as int,options: null == options ? _self.options : options // ignore: cast_nullable_to_non_nullable
-as List<ProductOptionValue>,prices: null == prices ? _self.prices : prices // ignore: cast_nullable_to_non_nullable
-as List<MoneyAmount>,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as bool,hsCode: freezed == hsCode ? _self.hsCode : hsCode // ignore: cast_nullable_to_non_nullable
+as int?,originCountry: freezed == originCountry ? _self.originCountry : originCountry // ignore: cast_nullable_to_non_nullable
+as String?,midCode: freezed == midCode ? _self.midCode : midCode // ignore: cast_nullable_to_non_nullable
+as String?,material: freezed == material ? _self.material : material // ignore: cast_nullable_to_non_nullable
+as String?,weight: freezed == weight ? _self.weight : weight // ignore: cast_nullable_to_non_nullable
+as int?,length: freezed == length ? _self.length : length // ignore: cast_nullable_to_non_nullable
+as int?,height: freezed == height ? _self.height : height // ignore: cast_nullable_to_non_nullable
+as int?,width: freezed == width ? _self.width : width // ignore: cast_nullable_to_non_nullable
+as int?,gst: freezed == gst ? _self.gst : gst // ignore: cast_nullable_to_non_nullable
+as int?,vat: freezed == vat ? _self.vat : vat // ignore: cast_nullable_to_non_nullable
+as int?,taxablePrice: freezed == taxablePrice ? _self.taxablePrice : taxablePrice // ignore: cast_nullable_to_non_nullable
+as int?,originalPrice: freezed == originalPrice ? _self.originalPrice : originalPrice // ignore: cast_nullable_to_non_nullable
+as int?,calculatedPrice: freezed == calculatedPrice ? _self.calculatedPrice : calculatedPrice // ignore: cast_nullable_to_non_nullable
+as int?,originalTaxablePrice: freezed == originalTaxablePrice ? _self.originalTaxablePrice : originalTaxablePrice // ignore: cast_nullable_to_non_nullable
+as int?,calculatedTaxablePrice: freezed == calculatedTaxablePrice ? _self.calculatedTaxablePrice : calculatedTaxablePrice // ignore: cast_nullable_to_non_nullable
+as int?,options: freezed == options ? _self.options : options // ignore: cast_nullable_to_non_nullable
+as List<ProductOptionValue>?,prices: freezed == prices ? _self.prices : prices // ignore: cast_nullable_to_non_nullable
+as List<MoneyAmount>?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,metadata: freezed == metadata ? _self.metadata : metadata // ignore: cast_nullable_to_non_nullable
@@ -196,7 +196,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String title, @JsonKey(name: 'product_id')  String productId,  Product? product,  String sku,  String barcode,  String ean,  String upc, @JsonKey(name: 'inventory_quantity')  int inventoryQuantity, @JsonKey(name: 'allow_backorder')  bool allowBackorder, @JsonKey(name: 'manage_inventory')  bool manageInventory, @JsonKey(name: 'hs_code')  int hsCode, @JsonKey(name: 'origin_country')  String originCountry, @JsonKey(name: 'mid_code')  String midCode,  String material,  int weight,  int length,  int height,  int width,  int gst,  int vat, @JsonKey(name: 'taxable_price')  int taxablePrice, @JsonKey(name: 'original_price')  int originalPrice, @JsonKey(name: 'calculated_price')  int calculatedPrice, @JsonKey(name: 'original_taxable_price')  int originalTaxablePrice, @JsonKey(name: 'calculated_taxable_price')  int calculatedTaxablePrice,  List<ProductOptionValue> options,  List<MoneyAmount> prices, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? title, @JsonKey(name: 'product_id')  String? productId,  Product? product,  String? sku,  String? barcode,  String? ean,  String? upc, @JsonKey(name: 'inventory_quantity')  int? inventoryQuantity, @JsonKey(name: 'allow_backorder')  bool allowBackorder, @JsonKey(name: 'manage_inventory')  bool manageInventory, @JsonKey(name: 'hs_code')  int? hsCode, @JsonKey(name: 'origin_country')  String? originCountry, @JsonKey(name: 'mid_code')  String? midCode,  String? material,  int? weight,  int? length,  int? height,  int? width,  int? gst,  int? vat, @JsonKey(name: 'taxable_price')  int? taxablePrice, @JsonKey(name: 'original_price')  int? originalPrice, @JsonKey(name: 'calculated_price')  int? calculatedPrice, @JsonKey(name: 'original_taxable_price')  int? originalTaxablePrice, @JsonKey(name: 'calculated_taxable_price')  int? calculatedTaxablePrice,  List<ProductOptionValue>? options,  List<MoneyAmount>? prices, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ProductVariant() when $default != null:
 return $default(_that.id,_that.title,_that.productId,_that.product,_that.sku,_that.barcode,_that.ean,_that.upc,_that.inventoryQuantity,_that.allowBackorder,_that.manageInventory,_that.hsCode,_that.originCountry,_that.midCode,_that.material,_that.weight,_that.length,_that.height,_that.width,_that.gst,_that.vat,_that.taxablePrice,_that.originalPrice,_that.calculatedPrice,_that.originalTaxablePrice,_that.calculatedTaxablePrice,_that.options,_that.prices,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -217,7 +217,7 @@ return $default(_that.id,_that.title,_that.productId,_that.product,_that.sku,_th
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String title, @JsonKey(name: 'product_id')  String productId,  Product? product,  String sku,  String barcode,  String ean,  String upc, @JsonKey(name: 'inventory_quantity')  int inventoryQuantity, @JsonKey(name: 'allow_backorder')  bool allowBackorder, @JsonKey(name: 'manage_inventory')  bool manageInventory, @JsonKey(name: 'hs_code')  int hsCode, @JsonKey(name: 'origin_country')  String originCountry, @JsonKey(name: 'mid_code')  String midCode,  String material,  int weight,  int length,  int height,  int width,  int gst,  int vat, @JsonKey(name: 'taxable_price')  int taxablePrice, @JsonKey(name: 'original_price')  int originalPrice, @JsonKey(name: 'calculated_price')  int calculatedPrice, @JsonKey(name: 'original_taxable_price')  int originalTaxablePrice, @JsonKey(name: 'calculated_taxable_price')  int calculatedTaxablePrice,  List<ProductOptionValue> options,  List<MoneyAmount> prices, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? title, @JsonKey(name: 'product_id')  String? productId,  Product? product,  String? sku,  String? barcode,  String? ean,  String? upc, @JsonKey(name: 'inventory_quantity')  int? inventoryQuantity, @JsonKey(name: 'allow_backorder')  bool allowBackorder, @JsonKey(name: 'manage_inventory')  bool manageInventory, @JsonKey(name: 'hs_code')  int? hsCode, @JsonKey(name: 'origin_country')  String? originCountry, @JsonKey(name: 'mid_code')  String? midCode,  String? material,  int? weight,  int? length,  int? height,  int? width,  int? gst,  int? vat, @JsonKey(name: 'taxable_price')  int? taxablePrice, @JsonKey(name: 'original_price')  int? originalPrice, @JsonKey(name: 'calculated_price')  int? calculatedPrice, @JsonKey(name: 'original_taxable_price')  int? originalTaxablePrice, @JsonKey(name: 'calculated_taxable_price')  int? calculatedTaxablePrice,  List<ProductOptionValue>? options,  List<MoneyAmount>? prices, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
 switch (_that) {
 case _ProductVariant():
 return $default(_that.id,_that.title,_that.productId,_that.product,_that.sku,_that.barcode,_that.ean,_that.upc,_that.inventoryQuantity,_that.allowBackorder,_that.manageInventory,_that.hsCode,_that.originCountry,_that.midCode,_that.material,_that.weight,_that.length,_that.height,_that.width,_that.gst,_that.vat,_that.taxablePrice,_that.originalPrice,_that.calculatedPrice,_that.originalTaxablePrice,_that.calculatedTaxablePrice,_that.options,_that.prices,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -237,7 +237,7 @@ return $default(_that.id,_that.title,_that.productId,_that.product,_that.sku,_th
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String title, @JsonKey(name: 'product_id')  String productId,  Product? product,  String sku,  String barcode,  String ean,  String upc, @JsonKey(name: 'inventory_quantity')  int inventoryQuantity, @JsonKey(name: 'allow_backorder')  bool allowBackorder, @JsonKey(name: 'manage_inventory')  bool manageInventory, @JsonKey(name: 'hs_code')  int hsCode, @JsonKey(name: 'origin_country')  String originCountry, @JsonKey(name: 'mid_code')  String midCode,  String material,  int weight,  int length,  int height,  int width,  int gst,  int vat, @JsonKey(name: 'taxable_price')  int taxablePrice, @JsonKey(name: 'original_price')  int originalPrice, @JsonKey(name: 'calculated_price')  int calculatedPrice, @JsonKey(name: 'original_taxable_price')  int originalTaxablePrice, @JsonKey(name: 'calculated_taxable_price')  int calculatedTaxablePrice,  List<ProductOptionValue> options,  List<MoneyAmount> prices, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? title, @JsonKey(name: 'product_id')  String? productId,  Product? product,  String? sku,  String? barcode,  String? ean,  String? upc, @JsonKey(name: 'inventory_quantity')  int? inventoryQuantity, @JsonKey(name: 'allow_backorder')  bool allowBackorder, @JsonKey(name: 'manage_inventory')  bool manageInventory, @JsonKey(name: 'hs_code')  int? hsCode, @JsonKey(name: 'origin_country')  String? originCountry, @JsonKey(name: 'mid_code')  String? midCode,  String? material,  int? weight,  int? length,  int? height,  int? width,  int? gst,  int? vat, @JsonKey(name: 'taxable_price')  int? taxablePrice, @JsonKey(name: 'original_price')  int? originalPrice, @JsonKey(name: 'calculated_price')  int? calculatedPrice, @JsonKey(name: 'original_taxable_price')  int? originalTaxablePrice, @JsonKey(name: 'calculated_taxable_price')  int? calculatedTaxablePrice,  List<ProductOptionValue>? options,  List<MoneyAmount>? prices, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
 switch (_that) {
 case _ProductVariant() when $default != null:
 return $default(_that.id,_that.title,_that.productId,_that.product,_that.sku,_that.barcode,_that.ean,_that.upc,_that.inventoryQuantity,_that.allowBackorder,_that.manageInventory,_that.hsCode,_that.originCountry,_that.midCode,_that.material,_that.weight,_that.length,_that.height,_that.width,_that.gst,_that.vat,_that.taxablePrice,_that.originalPrice,_that.calculatedPrice,_that.originalTaxablePrice,_that.calculatedTaxablePrice,_that.options,_that.prices,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -252,47 +252,51 @@ return $default(_that.id,_that.title,_that.productId,_that.product,_that.sku,_th
 @JsonSerializable()
 
 class _ProductVariant implements ProductVariant {
-  const _ProductVariant({required this.id, required this.title, @JsonKey(name: 'product_id') required this.productId, this.product, required this.sku, required this.barcode, required this.ean, required this.upc, @JsonKey(name: 'inventory_quantity') required this.inventoryQuantity, @JsonKey(name: 'allow_backorder') required this.allowBackorder, @JsonKey(name: 'manage_inventory') required this.manageInventory, @JsonKey(name: 'hs_code') required this.hsCode, @JsonKey(name: 'origin_country') required this.originCountry, @JsonKey(name: 'mid_code') required this.midCode, required this.material, required this.weight, required this.length, required this.height, required this.width, required this.gst, required this.vat, @JsonKey(name: 'taxable_price') required this.taxablePrice, @JsonKey(name: 'original_price') required this.originalPrice, @JsonKey(name: 'calculated_price') required this.calculatedPrice, @JsonKey(name: 'original_taxable_price') required this.originalTaxablePrice, @JsonKey(name: 'calculated_taxable_price') required this.calculatedTaxablePrice, required final  List<ProductOptionValue> options, required final  List<MoneyAmount> prices, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt, final  Map<String, dynamic>? metadata}): _options = options,_prices = prices,_metadata = metadata;
+  const _ProductVariant({this.id, this.title, @JsonKey(name: 'product_id') this.productId, this.product, this.sku, this.barcode, this.ean, this.upc, @JsonKey(name: 'inventory_quantity') this.inventoryQuantity, @JsonKey(name: 'allow_backorder') required this.allowBackorder, @JsonKey(name: 'manage_inventory') required this.manageInventory, @JsonKey(name: 'hs_code') this.hsCode, @JsonKey(name: 'origin_country') this.originCountry, @JsonKey(name: 'mid_code') this.midCode, this.material, this.weight, this.length, this.height, this.width, this.gst, this.vat, @JsonKey(name: 'taxable_price') this.taxablePrice, @JsonKey(name: 'original_price') this.originalPrice, @JsonKey(name: 'calculated_price') this.calculatedPrice, @JsonKey(name: 'original_taxable_price') this.originalTaxablePrice, @JsonKey(name: 'calculated_taxable_price') this.calculatedTaxablePrice, final  List<ProductOptionValue>? options, final  List<MoneyAmount>? prices, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt, final  Map<String, dynamic>? metadata}): _options = options,_prices = prices,_metadata = metadata;
   factory _ProductVariant.fromJson(Map<String, dynamic> json) => _$ProductVariantFromJson(json);
 
-@override final  String id;
-@override final  String title;
-@override@JsonKey(name: 'product_id') final  String productId;
+@override final  String? id;
+@override final  String? title;
+@override@JsonKey(name: 'product_id') final  String? productId;
 @override final  Product? product;
-@override final  String sku;
-@override final  String barcode;
-@override final  String ean;
-@override final  String upc;
-@override@JsonKey(name: 'inventory_quantity') final  int inventoryQuantity;
+@override final  String? sku;
+@override final  String? barcode;
+@override final  String? ean;
+@override final  String? upc;
+@override@JsonKey(name: 'inventory_quantity') final  int? inventoryQuantity;
 @override@JsonKey(name: 'allow_backorder') final  bool allowBackorder;
 @override@JsonKey(name: 'manage_inventory') final  bool manageInventory;
-@override@JsonKey(name: 'hs_code') final  int hsCode;
-@override@JsonKey(name: 'origin_country') final  String originCountry;
-@override@JsonKey(name: 'mid_code') final  String midCode;
-@override final  String material;
-@override final  int weight;
-@override final  int length;
-@override final  int height;
-@override final  int width;
-@override final  int gst;
-@override final  int vat;
-@override@JsonKey(name: 'taxable_price') final  int taxablePrice;
-@override@JsonKey(name: 'original_price') final  int originalPrice;
-@override@JsonKey(name: 'calculated_price') final  int calculatedPrice;
-@override@JsonKey(name: 'original_taxable_price') final  int originalTaxablePrice;
-@override@JsonKey(name: 'calculated_taxable_price') final  int calculatedTaxablePrice;
- final  List<ProductOptionValue> _options;
-@override List<ProductOptionValue> get options {
+@override@JsonKey(name: 'hs_code') final  int? hsCode;
+@override@JsonKey(name: 'origin_country') final  String? originCountry;
+@override@JsonKey(name: 'mid_code') final  String? midCode;
+@override final  String? material;
+@override final  int? weight;
+@override final  int? length;
+@override final  int? height;
+@override final  int? width;
+@override final  int? gst;
+@override final  int? vat;
+@override@JsonKey(name: 'taxable_price') final  int? taxablePrice;
+@override@JsonKey(name: 'original_price') final  int? originalPrice;
+@override@JsonKey(name: 'calculated_price') final  int? calculatedPrice;
+@override@JsonKey(name: 'original_taxable_price') final  int? originalTaxablePrice;
+@override@JsonKey(name: 'calculated_taxable_price') final  int? calculatedTaxablePrice;
+ final  List<ProductOptionValue>? _options;
+@override List<ProductOptionValue>? get options {
+  final value = _options;
+  if (value == null) return null;
   if (_options is EqualUnmodifiableListView) return _options;
   // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_options);
+  return EqualUnmodifiableListView(value);
 }
 
- final  List<MoneyAmount> _prices;
-@override List<MoneyAmount> get prices {
+ final  List<MoneyAmount>? _prices;
+@override List<MoneyAmount>? get prices {
+  final value = _prices;
+  if (value == null) return null;
   if (_prices is EqualUnmodifiableListView) return _prices;
   // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_prices);
+  return EqualUnmodifiableListView(value);
 }
 
 @override@JsonKey(name: 'created_at') final  DateTime? createdAt;
@@ -341,7 +345,7 @@ abstract mixin class _$ProductVariantCopyWith<$Res> implements $ProductVariantCo
   factory _$ProductVariantCopyWith(_ProductVariant value, $Res Function(_ProductVariant) _then) = __$ProductVariantCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String title,@JsonKey(name: 'product_id') String productId, Product? product, String sku, String barcode, String ean, String upc,@JsonKey(name: 'inventory_quantity') int inventoryQuantity,@JsonKey(name: 'allow_backorder') bool allowBackorder,@JsonKey(name: 'manage_inventory') bool manageInventory,@JsonKey(name: 'hs_code') int hsCode,@JsonKey(name: 'origin_country') String originCountry,@JsonKey(name: 'mid_code') String midCode, String material, int weight, int length, int height, int width, int gst, int vat,@JsonKey(name: 'taxable_price') int taxablePrice,@JsonKey(name: 'original_price') int originalPrice,@JsonKey(name: 'calculated_price') int calculatedPrice,@JsonKey(name: 'original_taxable_price') int originalTaxablePrice,@JsonKey(name: 'calculated_taxable_price') int calculatedTaxablePrice, List<ProductOptionValue> options, List<MoneyAmount> prices,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
+ String? id, String? title,@JsonKey(name: 'product_id') String? productId, Product? product, String? sku, String? barcode, String? ean, String? upc,@JsonKey(name: 'inventory_quantity') int? inventoryQuantity,@JsonKey(name: 'allow_backorder') bool allowBackorder,@JsonKey(name: 'manage_inventory') bool manageInventory,@JsonKey(name: 'hs_code') int? hsCode,@JsonKey(name: 'origin_country') String? originCountry,@JsonKey(name: 'mid_code') String? midCode, String? material, int? weight, int? length, int? height, int? width, int? gst, int? vat,@JsonKey(name: 'taxable_price') int? taxablePrice,@JsonKey(name: 'original_price') int? originalPrice,@JsonKey(name: 'calculated_price') int? calculatedPrice,@JsonKey(name: 'original_taxable_price') int? originalTaxablePrice,@JsonKey(name: 'calculated_taxable_price') int? calculatedTaxablePrice, List<ProductOptionValue>? options, List<MoneyAmount>? prices,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
 });
 
 
@@ -358,37 +362,37 @@ class __$ProductVariantCopyWithImpl<$Res>
 
 /// Create a copy of ProductVariant
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? title = null,Object? productId = null,Object? product = freezed,Object? sku = null,Object? barcode = null,Object? ean = null,Object? upc = null,Object? inventoryQuantity = null,Object? allowBackorder = null,Object? manageInventory = null,Object? hsCode = null,Object? originCountry = null,Object? midCode = null,Object? material = null,Object? weight = null,Object? length = null,Object? height = null,Object? width = null,Object? gst = null,Object? vat = null,Object? taxablePrice = null,Object? originalPrice = null,Object? calculatedPrice = null,Object? originalTaxablePrice = null,Object? calculatedTaxablePrice = null,Object? options = null,Object? prices = null,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,Object? metadata = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? title = freezed,Object? productId = freezed,Object? product = freezed,Object? sku = freezed,Object? barcode = freezed,Object? ean = freezed,Object? upc = freezed,Object? inventoryQuantity = freezed,Object? allowBackorder = null,Object? manageInventory = null,Object? hsCode = freezed,Object? originCountry = freezed,Object? midCode = freezed,Object? material = freezed,Object? weight = freezed,Object? length = freezed,Object? height = freezed,Object? width = freezed,Object? gst = freezed,Object? vat = freezed,Object? taxablePrice = freezed,Object? originalPrice = freezed,Object? calculatedPrice = freezed,Object? originalTaxablePrice = freezed,Object? calculatedTaxablePrice = freezed,Object? options = freezed,Object? prices = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,Object? metadata = freezed,}) {
   return _then(_ProductVariant(
-id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
-as String,productId: null == productId ? _self.productId : productId // ignore: cast_nullable_to_non_nullable
-as String,product: freezed == product ? _self.product : product // ignore: cast_nullable_to_non_nullable
-as Product?,sku: null == sku ? _self.sku : sku // ignore: cast_nullable_to_non_nullable
-as String,barcode: null == barcode ? _self.barcode : barcode // ignore: cast_nullable_to_non_nullable
-as String,ean: null == ean ? _self.ean : ean // ignore: cast_nullable_to_non_nullable
-as String,upc: null == upc ? _self.upc : upc // ignore: cast_nullable_to_non_nullable
-as String,inventoryQuantity: null == inventoryQuantity ? _self.inventoryQuantity : inventoryQuantity // ignore: cast_nullable_to_non_nullable
-as int,allowBackorder: null == allowBackorder ? _self.allowBackorder : allowBackorder // ignore: cast_nullable_to_non_nullable
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,title: freezed == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
+as String?,productId: freezed == productId ? _self.productId : productId // ignore: cast_nullable_to_non_nullable
+as String?,product: freezed == product ? _self.product : product // ignore: cast_nullable_to_non_nullable
+as Product?,sku: freezed == sku ? _self.sku : sku // ignore: cast_nullable_to_non_nullable
+as String?,barcode: freezed == barcode ? _self.barcode : barcode // ignore: cast_nullable_to_non_nullable
+as String?,ean: freezed == ean ? _self.ean : ean // ignore: cast_nullable_to_non_nullable
+as String?,upc: freezed == upc ? _self.upc : upc // ignore: cast_nullable_to_non_nullable
+as String?,inventoryQuantity: freezed == inventoryQuantity ? _self.inventoryQuantity : inventoryQuantity // ignore: cast_nullable_to_non_nullable
+as int?,allowBackorder: null == allowBackorder ? _self.allowBackorder : allowBackorder // ignore: cast_nullable_to_non_nullable
 as bool,manageInventory: null == manageInventory ? _self.manageInventory : manageInventory // ignore: cast_nullable_to_non_nullable
-as bool,hsCode: null == hsCode ? _self.hsCode : hsCode // ignore: cast_nullable_to_non_nullable
-as int,originCountry: null == originCountry ? _self.originCountry : originCountry // ignore: cast_nullable_to_non_nullable
-as String,midCode: null == midCode ? _self.midCode : midCode // ignore: cast_nullable_to_non_nullable
-as String,material: null == material ? _self.material : material // ignore: cast_nullable_to_non_nullable
-as String,weight: null == weight ? _self.weight : weight // ignore: cast_nullable_to_non_nullable
-as int,length: null == length ? _self.length : length // ignore: cast_nullable_to_non_nullable
-as int,height: null == height ? _self.height : height // ignore: cast_nullable_to_non_nullable
-as int,width: null == width ? _self.width : width // ignore: cast_nullable_to_non_nullable
-as int,gst: null == gst ? _self.gst : gst // ignore: cast_nullable_to_non_nullable
-as int,vat: null == vat ? _self.vat : vat // ignore: cast_nullable_to_non_nullable
-as int,taxablePrice: null == taxablePrice ? _self.taxablePrice : taxablePrice // ignore: cast_nullable_to_non_nullable
-as int,originalPrice: null == originalPrice ? _self.originalPrice : originalPrice // ignore: cast_nullable_to_non_nullable
-as int,calculatedPrice: null == calculatedPrice ? _self.calculatedPrice : calculatedPrice // ignore: cast_nullable_to_non_nullable
-as int,originalTaxablePrice: null == originalTaxablePrice ? _self.originalTaxablePrice : originalTaxablePrice // ignore: cast_nullable_to_non_nullable
-as int,calculatedTaxablePrice: null == calculatedTaxablePrice ? _self.calculatedTaxablePrice : calculatedTaxablePrice // ignore: cast_nullable_to_non_nullable
-as int,options: null == options ? _self._options : options // ignore: cast_nullable_to_non_nullable
-as List<ProductOptionValue>,prices: null == prices ? _self._prices : prices // ignore: cast_nullable_to_non_nullable
-as List<MoneyAmount>,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as bool,hsCode: freezed == hsCode ? _self.hsCode : hsCode // ignore: cast_nullable_to_non_nullable
+as int?,originCountry: freezed == originCountry ? _self.originCountry : originCountry // ignore: cast_nullable_to_non_nullable
+as String?,midCode: freezed == midCode ? _self.midCode : midCode // ignore: cast_nullable_to_non_nullable
+as String?,material: freezed == material ? _self.material : material // ignore: cast_nullable_to_non_nullable
+as String?,weight: freezed == weight ? _self.weight : weight // ignore: cast_nullable_to_non_nullable
+as int?,length: freezed == length ? _self.length : length // ignore: cast_nullable_to_non_nullable
+as int?,height: freezed == height ? _self.height : height // ignore: cast_nullable_to_non_nullable
+as int?,width: freezed == width ? _self.width : width // ignore: cast_nullable_to_non_nullable
+as int?,gst: freezed == gst ? _self.gst : gst // ignore: cast_nullable_to_non_nullable
+as int?,vat: freezed == vat ? _self.vat : vat // ignore: cast_nullable_to_non_nullable
+as int?,taxablePrice: freezed == taxablePrice ? _self.taxablePrice : taxablePrice // ignore: cast_nullable_to_non_nullable
+as int?,originalPrice: freezed == originalPrice ? _self.originalPrice : originalPrice // ignore: cast_nullable_to_non_nullable
+as int?,calculatedPrice: freezed == calculatedPrice ? _self.calculatedPrice : calculatedPrice // ignore: cast_nullable_to_non_nullable
+as int?,originalTaxablePrice: freezed == originalTaxablePrice ? _self.originalTaxablePrice : originalTaxablePrice // ignore: cast_nullable_to_non_nullable
+as int?,calculatedTaxablePrice: freezed == calculatedTaxablePrice ? _self.calculatedTaxablePrice : calculatedTaxablePrice // ignore: cast_nullable_to_non_nullable
+as int?,options: freezed == options ? _self._options : options // ignore: cast_nullable_to_non_nullable
+as List<ProductOptionValue>?,prices: freezed == prices ? _self._prices : prices // ignore: cast_nullable_to_non_nullable
+as List<MoneyAmount>?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,metadata: freezed == metadata ? _self._metadata : metadata // ignore: cast_nullable_to_non_nullable

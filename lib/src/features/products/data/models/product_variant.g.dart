@@ -8,39 +8,40 @@ part of 'product_variant.dart';
 
 _ProductVariant _$ProductVariantFromJson(Map<String, dynamic> json) =>
     _ProductVariant(
-      id: json['id'] as String,
-      title: json['title'] as String,
-      productId: json['product_id'] as String,
+      id: json['id'] as String?,
+      title: json['title'] as String?,
+      productId: json['product_id'] as String?,
       product: json['product'] == null
           ? null
           : Product.fromJson(json['product'] as Map<String, dynamic>),
-      sku: json['sku'] as String,
-      barcode: json['barcode'] as String,
-      ean: json['ean'] as String,
-      upc: json['upc'] as String,
-      inventoryQuantity: (json['inventory_quantity'] as num).toInt(),
+      sku: json['sku'] as String?,
+      barcode: json['barcode'] as String?,
+      ean: json['ean'] as String?,
+      upc: json['upc'] as String?,
+      inventoryQuantity: (json['inventory_quantity'] as num?)?.toInt(),
       allowBackorder: json['allow_backorder'] as bool,
       manageInventory: json['manage_inventory'] as bool,
-      hsCode: (json['hs_code'] as num).toInt(),
-      originCountry: json['origin_country'] as String,
-      midCode: json['mid_code'] as String,
-      material: json['material'] as String,
-      weight: (json['weight'] as num).toInt(),
-      length: (json['length'] as num).toInt(),
-      height: (json['height'] as num).toInt(),
-      width: (json['width'] as num).toInt(),
-      gst: (json['gst'] as num).toInt(),
-      vat: (json['vat'] as num).toInt(),
-      taxablePrice: (json['taxable_price'] as num).toInt(),
-      originalPrice: (json['original_price'] as num).toInt(),
-      calculatedPrice: (json['calculated_price'] as num).toInt(),
-      originalTaxablePrice: (json['original_taxable_price'] as num).toInt(),
-      calculatedTaxablePrice: (json['calculated_taxable_price'] as num).toInt(),
-      options: (json['options'] as List<dynamic>)
-          .map((e) => ProductOptionValue.fromJson(e as Map<String, dynamic>))
+      hsCode: (json['hs_code'] as num?)?.toInt(),
+      originCountry: json['origin_country'] as String?,
+      midCode: json['mid_code'] as String?,
+      material: json['material'] as String?,
+      weight: (json['weight'] as num?)?.toInt(),
+      length: (json['length'] as num?)?.toInt(),
+      height: (json['height'] as num?)?.toInt(),
+      width: (json['width'] as num?)?.toInt(),
+      gst: (json['gst'] as num?)?.toInt(),
+      vat: (json['vat'] as num?)?.toInt(),
+      taxablePrice: (json['taxable_price'] as num?)?.toInt(),
+      originalPrice: (json['original_price'] as num?)?.toInt(),
+      calculatedPrice: (json['calculated_price'] as num?)?.toInt(),
+      originalTaxablePrice: (json['original_taxable_price'] as num?)?.toInt(),
+      calculatedTaxablePrice: (json['calculated_taxable_price'] as num?)
+          ?.toInt(),
+      options: (json['options'] as List<dynamic>?)
+          ?.map((e) => ProductOptionValue.fromJson(e as Map<String, dynamic>))
           .toList(),
-      prices: (json['prices'] as List<dynamic>)
-          .map((e) => MoneyAmount.fromJson(e as Map<String, dynamic>))
+      prices: (json['prices'] as List<dynamic>?)
+          ?.map((e) => MoneyAmount.fromJson(e as Map<String, dynamic>))
           .toList(),
       createdAt: json['created_at'] == null
           ? null

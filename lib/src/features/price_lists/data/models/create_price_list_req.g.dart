@@ -17,7 +17,7 @@ _CreatePriceListReq _$CreatePriceListReqFromJson(Map<String, dynamic> json) =>
           ? null
           : DateTime.parse(json['endsAt'] as String),
       status: $enumDecodeNullable(_$PriceListStatusEnumMap, json['status']),
-      type: json['type'] as String?,
+      type: $enumDecodeNullable(_$PriceListTypeEnumMap, json['type']),
       rules: json['rules'] as Map<String, dynamic>?,
       prices: (json['prices'] as List<dynamic>?)
           ?.map((e) => Price.fromJson(e as Map<String, dynamic>))
@@ -31,7 +31,7 @@ Map<String, dynamic> _$CreatePriceListReqToJson(_CreatePriceListReq instance) =>
       'startsAt': instance.startsAt?.toIso8601String(),
       'endsAt': instance.endsAt?.toIso8601String(),
       'status': _$PriceListStatusEnumMap[instance.status],
-      'type': instance.type,
+      'type': _$PriceListTypeEnumMap[instance.type],
       'rules': instance.rules,
       'prices': instance.prices,
     };
@@ -39,4 +39,9 @@ Map<String, dynamic> _$CreatePriceListReqToJson(_CreatePriceListReq instance) =>
 const _$PriceListStatusEnumMap = {
   PriceListStatus.draft: 'draft',
   PriceListStatus.active: 'active',
+};
+
+const _$PriceListTypeEnumMap = {
+  PriceListType.sale: 'sale',
+  PriceListType.override: 'override',
 };
