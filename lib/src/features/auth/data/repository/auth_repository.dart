@@ -6,8 +6,8 @@ class AuthRepository {
 
   final AuthApi _authApi;
 
-  Future<AuthAdminSessionResponse> login() {
-    return _authApi.login();
+  Future<AuthAdminSessionResponse> postSession() {
+    return _authApi.postSession();
   }
 
   Future<DeleteSessionRes> logout() {

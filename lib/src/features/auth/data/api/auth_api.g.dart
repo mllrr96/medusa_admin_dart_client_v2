@@ -18,7 +18,7 @@ class _AuthApi implements AuthApi {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<AuthAdminSessionResponse> login() async {
+  Future<AuthAdminSessionResponse> postSession() async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -27,7 +27,7 @@ class _AuthApi implements AuthApi {
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/admin/auth/session',
+            '/auth/session',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -54,7 +54,7 @@ class _AuthApi implements AuthApi {
       Options(method: 'DELETE', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/admin/auth/session',
+            '/auth/session',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -81,7 +81,7 @@ class _AuthApi implements AuthApi {
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/admin/auth/token/refresh',
+            '/auth/token/refresh',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -111,7 +111,7 @@ class _AuthApi implements AuthApi {
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/admin/auth/user/${authProvider}',
+            '/auth/user/${authProvider}',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -132,7 +132,7 @@ class _AuthApi implements AuthApi {
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/admin/auth/user/${authProvider}/callback',
+            '/auth/user/${authProvider}/callback',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -162,7 +162,7 @@ class _AuthApi implements AuthApi {
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/admin/auth/user/${authProvider}/register',
+            '/auth/user/${authProvider}/register',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -192,7 +192,7 @@ class _AuthApi implements AuthApi {
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/admin/auth/user/${authProvider}/reset-password',
+            '/auth/user/${authProvider}/reset-password',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -214,7 +214,7 @@ class _AuthApi implements AuthApi {
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/admin/auth/user/${authProvider}/update',
+            '/auth/user/${authProvider}/update',
             queryParameters: queryParameters,
             data: _data,
           )
