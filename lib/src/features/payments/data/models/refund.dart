@@ -10,7 +10,7 @@ part 'refund.g.dart';
 abstract class Refund with _$Refund {
   const factory Refund({
     required String id,
-    required int amount,
+    required num amount,
     @JsonKey(name: 'refund_reason_id') String? refundReasonId,
     String? note,
     @JsonKey(name: 'created_at') DateTime? createdAt,

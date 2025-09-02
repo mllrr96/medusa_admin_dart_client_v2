@@ -19,20 +19,16 @@ import 'package:medusa_admin_dart_client/src/features/fulfillment_providers/data
 import 'package:medusa_admin_dart_client/src/features/fulfillment_sets/data/api/fulfillment_sets_api.dart';
 import 'package:medusa_admin_dart_client/src/features/fulfillment_sets/data/repository/fulfillment_sets_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/fulfillments/data/api/fulfillments_api.dart';
-import 'package:medusa_admin_dart_client/src/features/fulfillments/data/repository/fulfillments_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/gift_cards/data/api/gift_cards_api.dart';
 import 'package:medusa_admin_dart_client/src/features/inventory_items/data/api/inventory_items_api.dart';
 import 'package:medusa_admin_dart_client/src/features/invites/data/api/invites_api.dart';
 import 'package:medusa_admin_dart_client/src/features/invites/data/repository/invites_repository.dart';
-import 'package:medusa_admin_dart_client/src/features/notes/data/api/notes_api.dart';
 import 'package:medusa_admin_dart_client/src/features/notifications/data/api/notifications_api.dart';
 import 'package:medusa_admin_dart_client/src/features/order_edits/data/api/order_edits_api.dart';
-import 'package:medusa_admin_dart_client/src/features/order_edits/data/repository/order_edits_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/orders/data/api/orders_api.dart';
 import 'package:medusa_admin_dart_client/src/features/payment_collections/data/api/payment_collections_api.dart';
 import 'package:medusa_admin_dart_client/src/features/payment_collections/data/repository/payment_collections_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/payments/data/api/payments_api.dart';
-import 'package:medusa_admin_dart_client/src/features/payments/data/repository/payments_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/plugins/data/api/plugins_api.dart';
 import 'package:medusa_admin_dart_client/src/features/price_lists/data/api/price_lists_api.dart';
 import 'package:medusa_admin_dart_client/src/features/price_preferences/data/api/price_preferences_api.dart';
@@ -195,12 +191,6 @@ void configureDependencies({String? baseUrl, List<Interceptor>? interceptors}) {
   );
   getIt.registerLazySingleton<CustomerGroupsRepository>(
     () => CustomerGroupsRepository(getIt<CustomerGroupsApi>()),
-  );
-
-  // Notes
-  getIt.registerLazySingleton<NotesApi>(() => NotesApi(getIt<Dio>()));
-  getIt.registerLazySingleton<NotesRepository>(
-    () => NotesRepository(getIt<NotesApi>()),
   );
 
   // Notifications

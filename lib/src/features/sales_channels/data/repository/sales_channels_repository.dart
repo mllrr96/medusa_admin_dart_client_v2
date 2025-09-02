@@ -6,29 +6,19 @@ class SalesChannelsRepository {
 
   final SalesChannelsApi _salesChannelsApi;
 
-  Future<List<SalesChannel>> retrieveAll({
+  Future<SalesChannelListRes> retrieveAll({
     Map<String, dynamic>? queryParameters,
-  }) {
-    return _salesChannelsApi.retrieveAll(query: queryParameters);
-  }
+  }) => _salesChannelsApi.retrieveAll(query: queryParameters);
 
-  Future<SalesChannel> retrieve(String id) {
-    return _salesChannelsApi.retrieve(id);
-  }
+  Future<SalesChannel> retrieve(String id) => _salesChannelsApi.retrieve(id);
 
-  Future<SalesChannel> create(CreateSalesChannel body) {
-    return _salesChannelsApi.create(body);
-  }
+  Future<SalesChannel> create(CreateSalesChannel body) => _salesChannelsApi.create(body);
 
-  Future<SalesChannel> update(String id, UpdateSalesChannel body) {
-    return _salesChannelsApi.update(id, body);
-  }
+  Future<SalesChannel> update(String id, UpdateSalesChannel body) =>
+      _salesChannelsApi.update(id, body);
 
-  Future<void> delete(String id) {
-    return _salesChannelsApi.delete(id);
-  }
+  Future<void> delete(String id) => _salesChannelsApi.delete(id);
 
-  Future<SalesChannel> manageProducts(String id, ManageProductsReq body) {
-    return _salesChannelsApi.manageProducts(id, body);
-  }
+  Future<SalesChannel> manageProducts(String id, ManageProductsReq body) =>
+      _salesChannelsApi.manageProducts(id, body);
 }

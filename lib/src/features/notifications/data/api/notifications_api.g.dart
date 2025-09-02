@@ -18,7 +18,7 @@ class _NotificationsApi implements NotificationsApi {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<NotificationListRes> getNotifications({
+  Future<NotificationsListRes> getNotifications({
     Map<String, dynamic>? query,
   }) async {
     final _extra = <String, dynamic>{};
@@ -27,7 +27,7 @@ class _NotificationsApi implements NotificationsApi {
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<NotificationListRes>(
+    final _options = _setStreamType<NotificationsListRes>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -38,9 +38,9 @@ class _NotificationsApi implements NotificationsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late NotificationListRes _value;
+    late NotificationsListRes _value;
     try {
-      _value = NotificationListRes.fromJson(_result.data!);
+      _value = NotificationsListRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

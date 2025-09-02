@@ -11,35 +11,23 @@ class OrdersRepository {
   Future<OrderRes> retrieve(
     String id, {
     Map<String, dynamic>? queryParameters,
-  }) async {
-    try {
-      return await _ordersApi.retrieve(id, query: queryParameters);
-    } catch (e) {
-      rethrow;
-    }
-  }
+  }) async => await _ordersApi.retrieve(id, query: queryParameters);
 
-  Future<OrdersListRes> list({Map<String, dynamic>? queryParameters}) async {
-    try {
-      return await _ordersApi.list(query: queryParameters);
-    } catch (e) {
-      rethrow;
-    }
-  }
+  Future<OrderRes> archive(
+    String id, {
+    Map<String, dynamic>? fields,
+  }) async => await _ordersApi.archive(id, fields: fields);
+
+  Future<OrdersListRes> list({Map<String, dynamic>? queryParameters}) async =>
+      await _ordersApi.list(query: queryParameters);
 
   Future<OrderRes> update(
     String id,
     PostOrdersOrderReq payload, {
     Map<String, dynamic>? queryParameters,
-  }) async {
-    try {
-      return await _ordersApi.update(
-        id,
-        payload,
-        query: queryParameters,
-      );
-    } catch (e) {
-      rethrow;
-    }
-  }
+  }) async => await _ordersApi.update(
+    id,
+    payload,
+    query: queryParameters,
+  );
 }

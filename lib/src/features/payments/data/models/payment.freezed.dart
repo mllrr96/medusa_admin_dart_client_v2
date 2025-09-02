@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Payment {
 
- String get id; int get amount;@JsonKey(name: 'authorized_amount') int? get authorizedAmount;@JsonKey(name: 'currency_code') String get currencyCode;@JsonKey(name: 'provider_id') String get providerId; Map<String, dynamic>? get data;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'captured_at') DateTime? get capturedAt;@JsonKey(name: 'canceled_at') DateTime? get canceledAt;@JsonKey(name: 'captured_amount') int? get capturedAmount;@JsonKey(name: 'refunded_amount') int? get refundedAmount; List<Capture>? get captures; List<Refund>? get refunds;@JsonKey(name: 'payment_collection') PaymentCollection? get paymentCollection;@JsonKey(name: 'payment_session') PaymentSession? get paymentSession;
+ String get id; num get amount;@JsonKey(name: 'authorized_amount') num? get authorizedAmount;@JsonKey(name: 'currency_code') String get currencyCode;@JsonKey(name: 'provider_id') String get providerId; Map<String, dynamic>? get data;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'captured_at') DateTime? get capturedAt;@JsonKey(name: 'canceled_at') DateTime? get canceledAt;@JsonKey(name: 'captured_amount') num? get capturedAmount;@JsonKey(name: 'refunded_amount') num? get refundedAmount; List<Capture>? get captures; List<Refund>? get refunds;@JsonKey(name: 'payment_collection') PaymentCollection? get paymentCollection;@JsonKey(name: 'payment_session') PaymentSession? get paymentSession;
 /// Create a copy of Payment
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $PaymentCopyWith<$Res>  {
   factory $PaymentCopyWith(Payment value, $Res Function(Payment) _then) = _$PaymentCopyWithImpl;
 @useResult
 $Res call({
- String id, int amount,@JsonKey(name: 'authorized_amount') int? authorizedAmount,@JsonKey(name: 'currency_code') String currencyCode,@JsonKey(name: 'provider_id') String providerId, Map<String, dynamic>? data,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'captured_at') DateTime? capturedAt,@JsonKey(name: 'canceled_at') DateTime? canceledAt,@JsonKey(name: 'captured_amount') int? capturedAmount,@JsonKey(name: 'refunded_amount') int? refundedAmount, List<Capture>? captures, List<Refund>? refunds,@JsonKey(name: 'payment_collection') PaymentCollection? paymentCollection,@JsonKey(name: 'payment_session') PaymentSession? paymentSession
+ String id, num amount,@JsonKey(name: 'authorized_amount') num? authorizedAmount,@JsonKey(name: 'currency_code') String currencyCode,@JsonKey(name: 'provider_id') String providerId, Map<String, dynamic>? data,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'captured_at') DateTime? capturedAt,@JsonKey(name: 'canceled_at') DateTime? canceledAt,@JsonKey(name: 'captured_amount') num? capturedAmount,@JsonKey(name: 'refunded_amount') num? refundedAmount, List<Capture>? captures, List<Refund>? refunds,@JsonKey(name: 'payment_collection') PaymentCollection? paymentCollection,@JsonKey(name: 'payment_session') PaymentSession? paymentSession
 });
 
 
@@ -69,8 +69,8 @@ class _$PaymentCopyWithImpl<$Res>
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,amount: null == amount ? _self.amount : amount // ignore: cast_nullable_to_non_nullable
-as int,authorizedAmount: freezed == authorizedAmount ? _self.authorizedAmount : authorizedAmount // ignore: cast_nullable_to_non_nullable
-as int?,currencyCode: null == currencyCode ? _self.currencyCode : currencyCode // ignore: cast_nullable_to_non_nullable
+as num,authorizedAmount: freezed == authorizedAmount ? _self.authorizedAmount : authorizedAmount // ignore: cast_nullable_to_non_nullable
+as num?,currencyCode: null == currencyCode ? _self.currencyCode : currencyCode // ignore: cast_nullable_to_non_nullable
 as String,providerId: null == providerId ? _self.providerId : providerId // ignore: cast_nullable_to_non_nullable
 as String,data: freezed == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
@@ -78,8 +78,8 @@ as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ig
 as DateTime?,capturedAt: freezed == capturedAt ? _self.capturedAt : capturedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,canceledAt: freezed == canceledAt ? _self.canceledAt : canceledAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,capturedAmount: freezed == capturedAmount ? _self.capturedAmount : capturedAmount // ignore: cast_nullable_to_non_nullable
-as int?,refundedAmount: freezed == refundedAmount ? _self.refundedAmount : refundedAmount // ignore: cast_nullable_to_non_nullable
-as int?,captures: freezed == captures ? _self.captures : captures // ignore: cast_nullable_to_non_nullable
+as num?,refundedAmount: freezed == refundedAmount ? _self.refundedAmount : refundedAmount // ignore: cast_nullable_to_non_nullable
+as num?,captures: freezed == captures ? _self.captures : captures // ignore: cast_nullable_to_non_nullable
 as List<Capture>?,refunds: freezed == refunds ? _self.refunds : refunds // ignore: cast_nullable_to_non_nullable
 as List<Refund>?,paymentCollection: freezed == paymentCollection ? _self.paymentCollection : paymentCollection // ignore: cast_nullable_to_non_nullable
 as PaymentCollection?,paymentSession: freezed == paymentSession ? _self.paymentSession : paymentSession // ignore: cast_nullable_to_non_nullable
@@ -192,7 +192,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  int amount, @JsonKey(name: 'authorized_amount')  int? authorizedAmount, @JsonKey(name: 'currency_code')  String currencyCode, @JsonKey(name: 'provider_id')  String providerId,  Map<String, dynamic>? data, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'captured_at')  DateTime? capturedAt, @JsonKey(name: 'canceled_at')  DateTime? canceledAt, @JsonKey(name: 'captured_amount')  int? capturedAmount, @JsonKey(name: 'refunded_amount')  int? refundedAmount,  List<Capture>? captures,  List<Refund>? refunds, @JsonKey(name: 'payment_collection')  PaymentCollection? paymentCollection, @JsonKey(name: 'payment_session')  PaymentSession? paymentSession)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  num amount, @JsonKey(name: 'authorized_amount')  num? authorizedAmount, @JsonKey(name: 'currency_code')  String currencyCode, @JsonKey(name: 'provider_id')  String providerId,  Map<String, dynamic>? data, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'captured_at')  DateTime? capturedAt, @JsonKey(name: 'canceled_at')  DateTime? canceledAt, @JsonKey(name: 'captured_amount')  num? capturedAmount, @JsonKey(name: 'refunded_amount')  num? refundedAmount,  List<Capture>? captures,  List<Refund>? refunds, @JsonKey(name: 'payment_collection')  PaymentCollection? paymentCollection, @JsonKey(name: 'payment_session')  PaymentSession? paymentSession)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Payment() when $default != null:
 return $default(_that.id,_that.amount,_that.authorizedAmount,_that.currencyCode,_that.providerId,_that.data,_that.createdAt,_that.updatedAt,_that.capturedAt,_that.canceledAt,_that.capturedAmount,_that.refundedAmount,_that.captures,_that.refunds,_that.paymentCollection,_that.paymentSession);case _:
@@ -213,7 +213,7 @@ return $default(_that.id,_that.amount,_that.authorizedAmount,_that.currencyCode,
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  int amount, @JsonKey(name: 'authorized_amount')  int? authorizedAmount, @JsonKey(name: 'currency_code')  String currencyCode, @JsonKey(name: 'provider_id')  String providerId,  Map<String, dynamic>? data, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'captured_at')  DateTime? capturedAt, @JsonKey(name: 'canceled_at')  DateTime? canceledAt, @JsonKey(name: 'captured_amount')  int? capturedAmount, @JsonKey(name: 'refunded_amount')  int? refundedAmount,  List<Capture>? captures,  List<Refund>? refunds, @JsonKey(name: 'payment_collection')  PaymentCollection? paymentCollection, @JsonKey(name: 'payment_session')  PaymentSession? paymentSession)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  num amount, @JsonKey(name: 'authorized_amount')  num? authorizedAmount, @JsonKey(name: 'currency_code')  String currencyCode, @JsonKey(name: 'provider_id')  String providerId,  Map<String, dynamic>? data, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'captured_at')  DateTime? capturedAt, @JsonKey(name: 'canceled_at')  DateTime? canceledAt, @JsonKey(name: 'captured_amount')  num? capturedAmount, @JsonKey(name: 'refunded_amount')  num? refundedAmount,  List<Capture>? captures,  List<Refund>? refunds, @JsonKey(name: 'payment_collection')  PaymentCollection? paymentCollection, @JsonKey(name: 'payment_session')  PaymentSession? paymentSession)  $default,) {final _that = this;
 switch (_that) {
 case _Payment():
 return $default(_that.id,_that.amount,_that.authorizedAmount,_that.currencyCode,_that.providerId,_that.data,_that.createdAt,_that.updatedAt,_that.capturedAt,_that.canceledAt,_that.capturedAmount,_that.refundedAmount,_that.captures,_that.refunds,_that.paymentCollection,_that.paymentSession);case _:
@@ -233,7 +233,7 @@ return $default(_that.id,_that.amount,_that.authorizedAmount,_that.currencyCode,
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  int amount, @JsonKey(name: 'authorized_amount')  int? authorizedAmount, @JsonKey(name: 'currency_code')  String currencyCode, @JsonKey(name: 'provider_id')  String providerId,  Map<String, dynamic>? data, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'captured_at')  DateTime? capturedAt, @JsonKey(name: 'canceled_at')  DateTime? canceledAt, @JsonKey(name: 'captured_amount')  int? capturedAmount, @JsonKey(name: 'refunded_amount')  int? refundedAmount,  List<Capture>? captures,  List<Refund>? refunds, @JsonKey(name: 'payment_collection')  PaymentCollection? paymentCollection, @JsonKey(name: 'payment_session')  PaymentSession? paymentSession)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  num amount, @JsonKey(name: 'authorized_amount')  num? authorizedAmount, @JsonKey(name: 'currency_code')  String currencyCode, @JsonKey(name: 'provider_id')  String providerId,  Map<String, dynamic>? data, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'captured_at')  DateTime? capturedAt, @JsonKey(name: 'canceled_at')  DateTime? canceledAt, @JsonKey(name: 'captured_amount')  num? capturedAmount, @JsonKey(name: 'refunded_amount')  num? refundedAmount,  List<Capture>? captures,  List<Refund>? refunds, @JsonKey(name: 'payment_collection')  PaymentCollection? paymentCollection, @JsonKey(name: 'payment_session')  PaymentSession? paymentSession)?  $default,) {final _that = this;
 switch (_that) {
 case _Payment() when $default != null:
 return $default(_that.id,_that.amount,_that.authorizedAmount,_that.currencyCode,_that.providerId,_that.data,_that.createdAt,_that.updatedAt,_that.capturedAt,_that.canceledAt,_that.capturedAmount,_that.refundedAmount,_that.captures,_that.refunds,_that.paymentCollection,_that.paymentSession);case _:
@@ -252,8 +252,8 @@ class _Payment implements Payment {
   factory _Payment.fromJson(Map<String, dynamic> json) => _$PaymentFromJson(json);
 
 @override final  String id;
-@override final  int amount;
-@override@JsonKey(name: 'authorized_amount') final  int? authorizedAmount;
+@override final  num amount;
+@override@JsonKey(name: 'authorized_amount') final  num? authorizedAmount;
 @override@JsonKey(name: 'currency_code') final  String currencyCode;
 @override@JsonKey(name: 'provider_id') final  String providerId;
  final  Map<String, dynamic>? _data;
@@ -269,8 +269,8 @@ class _Payment implements Payment {
 @override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
 @override@JsonKey(name: 'captured_at') final  DateTime? capturedAt;
 @override@JsonKey(name: 'canceled_at') final  DateTime? canceledAt;
-@override@JsonKey(name: 'captured_amount') final  int? capturedAmount;
-@override@JsonKey(name: 'refunded_amount') final  int? refundedAmount;
+@override@JsonKey(name: 'captured_amount') final  num? capturedAmount;
+@override@JsonKey(name: 'refunded_amount') final  num? refundedAmount;
  final  List<Capture>? _captures;
 @override List<Capture>? get captures {
   final value = _captures;
@@ -325,7 +325,7 @@ abstract mixin class _$PaymentCopyWith<$Res> implements $PaymentCopyWith<$Res> {
   factory _$PaymentCopyWith(_Payment value, $Res Function(_Payment) _then) = __$PaymentCopyWithImpl;
 @override @useResult
 $Res call({
- String id, int amount,@JsonKey(name: 'authorized_amount') int? authorizedAmount,@JsonKey(name: 'currency_code') String currencyCode,@JsonKey(name: 'provider_id') String providerId, Map<String, dynamic>? data,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'captured_at') DateTime? capturedAt,@JsonKey(name: 'canceled_at') DateTime? canceledAt,@JsonKey(name: 'captured_amount') int? capturedAmount,@JsonKey(name: 'refunded_amount') int? refundedAmount, List<Capture>? captures, List<Refund>? refunds,@JsonKey(name: 'payment_collection') PaymentCollection? paymentCollection,@JsonKey(name: 'payment_session') PaymentSession? paymentSession
+ String id, num amount,@JsonKey(name: 'authorized_amount') num? authorizedAmount,@JsonKey(name: 'currency_code') String currencyCode,@JsonKey(name: 'provider_id') String providerId, Map<String, dynamic>? data,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'captured_at') DateTime? capturedAt,@JsonKey(name: 'canceled_at') DateTime? canceledAt,@JsonKey(name: 'captured_amount') num? capturedAmount,@JsonKey(name: 'refunded_amount') num? refundedAmount, List<Capture>? captures, List<Refund>? refunds,@JsonKey(name: 'payment_collection') PaymentCollection? paymentCollection,@JsonKey(name: 'payment_session') PaymentSession? paymentSession
 });
 
 
@@ -346,8 +346,8 @@ class __$PaymentCopyWithImpl<$Res>
   return _then(_Payment(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,amount: null == amount ? _self.amount : amount // ignore: cast_nullable_to_non_nullable
-as int,authorizedAmount: freezed == authorizedAmount ? _self.authorizedAmount : authorizedAmount // ignore: cast_nullable_to_non_nullable
-as int?,currencyCode: null == currencyCode ? _self.currencyCode : currencyCode // ignore: cast_nullable_to_non_nullable
+as num,authorizedAmount: freezed == authorizedAmount ? _self.authorizedAmount : authorizedAmount // ignore: cast_nullable_to_non_nullable
+as num?,currencyCode: null == currencyCode ? _self.currencyCode : currencyCode // ignore: cast_nullable_to_non_nullable
 as String,providerId: null == providerId ? _self.providerId : providerId // ignore: cast_nullable_to_non_nullable
 as String,data: freezed == data ? _self._data : data // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
@@ -355,8 +355,8 @@ as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ig
 as DateTime?,capturedAt: freezed == capturedAt ? _self.capturedAt : capturedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,canceledAt: freezed == canceledAt ? _self.canceledAt : canceledAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,capturedAmount: freezed == capturedAmount ? _self.capturedAmount : capturedAmount // ignore: cast_nullable_to_non_nullable
-as int?,refundedAmount: freezed == refundedAmount ? _self.refundedAmount : refundedAmount // ignore: cast_nullable_to_non_nullable
-as int?,captures: freezed == captures ? _self._captures : captures // ignore: cast_nullable_to_non_nullable
+as num?,refundedAmount: freezed == refundedAmount ? _self.refundedAmount : refundedAmount // ignore: cast_nullable_to_non_nullable
+as num?,captures: freezed == captures ? _self._captures : captures // ignore: cast_nullable_to_non_nullable
 as List<Capture>?,refunds: freezed == refunds ? _self._refunds : refunds // ignore: cast_nullable_to_non_nullable
 as List<Refund>?,paymentCollection: freezed == paymentCollection ? _self.paymentCollection : paymentCollection // ignore: cast_nullable_to_non_nullable
 as PaymentCollection?,paymentSession: freezed == paymentSession ? _self.paymentSession : paymentSession // ignore: cast_nullable_to_non_nullable

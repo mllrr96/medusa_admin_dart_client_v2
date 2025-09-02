@@ -9,7 +9,7 @@ abstract class SalesChannelsApi {
   factory SalesChannelsApi(Dio dio, {String baseUrl}) = _SalesChannelsApi;
 
   @GET('/admin/sales-channels')
-  Future<List<SalesChannel>> retrieveAll({
+  Future<SalesChannelListRes> retrieveAll({
     @Queries() Map<String, dynamic>? query,
   });
 

@@ -1,5 +1,5 @@
 import 'package:medusa_admin_dart_client/medusa_admin_dart_client_v2.dart';
-import 'package:medusa_admin_dart_client/src/features/notifications/data/models/notification_list_res.dart';
+import 'package:medusa_admin_dart_client/src/features/notifications/data/models/models.dart';
 import 'package:retrofit/retrofit.dart';
 import 'package:dio/dio.dart';
 
@@ -10,7 +10,7 @@ abstract class NotificationsApi {
   factory NotificationsApi(Dio dio, {String baseUrl}) = _NotificationsApi;
 
   @GET('/admin/notifications')
-  Future<NotificationListRes> getNotifications({
+  Future<NotificationsListRes> getNotifications({
     @Queries() Map<String, dynamic>? query,
   });
 

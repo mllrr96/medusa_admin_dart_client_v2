@@ -1,8 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:medusa_admin_dart_client/src/features/fulfillment_providers/data/models/fulfillment_provider.dart';
+import 'package:medusa_admin_dart_client/src/features/payments/data/models/payment_provider.dart';
+import 'package:medusa_admin_dart_client/src/core/models/country.dart';
 
-import '../../../../core/models/country.dart';
-import '../../../../core/models/payment_provider.dart';
 
 part 'region.freezed.dart';
 part 'region.g.dart';

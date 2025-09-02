@@ -2,10 +2,12 @@ import 'package:dio/dio.dart';
 import 'package:medusa_admin_dart_client/src/features/auth/data/repository/auth_repository.dart';
 import 'package:medusa_admin_dart_client/src/core/di/di.dart';
 import 'package:medusa_admin_dart_client/src/features/exchanges/data/repository/exchanges_repository.dart';
+import 'package:medusa_admin_dart_client/src/features/fulfillments/data/repository/fulfillments_repository.dart';
+import 'package:medusa_admin_dart_client/src/features/order_edits/data/repository/order_edits_repository.dart';
+import 'package:medusa_admin_dart_client/src/features/payments/data/repository/payments_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/sales_channels/data/repository/sales_channels_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/returns/data/repository/returns_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/notifications/data/repository/notifications_repository.dart';
-import 'package:medusa_admin_dart_client/src/features/notes/data/repository/notes_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/customer_groups/data/repository/customer_groups_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/draft_orders/data/repository/draft_orders_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/currencies/data/repository/currencies_repository.dart';
@@ -31,6 +33,14 @@ import 'src/features/product_types/data/repository/product_types_repository.dart
 import 'src/features/product_variants/data/repository/product_variants_repository.dart';
 import 'src/features/product_categories/data/repository/product_categories_repository.dart';
 
+export 'package:medusa_admin_dart_client/src/features/payments/data/models/models.dart';
+export 'package:medusa_admin_dart_client/src/features/payments/data/repository/payments_repository.dart';
+export 'package:medusa_admin_dart_client/src/features/fulfillments/data/models/models.dart';
+export 'package:medusa_admin_dart_client/src/features/order_edits/data/models/models.dart';
+export 'package:medusa_admin_dart_client/src/features/fulfillments/data/repository/fulfillments_repository.dart';
+export 'package:medusa_admin_dart_client/src/features/order_edits/data/repository/order_edits_repository.dart';
+export 'package:medusa_admin_dart_client/src/features/sales_channels/data/models/models.dart';
+export 'package:medusa_admin_dart_client/src/features/return_reasons/data/models/models.dart';
 export 'package:medusa_admin_dart_client/src/features/shipping_profiles/data/models/models.dart';
 export 'package:medusa_admin_dart_client/src/features/tax_rates/data/models/models.dart';
 export 'package:medusa_admin_dart_client/src/features/products/data/models/models.dart';
@@ -50,7 +60,6 @@ export 'package:medusa_admin_dart_client/src/features/discounts/data/models/mode
 export 'package:medusa_admin_dart_client/src/features/draft_orders/data/models/models.dart';
 export 'package:medusa_admin_dart_client/src/features/gift_cards/data/models/models.dart';
 export 'package:medusa_admin_dart_client/src/features/inventory_items/data/models/models.dart';
-export 'package:medusa_admin_dart_client/src/features/notes/data/models/models.dart';
 export 'package:medusa_admin_dart_client/src/features/notifications/data/models/models.dart';
 export 'package:medusa_admin_dart_client/src/features/orders/data/models/models.dart';
 export 'package:medusa_admin_dart_client/src/features/plugins/data/models/models.dart';
@@ -84,7 +93,6 @@ export 'package:medusa_admin_dart_client/src/features/store/data/repository/stor
 export 'package:medusa_admin_dart_client/src/features/plugins/data/repository/plugins_repository.dart';
 export 'package:medusa_admin_dart_client/src/features/orders/data/repository/orders_repository.dart';
 export 'package:medusa_admin_dart_client/src/features/notifications/data/repository/notifications_repository.dart';
-export 'package:medusa_admin_dart_client/src/features/notes/data/repository/notes_repository.dart';
 export 'package:medusa_admin_dart_client/src/features/inventory_items/data/repository/inventory_items_repository.dart';
 export 'package:medusa_admin_dart_client/src/features/draft_orders/data/repository/draft_orders_repository.dart';
 export 'package:medusa_admin_dart_client/src/features/customer_groups/data/repository/customer_groups_repository.dart';
@@ -128,9 +136,13 @@ class MedusaAdminV2 {
   AuthRepository get auth => getIt<AuthRepository>();
 
   ProductsRepository get products => getIt<ProductsRepository>();
+
   ProductCategoriesRepository get categories => getIt<ProductCategoriesRepository>();
 
   OrdersRepository get orders => getIt<OrdersRepository>();
+
+  OrderEditsRepository get orderEdits => getIt<OrderEditsRepository>();
+  FulfillmentsRepository get fulfillments => getIt<FulfillmentsRepository>();
 
   CustomersRepository get customers => getIt<CustomersRepository>();
 
@@ -144,11 +156,9 @@ class MedusaAdminV2 {
 
   PriceListsRepository get priceLists => getIt<PriceListsRepository>();
 
-  ShippingOptionsRepository get shippingOptions =>
-      getIt<ShippingOptionsRepository>();
+  ShippingOptionsRepository get shippingOptions => getIt<ShippingOptionsRepository>();
 
-  ShippingProfilesRepository get shippingProfiles =>
-      getIt<ShippingProfilesRepository>();
+  ShippingProfilesRepository get shippingProfiles => getIt<ShippingProfilesRepository>();
 
   UsersRepository get users => getIt<UsersRepository>();
 
@@ -162,10 +172,8 @@ class MedusaAdminV2 {
 
   DraftOrdersRepository get draftOrders => getIt<DraftOrdersRepository>();
 
-  CustomerGroupsRepository get customerGroups =>
-      getIt<CustomerGroupsRepository>();
-
-  NotesRepository get notes => getIt<NotesRepository>();
+  CustomerGroupsRepository get customerGroups => getIt<CustomerGroupsRepository>();
+  PaymentsRepository get payments => getIt<PaymentsRepository>();
 
   NotificationsRepository get notifications => getIt<NotificationsRepository>();
 
@@ -183,8 +191,7 @@ class MedusaAdminV2 {
 
   ProductTypesRepository get productTypes => getIt<ProductTypesRepository>();
 
-  ProductVariantsRepository get productVariants =>
-      getIt<ProductVariantsRepository>();
+  ProductVariantsRepository get productVariants => getIt<ProductVariantsRepository>();
 
   ExchangesRepository get exchanges => getIt<ExchangesRepository>();
 }

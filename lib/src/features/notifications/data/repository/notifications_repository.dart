@@ -1,13 +1,12 @@
-import 'package:medusa_admin_dart_client/medusa_admin_dart_client_v2.dart';
 import 'package:medusa_admin_dart_client/src/features/notifications/data/api/notifications_api.dart';
-import 'package:medusa_admin_dart_client/src/features/notifications/data/models/notification_list_res.dart';
+import 'package:medusa_admin_dart_client/src/features/notifications/data/models/models.dart';
 
 class NotificationsRepository {
   final NotificationsApi _notificationsApi;
 
   NotificationsRepository(this._notificationsApi);
 
-  Future<NotificationListRes> list({
+  Future<NotificationsListRes> list({
     Map<String, dynamic>? query,
   }) async {
     return await _notificationsApi.getNotifications(query: query);

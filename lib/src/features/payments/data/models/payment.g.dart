@@ -8,8 +8,8 @@ part of 'payment.dart';
 
 _Payment _$PaymentFromJson(Map<String, dynamic> json) => _Payment(
   id: json['id'] as String,
-  amount: (json['amount'] as num).toInt(),
-  authorizedAmount: (json['authorized_amount'] as num?)?.toInt(),
+  amount: json['amount'] as num,
+  authorizedAmount: json['authorized_amount'] as num?,
   currencyCode: json['currency_code'] as String,
   providerId: json['provider_id'] as String,
   data: json['data'] as Map<String, dynamic>?,
@@ -25,8 +25,8 @@ _Payment _$PaymentFromJson(Map<String, dynamic> json) => _Payment(
   canceledAt: json['canceled_at'] == null
       ? null
       : DateTime.parse(json['canceled_at'] as String),
-  capturedAmount: (json['captured_amount'] as num?)?.toInt(),
-  refundedAmount: (json['refunded_amount'] as num?)?.toInt(),
+  capturedAmount: json['captured_amount'] as num?,
+  refundedAmount: json['refunded_amount'] as num?,
   captures: (json['captures'] as List<dynamic>?)
       ?.map((e) => Capture.fromJson(e as Map<String, dynamic>))
       .toList(),

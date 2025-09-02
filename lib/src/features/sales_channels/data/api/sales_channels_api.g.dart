@@ -18,14 +18,14 @@ class _SalesChannelsApi implements SalesChannelsApi {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<List<SalesChannel>> retrieveAll({Map<String, dynamic>? query}) async {
+  Future<SalesChannelListRes> retrieveAll({Map<String, dynamic>? query}) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     queryParameters.addAll(query ?? <String, dynamic>{});
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<List<SalesChannel>>(
+    final _options = _setStreamType<SalesChannelListRes>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -35,12 +35,10 @@ class _SalesChannelsApi implements SalesChannelsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<List<dynamic>>(_options);
-    late List<SalesChannel> _value;
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late SalesChannelListRes _value;
     try {
-      _value = _result.data!
-          .map((dynamic i) => SalesChannel.fromJson(i as Map<String, dynamic>))
-          .toList();
+      _value = SalesChannelListRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

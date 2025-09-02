@@ -16,6 +16,12 @@ abstract class OrdersApi {
     @Queries() Map<String, dynamic>? query,
   });
 
+  @GET('/admin/orders/{id}/archive')
+  Future<OrderRes> archive(
+    @Path('id') String id, {
+    @Queries() Map<String, dynamic>? fields,
+  });
+
   @GET('/admin/orders')
   Future<OrdersListRes> list({
     @Queries() Map<String, dynamic>? query,

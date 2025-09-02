@@ -8,7 +8,7 @@ part of 'refund.dart';
 
 _Refund _$RefundFromJson(Map<String, dynamic> json) => _Refund(
   id: json['id'] as String,
-  amount: (json['amount'] as num).toInt(),
+  amount: json['amount'] as num,
   refundReasonId: json['refund_reason_id'] as String?,
   note: json['note'] as String?,
   createdAt: json['created_at'] == null

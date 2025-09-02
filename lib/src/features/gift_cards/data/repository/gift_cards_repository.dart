@@ -9,50 +9,20 @@ class GiftCardsRepository {
 
   GiftCardsRepository(this._giftCardsApi);
 
-  Future<GiftCardResponse> retrieve(String id) async {
-    try {
-      return await _giftCardsApi.retrieve(id: id);
-    } catch (e) {
-      rethrow;
-    }
-  }
+  Future<GiftCardResponse> retrieve(String id) async => await _giftCardsApi.retrieve(id: id);
 
   Future<GiftCardsListResponse> retrieveAll(
     Map<String, dynamic> queryParameters,
-  ) async {
-    try {
-      return await _giftCardsApi.retrieveAll(query: queryParameters);
-    } catch (e) {
-      rethrow;
-    }
-  }
+  ) async => await _giftCardsApi.retrieveAll(query: queryParameters);
 
   Future<GiftCardResponse> create(
     CreateGiftCardRequest giftCard,
-  ) async {
-    try {
-      return await _giftCardsApi.create(giftCard);
-    } catch (e) {
-      rethrow;
-    }
-  }
+  ) async => await _giftCardsApi.create(giftCard);
 
   Future<GiftCardResponse> update(
     String id,
     UpdateGiftCardRequest giftCard,
-  ) async {
-    try {
-      return await _giftCardsApi.update(id: id, payload: giftCard);
-    } catch (e) {
-      rethrow;
-    }
-  }
+  ) async => await _giftCardsApi.update(id: id, payload: giftCard);
 
-  Future<void> delete(String id) async {
-    try {
-      await _giftCardsApi.delete(id: id);
-    } catch (e) {
-      rethrow;
-    }
-  }
+  Future<void> delete(String id) async => await _giftCardsApi.delete(id: id);
 }

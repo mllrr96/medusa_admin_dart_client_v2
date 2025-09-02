@@ -1,7 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:medusa_admin_dart_client/src/features/fulfillments/data/models/create_fulfillment_req.dart';
-import 'package:medusa_admin_dart_client/src/features/fulfillments/data/models/create_shipment_req.dart';
-import 'package:medusa_admin_dart_client/src/features/fulfillments/data/models/fulfillment_res.dart';
+import 'package:medusa_admin_dart_client/src/features/fulfillments/data/models/models.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'fulfillments_api.g.dart';
