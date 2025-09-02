@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Order {
 
- String get id; int get version;@JsonKey(name: 'region_id') String get regionId;@JsonKey(name: 'customer_id') String get customerId;@JsonKey(name: 'sales_channel_id') String get salesChannelId; String get email;@JsonKey(name: 'currency_code') String get currencyCode;@JsonKey(name: 'display_id') int? get displayId; List<OrderLineItem> get items;@JsonKey(name: 'shipping_methods') List<OrderShippingMethod> get shippingMethods;@JsonKey(name: 'payment_status') PaymentStatus get paymentStatus;@JsonKey(name: 'fulfillment_status') FulfillmentStatus get fulfillmentStatus; List<dynamic>? get transactions; BaseOrderSummary get summary; Map<String, dynamic>? get metadata;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'original_item_total') num get originalItemTotal;@JsonKey(name: 'original_item_subtotal') num get originalItemSubtotal;@JsonKey(name: 'original_item_tax_total') num get originalItemTaxTotal;@JsonKey(name: 'item_total') num get itemTotal;@JsonKey(name: 'item_subtotal') num get itemSubtotal;@JsonKey(name: 'item_tax_total') num get itemTaxTotal;@JsonKey(name: 'original_total') num get originalTotal;@JsonKey(name: 'original_subtotal') num get originalSubtotal;@JsonKey(name: 'original_tax_total') num get originalTaxTotal; num get total; num get subtotal;@JsonKey(name: 'tax_total') num get taxTotal;@JsonKey(name: 'discount_total') num get discountTotal;@JsonKey(name: 'discount_tax_total') num get discountTaxTotal;@JsonKey(name: 'gift_card_total') num get giftCardTotal;@JsonKey(name: 'gift_card_tax_total') num get giftCardTaxTotal;@JsonKey(name: 'shipping_total') num get shippingTotal;@JsonKey(name: 'shipping_subtotal') num get shippingSubtotal;@JsonKey(name: 'shipping_tax_total') num get shippingTaxTotal;@JsonKey(name: 'original_shipping_total') num get originalShippingTotal;@JsonKey(name: 'original_shipping_subtotal') num get originalShippingSubtotal;@JsonKey(name: 'original_shipping_tax_total') num get originalShippingTaxTotal; OrderStatus get status; Region? get region;@JsonKey(name: 'credit_lines') List<OrderCreditLine>? get creditLines;@JsonKey(name: 'credit_line_total') num get creditLineTotal;@JsonKey(name: 'payment_collections') List<PaymentCollection>? get paymentCollections; List<OrderFulfillment>? get fulfillments;@JsonKey(name: 'sales_channel') SalesChannel? get salesChannel; Customer? get customer;@JsonKey(name: 'shipping_address') Address? get shippingAddress;@JsonKey(name: 'billing_address') Address? get billingAddress;
+ String get id; int get version;@JsonKey(name: 'region_id') String? get regionId;@JsonKey(name: 'customer_id') String? get customerId;@JsonKey(name: 'sales_channel_id') String? get salesChannelId; String get email;@JsonKey(name: 'currency_code') String? get currencyCode;@JsonKey(name: 'display_id') int? get displayId; List<OrderLineItem>? get items;@JsonKey(name: 'shipping_methods') List<OrderShippingMethod>? get shippingMethods;@JsonKey(name: 'payment_status') PaymentStatus? get paymentStatus;@JsonKey(name: 'fulfillment_status') FulfillmentStatus? get fulfillmentStatus; List<Transaction>? get transactions; BaseOrderSummary? get summary; Map<String, dynamic>? get metadata;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'original_item_total') num? get originalItemTotal;@JsonKey(name: 'original_item_subtotal') num? get originalItemSubtotal;@JsonKey(name: 'original_item_tax_total') num? get originalItemTaxTotal;@JsonKey(name: 'item_total') num? get itemTotal;@JsonKey(name: 'item_subtotal') num? get itemSubtotal;@JsonKey(name: 'item_tax_total') num? get itemTaxTotal;@JsonKey(name: 'original_total') num? get originalTotal;@JsonKey(name: 'original_subtotal') num? get originalSubtotal;@JsonKey(name: 'original_tax_total') num? get originalTaxTotal; num? get total; num? get subtotal;@JsonKey(name: 'tax_total') num? get taxTotal;@JsonKey(name: 'discount_total') num? get discountTotal;@JsonKey(name: 'discount_tax_total') num? get discountTaxTotal;@JsonKey(name: 'gift_card_total') num? get giftCardTotal;@JsonKey(name: 'gift_card_tax_total') num? get giftCardTaxTotal;@JsonKey(name: 'shipping_total') num? get shippingTotal;@JsonKey(name: 'shipping_subtotal') num? get shippingSubtotal;@JsonKey(name: 'shipping_tax_total') num? get shippingTaxTotal;@JsonKey(name: 'original_shipping_total') num? get originalShippingTotal;@JsonKey(name: 'original_shipping_subtotal') num? get originalShippingSubtotal;@JsonKey(name: 'original_shipping_tax_total') num? get originalShippingTaxTotal; OrderStatus get status; Region? get region;@JsonKey(name: 'credit_lines') List<OrderCreditLine>? get creditLines;@JsonKey(name: 'credit_line_total') num? get creditLineTotal;@JsonKey(name: 'payment_collections') List<PaymentCollection>? get paymentCollections; List<OrderFulfillment>? get fulfillments;@JsonKey(name: 'sales_channel') SalesChannel? get salesChannel; Customer? get customer;@JsonKey(name: 'shipping_address') Address? get shippingAddress;@JsonKey(name: 'billing_address') Address? get billingAddress;
 /// Create a copy of Order
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,11 +48,11 @@ abstract mixin class $OrderCopyWith<$Res>  {
   factory $OrderCopyWith(Order value, $Res Function(Order) _then) = _$OrderCopyWithImpl;
 @useResult
 $Res call({
- String id, int version,@JsonKey(name: 'region_id') String regionId,@JsonKey(name: 'customer_id') String customerId,@JsonKey(name: 'sales_channel_id') String salesChannelId, String email,@JsonKey(name: 'currency_code') String currencyCode,@JsonKey(name: 'display_id') int? displayId, List<OrderLineItem> items,@JsonKey(name: 'shipping_methods') List<OrderShippingMethod> shippingMethods,@JsonKey(name: 'payment_status') PaymentStatus paymentStatus,@JsonKey(name: 'fulfillment_status') FulfillmentStatus fulfillmentStatus, List<dynamic>? transactions, BaseOrderSummary summary, Map<String, dynamic>? metadata,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'original_item_total') num originalItemTotal,@JsonKey(name: 'original_item_subtotal') num originalItemSubtotal,@JsonKey(name: 'original_item_tax_total') num originalItemTaxTotal,@JsonKey(name: 'item_total') num itemTotal,@JsonKey(name: 'item_subtotal') num itemSubtotal,@JsonKey(name: 'item_tax_total') num itemTaxTotal,@JsonKey(name: 'original_total') num originalTotal,@JsonKey(name: 'original_subtotal') num originalSubtotal,@JsonKey(name: 'original_tax_total') num originalTaxTotal, num total, num subtotal,@JsonKey(name: 'tax_total') num taxTotal,@JsonKey(name: 'discount_total') num discountTotal,@JsonKey(name: 'discount_tax_total') num discountTaxTotal,@JsonKey(name: 'gift_card_total') num giftCardTotal,@JsonKey(name: 'gift_card_tax_total') num giftCardTaxTotal,@JsonKey(name: 'shipping_total') num shippingTotal,@JsonKey(name: 'shipping_subtotal') num shippingSubtotal,@JsonKey(name: 'shipping_tax_total') num shippingTaxTotal,@JsonKey(name: 'original_shipping_total') num originalShippingTotal,@JsonKey(name: 'original_shipping_subtotal') num originalShippingSubtotal,@JsonKey(name: 'original_shipping_tax_total') num originalShippingTaxTotal, OrderStatus status, Region? region,@JsonKey(name: 'credit_lines') List<OrderCreditLine>? creditLines,@JsonKey(name: 'credit_line_total') num creditLineTotal,@JsonKey(name: 'payment_collections') List<PaymentCollection>? paymentCollections, List<OrderFulfillment>? fulfillments,@JsonKey(name: 'sales_channel') SalesChannel? salesChannel, Customer? customer,@JsonKey(name: 'shipping_address') Address? shippingAddress,@JsonKey(name: 'billing_address') Address? billingAddress
+ String id, int version,@JsonKey(name: 'region_id') String? regionId,@JsonKey(name: 'customer_id') String? customerId,@JsonKey(name: 'sales_channel_id') String? salesChannelId, String email,@JsonKey(name: 'currency_code') String? currencyCode,@JsonKey(name: 'display_id') int? displayId, List<OrderLineItem>? items,@JsonKey(name: 'shipping_methods') List<OrderShippingMethod>? shippingMethods,@JsonKey(name: 'payment_status') PaymentStatus? paymentStatus,@JsonKey(name: 'fulfillment_status') FulfillmentStatus? fulfillmentStatus, List<Transaction>? transactions, BaseOrderSummary? summary, Map<String, dynamic>? metadata,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'original_item_total') num? originalItemTotal,@JsonKey(name: 'original_item_subtotal') num? originalItemSubtotal,@JsonKey(name: 'original_item_tax_total') num? originalItemTaxTotal,@JsonKey(name: 'item_total') num? itemTotal,@JsonKey(name: 'item_subtotal') num? itemSubtotal,@JsonKey(name: 'item_tax_total') num? itemTaxTotal,@JsonKey(name: 'original_total') num? originalTotal,@JsonKey(name: 'original_subtotal') num? originalSubtotal,@JsonKey(name: 'original_tax_total') num? originalTaxTotal, num? total, num? subtotal,@JsonKey(name: 'tax_total') num? taxTotal,@JsonKey(name: 'discount_total') num? discountTotal,@JsonKey(name: 'discount_tax_total') num? discountTaxTotal,@JsonKey(name: 'gift_card_total') num? giftCardTotal,@JsonKey(name: 'gift_card_tax_total') num? giftCardTaxTotal,@JsonKey(name: 'shipping_total') num? shippingTotal,@JsonKey(name: 'shipping_subtotal') num? shippingSubtotal,@JsonKey(name: 'shipping_tax_total') num? shippingTaxTotal,@JsonKey(name: 'original_shipping_total') num? originalShippingTotal,@JsonKey(name: 'original_shipping_subtotal') num? originalShippingSubtotal,@JsonKey(name: 'original_shipping_tax_total') num? originalShippingTaxTotal, OrderStatus status, Region? region,@JsonKey(name: 'credit_lines') List<OrderCreditLine>? creditLines,@JsonKey(name: 'credit_line_total') num? creditLineTotal,@JsonKey(name: 'payment_collections') List<PaymentCollection>? paymentCollections, List<OrderFulfillment>? fulfillments,@JsonKey(name: 'sales_channel') SalesChannel? salesChannel, Customer? customer,@JsonKey(name: 'shipping_address') Address? shippingAddress,@JsonKey(name: 'billing_address') Address? billingAddress
 });
 
 
-$BaseOrderSummaryCopyWith<$Res> get summary;$RegionCopyWith<$Res>? get region;$SalesChannelCopyWith<$Res>? get salesChannel;$CustomerCopyWith<$Res>? get customer;$AddressCopyWith<$Res>? get shippingAddress;$AddressCopyWith<$Res>? get billingAddress;
+$BaseOrderSummaryCopyWith<$Res>? get summary;$RegionCopyWith<$Res>? get region;$SalesChannelCopyWith<$Res>? get salesChannel;$CustomerCopyWith<$Res>? get customer;$AddressCopyWith<$Res>? get shippingAddress;$AddressCopyWith<$Res>? get billingAddress;
 
 }
 /// @nodoc
@@ -65,52 +65,52 @@ class _$OrderCopyWithImpl<$Res>
 
 /// Create a copy of Order
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? version = null,Object? regionId = null,Object? customerId = null,Object? salesChannelId = null,Object? email = null,Object? currencyCode = null,Object? displayId = freezed,Object? items = null,Object? shippingMethods = null,Object? paymentStatus = null,Object? fulfillmentStatus = null,Object? transactions = freezed,Object? summary = null,Object? metadata = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? originalItemTotal = null,Object? originalItemSubtotal = null,Object? originalItemTaxTotal = null,Object? itemTotal = null,Object? itemSubtotal = null,Object? itemTaxTotal = null,Object? originalTotal = null,Object? originalSubtotal = null,Object? originalTaxTotal = null,Object? total = null,Object? subtotal = null,Object? taxTotal = null,Object? discountTotal = null,Object? discountTaxTotal = null,Object? giftCardTotal = null,Object? giftCardTaxTotal = null,Object? shippingTotal = null,Object? shippingSubtotal = null,Object? shippingTaxTotal = null,Object? originalShippingTotal = null,Object? originalShippingSubtotal = null,Object? originalShippingTaxTotal = null,Object? status = null,Object? region = freezed,Object? creditLines = freezed,Object? creditLineTotal = null,Object? paymentCollections = freezed,Object? fulfillments = freezed,Object? salesChannel = freezed,Object? customer = freezed,Object? shippingAddress = freezed,Object? billingAddress = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? version = null,Object? regionId = freezed,Object? customerId = freezed,Object? salesChannelId = freezed,Object? email = null,Object? currencyCode = freezed,Object? displayId = freezed,Object? items = freezed,Object? shippingMethods = freezed,Object? paymentStatus = freezed,Object? fulfillmentStatus = freezed,Object? transactions = freezed,Object? summary = freezed,Object? metadata = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? originalItemTotal = freezed,Object? originalItemSubtotal = freezed,Object? originalItemTaxTotal = freezed,Object? itemTotal = freezed,Object? itemSubtotal = freezed,Object? itemTaxTotal = freezed,Object? originalTotal = freezed,Object? originalSubtotal = freezed,Object? originalTaxTotal = freezed,Object? total = freezed,Object? subtotal = freezed,Object? taxTotal = freezed,Object? discountTotal = freezed,Object? discountTaxTotal = freezed,Object? giftCardTotal = freezed,Object? giftCardTaxTotal = freezed,Object? shippingTotal = freezed,Object? shippingSubtotal = freezed,Object? shippingTaxTotal = freezed,Object? originalShippingTotal = freezed,Object? originalShippingSubtotal = freezed,Object? originalShippingTaxTotal = freezed,Object? status = null,Object? region = freezed,Object? creditLines = freezed,Object? creditLineTotal = freezed,Object? paymentCollections = freezed,Object? fulfillments = freezed,Object? salesChannel = freezed,Object? customer = freezed,Object? shippingAddress = freezed,Object? billingAddress = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,version: null == version ? _self.version : version // ignore: cast_nullable_to_non_nullable
-as int,regionId: null == regionId ? _self.regionId : regionId // ignore: cast_nullable_to_non_nullable
-as String,customerId: null == customerId ? _self.customerId : customerId // ignore: cast_nullable_to_non_nullable
-as String,salesChannelId: null == salesChannelId ? _self.salesChannelId : salesChannelId // ignore: cast_nullable_to_non_nullable
-as String,email: null == email ? _self.email : email // ignore: cast_nullable_to_non_nullable
-as String,currencyCode: null == currencyCode ? _self.currencyCode : currencyCode // ignore: cast_nullable_to_non_nullable
-as String,displayId: freezed == displayId ? _self.displayId : displayId // ignore: cast_nullable_to_non_nullable
-as int?,items: null == items ? _self.items : items // ignore: cast_nullable_to_non_nullable
-as List<OrderLineItem>,shippingMethods: null == shippingMethods ? _self.shippingMethods : shippingMethods // ignore: cast_nullable_to_non_nullable
-as List<OrderShippingMethod>,paymentStatus: null == paymentStatus ? _self.paymentStatus : paymentStatus // ignore: cast_nullable_to_non_nullable
-as PaymentStatus,fulfillmentStatus: null == fulfillmentStatus ? _self.fulfillmentStatus : fulfillmentStatus // ignore: cast_nullable_to_non_nullable
-as FulfillmentStatus,transactions: freezed == transactions ? _self.transactions : transactions // ignore: cast_nullable_to_non_nullable
-as List<dynamic>?,summary: null == summary ? _self.summary : summary // ignore: cast_nullable_to_non_nullable
-as BaseOrderSummary,metadata: freezed == metadata ? _self.metadata : metadata // ignore: cast_nullable_to_non_nullable
+as int,regionId: freezed == regionId ? _self.regionId : regionId // ignore: cast_nullable_to_non_nullable
+as String?,customerId: freezed == customerId ? _self.customerId : customerId // ignore: cast_nullable_to_non_nullable
+as String?,salesChannelId: freezed == salesChannelId ? _self.salesChannelId : salesChannelId // ignore: cast_nullable_to_non_nullable
+as String?,email: null == email ? _self.email : email // ignore: cast_nullable_to_non_nullable
+as String,currencyCode: freezed == currencyCode ? _self.currencyCode : currencyCode // ignore: cast_nullable_to_non_nullable
+as String?,displayId: freezed == displayId ? _self.displayId : displayId // ignore: cast_nullable_to_non_nullable
+as int?,items: freezed == items ? _self.items : items // ignore: cast_nullable_to_non_nullable
+as List<OrderLineItem>?,shippingMethods: freezed == shippingMethods ? _self.shippingMethods : shippingMethods // ignore: cast_nullable_to_non_nullable
+as List<OrderShippingMethod>?,paymentStatus: freezed == paymentStatus ? _self.paymentStatus : paymentStatus // ignore: cast_nullable_to_non_nullable
+as PaymentStatus?,fulfillmentStatus: freezed == fulfillmentStatus ? _self.fulfillmentStatus : fulfillmentStatus // ignore: cast_nullable_to_non_nullable
+as FulfillmentStatus?,transactions: freezed == transactions ? _self.transactions : transactions // ignore: cast_nullable_to_non_nullable
+as List<Transaction>?,summary: freezed == summary ? _self.summary : summary // ignore: cast_nullable_to_non_nullable
+as BaseOrderSummary?,metadata: freezed == metadata ? _self.metadata : metadata // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DateTime?,originalItemTotal: null == originalItemTotal ? _self.originalItemTotal : originalItemTotal // ignore: cast_nullable_to_non_nullable
-as num,originalItemSubtotal: null == originalItemSubtotal ? _self.originalItemSubtotal : originalItemSubtotal // ignore: cast_nullable_to_non_nullable
-as num,originalItemTaxTotal: null == originalItemTaxTotal ? _self.originalItemTaxTotal : originalItemTaxTotal // ignore: cast_nullable_to_non_nullable
-as num,itemTotal: null == itemTotal ? _self.itemTotal : itemTotal // ignore: cast_nullable_to_non_nullable
-as num,itemSubtotal: null == itemSubtotal ? _self.itemSubtotal : itemSubtotal // ignore: cast_nullable_to_non_nullable
-as num,itemTaxTotal: null == itemTaxTotal ? _self.itemTaxTotal : itemTaxTotal // ignore: cast_nullable_to_non_nullable
-as num,originalTotal: null == originalTotal ? _self.originalTotal : originalTotal // ignore: cast_nullable_to_non_nullable
-as num,originalSubtotal: null == originalSubtotal ? _self.originalSubtotal : originalSubtotal // ignore: cast_nullable_to_non_nullable
-as num,originalTaxTotal: null == originalTaxTotal ? _self.originalTaxTotal : originalTaxTotal // ignore: cast_nullable_to_non_nullable
-as num,total: null == total ? _self.total : total // ignore: cast_nullable_to_non_nullable
-as num,subtotal: null == subtotal ? _self.subtotal : subtotal // ignore: cast_nullable_to_non_nullable
-as num,taxTotal: null == taxTotal ? _self.taxTotal : taxTotal // ignore: cast_nullable_to_non_nullable
-as num,discountTotal: null == discountTotal ? _self.discountTotal : discountTotal // ignore: cast_nullable_to_non_nullable
-as num,discountTaxTotal: null == discountTaxTotal ? _self.discountTaxTotal : discountTaxTotal // ignore: cast_nullable_to_non_nullable
-as num,giftCardTotal: null == giftCardTotal ? _self.giftCardTotal : giftCardTotal // ignore: cast_nullable_to_non_nullable
-as num,giftCardTaxTotal: null == giftCardTaxTotal ? _self.giftCardTaxTotal : giftCardTaxTotal // ignore: cast_nullable_to_non_nullable
-as num,shippingTotal: null == shippingTotal ? _self.shippingTotal : shippingTotal // ignore: cast_nullable_to_non_nullable
-as num,shippingSubtotal: null == shippingSubtotal ? _self.shippingSubtotal : shippingSubtotal // ignore: cast_nullable_to_non_nullable
-as num,shippingTaxTotal: null == shippingTaxTotal ? _self.shippingTaxTotal : shippingTaxTotal // ignore: cast_nullable_to_non_nullable
-as num,originalShippingTotal: null == originalShippingTotal ? _self.originalShippingTotal : originalShippingTotal // ignore: cast_nullable_to_non_nullable
-as num,originalShippingSubtotal: null == originalShippingSubtotal ? _self.originalShippingSubtotal : originalShippingSubtotal // ignore: cast_nullable_to_non_nullable
-as num,originalShippingTaxTotal: null == originalShippingTaxTotal ? _self.originalShippingTaxTotal : originalShippingTaxTotal // ignore: cast_nullable_to_non_nullable
-as num,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
+as DateTime?,originalItemTotal: freezed == originalItemTotal ? _self.originalItemTotal : originalItemTotal // ignore: cast_nullable_to_non_nullable
+as num?,originalItemSubtotal: freezed == originalItemSubtotal ? _self.originalItemSubtotal : originalItemSubtotal // ignore: cast_nullable_to_non_nullable
+as num?,originalItemTaxTotal: freezed == originalItemTaxTotal ? _self.originalItemTaxTotal : originalItemTaxTotal // ignore: cast_nullable_to_non_nullable
+as num?,itemTotal: freezed == itemTotal ? _self.itemTotal : itemTotal // ignore: cast_nullable_to_non_nullable
+as num?,itemSubtotal: freezed == itemSubtotal ? _self.itemSubtotal : itemSubtotal // ignore: cast_nullable_to_non_nullable
+as num?,itemTaxTotal: freezed == itemTaxTotal ? _self.itemTaxTotal : itemTaxTotal // ignore: cast_nullable_to_non_nullable
+as num?,originalTotal: freezed == originalTotal ? _self.originalTotal : originalTotal // ignore: cast_nullable_to_non_nullable
+as num?,originalSubtotal: freezed == originalSubtotal ? _self.originalSubtotal : originalSubtotal // ignore: cast_nullable_to_non_nullable
+as num?,originalTaxTotal: freezed == originalTaxTotal ? _self.originalTaxTotal : originalTaxTotal // ignore: cast_nullable_to_non_nullable
+as num?,total: freezed == total ? _self.total : total // ignore: cast_nullable_to_non_nullable
+as num?,subtotal: freezed == subtotal ? _self.subtotal : subtotal // ignore: cast_nullable_to_non_nullable
+as num?,taxTotal: freezed == taxTotal ? _self.taxTotal : taxTotal // ignore: cast_nullable_to_non_nullable
+as num?,discountTotal: freezed == discountTotal ? _self.discountTotal : discountTotal // ignore: cast_nullable_to_non_nullable
+as num?,discountTaxTotal: freezed == discountTaxTotal ? _self.discountTaxTotal : discountTaxTotal // ignore: cast_nullable_to_non_nullable
+as num?,giftCardTotal: freezed == giftCardTotal ? _self.giftCardTotal : giftCardTotal // ignore: cast_nullable_to_non_nullable
+as num?,giftCardTaxTotal: freezed == giftCardTaxTotal ? _self.giftCardTaxTotal : giftCardTaxTotal // ignore: cast_nullable_to_non_nullable
+as num?,shippingTotal: freezed == shippingTotal ? _self.shippingTotal : shippingTotal // ignore: cast_nullable_to_non_nullable
+as num?,shippingSubtotal: freezed == shippingSubtotal ? _self.shippingSubtotal : shippingSubtotal // ignore: cast_nullable_to_non_nullable
+as num?,shippingTaxTotal: freezed == shippingTaxTotal ? _self.shippingTaxTotal : shippingTaxTotal // ignore: cast_nullable_to_non_nullable
+as num?,originalShippingTotal: freezed == originalShippingTotal ? _self.originalShippingTotal : originalShippingTotal // ignore: cast_nullable_to_non_nullable
+as num?,originalShippingSubtotal: freezed == originalShippingSubtotal ? _self.originalShippingSubtotal : originalShippingSubtotal // ignore: cast_nullable_to_non_nullable
+as num?,originalShippingTaxTotal: freezed == originalShippingTaxTotal ? _self.originalShippingTaxTotal : originalShippingTaxTotal // ignore: cast_nullable_to_non_nullable
+as num?,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as OrderStatus,region: freezed == region ? _self.region : region // ignore: cast_nullable_to_non_nullable
 as Region?,creditLines: freezed == creditLines ? _self.creditLines : creditLines // ignore: cast_nullable_to_non_nullable
-as List<OrderCreditLine>?,creditLineTotal: null == creditLineTotal ? _self.creditLineTotal : creditLineTotal // ignore: cast_nullable_to_non_nullable
-as num,paymentCollections: freezed == paymentCollections ? _self.paymentCollections : paymentCollections // ignore: cast_nullable_to_non_nullable
+as List<OrderCreditLine>?,creditLineTotal: freezed == creditLineTotal ? _self.creditLineTotal : creditLineTotal // ignore: cast_nullable_to_non_nullable
+as num?,paymentCollections: freezed == paymentCollections ? _self.paymentCollections : paymentCollections // ignore: cast_nullable_to_non_nullable
 as List<PaymentCollection>?,fulfillments: freezed == fulfillments ? _self.fulfillments : fulfillments // ignore: cast_nullable_to_non_nullable
 as List<OrderFulfillment>?,salesChannel: freezed == salesChannel ? _self.salesChannel : salesChannel // ignore: cast_nullable_to_non_nullable
 as SalesChannel?,customer: freezed == customer ? _self.customer : customer // ignore: cast_nullable_to_non_nullable
@@ -123,9 +123,12 @@ as Address?,
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$BaseOrderSummaryCopyWith<$Res> get summary {
-  
-  return $BaseOrderSummaryCopyWith<$Res>(_self.summary, (value) {
+$BaseOrderSummaryCopyWith<$Res>? get summary {
+    if (_self.summary == null) {
+    return null;
+  }
+
+  return $BaseOrderSummaryCopyWith<$Res>(_self.summary!, (value) {
     return _then(_self.copyWith(summary: value));
   });
 }/// Create a copy of Order
@@ -270,7 +273,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  int version, @JsonKey(name: 'region_id')  String regionId, @JsonKey(name: 'customer_id')  String customerId, @JsonKey(name: 'sales_channel_id')  String salesChannelId,  String email, @JsonKey(name: 'currency_code')  String currencyCode, @JsonKey(name: 'display_id')  int? displayId,  List<OrderLineItem> items, @JsonKey(name: 'shipping_methods')  List<OrderShippingMethod> shippingMethods, @JsonKey(name: 'payment_status')  PaymentStatus paymentStatus, @JsonKey(name: 'fulfillment_status')  FulfillmentStatus fulfillmentStatus,  List<dynamic>? transactions,  BaseOrderSummary summary,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'original_item_total')  num originalItemTotal, @JsonKey(name: 'original_item_subtotal')  num originalItemSubtotal, @JsonKey(name: 'original_item_tax_total')  num originalItemTaxTotal, @JsonKey(name: 'item_total')  num itemTotal, @JsonKey(name: 'item_subtotal')  num itemSubtotal, @JsonKey(name: 'item_tax_total')  num itemTaxTotal, @JsonKey(name: 'original_total')  num originalTotal, @JsonKey(name: 'original_subtotal')  num originalSubtotal, @JsonKey(name: 'original_tax_total')  num originalTaxTotal,  num total,  num subtotal, @JsonKey(name: 'tax_total')  num taxTotal, @JsonKey(name: 'discount_total')  num discountTotal, @JsonKey(name: 'discount_tax_total')  num discountTaxTotal, @JsonKey(name: 'gift_card_total')  num giftCardTotal, @JsonKey(name: 'gift_card_tax_total')  num giftCardTaxTotal, @JsonKey(name: 'shipping_total')  num shippingTotal, @JsonKey(name: 'shipping_subtotal')  num shippingSubtotal, @JsonKey(name: 'shipping_tax_total')  num shippingTaxTotal, @JsonKey(name: 'original_shipping_total')  num originalShippingTotal, @JsonKey(name: 'original_shipping_subtotal')  num originalShippingSubtotal, @JsonKey(name: 'original_shipping_tax_total')  num originalShippingTaxTotal,  OrderStatus status,  Region? region, @JsonKey(name: 'credit_lines')  List<OrderCreditLine>? creditLines, @JsonKey(name: 'credit_line_total')  num creditLineTotal, @JsonKey(name: 'payment_collections')  List<PaymentCollection>? paymentCollections,  List<OrderFulfillment>? fulfillments, @JsonKey(name: 'sales_channel')  SalesChannel? salesChannel,  Customer? customer, @JsonKey(name: 'shipping_address')  Address? shippingAddress, @JsonKey(name: 'billing_address')  Address? billingAddress)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  int version, @JsonKey(name: 'region_id')  String? regionId, @JsonKey(name: 'customer_id')  String? customerId, @JsonKey(name: 'sales_channel_id')  String? salesChannelId,  String email, @JsonKey(name: 'currency_code')  String? currencyCode, @JsonKey(name: 'display_id')  int? displayId,  List<OrderLineItem>? items, @JsonKey(name: 'shipping_methods')  List<OrderShippingMethod>? shippingMethods, @JsonKey(name: 'payment_status')  PaymentStatus? paymentStatus, @JsonKey(name: 'fulfillment_status')  FulfillmentStatus? fulfillmentStatus,  List<Transaction>? transactions,  BaseOrderSummary? summary,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'original_item_total')  num? originalItemTotal, @JsonKey(name: 'original_item_subtotal')  num? originalItemSubtotal, @JsonKey(name: 'original_item_tax_total')  num? originalItemTaxTotal, @JsonKey(name: 'item_total')  num? itemTotal, @JsonKey(name: 'item_subtotal')  num? itemSubtotal, @JsonKey(name: 'item_tax_total')  num? itemTaxTotal, @JsonKey(name: 'original_total')  num? originalTotal, @JsonKey(name: 'original_subtotal')  num? originalSubtotal, @JsonKey(name: 'original_tax_total')  num? originalTaxTotal,  num? total,  num? subtotal, @JsonKey(name: 'tax_total')  num? taxTotal, @JsonKey(name: 'discount_total')  num? discountTotal, @JsonKey(name: 'discount_tax_total')  num? discountTaxTotal, @JsonKey(name: 'gift_card_total')  num? giftCardTotal, @JsonKey(name: 'gift_card_tax_total')  num? giftCardTaxTotal, @JsonKey(name: 'shipping_total')  num? shippingTotal, @JsonKey(name: 'shipping_subtotal')  num? shippingSubtotal, @JsonKey(name: 'shipping_tax_total')  num? shippingTaxTotal, @JsonKey(name: 'original_shipping_total')  num? originalShippingTotal, @JsonKey(name: 'original_shipping_subtotal')  num? originalShippingSubtotal, @JsonKey(name: 'original_shipping_tax_total')  num? originalShippingTaxTotal,  OrderStatus status,  Region? region, @JsonKey(name: 'credit_lines')  List<OrderCreditLine>? creditLines, @JsonKey(name: 'credit_line_total')  num? creditLineTotal, @JsonKey(name: 'payment_collections')  List<PaymentCollection>? paymentCollections,  List<OrderFulfillment>? fulfillments, @JsonKey(name: 'sales_channel')  SalesChannel? salesChannel,  Customer? customer, @JsonKey(name: 'shipping_address')  Address? shippingAddress, @JsonKey(name: 'billing_address')  Address? billingAddress)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Order() when $default != null:
 return $default(_that.id,_that.version,_that.regionId,_that.customerId,_that.salesChannelId,_that.email,_that.currencyCode,_that.displayId,_that.items,_that.shippingMethods,_that.paymentStatus,_that.fulfillmentStatus,_that.transactions,_that.summary,_that.metadata,_that.createdAt,_that.updatedAt,_that.originalItemTotal,_that.originalItemSubtotal,_that.originalItemTaxTotal,_that.itemTotal,_that.itemSubtotal,_that.itemTaxTotal,_that.originalTotal,_that.originalSubtotal,_that.originalTaxTotal,_that.total,_that.subtotal,_that.taxTotal,_that.discountTotal,_that.discountTaxTotal,_that.giftCardTotal,_that.giftCardTaxTotal,_that.shippingTotal,_that.shippingSubtotal,_that.shippingTaxTotal,_that.originalShippingTotal,_that.originalShippingSubtotal,_that.originalShippingTaxTotal,_that.status,_that.region,_that.creditLines,_that.creditLineTotal,_that.paymentCollections,_that.fulfillments,_that.salesChannel,_that.customer,_that.shippingAddress,_that.billingAddress);case _:
@@ -291,7 +294,7 @@ return $default(_that.id,_that.version,_that.regionId,_that.customerId,_that.sal
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  int version, @JsonKey(name: 'region_id')  String regionId, @JsonKey(name: 'customer_id')  String customerId, @JsonKey(name: 'sales_channel_id')  String salesChannelId,  String email, @JsonKey(name: 'currency_code')  String currencyCode, @JsonKey(name: 'display_id')  int? displayId,  List<OrderLineItem> items, @JsonKey(name: 'shipping_methods')  List<OrderShippingMethod> shippingMethods, @JsonKey(name: 'payment_status')  PaymentStatus paymentStatus, @JsonKey(name: 'fulfillment_status')  FulfillmentStatus fulfillmentStatus,  List<dynamic>? transactions,  BaseOrderSummary summary,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'original_item_total')  num originalItemTotal, @JsonKey(name: 'original_item_subtotal')  num originalItemSubtotal, @JsonKey(name: 'original_item_tax_total')  num originalItemTaxTotal, @JsonKey(name: 'item_total')  num itemTotal, @JsonKey(name: 'item_subtotal')  num itemSubtotal, @JsonKey(name: 'item_tax_total')  num itemTaxTotal, @JsonKey(name: 'original_total')  num originalTotal, @JsonKey(name: 'original_subtotal')  num originalSubtotal, @JsonKey(name: 'original_tax_total')  num originalTaxTotal,  num total,  num subtotal, @JsonKey(name: 'tax_total')  num taxTotal, @JsonKey(name: 'discount_total')  num discountTotal, @JsonKey(name: 'discount_tax_total')  num discountTaxTotal, @JsonKey(name: 'gift_card_total')  num giftCardTotal, @JsonKey(name: 'gift_card_tax_total')  num giftCardTaxTotal, @JsonKey(name: 'shipping_total')  num shippingTotal, @JsonKey(name: 'shipping_subtotal')  num shippingSubtotal, @JsonKey(name: 'shipping_tax_total')  num shippingTaxTotal, @JsonKey(name: 'original_shipping_total')  num originalShippingTotal, @JsonKey(name: 'original_shipping_subtotal')  num originalShippingSubtotal, @JsonKey(name: 'original_shipping_tax_total')  num originalShippingTaxTotal,  OrderStatus status,  Region? region, @JsonKey(name: 'credit_lines')  List<OrderCreditLine>? creditLines, @JsonKey(name: 'credit_line_total')  num creditLineTotal, @JsonKey(name: 'payment_collections')  List<PaymentCollection>? paymentCollections,  List<OrderFulfillment>? fulfillments, @JsonKey(name: 'sales_channel')  SalesChannel? salesChannel,  Customer? customer, @JsonKey(name: 'shipping_address')  Address? shippingAddress, @JsonKey(name: 'billing_address')  Address? billingAddress)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  int version, @JsonKey(name: 'region_id')  String? regionId, @JsonKey(name: 'customer_id')  String? customerId, @JsonKey(name: 'sales_channel_id')  String? salesChannelId,  String email, @JsonKey(name: 'currency_code')  String? currencyCode, @JsonKey(name: 'display_id')  int? displayId,  List<OrderLineItem>? items, @JsonKey(name: 'shipping_methods')  List<OrderShippingMethod>? shippingMethods, @JsonKey(name: 'payment_status')  PaymentStatus? paymentStatus, @JsonKey(name: 'fulfillment_status')  FulfillmentStatus? fulfillmentStatus,  List<Transaction>? transactions,  BaseOrderSummary? summary,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'original_item_total')  num? originalItemTotal, @JsonKey(name: 'original_item_subtotal')  num? originalItemSubtotal, @JsonKey(name: 'original_item_tax_total')  num? originalItemTaxTotal, @JsonKey(name: 'item_total')  num? itemTotal, @JsonKey(name: 'item_subtotal')  num? itemSubtotal, @JsonKey(name: 'item_tax_total')  num? itemTaxTotal, @JsonKey(name: 'original_total')  num? originalTotal, @JsonKey(name: 'original_subtotal')  num? originalSubtotal, @JsonKey(name: 'original_tax_total')  num? originalTaxTotal,  num? total,  num? subtotal, @JsonKey(name: 'tax_total')  num? taxTotal, @JsonKey(name: 'discount_total')  num? discountTotal, @JsonKey(name: 'discount_tax_total')  num? discountTaxTotal, @JsonKey(name: 'gift_card_total')  num? giftCardTotal, @JsonKey(name: 'gift_card_tax_total')  num? giftCardTaxTotal, @JsonKey(name: 'shipping_total')  num? shippingTotal, @JsonKey(name: 'shipping_subtotal')  num? shippingSubtotal, @JsonKey(name: 'shipping_tax_total')  num? shippingTaxTotal, @JsonKey(name: 'original_shipping_total')  num? originalShippingTotal, @JsonKey(name: 'original_shipping_subtotal')  num? originalShippingSubtotal, @JsonKey(name: 'original_shipping_tax_total')  num? originalShippingTaxTotal,  OrderStatus status,  Region? region, @JsonKey(name: 'credit_lines')  List<OrderCreditLine>? creditLines, @JsonKey(name: 'credit_line_total')  num? creditLineTotal, @JsonKey(name: 'payment_collections')  List<PaymentCollection>? paymentCollections,  List<OrderFulfillment>? fulfillments, @JsonKey(name: 'sales_channel')  SalesChannel? salesChannel,  Customer? customer, @JsonKey(name: 'shipping_address')  Address? shippingAddress, @JsonKey(name: 'billing_address')  Address? billingAddress)  $default,) {final _that = this;
 switch (_that) {
 case _Order():
 return $default(_that.id,_that.version,_that.regionId,_that.customerId,_that.salesChannelId,_that.email,_that.currencyCode,_that.displayId,_that.items,_that.shippingMethods,_that.paymentStatus,_that.fulfillmentStatus,_that.transactions,_that.summary,_that.metadata,_that.createdAt,_that.updatedAt,_that.originalItemTotal,_that.originalItemSubtotal,_that.originalItemTaxTotal,_that.itemTotal,_that.itemSubtotal,_that.itemTaxTotal,_that.originalTotal,_that.originalSubtotal,_that.originalTaxTotal,_that.total,_that.subtotal,_that.taxTotal,_that.discountTotal,_that.discountTaxTotal,_that.giftCardTotal,_that.giftCardTaxTotal,_that.shippingTotal,_that.shippingSubtotal,_that.shippingTaxTotal,_that.originalShippingTotal,_that.originalShippingSubtotal,_that.originalShippingTaxTotal,_that.status,_that.region,_that.creditLines,_that.creditLineTotal,_that.paymentCollections,_that.fulfillments,_that.salesChannel,_that.customer,_that.shippingAddress,_that.billingAddress);case _:
@@ -311,7 +314,7 @@ return $default(_that.id,_that.version,_that.regionId,_that.customerId,_that.sal
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  int version, @JsonKey(name: 'region_id')  String regionId, @JsonKey(name: 'customer_id')  String customerId, @JsonKey(name: 'sales_channel_id')  String salesChannelId,  String email, @JsonKey(name: 'currency_code')  String currencyCode, @JsonKey(name: 'display_id')  int? displayId,  List<OrderLineItem> items, @JsonKey(name: 'shipping_methods')  List<OrderShippingMethod> shippingMethods, @JsonKey(name: 'payment_status')  PaymentStatus paymentStatus, @JsonKey(name: 'fulfillment_status')  FulfillmentStatus fulfillmentStatus,  List<dynamic>? transactions,  BaseOrderSummary summary,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'original_item_total')  num originalItemTotal, @JsonKey(name: 'original_item_subtotal')  num originalItemSubtotal, @JsonKey(name: 'original_item_tax_total')  num originalItemTaxTotal, @JsonKey(name: 'item_total')  num itemTotal, @JsonKey(name: 'item_subtotal')  num itemSubtotal, @JsonKey(name: 'item_tax_total')  num itemTaxTotal, @JsonKey(name: 'original_total')  num originalTotal, @JsonKey(name: 'original_subtotal')  num originalSubtotal, @JsonKey(name: 'original_tax_total')  num originalTaxTotal,  num total,  num subtotal, @JsonKey(name: 'tax_total')  num taxTotal, @JsonKey(name: 'discount_total')  num discountTotal, @JsonKey(name: 'discount_tax_total')  num discountTaxTotal, @JsonKey(name: 'gift_card_total')  num giftCardTotal, @JsonKey(name: 'gift_card_tax_total')  num giftCardTaxTotal, @JsonKey(name: 'shipping_total')  num shippingTotal, @JsonKey(name: 'shipping_subtotal')  num shippingSubtotal, @JsonKey(name: 'shipping_tax_total')  num shippingTaxTotal, @JsonKey(name: 'original_shipping_total')  num originalShippingTotal, @JsonKey(name: 'original_shipping_subtotal')  num originalShippingSubtotal, @JsonKey(name: 'original_shipping_tax_total')  num originalShippingTaxTotal,  OrderStatus status,  Region? region, @JsonKey(name: 'credit_lines')  List<OrderCreditLine>? creditLines, @JsonKey(name: 'credit_line_total')  num creditLineTotal, @JsonKey(name: 'payment_collections')  List<PaymentCollection>? paymentCollections,  List<OrderFulfillment>? fulfillments, @JsonKey(name: 'sales_channel')  SalesChannel? salesChannel,  Customer? customer, @JsonKey(name: 'shipping_address')  Address? shippingAddress, @JsonKey(name: 'billing_address')  Address? billingAddress)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  int version, @JsonKey(name: 'region_id')  String? regionId, @JsonKey(name: 'customer_id')  String? customerId, @JsonKey(name: 'sales_channel_id')  String? salesChannelId,  String email, @JsonKey(name: 'currency_code')  String? currencyCode, @JsonKey(name: 'display_id')  int? displayId,  List<OrderLineItem>? items, @JsonKey(name: 'shipping_methods')  List<OrderShippingMethod>? shippingMethods, @JsonKey(name: 'payment_status')  PaymentStatus? paymentStatus, @JsonKey(name: 'fulfillment_status')  FulfillmentStatus? fulfillmentStatus,  List<Transaction>? transactions,  BaseOrderSummary? summary,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'original_item_total')  num? originalItemTotal, @JsonKey(name: 'original_item_subtotal')  num? originalItemSubtotal, @JsonKey(name: 'original_item_tax_total')  num? originalItemTaxTotal, @JsonKey(name: 'item_total')  num? itemTotal, @JsonKey(name: 'item_subtotal')  num? itemSubtotal, @JsonKey(name: 'item_tax_total')  num? itemTaxTotal, @JsonKey(name: 'original_total')  num? originalTotal, @JsonKey(name: 'original_subtotal')  num? originalSubtotal, @JsonKey(name: 'original_tax_total')  num? originalTaxTotal,  num? total,  num? subtotal, @JsonKey(name: 'tax_total')  num? taxTotal, @JsonKey(name: 'discount_total')  num? discountTotal, @JsonKey(name: 'discount_tax_total')  num? discountTaxTotal, @JsonKey(name: 'gift_card_total')  num? giftCardTotal, @JsonKey(name: 'gift_card_tax_total')  num? giftCardTaxTotal, @JsonKey(name: 'shipping_total')  num? shippingTotal, @JsonKey(name: 'shipping_subtotal')  num? shippingSubtotal, @JsonKey(name: 'shipping_tax_total')  num? shippingTaxTotal, @JsonKey(name: 'original_shipping_total')  num? originalShippingTotal, @JsonKey(name: 'original_shipping_subtotal')  num? originalShippingSubtotal, @JsonKey(name: 'original_shipping_tax_total')  num? originalShippingTaxTotal,  OrderStatus status,  Region? region, @JsonKey(name: 'credit_lines')  List<OrderCreditLine>? creditLines, @JsonKey(name: 'credit_line_total')  num? creditLineTotal, @JsonKey(name: 'payment_collections')  List<PaymentCollection>? paymentCollections,  List<OrderFulfillment>? fulfillments, @JsonKey(name: 'sales_channel')  SalesChannel? salesChannel,  Customer? customer, @JsonKey(name: 'shipping_address')  Address? shippingAddress, @JsonKey(name: 'billing_address')  Address? billingAddress)?  $default,) {final _that = this;
 switch (_that) {
 case _Order() when $default != null:
 return $default(_that.id,_that.version,_that.regionId,_that.customerId,_that.salesChannelId,_that.email,_that.currencyCode,_that.displayId,_that.items,_that.shippingMethods,_that.paymentStatus,_that.fulfillmentStatus,_that.transactions,_that.summary,_that.metadata,_that.createdAt,_that.updatedAt,_that.originalItemTotal,_that.originalItemSubtotal,_that.originalItemTaxTotal,_that.itemTotal,_that.itemSubtotal,_that.itemTaxTotal,_that.originalTotal,_that.originalSubtotal,_that.originalTaxTotal,_that.total,_that.subtotal,_that.taxTotal,_that.discountTotal,_that.discountTaxTotal,_that.giftCardTotal,_that.giftCardTaxTotal,_that.shippingTotal,_that.shippingSubtotal,_that.shippingTaxTotal,_that.originalShippingTotal,_that.originalShippingSubtotal,_that.originalShippingTaxTotal,_that.status,_that.region,_that.creditLines,_that.creditLineTotal,_that.paymentCollections,_that.fulfillments,_that.salesChannel,_that.customer,_that.shippingAddress,_that.billingAddress);case _:
@@ -326,35 +329,39 @@ return $default(_that.id,_that.version,_that.regionId,_that.customerId,_that.sal
 @JsonSerializable()
 
 class _Order implements Order {
-  const _Order({required this.id, required this.version, @JsonKey(name: 'region_id') required this.regionId, @JsonKey(name: 'customer_id') required this.customerId, @JsonKey(name: 'sales_channel_id') required this.salesChannelId, required this.email, @JsonKey(name: 'currency_code') required this.currencyCode, @JsonKey(name: 'display_id') this.displayId, required final  List<OrderLineItem> items, @JsonKey(name: 'shipping_methods') required final  List<OrderShippingMethod> shippingMethods, @JsonKey(name: 'payment_status') required this.paymentStatus, @JsonKey(name: 'fulfillment_status') required this.fulfillmentStatus, final  List<dynamic>? transactions, required this.summary, final  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'original_item_total') required this.originalItemTotal, @JsonKey(name: 'original_item_subtotal') required this.originalItemSubtotal, @JsonKey(name: 'original_item_tax_total') required this.originalItemTaxTotal, @JsonKey(name: 'item_total') required this.itemTotal, @JsonKey(name: 'item_subtotal') required this.itemSubtotal, @JsonKey(name: 'item_tax_total') required this.itemTaxTotal, @JsonKey(name: 'original_total') required this.originalTotal, @JsonKey(name: 'original_subtotal') required this.originalSubtotal, @JsonKey(name: 'original_tax_total') required this.originalTaxTotal, required this.total, required this.subtotal, @JsonKey(name: 'tax_total') required this.taxTotal, @JsonKey(name: 'discount_total') required this.discountTotal, @JsonKey(name: 'discount_tax_total') required this.discountTaxTotal, @JsonKey(name: 'gift_card_total') required this.giftCardTotal, @JsonKey(name: 'gift_card_tax_total') required this.giftCardTaxTotal, @JsonKey(name: 'shipping_total') required this.shippingTotal, @JsonKey(name: 'shipping_subtotal') required this.shippingSubtotal, @JsonKey(name: 'shipping_tax_total') required this.shippingTaxTotal, @JsonKey(name: 'original_shipping_total') required this.originalShippingTotal, @JsonKey(name: 'original_shipping_subtotal') required this.originalShippingSubtotal, @JsonKey(name: 'original_shipping_tax_total') required this.originalShippingTaxTotal, required this.status, this.region, @JsonKey(name: 'credit_lines') final  List<OrderCreditLine>? creditLines, @JsonKey(name: 'credit_line_total') required this.creditLineTotal, @JsonKey(name: 'payment_collections') final  List<PaymentCollection>? paymentCollections, final  List<OrderFulfillment>? fulfillments, @JsonKey(name: 'sales_channel') this.salesChannel, this.customer, @JsonKey(name: 'shipping_address') this.shippingAddress, @JsonKey(name: 'billing_address') this.billingAddress}): _items = items,_shippingMethods = shippingMethods,_transactions = transactions,_metadata = metadata,_creditLines = creditLines,_paymentCollections = paymentCollections,_fulfillments = fulfillments;
+  const _Order({required this.id, required this.version, @JsonKey(name: 'region_id') this.regionId, @JsonKey(name: 'customer_id') this.customerId, @JsonKey(name: 'sales_channel_id') this.salesChannelId, required this.email, @JsonKey(name: 'currency_code') this.currencyCode, @JsonKey(name: 'display_id') this.displayId, final  List<OrderLineItem>? items, @JsonKey(name: 'shipping_methods') final  List<OrderShippingMethod>? shippingMethods, @JsonKey(name: 'payment_status') this.paymentStatus, @JsonKey(name: 'fulfillment_status') this.fulfillmentStatus, final  List<Transaction>? transactions, this.summary, final  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'original_item_total') this.originalItemTotal, @JsonKey(name: 'original_item_subtotal') this.originalItemSubtotal, @JsonKey(name: 'original_item_tax_total') this.originalItemTaxTotal, @JsonKey(name: 'item_total') this.itemTotal, @JsonKey(name: 'item_subtotal') this.itemSubtotal, @JsonKey(name: 'item_tax_total') this.itemTaxTotal, @JsonKey(name: 'original_total') this.originalTotal, @JsonKey(name: 'original_subtotal') this.originalSubtotal, @JsonKey(name: 'original_tax_total') this.originalTaxTotal, this.total, this.subtotal, @JsonKey(name: 'tax_total') this.taxTotal, @JsonKey(name: 'discount_total') this.discountTotal, @JsonKey(name: 'discount_tax_total') this.discountTaxTotal, @JsonKey(name: 'gift_card_total') this.giftCardTotal, @JsonKey(name: 'gift_card_tax_total') this.giftCardTaxTotal, @JsonKey(name: 'shipping_total') this.shippingTotal, @JsonKey(name: 'shipping_subtotal') this.shippingSubtotal, @JsonKey(name: 'shipping_tax_total') this.shippingTaxTotal, @JsonKey(name: 'original_shipping_total') this.originalShippingTotal, @JsonKey(name: 'original_shipping_subtotal') this.originalShippingSubtotal, @JsonKey(name: 'original_shipping_tax_total') this.originalShippingTaxTotal, required this.status, this.region, @JsonKey(name: 'credit_lines') final  List<OrderCreditLine>? creditLines, @JsonKey(name: 'credit_line_total') this.creditLineTotal, @JsonKey(name: 'payment_collections') final  List<PaymentCollection>? paymentCollections, final  List<OrderFulfillment>? fulfillments, @JsonKey(name: 'sales_channel') this.salesChannel, this.customer, @JsonKey(name: 'shipping_address') this.shippingAddress, @JsonKey(name: 'billing_address') this.billingAddress}): _items = items,_shippingMethods = shippingMethods,_transactions = transactions,_metadata = metadata,_creditLines = creditLines,_paymentCollections = paymentCollections,_fulfillments = fulfillments;
   factory _Order.fromJson(Map<String, dynamic> json) => _$OrderFromJson(json);
 
 @override final  String id;
 @override final  int version;
-@override@JsonKey(name: 'region_id') final  String regionId;
-@override@JsonKey(name: 'customer_id') final  String customerId;
-@override@JsonKey(name: 'sales_channel_id') final  String salesChannelId;
+@override@JsonKey(name: 'region_id') final  String? regionId;
+@override@JsonKey(name: 'customer_id') final  String? customerId;
+@override@JsonKey(name: 'sales_channel_id') final  String? salesChannelId;
 @override final  String email;
-@override@JsonKey(name: 'currency_code') final  String currencyCode;
+@override@JsonKey(name: 'currency_code') final  String? currencyCode;
 @override@JsonKey(name: 'display_id') final  int? displayId;
- final  List<OrderLineItem> _items;
-@override List<OrderLineItem> get items {
+ final  List<OrderLineItem>? _items;
+@override List<OrderLineItem>? get items {
+  final value = _items;
+  if (value == null) return null;
   if (_items is EqualUnmodifiableListView) return _items;
   // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_items);
+  return EqualUnmodifiableListView(value);
 }
 
- final  List<OrderShippingMethod> _shippingMethods;
-@override@JsonKey(name: 'shipping_methods') List<OrderShippingMethod> get shippingMethods {
+ final  List<OrderShippingMethod>? _shippingMethods;
+@override@JsonKey(name: 'shipping_methods') List<OrderShippingMethod>? get shippingMethods {
+  final value = _shippingMethods;
+  if (value == null) return null;
   if (_shippingMethods is EqualUnmodifiableListView) return _shippingMethods;
   // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_shippingMethods);
+  return EqualUnmodifiableListView(value);
 }
 
-@override@JsonKey(name: 'payment_status') final  PaymentStatus paymentStatus;
-@override@JsonKey(name: 'fulfillment_status') final  FulfillmentStatus fulfillmentStatus;
- final  List<dynamic>? _transactions;
-@override List<dynamic>? get transactions {
+@override@JsonKey(name: 'payment_status') final  PaymentStatus? paymentStatus;
+@override@JsonKey(name: 'fulfillment_status') final  FulfillmentStatus? fulfillmentStatus;
+ final  List<Transaction>? _transactions;
+@override List<Transaction>? get transactions {
   final value = _transactions;
   if (value == null) return null;
   if (_transactions is EqualUnmodifiableListView) return _transactions;
@@ -362,7 +369,7 @@ class _Order implements Order {
   return EqualUnmodifiableListView(value);
 }
 
-@override final  BaseOrderSummary summary;
+@override final  BaseOrderSummary? summary;
  final  Map<String, dynamic>? _metadata;
 @override Map<String, dynamic>? get metadata {
   final value = _metadata;
@@ -374,28 +381,28 @@ class _Order implements Order {
 
 @override@JsonKey(name: 'created_at') final  DateTime? createdAt;
 @override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
-@override@JsonKey(name: 'original_item_total') final  num originalItemTotal;
-@override@JsonKey(name: 'original_item_subtotal') final  num originalItemSubtotal;
-@override@JsonKey(name: 'original_item_tax_total') final  num originalItemTaxTotal;
-@override@JsonKey(name: 'item_total') final  num itemTotal;
-@override@JsonKey(name: 'item_subtotal') final  num itemSubtotal;
-@override@JsonKey(name: 'item_tax_total') final  num itemTaxTotal;
-@override@JsonKey(name: 'original_total') final  num originalTotal;
-@override@JsonKey(name: 'original_subtotal') final  num originalSubtotal;
-@override@JsonKey(name: 'original_tax_total') final  num originalTaxTotal;
-@override final  num total;
-@override final  num subtotal;
-@override@JsonKey(name: 'tax_total') final  num taxTotal;
-@override@JsonKey(name: 'discount_total') final  num discountTotal;
-@override@JsonKey(name: 'discount_tax_total') final  num discountTaxTotal;
-@override@JsonKey(name: 'gift_card_total') final  num giftCardTotal;
-@override@JsonKey(name: 'gift_card_tax_total') final  num giftCardTaxTotal;
-@override@JsonKey(name: 'shipping_total') final  num shippingTotal;
-@override@JsonKey(name: 'shipping_subtotal') final  num shippingSubtotal;
-@override@JsonKey(name: 'shipping_tax_total') final  num shippingTaxTotal;
-@override@JsonKey(name: 'original_shipping_total') final  num originalShippingTotal;
-@override@JsonKey(name: 'original_shipping_subtotal') final  num originalShippingSubtotal;
-@override@JsonKey(name: 'original_shipping_tax_total') final  num originalShippingTaxTotal;
+@override@JsonKey(name: 'original_item_total') final  num? originalItemTotal;
+@override@JsonKey(name: 'original_item_subtotal') final  num? originalItemSubtotal;
+@override@JsonKey(name: 'original_item_tax_total') final  num? originalItemTaxTotal;
+@override@JsonKey(name: 'item_total') final  num? itemTotal;
+@override@JsonKey(name: 'item_subtotal') final  num? itemSubtotal;
+@override@JsonKey(name: 'item_tax_total') final  num? itemTaxTotal;
+@override@JsonKey(name: 'original_total') final  num? originalTotal;
+@override@JsonKey(name: 'original_subtotal') final  num? originalSubtotal;
+@override@JsonKey(name: 'original_tax_total') final  num? originalTaxTotal;
+@override final  num? total;
+@override final  num? subtotal;
+@override@JsonKey(name: 'tax_total') final  num? taxTotal;
+@override@JsonKey(name: 'discount_total') final  num? discountTotal;
+@override@JsonKey(name: 'discount_tax_total') final  num? discountTaxTotal;
+@override@JsonKey(name: 'gift_card_total') final  num? giftCardTotal;
+@override@JsonKey(name: 'gift_card_tax_total') final  num? giftCardTaxTotal;
+@override@JsonKey(name: 'shipping_total') final  num? shippingTotal;
+@override@JsonKey(name: 'shipping_subtotal') final  num? shippingSubtotal;
+@override@JsonKey(name: 'shipping_tax_total') final  num? shippingTaxTotal;
+@override@JsonKey(name: 'original_shipping_total') final  num? originalShippingTotal;
+@override@JsonKey(name: 'original_shipping_subtotal') final  num? originalShippingSubtotal;
+@override@JsonKey(name: 'original_shipping_tax_total') final  num? originalShippingTaxTotal;
 @override final  OrderStatus status;
 @override final  Region? region;
  final  List<OrderCreditLine>? _creditLines;
@@ -407,7 +414,7 @@ class _Order implements Order {
   return EqualUnmodifiableListView(value);
 }
 
-@override@JsonKey(name: 'credit_line_total') final  num creditLineTotal;
+@override@JsonKey(name: 'credit_line_total') final  num? creditLineTotal;
  final  List<PaymentCollection>? _paymentCollections;
 @override@JsonKey(name: 'payment_collections') List<PaymentCollection>? get paymentCollections {
   final value = _paymentCollections;
@@ -464,11 +471,11 @@ abstract mixin class _$OrderCopyWith<$Res> implements $OrderCopyWith<$Res> {
   factory _$OrderCopyWith(_Order value, $Res Function(_Order) _then) = __$OrderCopyWithImpl;
 @override @useResult
 $Res call({
- String id, int version,@JsonKey(name: 'region_id') String regionId,@JsonKey(name: 'customer_id') String customerId,@JsonKey(name: 'sales_channel_id') String salesChannelId, String email,@JsonKey(name: 'currency_code') String currencyCode,@JsonKey(name: 'display_id') int? displayId, List<OrderLineItem> items,@JsonKey(name: 'shipping_methods') List<OrderShippingMethod> shippingMethods,@JsonKey(name: 'payment_status') PaymentStatus paymentStatus,@JsonKey(name: 'fulfillment_status') FulfillmentStatus fulfillmentStatus, List<dynamic>? transactions, BaseOrderSummary summary, Map<String, dynamic>? metadata,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'original_item_total') num originalItemTotal,@JsonKey(name: 'original_item_subtotal') num originalItemSubtotal,@JsonKey(name: 'original_item_tax_total') num originalItemTaxTotal,@JsonKey(name: 'item_total') num itemTotal,@JsonKey(name: 'item_subtotal') num itemSubtotal,@JsonKey(name: 'item_tax_total') num itemTaxTotal,@JsonKey(name: 'original_total') num originalTotal,@JsonKey(name: 'original_subtotal') num originalSubtotal,@JsonKey(name: 'original_tax_total') num originalTaxTotal, num total, num subtotal,@JsonKey(name: 'tax_total') num taxTotal,@JsonKey(name: 'discount_total') num discountTotal,@JsonKey(name: 'discount_tax_total') num discountTaxTotal,@JsonKey(name: 'gift_card_total') num giftCardTotal,@JsonKey(name: 'gift_card_tax_total') num giftCardTaxTotal,@JsonKey(name: 'shipping_total') num shippingTotal,@JsonKey(name: 'shipping_subtotal') num shippingSubtotal,@JsonKey(name: 'shipping_tax_total') num shippingTaxTotal,@JsonKey(name: 'original_shipping_total') num originalShippingTotal,@JsonKey(name: 'original_shipping_subtotal') num originalShippingSubtotal,@JsonKey(name: 'original_shipping_tax_total') num originalShippingTaxTotal, OrderStatus status, Region? region,@JsonKey(name: 'credit_lines') List<OrderCreditLine>? creditLines,@JsonKey(name: 'credit_line_total') num creditLineTotal,@JsonKey(name: 'payment_collections') List<PaymentCollection>? paymentCollections, List<OrderFulfillment>? fulfillments,@JsonKey(name: 'sales_channel') SalesChannel? salesChannel, Customer? customer,@JsonKey(name: 'shipping_address') Address? shippingAddress,@JsonKey(name: 'billing_address') Address? billingAddress
+ String id, int version,@JsonKey(name: 'region_id') String? regionId,@JsonKey(name: 'customer_id') String? customerId,@JsonKey(name: 'sales_channel_id') String? salesChannelId, String email,@JsonKey(name: 'currency_code') String? currencyCode,@JsonKey(name: 'display_id') int? displayId, List<OrderLineItem>? items,@JsonKey(name: 'shipping_methods') List<OrderShippingMethod>? shippingMethods,@JsonKey(name: 'payment_status') PaymentStatus? paymentStatus,@JsonKey(name: 'fulfillment_status') FulfillmentStatus? fulfillmentStatus, List<Transaction>? transactions, BaseOrderSummary? summary, Map<String, dynamic>? metadata,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'original_item_total') num? originalItemTotal,@JsonKey(name: 'original_item_subtotal') num? originalItemSubtotal,@JsonKey(name: 'original_item_tax_total') num? originalItemTaxTotal,@JsonKey(name: 'item_total') num? itemTotal,@JsonKey(name: 'item_subtotal') num? itemSubtotal,@JsonKey(name: 'item_tax_total') num? itemTaxTotal,@JsonKey(name: 'original_total') num? originalTotal,@JsonKey(name: 'original_subtotal') num? originalSubtotal,@JsonKey(name: 'original_tax_total') num? originalTaxTotal, num? total, num? subtotal,@JsonKey(name: 'tax_total') num? taxTotal,@JsonKey(name: 'discount_total') num? discountTotal,@JsonKey(name: 'discount_tax_total') num? discountTaxTotal,@JsonKey(name: 'gift_card_total') num? giftCardTotal,@JsonKey(name: 'gift_card_tax_total') num? giftCardTaxTotal,@JsonKey(name: 'shipping_total') num? shippingTotal,@JsonKey(name: 'shipping_subtotal') num? shippingSubtotal,@JsonKey(name: 'shipping_tax_total') num? shippingTaxTotal,@JsonKey(name: 'original_shipping_total') num? originalShippingTotal,@JsonKey(name: 'original_shipping_subtotal') num? originalShippingSubtotal,@JsonKey(name: 'original_shipping_tax_total') num? originalShippingTaxTotal, OrderStatus status, Region? region,@JsonKey(name: 'credit_lines') List<OrderCreditLine>? creditLines,@JsonKey(name: 'credit_line_total') num? creditLineTotal,@JsonKey(name: 'payment_collections') List<PaymentCollection>? paymentCollections, List<OrderFulfillment>? fulfillments,@JsonKey(name: 'sales_channel') SalesChannel? salesChannel, Customer? customer,@JsonKey(name: 'shipping_address') Address? shippingAddress,@JsonKey(name: 'billing_address') Address? billingAddress
 });
 
 
-@override $BaseOrderSummaryCopyWith<$Res> get summary;@override $RegionCopyWith<$Res>? get region;@override $SalesChannelCopyWith<$Res>? get salesChannel;@override $CustomerCopyWith<$Res>? get customer;@override $AddressCopyWith<$Res>? get shippingAddress;@override $AddressCopyWith<$Res>? get billingAddress;
+@override $BaseOrderSummaryCopyWith<$Res>? get summary;@override $RegionCopyWith<$Res>? get region;@override $SalesChannelCopyWith<$Res>? get salesChannel;@override $CustomerCopyWith<$Res>? get customer;@override $AddressCopyWith<$Res>? get shippingAddress;@override $AddressCopyWith<$Res>? get billingAddress;
 
 }
 /// @nodoc
@@ -481,52 +488,52 @@ class __$OrderCopyWithImpl<$Res>
 
 /// Create a copy of Order
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? version = null,Object? regionId = null,Object? customerId = null,Object? salesChannelId = null,Object? email = null,Object? currencyCode = null,Object? displayId = freezed,Object? items = null,Object? shippingMethods = null,Object? paymentStatus = null,Object? fulfillmentStatus = null,Object? transactions = freezed,Object? summary = null,Object? metadata = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? originalItemTotal = null,Object? originalItemSubtotal = null,Object? originalItemTaxTotal = null,Object? itemTotal = null,Object? itemSubtotal = null,Object? itemTaxTotal = null,Object? originalTotal = null,Object? originalSubtotal = null,Object? originalTaxTotal = null,Object? total = null,Object? subtotal = null,Object? taxTotal = null,Object? discountTotal = null,Object? discountTaxTotal = null,Object? giftCardTotal = null,Object? giftCardTaxTotal = null,Object? shippingTotal = null,Object? shippingSubtotal = null,Object? shippingTaxTotal = null,Object? originalShippingTotal = null,Object? originalShippingSubtotal = null,Object? originalShippingTaxTotal = null,Object? status = null,Object? region = freezed,Object? creditLines = freezed,Object? creditLineTotal = null,Object? paymentCollections = freezed,Object? fulfillments = freezed,Object? salesChannel = freezed,Object? customer = freezed,Object? shippingAddress = freezed,Object? billingAddress = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? version = null,Object? regionId = freezed,Object? customerId = freezed,Object? salesChannelId = freezed,Object? email = null,Object? currencyCode = freezed,Object? displayId = freezed,Object? items = freezed,Object? shippingMethods = freezed,Object? paymentStatus = freezed,Object? fulfillmentStatus = freezed,Object? transactions = freezed,Object? summary = freezed,Object? metadata = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? originalItemTotal = freezed,Object? originalItemSubtotal = freezed,Object? originalItemTaxTotal = freezed,Object? itemTotal = freezed,Object? itemSubtotal = freezed,Object? itemTaxTotal = freezed,Object? originalTotal = freezed,Object? originalSubtotal = freezed,Object? originalTaxTotal = freezed,Object? total = freezed,Object? subtotal = freezed,Object? taxTotal = freezed,Object? discountTotal = freezed,Object? discountTaxTotal = freezed,Object? giftCardTotal = freezed,Object? giftCardTaxTotal = freezed,Object? shippingTotal = freezed,Object? shippingSubtotal = freezed,Object? shippingTaxTotal = freezed,Object? originalShippingTotal = freezed,Object? originalShippingSubtotal = freezed,Object? originalShippingTaxTotal = freezed,Object? status = null,Object? region = freezed,Object? creditLines = freezed,Object? creditLineTotal = freezed,Object? paymentCollections = freezed,Object? fulfillments = freezed,Object? salesChannel = freezed,Object? customer = freezed,Object? shippingAddress = freezed,Object? billingAddress = freezed,}) {
   return _then(_Order(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,version: null == version ? _self.version : version // ignore: cast_nullable_to_non_nullable
-as int,regionId: null == regionId ? _self.regionId : regionId // ignore: cast_nullable_to_non_nullable
-as String,customerId: null == customerId ? _self.customerId : customerId // ignore: cast_nullable_to_non_nullable
-as String,salesChannelId: null == salesChannelId ? _self.salesChannelId : salesChannelId // ignore: cast_nullable_to_non_nullable
-as String,email: null == email ? _self.email : email // ignore: cast_nullable_to_non_nullable
-as String,currencyCode: null == currencyCode ? _self.currencyCode : currencyCode // ignore: cast_nullable_to_non_nullable
-as String,displayId: freezed == displayId ? _self.displayId : displayId // ignore: cast_nullable_to_non_nullable
-as int?,items: null == items ? _self._items : items // ignore: cast_nullable_to_non_nullable
-as List<OrderLineItem>,shippingMethods: null == shippingMethods ? _self._shippingMethods : shippingMethods // ignore: cast_nullable_to_non_nullable
-as List<OrderShippingMethod>,paymentStatus: null == paymentStatus ? _self.paymentStatus : paymentStatus // ignore: cast_nullable_to_non_nullable
-as PaymentStatus,fulfillmentStatus: null == fulfillmentStatus ? _self.fulfillmentStatus : fulfillmentStatus // ignore: cast_nullable_to_non_nullable
-as FulfillmentStatus,transactions: freezed == transactions ? _self._transactions : transactions // ignore: cast_nullable_to_non_nullable
-as List<dynamic>?,summary: null == summary ? _self.summary : summary // ignore: cast_nullable_to_non_nullable
-as BaseOrderSummary,metadata: freezed == metadata ? _self._metadata : metadata // ignore: cast_nullable_to_non_nullable
+as int,regionId: freezed == regionId ? _self.regionId : regionId // ignore: cast_nullable_to_non_nullable
+as String?,customerId: freezed == customerId ? _self.customerId : customerId // ignore: cast_nullable_to_non_nullable
+as String?,salesChannelId: freezed == salesChannelId ? _self.salesChannelId : salesChannelId // ignore: cast_nullable_to_non_nullable
+as String?,email: null == email ? _self.email : email // ignore: cast_nullable_to_non_nullable
+as String,currencyCode: freezed == currencyCode ? _self.currencyCode : currencyCode // ignore: cast_nullable_to_non_nullable
+as String?,displayId: freezed == displayId ? _self.displayId : displayId // ignore: cast_nullable_to_non_nullable
+as int?,items: freezed == items ? _self._items : items // ignore: cast_nullable_to_non_nullable
+as List<OrderLineItem>?,shippingMethods: freezed == shippingMethods ? _self._shippingMethods : shippingMethods // ignore: cast_nullable_to_non_nullable
+as List<OrderShippingMethod>?,paymentStatus: freezed == paymentStatus ? _self.paymentStatus : paymentStatus // ignore: cast_nullable_to_non_nullable
+as PaymentStatus?,fulfillmentStatus: freezed == fulfillmentStatus ? _self.fulfillmentStatus : fulfillmentStatus // ignore: cast_nullable_to_non_nullable
+as FulfillmentStatus?,transactions: freezed == transactions ? _self._transactions : transactions // ignore: cast_nullable_to_non_nullable
+as List<Transaction>?,summary: freezed == summary ? _self.summary : summary // ignore: cast_nullable_to_non_nullable
+as BaseOrderSummary?,metadata: freezed == metadata ? _self._metadata : metadata // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
-as DateTime?,originalItemTotal: null == originalItemTotal ? _self.originalItemTotal : originalItemTotal // ignore: cast_nullable_to_non_nullable
-as num,originalItemSubtotal: null == originalItemSubtotal ? _self.originalItemSubtotal : originalItemSubtotal // ignore: cast_nullable_to_non_nullable
-as num,originalItemTaxTotal: null == originalItemTaxTotal ? _self.originalItemTaxTotal : originalItemTaxTotal // ignore: cast_nullable_to_non_nullable
-as num,itemTotal: null == itemTotal ? _self.itemTotal : itemTotal // ignore: cast_nullable_to_non_nullable
-as num,itemSubtotal: null == itemSubtotal ? _self.itemSubtotal : itemSubtotal // ignore: cast_nullable_to_non_nullable
-as num,itemTaxTotal: null == itemTaxTotal ? _self.itemTaxTotal : itemTaxTotal // ignore: cast_nullable_to_non_nullable
-as num,originalTotal: null == originalTotal ? _self.originalTotal : originalTotal // ignore: cast_nullable_to_non_nullable
-as num,originalSubtotal: null == originalSubtotal ? _self.originalSubtotal : originalSubtotal // ignore: cast_nullable_to_non_nullable
-as num,originalTaxTotal: null == originalTaxTotal ? _self.originalTaxTotal : originalTaxTotal // ignore: cast_nullable_to_non_nullable
-as num,total: null == total ? _self.total : total // ignore: cast_nullable_to_non_nullable
-as num,subtotal: null == subtotal ? _self.subtotal : subtotal // ignore: cast_nullable_to_non_nullable
-as num,taxTotal: null == taxTotal ? _self.taxTotal : taxTotal // ignore: cast_nullable_to_non_nullable
-as num,discountTotal: null == discountTotal ? _self.discountTotal : discountTotal // ignore: cast_nullable_to_non_nullable
-as num,discountTaxTotal: null == discountTaxTotal ? _self.discountTaxTotal : discountTaxTotal // ignore: cast_nullable_to_non_nullable
-as num,giftCardTotal: null == giftCardTotal ? _self.giftCardTotal : giftCardTotal // ignore: cast_nullable_to_non_nullable
-as num,giftCardTaxTotal: null == giftCardTaxTotal ? _self.giftCardTaxTotal : giftCardTaxTotal // ignore: cast_nullable_to_non_nullable
-as num,shippingTotal: null == shippingTotal ? _self.shippingTotal : shippingTotal // ignore: cast_nullable_to_non_nullable
-as num,shippingSubtotal: null == shippingSubtotal ? _self.shippingSubtotal : shippingSubtotal // ignore: cast_nullable_to_non_nullable
-as num,shippingTaxTotal: null == shippingTaxTotal ? _self.shippingTaxTotal : shippingTaxTotal // ignore: cast_nullable_to_non_nullable
-as num,originalShippingTotal: null == originalShippingTotal ? _self.originalShippingTotal : originalShippingTotal // ignore: cast_nullable_to_non_nullable
-as num,originalShippingSubtotal: null == originalShippingSubtotal ? _self.originalShippingSubtotal : originalShippingSubtotal // ignore: cast_nullable_to_non_nullable
-as num,originalShippingTaxTotal: null == originalShippingTaxTotal ? _self.originalShippingTaxTotal : originalShippingTaxTotal // ignore: cast_nullable_to_non_nullable
-as num,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
+as DateTime?,originalItemTotal: freezed == originalItemTotal ? _self.originalItemTotal : originalItemTotal // ignore: cast_nullable_to_non_nullable
+as num?,originalItemSubtotal: freezed == originalItemSubtotal ? _self.originalItemSubtotal : originalItemSubtotal // ignore: cast_nullable_to_non_nullable
+as num?,originalItemTaxTotal: freezed == originalItemTaxTotal ? _self.originalItemTaxTotal : originalItemTaxTotal // ignore: cast_nullable_to_non_nullable
+as num?,itemTotal: freezed == itemTotal ? _self.itemTotal : itemTotal // ignore: cast_nullable_to_non_nullable
+as num?,itemSubtotal: freezed == itemSubtotal ? _self.itemSubtotal : itemSubtotal // ignore: cast_nullable_to_non_nullable
+as num?,itemTaxTotal: freezed == itemTaxTotal ? _self.itemTaxTotal : itemTaxTotal // ignore: cast_nullable_to_non_nullable
+as num?,originalTotal: freezed == originalTotal ? _self.originalTotal : originalTotal // ignore: cast_nullable_to_non_nullable
+as num?,originalSubtotal: freezed == originalSubtotal ? _self.originalSubtotal : originalSubtotal // ignore: cast_nullable_to_non_nullable
+as num?,originalTaxTotal: freezed == originalTaxTotal ? _self.originalTaxTotal : originalTaxTotal // ignore: cast_nullable_to_non_nullable
+as num?,total: freezed == total ? _self.total : total // ignore: cast_nullable_to_non_nullable
+as num?,subtotal: freezed == subtotal ? _self.subtotal : subtotal // ignore: cast_nullable_to_non_nullable
+as num?,taxTotal: freezed == taxTotal ? _self.taxTotal : taxTotal // ignore: cast_nullable_to_non_nullable
+as num?,discountTotal: freezed == discountTotal ? _self.discountTotal : discountTotal // ignore: cast_nullable_to_non_nullable
+as num?,discountTaxTotal: freezed == discountTaxTotal ? _self.discountTaxTotal : discountTaxTotal // ignore: cast_nullable_to_non_nullable
+as num?,giftCardTotal: freezed == giftCardTotal ? _self.giftCardTotal : giftCardTotal // ignore: cast_nullable_to_non_nullable
+as num?,giftCardTaxTotal: freezed == giftCardTaxTotal ? _self.giftCardTaxTotal : giftCardTaxTotal // ignore: cast_nullable_to_non_nullable
+as num?,shippingTotal: freezed == shippingTotal ? _self.shippingTotal : shippingTotal // ignore: cast_nullable_to_non_nullable
+as num?,shippingSubtotal: freezed == shippingSubtotal ? _self.shippingSubtotal : shippingSubtotal // ignore: cast_nullable_to_non_nullable
+as num?,shippingTaxTotal: freezed == shippingTaxTotal ? _self.shippingTaxTotal : shippingTaxTotal // ignore: cast_nullable_to_non_nullable
+as num?,originalShippingTotal: freezed == originalShippingTotal ? _self.originalShippingTotal : originalShippingTotal // ignore: cast_nullable_to_non_nullable
+as num?,originalShippingSubtotal: freezed == originalShippingSubtotal ? _self.originalShippingSubtotal : originalShippingSubtotal // ignore: cast_nullable_to_non_nullable
+as num?,originalShippingTaxTotal: freezed == originalShippingTaxTotal ? _self.originalShippingTaxTotal : originalShippingTaxTotal // ignore: cast_nullable_to_non_nullable
+as num?,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
 as OrderStatus,region: freezed == region ? _self.region : region // ignore: cast_nullable_to_non_nullable
 as Region?,creditLines: freezed == creditLines ? _self._creditLines : creditLines // ignore: cast_nullable_to_non_nullable
-as List<OrderCreditLine>?,creditLineTotal: null == creditLineTotal ? _self.creditLineTotal : creditLineTotal // ignore: cast_nullable_to_non_nullable
-as num,paymentCollections: freezed == paymentCollections ? _self._paymentCollections : paymentCollections // ignore: cast_nullable_to_non_nullable
+as List<OrderCreditLine>?,creditLineTotal: freezed == creditLineTotal ? _self.creditLineTotal : creditLineTotal // ignore: cast_nullable_to_non_nullable
+as num?,paymentCollections: freezed == paymentCollections ? _self._paymentCollections : paymentCollections // ignore: cast_nullable_to_non_nullable
 as List<PaymentCollection>?,fulfillments: freezed == fulfillments ? _self._fulfillments : fulfillments // ignore: cast_nullable_to_non_nullable
 as List<OrderFulfillment>?,salesChannel: freezed == salesChannel ? _self.salesChannel : salesChannel // ignore: cast_nullable_to_non_nullable
 as SalesChannel?,customer: freezed == customer ? _self.customer : customer // ignore: cast_nullable_to_non_nullable
@@ -540,9 +547,12 @@ as Address?,
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$BaseOrderSummaryCopyWith<$Res> get summary {
-  
-  return $BaseOrderSummaryCopyWith<$Res>(_self.summary, (value) {
+$BaseOrderSummaryCopyWith<$Res>? get summary {
+    if (_self.summary == null) {
+    return null;
+  }
+
+  return $BaseOrderSummaryCopyWith<$Res>(_self.summary!, (value) {
     return _then(_self.copyWith(summary: value));
   });
 }/// Create a copy of Order

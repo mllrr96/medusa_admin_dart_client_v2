@@ -9,25 +9,32 @@ part of 'order.dart';
 _Order _$OrderFromJson(Map<String, dynamic> json) => _Order(
   id: json['id'] as String,
   version: (json['version'] as num).toInt(),
-  regionId: json['region_id'] as String,
-  customerId: json['customer_id'] as String,
-  salesChannelId: json['sales_channel_id'] as String,
+  regionId: json['region_id'] as String?,
+  customerId: json['customer_id'] as String?,
+  salesChannelId: json['sales_channel_id'] as String?,
   email: json['email'] as String,
-  currencyCode: json['currency_code'] as String,
+  currencyCode: json['currency_code'] as String?,
   displayId: (json['display_id'] as num?)?.toInt(),
-  items: (json['items'] as List<dynamic>)
-      .map((e) => OrderLineItem.fromJson(e as Map<String, dynamic>))
+  items: (json['items'] as List<dynamic>?)
+      ?.map((e) => OrderLineItem.fromJson(e as Map<String, dynamic>))
       .toList(),
-  shippingMethods: (json['shipping_methods'] as List<dynamic>)
-      .map((e) => OrderShippingMethod.fromJson(e as Map<String, dynamic>))
+  shippingMethods: (json['shipping_methods'] as List<dynamic>?)
+      ?.map((e) => OrderShippingMethod.fromJson(e as Map<String, dynamic>))
       .toList(),
-  paymentStatus: $enumDecode(_$PaymentStatusEnumMap, json['payment_status']),
-  fulfillmentStatus: $enumDecode(
+  paymentStatus: $enumDecodeNullable(
+    _$PaymentStatusEnumMap,
+    json['payment_status'],
+  ),
+  fulfillmentStatus: $enumDecodeNullable(
     _$FulfillmentStatusEnumMap,
     json['fulfillment_status'],
   ),
-  transactions: json['transactions'] as List<dynamic>?,
-  summary: BaseOrderSummary.fromJson(json['summary'] as Map<String, dynamic>),
+  transactions: (json['transactions'] as List<dynamic>?)
+      ?.map((e) => Transaction.fromJson(e as Map<String, dynamic>))
+      .toList(),
+  summary: json['summary'] == null
+      ? null
+      : BaseOrderSummary.fromJson(json['summary'] as Map<String, dynamic>),
   metadata: json['metadata'] as Map<String, dynamic>?,
   createdAt: json['created_at'] == null
       ? null
@@ -35,28 +42,28 @@ _Order _$OrderFromJson(Map<String, dynamic> json) => _Order(
   updatedAt: json['updated_at'] == null
       ? null
       : DateTime.parse(json['updated_at'] as String),
-  originalItemTotal: json['original_item_total'] as num,
-  originalItemSubtotal: json['original_item_subtotal'] as num,
-  originalItemTaxTotal: json['original_item_tax_total'] as num,
-  itemTotal: json['item_total'] as num,
-  itemSubtotal: json['item_subtotal'] as num,
-  itemTaxTotal: json['item_tax_total'] as num,
-  originalTotal: json['original_total'] as num,
-  originalSubtotal: json['original_subtotal'] as num,
-  originalTaxTotal: json['original_tax_total'] as num,
-  total: json['total'] as num,
-  subtotal: json['subtotal'] as num,
-  taxTotal: json['tax_total'] as num,
-  discountTotal: json['discount_total'] as num,
-  discountTaxTotal: json['discount_tax_total'] as num,
-  giftCardTotal: json['gift_card_total'] as num,
-  giftCardTaxTotal: json['gift_card_tax_total'] as num,
-  shippingTotal: json['shipping_total'] as num,
-  shippingSubtotal: json['shipping_subtotal'] as num,
-  shippingTaxTotal: json['shipping_tax_total'] as num,
-  originalShippingTotal: json['original_shipping_total'] as num,
-  originalShippingSubtotal: json['original_shipping_subtotal'] as num,
-  originalShippingTaxTotal: json['original_shipping_tax_total'] as num,
+  originalItemTotal: json['original_item_total'] as num?,
+  originalItemSubtotal: json['original_item_subtotal'] as num?,
+  originalItemTaxTotal: json['original_item_tax_total'] as num?,
+  itemTotal: json['item_total'] as num?,
+  itemSubtotal: json['item_subtotal'] as num?,
+  itemTaxTotal: json['item_tax_total'] as num?,
+  originalTotal: json['original_total'] as num?,
+  originalSubtotal: json['original_subtotal'] as num?,
+  originalTaxTotal: json['original_tax_total'] as num?,
+  total: json['total'] as num?,
+  subtotal: json['subtotal'] as num?,
+  taxTotal: json['tax_total'] as num?,
+  discountTotal: json['discount_total'] as num?,
+  discountTaxTotal: json['discount_tax_total'] as num?,
+  giftCardTotal: json['gift_card_total'] as num?,
+  giftCardTaxTotal: json['gift_card_tax_total'] as num?,
+  shippingTotal: json['shipping_total'] as num?,
+  shippingSubtotal: json['shipping_subtotal'] as num?,
+  shippingTaxTotal: json['shipping_tax_total'] as num?,
+  originalShippingTotal: json['original_shipping_total'] as num?,
+  originalShippingSubtotal: json['original_shipping_subtotal'] as num?,
+  originalShippingTaxTotal: json['original_shipping_tax_total'] as num?,
   status: $enumDecode(_$OrderStatusEnumMap, json['status']),
   region: json['region'] == null
       ? null
@@ -64,7 +71,7 @@ _Order _$OrderFromJson(Map<String, dynamic> json) => _Order(
   creditLines: (json['credit_lines'] as List<dynamic>?)
       ?.map((e) => OrderCreditLine.fromJson(e as Map<String, dynamic>))
       .toList(),
-  creditLineTotal: json['credit_line_total'] as num,
+  creditLineTotal: json['credit_line_total'] as num?,
   paymentCollections: (json['payment_collections'] as List<dynamic>?)
       ?.map((e) => PaymentCollection.fromJson(e as Map<String, dynamic>))
       .toList(),
@@ -96,8 +103,8 @@ Map<String, dynamic> _$OrderToJson(_Order instance) => <String, dynamic>{
   'display_id': instance.displayId,
   'items': instance.items,
   'shipping_methods': instance.shippingMethods,
-  'payment_status': _$PaymentStatusEnumMap[instance.paymentStatus]!,
-  'fulfillment_status': _$FulfillmentStatusEnumMap[instance.fulfillmentStatus]!,
+  'payment_status': _$PaymentStatusEnumMap[instance.paymentStatus],
+  'fulfillment_status': _$FulfillmentStatusEnumMap[instance.fulfillmentStatus],
   'transactions': instance.transactions,
   'summary': instance.summary,
   'metadata': instance.metadata,
