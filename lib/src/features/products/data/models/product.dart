@@ -9,6 +9,8 @@ import 'package:medusa_admin_dart_client/src/features/sales_channels/data/models
 import 'package:medusa_admin_dart_client/src/core/models/product_type.dart';
 import 'package:medusa_admin_dart_client/src/features/shipping_profiles/data/models/shipping_profile.dart';
 
+import 'package:medusa_admin_dart_client/src/features/products/data/models/product_status.dart';
+
 part 'product.freezed.dart';
 part 'product.g.dart';
 
@@ -21,7 +23,7 @@ abstract class Product with _$Product {
     String? description,
     required String handle,
     @JsonKey(name: 'is_giftcard') required bool isGiftcard,
-    required String status,
+    required ProductStatus status,
     List<ProductImage>? images,
     String? thumbnail,
     List<ProductOption>? options,

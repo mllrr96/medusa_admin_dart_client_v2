@@ -1,5 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:medusa_admin_dart_client/src/core/models/price.dart';
+import 'package:medusa_admin_dart_client/src/features/price_lists/data/models/price_list_status.dart';
+import 'package:medusa_admin_dart_client/src/features/price_lists/data/models/price_list_type.dart';
 
 part 'price_list.freezed.dart';
 part 'price_list.g.dart';
@@ -11,14 +13,14 @@ abstract class PriceList with _$PriceList {
     required String title,
     required String description,
     required Map<String, dynamic> rules,
-    required String startsAt,
-    required String endsAt,
-    required String status,
-    required String type,
+    @JsonKey(name: 'starts_at') DateTime? startsAt,
+    @JsonKey(name: 'ends_at') DateTime? endsAt,
+    required PriceListStatus status,
+    required PriceListType type,
     required List<Price> prices,
-    DateTime? createdAt,
-    DateTime? updatedAt,
-    DateTime? deletedAt,
+    @JsonKey(name: 'created_at') DateTime? createdAt,
+    @JsonKey(name: 'updated_at') DateTime? updatedAt,
+    @JsonKey(name: 'deleted_at') DateTime? deletedAt,
   }) = _PriceList;
 
   factory PriceList.fromJson(Map<String, dynamic> json) =>

@@ -8,7 +8,8 @@ part 'shipping_option_list_res.g.dart';
 @freezed
 abstract class ShippingOptionListRes with _$ShippingOptionListRes {
   const factory ShippingOptionListRes({
-    @JsonKey(name: 'shipping_options') required List<ShippingOption> shippingOptions,
+    @JsonKey(name: 'shipping_options')
+    required List<ShippingOption> shippingOptions,
     required int limit,
     required int offset,
     required int count,

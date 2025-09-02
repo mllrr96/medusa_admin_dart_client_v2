@@ -13,7 +13,7 @@ _Product _$ProductFromJson(Map<String, dynamic> json) => _Product(
   description: json['description'] as String?,
   handle: json['handle'] as String,
   isGiftcard: json['is_giftcard'] as bool,
-  status: json['status'] as String,
+  status: $enumDecode(_$ProductStatusEnumMap, json['status']),
   images: (json['images'] as List<dynamic>?)
       ?.map((e) => ProductImage.fromJson(e as Map<String, dynamic>))
       .toList(),
@@ -75,7 +75,7 @@ Map<String, dynamic> _$ProductToJson(_Product instance) => <String, dynamic>{
   'description': instance.description,
   'handle': instance.handle,
   'is_giftcard': instance.isGiftcard,
-  'status': instance.status,
+  'status': _$ProductStatusEnumMap[instance.status]!,
   'images': instance.images,
   'thumbnail': instance.thumbnail,
   'options': instance.options,
@@ -102,4 +102,11 @@ Map<String, dynamic> _$ProductToJson(_Product instance) => <String, dynamic>{
   'created_at': instance.createdAt?.toIso8601String(),
   'updated_at': instance.updatedAt?.toIso8601String(),
   'deleted_at': instance.deletedAt?.toIso8601String(),
+};
+
+const _$ProductStatusEnumMap = {
+  ProductStatus.draft: 'draft',
+  ProductStatus.proposed: 'proposed',
+  ProductStatus.published: 'published',
+  ProductStatus.rejected: 'rejected',
 };

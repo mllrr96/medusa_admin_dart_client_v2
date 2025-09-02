@@ -9,7 +9,8 @@ class GiftCardsRepository {
 
   GiftCardsRepository(this._giftCardsApi);
 
-  Future<GiftCardResponse> retrieve(String id) async => await _giftCardsApi.retrieve(id: id);
+  Future<GiftCardResponse> retrieve(String id) async =>
+      await _giftCardsApi.retrieve(id: id);
 
   Future<GiftCardsListResponse> retrieveAll(
     Map<String, dynamic> queryParameters,

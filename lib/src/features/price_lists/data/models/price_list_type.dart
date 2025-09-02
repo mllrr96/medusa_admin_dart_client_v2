@@ -1,0 +1,4 @@
+enum PriceListType {
+  sale,
+  override,
+}

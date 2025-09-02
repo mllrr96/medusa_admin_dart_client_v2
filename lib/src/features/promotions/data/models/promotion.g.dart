@@ -10,9 +10,9 @@ _Promotion _$PromotionFromJson(Map<String, dynamic> json) => _Promotion(
   id: json['id'] as String,
   code: json['code'] as String?,
   isAutomatic: json['is_automatic'] as bool?,
-  type: json['type'] as String?,
+  type: $enumDecodeNullable(_$PromotionTypeEnumMap, json['type']),
   campaignId: json['campaign_id'] as String?,
-  status: json['status'] as String?,
+  status: $enumDecodeNullable(_$PromotionStatusEnumMap, json['status']),
   isTaxInclusive: json['is_tax_inclusive'] as bool?,
   createdAt: json['created_at'] == null
       ? null
@@ -41,9 +41,9 @@ Map<String, dynamic> _$PromotionToJson(_Promotion instance) =>
       'id': instance.id,
       'code': instance.code,
       'is_automatic': instance.isAutomatic,
-      'type': instance.type,
+      'type': _$PromotionTypeEnumMap[instance.type],
       'campaign_id': instance.campaignId,
-      'status': instance.status,
+      'status': _$PromotionStatusEnumMap[instance.status],
       'is_tax_inclusive': instance.isTaxInclusive,
       'created_at': instance.createdAt?.toIso8601String(),
       'updated_at': instance.updatedAt?.toIso8601String(),
@@ -52,3 +52,14 @@ Map<String, dynamic> _$PromotionToJson(_Promotion instance) =>
       'rules': instance.rules,
       'campaign': instance.campaign,
     };
+
+const _$PromotionTypeEnumMap = {
+  PromotionType.standard: 'standard',
+  PromotionType.buyget: 'buyget',
+};
+
+const _$PromotionStatusEnumMap = {
+  PromotionStatus.draft: 'draft',
+  PromotionStatus.active: 'active',
+  PromotionStatus.inactive: 'inactive',
+};

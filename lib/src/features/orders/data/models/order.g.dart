@@ -21,8 +21,11 @@ _Order _$OrderFromJson(Map<String, dynamic> json) => _Order(
   shippingMethods: (json['shipping_methods'] as List<dynamic>)
       .map((e) => OrderShippingMethod.fromJson(e as Map<String, dynamic>))
       .toList(),
-  paymentStatus: json['payment_status'] as String,
-  fulfillmentStatus: json['fulfillment_status'] as String,
+  paymentStatus: $enumDecode(_$PaymentStatusEnumMap, json['payment_status']),
+  fulfillmentStatus: $enumDecode(
+    _$FulfillmentStatusEnumMap,
+    json['fulfillment_status'],
+  ),
   transactions: json['transactions'] as List<dynamic>?,
   summary: BaseOrderSummary.fromJson(json['summary'] as Map<String, dynamic>),
   metadata: json['metadata'] as Map<String, dynamic>?,
@@ -93,8 +96,8 @@ Map<String, dynamic> _$OrderToJson(_Order instance) => <String, dynamic>{
   'display_id': instance.displayId,
   'items': instance.items,
   'shipping_methods': instance.shippingMethods,
-  'payment_status': instance.paymentStatus,
-  'fulfillment_status': instance.fulfillmentStatus,
+  'payment_status': _$PaymentStatusEnumMap[instance.paymentStatus]!,
+  'fulfillment_status': _$FulfillmentStatusEnumMap[instance.fulfillmentStatus]!,
   'transactions': instance.transactions,
   'summary': instance.summary,
   'metadata': instance.metadata,
@@ -132,4 +135,28 @@ Map<String, dynamic> _$OrderToJson(_Order instance) => <String, dynamic>{
   'customer': instance.customer,
   'shipping_address': instance.shippingAddress,
   'billing_address': instance.billingAddress,
+};
+
+const _$PaymentStatusEnumMap = {
+  PaymentStatus.notPaid: 'notPaid',
+  PaymentStatus.awaiting: 'awaiting',
+  PaymentStatus.authorized: 'authorized',
+  PaymentStatus.partiallyAuthorized: 'partiallyAuthorized',
+  PaymentStatus.canceled: 'canceled',
+  PaymentStatus.captured: 'captured',
+  PaymentStatus.partiallyCaptured: 'partiallyCaptured',
+  PaymentStatus.partiallyRefunded: 'partiallyRefunded',
+  PaymentStatus.refunded: 'refunded',
+  PaymentStatus.requiresAction: 'requiresAction',
+};
+
+const _$FulfillmentStatusEnumMap = {
+  FulfillmentStatus.canceled: 'canceled',
+  FulfillmentStatus.notFulfilled: 'notFulfilled',
+  FulfillmentStatus.partiallyFulfilled: 'partiallyFulfilled',
+  FulfillmentStatus.fulfilled: 'fulfilled',
+  FulfillmentStatus.partiallyShipped: 'partiallyShipped',
+  FulfillmentStatus.shipped: 'shipped',
+  FulfillmentStatus.partiallyDelivered: 'partiallyDelivered',
+  FulfillmentStatus.delivered: 'delivered',
 };

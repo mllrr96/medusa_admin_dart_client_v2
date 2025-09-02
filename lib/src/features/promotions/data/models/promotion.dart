@@ -1,5 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:medusa_admin_dart_client/src/features/campaigns/data/models/campaign.dart';
+import 'package:medusa_admin_dart_client/src/features/promotions/data/models/promotion_status.dart';
+import 'package:medusa_admin_dart_client/src/features/promotions/data/models/promotion_type.dart';
 
 import 'application_method.dart';
 import 'promotion_rule.dart';
@@ -23,14 +25,14 @@ abstract class Promotion with _$Promotion {
 
     /// The promotion's type.
     /// Enum: "standard", "buyget"
-    String? type,
+    PromotionType? type,
 
     /// The ID of the campaign this promotion belongs to.
     @JsonKey(name: 'campaign_id') String? campaignId,
 
     /// The promotion's status.
     /// Enum: "draft", "active", "inactive"
-    String? status,
+    PromotionStatus? status,
 
     /// Whether the promotion is tax inclusive. If enabled, the promotion is applied after tax is calculated.
     @JsonKey(name: 'is_tax_inclusive') bool? isTaxInclusive,

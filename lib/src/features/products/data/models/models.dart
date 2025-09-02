@@ -7,3 +7,6 @@ export 'product_variant.dart';
 export 'calculated_price_set.dart';
 export 'product_variant_inventory_item.dart';
 export 'products_res.dart';
+export 'create_product_req.dart';
+export 'update_product_req.dart';
+export 'product_status.dart';

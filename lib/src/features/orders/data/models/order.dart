@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:medusa_admin_dart_client/src/core/models/address.dart';
+import 'package:medusa_admin_dart_client/src/core/models/fulfillment_status.dart';
 import 'package:medusa_admin_dart_client/src/core/models/order_fulfillment.dart';
 import 'package:medusa_admin_dart_client/src/core/models/order_shipping_method.dart';
 import 'package:medusa_admin_dart_client/src/core/models/payment_collection.dart';
@@ -7,6 +8,7 @@ import 'package:medusa_admin_dart_client/src/core/models/base_order_summary.dart
 import 'package:medusa_admin_dart_client/src/core/models/customer.dart';
 import 'package:medusa_admin_dart_client/src/core/models/order_credit_line.dart';
 import 'package:medusa_admin_dart_client/src/core/models/order_line_item.dart';
+import 'package:medusa_admin_dart_client/src/core/models/payment_status.dart';
 import 'package:medusa_admin_dart_client/src/features/regions/data/models/region.dart';
 
 import '../../../sales_channels/data/models/sales_channel.dart';
@@ -28,8 +30,9 @@ abstract class Order with _$Order {
     required List<OrderLineItem> items,
     @JsonKey(name: 'shipping_methods')
     required List<OrderShippingMethod> shippingMethods,
-    @JsonKey(name: 'payment_status') required String paymentStatus,
-    @JsonKey(name: 'fulfillment_status') required String fulfillmentStatus,
+    @JsonKey(name: 'payment_status') required PaymentStatus paymentStatus,
+    @JsonKey(name: 'fulfillment_status')
+    required FulfillmentStatus fulfillmentStatus,
     List<dynamic>? transactions,
     required BaseOrderSummary summary,
     Map<String, dynamic>? metadata,

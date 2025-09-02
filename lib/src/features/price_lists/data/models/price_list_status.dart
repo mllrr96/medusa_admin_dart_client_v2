@@ -1,0 +1,4 @@
+enum PriceListStatus {
+  draft,
+  active,
+}

@@ -11,22 +11,26 @@ _PriceList _$PriceListFromJson(Map<String, dynamic> json) => _PriceList(
   title: json['title'] as String,
   description: json['description'] as String,
   rules: json['rules'] as Map<String, dynamic>,
-  startsAt: json['startsAt'] as String,
-  endsAt: json['endsAt'] as String,
-  status: json['status'] as String,
-  type: json['type'] as String,
+  startsAt: json['starts_at'] == null
+      ? null
+      : DateTime.parse(json['starts_at'] as String),
+  endsAt: json['ends_at'] == null
+      ? null
+      : DateTime.parse(json['ends_at'] as String),
+  status: $enumDecode(_$PriceListStatusEnumMap, json['status']),
+  type: $enumDecode(_$PriceListTypeEnumMap, json['type']),
   prices: (json['prices'] as List<dynamic>)
       .map((e) => Price.fromJson(e as Map<String, dynamic>))
       .toList(),
-  createdAt: json['createdAt'] == null
+  createdAt: json['created_at'] == null
       ? null
-      : DateTime.parse(json['createdAt'] as String),
-  updatedAt: json['updatedAt'] == null
+      : DateTime.parse(json['created_at'] as String),
+  updatedAt: json['updated_at'] == null
       ? null
-      : DateTime.parse(json['updatedAt'] as String),
-  deletedAt: json['deletedAt'] == null
+      : DateTime.parse(json['updated_at'] as String),
+  deletedAt: json['deleted_at'] == null
       ? null
-      : DateTime.parse(json['deletedAt'] as String),
+      : DateTime.parse(json['deleted_at'] as String),
 );
 
 Map<String, dynamic> _$PriceListToJson(_PriceList instance) =>
@@ -35,12 +39,22 @@ Map<String, dynamic> _$PriceListToJson(_PriceList instance) =>
       'title': instance.title,
       'description': instance.description,
       'rules': instance.rules,
-      'startsAt': instance.startsAt,
-      'endsAt': instance.endsAt,
-      'status': instance.status,
-      'type': instance.type,
+      'starts_at': instance.startsAt?.toIso8601String(),
+      'ends_at': instance.endsAt?.toIso8601String(),
+      'status': _$PriceListStatusEnumMap[instance.status]!,
+      'type': _$PriceListTypeEnumMap[instance.type]!,
       'prices': instance.prices,
-      'createdAt': instance.createdAt?.toIso8601String(),
-      'updatedAt': instance.updatedAt?.toIso8601String(),
-      'deletedAt': instance.deletedAt?.toIso8601String(),
+      'created_at': instance.createdAt?.toIso8601String(),
+      'updated_at': instance.updatedAt?.toIso8601String(),
+      'deleted_at': instance.deletedAt?.toIso8601String(),
     };
+
+const _$PriceListStatusEnumMap = {
+  PriceListStatus.draft: 'draft',
+  PriceListStatus.active: 'active',
+};
+
+const _$PriceListTypeEnumMap = {
+  PriceListType.sale: 'sale',
+  PriceListType.override: 'override',
+};

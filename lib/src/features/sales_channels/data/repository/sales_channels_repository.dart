@@ -12,7 +12,8 @@ class SalesChannelsRepository {
 
   Future<SalesChannel> retrieve(String id) => _salesChannelsApi.retrieve(id);
 
-  Future<SalesChannel> create(CreateSalesChannel body) => _salesChannelsApi.create(body);
+  Future<SalesChannel> create(CreateSalesChannel body) =>
+      _salesChannelsApi.create(body);
 
   Future<SalesChannel> update(String id, UpdateSalesChannel body) =>
       _salesChannelsApi.update(id, body);

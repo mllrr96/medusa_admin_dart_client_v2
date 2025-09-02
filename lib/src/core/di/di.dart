@@ -10,7 +10,6 @@ import 'package:medusa_admin_dart_client/src/features/collections/data/api/colle
 import 'package:medusa_admin_dart_client/src/features/currencies/data/api/currencies_api.dart';
 import 'package:medusa_admin_dart_client/src/features/customer_groups/data/api/customer_groups_api.dart';
 import 'package:medusa_admin_dart_client/src/features/customers/data/api/customers_api.dart';
-import 'package:medusa_admin_dart_client/src/features/discounts/data/api/discounts_api.dart';
 import 'package:medusa_admin_dart_client/src/features/draft_orders/data/api/draft_orders_api.dart';
 import 'package:medusa_admin_dart_client/src/features/exchanges/data/api/exchanges_api.dart';
 import 'package:medusa_admin_dart_client/src/features/exchanges/data/repository/exchanges_repository.dart';
@@ -22,7 +21,6 @@ import 'package:medusa_admin_dart_client/src/features/fulfillments/data/api/fulf
 import 'package:medusa_admin_dart_client/src/features/gift_cards/data/api/gift_cards_api.dart';
 import 'package:medusa_admin_dart_client/src/features/inventory_items/data/api/inventory_items_api.dart';
 import 'package:medusa_admin_dart_client/src/features/invites/data/api/invites_api.dart';
-import 'package:medusa_admin_dart_client/src/features/invites/data/repository/invites_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/notifications/data/api/notifications_api.dart';
 import 'package:medusa_admin_dart_client/src/features/order_edits/data/api/order_edits_api.dart';
 import 'package:medusa_admin_dart_client/src/features/orders/data/api/orders_api.dart';
@@ -37,10 +35,8 @@ import 'package:medusa_admin_dart_client/src/features/product_categories/data/ap
 import 'package:medusa_admin_dart_client/src/features/product_tags/data/api/product_tags_api.dart';
 import 'package:medusa_admin_dart_client/src/features/product_types/data/api/product_types_api.dart';
 import 'package:medusa_admin_dart_client/src/features/product_variants/data/api/product_variants_api.dart';
-import 'package:medusa_admin_dart_client/src/features/product_variants/data/repository/product_variants_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/products/data/api/products_api.dart';
 import 'package:medusa_admin_dart_client/src/features/promotions/data/api/promotions_api.dart';
-import 'package:medusa_admin_dart_client/src/features/promotions/data/repository/promotions_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/refund_reasons/data/api/refund_reasons_api.dart';
 import 'package:medusa_admin_dart_client/src/features/refund_reasons/data/repository/refund_reasons_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/regions/data/api/regions_api.dart';
@@ -111,12 +107,6 @@ void configureDependencies({String? baseUrl, List<Interceptor>? interceptors}) {
   );
   getIt.registerLazySingleton<CollectionsRepository>(
     () => CollectionsRepository(getIt<CollectionsApi>()),
-  );
-
-  // Discounts
-  getIt.registerLazySingleton<DiscountsApi>(() => DiscountsApi(getIt<Dio>()));
-  getIt.registerLazySingleton<DiscountsRepository>(
-    () => DiscountsRepository(getIt<DiscountsApi>()),
   );
 
   // Gift Cards

@@ -1,4 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:medusa_admin_dart_client/src/core/models/fulfillment_status.dart';
+import 'package:medusa_admin_dart_client/src/core/models/payment_status.dart';
 import 'package:medusa_admin_dart_client/src/features/sales_channels/data/models/sales_channel.dart';
 import 'package:medusa_admin_dart_client/src/core/models/payment_collection.dart';
 import 'package:medusa_admin_dart_client/src/core/models/customer.dart';
@@ -37,8 +39,9 @@ abstract class DraftOrder with _$DraftOrder {
     @JsonKey(name: 'sales_channel_id') required String salesChannelId,
     required String email,
     @JsonKey(name: 'display_id') int? displayId,
-    @JsonKey(name: 'payment_status') required String paymentStatus,
-    @JsonKey(name: 'fulfillment_status') required String fulfillmentStatus,
+    @JsonKey(name: 'payment_status') required PaymentStatus paymentStatus,
+    @JsonKey(name: 'fulfillment_status')
+    required FulfillmentStatus fulfillmentStatus,
     List<OrderTransaction>? transactions,
     required OrderSummary summary,
     Map<String, dynamic>? metadata,

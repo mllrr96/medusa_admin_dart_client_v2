@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$PriceList {
 
- String get id; String get title; String get description; Map<String, dynamic> get rules; String get startsAt; String get endsAt; String get status; String get type; List<Price> get prices; DateTime? get createdAt; DateTime? get updatedAt; DateTime? get deletedAt;
+ String get id; String get title; String get description; Map<String, dynamic> get rules;@JsonKey(name: 'starts_at') DateTime? get startsAt;@JsonKey(name: 'ends_at') DateTime? get endsAt; PriceListStatus get status; PriceListType get type; List<Price> get prices;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt;
 /// Create a copy of PriceList
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $PriceListCopyWith<$Res>  {
   factory $PriceListCopyWith(PriceList value, $Res Function(PriceList) _then) = _$PriceListCopyWithImpl;
 @useResult
 $Res call({
- String id, String title, String description, Map<String, dynamic> rules, String startsAt, String endsAt, String status, String type, List<Price> prices, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt
+ String id, String title, String description, Map<String, dynamic> rules,@JsonKey(name: 'starts_at') DateTime? startsAt,@JsonKey(name: 'ends_at') DateTime? endsAt, PriceListStatus status, PriceListType type, List<Price> prices,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
 });
 
 
@@ -65,17 +65,17 @@ class _$PriceListCopyWithImpl<$Res>
 
 /// Create a copy of PriceList
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? title = null,Object? description = null,Object? rules = null,Object? startsAt = null,Object? endsAt = null,Object? status = null,Object? type = null,Object? prices = null,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? title = null,Object? description = null,Object? rules = null,Object? startsAt = freezed,Object? endsAt = freezed,Object? status = null,Object? type = null,Object? prices = null,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
 as String,description: null == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
 as String,rules: null == rules ? _self.rules : rules // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>,startsAt: null == startsAt ? _self.startsAt : startsAt // ignore: cast_nullable_to_non_nullable
-as String,endsAt: null == endsAt ? _self.endsAt : endsAt // ignore: cast_nullable_to_non_nullable
-as String,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
-as String,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
-as String,prices: null == prices ? _self.prices : prices // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>,startsAt: freezed == startsAt ? _self.startsAt : startsAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,endsAt: freezed == endsAt ? _self.endsAt : endsAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
+as PriceListStatus,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
+as PriceListType,prices: null == prices ? _self.prices : prices // ignore: cast_nullable_to_non_nullable
 as List<Price>,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
@@ -164,7 +164,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String title,  String description,  Map<String, dynamic> rules,  String startsAt,  String endsAt,  String status,  String type,  List<Price> prices,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String title,  String description,  Map<String, dynamic> rules, @JsonKey(name: 'starts_at')  DateTime? startsAt, @JsonKey(name: 'ends_at')  DateTime? endsAt,  PriceListStatus status,  PriceListType type,  List<Price> prices, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _PriceList() when $default != null:
 return $default(_that.id,_that.title,_that.description,_that.rules,_that.startsAt,_that.endsAt,_that.status,_that.type,_that.prices,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -185,7 +185,7 @@ return $default(_that.id,_that.title,_that.description,_that.rules,_that.startsA
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String title,  String description,  Map<String, dynamic> rules,  String startsAt,  String endsAt,  String status,  String type,  List<Price> prices,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String title,  String description,  Map<String, dynamic> rules, @JsonKey(name: 'starts_at')  DateTime? startsAt, @JsonKey(name: 'ends_at')  DateTime? endsAt,  PriceListStatus status,  PriceListType type,  List<Price> prices, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)  $default,) {final _that = this;
 switch (_that) {
 case _PriceList():
 return $default(_that.id,_that.title,_that.description,_that.rules,_that.startsAt,_that.endsAt,_that.status,_that.type,_that.prices,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -205,7 +205,7 @@ return $default(_that.id,_that.title,_that.description,_that.rules,_that.startsA
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String title,  String description,  Map<String, dynamic> rules,  String startsAt,  String endsAt,  String status,  String type,  List<Price> prices,  DateTime? createdAt,  DateTime? updatedAt,  DateTime? deletedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String title,  String description,  Map<String, dynamic> rules, @JsonKey(name: 'starts_at')  DateTime? startsAt, @JsonKey(name: 'ends_at')  DateTime? endsAt,  PriceListStatus status,  PriceListType type,  List<Price> prices, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _PriceList() when $default != null:
 return $default(_that.id,_that.title,_that.description,_that.rules,_that.startsAt,_that.endsAt,_that.status,_that.type,_that.prices,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -220,7 +220,7 @@ return $default(_that.id,_that.title,_that.description,_that.rules,_that.startsA
 @JsonSerializable()
 
 class _PriceList implements PriceList {
-  const _PriceList({required this.id, required this.title, required this.description, required final  Map<String, dynamic> rules, required this.startsAt, required this.endsAt, required this.status, required this.type, required final  List<Price> prices, this.createdAt, this.updatedAt, this.deletedAt}): _rules = rules,_prices = prices;
+  const _PriceList({required this.id, required this.title, required this.description, required final  Map<String, dynamic> rules, @JsonKey(name: 'starts_at') this.startsAt, @JsonKey(name: 'ends_at') this.endsAt, required this.status, required this.type, required final  List<Price> prices, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt}): _rules = rules,_prices = prices;
   factory _PriceList.fromJson(Map<String, dynamic> json) => _$PriceListFromJson(json);
 
 @override final  String id;
@@ -233,10 +233,10 @@ class _PriceList implements PriceList {
   return EqualUnmodifiableMapView(_rules);
 }
 
-@override final  String startsAt;
-@override final  String endsAt;
-@override final  String status;
-@override final  String type;
+@override@JsonKey(name: 'starts_at') final  DateTime? startsAt;
+@override@JsonKey(name: 'ends_at') final  DateTime? endsAt;
+@override final  PriceListStatus status;
+@override final  PriceListType type;
  final  List<Price> _prices;
 @override List<Price> get prices {
   if (_prices is EqualUnmodifiableListView) return _prices;
@@ -244,9 +244,9 @@ class _PriceList implements PriceList {
   return EqualUnmodifiableListView(_prices);
 }
 
-@override final  DateTime? createdAt;
-@override final  DateTime? updatedAt;
-@override final  DateTime? deletedAt;
+@override@JsonKey(name: 'created_at') final  DateTime? createdAt;
+@override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
+@override@JsonKey(name: 'deleted_at') final  DateTime? deletedAt;
 
 /// Create a copy of PriceList
 /// with the given fields replaced by the non-null parameter values.
@@ -281,7 +281,7 @@ abstract mixin class _$PriceListCopyWith<$Res> implements $PriceListCopyWith<$Re
   factory _$PriceListCopyWith(_PriceList value, $Res Function(_PriceList) _then) = __$PriceListCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String title, String description, Map<String, dynamic> rules, String startsAt, String endsAt, String status, String type, List<Price> prices, DateTime? createdAt, DateTime? updatedAt, DateTime? deletedAt
+ String id, String title, String description, Map<String, dynamic> rules,@JsonKey(name: 'starts_at') DateTime? startsAt,@JsonKey(name: 'ends_at') DateTime? endsAt, PriceListStatus status, PriceListType type, List<Price> prices,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
 });
 
 
@@ -298,17 +298,17 @@ class __$PriceListCopyWithImpl<$Res>
 
 /// Create a copy of PriceList
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? title = null,Object? description = null,Object? rules = null,Object? startsAt = null,Object? endsAt = null,Object? status = null,Object? type = null,Object? prices = null,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? title = null,Object? description = null,Object? rules = null,Object? startsAt = freezed,Object? endsAt = freezed,Object? status = null,Object? type = null,Object? prices = null,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
   return _then(_PriceList(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
 as String,description: null == description ? _self.description : description // ignore: cast_nullable_to_non_nullable
 as String,rules: null == rules ? _self._rules : rules // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>,startsAt: null == startsAt ? _self.startsAt : startsAt // ignore: cast_nullable_to_non_nullable
-as String,endsAt: null == endsAt ? _self.endsAt : endsAt // ignore: cast_nullable_to_non_nullable
-as String,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
-as String,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
-as String,prices: null == prices ? _self._prices : prices // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>,startsAt: freezed == startsAt ? _self.startsAt : startsAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,endsAt: freezed == endsAt ? _self.endsAt : endsAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
+as PriceListStatus,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
+as PriceListType,prices: null == prices ? _self._prices : prices // ignore: cast_nullable_to_non_nullable
 as List<Price>,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable

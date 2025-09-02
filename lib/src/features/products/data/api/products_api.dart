@@ -3,7 +3,6 @@ import 'package:medusa_admin_dart_client/src/features/products/data/models/assoc
 import 'package:medusa_admin_dart_client/src/features/products/data/models/batch_product_req.dart';
 import 'package:medusa_admin_dart_client/src/features/products/data/models/batch_product_res.dart';
 import 'package:medusa_admin_dart_client/src/features/products/data/models/create_product_option_req.dart';
-import 'package:medusa_admin_dart_client/src/features/products/data/models/create_product_req.dart';
 import 'package:medusa_admin_dart_client/src/features/products/data/models/create_product_variant_req.dart';
 import 'package:medusa_admin_dart_client/src/features/products/data/models/export_product_res.dart';
 import 'package:medusa_admin_dart_client/src/features/products/data/models/import_product_req.dart';
@@ -12,7 +11,6 @@ import 'package:medusa_admin_dart_client/src/features/products/data/models/impor
 import 'package:medusa_admin_dart_client/src/features/products/data/models/models.dart';
 import 'package:medusa_admin_dart_client/src/features/products/data/models/update_inventory_item_req.dart';
 import 'package:medusa_admin_dart_client/src/features/products/data/models/update_product_option_req.dart';
-import 'package:medusa_admin_dart_client/src/features/products/data/models/update_product_req.dart';
 import 'package:medusa_admin_dart_client/src/features/products/data/models/update_product_variant_req.dart';
 import 'package:retrofit/retrofit.dart';
 

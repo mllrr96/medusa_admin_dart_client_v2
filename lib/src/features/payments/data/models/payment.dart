@@ -4,8 +4,6 @@ import 'package:medusa_admin_dart_client/src/features/payments/data/models/payme
 import 'package:medusa_admin_dart_client/src/core/models/payment_collection.dart';
 import 'package:medusa_admin_dart_client/src/features/payments/data/models/refund.dart';
 
-
-
 part 'payment.freezed.dart';
 part 'payment.g.dart';
 

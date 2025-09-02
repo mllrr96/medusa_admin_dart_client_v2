@@ -1,10 +1,5 @@
 import 'package:dio/dio.dart';
 import 'package:medusa_admin_dart_client/medusa_admin_dart_client_v2.dart';
-import 'package:medusa_admin_dart_client/src/features/invites/data/models/create_invite_req.dart';
-import 'package:medusa_admin_dart_client/src/features/invites/data/models/delete_invite_res.dart';
-import 'package:medusa_admin_dart_client/src/features/invites/data/models/invite_accept_req.dart';
-import 'package:medusa_admin_dart_client/src/features/invites/data/models/invite_list_res.dart';
-import 'package:medusa_admin_dart_client/src/features/invites/data/models/invite_res.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'invites_api.g.dart';

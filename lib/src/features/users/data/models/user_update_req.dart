@@ -12,5 +12,6 @@ abstract class UserUpdateReq with _$UserUpdateReq {
     Map<String, dynamic>? metadata,
   }) = _UserUpdateReq;
 
-  factory UserUpdateReq.fromJson(Map<String, dynamic> json) => _$UserUpdateReqFromJson(json);
+  factory UserUpdateReq.fromJson(Map<String, dynamic> json) =>
+      _$UserUpdateReqFromJson(json);
 }

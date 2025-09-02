@@ -19,7 +19,6 @@ import 'package:medusa_admin_dart_client/src/features/shipping_profiles/data/rep
 import 'package:medusa_admin_dart_client/src/features/shipping_options/data/repository/shipping_options_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/price_lists/data/repository/price_lists_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/gift_cards/data/repository/gift_cards_repository.dart';
-import 'package:medusa_admin_dart_client/src/features/discounts/data/repository/discounts_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/collections/data/repository/collections_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/regions/data/repository/regions_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/customers/data/repository/customers_repository.dart';
@@ -28,11 +27,19 @@ import 'package:medusa_admin_dart_client/src/features/products/data/repository/p
 import 'package:medusa_admin_dart_client/src/features/return_reasons/data/repository/return_reasons_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/api_keys/data/repository/api_keys_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/tax_providers/data/repository/tax_providers_repository.dart';
+import 'src/features/invites/data/repository/invites_repository.dart';
 import 'src/features/product_tags/data/repository/product_tags_repository.dart';
 import 'src/features/product_types/data/repository/product_types_repository.dart';
 import 'src/features/product_variants/data/repository/product_variants_repository.dart';
 import 'src/features/product_categories/data/repository/product_categories_repository.dart';
+import 'src/features/promotions/data/repository/promotions_repository.dart';
 
+export 'src/features/invites/data/repository/invites_repository.dart';
+export 'src/features/promotions/data/repository/promotions_repository.dart';
+export 'src/features/product_variants/data/repository/product_variants_repository.dart';
+export 'package:medusa_admin_dart_client/src/features/invites/data/models/models.dart';
+export 'package:medusa_admin_dart_client/src/features/promotions/data/models/models.dart';
+export 'package:medusa_admin_dart_client/src/features/product_variants/data/models/models.dart';
 export 'package:medusa_admin_dart_client/src/features/payments/data/models/models.dart';
 export 'package:medusa_admin_dart_client/src/features/payments/data/repository/payments_repository.dart';
 export 'package:medusa_admin_dart_client/src/features/fulfillments/data/models/models.dart';
@@ -56,7 +63,6 @@ export 'package:medusa_admin_dart_client/src/features/auth/data/models/models.da
 export 'package:medusa_admin_dart_client/src/features/campaigns/data/models/models.dart';
 export 'package:medusa_admin_dart_client/src/features/currencies/data/models/models.dart';
 export 'package:medusa_admin_dart_client/src/features/customer_groups/data/models/models.dart';
-export 'package:medusa_admin_dart_client/src/features/discounts/data/models/models.dart';
 export 'package:medusa_admin_dart_client/src/features/draft_orders/data/models/models.dart';
 export 'package:medusa_admin_dart_client/src/features/gift_cards/data/models/models.dart';
 export 'package:medusa_admin_dart_client/src/features/inventory_items/data/models/models.dart';
@@ -85,7 +91,6 @@ export 'package:medusa_admin_dart_client/src/features/users/data/repository/user
 export 'package:medusa_admin_dart_client/src/features/auth/data/repository/auth_repository.dart';
 export 'package:medusa_admin_dart_client/src/features/price_lists/data/repository/price_lists_repository.dart';
 export 'package:medusa_admin_dart_client/src/features/gift_cards/data/repository/gift_cards_repository.dart';
-export 'package:medusa_admin_dart_client/src/features/discounts/data/repository/discounts_repository.dart';
 export 'package:medusa_admin_dart_client/src/features/uploads/data/repository/uploads_repository.dart';
 export 'package:medusa_admin_dart_client/src/features/transaction_groups/data/repository/transaction_groups_repository.dart';
 export 'package:medusa_admin_dart_client/src/features/tax_providers/data/repository/tax_providers_repository.dart';
@@ -137,11 +142,13 @@ class MedusaAdminV2 {
 
   ProductsRepository get products => getIt<ProductsRepository>();
 
-  ProductCategoriesRepository get categories => getIt<ProductCategoriesRepository>();
+  ProductCategoriesRepository get categories =>
+      getIt<ProductCategoriesRepository>();
 
   OrdersRepository get orders => getIt<OrdersRepository>();
 
   OrderEditsRepository get orderEdits => getIt<OrderEditsRepository>();
+
   FulfillmentsRepository get fulfillments => getIt<FulfillmentsRepository>();
 
   CustomersRepository get customers => getIt<CustomersRepository>();
@@ -150,15 +157,19 @@ class MedusaAdminV2 {
 
   CollectionsRepository get collections => getIt<CollectionsRepository>();
 
-  DiscountsRepository get discounts => getIt<DiscountsRepository>();
-
   GiftCardsRepository get giftCards => getIt<GiftCardsRepository>();
 
   PriceListsRepository get priceLists => getIt<PriceListsRepository>();
 
-  ShippingOptionsRepository get shippingOptions => getIt<ShippingOptionsRepository>();
+  ShippingOptionsRepository get shippingOptions =>
+      getIt<ShippingOptionsRepository>();
 
-  ShippingProfilesRepository get shippingProfiles => getIt<ShippingProfilesRepository>();
+  ShippingProfilesRepository get shippingProfiles =>
+      getIt<ShippingProfilesRepository>();
+
+  PromotionsRepository get promotions => getIt<PromotionsRepository>();
+
+  InvitesRepository get invites => getIt<InvitesRepository>();
 
   UsersRepository get users => getIt<UsersRepository>();
 
@@ -172,7 +183,9 @@ class MedusaAdminV2 {
 
   DraftOrdersRepository get draftOrders => getIt<DraftOrdersRepository>();
 
-  CustomerGroupsRepository get customerGroups => getIt<CustomerGroupsRepository>();
+  CustomerGroupsRepository get customerGroups =>
+      getIt<CustomerGroupsRepository>();
+
   PaymentsRepository get payments => getIt<PaymentsRepository>();
 
   NotificationsRepository get notifications => getIt<NotificationsRepository>();
@@ -191,7 +204,8 @@ class MedusaAdminV2 {
 
   ProductTypesRepository get productTypes => getIt<ProductTypesRepository>();
 
-  ProductVariantsRepository get productVariants => getIt<ProductVariantsRepository>();
+  ProductVariantsRepository get productVariants =>
+      getIt<ProductVariantsRepository>();
 
   ExchangesRepository get exchanges => getIt<ExchangesRepository>();
 }
