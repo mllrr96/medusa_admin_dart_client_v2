@@ -9,6 +9,7 @@ import 'package:medusa_admin_dart_client/src/core/models/customer.dart';
 import 'package:medusa_admin_dart_client/src/core/models/order_credit_line.dart';
 import 'package:medusa_admin_dart_client/src/core/models/order_line_item.dart';
 import 'package:medusa_admin_dart_client/src/core/models/payment_status.dart';
+import 'package:medusa_admin_dart_client/src/features/orders/data/models/order_status.dart';
 import 'package:medusa_admin_dart_client/src/features/regions/data/models/region.dart';
 
 import '../../../sales_channels/data/models/sales_channel.dart';
@@ -63,7 +64,7 @@ abstract class Order with _$Order {
     required num originalShippingSubtotal,
     @JsonKey(name: 'original_shipping_tax_total')
     required num originalShippingTaxTotal,
-    required String status,
+    required OrderStatus status,
     Region? region,
     @JsonKey(name: 'credit_lines') List<OrderCreditLine>? creditLines,
     @JsonKey(name: 'credit_line_total') required num creditLineTotal,

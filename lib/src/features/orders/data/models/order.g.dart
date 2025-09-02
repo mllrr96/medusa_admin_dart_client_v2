@@ -57,7 +57,7 @@ _Order _$OrderFromJson(Map<String, dynamic> json) => _Order(
   originalShippingTotal: json['original_shipping_total'] as num,
   originalShippingSubtotal: json['original_shipping_subtotal'] as num,
   originalShippingTaxTotal: json['original_shipping_tax_total'] as num,
-  status: json['status'] as String,
+  status: $enumDecode(_$OrderStatusEnumMap, json['status']),
   region: json['region'] == null
       ? null
       : Region.fromJson(json['region'] as Map<String, dynamic>),
@@ -125,7 +125,7 @@ Map<String, dynamic> _$OrderToJson(_Order instance) => <String, dynamic>{
   'original_shipping_total': instance.originalShippingTotal,
   'original_shipping_subtotal': instance.originalShippingSubtotal,
   'original_shipping_tax_total': instance.originalShippingTaxTotal,
-  'status': instance.status,
+  'status': _$OrderStatusEnumMap[instance.status]!,
   'region': instance.region,
   'credit_lines': instance.creditLines,
   'credit_line_total': instance.creditLineTotal,
@@ -159,4 +159,12 @@ const _$FulfillmentStatusEnumMap = {
   FulfillmentStatus.shipped: 'shipped',
   FulfillmentStatus.partiallyDelivered: 'partiallyDelivered',
   FulfillmentStatus.delivered: 'delivered',
+};
+
+const _$OrderStatusEnumMap = {
+  OrderStatus.canceled: 'canceled',
+  OrderStatus.requested: 'requested',
+  OrderStatus.pending: 'pending',
+  OrderStatus.confirmed: 'confirmed',
+  OrderStatus.declined: 'declined',
 };

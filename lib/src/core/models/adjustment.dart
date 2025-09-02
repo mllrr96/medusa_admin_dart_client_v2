@@ -1,7 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import 'discount.dart';
-
 part 'adjustment.freezed.dart';
 part 'adjustment.g.dart';
 
@@ -12,7 +10,6 @@ abstract class Adjustment with _$Adjustment {
     required String description,
     required int amount,
     @JsonKey(name: 'discount_id') String? discountId,
-    Discount? discount,
     @JsonKey(name: 'item_id') required String itemId,
     @JsonKey(name: 'created_at') DateTime? createdAt,
     @JsonKey(name: 'updated_at') DateTime? updatedAt,

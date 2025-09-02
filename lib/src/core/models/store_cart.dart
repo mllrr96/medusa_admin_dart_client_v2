@@ -1,16 +1,17 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:medusa_admin_dart_client/src/features/promotions/data/models/promotion.dart';
 import 'package:medusa_admin_dart_client/src/features/regions/data/models/region.dart';
 import 'package:medusa_admin_dart_client/src/core/models/address.dart';
 import 'package:medusa_admin_dart_client/src/core/models/line_item.dart';
 import 'package:medusa_admin_dart_client/src/core/models/shipping_method.dart';
 import 'package:medusa_admin_dart_client/src/core/models/payment_collection.dart';
 
-part 'cart.freezed.dart';
-part 'cart.g.dart';
+part 'store_cart.freezed.dart';
+part 'store_cart.g.dart';
 
 @freezed
-abstract class Cart with _$Cart {
-  const factory Cart({
+abstract class StoreCart with _$StoreCart {
+  const factory StoreCart({
     required String id,
     @JsonKey(name: 'currency_code') required String currencyCode,
     @JsonKey(name: 'original_item_total') required num originalItemTotal,
@@ -37,6 +38,7 @@ abstract class Cart with _$Cart {
         required num originalShippingSubtotal,
     @JsonKey(name: 'original_shipping_tax_total')
         required num originalShippingTaxTotal,
+    required List<Promotion> promotions,
     Region? region,
     @JsonKey(name: 'region_id') String? regionId,
     @JsonKey(name: 'customer_id') String? customerId,
@@ -50,7 +52,8 @@ abstract class Cart with _$Cart {
     Map<String, dynamic>? metadata,
     @JsonKey(name: 'created_at') DateTime? createdAt,
     @JsonKey(name: 'updated_at') DateTime? updatedAt,
-  }) = _Cart;
+  }) = _StoreCart;
 
-  factory Cart.fromJson(Map<String, dynamic> json) => _$CartFromJson(json);
+  factory StoreCart.fromJson(Map<String, dynamic> json) =>
+      _$StoreCartFromJson(json);
 }
