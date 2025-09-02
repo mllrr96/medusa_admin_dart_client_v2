@@ -9,7 +9,7 @@ part of 'gift_card.dart';
 _GiftCard _$GiftCardFromJson(Map<String, dynamic> json) => _GiftCard(
   id: json['id'] as String,
   code: json['code'] as String,
-  status: json['status'] as String,
+  status: $enumDecode(_$GiftCardStatusEnumMap, json['status']),
   value: (json['value'] as num).toInt(),
   currencyCode: json['currencyCode'] as String,
   customerId: json['customerId'] as String,
@@ -32,7 +32,7 @@ _GiftCard _$GiftCardFromJson(Map<String, dynamic> json) => _GiftCard(
 Map<String, dynamic> _$GiftCardToJson(_GiftCard instance) => <String, dynamic>{
   'id': instance.id,
   'code': instance.code,
-  'status': instance.status,
+  'status': _$GiftCardStatusEnumMap[instance.status]!,
   'value': instance.value,
   'currencyCode': instance.currencyCode,
   'customerId': instance.customerId,
@@ -44,4 +44,9 @@ Map<String, dynamic> _$GiftCardToJson(_GiftCard instance) => <String, dynamic>{
   'createdAt': instance.createdAt?.toIso8601String(),
   'updatedAt': instance.updatedAt?.toIso8601String(),
   'lineItem': instance.lineItem,
+};
+
+const _$GiftCardStatusEnumMap = {
+  GiftCardStatus.pending: 'pending',
+  GiftCardStatus.redeemed: 'redeemed',
 };

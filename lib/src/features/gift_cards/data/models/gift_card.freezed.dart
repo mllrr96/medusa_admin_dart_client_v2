@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$GiftCard {
 
- String get id; String get code; String get status; int get value; String get currencyCode; String get customerId; Customer get customer; String get referenceId; String get note; String get reference; DateTime? get expiresAt; DateTime? get createdAt; DateTime? get updatedAt; LineItem get lineItem;
+ String get id; String get code; GiftCardStatus get status; int get value; String get currencyCode; String get customerId; Customer get customer; String get referenceId; String get note; String get reference; DateTime? get expiresAt; DateTime? get createdAt; DateTime? get updatedAt; LineItem get lineItem;
 /// Create a copy of GiftCard
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $GiftCardCopyWith<$Res>  {
   factory $GiftCardCopyWith(GiftCard value, $Res Function(GiftCard) _then) = _$GiftCardCopyWithImpl;
 @useResult
 $Res call({
- String id, String code, String status, int value, String currencyCode, String customerId, Customer customer, String referenceId, String note, String reference, DateTime? expiresAt, DateTime? createdAt, DateTime? updatedAt, LineItem lineItem
+ String id, String code, GiftCardStatus status, int value, String currencyCode, String customerId, Customer customer, String referenceId, String note, String reference, DateTime? expiresAt, DateTime? createdAt, DateTime? updatedAt, LineItem lineItem
 });
 
 
@@ -70,7 +70,7 @@ class _$GiftCardCopyWithImpl<$Res>
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,code: null == code ? _self.code : code // ignore: cast_nullable_to_non_nullable
 as String,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
-as String,value: null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
+as GiftCardStatus,value: null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
 as int,currencyCode: null == currencyCode ? _self.currencyCode : currencyCode // ignore: cast_nullable_to_non_nullable
 as String,customerId: null == customerId ? _self.customerId : customerId // ignore: cast_nullable_to_non_nullable
 as String,customer: null == customer ? _self.customer : customer // ignore: cast_nullable_to_non_nullable
@@ -184,7 +184,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String code,  String status,  int value,  String currencyCode,  String customerId,  Customer customer,  String referenceId,  String note,  String reference,  DateTime? expiresAt,  DateTime? createdAt,  DateTime? updatedAt,  LineItem lineItem)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String code,  GiftCardStatus status,  int value,  String currencyCode,  String customerId,  Customer customer,  String referenceId,  String note,  String reference,  DateTime? expiresAt,  DateTime? createdAt,  DateTime? updatedAt,  LineItem lineItem)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _GiftCard() when $default != null:
 return $default(_that.id,_that.code,_that.status,_that.value,_that.currencyCode,_that.customerId,_that.customer,_that.referenceId,_that.note,_that.reference,_that.expiresAt,_that.createdAt,_that.updatedAt,_that.lineItem);case _:
@@ -205,7 +205,7 @@ return $default(_that.id,_that.code,_that.status,_that.value,_that.currencyCode,
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String code,  String status,  int value,  String currencyCode,  String customerId,  Customer customer,  String referenceId,  String note,  String reference,  DateTime? expiresAt,  DateTime? createdAt,  DateTime? updatedAt,  LineItem lineItem)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String code,  GiftCardStatus status,  int value,  String currencyCode,  String customerId,  Customer customer,  String referenceId,  String note,  String reference,  DateTime? expiresAt,  DateTime? createdAt,  DateTime? updatedAt,  LineItem lineItem)  $default,) {final _that = this;
 switch (_that) {
 case _GiftCard():
 return $default(_that.id,_that.code,_that.status,_that.value,_that.currencyCode,_that.customerId,_that.customer,_that.referenceId,_that.note,_that.reference,_that.expiresAt,_that.createdAt,_that.updatedAt,_that.lineItem);case _:
@@ -225,7 +225,7 @@ return $default(_that.id,_that.code,_that.status,_that.value,_that.currencyCode,
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String code,  String status,  int value,  String currencyCode,  String customerId,  Customer customer,  String referenceId,  String note,  String reference,  DateTime? expiresAt,  DateTime? createdAt,  DateTime? updatedAt,  LineItem lineItem)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String code,  GiftCardStatus status,  int value,  String currencyCode,  String customerId,  Customer customer,  String referenceId,  String note,  String reference,  DateTime? expiresAt,  DateTime? createdAt,  DateTime? updatedAt,  LineItem lineItem)?  $default,) {final _that = this;
 switch (_that) {
 case _GiftCard() when $default != null:
 return $default(_that.id,_that.code,_that.status,_that.value,_that.currencyCode,_that.customerId,_that.customer,_that.referenceId,_that.note,_that.reference,_that.expiresAt,_that.createdAt,_that.updatedAt,_that.lineItem);case _:
@@ -245,7 +245,7 @@ class _GiftCard implements GiftCard {
 
 @override final  String id;
 @override final  String code;
-@override final  String status;
+@override final  GiftCardStatus status;
 @override final  int value;
 @override final  String currencyCode;
 @override final  String customerId;
@@ -291,7 +291,7 @@ abstract mixin class _$GiftCardCopyWith<$Res> implements $GiftCardCopyWith<$Res>
   factory _$GiftCardCopyWith(_GiftCard value, $Res Function(_GiftCard) _then) = __$GiftCardCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String code, String status, int value, String currencyCode, String customerId, Customer customer, String referenceId, String note, String reference, DateTime? expiresAt, DateTime? createdAt, DateTime? updatedAt, LineItem lineItem
+ String id, String code, GiftCardStatus status, int value, String currencyCode, String customerId, Customer customer, String referenceId, String note, String reference, DateTime? expiresAt, DateTime? createdAt, DateTime? updatedAt, LineItem lineItem
 });
 
 
@@ -313,7 +313,7 @@ class __$GiftCardCopyWithImpl<$Res>
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,code: null == code ? _self.code : code // ignore: cast_nullable_to_non_nullable
 as String,status: null == status ? _self.status : status // ignore: cast_nullable_to_non_nullable
-as String,value: null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
+as GiftCardStatus,value: null == value ? _self.value : value // ignore: cast_nullable_to_non_nullable
 as int,currencyCode: null == currencyCode ? _self.currencyCode : currencyCode // ignore: cast_nullable_to_non_nullable
 as String,customerId: null == customerId ? _self.customerId : customerId // ignore: cast_nullable_to_non_nullable
 as String,customer: null == customer ? _self.customer : customer // ignore: cast_nullable_to_non_nullable
