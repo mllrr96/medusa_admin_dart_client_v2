@@ -9,7 +9,7 @@ part 'product_option.g.dart';
 abstract class ProductOption with _$ProductOption {
   const factory ProductOption({
     required String id,
-    required String title,
+    String? title,
     @JsonKey(name: 'product_id') String? productId,
     Product? product,
     List<ProductOptionValue>? values,

@@ -9,7 +9,7 @@ part of 'product_option.dart';
 _ProductOption _$ProductOptionFromJson(Map<String, dynamic> json) =>
     _ProductOption(
       id: json['id'] as String,
-      title: json['title'] as String,
+      title: json['title'] as String?,
       productId: json['product_id'] as String?,
       product: json['product'] == null
           ? null

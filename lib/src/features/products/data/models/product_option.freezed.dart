@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ProductOption {
 
- String get id; String get title;@JsonKey(name: 'product_id') String? get productId; Product? get product; List<ProductOptionValue>? get values; Map<String, dynamic>? get metadata;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt;
+ String get id; String? get title;@JsonKey(name: 'product_id') String? get productId; Product? get product; List<ProductOptionValue>? get values; Map<String, dynamic>? get metadata;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt;
 /// Create a copy of ProductOption
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $ProductOptionCopyWith<$Res>  {
   factory $ProductOptionCopyWith(ProductOption value, $Res Function(ProductOption) _then) = _$ProductOptionCopyWithImpl;
 @useResult
 $Res call({
- String id, String title,@JsonKey(name: 'product_id') String? productId, Product? product, List<ProductOptionValue>? values, Map<String, dynamic>? metadata,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
+ String id, String? title,@JsonKey(name: 'product_id') String? productId, Product? product, List<ProductOptionValue>? values, Map<String, dynamic>? metadata,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
 });
 
 
@@ -65,11 +65,11 @@ class _$ProductOptionCopyWithImpl<$Res>
 
 /// Create a copy of ProductOption
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? title = null,Object? productId = freezed,Object? product = freezed,Object? values = freezed,Object? metadata = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? title = freezed,Object? productId = freezed,Object? product = freezed,Object? values = freezed,Object? metadata = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
-as String,productId: freezed == productId ? _self.productId : productId // ignore: cast_nullable_to_non_nullable
+as String,title: freezed == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
+as String?,productId: freezed == productId ? _self.productId : productId // ignore: cast_nullable_to_non_nullable
 as String?,product: freezed == product ? _self.product : product // ignore: cast_nullable_to_non_nullable
 as Product?,values: freezed == values ? _self.values : values // ignore: cast_nullable_to_non_nullable
 as List<ProductOptionValue>?,metadata: freezed == metadata ? _self.metadata : metadata // ignore: cast_nullable_to_non_nullable
@@ -173,7 +173,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String title, @JsonKey(name: 'product_id')  String? productId,  Product? product,  List<ProductOptionValue>? values,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String? title, @JsonKey(name: 'product_id')  String? productId,  Product? product,  List<ProductOptionValue>? values,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ProductOption() when $default != null:
 return $default(_that.id,_that.title,_that.productId,_that.product,_that.values,_that.metadata,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -194,7 +194,7 @@ return $default(_that.id,_that.title,_that.productId,_that.product,_that.values,
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String title, @JsonKey(name: 'product_id')  String? productId,  Product? product,  List<ProductOptionValue>? values,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String? title, @JsonKey(name: 'product_id')  String? productId,  Product? product,  List<ProductOptionValue>? values,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)  $default,) {final _that = this;
 switch (_that) {
 case _ProductOption():
 return $default(_that.id,_that.title,_that.productId,_that.product,_that.values,_that.metadata,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -214,7 +214,7 @@ return $default(_that.id,_that.title,_that.productId,_that.product,_that.values,
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String title, @JsonKey(name: 'product_id')  String? productId,  Product? product,  List<ProductOptionValue>? values,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String? title, @JsonKey(name: 'product_id')  String? productId,  Product? product,  List<ProductOptionValue>? values,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _ProductOption() when $default != null:
 return $default(_that.id,_that.title,_that.productId,_that.product,_that.values,_that.metadata,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -229,11 +229,11 @@ return $default(_that.id,_that.title,_that.productId,_that.product,_that.values,
 @JsonSerializable()
 
 class _ProductOption implements ProductOption {
-  const _ProductOption({required this.id, required this.title, @JsonKey(name: 'product_id') this.productId, this.product, final  List<ProductOptionValue>? values, final  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt}): _values = values,_metadata = metadata;
+  const _ProductOption({required this.id, this.title, @JsonKey(name: 'product_id') this.productId, this.product, final  List<ProductOptionValue>? values, final  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt}): _values = values,_metadata = metadata;
   factory _ProductOption.fromJson(Map<String, dynamic> json) => _$ProductOptionFromJson(json);
 
 @override final  String id;
-@override final  String title;
+@override final  String? title;
 @override@JsonKey(name: 'product_id') final  String? productId;
 @override final  Product? product;
  final  List<ProductOptionValue>? _values;
@@ -291,7 +291,7 @@ abstract mixin class _$ProductOptionCopyWith<$Res> implements $ProductOptionCopy
   factory _$ProductOptionCopyWith(_ProductOption value, $Res Function(_ProductOption) _then) = __$ProductOptionCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String title,@JsonKey(name: 'product_id') String? productId, Product? product, List<ProductOptionValue>? values, Map<String, dynamic>? metadata,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
+ String id, String? title,@JsonKey(name: 'product_id') String? productId, Product? product, List<ProductOptionValue>? values, Map<String, dynamic>? metadata,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
 });
 
 
@@ -308,11 +308,11 @@ class __$ProductOptionCopyWithImpl<$Res>
 
 /// Create a copy of ProductOption
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? title = null,Object? productId = freezed,Object? product = freezed,Object? values = freezed,Object? metadata = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? title = freezed,Object? productId = freezed,Object? product = freezed,Object? values = freezed,Object? metadata = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
   return _then(_ProductOption(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
-as String,productId: freezed == productId ? _self.productId : productId // ignore: cast_nullable_to_non_nullable
+as String,title: freezed == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
+as String?,productId: freezed == productId ? _self.productId : productId // ignore: cast_nullable_to_non_nullable
 as String?,product: freezed == product ? _self.product : product // ignore: cast_nullable_to_non_nullable
 as Product?,values: freezed == values ? _self._values : values // ignore: cast_nullable_to_non_nullable
 as List<ProductOptionValue>?,metadata: freezed == metadata ? _self._metadata : metadata // ignore: cast_nullable_to_non_nullable

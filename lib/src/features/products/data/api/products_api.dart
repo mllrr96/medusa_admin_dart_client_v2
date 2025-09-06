@@ -57,7 +57,7 @@ abstract class ProductsApi {
   );
 
   @GET('/admin/products/{id}/options')
-  Future<List<ProductOption>> listOptions(@Path('id') String id);
+  Future<ProductOptionsRes> listOptions(@Path('id') String id);
 
   @POST('/admin/products/{id}/options')
   Future<Product> createOption(
@@ -85,7 +85,7 @@ abstract class ProductsApi {
   );
 
   @GET('/admin/products/{id}/variants')
-  Future<List<ProductVariant>> listVariants(@Path('id') String id);
+  Future<ProductVariantsRes> listVariants(@Path('id') String id);
 
   @POST('/admin/products/{id}/variants')
   Future<Product> createVariant(

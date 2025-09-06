@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Currency {
 
- String get code; String get symbol; String get symbolNative; String get name;
+ String? get code; String? get symbol; String? get symbolNative; String? get name;
 /// Create a copy of Currency
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $CurrencyCopyWith<$Res>  {
   factory $CurrencyCopyWith(Currency value, $Res Function(Currency) _then) = _$CurrencyCopyWithImpl;
 @useResult
 $Res call({
- String code, String symbol, String symbolNative, String name
+ String? code, String? symbol, String? symbolNative, String? name
 });
 
 
@@ -65,13 +65,13 @@ class _$CurrencyCopyWithImpl<$Res>
 
 /// Create a copy of Currency
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? code = null,Object? symbol = null,Object? symbolNative = null,Object? name = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? code = freezed,Object? symbol = freezed,Object? symbolNative = freezed,Object? name = freezed,}) {
   return _then(_self.copyWith(
-code: null == code ? _self.code : code // ignore: cast_nullable_to_non_nullable
-as String,symbol: null == symbol ? _self.symbol : symbol // ignore: cast_nullable_to_non_nullable
-as String,symbolNative: null == symbolNative ? _self.symbolNative : symbolNative // ignore: cast_nullable_to_non_nullable
-as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,
+code: freezed == code ? _self.code : code // ignore: cast_nullable_to_non_nullable
+as String?,symbol: freezed == symbol ? _self.symbol : symbol // ignore: cast_nullable_to_non_nullable
+as String?,symbolNative: freezed == symbolNative ? _self.symbolNative : symbolNative // ignore: cast_nullable_to_non_nullable
+as String?,name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String?,
   ));
 }
 
@@ -156,7 +156,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String code,  String symbol,  String symbolNative,  String name)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? code,  String? symbol,  String? symbolNative,  String? name)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Currency() when $default != null:
 return $default(_that.code,_that.symbol,_that.symbolNative,_that.name);case _:
@@ -177,7 +177,7 @@ return $default(_that.code,_that.symbol,_that.symbolNative,_that.name);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String code,  String symbol,  String symbolNative,  String name)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? code,  String? symbol,  String? symbolNative,  String? name)  $default,) {final _that = this;
 switch (_that) {
 case _Currency():
 return $default(_that.code,_that.symbol,_that.symbolNative,_that.name);case _:
@@ -197,7 +197,7 @@ return $default(_that.code,_that.symbol,_that.symbolNative,_that.name);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String code,  String symbol,  String symbolNative,  String name)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? code,  String? symbol,  String? symbolNative,  String? name)?  $default,) {final _that = this;
 switch (_that) {
 case _Currency() when $default != null:
 return $default(_that.code,_that.symbol,_that.symbolNative,_that.name);case _:
@@ -212,13 +212,13 @@ return $default(_that.code,_that.symbol,_that.symbolNative,_that.name);case _:
 @JsonSerializable()
 
 class _Currency implements Currency {
-  const _Currency({required this.code, required this.symbol, required this.symbolNative, required this.name});
+  const _Currency({this.code, this.symbol, this.symbolNative, this.name});
   factory _Currency.fromJson(Map<String, dynamic> json) => _$CurrencyFromJson(json);
 
-@override final  String code;
-@override final  String symbol;
-@override final  String symbolNative;
-@override final  String name;
+@override final  String? code;
+@override final  String? symbol;
+@override final  String? symbolNative;
+@override final  String? name;
 
 /// Create a copy of Currency
 /// with the given fields replaced by the non-null parameter values.
@@ -253,7 +253,7 @@ abstract mixin class _$CurrencyCopyWith<$Res> implements $CurrencyCopyWith<$Res>
   factory _$CurrencyCopyWith(_Currency value, $Res Function(_Currency) _then) = __$CurrencyCopyWithImpl;
 @override @useResult
 $Res call({
- String code, String symbol, String symbolNative, String name
+ String? code, String? symbol, String? symbolNative, String? name
 });
 
 
@@ -270,13 +270,13 @@ class __$CurrencyCopyWithImpl<$Res>
 
 /// Create a copy of Currency
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? code = null,Object? symbol = null,Object? symbolNative = null,Object? name = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? code = freezed,Object? symbol = freezed,Object? symbolNative = freezed,Object? name = freezed,}) {
   return _then(_Currency(
-code: null == code ? _self.code : code // ignore: cast_nullable_to_non_nullable
-as String,symbol: null == symbol ? _self.symbol : symbol // ignore: cast_nullable_to_non_nullable
-as String,symbolNative: null == symbolNative ? _self.symbolNative : symbolNative // ignore: cast_nullable_to_non_nullable
-as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,
+code: freezed == code ? _self.code : code // ignore: cast_nullable_to_non_nullable
+as String?,symbol: freezed == symbol ? _self.symbol : symbol // ignore: cast_nullable_to_non_nullable
+as String?,symbolNative: freezed == symbolNative ? _self.symbolNative : symbolNative // ignore: cast_nullable_to_non_nullable
+as String?,name: freezed == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String?,
   ));
 }
 

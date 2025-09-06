@@ -2,6 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:medusa_admin_dart_client/medusa_admin_dart_client_v2.dart';
 
 part 'store.freezed.dart';
+
 part 'store.g.dart';
 
 @freezed
@@ -9,13 +10,11 @@ abstract class Store with _$Store {
   const factory Store({
     required String id,
     required String name,
-    @JsonKey(name: 'supported_currencies')
-    required List<StoreCurrency> supportedCurrencies,
-    @JsonKey(name: 'default_sales_channel_id')
-    required String defaultSalesChannelId,
-    @JsonKey(name: 'default_region_id') required String defaultRegionId,
-    @JsonKey(name: 'default_location_id') required String defaultLocationId,
-    required Map<String, dynamic> metadata,
+    @JsonKey(name: 'supported_currencies') List<StoreCurrency>? supportedCurrencies,
+    @JsonKey(name: 'default_sales_channel_id') String? defaultSalesChannelId,
+    @JsonKey(name: 'default_region_id') String? defaultRegionId,
+    @JsonKey(name: 'default_location_id') String? defaultLocationId,
+    Map<String, dynamic>? metadata,
     @JsonKey(name: 'created_at') DateTime? createdAt,
     @JsonKey(name: 'updated_at') DateTime? updatedAt,
   }) = _Store;
@@ -36,6 +35,5 @@ abstract class StoreCurrency with _$StoreCurrency {
     @JsonKey(name: 'deleted_at') DateTime? deletedAt,
   }) = _StoreCurrency;
 
-  factory StoreCurrency.fromJson(Map<String, dynamic> json) =>
-      _$StoreCurrencyFromJson(json);
+  factory StoreCurrency.fromJson(Map<String, dynamic> json) => _$StoreCurrencyFromJson(json);
 }

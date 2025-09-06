@@ -10,3 +10,5 @@ export 'products_res.dart';
 export 'create_product_req.dart';
 export 'update_product_req.dart';
 export 'product_status.dart';
+export 'product_variants_res.dart';
+export 'product_options_res.dart';

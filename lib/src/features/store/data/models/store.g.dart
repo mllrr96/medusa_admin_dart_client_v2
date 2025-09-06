@@ -9,13 +9,13 @@ part of 'store.dart';
 _Store _$StoreFromJson(Map<String, dynamic> json) => _Store(
   id: json['id'] as String,
   name: json['name'] as String,
-  supportedCurrencies: (json['supported_currencies'] as List<dynamic>)
-      .map((e) => StoreCurrency.fromJson(e as Map<String, dynamic>))
+  supportedCurrencies: (json['supported_currencies'] as List<dynamic>?)
+      ?.map((e) => StoreCurrency.fromJson(e as Map<String, dynamic>))
       .toList(),
-  defaultSalesChannelId: json['default_sales_channel_id'] as String,
-  defaultRegionId: json['default_region_id'] as String,
-  defaultLocationId: json['default_location_id'] as String,
-  metadata: json['metadata'] as Map<String, dynamic>,
+  defaultSalesChannelId: json['default_sales_channel_id'] as String?,
+  defaultRegionId: json['default_region_id'] as String?,
+  defaultLocationId: json['default_location_id'] as String?,
+  metadata: json['metadata'] as Map<String, dynamic>?,
   createdAt: json['created_at'] == null
       ? null
       : DateTime.parse(json['created_at'] as String),

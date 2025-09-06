@@ -274,12 +274,12 @@ class _ProductsApi implements ProductsApi {
   }
 
   @override
-  Future<List<ProductOption>> listOptions(String id) async {
+  Future<ProductOptionsRes> listOptions(String id) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<List<ProductOption>>(
+    final _options = _setStreamType<ProductOptionsRes>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -289,12 +289,10 @@ class _ProductsApi implements ProductsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<List<dynamic>>(_options);
-    late List<ProductOption> _value;
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late ProductOptionsRes _value;
     try {
-      _value = _result.data!
-          .map((dynamic i) => ProductOption.fromJson(i as Map<String, dynamic>))
-          .toList();
+      _value = ProductOptionsRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -407,12 +405,12 @@ class _ProductsApi implements ProductsApi {
   }
 
   @override
-  Future<List<ProductVariant>> listVariants(String id) async {
+  Future<ProductVariantsRes> listVariants(String id) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<List<ProductVariant>>(
+    final _options = _setStreamType<ProductVariantsRes>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -422,14 +420,10 @@ class _ProductsApi implements ProductsApi {
           )
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
-    final _result = await _dio.fetch<List<dynamic>>(_options);
-    late List<ProductVariant> _value;
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late ProductVariantsRes _value;
     try {
-      _value = _result.data!
-          .map(
-            (dynamic i) => ProductVariant.fromJson(i as Map<String, dynamic>),
-          )
-          .toList();
+      _value = ProductVariantsRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

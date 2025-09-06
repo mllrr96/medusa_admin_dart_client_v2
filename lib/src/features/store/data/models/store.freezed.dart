@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Store {
 
- String get id; String get name;@JsonKey(name: 'supported_currencies') List<StoreCurrency> get supportedCurrencies;@JsonKey(name: 'default_sales_channel_id') String get defaultSalesChannelId;@JsonKey(name: 'default_region_id') String get defaultRegionId;@JsonKey(name: 'default_location_id') String get defaultLocationId; Map<String, dynamic> get metadata;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;
+ String get id; String get name;@JsonKey(name: 'supported_currencies') List<StoreCurrency>? get supportedCurrencies;@JsonKey(name: 'default_sales_channel_id') String? get defaultSalesChannelId;@JsonKey(name: 'default_region_id') String? get defaultRegionId;@JsonKey(name: 'default_location_id') String? get defaultLocationId; Map<String, dynamic>? get metadata;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;
 /// Create a copy of Store
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $StoreCopyWith<$Res>  {
   factory $StoreCopyWith(Store value, $Res Function(Store) _then) = _$StoreCopyWithImpl;
 @useResult
 $Res call({
- String id, String name,@JsonKey(name: 'supported_currencies') List<StoreCurrency> supportedCurrencies,@JsonKey(name: 'default_sales_channel_id') String defaultSalesChannelId,@JsonKey(name: 'default_region_id') String defaultRegionId,@JsonKey(name: 'default_location_id') String defaultLocationId, Map<String, dynamic> metadata,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt
+ String id, String name,@JsonKey(name: 'supported_currencies') List<StoreCurrency>? supportedCurrencies,@JsonKey(name: 'default_sales_channel_id') String? defaultSalesChannelId,@JsonKey(name: 'default_region_id') String? defaultRegionId,@JsonKey(name: 'default_location_id') String? defaultLocationId, Map<String, dynamic>? metadata,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt
 });
 
 
@@ -65,16 +65,16 @@ class _$StoreCopyWithImpl<$Res>
 
 /// Create a copy of Store
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? supportedCurrencies = null,Object? defaultSalesChannelId = null,Object? defaultRegionId = null,Object? defaultLocationId = null,Object? metadata = null,Object? createdAt = freezed,Object? updatedAt = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? supportedCurrencies = freezed,Object? defaultSalesChannelId = freezed,Object? defaultRegionId = freezed,Object? defaultLocationId = freezed,Object? metadata = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,supportedCurrencies: null == supportedCurrencies ? _self.supportedCurrencies : supportedCurrencies // ignore: cast_nullable_to_non_nullable
-as List<StoreCurrency>,defaultSalesChannelId: null == defaultSalesChannelId ? _self.defaultSalesChannelId : defaultSalesChannelId // ignore: cast_nullable_to_non_nullable
-as String,defaultRegionId: null == defaultRegionId ? _self.defaultRegionId : defaultRegionId // ignore: cast_nullable_to_non_nullable
-as String,defaultLocationId: null == defaultLocationId ? _self.defaultLocationId : defaultLocationId // ignore: cast_nullable_to_non_nullable
-as String,metadata: null == metadata ? _self.metadata : metadata // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as String,supportedCurrencies: freezed == supportedCurrencies ? _self.supportedCurrencies : supportedCurrencies // ignore: cast_nullable_to_non_nullable
+as List<StoreCurrency>?,defaultSalesChannelId: freezed == defaultSalesChannelId ? _self.defaultSalesChannelId : defaultSalesChannelId // ignore: cast_nullable_to_non_nullable
+as String?,defaultRegionId: freezed == defaultRegionId ? _self.defaultRegionId : defaultRegionId // ignore: cast_nullable_to_non_nullable
+as String?,defaultLocationId: freezed == defaultLocationId ? _self.defaultLocationId : defaultLocationId // ignore: cast_nullable_to_non_nullable
+as String?,metadata: freezed == metadata ? _self.metadata : metadata // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,
   ));
@@ -161,7 +161,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(name: 'supported_currencies')  List<StoreCurrency> supportedCurrencies, @JsonKey(name: 'default_sales_channel_id')  String defaultSalesChannelId, @JsonKey(name: 'default_region_id')  String defaultRegionId, @JsonKey(name: 'default_location_id')  String defaultLocationId,  Map<String, dynamic> metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(name: 'supported_currencies')  List<StoreCurrency>? supportedCurrencies, @JsonKey(name: 'default_sales_channel_id')  String? defaultSalesChannelId, @JsonKey(name: 'default_region_id')  String? defaultRegionId, @JsonKey(name: 'default_location_id')  String? defaultLocationId,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Store() when $default != null:
 return $default(_that.id,_that.name,_that.supportedCurrencies,_that.defaultSalesChannelId,_that.defaultRegionId,_that.defaultLocationId,_that.metadata,_that.createdAt,_that.updatedAt);case _:
@@ -182,7 +182,7 @@ return $default(_that.id,_that.name,_that.supportedCurrencies,_that.defaultSales
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(name: 'supported_currencies')  List<StoreCurrency> supportedCurrencies, @JsonKey(name: 'default_sales_channel_id')  String defaultSalesChannelId, @JsonKey(name: 'default_region_id')  String defaultRegionId, @JsonKey(name: 'default_location_id')  String defaultLocationId,  Map<String, dynamic> metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(name: 'supported_currencies')  List<StoreCurrency>? supportedCurrencies, @JsonKey(name: 'default_sales_channel_id')  String? defaultSalesChannelId, @JsonKey(name: 'default_region_id')  String? defaultRegionId, @JsonKey(name: 'default_location_id')  String? defaultLocationId,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt)  $default,) {final _that = this;
 switch (_that) {
 case _Store():
 return $default(_that.id,_that.name,_that.supportedCurrencies,_that.defaultSalesChannelId,_that.defaultRegionId,_that.defaultLocationId,_that.metadata,_that.createdAt,_that.updatedAt);case _:
@@ -202,7 +202,7 @@ return $default(_that.id,_that.name,_that.supportedCurrencies,_that.defaultSales
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name, @JsonKey(name: 'supported_currencies')  List<StoreCurrency> supportedCurrencies, @JsonKey(name: 'default_sales_channel_id')  String defaultSalesChannelId, @JsonKey(name: 'default_region_id')  String defaultRegionId, @JsonKey(name: 'default_location_id')  String defaultLocationId,  Map<String, dynamic> metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name, @JsonKey(name: 'supported_currencies')  List<StoreCurrency>? supportedCurrencies, @JsonKey(name: 'default_sales_channel_id')  String? defaultSalesChannelId, @JsonKey(name: 'default_region_id')  String? defaultRegionId, @JsonKey(name: 'default_location_id')  String? defaultLocationId,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _Store() when $default != null:
 return $default(_that.id,_that.name,_that.supportedCurrencies,_that.defaultSalesChannelId,_that.defaultRegionId,_that.defaultLocationId,_that.metadata,_that.createdAt,_that.updatedAt);case _:
@@ -217,26 +217,30 @@ return $default(_that.id,_that.name,_that.supportedCurrencies,_that.defaultSales
 @JsonSerializable()
 
 class _Store implements Store {
-  const _Store({required this.id, required this.name, @JsonKey(name: 'supported_currencies') required final  List<StoreCurrency> supportedCurrencies, @JsonKey(name: 'default_sales_channel_id') required this.defaultSalesChannelId, @JsonKey(name: 'default_region_id') required this.defaultRegionId, @JsonKey(name: 'default_location_id') required this.defaultLocationId, required final  Map<String, dynamic> metadata, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt}): _supportedCurrencies = supportedCurrencies,_metadata = metadata;
+  const _Store({required this.id, required this.name, @JsonKey(name: 'supported_currencies') final  List<StoreCurrency>? supportedCurrencies, @JsonKey(name: 'default_sales_channel_id') this.defaultSalesChannelId, @JsonKey(name: 'default_region_id') this.defaultRegionId, @JsonKey(name: 'default_location_id') this.defaultLocationId, final  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt}): _supportedCurrencies = supportedCurrencies,_metadata = metadata;
   factory _Store.fromJson(Map<String, dynamic> json) => _$StoreFromJson(json);
 
 @override final  String id;
 @override final  String name;
- final  List<StoreCurrency> _supportedCurrencies;
-@override@JsonKey(name: 'supported_currencies') List<StoreCurrency> get supportedCurrencies {
+ final  List<StoreCurrency>? _supportedCurrencies;
+@override@JsonKey(name: 'supported_currencies') List<StoreCurrency>? get supportedCurrencies {
+  final value = _supportedCurrencies;
+  if (value == null) return null;
   if (_supportedCurrencies is EqualUnmodifiableListView) return _supportedCurrencies;
   // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_supportedCurrencies);
+  return EqualUnmodifiableListView(value);
 }
 
-@override@JsonKey(name: 'default_sales_channel_id') final  String defaultSalesChannelId;
-@override@JsonKey(name: 'default_region_id') final  String defaultRegionId;
-@override@JsonKey(name: 'default_location_id') final  String defaultLocationId;
- final  Map<String, dynamic> _metadata;
-@override Map<String, dynamic> get metadata {
+@override@JsonKey(name: 'default_sales_channel_id') final  String? defaultSalesChannelId;
+@override@JsonKey(name: 'default_region_id') final  String? defaultRegionId;
+@override@JsonKey(name: 'default_location_id') final  String? defaultLocationId;
+ final  Map<String, dynamic>? _metadata;
+@override Map<String, dynamic>? get metadata {
+  final value = _metadata;
+  if (value == null) return null;
   if (_metadata is EqualUnmodifiableMapView) return _metadata;
   // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(_metadata);
+  return EqualUnmodifiableMapView(value);
 }
 
 @override@JsonKey(name: 'created_at') final  DateTime? createdAt;
@@ -275,7 +279,7 @@ abstract mixin class _$StoreCopyWith<$Res> implements $StoreCopyWith<$Res> {
   factory _$StoreCopyWith(_Store value, $Res Function(_Store) _then) = __$StoreCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String name,@JsonKey(name: 'supported_currencies') List<StoreCurrency> supportedCurrencies,@JsonKey(name: 'default_sales_channel_id') String defaultSalesChannelId,@JsonKey(name: 'default_region_id') String defaultRegionId,@JsonKey(name: 'default_location_id') String defaultLocationId, Map<String, dynamic> metadata,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt
+ String id, String name,@JsonKey(name: 'supported_currencies') List<StoreCurrency>? supportedCurrencies,@JsonKey(name: 'default_sales_channel_id') String? defaultSalesChannelId,@JsonKey(name: 'default_region_id') String? defaultRegionId,@JsonKey(name: 'default_location_id') String? defaultLocationId, Map<String, dynamic>? metadata,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt
 });
 
 
@@ -292,16 +296,16 @@ class __$StoreCopyWithImpl<$Res>
 
 /// Create a copy of Store
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? supportedCurrencies = null,Object? defaultSalesChannelId = null,Object? defaultRegionId = null,Object? defaultLocationId = null,Object? metadata = null,Object? createdAt = freezed,Object? updatedAt = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? supportedCurrencies = freezed,Object? defaultSalesChannelId = freezed,Object? defaultRegionId = freezed,Object? defaultLocationId = freezed,Object? metadata = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,}) {
   return _then(_Store(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,supportedCurrencies: null == supportedCurrencies ? _self._supportedCurrencies : supportedCurrencies // ignore: cast_nullable_to_non_nullable
-as List<StoreCurrency>,defaultSalesChannelId: null == defaultSalesChannelId ? _self.defaultSalesChannelId : defaultSalesChannelId // ignore: cast_nullable_to_non_nullable
-as String,defaultRegionId: null == defaultRegionId ? _self.defaultRegionId : defaultRegionId // ignore: cast_nullable_to_non_nullable
-as String,defaultLocationId: null == defaultLocationId ? _self.defaultLocationId : defaultLocationId // ignore: cast_nullable_to_non_nullable
-as String,metadata: null == metadata ? _self._metadata : metadata // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as String,supportedCurrencies: freezed == supportedCurrencies ? _self._supportedCurrencies : supportedCurrencies // ignore: cast_nullable_to_non_nullable
+as List<StoreCurrency>?,defaultSalesChannelId: freezed == defaultSalesChannelId ? _self.defaultSalesChannelId : defaultSalesChannelId // ignore: cast_nullable_to_non_nullable
+as String?,defaultRegionId: freezed == defaultRegionId ? _self.defaultRegionId : defaultRegionId // ignore: cast_nullable_to_non_nullable
+as String?,defaultLocationId: freezed == defaultLocationId ? _self.defaultLocationId : defaultLocationId // ignore: cast_nullable_to_non_nullable
+as String?,metadata: freezed == metadata ? _self._metadata : metadata // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,
   ));

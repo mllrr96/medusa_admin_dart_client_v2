@@ -58,7 +58,7 @@ class ProductsRepository {
     return _productsApi.update(id, body);
   }
 
-  Future<List<ProductOption>> listOptions(String id) {
+  Future<ProductOptionsRes> listOptions(String id) {
     return _productsApi.listOptions(id);
   }
 
@@ -82,7 +82,7 @@ class ProductsRepository {
     return _productsApi.updateOption(id, optionId, body);
   }
 
-  Future<List<ProductVariant>> listVariants(String id) {
+  Future<ProductVariantsRes> listVariants(String id) {
     return _productsApi.listVariants(id);
   }
 
