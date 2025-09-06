@@ -7,7 +7,7 @@ part 'auth_models.g.dart';
 @freezed
 abstract class AuthAdminSessionResponse with _$AuthAdminSessionResponse {
   const factory AuthAdminSessionResponse({
-    required User user,
+    required SessionUser user,
   }) = _AuthAdminSessionResponse;
 
   factory AuthAdminSessionResponse.fromJson(Map<String, dynamic> json) =>

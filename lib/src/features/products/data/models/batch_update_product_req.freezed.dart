@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$BatchUpdateProductReq {
 
- String get id; String? get title; String? get subtitle; String? get description;@JsonKey(name: 'is_giftcard') bool? get isGiftcard; bool? get discountable; List<String>? get images; String? get thumbnail; String? get handle; String? get status;@JsonKey(name: 'type_id') String? get typeId;@JsonKey(name: 'collection_id') String? get collectionId; List<Map<String, String>>? get categories; List<Map<String, String>>? get tags; List<UpdateProductOptionReq>? get options; List<Map<String, dynamic>>? get variants;@JsonKey(name: 'sales_channels') List<Map<String, String>>? get salesChannels; int? get weight; int? get length; int? get height; int? get width;@JsonKey(name: 'hs_code') String? get hsCode;@JsonKey(name: 'mid_code') String? get midCode;@JsonKey(name: 'origin_country') String? get originCountry; String? get material; Map<String, dynamic>? get metadata;@JsonKey(name: 'external_id') String? get externalId;@JsonKey(name: 'shipping_profile_id') String? get shippingProfileId;
+ String get id; String? get title; String? get subtitle; String? get description;@JsonKey(name: 'is_giftcard') bool? get isGiftcard; bool? get discountable; List<String>? get images; String? get thumbnail; String? get handle; String? get status;@JsonKey(name: 'type_id') String? get typeId;@JsonKey(name: 'collection_id') String? get collectionId; List<Map<String, String>>? get categories; List<Map<String, String>>? get tags; List<UpdateProductOptionReq>? get options; List<Map<String, dynamic>>? get variants;@JsonKey(name: 'sales_channels') List<Map<String, String>>? get salesChannels; String? get weight; String? get length; String? get height; String? get width;@JsonKey(name: 'hs_code') String? get hsCode;@JsonKey(name: 'mid_code') String? get midCode;@JsonKey(name: 'origin_country') String? get originCountry; String? get material; Map<String, dynamic>? get metadata;@JsonKey(name: 'external_id') String? get externalId;@JsonKey(name: 'shipping_profile_id') String? get shippingProfileId;
 /// Create a copy of BatchUpdateProductReq
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $BatchUpdateProductReqCopyWith<$Res>  {
   factory $BatchUpdateProductReqCopyWith(BatchUpdateProductReq value, $Res Function(BatchUpdateProductReq) _then) = _$BatchUpdateProductReqCopyWithImpl;
 @useResult
 $Res call({
- String id, String? title, String? subtitle, String? description,@JsonKey(name: 'is_giftcard') bool? isGiftcard, bool? discountable, List<String>? images, String? thumbnail, String? handle, String? status,@JsonKey(name: 'type_id') String? typeId,@JsonKey(name: 'collection_id') String? collectionId, List<Map<String, String>>? categories, List<Map<String, String>>? tags, List<UpdateProductOptionReq>? options, List<Map<String, dynamic>>? variants,@JsonKey(name: 'sales_channels') List<Map<String, String>>? salesChannels, int? weight, int? length, int? height, int? width,@JsonKey(name: 'hs_code') String? hsCode,@JsonKey(name: 'mid_code') String? midCode,@JsonKey(name: 'origin_country') String? originCountry, String? material, Map<String, dynamic>? metadata,@JsonKey(name: 'external_id') String? externalId,@JsonKey(name: 'shipping_profile_id') String? shippingProfileId
+ String id, String? title, String? subtitle, String? description,@JsonKey(name: 'is_giftcard') bool? isGiftcard, bool? discountable, List<String>? images, String? thumbnail, String? handle, String? status,@JsonKey(name: 'type_id') String? typeId,@JsonKey(name: 'collection_id') String? collectionId, List<Map<String, String>>? categories, List<Map<String, String>>? tags, List<UpdateProductOptionReq>? options, List<Map<String, dynamic>>? variants,@JsonKey(name: 'sales_channels') List<Map<String, String>>? salesChannels, String? weight, String? length, String? height, String? width,@JsonKey(name: 'hs_code') String? hsCode,@JsonKey(name: 'mid_code') String? midCode,@JsonKey(name: 'origin_country') String? originCountry, String? material, Map<String, dynamic>? metadata,@JsonKey(name: 'external_id') String? externalId,@JsonKey(name: 'shipping_profile_id') String? shippingProfileId
 });
 
 
@@ -85,10 +85,10 @@ as List<Map<String, String>>?,options: freezed == options ? _self.options : opti
 as List<UpdateProductOptionReq>?,variants: freezed == variants ? _self.variants : variants // ignore: cast_nullable_to_non_nullable
 as List<Map<String, dynamic>>?,salesChannels: freezed == salesChannels ? _self.salesChannels : salesChannels // ignore: cast_nullable_to_non_nullable
 as List<Map<String, String>>?,weight: freezed == weight ? _self.weight : weight // ignore: cast_nullable_to_non_nullable
-as int?,length: freezed == length ? _self.length : length // ignore: cast_nullable_to_non_nullable
-as int?,height: freezed == height ? _self.height : height // ignore: cast_nullable_to_non_nullable
-as int?,width: freezed == width ? _self.width : width // ignore: cast_nullable_to_non_nullable
-as int?,hsCode: freezed == hsCode ? _self.hsCode : hsCode // ignore: cast_nullable_to_non_nullable
+as String?,length: freezed == length ? _self.length : length // ignore: cast_nullable_to_non_nullable
+as String?,height: freezed == height ? _self.height : height // ignore: cast_nullable_to_non_nullable
+as String?,width: freezed == width ? _self.width : width // ignore: cast_nullable_to_non_nullable
+as String?,hsCode: freezed == hsCode ? _self.hsCode : hsCode // ignore: cast_nullable_to_non_nullable
 as String?,midCode: freezed == midCode ? _self.midCode : midCode // ignore: cast_nullable_to_non_nullable
 as String?,originCountry: freezed == originCountry ? _self.originCountry : originCountry // ignore: cast_nullable_to_non_nullable
 as String?,material: freezed == material ? _self.material : material // ignore: cast_nullable_to_non_nullable
@@ -180,7 +180,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String? title,  String? subtitle,  String? description, @JsonKey(name: 'is_giftcard')  bool? isGiftcard,  bool? discountable,  List<String>? images,  String? thumbnail,  String? handle,  String? status, @JsonKey(name: 'type_id')  String? typeId, @JsonKey(name: 'collection_id')  String? collectionId,  List<Map<String, String>>? categories,  List<Map<String, String>>? tags,  List<UpdateProductOptionReq>? options,  List<Map<String, dynamic>>? variants, @JsonKey(name: 'sales_channels')  List<Map<String, String>>? salesChannels,  int? weight,  int? length,  int? height,  int? width, @JsonKey(name: 'hs_code')  String? hsCode, @JsonKey(name: 'mid_code')  String? midCode, @JsonKey(name: 'origin_country')  String? originCountry,  String? material,  Map<String, dynamic>? metadata, @JsonKey(name: 'external_id')  String? externalId, @JsonKey(name: 'shipping_profile_id')  String? shippingProfileId)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String? title,  String? subtitle,  String? description, @JsonKey(name: 'is_giftcard')  bool? isGiftcard,  bool? discountable,  List<String>? images,  String? thumbnail,  String? handle,  String? status, @JsonKey(name: 'type_id')  String? typeId, @JsonKey(name: 'collection_id')  String? collectionId,  List<Map<String, String>>? categories,  List<Map<String, String>>? tags,  List<UpdateProductOptionReq>? options,  List<Map<String, dynamic>>? variants, @JsonKey(name: 'sales_channels')  List<Map<String, String>>? salesChannels,  String? weight,  String? length,  String? height,  String? width, @JsonKey(name: 'hs_code')  String? hsCode, @JsonKey(name: 'mid_code')  String? midCode, @JsonKey(name: 'origin_country')  String? originCountry,  String? material,  Map<String, dynamic>? metadata, @JsonKey(name: 'external_id')  String? externalId, @JsonKey(name: 'shipping_profile_id')  String? shippingProfileId)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _BatchUpdateProductReq() when $default != null:
 return $default(_that.id,_that.title,_that.subtitle,_that.description,_that.isGiftcard,_that.discountable,_that.images,_that.thumbnail,_that.handle,_that.status,_that.typeId,_that.collectionId,_that.categories,_that.tags,_that.options,_that.variants,_that.salesChannels,_that.weight,_that.length,_that.height,_that.width,_that.hsCode,_that.midCode,_that.originCountry,_that.material,_that.metadata,_that.externalId,_that.shippingProfileId);case _:
@@ -201,7 +201,7 @@ return $default(_that.id,_that.title,_that.subtitle,_that.description,_that.isGi
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String? title,  String? subtitle,  String? description, @JsonKey(name: 'is_giftcard')  bool? isGiftcard,  bool? discountable,  List<String>? images,  String? thumbnail,  String? handle,  String? status, @JsonKey(name: 'type_id')  String? typeId, @JsonKey(name: 'collection_id')  String? collectionId,  List<Map<String, String>>? categories,  List<Map<String, String>>? tags,  List<UpdateProductOptionReq>? options,  List<Map<String, dynamic>>? variants, @JsonKey(name: 'sales_channels')  List<Map<String, String>>? salesChannels,  int? weight,  int? length,  int? height,  int? width, @JsonKey(name: 'hs_code')  String? hsCode, @JsonKey(name: 'mid_code')  String? midCode, @JsonKey(name: 'origin_country')  String? originCountry,  String? material,  Map<String, dynamic>? metadata, @JsonKey(name: 'external_id')  String? externalId, @JsonKey(name: 'shipping_profile_id')  String? shippingProfileId)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String? title,  String? subtitle,  String? description, @JsonKey(name: 'is_giftcard')  bool? isGiftcard,  bool? discountable,  List<String>? images,  String? thumbnail,  String? handle,  String? status, @JsonKey(name: 'type_id')  String? typeId, @JsonKey(name: 'collection_id')  String? collectionId,  List<Map<String, String>>? categories,  List<Map<String, String>>? tags,  List<UpdateProductOptionReq>? options,  List<Map<String, dynamic>>? variants, @JsonKey(name: 'sales_channels')  List<Map<String, String>>? salesChannels,  String? weight,  String? length,  String? height,  String? width, @JsonKey(name: 'hs_code')  String? hsCode, @JsonKey(name: 'mid_code')  String? midCode, @JsonKey(name: 'origin_country')  String? originCountry,  String? material,  Map<String, dynamic>? metadata, @JsonKey(name: 'external_id')  String? externalId, @JsonKey(name: 'shipping_profile_id')  String? shippingProfileId)  $default,) {final _that = this;
 switch (_that) {
 case _BatchUpdateProductReq():
 return $default(_that.id,_that.title,_that.subtitle,_that.description,_that.isGiftcard,_that.discountable,_that.images,_that.thumbnail,_that.handle,_that.status,_that.typeId,_that.collectionId,_that.categories,_that.tags,_that.options,_that.variants,_that.salesChannels,_that.weight,_that.length,_that.height,_that.width,_that.hsCode,_that.midCode,_that.originCountry,_that.material,_that.metadata,_that.externalId,_that.shippingProfileId);case _:
@@ -221,7 +221,7 @@ return $default(_that.id,_that.title,_that.subtitle,_that.description,_that.isGi
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String? title,  String? subtitle,  String? description, @JsonKey(name: 'is_giftcard')  bool? isGiftcard,  bool? discountable,  List<String>? images,  String? thumbnail,  String? handle,  String? status, @JsonKey(name: 'type_id')  String? typeId, @JsonKey(name: 'collection_id')  String? collectionId,  List<Map<String, String>>? categories,  List<Map<String, String>>? tags,  List<UpdateProductOptionReq>? options,  List<Map<String, dynamic>>? variants, @JsonKey(name: 'sales_channels')  List<Map<String, String>>? salesChannels,  int? weight,  int? length,  int? height,  int? width, @JsonKey(name: 'hs_code')  String? hsCode, @JsonKey(name: 'mid_code')  String? midCode, @JsonKey(name: 'origin_country')  String? originCountry,  String? material,  Map<String, dynamic>? metadata, @JsonKey(name: 'external_id')  String? externalId, @JsonKey(name: 'shipping_profile_id')  String? shippingProfileId)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String? title,  String? subtitle,  String? description, @JsonKey(name: 'is_giftcard')  bool? isGiftcard,  bool? discountable,  List<String>? images,  String? thumbnail,  String? handle,  String? status, @JsonKey(name: 'type_id')  String? typeId, @JsonKey(name: 'collection_id')  String? collectionId,  List<Map<String, String>>? categories,  List<Map<String, String>>? tags,  List<UpdateProductOptionReq>? options,  List<Map<String, dynamic>>? variants, @JsonKey(name: 'sales_channels')  List<Map<String, String>>? salesChannels,  String? weight,  String? length,  String? height,  String? width, @JsonKey(name: 'hs_code')  String? hsCode, @JsonKey(name: 'mid_code')  String? midCode, @JsonKey(name: 'origin_country')  String? originCountry,  String? material,  Map<String, dynamic>? metadata, @JsonKey(name: 'external_id')  String? externalId, @JsonKey(name: 'shipping_profile_id')  String? shippingProfileId)?  $default,) {final _that = this;
 switch (_that) {
 case _BatchUpdateProductReq() when $default != null:
 return $default(_that.id,_that.title,_that.subtitle,_that.description,_that.isGiftcard,_that.discountable,_that.images,_that.thumbnail,_that.handle,_that.status,_that.typeId,_that.collectionId,_that.categories,_that.tags,_that.options,_that.variants,_that.salesChannels,_that.weight,_that.length,_that.height,_that.width,_that.hsCode,_that.midCode,_that.originCountry,_that.material,_that.metadata,_that.externalId,_that.shippingProfileId);case _:
@@ -304,10 +304,10 @@ class _BatchUpdateProductReq implements BatchUpdateProductReq {
   return EqualUnmodifiableListView(value);
 }
 
-@override final  int? weight;
-@override final  int? length;
-@override final  int? height;
-@override final  int? width;
+@override final  String? weight;
+@override final  String? length;
+@override final  String? height;
+@override final  String? width;
 @override@JsonKey(name: 'hs_code') final  String? hsCode;
 @override@JsonKey(name: 'mid_code') final  String? midCode;
 @override@JsonKey(name: 'origin_country') final  String? originCountry;
@@ -357,7 +357,7 @@ abstract mixin class _$BatchUpdateProductReqCopyWith<$Res> implements $BatchUpda
   factory _$BatchUpdateProductReqCopyWith(_BatchUpdateProductReq value, $Res Function(_BatchUpdateProductReq) _then) = __$BatchUpdateProductReqCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String? title, String? subtitle, String? description,@JsonKey(name: 'is_giftcard') bool? isGiftcard, bool? discountable, List<String>? images, String? thumbnail, String? handle, String? status,@JsonKey(name: 'type_id') String? typeId,@JsonKey(name: 'collection_id') String? collectionId, List<Map<String, String>>? categories, List<Map<String, String>>? tags, List<UpdateProductOptionReq>? options, List<Map<String, dynamic>>? variants,@JsonKey(name: 'sales_channels') List<Map<String, String>>? salesChannels, int? weight, int? length, int? height, int? width,@JsonKey(name: 'hs_code') String? hsCode,@JsonKey(name: 'mid_code') String? midCode,@JsonKey(name: 'origin_country') String? originCountry, String? material, Map<String, dynamic>? metadata,@JsonKey(name: 'external_id') String? externalId,@JsonKey(name: 'shipping_profile_id') String? shippingProfileId
+ String id, String? title, String? subtitle, String? description,@JsonKey(name: 'is_giftcard') bool? isGiftcard, bool? discountable, List<String>? images, String? thumbnail, String? handle, String? status,@JsonKey(name: 'type_id') String? typeId,@JsonKey(name: 'collection_id') String? collectionId, List<Map<String, String>>? categories, List<Map<String, String>>? tags, List<UpdateProductOptionReq>? options, List<Map<String, dynamic>>? variants,@JsonKey(name: 'sales_channels') List<Map<String, String>>? salesChannels, String? weight, String? length, String? height, String? width,@JsonKey(name: 'hs_code') String? hsCode,@JsonKey(name: 'mid_code') String? midCode,@JsonKey(name: 'origin_country') String? originCountry, String? material, Map<String, dynamic>? metadata,@JsonKey(name: 'external_id') String? externalId,@JsonKey(name: 'shipping_profile_id') String? shippingProfileId
 });
 
 
@@ -394,10 +394,10 @@ as List<Map<String, String>>?,options: freezed == options ? _self._options : opt
 as List<UpdateProductOptionReq>?,variants: freezed == variants ? _self._variants : variants // ignore: cast_nullable_to_non_nullable
 as List<Map<String, dynamic>>?,salesChannels: freezed == salesChannels ? _self._salesChannels : salesChannels // ignore: cast_nullable_to_non_nullable
 as List<Map<String, String>>?,weight: freezed == weight ? _self.weight : weight // ignore: cast_nullable_to_non_nullable
-as int?,length: freezed == length ? _self.length : length // ignore: cast_nullable_to_non_nullable
-as int?,height: freezed == height ? _self.height : height // ignore: cast_nullable_to_non_nullable
-as int?,width: freezed == width ? _self.width : width // ignore: cast_nullable_to_non_nullable
-as int?,hsCode: freezed == hsCode ? _self.hsCode : hsCode // ignore: cast_nullable_to_non_nullable
+as String?,length: freezed == length ? _self.length : length // ignore: cast_nullable_to_non_nullable
+as String?,height: freezed == height ? _self.height : height // ignore: cast_nullable_to_non_nullable
+as String?,width: freezed == width ? _self.width : width // ignore: cast_nullable_to_non_nullable
+as String?,hsCode: freezed == hsCode ? _self.hsCode : hsCode // ignore: cast_nullable_to_non_nullable
 as String?,midCode: freezed == midCode ? _self.midCode : midCode // ignore: cast_nullable_to_non_nullable
 as String?,originCountry: freezed == originCountry ? _self.originCountry : originCountry // ignore: cast_nullable_to_non_nullable
 as String?,material: freezed == material ? _self.material : material // ignore: cast_nullable_to_non_nullable

@@ -16,9 +16,11 @@ abstract class UsersApi {
   });
 
   @GET('/admin/users/me')
-  Future<UserResponse> retrieveMe({
-    @Queries() Map<String, dynamic>? query,
-  });
+  Future<UserResponse> retrieveMe(
+  {
+    @Query('fields') String? fields,
+  }
+  );
 
   @GET('/admin/users/{id}')
   Future<UserResponse> retrieve(@Path('id') String id);

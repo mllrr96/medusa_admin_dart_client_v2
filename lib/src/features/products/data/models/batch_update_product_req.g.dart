@@ -36,10 +36,10 @@ _BatchUpdateProductReq _$BatchUpdateProductReqFromJson(
   salesChannels: (json['sales_channels'] as List<dynamic>?)
       ?.map((e) => Map<String, String>.from(e as Map))
       .toList(),
-  weight: (json['weight'] as num?)?.toInt(),
-  length: (json['length'] as num?)?.toInt(),
-  height: (json['height'] as num?)?.toInt(),
-  width: (json['width'] as num?)?.toInt(),
+  weight: json['weight'] as String?,
+  length: json['length'] as String?,
+  height: json['height'] as String?,
+  width: json['width'] as String?,
   hsCode: json['hs_code'] as String?,
   midCode: json['mid_code'] as String?,
   originCountry: json['origin_country'] as String?,

@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$CreateProductVariantReq {
 
- String get title; String? get sku; String? get ean; String? get upc; String? get barcode;@JsonKey(name: 'hs_code') String? get hsCode;@JsonKey(name: 'mid_code') String? get midCode;@JsonKey(name: 'allow_backorder') bool? get allowBackorder;@JsonKey(name: 'manage_inventory') bool? get manageInventory;@JsonKey(name: 'variant_rank') int? get rank; int? get weight; int? get length; int? get height; int? get width;@JsonKey(name: 'origin_country') String? get originCountry; String? get material; Map<String, dynamic>? get metadata; List<CreateProductVariantPriceReq> get prices; Map<String, String>? get options;@JsonKey(name: 'inventory_items') List<CreateProductVariantInventoryKitReq>? get inventoryItems;
+ String get title; String? get sku; String? get ean; String? get upc; String? get barcode;@JsonKey(name: 'hs_code') String? get hsCode;@JsonKey(name: 'mid_code') String? get midCode;@JsonKey(name: 'allow_backorder') bool? get allowBackorder;@JsonKey(name: 'manage_inventory') bool? get manageInventory;@JsonKey(name: 'variant_rank') int? get rank; String? get weight; String? get length; String? get height; String? get width;@JsonKey(name: 'origin_country') String? get originCountry; String? get material; Map<String, dynamic>? get metadata; List<CreateProductVariantPriceReq> get prices; Map<String, String>? get options;@JsonKey(name: 'inventory_items') List<CreateProductVariantInventoryKitReq>? get inventoryItems;
 /// Create a copy of CreateProductVariantReq
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $CreateProductVariantReqCopyWith<$Res>  {
   factory $CreateProductVariantReqCopyWith(CreateProductVariantReq value, $Res Function(CreateProductVariantReq) _then) = _$CreateProductVariantReqCopyWithImpl;
 @useResult
 $Res call({
- String title, String? sku, String? ean, String? upc, String? barcode,@JsonKey(name: 'hs_code') String? hsCode,@JsonKey(name: 'mid_code') String? midCode,@JsonKey(name: 'allow_backorder') bool? allowBackorder,@JsonKey(name: 'manage_inventory') bool? manageInventory,@JsonKey(name: 'variant_rank') int? rank, int? weight, int? length, int? height, int? width,@JsonKey(name: 'origin_country') String? originCountry, String? material, Map<String, dynamic>? metadata, List<CreateProductVariantPriceReq> prices, Map<String, String>? options,@JsonKey(name: 'inventory_items') List<CreateProductVariantInventoryKitReq>? inventoryItems
+ String title, String? sku, String? ean, String? upc, String? barcode,@JsonKey(name: 'hs_code') String? hsCode,@JsonKey(name: 'mid_code') String? midCode,@JsonKey(name: 'allow_backorder') bool? allowBackorder,@JsonKey(name: 'manage_inventory') bool? manageInventory,@JsonKey(name: 'variant_rank') int? rank, String? weight, String? length, String? height, String? width,@JsonKey(name: 'origin_country') String? originCountry, String? material, Map<String, dynamic>? metadata, List<CreateProductVariantPriceReq> prices, Map<String, String>? options,@JsonKey(name: 'inventory_items') List<CreateProductVariantInventoryKitReq>? inventoryItems
 });
 
 
@@ -78,10 +78,10 @@ as String?,allowBackorder: freezed == allowBackorder ? _self.allowBackorder : al
 as bool?,manageInventory: freezed == manageInventory ? _self.manageInventory : manageInventory // ignore: cast_nullable_to_non_nullable
 as bool?,rank: freezed == rank ? _self.rank : rank // ignore: cast_nullable_to_non_nullable
 as int?,weight: freezed == weight ? _self.weight : weight // ignore: cast_nullable_to_non_nullable
-as int?,length: freezed == length ? _self.length : length // ignore: cast_nullable_to_non_nullable
-as int?,height: freezed == height ? _self.height : height // ignore: cast_nullable_to_non_nullable
-as int?,width: freezed == width ? _self.width : width // ignore: cast_nullable_to_non_nullable
-as int?,originCountry: freezed == originCountry ? _self.originCountry : originCountry // ignore: cast_nullable_to_non_nullable
+as String?,length: freezed == length ? _self.length : length // ignore: cast_nullable_to_non_nullable
+as String?,height: freezed == height ? _self.height : height // ignore: cast_nullable_to_non_nullable
+as String?,width: freezed == width ? _self.width : width // ignore: cast_nullable_to_non_nullable
+as String?,originCountry: freezed == originCountry ? _self.originCountry : originCountry // ignore: cast_nullable_to_non_nullable
 as String?,material: freezed == material ? _self.material : material // ignore: cast_nullable_to_non_nullable
 as String?,metadata: freezed == metadata ? _self.metadata : metadata // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,prices: null == prices ? _self.prices : prices // ignore: cast_nullable_to_non_nullable
@@ -172,7 +172,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String title,  String? sku,  String? ean,  String? upc,  String? barcode, @JsonKey(name: 'hs_code')  String? hsCode, @JsonKey(name: 'mid_code')  String? midCode, @JsonKey(name: 'allow_backorder')  bool? allowBackorder, @JsonKey(name: 'manage_inventory')  bool? manageInventory, @JsonKey(name: 'variant_rank')  int? rank,  int? weight,  int? length,  int? height,  int? width, @JsonKey(name: 'origin_country')  String? originCountry,  String? material,  Map<String, dynamic>? metadata,  List<CreateProductVariantPriceReq> prices,  Map<String, String>? options, @JsonKey(name: 'inventory_items')  List<CreateProductVariantInventoryKitReq>? inventoryItems)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String title,  String? sku,  String? ean,  String? upc,  String? barcode, @JsonKey(name: 'hs_code')  String? hsCode, @JsonKey(name: 'mid_code')  String? midCode, @JsonKey(name: 'allow_backorder')  bool? allowBackorder, @JsonKey(name: 'manage_inventory')  bool? manageInventory, @JsonKey(name: 'variant_rank')  int? rank,  String? weight,  String? length,  String? height,  String? width, @JsonKey(name: 'origin_country')  String? originCountry,  String? material,  Map<String, dynamic>? metadata,  List<CreateProductVariantPriceReq> prices,  Map<String, String>? options, @JsonKey(name: 'inventory_items')  List<CreateProductVariantInventoryKitReq>? inventoryItems)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _CreateProductVariantReq() when $default != null:
 return $default(_that.title,_that.sku,_that.ean,_that.upc,_that.barcode,_that.hsCode,_that.midCode,_that.allowBackorder,_that.manageInventory,_that.rank,_that.weight,_that.length,_that.height,_that.width,_that.originCountry,_that.material,_that.metadata,_that.prices,_that.options,_that.inventoryItems);case _:
@@ -193,7 +193,7 @@ return $default(_that.title,_that.sku,_that.ean,_that.upc,_that.barcode,_that.hs
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String title,  String? sku,  String? ean,  String? upc,  String? barcode, @JsonKey(name: 'hs_code')  String? hsCode, @JsonKey(name: 'mid_code')  String? midCode, @JsonKey(name: 'allow_backorder')  bool? allowBackorder, @JsonKey(name: 'manage_inventory')  bool? manageInventory, @JsonKey(name: 'variant_rank')  int? rank,  int? weight,  int? length,  int? height,  int? width, @JsonKey(name: 'origin_country')  String? originCountry,  String? material,  Map<String, dynamic>? metadata,  List<CreateProductVariantPriceReq> prices,  Map<String, String>? options, @JsonKey(name: 'inventory_items')  List<CreateProductVariantInventoryKitReq>? inventoryItems)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String title,  String? sku,  String? ean,  String? upc,  String? barcode, @JsonKey(name: 'hs_code')  String? hsCode, @JsonKey(name: 'mid_code')  String? midCode, @JsonKey(name: 'allow_backorder')  bool? allowBackorder, @JsonKey(name: 'manage_inventory')  bool? manageInventory, @JsonKey(name: 'variant_rank')  int? rank,  String? weight,  String? length,  String? height,  String? width, @JsonKey(name: 'origin_country')  String? originCountry,  String? material,  Map<String, dynamic>? metadata,  List<CreateProductVariantPriceReq> prices,  Map<String, String>? options, @JsonKey(name: 'inventory_items')  List<CreateProductVariantInventoryKitReq>? inventoryItems)  $default,) {final _that = this;
 switch (_that) {
 case _CreateProductVariantReq():
 return $default(_that.title,_that.sku,_that.ean,_that.upc,_that.barcode,_that.hsCode,_that.midCode,_that.allowBackorder,_that.manageInventory,_that.rank,_that.weight,_that.length,_that.height,_that.width,_that.originCountry,_that.material,_that.metadata,_that.prices,_that.options,_that.inventoryItems);case _:
@@ -213,7 +213,7 @@ return $default(_that.title,_that.sku,_that.ean,_that.upc,_that.barcode,_that.hs
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String title,  String? sku,  String? ean,  String? upc,  String? barcode, @JsonKey(name: 'hs_code')  String? hsCode, @JsonKey(name: 'mid_code')  String? midCode, @JsonKey(name: 'allow_backorder')  bool? allowBackorder, @JsonKey(name: 'manage_inventory')  bool? manageInventory, @JsonKey(name: 'variant_rank')  int? rank,  int? weight,  int? length,  int? height,  int? width, @JsonKey(name: 'origin_country')  String? originCountry,  String? material,  Map<String, dynamic>? metadata,  List<CreateProductVariantPriceReq> prices,  Map<String, String>? options, @JsonKey(name: 'inventory_items')  List<CreateProductVariantInventoryKitReq>? inventoryItems)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String title,  String? sku,  String? ean,  String? upc,  String? barcode, @JsonKey(name: 'hs_code')  String? hsCode, @JsonKey(name: 'mid_code')  String? midCode, @JsonKey(name: 'allow_backorder')  bool? allowBackorder, @JsonKey(name: 'manage_inventory')  bool? manageInventory, @JsonKey(name: 'variant_rank')  int? rank,  String? weight,  String? length,  String? height,  String? width, @JsonKey(name: 'origin_country')  String? originCountry,  String? material,  Map<String, dynamic>? metadata,  List<CreateProductVariantPriceReq> prices,  Map<String, String>? options, @JsonKey(name: 'inventory_items')  List<CreateProductVariantInventoryKitReq>? inventoryItems)?  $default,) {final _that = this;
 switch (_that) {
 case _CreateProductVariantReq() when $default != null:
 return $default(_that.title,_that.sku,_that.ean,_that.upc,_that.barcode,_that.hsCode,_that.midCode,_that.allowBackorder,_that.manageInventory,_that.rank,_that.weight,_that.length,_that.height,_that.width,_that.originCountry,_that.material,_that.metadata,_that.prices,_that.options,_that.inventoryItems);case _:
@@ -241,10 +241,10 @@ class _CreateProductVariantReq implements CreateProductVariantReq {
 @override@JsonKey(name: 'allow_backorder') final  bool? allowBackorder;
 @override@JsonKey(name: 'manage_inventory') final  bool? manageInventory;
 @override@JsonKey(name: 'variant_rank') final  int? rank;
-@override final  int? weight;
-@override final  int? length;
-@override final  int? height;
-@override final  int? width;
+@override final  String? weight;
+@override final  String? length;
+@override final  String? height;
+@override final  String? width;
 @override@JsonKey(name: 'origin_country') final  String? originCountry;
 @override final  String? material;
  final  Map<String, dynamic>? _metadata;
@@ -315,7 +315,7 @@ abstract mixin class _$CreateProductVariantReqCopyWith<$Res> implements $CreateP
   factory _$CreateProductVariantReqCopyWith(_CreateProductVariantReq value, $Res Function(_CreateProductVariantReq) _then) = __$CreateProductVariantReqCopyWithImpl;
 @override @useResult
 $Res call({
- String title, String? sku, String? ean, String? upc, String? barcode,@JsonKey(name: 'hs_code') String? hsCode,@JsonKey(name: 'mid_code') String? midCode,@JsonKey(name: 'allow_backorder') bool? allowBackorder,@JsonKey(name: 'manage_inventory') bool? manageInventory,@JsonKey(name: 'variant_rank') int? rank, int? weight, int? length, int? height, int? width,@JsonKey(name: 'origin_country') String? originCountry, String? material, Map<String, dynamic>? metadata, List<CreateProductVariantPriceReq> prices, Map<String, String>? options,@JsonKey(name: 'inventory_items') List<CreateProductVariantInventoryKitReq>? inventoryItems
+ String title, String? sku, String? ean, String? upc, String? barcode,@JsonKey(name: 'hs_code') String? hsCode,@JsonKey(name: 'mid_code') String? midCode,@JsonKey(name: 'allow_backorder') bool? allowBackorder,@JsonKey(name: 'manage_inventory') bool? manageInventory,@JsonKey(name: 'variant_rank') int? rank, String? weight, String? length, String? height, String? width,@JsonKey(name: 'origin_country') String? originCountry, String? material, Map<String, dynamic>? metadata, List<CreateProductVariantPriceReq> prices, Map<String, String>? options,@JsonKey(name: 'inventory_items') List<CreateProductVariantInventoryKitReq>? inventoryItems
 });
 
 
@@ -345,10 +345,10 @@ as String?,allowBackorder: freezed == allowBackorder ? _self.allowBackorder : al
 as bool?,manageInventory: freezed == manageInventory ? _self.manageInventory : manageInventory // ignore: cast_nullable_to_non_nullable
 as bool?,rank: freezed == rank ? _self.rank : rank // ignore: cast_nullable_to_non_nullable
 as int?,weight: freezed == weight ? _self.weight : weight // ignore: cast_nullable_to_non_nullable
-as int?,length: freezed == length ? _self.length : length // ignore: cast_nullable_to_non_nullable
-as int?,height: freezed == height ? _self.height : height // ignore: cast_nullable_to_non_nullable
-as int?,width: freezed == width ? _self.width : width // ignore: cast_nullable_to_non_nullable
-as int?,originCountry: freezed == originCountry ? _self.originCountry : originCountry // ignore: cast_nullable_to_non_nullable
+as String?,length: freezed == length ? _self.length : length // ignore: cast_nullable_to_non_nullable
+as String?,height: freezed == height ? _self.height : height // ignore: cast_nullable_to_non_nullable
+as String?,width: freezed == width ? _self.width : width // ignore: cast_nullable_to_non_nullable
+as String?,originCountry: freezed == originCountry ? _self.originCountry : originCountry // ignore: cast_nullable_to_non_nullable
 as String?,material: freezed == material ? _self.material : material // ignore: cast_nullable_to_non_nullable
 as String?,metadata: freezed == metadata ? _self._metadata : metadata // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,prices: null == prices ? _self._prices : prices // ignore: cast_nullable_to_non_nullable

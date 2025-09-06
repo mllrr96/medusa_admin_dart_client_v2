@@ -18,10 +18,11 @@ class _AuthApi implements AuthApi {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<AuthAdminSessionResponse> postSession() async {
+  Future<AuthAdminSessionResponse> postSession(String authorization) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'Authorization': authorization};
+    _headers.removeWhere((k, v) => v == null);
     const Map<String, dynamic>? _data = null;
     final _options = _setStreamType<AuthAdminSessionResponse>(
       Options(method: 'POST', headers: _headers, extra: _extra)
@@ -101,12 +102,13 @@ class _AuthApi implements AuthApi {
   @override
   Future<dynamic> authProvider(
     String authProvider,
-    PostActorTypeAuthProviderReq body,
+    Map<String, dynamic> body,
   ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = body;
+    final _data = <String, dynamic>{};
+    _data.addAll(body);
     final _options = _setStreamType<dynamic>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(

@@ -6,8 +6,8 @@ class AuthRepository {
 
   final AuthApi _authApi;
 
-  Future<AuthAdminSessionResponse> postSession() {
-    return _authApi.postSession();
+  Future<AuthAdminSessionResponse> postSession(String authorization) {
+    return _authApi.postSession(authorization);
   }
 
   Future<DeleteSessionRes> logout() {
@@ -24,7 +24,7 @@ class AuthRepository {
   ) {
     return _authApi.authProvider(
       authProvider,
-      PostActorTypeAuthProviderReq(payload: payload),
+      payload,
     );
   }
 

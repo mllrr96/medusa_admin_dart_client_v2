@@ -10,7 +10,9 @@ abstract class AuthApi {
   factory AuthApi(Dio dio, {String baseUrl}) = _AuthApi;
 
   @POST('/auth/session')
-  Future<AuthAdminSessionResponse> postSession();
+  Future<AuthAdminSessionResponse> postSession(
+    @Header('Authorization') String authorization,
+  );
 
   @DELETE('/auth/session')
   Future<DeleteSessionRes> logout();
@@ -21,7 +23,7 @@ abstract class AuthApi {
   @POST('/auth/user/{auth_provider}')
   Future<dynamic> authProvider(
     @Path('auth_provider') String authProvider,
-    @Body() PostActorTypeAuthProviderReq body,
+    @Body() Map<String, dynamic> body,
   );
 
   @POST('/auth/user/{auth_provider}/callback')

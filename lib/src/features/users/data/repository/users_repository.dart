@@ -16,9 +16,9 @@ class UsersRepository {
   }
 
   Future<UserResponse> retrieveMe({
-    Map<String, dynamic>? queryParameters,
+    String? fields,
   }) {
-    return _usersApi.retrieveMe(query: queryParameters);
+    return _usersApi.retrieveMe(fields: fields);
   }
 
   Future<UserResponse> retrieve(String id) {

@@ -12,7 +12,7 @@ abstract class ProductOptionValue with _$ProductOptionValue {
     required String value,
     @JsonKey(name: 'option_id') required String optionId,
     ProductOption? option,
-    @JsonKey(name: 'variant_id') required String variantId,
+    @JsonKey(name: 'variant_id') String? variantId,
     ProductVariant? variant,
     @JsonKey(name: 'created_at') DateTime? createdAt,
     @JsonKey(name: 'updated_at') DateTime? updatedAt,

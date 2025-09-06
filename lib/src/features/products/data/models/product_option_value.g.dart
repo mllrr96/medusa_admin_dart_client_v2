@@ -14,7 +14,7 @@ _ProductOptionValue _$ProductOptionValueFromJson(Map<String, dynamic> json) =>
       option: json['option'] == null
           ? null
           : ProductOption.fromJson(json['option'] as Map<String, dynamic>),
-      variantId: json['variant_id'] as String,
+      variantId: json['variant_id'] as String?,
       variant: json['variant'] == null
           ? null
           : ProductVariant.fromJson(json['variant'] as Map<String, dynamic>),

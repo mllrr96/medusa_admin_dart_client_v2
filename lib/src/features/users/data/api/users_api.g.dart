@@ -47,10 +47,9 @@ class _UsersApi implements UsersApi {
   }
 
   @override
-  Future<UserResponse> retrieveMe({Map<String, dynamic>? query}) async {
+  Future<UserResponse> retrieveMe({String? fields}) async {
     final _extra = <String, dynamic>{};
-    final queryParameters = <String, dynamic>{};
-    queryParameters.addAll(query ?? <String, dynamic>{});
+    final queryParameters = <String, dynamic>{r'fields': fields};
     queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
