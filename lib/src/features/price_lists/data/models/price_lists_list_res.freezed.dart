@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$PriceListsListRes {
 
- List<PriceList> get priceLists; int get count; int get offset; int get limit;
+@JsonKey(name: 'price_lists') List<PriceList> get priceLists; int get count; int get offset; int get limit;
 /// Create a copy of PriceListsListRes
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $PriceListsListResCopyWith<$Res>  {
   factory $PriceListsListResCopyWith(PriceListsListRes value, $Res Function(PriceListsListRes) _then) = _$PriceListsListResCopyWithImpl;
 @useResult
 $Res call({
- List<PriceList> priceLists, int count, int offset, int limit
+@JsonKey(name: 'price_lists') List<PriceList> priceLists, int count, int offset, int limit
 });
 
 
@@ -156,7 +156,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<PriceList> priceLists,  int count,  int offset,  int limit)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'price_lists')  List<PriceList> priceLists,  int count,  int offset,  int limit)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _PriceListsListRes() when $default != null:
 return $default(_that.priceLists,_that.count,_that.offset,_that.limit);case _:
@@ -177,7 +177,7 @@ return $default(_that.priceLists,_that.count,_that.offset,_that.limit);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<PriceList> priceLists,  int count,  int offset,  int limit)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'price_lists')  List<PriceList> priceLists,  int count,  int offset,  int limit)  $default,) {final _that = this;
 switch (_that) {
 case _PriceListsListRes():
 return $default(_that.priceLists,_that.count,_that.offset,_that.limit);case _:
@@ -197,7 +197,7 @@ return $default(_that.priceLists,_that.count,_that.offset,_that.limit);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<PriceList> priceLists,  int count,  int offset,  int limit)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'price_lists')  List<PriceList> priceLists,  int count,  int offset,  int limit)?  $default,) {final _that = this;
 switch (_that) {
 case _PriceListsListRes() when $default != null:
 return $default(_that.priceLists,_that.count,_that.offset,_that.limit);case _:
@@ -212,11 +212,11 @@ return $default(_that.priceLists,_that.count,_that.offset,_that.limit);case _:
 @JsonSerializable()
 
 class _PriceListsListRes implements PriceListsListRes {
-  const _PriceListsListRes({required final  List<PriceList> priceLists, required this.count, required this.offset, required this.limit}): _priceLists = priceLists;
+  const _PriceListsListRes({@JsonKey(name: 'price_lists') required final  List<PriceList> priceLists, required this.count, required this.offset, required this.limit}): _priceLists = priceLists;
   factory _PriceListsListRes.fromJson(Map<String, dynamic> json) => _$PriceListsListResFromJson(json);
 
  final  List<PriceList> _priceLists;
-@override List<PriceList> get priceLists {
+@override@JsonKey(name: 'price_lists') List<PriceList> get priceLists {
   if (_priceLists is EqualUnmodifiableListView) return _priceLists;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_priceLists);
@@ -259,7 +259,7 @@ abstract mixin class _$PriceListsListResCopyWith<$Res> implements $PriceListsLis
   factory _$PriceListsListResCopyWith(_PriceListsListRes value, $Res Function(_PriceListsListRes) _then) = __$PriceListsListResCopyWithImpl;
 @override @useResult
 $Res call({
- List<PriceList> priceLists, int count, int offset, int limit
+@JsonKey(name: 'price_lists') List<PriceList> priceLists, int count, int offset, int limit
 });
 
 

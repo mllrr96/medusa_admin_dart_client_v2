@@ -16,6 +16,7 @@ abstract class TaxRateRes with _$TaxRateRes {
 @freezed
 abstract class TaxRatesListRes with _$TaxRatesListRes {
   const factory TaxRatesListRes({
+    @JsonKey(name: 'tax_rates')
     required List<TaxRate> taxRates,
     required int limit,
     required int offset,

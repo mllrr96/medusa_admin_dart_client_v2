@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$PricePreferenceListRes {
 
- List<PricePreference> get pricePreferences; int get limit; int get offset; int get count;
+@JsonKey(name: 'price_preferences') List<PricePreference> get pricePreferences; int get limit; int get offset; int get count;
 /// Create a copy of PricePreferenceListRes
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $PricePreferenceListResCopyWith<$Res>  {
   factory $PricePreferenceListResCopyWith(PricePreferenceListRes value, $Res Function(PricePreferenceListRes) _then) = _$PricePreferenceListResCopyWithImpl;
 @useResult
 $Res call({
- List<PricePreference> pricePreferences, int limit, int offset, int count
+@JsonKey(name: 'price_preferences') List<PricePreference> pricePreferences, int limit, int offset, int count
 });
 
 
@@ -156,7 +156,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<PricePreference> pricePreferences,  int limit,  int offset,  int count)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'price_preferences')  List<PricePreference> pricePreferences,  int limit,  int offset,  int count)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _PricePreferenceListRes() when $default != null:
 return $default(_that.pricePreferences,_that.limit,_that.offset,_that.count);case _:
@@ -177,7 +177,7 @@ return $default(_that.pricePreferences,_that.limit,_that.offset,_that.count);cas
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<PricePreference> pricePreferences,  int limit,  int offset,  int count)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'price_preferences')  List<PricePreference> pricePreferences,  int limit,  int offset,  int count)  $default,) {final _that = this;
 switch (_that) {
 case _PricePreferenceListRes():
 return $default(_that.pricePreferences,_that.limit,_that.offset,_that.count);case _:
@@ -197,7 +197,7 @@ return $default(_that.pricePreferences,_that.limit,_that.offset,_that.count);cas
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<PricePreference> pricePreferences,  int limit,  int offset,  int count)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'price_preferences')  List<PricePreference> pricePreferences,  int limit,  int offset,  int count)?  $default,) {final _that = this;
 switch (_that) {
 case _PricePreferenceListRes() when $default != null:
 return $default(_that.pricePreferences,_that.limit,_that.offset,_that.count);case _:
@@ -212,11 +212,11 @@ return $default(_that.pricePreferences,_that.limit,_that.offset,_that.count);cas
 @JsonSerializable()
 
 class _PricePreferenceListRes implements PricePreferenceListRes {
-  const _PricePreferenceListRes({required final  List<PricePreference> pricePreferences, required this.limit, required this.offset, required this.count}): _pricePreferences = pricePreferences;
+  const _PricePreferenceListRes({@JsonKey(name: 'price_preferences') required final  List<PricePreference> pricePreferences, required this.limit, required this.offset, required this.count}): _pricePreferences = pricePreferences;
   factory _PricePreferenceListRes.fromJson(Map<String, dynamic> json) => _$PricePreferenceListResFromJson(json);
 
  final  List<PricePreference> _pricePreferences;
-@override List<PricePreference> get pricePreferences {
+@override@JsonKey(name: 'price_preferences') List<PricePreference> get pricePreferences {
   if (_pricePreferences is EqualUnmodifiableListView) return _pricePreferences;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_pricePreferences);
@@ -259,7 +259,7 @@ abstract mixin class _$PricePreferenceListResCopyWith<$Res> implements $PricePre
   factory _$PricePreferenceListResCopyWith(_PricePreferenceListRes value, $Res Function(_PricePreferenceListRes) _then) = __$PricePreferenceListResCopyWithImpl;
 @override @useResult
 $Res call({
- List<PricePreference> pricePreferences, int limit, int offset, int count
+@JsonKey(name: 'price_preferences') List<PricePreference> pricePreferences, int limit, int offset, int count
 });
 
 

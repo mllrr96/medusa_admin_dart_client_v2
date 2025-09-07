@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$PaymentProviderListRes {
 
- List<PaymentProvider> get paymentProviders; int get limit; int get offset; int get count;
+@JsonKey(name: 'payment_providers') List<PaymentProvider> get paymentProviders; int get limit; int get offset; int get count;
 /// Create a copy of PaymentProviderListRes
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $PaymentProviderListResCopyWith<$Res>  {
   factory $PaymentProviderListResCopyWith(PaymentProviderListRes value, $Res Function(PaymentProviderListRes) _then) = _$PaymentProviderListResCopyWithImpl;
 @useResult
 $Res call({
- List<PaymentProvider> paymentProviders, int limit, int offset, int count
+@JsonKey(name: 'payment_providers') List<PaymentProvider> paymentProviders, int limit, int offset, int count
 });
 
 
@@ -156,7 +156,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<PaymentProvider> paymentProviders,  int limit,  int offset,  int count)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'payment_providers')  List<PaymentProvider> paymentProviders,  int limit,  int offset,  int count)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _PaymentProviderListRes() when $default != null:
 return $default(_that.paymentProviders,_that.limit,_that.offset,_that.count);case _:
@@ -177,7 +177,7 @@ return $default(_that.paymentProviders,_that.limit,_that.offset,_that.count);cas
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<PaymentProvider> paymentProviders,  int limit,  int offset,  int count)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'payment_providers')  List<PaymentProvider> paymentProviders,  int limit,  int offset,  int count)  $default,) {final _that = this;
 switch (_that) {
 case _PaymentProviderListRes():
 return $default(_that.paymentProviders,_that.limit,_that.offset,_that.count);case _:
@@ -197,7 +197,7 @@ return $default(_that.paymentProviders,_that.limit,_that.offset,_that.count);cas
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<PaymentProvider> paymentProviders,  int limit,  int offset,  int count)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'payment_providers')  List<PaymentProvider> paymentProviders,  int limit,  int offset,  int count)?  $default,) {final _that = this;
 switch (_that) {
 case _PaymentProviderListRes() when $default != null:
 return $default(_that.paymentProviders,_that.limit,_that.offset,_that.count);case _:
@@ -212,11 +212,11 @@ return $default(_that.paymentProviders,_that.limit,_that.offset,_that.count);cas
 @JsonSerializable()
 
 class _PaymentProviderListRes implements PaymentProviderListRes {
-  const _PaymentProviderListRes({required final  List<PaymentProvider> paymentProviders, required this.limit, required this.offset, required this.count}): _paymentProviders = paymentProviders;
+  const _PaymentProviderListRes({@JsonKey(name: 'payment_providers') required final  List<PaymentProvider> paymentProviders, required this.limit, required this.offset, required this.count}): _paymentProviders = paymentProviders;
   factory _PaymentProviderListRes.fromJson(Map<String, dynamic> json) => _$PaymentProviderListResFromJson(json);
 
  final  List<PaymentProvider> _paymentProviders;
-@override List<PaymentProvider> get paymentProviders {
+@override@JsonKey(name: 'payment_providers') List<PaymentProvider> get paymentProviders {
   if (_paymentProviders is EqualUnmodifiableListView) return _paymentProviders;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_paymentProviders);
@@ -259,7 +259,7 @@ abstract mixin class _$PaymentProviderListResCopyWith<$Res> implements $PaymentP
   factory _$PaymentProviderListResCopyWith(_PaymentProviderListRes value, $Res Function(_PaymentProviderListRes) _then) = __$PaymentProviderListResCopyWithImpl;
 @override @useResult
 $Res call({
- List<PaymentProvider> paymentProviders, int limit, int offset, int count
+@JsonKey(name: 'payment_providers') List<PaymentProvider> paymentProviders, int limit, int offset, int count
 });
 
 

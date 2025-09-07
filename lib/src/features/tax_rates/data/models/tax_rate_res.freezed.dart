@@ -296,7 +296,7 @@ $TaxRateCopyWith<$Res> get taxRate {
 /// @nodoc
 mixin _$TaxRatesListRes {
 
- List<TaxRate> get taxRates; int get limit; int get offset; int get count;
+@JsonKey(name: 'tax_rates') List<TaxRate> get taxRates; int get limit; int get offset; int get count;
 /// Create a copy of TaxRatesListRes
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -329,7 +329,7 @@ abstract mixin class $TaxRatesListResCopyWith<$Res>  {
   factory $TaxRatesListResCopyWith(TaxRatesListRes value, $Res Function(TaxRatesListRes) _then) = _$TaxRatesListResCopyWithImpl;
 @useResult
 $Res call({
- List<TaxRate> taxRates, int limit, int offset, int count
+@JsonKey(name: 'tax_rates') List<TaxRate> taxRates, int limit, int offset, int count
 });
 
 
@@ -437,7 +437,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<TaxRate> taxRates,  int limit,  int offset,  int count)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'tax_rates')  List<TaxRate> taxRates,  int limit,  int offset,  int count)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _TaxRatesListRes() when $default != null:
 return $default(_that.taxRates,_that.limit,_that.offset,_that.count);case _:
@@ -458,7 +458,7 @@ return $default(_that.taxRates,_that.limit,_that.offset,_that.count);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<TaxRate> taxRates,  int limit,  int offset,  int count)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'tax_rates')  List<TaxRate> taxRates,  int limit,  int offset,  int count)  $default,) {final _that = this;
 switch (_that) {
 case _TaxRatesListRes():
 return $default(_that.taxRates,_that.limit,_that.offset,_that.count);case _:
@@ -478,7 +478,7 @@ return $default(_that.taxRates,_that.limit,_that.offset,_that.count);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<TaxRate> taxRates,  int limit,  int offset,  int count)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'tax_rates')  List<TaxRate> taxRates,  int limit,  int offset,  int count)?  $default,) {final _that = this;
 switch (_that) {
 case _TaxRatesListRes() when $default != null:
 return $default(_that.taxRates,_that.limit,_that.offset,_that.count);case _:
@@ -493,11 +493,11 @@ return $default(_that.taxRates,_that.limit,_that.offset,_that.count);case _:
 @JsonSerializable()
 
 class _TaxRatesListRes implements TaxRatesListRes {
-  const _TaxRatesListRes({required final  List<TaxRate> taxRates, required this.limit, required this.offset, required this.count}): _taxRates = taxRates;
+  const _TaxRatesListRes({@JsonKey(name: 'tax_rates') required final  List<TaxRate> taxRates, required this.limit, required this.offset, required this.count}): _taxRates = taxRates;
   factory _TaxRatesListRes.fromJson(Map<String, dynamic> json) => _$TaxRatesListResFromJson(json);
 
  final  List<TaxRate> _taxRates;
-@override List<TaxRate> get taxRates {
+@override@JsonKey(name: 'tax_rates') List<TaxRate> get taxRates {
   if (_taxRates is EqualUnmodifiableListView) return _taxRates;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_taxRates);
@@ -540,7 +540,7 @@ abstract mixin class _$TaxRatesListResCopyWith<$Res> implements $TaxRatesListRes
   factory _$TaxRatesListResCopyWith(_TaxRatesListRes value, $Res Function(_TaxRatesListRes) _then) = __$TaxRatesListResCopyWithImpl;
 @override @useResult
 $Res call({
- List<TaxRate> taxRates, int limit, int offset, int count
+@JsonKey(name: 'tax_rates') List<TaxRate> taxRates, int limit, int offset, int count
 });
 
 

@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$TransactionGroupsListRes {
 
- List<TransactionGroup> get transactionGroups; int get limit; int get offset; int get count;
+@JsonKey(name: 'transaction_groups') List<TransactionGroup> get transactionGroups; int get limit; int get offset; int get count;
 /// Create a copy of TransactionGroupsListRes
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $TransactionGroupsListResCopyWith<$Res>  {
   factory $TransactionGroupsListResCopyWith(TransactionGroupsListRes value, $Res Function(TransactionGroupsListRes) _then) = _$TransactionGroupsListResCopyWithImpl;
 @useResult
 $Res call({
- List<TransactionGroup> transactionGroups, int limit, int offset, int count
+@JsonKey(name: 'transaction_groups') List<TransactionGroup> transactionGroups, int limit, int offset, int count
 });
 
 
@@ -156,7 +156,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<TransactionGroup> transactionGroups,  int limit,  int offset,  int count)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'transaction_groups')  List<TransactionGroup> transactionGroups,  int limit,  int offset,  int count)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _TransactionGroupsListRes() when $default != null:
 return $default(_that.transactionGroups,_that.limit,_that.offset,_that.count);case _:
@@ -177,7 +177,7 @@ return $default(_that.transactionGroups,_that.limit,_that.offset,_that.count);ca
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<TransactionGroup> transactionGroups,  int limit,  int offset,  int count)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'transaction_groups')  List<TransactionGroup> transactionGroups,  int limit,  int offset,  int count)  $default,) {final _that = this;
 switch (_that) {
 case _TransactionGroupsListRes():
 return $default(_that.transactionGroups,_that.limit,_that.offset,_that.count);case _:
@@ -197,7 +197,7 @@ return $default(_that.transactionGroups,_that.limit,_that.offset,_that.count);ca
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<TransactionGroup> transactionGroups,  int limit,  int offset,  int count)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'transaction_groups')  List<TransactionGroup> transactionGroups,  int limit,  int offset,  int count)?  $default,) {final _that = this;
 switch (_that) {
 case _TransactionGroupsListRes() when $default != null:
 return $default(_that.transactionGroups,_that.limit,_that.offset,_that.count);case _:
@@ -212,11 +212,11 @@ return $default(_that.transactionGroups,_that.limit,_that.offset,_that.count);ca
 @JsonSerializable()
 
 class _TransactionGroupsListRes implements TransactionGroupsListRes {
-  const _TransactionGroupsListRes({required final  List<TransactionGroup> transactionGroups, required this.limit, required this.offset, required this.count}): _transactionGroups = transactionGroups;
+  const _TransactionGroupsListRes({@JsonKey(name: 'transaction_groups') required final  List<TransactionGroup> transactionGroups, required this.limit, required this.offset, required this.count}): _transactionGroups = transactionGroups;
   factory _TransactionGroupsListRes.fromJson(Map<String, dynamic> json) => _$TransactionGroupsListResFromJson(json);
 
  final  List<TransactionGroup> _transactionGroups;
-@override List<TransactionGroup> get transactionGroups {
+@override@JsonKey(name: 'transaction_groups') List<TransactionGroup> get transactionGroups {
   if (_transactionGroups is EqualUnmodifiableListView) return _transactionGroups;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_transactionGroups);
@@ -259,7 +259,7 @@ abstract mixin class _$TransactionGroupsListResCopyWith<$Res> implements $Transa
   factory _$TransactionGroupsListResCopyWith(_TransactionGroupsListRes value, $Res Function(_TransactionGroupsListRes) _then) = __$TransactionGroupsListResCopyWithImpl;
 @override @useResult
 $Res call({
- List<TransactionGroup> transactionGroups, int limit, int offset, int count
+@JsonKey(name: 'transaction_groups') List<TransactionGroup> transactionGroups, int limit, int offset, int count
 });
 
 

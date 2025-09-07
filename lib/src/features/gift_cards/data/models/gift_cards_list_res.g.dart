@@ -9,7 +9,7 @@ part of 'gift_cards_list_res.dart';
 _GiftCardsListResponse _$GiftCardsListResponseFromJson(
   Map<String, dynamic> json,
 ) => _GiftCardsListResponse(
-  giftCards: (json['giftCards'] as List<dynamic>)
+  giftCards: (json['gift_cards'] as List<dynamic>)
       .map((e) => GiftCard.fromJson(e as Map<String, dynamic>))
       .toList(),
   count: (json['count'] as num).toInt(),
@@ -20,7 +20,7 @@ _GiftCardsListResponse _$GiftCardsListResponseFromJson(
 Map<String, dynamic> _$GiftCardsListResponseToJson(
   _GiftCardsListResponse instance,
 ) => <String, dynamic>{
-  'giftCards': instance.giftCards,
+  'gift_cards': instance.giftCards,
   'count': instance.count,
   'offset': instance.offset,
   'limit': instance.limit,

@@ -9,7 +9,7 @@ part of 'payment_provider_list_res.dart';
 _PaymentProviderListRes _$PaymentProviderListResFromJson(
   Map<String, dynamic> json,
 ) => _PaymentProviderListRes(
-  paymentProviders: (json['paymentProviders'] as List<dynamic>)
+  paymentProviders: (json['payment_providers'] as List<dynamic>)
       .map((e) => PaymentProvider.fromJson(e as Map<String, dynamic>))
       .toList(),
   limit: (json['limit'] as num).toInt(),
@@ -20,7 +20,7 @@ _PaymentProviderListRes _$PaymentProviderListResFromJson(
 Map<String, dynamic> _$PaymentProviderListResToJson(
   _PaymentProviderListRes instance,
 ) => <String, dynamic>{
-  'paymentProviders': instance.paymentProviders,
+  'payment_providers': instance.paymentProviders,
   'limit': instance.limit,
   'offset': instance.offset,
   'count': instance.count,

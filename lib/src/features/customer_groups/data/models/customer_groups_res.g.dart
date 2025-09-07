@@ -9,17 +9,17 @@ part of 'customer_groups_res.dart';
 _CustomerGroupsRes _$CustomerGroupsResFromJson(Map<String, dynamic> json) =>
     _CustomerGroupsRes(
       customerGroup: CustomerGroup.fromJson(
-        json['customerGroup'] as Map<String, dynamic>,
+        json['customer_group'] as Map<String, dynamic>,
       ),
     );
 
 Map<String, dynamic> _$CustomerGroupsResToJson(_CustomerGroupsRes instance) =>
-    <String, dynamic>{'customerGroup': instance.customerGroup};
+    <String, dynamic>{'customer_group': instance.customerGroup};
 
 _CustomerGroupsListRes _$CustomerGroupsListResFromJson(
   Map<String, dynamic> json,
 ) => _CustomerGroupsListRes(
-  customerGroups: (json['customerGroups'] as List<dynamic>)
+  customerGroups: (json['customer_groups'] as List<dynamic>)
       .map((e) => CustomerGroup.fromJson(e as Map<String, dynamic>))
       .toList(),
   count: (json['count'] as num).toInt(),
@@ -30,7 +30,7 @@ _CustomerGroupsListRes _$CustomerGroupsListResFromJson(
 Map<String, dynamic> _$CustomerGroupsListResToJson(
   _CustomerGroupsListRes instance,
 ) => <String, dynamic>{
-  'customerGroups': instance.customerGroups,
+  'customer_groups': instance.customerGroups,
   'count': instance.count,
   'limit': instance.limit,
   'offset': instance.offset,

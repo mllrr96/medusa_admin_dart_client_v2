@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$GiftCardsListResponse {
 
- List<GiftCard> get giftCards; int get count; int get offset; int get limit;
+@JsonKey(name: 'gift_cards') List<GiftCard> get giftCards; int get count; int get offset; int get limit;
 /// Create a copy of GiftCardsListResponse
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $GiftCardsListResponseCopyWith<$Res>  {
   factory $GiftCardsListResponseCopyWith(GiftCardsListResponse value, $Res Function(GiftCardsListResponse) _then) = _$GiftCardsListResponseCopyWithImpl;
 @useResult
 $Res call({
- List<GiftCard> giftCards, int count, int offset, int limit
+@JsonKey(name: 'gift_cards') List<GiftCard> giftCards, int count, int offset, int limit
 });
 
 
@@ -156,7 +156,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<GiftCard> giftCards,  int count,  int offset,  int limit)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'gift_cards')  List<GiftCard> giftCards,  int count,  int offset,  int limit)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _GiftCardsListResponse() when $default != null:
 return $default(_that.giftCards,_that.count,_that.offset,_that.limit);case _:
@@ -177,7 +177,7 @@ return $default(_that.giftCards,_that.count,_that.offset,_that.limit);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<GiftCard> giftCards,  int count,  int offset,  int limit)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'gift_cards')  List<GiftCard> giftCards,  int count,  int offset,  int limit)  $default,) {final _that = this;
 switch (_that) {
 case _GiftCardsListResponse():
 return $default(_that.giftCards,_that.count,_that.offset,_that.limit);case _:
@@ -197,7 +197,7 @@ return $default(_that.giftCards,_that.count,_that.offset,_that.limit);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<GiftCard> giftCards,  int count,  int offset,  int limit)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'gift_cards')  List<GiftCard> giftCards,  int count,  int offset,  int limit)?  $default,) {final _that = this;
 switch (_that) {
 case _GiftCardsListResponse() when $default != null:
 return $default(_that.giftCards,_that.count,_that.offset,_that.limit);case _:
@@ -212,11 +212,11 @@ return $default(_that.giftCards,_that.count,_that.offset,_that.limit);case _:
 @JsonSerializable()
 
 class _GiftCardsListResponse implements GiftCardsListResponse {
-  const _GiftCardsListResponse({required final  List<GiftCard> giftCards, required this.count, required this.offset, required this.limit}): _giftCards = giftCards;
+  const _GiftCardsListResponse({@JsonKey(name: 'gift_cards') required final  List<GiftCard> giftCards, required this.count, required this.offset, required this.limit}): _giftCards = giftCards;
   factory _GiftCardsListResponse.fromJson(Map<String, dynamic> json) => _$GiftCardsListResponseFromJson(json);
 
  final  List<GiftCard> _giftCards;
-@override List<GiftCard> get giftCards {
+@override@JsonKey(name: 'gift_cards') List<GiftCard> get giftCards {
   if (_giftCards is EqualUnmodifiableListView) return _giftCards;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_giftCards);
@@ -259,7 +259,7 @@ abstract mixin class _$GiftCardsListResponseCopyWith<$Res> implements $GiftCards
   factory _$GiftCardsListResponseCopyWith(_GiftCardsListResponse value, $Res Function(_GiftCardsListResponse) _then) = __$GiftCardsListResponseCopyWithImpl;
 @override @useResult
 $Res call({
- List<GiftCard> giftCards, int count, int offset, int limit
+@JsonKey(name: 'gift_cards') List<GiftCard> giftCards, int count, int offset, int limit
 });
 
 

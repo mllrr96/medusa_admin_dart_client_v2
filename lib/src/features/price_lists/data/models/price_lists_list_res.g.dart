@@ -8,7 +8,7 @@ part of 'price_lists_list_res.dart';
 
 _PriceListsListRes _$PriceListsListResFromJson(Map<String, dynamic> json) =>
     _PriceListsListRes(
-      priceLists: (json['priceLists'] as List<dynamic>)
+      priceLists: (json['price_lists'] as List<dynamic>)
           .map((e) => PriceList.fromJson(e as Map<String, dynamic>))
           .toList(),
       count: (json['count'] as num).toInt(),
@@ -18,7 +18,7 @@ _PriceListsListRes _$PriceListsListResFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$PriceListsListResToJson(_PriceListsListRes instance) =>
     <String, dynamic>{
-      'priceLists': instance.priceLists,
+      'price_lists': instance.priceLists,
       'count': instance.count,
       'offset': instance.offset,
       'limit': instance.limit,

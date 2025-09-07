@@ -7,6 +7,7 @@ part 'payment_provider_list_res.g.dart';
 @freezed
 abstract class PaymentProviderListRes with _$PaymentProviderListRes {
   const factory PaymentProviderListRes({
+    @JsonKey(name: 'payment_providers')
     required List<PaymentProvider> paymentProviders,
     required int limit,
     required int offset,

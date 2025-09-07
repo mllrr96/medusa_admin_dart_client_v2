@@ -8,6 +8,7 @@ part 'price_preference_list_res.g.dart';
 @freezed
 abstract class PricePreferenceListRes with _$PricePreferenceListRes {
   const factory PricePreferenceListRes({
+    @JsonKey(name: 'price_preferences')
     required List<PricePreference> pricePreferences,
     required int limit,
     required int offset,

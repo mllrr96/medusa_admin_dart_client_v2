@@ -9,7 +9,7 @@ part of 'price_preference_list_res.dart';
 _PricePreferenceListRes _$PricePreferenceListResFromJson(
   Map<String, dynamic> json,
 ) => _PricePreferenceListRes(
-  pricePreferences: (json['pricePreferences'] as List<dynamic>)
+  pricePreferences: (json['price_preferences'] as List<dynamic>)
       .map((e) => PricePreference.fromJson(e as Map<String, dynamic>))
       .toList(),
   limit: (json['limit'] as num).toInt(),
@@ -20,7 +20,7 @@ _PricePreferenceListRes _$PricePreferenceListResFromJson(
 Map<String, dynamic> _$PricePreferenceListResToJson(
   _PricePreferenceListRes instance,
 ) => <String, dynamic>{
-  'pricePreferences': instance.pricePreferences,
+  'price_preferences': instance.pricePreferences,
   'limit': instance.limit,
   'offset': instance.offset,
   'count': instance.count,

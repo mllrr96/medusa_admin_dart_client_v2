@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$RefundReasonListRes {
 
- List<RefundReason> get refundReasons; int get limit; int get offset; int get count;
+@JsonKey(name: 'refund_reasons') List<RefundReason> get refundReasons; int get limit; int get offset; int get count;
 /// Create a copy of RefundReasonListRes
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $RefundReasonListResCopyWith<$Res>  {
   factory $RefundReasonListResCopyWith(RefundReasonListRes value, $Res Function(RefundReasonListRes) _then) = _$RefundReasonListResCopyWithImpl;
 @useResult
 $Res call({
- List<RefundReason> refundReasons, int limit, int offset, int count
+@JsonKey(name: 'refund_reasons') List<RefundReason> refundReasons, int limit, int offset, int count
 });
 
 
@@ -156,7 +156,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<RefundReason> refundReasons,  int limit,  int offset,  int count)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'refund_reasons')  List<RefundReason> refundReasons,  int limit,  int offset,  int count)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _RefundReasonListRes() when $default != null:
 return $default(_that.refundReasons,_that.limit,_that.offset,_that.count);case _:
@@ -177,7 +177,7 @@ return $default(_that.refundReasons,_that.limit,_that.offset,_that.count);case _
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<RefundReason> refundReasons,  int limit,  int offset,  int count)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'refund_reasons')  List<RefundReason> refundReasons,  int limit,  int offset,  int count)  $default,) {final _that = this;
 switch (_that) {
 case _RefundReasonListRes():
 return $default(_that.refundReasons,_that.limit,_that.offset,_that.count);case _:
@@ -197,7 +197,7 @@ return $default(_that.refundReasons,_that.limit,_that.offset,_that.count);case _
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<RefundReason> refundReasons,  int limit,  int offset,  int count)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'refund_reasons')  List<RefundReason> refundReasons,  int limit,  int offset,  int count)?  $default,) {final _that = this;
 switch (_that) {
 case _RefundReasonListRes() when $default != null:
 return $default(_that.refundReasons,_that.limit,_that.offset,_that.count);case _:
@@ -212,11 +212,11 @@ return $default(_that.refundReasons,_that.limit,_that.offset,_that.count);case _
 @JsonSerializable()
 
 class _RefundReasonListRes implements RefundReasonListRes {
-  const _RefundReasonListRes({required final  List<RefundReason> refundReasons, required this.limit, required this.offset, required this.count}): _refundReasons = refundReasons;
+  const _RefundReasonListRes({@JsonKey(name: 'refund_reasons') required final  List<RefundReason> refundReasons, required this.limit, required this.offset, required this.count}): _refundReasons = refundReasons;
   factory _RefundReasonListRes.fromJson(Map<String, dynamic> json) => _$RefundReasonListResFromJson(json);
 
  final  List<RefundReason> _refundReasons;
-@override List<RefundReason> get refundReasons {
+@override@JsonKey(name: 'refund_reasons') List<RefundReason> get refundReasons {
   if (_refundReasons is EqualUnmodifiableListView) return _refundReasons;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_refundReasons);
@@ -259,7 +259,7 @@ abstract mixin class _$RefundReasonListResCopyWith<$Res> implements $RefundReaso
   factory _$RefundReasonListResCopyWith(_RefundReasonListRes value, $Res Function(_RefundReasonListRes) _then) = __$RefundReasonListResCopyWithImpl;
 @override @useResult
 $Res call({
- List<RefundReason> refundReasons, int limit, int offset, int count
+@JsonKey(name: 'refund_reasons') List<RefundReason> refundReasons, int limit, int offset, int count
 });
 
 

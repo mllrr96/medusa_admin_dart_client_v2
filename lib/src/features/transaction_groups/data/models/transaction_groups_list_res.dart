@@ -7,6 +7,7 @@ part 'transaction_groups_list_res.g.dart';
 @freezed
 abstract class TransactionGroupsListRes with _$TransactionGroupsListRes {
   const factory TransactionGroupsListRes({
+    @JsonKey(name: 'transaction_groups')
     required List<TransactionGroup> transactionGroups,
     required int limit,
     required int offset,

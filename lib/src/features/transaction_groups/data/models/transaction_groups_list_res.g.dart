@@ -9,7 +9,7 @@ part of 'transaction_groups_list_res.dart';
 _TransactionGroupsListRes _$TransactionGroupsListResFromJson(
   Map<String, dynamic> json,
 ) => _TransactionGroupsListRes(
-  transactionGroups: (json['transactionGroups'] as List<dynamic>)
+  transactionGroups: (json['transaction_groups'] as List<dynamic>)
       .map((e) => TransactionGroup.fromJson(e as Map<String, dynamic>))
       .toList(),
   limit: (json['limit'] as num).toInt(),
@@ -20,7 +20,7 @@ _TransactionGroupsListRes _$TransactionGroupsListResFromJson(
 Map<String, dynamic> _$TransactionGroupsListResToJson(
   _TransactionGroupsListRes instance,
 ) => <String, dynamic>{
-  'transactionGroups': instance.transactionGroups,
+  'transaction_groups': instance.transactionGroups,
   'limit': instance.limit,
   'offset': instance.offset,
   'count': instance.count,

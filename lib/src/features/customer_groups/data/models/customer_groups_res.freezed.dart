@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$CustomerGroupsRes {
 
- CustomerGroup get customerGroup;
+@JsonKey(name: 'customer_group') CustomerGroup get customerGroup;
 /// Create a copy of CustomerGroupsRes
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $CustomerGroupsResCopyWith<$Res>  {
   factory $CustomerGroupsResCopyWith(CustomerGroupsRes value, $Res Function(CustomerGroupsRes) _then) = _$CustomerGroupsResCopyWithImpl;
 @useResult
 $Res call({
- CustomerGroup customerGroup
+@JsonKey(name: 'customer_group') CustomerGroup customerGroup
 });
 
 
@@ -162,7 +162,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( CustomerGroup customerGroup)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'customer_group')  CustomerGroup customerGroup)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _CustomerGroupsRes() when $default != null:
 return $default(_that.customerGroup);case _:
@@ -183,7 +183,7 @@ return $default(_that.customerGroup);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( CustomerGroup customerGroup)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'customer_group')  CustomerGroup customerGroup)  $default,) {final _that = this;
 switch (_that) {
 case _CustomerGroupsRes():
 return $default(_that.customerGroup);case _:
@@ -203,7 +203,7 @@ return $default(_that.customerGroup);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( CustomerGroup customerGroup)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'customer_group')  CustomerGroup customerGroup)?  $default,) {final _that = this;
 switch (_that) {
 case _CustomerGroupsRes() when $default != null:
 return $default(_that.customerGroup);case _:
@@ -218,10 +218,10 @@ return $default(_that.customerGroup);case _:
 @JsonSerializable()
 
 class _CustomerGroupsRes implements CustomerGroupsRes {
-  const _CustomerGroupsRes({required this.customerGroup});
+  const _CustomerGroupsRes({@JsonKey(name: 'customer_group') required this.customerGroup});
   factory _CustomerGroupsRes.fromJson(Map<String, dynamic> json) => _$CustomerGroupsResFromJson(json);
 
-@override final  CustomerGroup customerGroup;
+@override@JsonKey(name: 'customer_group') final  CustomerGroup customerGroup;
 
 /// Create a copy of CustomerGroupsRes
 /// with the given fields replaced by the non-null parameter values.
@@ -256,7 +256,7 @@ abstract mixin class _$CustomerGroupsResCopyWith<$Res> implements $CustomerGroup
   factory _$CustomerGroupsResCopyWith(_CustomerGroupsRes value, $Res Function(_CustomerGroupsRes) _then) = __$CustomerGroupsResCopyWithImpl;
 @override @useResult
 $Res call({
- CustomerGroup customerGroup
+@JsonKey(name: 'customer_group') CustomerGroup customerGroup
 });
 
 
@@ -296,7 +296,7 @@ $CustomerGroupCopyWith<$Res> get customerGroup {
 /// @nodoc
 mixin _$CustomerGroupsListRes {
 
- List<CustomerGroup> get customerGroups; int get count; int get limit; int get offset;
+@JsonKey(name: 'customer_groups') List<CustomerGroup> get customerGroups; int get count; int get limit; int get offset;
 /// Create a copy of CustomerGroupsListRes
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -329,7 +329,7 @@ abstract mixin class $CustomerGroupsListResCopyWith<$Res>  {
   factory $CustomerGroupsListResCopyWith(CustomerGroupsListRes value, $Res Function(CustomerGroupsListRes) _then) = _$CustomerGroupsListResCopyWithImpl;
 @useResult
 $Res call({
- List<CustomerGroup> customerGroups, int count, int limit, int offset
+@JsonKey(name: 'customer_groups') List<CustomerGroup> customerGroups, int count, int limit, int offset
 });
 
 
@@ -437,7 +437,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<CustomerGroup> customerGroups,  int count,  int limit,  int offset)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'customer_groups')  List<CustomerGroup> customerGroups,  int count,  int limit,  int offset)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _CustomerGroupsListRes() when $default != null:
 return $default(_that.customerGroups,_that.count,_that.limit,_that.offset);case _:
@@ -458,7 +458,7 @@ return $default(_that.customerGroups,_that.count,_that.limit,_that.offset);case 
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<CustomerGroup> customerGroups,  int count,  int limit,  int offset)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'customer_groups')  List<CustomerGroup> customerGroups,  int count,  int limit,  int offset)  $default,) {final _that = this;
 switch (_that) {
 case _CustomerGroupsListRes():
 return $default(_that.customerGroups,_that.count,_that.limit,_that.offset);case _:
@@ -478,7 +478,7 @@ return $default(_that.customerGroups,_that.count,_that.limit,_that.offset);case 
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<CustomerGroup> customerGroups,  int count,  int limit,  int offset)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'customer_groups')  List<CustomerGroup> customerGroups,  int count,  int limit,  int offset)?  $default,) {final _that = this;
 switch (_that) {
 case _CustomerGroupsListRes() when $default != null:
 return $default(_that.customerGroups,_that.count,_that.limit,_that.offset);case _:
@@ -493,11 +493,11 @@ return $default(_that.customerGroups,_that.count,_that.limit,_that.offset);case 
 @JsonSerializable()
 
 class _CustomerGroupsListRes implements CustomerGroupsListRes {
-  const _CustomerGroupsListRes({required final  List<CustomerGroup> customerGroups, required this.count, required this.limit, required this.offset}): _customerGroups = customerGroups;
+  const _CustomerGroupsListRes({@JsonKey(name: 'customer_groups') required final  List<CustomerGroup> customerGroups, required this.count, required this.limit, required this.offset}): _customerGroups = customerGroups;
   factory _CustomerGroupsListRes.fromJson(Map<String, dynamic> json) => _$CustomerGroupsListResFromJson(json);
 
  final  List<CustomerGroup> _customerGroups;
-@override List<CustomerGroup> get customerGroups {
+@override@JsonKey(name: 'customer_groups') List<CustomerGroup> get customerGroups {
   if (_customerGroups is EqualUnmodifiableListView) return _customerGroups;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_customerGroups);
@@ -540,7 +540,7 @@ abstract mixin class _$CustomerGroupsListResCopyWith<$Res> implements $CustomerG
   factory _$CustomerGroupsListResCopyWith(_CustomerGroupsListRes value, $Res Function(_CustomerGroupsListRes) _then) = __$CustomerGroupsListResCopyWithImpl;
 @override @useResult
 $Res call({
- List<CustomerGroup> customerGroups, int count, int limit, int offset
+@JsonKey(name: 'customer_groups') List<CustomerGroup> customerGroups, int count, int limit, int offset
 });
 
 

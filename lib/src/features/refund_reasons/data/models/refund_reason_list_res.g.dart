@@ -8,7 +8,7 @@ part of 'refund_reason_list_res.dart';
 
 _RefundReasonListRes _$RefundReasonListResFromJson(Map<String, dynamic> json) =>
     _RefundReasonListRes(
-      refundReasons: (json['refundReasons'] as List<dynamic>)
+      refundReasons: (json['refund_reasons'] as List<dynamic>)
           .map((e) => RefundReason.fromJson(e as Map<String, dynamic>))
           .toList(),
       limit: (json['limit'] as num).toInt(),
@@ -19,7 +19,7 @@ _RefundReasonListRes _$RefundReasonListResFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$RefundReasonListResToJson(
   _RefundReasonListRes instance,
 ) => <String, dynamic>{
-  'refundReasons': instance.refundReasons,
+  'refund_reasons': instance.refundReasons,
   'limit': instance.limit,
   'offset': instance.offset,
   'count': instance.count,

@@ -16,7 +16,7 @@ Map<String, dynamic> _$TaxRegionResToJson(_TaxRegionRes instance) =>
 
 _TaxRegionsListRes _$TaxRegionsListResFromJson(Map<String, dynamic> json) =>
     _TaxRegionsListRes(
-      taxRegions: (json['taxRegions'] as List<dynamic>)
+      taxRegions: (json['tax_regions'] as List<dynamic>)
           .map((e) => TaxRegion.fromJson(e as Map<String, dynamic>))
           .toList(),
       limit: (json['limit'] as num).toInt(),
@@ -26,7 +26,7 @@ _TaxRegionsListRes _$TaxRegionsListResFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$TaxRegionsListResToJson(_TaxRegionsListRes instance) =>
     <String, dynamic>{
-      'taxRegions': instance.taxRegions,
+      'tax_regions': instance.taxRegions,
       'limit': instance.limit,
       'offset': instance.offset,
       'count': instance.count,

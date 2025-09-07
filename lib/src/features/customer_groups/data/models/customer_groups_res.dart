@@ -8,6 +8,7 @@ part 'customer_groups_res.g.dart';
 @freezed
 abstract class CustomerGroupsRes with _$CustomerGroupsRes {
   const factory CustomerGroupsRes({
+    @JsonKey(name: 'customer_group')
     required CustomerGroup customerGroup,
   }) = _CustomerGroupsRes;
 
@@ -19,6 +20,7 @@ abstract class CustomerGroupsRes with _$CustomerGroupsRes {
 @freezed
 abstract class CustomerGroupsListRes with _$CustomerGroupsListRes {
   const factory CustomerGroupsListRes({
+    @JsonKey(name: 'customer_groups')
     required List<CustomerGroup> customerGroups,
     required int count,
     required int limit,

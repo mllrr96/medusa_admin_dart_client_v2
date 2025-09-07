@@ -296,7 +296,7 @@ $TaxRegionCopyWith<$Res> get taxRegion {
 /// @nodoc
 mixin _$TaxRegionsListRes {
 
- List<TaxRegion> get taxRegions; int get limit; int get offset; int get count;
+@JsonKey(name: 'tax_regions') List<TaxRegion> get taxRegions; int get limit; int get offset; int get count;
 /// Create a copy of TaxRegionsListRes
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -329,7 +329,7 @@ abstract mixin class $TaxRegionsListResCopyWith<$Res>  {
   factory $TaxRegionsListResCopyWith(TaxRegionsListRes value, $Res Function(TaxRegionsListRes) _then) = _$TaxRegionsListResCopyWithImpl;
 @useResult
 $Res call({
- List<TaxRegion> taxRegions, int limit, int offset, int count
+@JsonKey(name: 'tax_regions') List<TaxRegion> taxRegions, int limit, int offset, int count
 });
 
 
@@ -437,7 +437,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<TaxRegion> taxRegions,  int limit,  int offset,  int count)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'tax_regions')  List<TaxRegion> taxRegions,  int limit,  int offset,  int count)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _TaxRegionsListRes() when $default != null:
 return $default(_that.taxRegions,_that.limit,_that.offset,_that.count);case _:
@@ -458,7 +458,7 @@ return $default(_that.taxRegions,_that.limit,_that.offset,_that.count);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<TaxRegion> taxRegions,  int limit,  int offset,  int count)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'tax_regions')  List<TaxRegion> taxRegions,  int limit,  int offset,  int count)  $default,) {final _that = this;
 switch (_that) {
 case _TaxRegionsListRes():
 return $default(_that.taxRegions,_that.limit,_that.offset,_that.count);case _:
@@ -478,7 +478,7 @@ return $default(_that.taxRegions,_that.limit,_that.offset,_that.count);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<TaxRegion> taxRegions,  int limit,  int offset,  int count)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'tax_regions')  List<TaxRegion> taxRegions,  int limit,  int offset,  int count)?  $default,) {final _that = this;
 switch (_that) {
 case _TaxRegionsListRes() when $default != null:
 return $default(_that.taxRegions,_that.limit,_that.offset,_that.count);case _:
@@ -493,11 +493,11 @@ return $default(_that.taxRegions,_that.limit,_that.offset,_that.count);case _:
 @JsonSerializable()
 
 class _TaxRegionsListRes implements TaxRegionsListRes {
-  const _TaxRegionsListRes({required final  List<TaxRegion> taxRegions, required this.limit, required this.offset, required this.count}): _taxRegions = taxRegions;
+  const _TaxRegionsListRes({@JsonKey(name: 'tax_regions') required final  List<TaxRegion> taxRegions, required this.limit, required this.offset, required this.count}): _taxRegions = taxRegions;
   factory _TaxRegionsListRes.fromJson(Map<String, dynamic> json) => _$TaxRegionsListResFromJson(json);
 
  final  List<TaxRegion> _taxRegions;
-@override List<TaxRegion> get taxRegions {
+@override@JsonKey(name: 'tax_regions') List<TaxRegion> get taxRegions {
   if (_taxRegions is EqualUnmodifiableListView) return _taxRegions;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_taxRegions);
@@ -540,7 +540,7 @@ abstract mixin class _$TaxRegionsListResCopyWith<$Res> implements $TaxRegionsLis
   factory _$TaxRegionsListResCopyWith(_TaxRegionsListRes value, $Res Function(_TaxRegionsListRes) _then) = __$TaxRegionsListResCopyWithImpl;
 @override @useResult
 $Res call({
- List<TaxRegion> taxRegions, int limit, int offset, int count
+@JsonKey(name: 'tax_regions') List<TaxRegion> taxRegions, int limit, int offset, int count
 });
 
 

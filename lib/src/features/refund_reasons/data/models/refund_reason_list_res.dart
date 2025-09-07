@@ -7,6 +7,7 @@ part 'refund_reason_list_res.g.dart';
 @freezed
 abstract class RefundReasonListRes with _$RefundReasonListRes {
   const factory RefundReasonListRes({
+    @JsonKey(name: 'refund_reasons')
     required List<RefundReason> refundReasons,
     required int limit,
     required int offset,
