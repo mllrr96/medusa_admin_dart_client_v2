@@ -14,13 +14,13 @@ abstract class SalesChannelsApi {
   });
 
   @GET('/admin/sales-channels/{id}')
-  Future<SalesChannel> retrieve(@Path('id') String id);
+  Future<SalesChannelRes> retrieve(@Path('id') String id);
 
   @POST('/admin/sales-channels')
-  Future<SalesChannel> create(@Body() CreateSalesChannel body);
+  Future<SalesChannelRes> create(@Body() CreateSalesChannel body);
 
   @POST('/admin/sales-channels/{id}')
-  Future<SalesChannel> update(
+  Future<SalesChannelRes> update(
     @Path('id') String id,
     @Body() UpdateSalesChannel body,
   );
@@ -29,7 +29,7 @@ abstract class SalesChannelsApi {
   Future<void> delete(@Path('id') String id);
 
   @POST('/admin/sales-channels/{id}/products')
-  Future<SalesChannel> manageProducts(
+  Future<SalesChannelRes> manageProducts(
     @Path('id') String id,
     @Body() ManageProductsReq body,
   );

@@ -8,7 +8,7 @@ part of 'sales_channel_list_res.dart';
 
 _SalesChannelListRes _$SalesChannelListResFromJson(Map<String, dynamic> json) =>
     _SalesChannelListRes(
-      salesChannels: (json['sales_channel'] as List<dynamic>)
+      salesChannels: (json['sales_channels'] as List<dynamic>)
           .map((e) => SalesChannel.fromJson(e as Map<String, dynamic>))
           .toList(),
       limit: (json['limit'] as num).toInt(),
@@ -19,7 +19,7 @@ _SalesChannelListRes _$SalesChannelListResFromJson(Map<String, dynamic> json) =>
 Map<String, dynamic> _$SalesChannelListResToJson(
   _SalesChannelListRes instance,
 ) => <String, dynamic>{
-  'sales_channel': instance.salesChannels,
+  'sales_channels': instance.salesChannels,
   'limit': instance.limit,
   'offset': instance.offset,
   'count': instance.count,

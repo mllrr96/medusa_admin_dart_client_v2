@@ -47,12 +47,12 @@ class _SalesChannelsApi implements SalesChannelsApi {
   }
 
   @override
-  Future<SalesChannel> retrieve(String id) async {
+  Future<SalesChannelRes> retrieve(String id) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<SalesChannel>(
+    final _options = _setStreamType<SalesChannelRes>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -63,9 +63,9 @@ class _SalesChannelsApi implements SalesChannelsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late SalesChannel _value;
+    late SalesChannelRes _value;
     try {
-      _value = SalesChannel.fromJson(_result.data!);
+      _value = SalesChannelRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -74,12 +74,12 @@ class _SalesChannelsApi implements SalesChannelsApi {
   }
 
   @override
-  Future<SalesChannel> create(CreateSalesChannel body) async {
+  Future<SalesChannelRes> create(CreateSalesChannel body) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = body;
-    final _options = _setStreamType<SalesChannel>(
+    final _options = _setStreamType<SalesChannelRes>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -90,9 +90,9 @@ class _SalesChannelsApi implements SalesChannelsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late SalesChannel _value;
+    late SalesChannelRes _value;
     try {
-      _value = SalesChannel.fromJson(_result.data!);
+      _value = SalesChannelRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -101,12 +101,12 @@ class _SalesChannelsApi implements SalesChannelsApi {
   }
 
   @override
-  Future<SalesChannel> update(String id, UpdateSalesChannel body) async {
+  Future<SalesChannelRes> update(String id, UpdateSalesChannel body) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = body;
-    final _options = _setStreamType<SalesChannel>(
+    final _options = _setStreamType<SalesChannelRes>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -117,9 +117,9 @@ class _SalesChannelsApi implements SalesChannelsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late SalesChannel _value;
+    late SalesChannelRes _value;
     try {
-      _value = SalesChannel.fromJson(_result.data!);
+      _value = SalesChannelRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -147,12 +147,15 @@ class _SalesChannelsApi implements SalesChannelsApi {
   }
 
   @override
-  Future<SalesChannel> manageProducts(String id, ManageProductsReq body) async {
+  Future<SalesChannelRes> manageProducts(
+    String id,
+    ManageProductsReq body,
+  ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = body;
-    final _options = _setStreamType<SalesChannel>(
+    final _options = _setStreamType<SalesChannelRes>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -163,9 +166,9 @@ class _SalesChannelsApi implements SalesChannelsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late SalesChannel _value;
+    late SalesChannelRes _value;
     try {
-      _value = SalesChannel.fromJson(_result.data!);
+      _value = SalesChannelRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

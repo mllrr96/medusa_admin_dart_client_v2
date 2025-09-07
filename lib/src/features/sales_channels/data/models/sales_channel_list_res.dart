@@ -7,7 +7,7 @@ part 'sales_channel_list_res.g.dart';
 @freezed
 abstract class SalesChannelListRes with _$SalesChannelListRes {
   const factory SalesChannelListRes({
-    @JsonKey(name: 'sales_channel') required List<SalesChannel> salesChannels,
+    @JsonKey(name: 'sales_channels') required List<SalesChannel> salesChannels,
     required int limit,
     required int offset,
     required int count,

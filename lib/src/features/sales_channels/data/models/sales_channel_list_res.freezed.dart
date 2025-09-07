@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$SalesChannelListRes {
 
-@JsonKey(name: 'sales_channel') List<SalesChannel> get salesChannels; int get limit; int get offset; int get count;
+@JsonKey(name: 'sales_channels') List<SalesChannel> get salesChannels; int get limit; int get offset; int get count;
 /// Create a copy of SalesChannelListRes
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $SalesChannelListResCopyWith<$Res>  {
   factory $SalesChannelListResCopyWith(SalesChannelListRes value, $Res Function(SalesChannelListRes) _then) = _$SalesChannelListResCopyWithImpl;
 @useResult
 $Res call({
-@JsonKey(name: 'sales_channel') List<SalesChannel> salesChannels, int limit, int offset, int count
+@JsonKey(name: 'sales_channels') List<SalesChannel> salesChannels, int limit, int offset, int count
 });
 
 
@@ -156,7 +156,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'sales_channel')  List<SalesChannel> salesChannels,  int limit,  int offset,  int count)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'sales_channels')  List<SalesChannel> salesChannels,  int limit,  int offset,  int count)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _SalesChannelListRes() when $default != null:
 return $default(_that.salesChannels,_that.limit,_that.offset,_that.count);case _:
@@ -177,7 +177,7 @@ return $default(_that.salesChannels,_that.limit,_that.offset,_that.count);case _
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'sales_channel')  List<SalesChannel> salesChannels,  int limit,  int offset,  int count)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'sales_channels')  List<SalesChannel> salesChannels,  int limit,  int offset,  int count)  $default,) {final _that = this;
 switch (_that) {
 case _SalesChannelListRes():
 return $default(_that.salesChannels,_that.limit,_that.offset,_that.count);case _:
@@ -197,7 +197,7 @@ return $default(_that.salesChannels,_that.limit,_that.offset,_that.count);case _
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'sales_channel')  List<SalesChannel> salesChannels,  int limit,  int offset,  int count)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'sales_channels')  List<SalesChannel> salesChannels,  int limit,  int offset,  int count)?  $default,) {final _that = this;
 switch (_that) {
 case _SalesChannelListRes() when $default != null:
 return $default(_that.salesChannels,_that.limit,_that.offset,_that.count);case _:
@@ -212,11 +212,11 @@ return $default(_that.salesChannels,_that.limit,_that.offset,_that.count);case _
 @JsonSerializable()
 
 class _SalesChannelListRes implements SalesChannelListRes {
-  const _SalesChannelListRes({@JsonKey(name: 'sales_channel') required final  List<SalesChannel> salesChannels, required this.limit, required this.offset, required this.count}): _salesChannels = salesChannels;
+  const _SalesChannelListRes({@JsonKey(name: 'sales_channels') required final  List<SalesChannel> salesChannels, required this.limit, required this.offset, required this.count}): _salesChannels = salesChannels;
   factory _SalesChannelListRes.fromJson(Map<String, dynamic> json) => _$SalesChannelListResFromJson(json);
 
  final  List<SalesChannel> _salesChannels;
-@override@JsonKey(name: 'sales_channel') List<SalesChannel> get salesChannels {
+@override@JsonKey(name: 'sales_channels') List<SalesChannel> get salesChannels {
   if (_salesChannels is EqualUnmodifiableListView) return _salesChannels;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_salesChannels);
@@ -259,7 +259,7 @@ abstract mixin class _$SalesChannelListResCopyWith<$Res> implements $SalesChanne
   factory _$SalesChannelListResCopyWith(_SalesChannelListRes value, $Res Function(_SalesChannelListRes) _then) = __$SalesChannelListResCopyWithImpl;
 @override @useResult
 $Res call({
-@JsonKey(name: 'sales_channel') List<SalesChannel> salesChannels, int limit, int offset, int count
+@JsonKey(name: 'sales_channels') List<SalesChannel> salesChannels, int limit, int offset, int count
 });
 
 

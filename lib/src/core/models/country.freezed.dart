@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Country {
 
- int get id;@JsonKey(name: 'iso_2') String get iso2;@JsonKey(name: 'iso_3') String get iso3;@JsonKey(name: 'num_code') String get numCode; String get name;@JsonKey(name: 'display_on_store') String get displayOnStore;
+ int? get id;@JsonKey(name: 'iso_2') String get iso2;@JsonKey(name: 'iso_3') String get iso3;@JsonKey(name: 'num_code') String get numCode;@JsonKey(name: 'region_id') String? get regionId; String get name;@JsonKey(name: 'display_name') String get displayOnStore; Map<String, dynamic>? get metadata;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt;
 /// Create a copy of Country
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $CountryCopyWith<Country> get copyWith => _$CountryCopyWithImpl<Country>(this as
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is Country&&(identical(other.id, id) || other.id == id)&&(identical(other.iso2, iso2) || other.iso2 == iso2)&&(identical(other.iso3, iso3) || other.iso3 == iso3)&&(identical(other.numCode, numCode) || other.numCode == numCode)&&(identical(other.name, name) || other.name == name)&&(identical(other.displayOnStore, displayOnStore) || other.displayOnStore == displayOnStore));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is Country&&(identical(other.id, id) || other.id == id)&&(identical(other.iso2, iso2) || other.iso2 == iso2)&&(identical(other.iso3, iso3) || other.iso3 == iso3)&&(identical(other.numCode, numCode) || other.numCode == numCode)&&(identical(other.regionId, regionId) || other.regionId == regionId)&&(identical(other.name, name) || other.name == name)&&(identical(other.displayOnStore, displayOnStore) || other.displayOnStore == displayOnStore)&&const DeepCollectionEquality().equals(other.metadata, metadata)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.deletedAt, deletedAt) || other.deletedAt == deletedAt));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,iso2,iso3,numCode,name,displayOnStore);
+int get hashCode => Object.hash(runtimeType,id,iso2,iso3,numCode,regionId,name,displayOnStore,const DeepCollectionEquality().hash(metadata),createdAt,updatedAt,deletedAt);
 
 @override
 String toString() {
-  return 'Country(id: $id, iso2: $iso2, iso3: $iso3, numCode: $numCode, name: $name, displayOnStore: $displayOnStore)';
+  return 'Country(id: $id, iso2: $iso2, iso3: $iso3, numCode: $numCode, regionId: $regionId, name: $name, displayOnStore: $displayOnStore, metadata: $metadata, createdAt: $createdAt, updatedAt: $updatedAt, deletedAt: $deletedAt)';
 }
 
 
@@ -48,7 +48,7 @@ abstract mixin class $CountryCopyWith<$Res>  {
   factory $CountryCopyWith(Country value, $Res Function(Country) _then) = _$CountryCopyWithImpl;
 @useResult
 $Res call({
- int id,@JsonKey(name: 'iso_2') String iso2,@JsonKey(name: 'iso_3') String iso3,@JsonKey(name: 'num_code') String numCode, String name,@JsonKey(name: 'display_on_store') String displayOnStore
+ int? id,@JsonKey(name: 'iso_2') String iso2,@JsonKey(name: 'iso_3') String iso3,@JsonKey(name: 'num_code') String numCode,@JsonKey(name: 'region_id') String? regionId, String name,@JsonKey(name: 'display_name') String displayOnStore, Map<String, dynamic>? metadata,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
 });
 
 
@@ -65,15 +65,20 @@ class _$CountryCopyWithImpl<$Res>
 
 /// Create a copy of Country
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? iso2 = null,Object? iso3 = null,Object? numCode = null,Object? name = null,Object? displayOnStore = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? iso2 = null,Object? iso3 = null,Object? numCode = null,Object? regionId = freezed,Object? name = null,Object? displayOnStore = null,Object? metadata = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
   return _then(_self.copyWith(
-id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as int,iso2: null == iso2 ? _self.iso2 : iso2 // ignore: cast_nullable_to_non_nullable
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as int?,iso2: null == iso2 ? _self.iso2 : iso2 // ignore: cast_nullable_to_non_nullable
 as String,iso3: null == iso3 ? _self.iso3 : iso3 // ignore: cast_nullable_to_non_nullable
 as String,numCode: null == numCode ? _self.numCode : numCode // ignore: cast_nullable_to_non_nullable
-as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,regionId: freezed == regionId ? _self.regionId : regionId // ignore: cast_nullable_to_non_nullable
+as String?,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,displayOnStore: null == displayOnStore ? _self.displayOnStore : displayOnStore // ignore: cast_nullable_to_non_nullable
-as String,
+as String,metadata: freezed == metadata ? _self.metadata : metadata // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,
   ));
 }
 
@@ -158,10 +163,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int id, @JsonKey(name: 'iso_2')  String iso2, @JsonKey(name: 'iso_3')  String iso3, @JsonKey(name: 'num_code')  String numCode,  String name, @JsonKey(name: 'display_on_store')  String displayOnStore)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( int? id, @JsonKey(name: 'iso_2')  String iso2, @JsonKey(name: 'iso_3')  String iso3, @JsonKey(name: 'num_code')  String numCode, @JsonKey(name: 'region_id')  String? regionId,  String name, @JsonKey(name: 'display_name')  String displayOnStore,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Country() when $default != null:
-return $default(_that.id,_that.iso2,_that.iso3,_that.numCode,_that.name,_that.displayOnStore);case _:
+return $default(_that.id,_that.iso2,_that.iso3,_that.numCode,_that.regionId,_that.name,_that.displayOnStore,_that.metadata,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
   return orElse();
 
 }
@@ -179,10 +184,10 @@ return $default(_that.id,_that.iso2,_that.iso3,_that.numCode,_that.name,_that.di
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int id, @JsonKey(name: 'iso_2')  String iso2, @JsonKey(name: 'iso_3')  String iso3, @JsonKey(name: 'num_code')  String numCode,  String name, @JsonKey(name: 'display_on_store')  String displayOnStore)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( int? id, @JsonKey(name: 'iso_2')  String iso2, @JsonKey(name: 'iso_3')  String iso3, @JsonKey(name: 'num_code')  String numCode, @JsonKey(name: 'region_id')  String? regionId,  String name, @JsonKey(name: 'display_name')  String displayOnStore,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)  $default,) {final _that = this;
 switch (_that) {
 case _Country():
-return $default(_that.id,_that.iso2,_that.iso3,_that.numCode,_that.name,_that.displayOnStore);case _:
+return $default(_that.id,_that.iso2,_that.iso3,_that.numCode,_that.regionId,_that.name,_that.displayOnStore,_that.metadata,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -199,10 +204,10 @@ return $default(_that.id,_that.iso2,_that.iso3,_that.numCode,_that.name,_that.di
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int id, @JsonKey(name: 'iso_2')  String iso2, @JsonKey(name: 'iso_3')  String iso3, @JsonKey(name: 'num_code')  String numCode,  String name, @JsonKey(name: 'display_on_store')  String displayOnStore)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( int? id, @JsonKey(name: 'iso_2')  String iso2, @JsonKey(name: 'iso_3')  String iso3, @JsonKey(name: 'num_code')  String numCode, @JsonKey(name: 'region_id')  String? regionId,  String name, @JsonKey(name: 'display_name')  String displayOnStore,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _Country() when $default != null:
-return $default(_that.id,_that.iso2,_that.iso3,_that.numCode,_that.name,_that.displayOnStore);case _:
+return $default(_that.id,_that.iso2,_that.iso3,_that.numCode,_that.regionId,_that.name,_that.displayOnStore,_that.metadata,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
   return null;
 
 }
@@ -214,15 +219,28 @@ return $default(_that.id,_that.iso2,_that.iso3,_that.numCode,_that.name,_that.di
 @JsonSerializable()
 
 class _Country implements Country {
-  const _Country({required this.id, @JsonKey(name: 'iso_2') required this.iso2, @JsonKey(name: 'iso_3') required this.iso3, @JsonKey(name: 'num_code') required this.numCode, required this.name, @JsonKey(name: 'display_on_store') required this.displayOnStore});
+  const _Country({this.id, @JsonKey(name: 'iso_2') required this.iso2, @JsonKey(name: 'iso_3') required this.iso3, @JsonKey(name: 'num_code') required this.numCode, @JsonKey(name: 'region_id') this.regionId, required this.name, @JsonKey(name: 'display_name') required this.displayOnStore, final  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt}): _metadata = metadata;
   factory _Country.fromJson(Map<String, dynamic> json) => _$CountryFromJson(json);
 
-@override final  int id;
+@override final  int? id;
 @override@JsonKey(name: 'iso_2') final  String iso2;
 @override@JsonKey(name: 'iso_3') final  String iso3;
 @override@JsonKey(name: 'num_code') final  String numCode;
+@override@JsonKey(name: 'region_id') final  String? regionId;
 @override final  String name;
-@override@JsonKey(name: 'display_on_store') final  String displayOnStore;
+@override@JsonKey(name: 'display_name') final  String displayOnStore;
+ final  Map<String, dynamic>? _metadata;
+@override Map<String, dynamic>? get metadata {
+  final value = _metadata;
+  if (value == null) return null;
+  if (_metadata is EqualUnmodifiableMapView) return _metadata;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableMapView(value);
+}
+
+@override@JsonKey(name: 'created_at') final  DateTime? createdAt;
+@override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
+@override@JsonKey(name: 'deleted_at') final  DateTime? deletedAt;
 
 /// Create a copy of Country
 /// with the given fields replaced by the non-null parameter values.
@@ -237,16 +255,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Country&&(identical(other.id, id) || other.id == id)&&(identical(other.iso2, iso2) || other.iso2 == iso2)&&(identical(other.iso3, iso3) || other.iso3 == iso3)&&(identical(other.numCode, numCode) || other.numCode == numCode)&&(identical(other.name, name) || other.name == name)&&(identical(other.displayOnStore, displayOnStore) || other.displayOnStore == displayOnStore));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _Country&&(identical(other.id, id) || other.id == id)&&(identical(other.iso2, iso2) || other.iso2 == iso2)&&(identical(other.iso3, iso3) || other.iso3 == iso3)&&(identical(other.numCode, numCode) || other.numCode == numCode)&&(identical(other.regionId, regionId) || other.regionId == regionId)&&(identical(other.name, name) || other.name == name)&&(identical(other.displayOnStore, displayOnStore) || other.displayOnStore == displayOnStore)&&const DeepCollectionEquality().equals(other._metadata, _metadata)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.deletedAt, deletedAt) || other.deletedAt == deletedAt));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,iso2,iso3,numCode,name,displayOnStore);
+int get hashCode => Object.hash(runtimeType,id,iso2,iso3,numCode,regionId,name,displayOnStore,const DeepCollectionEquality().hash(_metadata),createdAt,updatedAt,deletedAt);
 
 @override
 String toString() {
-  return 'Country(id: $id, iso2: $iso2, iso3: $iso3, numCode: $numCode, name: $name, displayOnStore: $displayOnStore)';
+  return 'Country(id: $id, iso2: $iso2, iso3: $iso3, numCode: $numCode, regionId: $regionId, name: $name, displayOnStore: $displayOnStore, metadata: $metadata, createdAt: $createdAt, updatedAt: $updatedAt, deletedAt: $deletedAt)';
 }
 
 
@@ -257,7 +275,7 @@ abstract mixin class _$CountryCopyWith<$Res> implements $CountryCopyWith<$Res> {
   factory _$CountryCopyWith(_Country value, $Res Function(_Country) _then) = __$CountryCopyWithImpl;
 @override @useResult
 $Res call({
- int id,@JsonKey(name: 'iso_2') String iso2,@JsonKey(name: 'iso_3') String iso3,@JsonKey(name: 'num_code') String numCode, String name,@JsonKey(name: 'display_on_store') String displayOnStore
+ int? id,@JsonKey(name: 'iso_2') String iso2,@JsonKey(name: 'iso_3') String iso3,@JsonKey(name: 'num_code') String numCode,@JsonKey(name: 'region_id') String? regionId, String name,@JsonKey(name: 'display_name') String displayOnStore, Map<String, dynamic>? metadata,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
 });
 
 
@@ -274,15 +292,20 @@ class __$CountryCopyWithImpl<$Res>
 
 /// Create a copy of Country
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? iso2 = null,Object? iso3 = null,Object? numCode = null,Object? name = null,Object? displayOnStore = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? iso2 = null,Object? iso3 = null,Object? numCode = null,Object? regionId = freezed,Object? name = null,Object? displayOnStore = null,Object? metadata = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
   return _then(_Country(
-id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as int,iso2: null == iso2 ? _self.iso2 : iso2 // ignore: cast_nullable_to_non_nullable
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as int?,iso2: null == iso2 ? _self.iso2 : iso2 // ignore: cast_nullable_to_non_nullable
 as String,iso3: null == iso3 ? _self.iso3 : iso3 // ignore: cast_nullable_to_non_nullable
 as String,numCode: null == numCode ? _self.numCode : numCode // ignore: cast_nullable_to_non_nullable
-as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
+as String,regionId: freezed == regionId ? _self.regionId : regionId // ignore: cast_nullable_to_non_nullable
+as String?,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
 as String,displayOnStore: null == displayOnStore ? _self.displayOnStore : displayOnStore // ignore: cast_nullable_to_non_nullable
-as String,
+as String,metadata: freezed == metadata ? _self._metadata : metadata // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,
   ));
 }
 
