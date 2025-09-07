@@ -47,12 +47,12 @@ class _ProductsApi implements ProductsApi {
   }
 
   @override
-  Future<Product> create(CreateProductReq body) async {
+  Future<ProductRes> create(CreateProductReq body) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = body;
-    final _options = _setStreamType<Product>(
+    final _options = _setStreamType<ProductRes>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -63,9 +63,9 @@ class _ProductsApi implements ProductsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late Product _value;
+    late ProductRes _value;
     try {
-      _value = Product.fromJson(_result.data!);
+      _value = ProductRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -220,12 +220,12 @@ class _ProductsApi implements ProductsApi {
   }
 
   @override
-  Future<Product> retrieve(String id) async {
+  Future<ProductRes> retrieve(String id) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<Product>(
+    final _options = _setStreamType<ProductRes>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -236,9 +236,9 @@ class _ProductsApi implements ProductsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late Product _value;
+    late ProductRes _value;
     try {
-      _value = Product.fromJson(_result.data!);
+      _value = ProductRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -247,12 +247,12 @@ class _ProductsApi implements ProductsApi {
   }
 
   @override
-  Future<Product> update(String id, UpdateProductReq body) async {
+  Future<ProductRes> update(String id, UpdateProductReq body) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = body;
-    final _options = _setStreamType<Product>(
+    final _options = _setStreamType<ProductRes>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -263,9 +263,9 @@ class _ProductsApi implements ProductsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late Product _value;
+    late ProductRes _value;
     try {
-      _value = Product.fromJson(_result.data!);
+      _value = ProductRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -301,12 +301,15 @@ class _ProductsApi implements ProductsApi {
   }
 
   @override
-  Future<Product> createOption(String id, CreateProductOptionReq body) async {
+  Future<ProductRes> createOption(
+    String id,
+    CreateProductOptionReq body,
+  ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = body;
-    final _options = _setStreamType<Product>(
+    final _options = _setStreamType<ProductRes>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -317,9 +320,9 @@ class _ProductsApi implements ProductsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late Product _value;
+    late ProductRes _value;
     try {
-      _value = Product.fromJson(_result.data!);
+      _value = ProductRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -374,7 +377,7 @@ class _ProductsApi implements ProductsApi {
   }
 
   @override
-  Future<Product> updateOption(
+  Future<ProductRes> updateOption(
     String id,
     String optionId,
     UpdateProductOptionReq body,
@@ -383,7 +386,7 @@ class _ProductsApi implements ProductsApi {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = body;
-    final _options = _setStreamType<Product>(
+    final _options = _setStreamType<ProductRes>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -394,9 +397,9 @@ class _ProductsApi implements ProductsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late Product _value;
+    late ProductRes _value;
     try {
-      _value = Product.fromJson(_result.data!);
+      _value = ProductRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -432,12 +435,15 @@ class _ProductsApi implements ProductsApi {
   }
 
   @override
-  Future<Product> createVariant(String id, CreateProductVariantReq body) async {
+  Future<ProductRes> createVariant(
+    String id,
+    CreateProductVariantReq body,
+  ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = body;
-    final _options = _setStreamType<Product>(
+    final _options = _setStreamType<ProductRes>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -448,9 +454,9 @@ class _ProductsApi implements ProductsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late Product _value;
+    late ProductRes _value;
     try {
-      _value = Product.fromJson(_result.data!);
+      _value = ProductRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -505,12 +511,12 @@ class _ProductsApi implements ProductsApi {
   }
 
   @override
-  Future<ProductVariant> retrieveVariant(String id, String variantId) async {
+  Future<ProductVariantRes> retrieveVariant(String id, String variantId) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<ProductVariant>(
+    final _options = _setStreamType<ProductVariantRes>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -521,9 +527,9 @@ class _ProductsApi implements ProductsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late ProductVariant _value;
+    late ProductVariantRes _value;
     try {
-      _value = ProductVariant.fromJson(_result.data!);
+      _value = ProductVariantRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -532,7 +538,7 @@ class _ProductsApi implements ProductsApi {
   }
 
   @override
-  Future<Product> updateVariant(
+  Future<ProductVariantRes> updateVariant(
     String id,
     String variantId,
     UpdateProductVariantReq body,
@@ -541,7 +547,7 @@ class _ProductsApi implements ProductsApi {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = body;
-    final _options = _setStreamType<Product>(
+    final _options = _setStreamType<ProductVariantRes>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -552,9 +558,9 @@ class _ProductsApi implements ProductsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late Product _value;
+    late ProductVariantRes _value;
     try {
-      _value = Product.fromJson(_result.data!);
+      _value = ProductVariantRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -563,7 +569,7 @@ class _ProductsApi implements ProductsApi {
   }
 
   @override
-  Future<ProductVariant> associateInventoryItem(
+  Future<ProductVariantRes> associateInventoryItem(
     String id,
     String variantId,
     AssociateInventoryItemReq body,
@@ -572,7 +578,7 @@ class _ProductsApi implements ProductsApi {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = body;
-    final _options = _setStreamType<ProductVariant>(
+    final _options = _setStreamType<ProductVariantRes>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -583,9 +589,9 @@ class _ProductsApi implements ProductsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late ProductVariant _value;
+    late ProductVariantRes _value;
     try {
-      _value = ProductVariant.fromJson(_result.data!);
+      _value = ProductVariantRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -617,7 +623,7 @@ class _ProductsApi implements ProductsApi {
   }
 
   @override
-  Future<ProductVariant> updateInventoryItem(
+  Future<ProductVariantRes> updateInventoryItem(
     String id,
     String variantId,
     String inventoryItemId,
@@ -627,7 +633,7 @@ class _ProductsApi implements ProductsApi {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = body;
-    final _options = _setStreamType<ProductVariant>(
+    final _options = _setStreamType<ProductVariantRes>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -638,9 +644,9 @@ class _ProductsApi implements ProductsApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late ProductVariant _value;
+    late ProductVariantRes _value;
     try {
-      _value = ProductVariant.fromJson(_result.data!);
+      _value = ProductVariantRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

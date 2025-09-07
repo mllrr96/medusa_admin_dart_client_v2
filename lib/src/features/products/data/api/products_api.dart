@@ -20,14 +20,13 @@ part 'products_api.g.dart';
 abstract class ProductsApi {
   factory ProductsApi(Dio dio, {String baseUrl}) = _ProductsApi;
 
-  // TODO: all methods need recheck
   @GET('/admin/products')
   Future<ProductsRes> retrieveAll({
     @Queries() Map<String, dynamic>? query,
   });
 
   @POST('/admin/products')
-  Future<Product> create(@Body() CreateProductReq body);
+  Future<ProductRes> create(@Body() CreateProductReq body);
 
   @POST('/admin/products/batch')
   Future<BatchProductRes> batch(@Body() BatchProductReq body);
@@ -48,10 +47,10 @@ abstract class ProductsApi {
   Future<void> delete(@Path('id') String id);
 
   @GET('/admin/products/{id}')
-  Future<Product> retrieve(@Path('id') String id);
+  Future<ProductRes> retrieve(@Path('id') String id);
 
   @POST('/admin/products/{id}')
-  Future<Product> update(
+  Future<ProductRes> update(
     @Path('id') String id,
     @Body() UpdateProductReq body,
   );
@@ -60,7 +59,7 @@ abstract class ProductsApi {
   Future<ProductOptionsRes> listOptions(@Path('id') String id);
 
   @POST('/admin/products/{id}/options')
-  Future<Product> createOption(
+  Future<ProductRes> createOption(
     @Path('id') String id,
     @Body() CreateProductOptionReq body,
   );
@@ -78,7 +77,7 @@ abstract class ProductsApi {
   );
 
   @POST('/admin/products/{id}/options/{option_id}')
-  Future<Product> updateOption(
+  Future<ProductRes> updateOption(
     @Path('id') String id,
     @Path('option_id') String optionId,
     @Body() UpdateProductOptionReq body,
@@ -88,7 +87,7 @@ abstract class ProductsApi {
   Future<ProductVariantsRes> listVariants(@Path('id') String id);
 
   @POST('/admin/products/{id}/variants')
-  Future<Product> createVariant(
+  Future<ProductRes> createVariant(
     @Path('id') String id,
     @Body() CreateProductVariantReq body,
   );
@@ -106,20 +105,20 @@ abstract class ProductsApi {
   );
 
   @GET('/admin/products/{id}/variants/{variant_id}')
-  Future<ProductVariant> retrieveVariant(
+  Future<ProductVariantRes> retrieveVariant(
     @Path('id') String id,
     @Path('variant_id') String variantId,
   );
 
   @POST('/admin/products/{id}/variants/{variant_id}')
-  Future<Product> updateVariant(
+  Future<ProductVariantRes> updateVariant(
     @Path('id') String id,
     @Path('variant_id') String variantId,
     @Body() UpdateProductVariantReq body,
   );
 
   @POST('/admin/products/{id}/variants/{variant_id}/inventory-items')
-  Future<ProductVariant> associateInventoryItem(
+  Future<ProductVariantRes> associateInventoryItem(
     @Path('id') String id,
     @Path('variant_id') String variantId,
     @Body() AssociateInventoryItemReq body,
@@ -137,7 +136,7 @@ abstract class ProductsApi {
   @POST(
     '/admin/products/{id}/variants/{variant_id}/inventory-items/{inventory_item_id}',
   )
-  Future<ProductVariant> updateInventoryItem(
+  Future<ProductVariantRes> updateInventoryItem(
     @Path('id') String id,
     @Path('variant_id') String variantId,
     @Path('inventory_item_id') String inventoryItemId,

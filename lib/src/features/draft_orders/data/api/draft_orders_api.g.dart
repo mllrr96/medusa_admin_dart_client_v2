@@ -31,7 +31,7 @@ class _DraftOrdersApi implements DraftOrdersApi {
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/draft-orders',
+            '/admin/draft-orders',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -62,7 +62,7 @@ class _DraftOrdersApi implements DraftOrdersApi {
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/draft-orders',
+            '/admin/draft-orders',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -89,7 +89,7 @@ class _DraftOrdersApi implements DraftOrdersApi {
       Options(method: 'DELETE', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/draft-orders/${id}',
+            '/admin/draft-orders/${id}',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -109,7 +109,7 @@ class _DraftOrdersApi implements DraftOrdersApi {
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/draft-orders/${id}',
+            '/admin/draft-orders/${id}',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -141,7 +141,7 @@ class _DraftOrdersApi implements DraftOrdersApi {
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/draft-orders/${id}',
+            '/admin/draft-orders/${id}',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -168,7 +168,7 @@ class _DraftOrdersApi implements DraftOrdersApi {
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/draft-orders/${id}/convert-to-order',
+            '/admin/draft-orders/${id}/convert-to-order',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -187,7 +187,7 @@ class _DraftOrdersApi implements DraftOrdersApi {
       Options(method: 'DELETE', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/draft-orders/${id}/edit',
+            '/admin/draft-orders/${id}/edit',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -206,7 +206,7 @@ class _DraftOrdersApi implements DraftOrdersApi {
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/draft-orders/${id}/edit',
+            '/admin/draft-orders/${id}/edit',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -225,7 +225,7 @@ class _DraftOrdersApi implements DraftOrdersApi {
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/draft-orders/${id}/edit/confirm',
+            '/admin/draft-orders/${id}/edit/confirm',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -244,7 +244,7 @@ class _DraftOrdersApi implements DraftOrdersApi {
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/draft-orders/${id}/edit/items',
+            '/admin/draft-orders/${id}/edit/items',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -267,7 +267,7 @@ class _DraftOrdersApi implements DraftOrdersApi {
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/draft-orders/${id}/edit/items/item/${itemId}',
+            '/admin/draft-orders/${id}/edit/items/item/${itemId}',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -286,7 +286,7 @@ class _DraftOrdersApi implements DraftOrdersApi {
       Options(method: 'DELETE', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/draft-orders/${id}/edit/items/${actionId}',
+            '/admin/draft-orders/${id}/edit/items/${actionId}',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -309,7 +309,7 @@ class _DraftOrdersApi implements DraftOrdersApi {
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/draft-orders/${id}/edit/items/${actionId}',
+            '/admin/draft-orders/${id}/edit/items/${actionId}',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -331,7 +331,7 @@ class _DraftOrdersApi implements DraftOrdersApi {
       Options(method: 'DELETE', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/draft-orders/${id}/edit/promotions',
+            '/admin/draft-orders/${id}/edit/promotions',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -361,7 +361,7 @@ class _DraftOrdersApi implements DraftOrdersApi {
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/draft-orders/${id}/edit/promotions',
+            '/admin/draft-orders/${id}/edit/promotions',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -388,7 +388,7 @@ class _DraftOrdersApi implements DraftOrdersApi {
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/draft-orders/${id}/edit/request',
+            '/admin/draft-orders/${id}/edit/request',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -410,7 +410,7 @@ class _DraftOrdersApi implements DraftOrdersApi {
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/draft-orders/${id}/edit/shipping-methods',
+            '/admin/draft-orders/${id}/edit/shipping-methods',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -429,7 +429,7 @@ class _DraftOrdersApi implements DraftOrdersApi {
       Options(method: 'DELETE', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/draft-orders/${id}/edit/shipping-methods/method/${methodId}',
+            '/admin/draft-orders/${id}/edit/shipping-methods/method/${methodId}',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -452,7 +452,7 @@ class _DraftOrdersApi implements DraftOrdersApi {
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/draft-orders/${id}/edit/shipping-methods/method/${methodId}',
+            '/admin/draft-orders/${id}/edit/shipping-methods/method/${methodId}',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -471,7 +471,7 @@ class _DraftOrdersApi implements DraftOrdersApi {
       Options(method: 'DELETE', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/draft-orders/${id}/edit/shipping-methods/${actionId}',
+            '/admin/draft-orders/${id}/edit/shipping-methods/${actionId}',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -494,7 +494,7 @@ class _DraftOrdersApi implements DraftOrdersApi {
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/draft-orders/${id}/edit/shipping-methods/${actionId}',
+            '/admin/draft-orders/${id}/edit/shipping-methods/${actionId}',
             queryParameters: queryParameters,
             data: _data,
           )

@@ -8,112 +8,112 @@ part 'draft_orders_api.g.dart';
 abstract class DraftOrdersApi {
   factory DraftOrdersApi(Dio dio, {String baseUrl}) = _DraftOrdersApi;
 
-  @GET('/draft-orders')
+  @GET('/admin/draft-orders')
   Future<DraftOrderListResponse> getDraftOrders({
     @Queries() GetDraftOrdersQuery? query,
   });
 
-  @POST('/draft-orders')
+  @POST('/admin/draft-orders')
   Future<DraftOrderResponse> createDraftOrder(
     @Body() PostDraftOrdersReq body, {
     @Query('fields') String? fields,
   });
 
-  @DELETE('/draft-orders/{id}')
+  @DELETE('/admin/draft-orders/{id}')
   Future<void> deleteDraftOrder(@Path('id') String id);
 
-  @GET('/draft-orders/{id}')
+  @GET('/admin/draft-orders/{id}')
   Future<DraftOrderResponse> getDraftOrder(
     @Path('id') String id, {
     @Query('fields') String? fields,
   });
 
-  @POST('/draft-orders/{id}')
+  @POST('/admin/draft-orders/{id}')
   Future<DraftOrderResponse> updateDraftOrder(
     @Path('id') String id,
     @Body() UpdateDraftOrder body, {
     @Query('fields') String? fields,
   });
 
-  @POST('/draft-orders/{id}/convert-to-order')
+  @POST('/admin/draft-orders/{id}/convert-to-order')
   Future<void> convertToOrder(@Path('id') String id);
 
-  @DELETE('/draft-orders/{id}/edit')
+  @DELETE('/admin/draft-orders/{id}/edit')
   Future<void> cancelEdit(@Path('id') String id);
 
-  @POST('/draft-orders/{id}/edit')
+  @POST('/admin/draft-orders/{id}/edit')
   Future<void> createEdit(@Path('id') String id);
 
-  @POST('/draft-orders/{id}/edit/confirm')
+  @POST('/admin/draft-orders/{id}/edit/confirm')
   Future<void> confirmEdit(@Path('id') String id);
 
-  @POST('/draft-orders/{id}/edit/items')
+  @POST('/admin/draft-orders/{id}/edit/items')
   Future<void> addItems(
     @Path('id') String id,
     @Body() AddDraftOrderItems body,
   );
 
-  @POST('/draft-orders/{id}/edit/items/item/{item_id}')
+  @POST('/admin/draft-orders/{id}/edit/items/item/{item_id}')
   Future<void> updateItem(
     @Path('id') String id,
     @Path('item_id') String itemId,
     @Body() UpdateDraftOrderItem body,
   );
 
-  @DELETE('/draft-orders/{id}/edit/items/{action_id}')
+  @DELETE('/admin/draft-orders/{id}/edit/items/{action_id}')
   Future<void> deleteItem(
     @Path('id') String id,
     @Path('action_id') String actionId,
   );
 
-  @POST('/draft-orders/{id}/edit/items/{action_id}')
+  @POST('/admin/draft-orders/{id}/edit/items/{action_id}')
   Future<void> updateNewItem(
     @Path('id') String id,
     @Path('action_id') String actionId,
     @Body() UpdateDraftOrderItem body,
   );
 
-  @DELETE('/draft-orders/{id}/edit/promotions')
+  @DELETE('/admin/draft-orders/{id}/edit/promotions')
   Future<DraftOrderPreviewResponse> deletePromotions(
     @Path('id') String id,
     @Body() RemoveDraftOrderPromotions body,
   );
 
-  @POST('/draft-orders/{id}/edit/promotions')
+  @POST('/admin/draft-orders/{id}/edit/promotions')
   Future<DraftOrderPreviewResponse> addPromotions(
     @Path('id') String id,
     @Body() AddDraftOrderPromotions body,
   );
 
-  @POST('/draft-orders/{id}/edit/request')
+  @POST('/admin/draft-orders/{id}/edit/request')
   Future<void> requestEdit(@Path('id') String id);
 
-  @POST('/draft-orders/{id}/edit/shipping-methods')
+  @POST('/admin/draft-orders/{id}/edit/shipping-methods')
   Future<void> addShippingMethod(
     @Path('id') String id,
     @Body() AddDraftOrderShippingMethod body,
   );
 
-  @DELETE('/draft-orders/{id}/edit/shipping-methods/method/{method_id}')
+  @DELETE('/admin/draft-orders/{id}/edit/shipping-methods/method/{method_id}')
   Future<void> deleteShippingMethod(
     @Path('id') String id,
     @Path('method_id') String methodId,
   );
 
-  @POST('/draft-orders/{id}/edit/shipping-methods/method/{method_id}')
+  @POST('/admin/draft-orders/{id}/edit/shipping-methods/method/{method_id}')
   Future<void> updateShippingMethod(
     @Path('id') String id,
     @Path('method_id') String methodId,
     @Body() UpdateDraftOrderShippingMethod body,
   );
 
-  @DELETE('/draft-orders/{id}/edit/shipping-methods/{action_id}')
+  @DELETE('/admin/draft-orders/{id}/edit/shipping-methods/{action_id}')
   Future<void> deleteNewShippingMethod(
     @Path('id') String id,
     @Path('action_id') String actionId,
   );
 
-  @POST('/draft-orders/{id}/edit/shipping-methods/{action_id}')
+  @POST('/admin/draft-orders/{id}/edit/shipping-methods/{action_id}')
   Future<void> updateNewShippingMethod(
     @Path('id') String id,
     @Path('action_id') String actionId,

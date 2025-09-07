@@ -22,7 +22,7 @@ class ProductsRepository {
     return _productsApi.retrieveAll(query: queryParameters);
   }
 
-  Future<Product> create(CreateProductReq body) {
+  Future<ProductRes> create(CreateProductReq body) {
     return _productsApi.create(body);
   }
 
@@ -50,11 +50,11 @@ class ProductsRepository {
     return _productsApi.delete(id);
   }
 
-  Future<Product> retrieve(String id) {
+  Future<ProductRes> retrieve(String id) {
     return _productsApi.retrieve(id);
   }
 
-  Future<Product> update(String id, UpdateProductReq body) {
+  Future<ProductRes> update(String id, UpdateProductReq body) {
     return _productsApi.update(id, body);
   }
 
@@ -62,7 +62,7 @@ class ProductsRepository {
     return _productsApi.listOptions(id);
   }
 
-  Future<Product> createOption(String id, CreateProductOptionReq body) {
+  Future<ProductRes> createOption(String id, CreateProductOptionReq body) {
     return _productsApi.createOption(id, body);
   }
 
@@ -74,7 +74,7 @@ class ProductsRepository {
     return _productsApi.retrieveOption(id, optionId);
   }
 
-  Future<Product> updateOption(
+  Future<ProductRes> updateOption(
     String id,
     String optionId,
     UpdateProductOptionReq body,
@@ -86,7 +86,7 @@ class ProductsRepository {
     return _productsApi.listVariants(id);
   }
 
-  Future<Product> createVariant(String id, CreateProductVariantReq body) {
+  Future<ProductRes> createVariant(String id, CreateProductVariantReq body) {
     return _productsApi.createVariant(id, body);
   }
 
@@ -98,11 +98,11 @@ class ProductsRepository {
     return _productsApi.deleteVariant(id, variantId);
   }
 
-  Future<ProductVariant> retrieveVariant(String id, String variantId) {
+  Future<ProductVariantRes> retrieveVariant(String id, String variantId) {
     return _productsApi.retrieveVariant(id, variantId);
   }
 
-  Future<Product> updateVariant(
+  Future<ProductVariantRes> updateVariant(
     String id,
     String variantId,
     UpdateProductVariantReq body,
@@ -110,7 +110,7 @@ class ProductsRepository {
     return _productsApi.updateVariant(id, variantId, body);
   }
 
-  Future<ProductVariant> associateInventoryItem(
+  Future<ProductVariantRes> associateInventoryItem(
     String id,
     String variantId,
     AssociateInventoryItemReq body,
@@ -126,7 +126,7 @@ class ProductsRepository {
     return _productsApi.deleteInventoryItem(id, variantId, inventoryItemId);
   }
 
-  Future<ProductVariant> updateInventoryItem(
+  Future<ProductVariantRes> updateInventoryItem(
     String id,
     String variantId,
     String inventoryItemId,
