@@ -8,8 +8,8 @@ part of 'product_variant_res.dart';
 
 _ProductVariantRes _$ProductVariantResFromJson(Map<String, dynamic> json) =>
     _ProductVariantRes(
-      product: Product.fromJson(json['product'] as Map<String, dynamic>),
+      variant: Product.fromJson(json['variant'] as Map<String, dynamic>),
     );
 
 Map<String, dynamic> _$ProductVariantResToJson(_ProductVariantRes instance) =>
-    <String, dynamic>{'product': instance.product};
+    <String, dynamic>{'variant': instance.variant};

@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ProductVariantRes {
 
- Product get product;
+ Product get variant;
 /// Create a copy of ProductVariantRes
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $ProductVariantResCopyWith<ProductVariantRes> get copyWith => _$ProductVariantRe
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is ProductVariantRes&&(identical(other.product, product) || other.product == product));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is ProductVariantRes&&(identical(other.variant, variant) || other.variant == variant));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,product);
+int get hashCode => Object.hash(runtimeType,variant);
 
 @override
 String toString() {
-  return 'ProductVariantRes(product: $product)';
+  return 'ProductVariantRes(variant: $variant)';
 }
 
 
@@ -48,11 +48,11 @@ abstract mixin class $ProductVariantResCopyWith<$Res>  {
   factory $ProductVariantResCopyWith(ProductVariantRes value, $Res Function(ProductVariantRes) _then) = _$ProductVariantResCopyWithImpl;
 @useResult
 $Res call({
- Product product
+ Product variant
 });
 
 
-$ProductCopyWith<$Res> get product;
+$ProductCopyWith<$Res> get variant;
 
 }
 /// @nodoc
@@ -65,9 +65,9 @@ class _$ProductVariantResCopyWithImpl<$Res>
 
 /// Create a copy of ProductVariantRes
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? product = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? variant = null,}) {
   return _then(_self.copyWith(
-product: null == product ? _self.product : product // ignore: cast_nullable_to_non_nullable
+variant: null == variant ? _self.variant : variant // ignore: cast_nullable_to_non_nullable
 as Product,
   ));
 }
@@ -75,10 +75,10 @@ as Product,
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$ProductCopyWith<$Res> get product {
+$ProductCopyWith<$Res> get variant {
   
-  return $ProductCopyWith<$Res>(_self.product, (value) {
-    return _then(_self.copyWith(product: value));
+  return $ProductCopyWith<$Res>(_self.variant, (value) {
+    return _then(_self.copyWith(variant: value));
   });
 }
 }
@@ -162,10 +162,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( Product product)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( Product variant)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ProductVariantRes() when $default != null:
-return $default(_that.product);case _:
+return $default(_that.variant);case _:
   return orElse();
 
 }
@@ -183,10 +183,10 @@ return $default(_that.product);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( Product product)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( Product variant)  $default,) {final _that = this;
 switch (_that) {
 case _ProductVariantRes():
-return $default(_that.product);case _:
+return $default(_that.variant);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -203,10 +203,10 @@ return $default(_that.product);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( Product product)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( Product variant)?  $default,) {final _that = this;
 switch (_that) {
 case _ProductVariantRes() when $default != null:
-return $default(_that.product);case _:
+return $default(_that.variant);case _:
   return null;
 
 }
@@ -218,10 +218,10 @@ return $default(_that.product);case _:
 @JsonSerializable()
 
 class _ProductVariantRes implements ProductVariantRes {
-  const _ProductVariantRes({required this.product});
+  const _ProductVariantRes({required this.variant});
   factory _ProductVariantRes.fromJson(Map<String, dynamic> json) => _$ProductVariantResFromJson(json);
 
-@override final  Product product;
+@override final  Product variant;
 
 /// Create a copy of ProductVariantRes
 /// with the given fields replaced by the non-null parameter values.
@@ -236,16 +236,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ProductVariantRes&&(identical(other.product, product) || other.product == product));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _ProductVariantRes&&(identical(other.variant, variant) || other.variant == variant));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,product);
+int get hashCode => Object.hash(runtimeType,variant);
 
 @override
 String toString() {
-  return 'ProductVariantRes(product: $product)';
+  return 'ProductVariantRes(variant: $variant)';
 }
 
 
@@ -256,11 +256,11 @@ abstract mixin class _$ProductVariantResCopyWith<$Res> implements $ProductVarian
   factory _$ProductVariantResCopyWith(_ProductVariantRes value, $Res Function(_ProductVariantRes) _then) = __$ProductVariantResCopyWithImpl;
 @override @useResult
 $Res call({
- Product product
+ Product variant
 });
 
 
-@override $ProductCopyWith<$Res> get product;
+@override $ProductCopyWith<$Res> get variant;
 
 }
 /// @nodoc
@@ -273,9 +273,9 @@ class __$ProductVariantResCopyWithImpl<$Res>
 
 /// Create a copy of ProductVariantRes
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? product = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? variant = null,}) {
   return _then(_ProductVariantRes(
-product: null == product ? _self.product : product // ignore: cast_nullable_to_non_nullable
+variant: null == variant ? _self.variant : variant // ignore: cast_nullable_to_non_nullable
 as Product,
   ));
 }
@@ -284,10 +284,10 @@ as Product,
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$ProductCopyWith<$Res> get product {
+$ProductCopyWith<$Res> get variant {
   
-  return $ProductCopyWith<$Res>(_self.product, (value) {
-    return _then(_self.copyWith(product: value));
+  return $ProductCopyWith<$Res>(_self.variant, (value) {
+    return _then(_self.copyWith(variant: value));
   });
 }
 }

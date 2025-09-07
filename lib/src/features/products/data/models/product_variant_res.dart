@@ -7,7 +7,7 @@ part 'product_variant_res.g.dart';
 @freezed
 abstract class ProductVariantRes with _$ProductVariantRes {
   const factory ProductVariantRes({
-    required Product product,
+    required Product variant,
   }) = _ProductVariantRes;
 
   factory ProductVariantRes.fromJson(Map<String, dynamic> json) =>
