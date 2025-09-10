@@ -9,11 +9,9 @@ part of 'add_customers_to_group_req.dart';
 _AddCustomersToGroupReq _$AddCustomersToGroupReqFromJson(
   Map<String, dynamic> json,
 ) => _AddCustomersToGroupReq(
-  customerIds: (json['customer_ids'] as List<dynamic>)
-      .map((e) => e as String)
-      .toList(),
+  customerIds: (json['add'] as List<dynamic>).map((e) => e as String).toList(),
 );
 
 Map<String, dynamic> _$AddCustomersToGroupReqToJson(
   _AddCustomersToGroupReq instance,
-) => <String, dynamic>{'customer_ids': instance.customerIds};
+) => <String, dynamic>{'add': instance.customerIds};

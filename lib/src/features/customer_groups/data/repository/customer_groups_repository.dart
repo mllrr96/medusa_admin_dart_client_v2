@@ -66,7 +66,7 @@ class CustomerGroupsRepository {
   /// Returns the updated [CustomerGroup].
   Future<CustomerGroupsRes> removeCustomers(
     String id,
-    AddCustomersToGroupReq payload,
+    RemoveCustomersToGroupReq payload,
   ) async {
     return await _customerGroupsApi.removeCustomers(id, payload);
   }

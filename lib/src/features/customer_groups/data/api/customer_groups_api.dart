@@ -37,6 +37,6 @@ abstract class CustomerGroupsApi {
   @DELETE('/admin/customer-groups/{id}/customers')
   Future<CustomerGroupsRes> removeCustomers(
     @Path('id') String id,
-    @Body() AddCustomersToGroupReq body,
+    @Body() RemoveCustomersToGroupReq body,
   );
 }

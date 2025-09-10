@@ -192,7 +192,7 @@ class _CustomerGroupsApi implements CustomerGroupsApi {
   @override
   Future<CustomerGroupsRes> removeCustomers(
     String id,
-    AddCustomersToGroupReq body,
+    RemoveCustomersToGroupReq body,
   ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
