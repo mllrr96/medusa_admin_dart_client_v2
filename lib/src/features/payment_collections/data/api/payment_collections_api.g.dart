@@ -2,6 +2,8 @@
 
 part of 'payment_collections_api.dart';
 
+// dart format off
+
 // **************************************************************************
 // RetrofitGenerator
 // **************************************************************************
@@ -136,3 +138,5 @@ class _PaymentCollectionsApi implements PaymentCollectionsApi {
     return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
 }
+
+// dart format on

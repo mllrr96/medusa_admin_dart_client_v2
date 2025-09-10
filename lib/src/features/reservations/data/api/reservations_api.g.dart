@@ -2,6 +2,8 @@
 
 part of 'reservations_api.dart';
 
+// dart format off
+
 // **************************************************************************
 // RetrofitGenerator
 // **************************************************************************
@@ -202,3 +204,5 @@ class _ReservationsApi implements ReservationsApi {
     return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
 }
+
+// dart format on

@@ -2,6 +2,8 @@
 
 part of 'gift_cards_api.dart';
 
+// dart format off
+
 // **************************************************************************
 // RetrofitGenerator
 // **************************************************************************
@@ -193,3 +195,5 @@ class _GiftCardsApi implements GiftCardsApi {
     return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
 }
+
+// dart format on

@@ -2,6 +2,8 @@
 
 part of 'store_credit_accounts_api.dart';
 
+// dart format off
+
 // **************************************************************************
 // RetrofitGenerator
 // **************************************************************************
@@ -171,3 +173,5 @@ class _StoreCreditAccountsApi implements StoreCreditAccountsApi {
     return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
 }
+
+// dart format on

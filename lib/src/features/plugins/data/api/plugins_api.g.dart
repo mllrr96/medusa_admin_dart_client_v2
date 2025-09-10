@@ -2,6 +2,8 @@
 
 part of 'plugins_api.dart';
 
+// dart format off
+
 // **************************************************************************
 // RetrofitGenerator
 // **************************************************************************
@@ -73,3 +75,5 @@ class _PluginsApi implements PluginsApi {
     return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
 }
+
+// dart format on

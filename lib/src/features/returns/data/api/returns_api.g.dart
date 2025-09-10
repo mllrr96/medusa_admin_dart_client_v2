@@ -2,6 +2,8 @@
 
 part of 'returns_api.dart';
 
+// dart format off
+
 // **************************************************************************
 // RetrofitGenerator
 // **************************************************************************
@@ -214,3 +216,5 @@ class _ReturnsApi implements ReturnsApi {
     return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
 }
+
+// dart format on

@@ -2,6 +2,8 @@
 
 part of 'product_tags_api.dart';
 
+// dart format off
+
 // **************************************************************************
 // RetrofitGenerator
 // **************************************************************************
@@ -181,3 +183,5 @@ class _ProductTagsApi implements ProductTagsApi {
     return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
 }
+
+// dart format on

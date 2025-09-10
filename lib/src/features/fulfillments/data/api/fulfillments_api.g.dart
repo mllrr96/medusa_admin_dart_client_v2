@@ -2,6 +2,8 @@
 
 part of 'fulfillments_api.dart';
 
+// dart format off
+
 // **************************************************************************
 // RetrofitGenerator
 // **************************************************************************
@@ -141,3 +143,5 @@ class _FulfillmentsApi implements FulfillmentsApi {
     return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
 }
+
+// dart format on

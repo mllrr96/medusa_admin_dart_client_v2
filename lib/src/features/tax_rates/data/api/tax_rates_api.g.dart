@@ -2,6 +2,8 @@
 
 part of 'tax_rates_api.dart';
 
+// dart format off
+
 // **************************************************************************
 // RetrofitGenerator
 // **************************************************************************
@@ -254,3 +256,5 @@ class _TaxRatesApi implements TaxRatesApi {
     return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
 }
+
+// dart format on

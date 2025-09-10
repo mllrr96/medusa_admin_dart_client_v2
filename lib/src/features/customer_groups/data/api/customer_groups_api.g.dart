@@ -2,6 +2,8 @@
 
 part of 'customer_groups_api.dart';
 
+// dart format off
+
 // **************************************************************************
 // RetrofitGenerator
 // **************************************************************************
@@ -244,3 +246,5 @@ class _CustomerGroupsApi implements CustomerGroupsApi {
     return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
 }
+
+// dart format on

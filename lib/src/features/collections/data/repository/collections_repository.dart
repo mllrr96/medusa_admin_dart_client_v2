@@ -13,15 +13,15 @@ class CollectionsRepository {
     return _collectionsApi.retrieveAll(query: queryParameters);
   }
 
-  Future<ProductCollection> retrieve(String id) {
+  Future<ProductCollectionRes> retrieve(String id) {
     return _collectionsApi.retrieve(id);
   }
 
-  Future<ProductCollection> create(CreateCollectionReq body) {
+  Future<ProductCollectionRes> create(CreateCollectionReq body) {
     return _collectionsApi.create(body);
   }
 
-  Future<ProductCollection> update(String id, UpdateCollectionReq body) {
+  Future<ProductCollectionRes> update(String id, UpdateCollectionReq body) {
     return _collectionsApi.update(id, body);
   }
 
@@ -29,11 +29,11 @@ class CollectionsRepository {
     return _collectionsApi.delete(id);
   }
 
-  Future<ProductCollection> addProducts(String id, List<String> productIds) {
+  Future<ProductCollectionRes> addProducts(String id, List<String> productIds) {
     return _collectionsApi.addProducts(id, {'add': productIds});
   }
 
-  Future<ProductCollection> removeProducts(String id, List<String> productIds) {
+  Future<ProductCollectionRes> removeProducts(String id, List<String> productIds) {
     return _collectionsApi.removeProducts(id, {'remove': productIds});
   }
 }

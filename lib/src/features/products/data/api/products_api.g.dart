@@ -2,6 +2,8 @@
 
 part of 'products_api.dart';
 
+// dart format off
+
 // **************************************************************************
 // RetrofitGenerator
 // **************************************************************************
@@ -681,3 +683,5 @@ class _ProductsApi implements ProductsApi {
     return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
 }
+
+// dart format on

@@ -2,6 +2,8 @@
 
 part of 'sales_channels_api.dart';
 
+// dart format off
+
 // **************************************************************************
 // RetrofitGenerator
 // **************************************************************************
@@ -203,3 +205,5 @@ class _SalesChannelsApi implements SalesChannelsApi {
     return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
 }
+
+// dart format on

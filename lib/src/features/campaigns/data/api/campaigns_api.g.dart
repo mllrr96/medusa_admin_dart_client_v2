@@ -2,6 +2,8 @@
 
 part of 'campaigns_api.dart';
 
+// dart format off
+
 // **************************************************************************
 // RetrofitGenerator
 // **************************************************************************
@@ -211,3 +213,5 @@ class _CampaignsApi implements CampaignsApi {
     return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
 }
+
+// dart format on

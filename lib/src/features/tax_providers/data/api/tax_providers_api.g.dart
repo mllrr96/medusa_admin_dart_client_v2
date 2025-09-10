@@ -2,6 +2,8 @@
 
 part of 'tax_providers_api.dart';
 
+// dart format off
+
 // **************************************************************************
 // RetrofitGenerator
 // **************************************************************************
@@ -73,3 +75,5 @@ class _TaxProvidersApi implements TaxProvidersApi {
     return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
 }
+
+// dart format on

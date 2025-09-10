@@ -2,6 +2,8 @@
 
 part of 'order_edits_api.dart';
 
+// dart format off
+
 // **************************************************************************
 // RetrofitGenerator
 // **************************************************************************
@@ -433,3 +435,5 @@ class _OrderEditsApi implements OrderEditsApi {
     return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
 }
+
+// dart format on

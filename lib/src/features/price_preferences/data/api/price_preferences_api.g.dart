@@ -2,6 +2,8 @@
 
 part of 'price_preferences_api.dart';
 
+// dart format off
+
 // **************************************************************************
 // RetrofitGenerator
 // **************************************************************************
@@ -204,3 +206,5 @@ class _PricePreferencesApi implements PricePreferencesApi {
     return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
 }
+
+// dart format on

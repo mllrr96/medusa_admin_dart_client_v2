@@ -2,6 +2,8 @@
 
 part of 'payments_api.dart';
 
+// dart format off
+
 // **************************************************************************
 // RetrofitGenerator
 // **************************************************************************
@@ -202,3 +204,5 @@ class _PaymentsApi implements PaymentsApi {
     return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
 }
+
+// dart format on

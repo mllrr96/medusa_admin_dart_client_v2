@@ -2,6 +2,8 @@
 
 part of 'claims_api.dart';
 
+// dart format off
+
 // **************************************************************************
 // RetrofitGenerator
 // **************************************************************************
@@ -691,3 +693,5 @@ class _ClaimsApi implements ClaimsApi {
     return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
 }
+
+// dart format on

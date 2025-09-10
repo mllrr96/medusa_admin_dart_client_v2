@@ -2,6 +2,8 @@
 
 part of 'shipping_profiles_api.dart';
 
+// dart format off
+
 // **************************************************************************
 // RetrofitGenerator
 // **************************************************************************
@@ -178,3 +180,5 @@ class _ShippingProfilesApi implements ShippingProfilesApi {
     return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
 }
+
+// dart format on

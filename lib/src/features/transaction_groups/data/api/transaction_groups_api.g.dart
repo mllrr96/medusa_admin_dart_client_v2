@@ -2,6 +2,8 @@
 
 part of 'transaction_groups_api.dart';
 
+// dart format off
+
 // **************************************************************************
 // RetrofitGenerator
 // **************************************************************************
@@ -73,3 +75,5 @@ class _TransactionGroupsApi implements TransactionGroupsApi {
     return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
 }
+
+// dart format on

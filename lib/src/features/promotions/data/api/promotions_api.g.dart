@@ -2,6 +2,8 @@
 
 part of 'promotions_api.dart';
 
+// dart format off
+
 // **************************************************************************
 // RetrofitGenerator
 // **************************************************************************
@@ -399,3 +401,5 @@ class _PromotionsApi implements PromotionsApi {
     return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
 }
+
+// dart format on

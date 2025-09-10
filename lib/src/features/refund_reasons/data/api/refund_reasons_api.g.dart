@@ -2,6 +2,8 @@
 
 part of 'refund_reasons_api.dart';
 
+// dart format off
+
 // **************************************************************************
 // RetrofitGenerator
 // **************************************************************************
@@ -181,3 +183,5 @@ class _RefundReasonsApi implements RefundReasonsApi {
     return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
 }
+
+// dart format on

@@ -2,6 +2,8 @@
 
 part of 'store_api.dart';
 
+// dart format off
+
 // **************************************************************************
 // RetrofitGenerator
 // **************************************************************************
@@ -135,3 +137,5 @@ class _StoreApi implements StoreApi {
     return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
 }
+
+// dart format on

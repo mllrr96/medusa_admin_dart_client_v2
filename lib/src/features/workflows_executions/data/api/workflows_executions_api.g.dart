@@ -2,6 +2,8 @@
 
 part of 'workflows_executions_api.dart';
 
+// dart format off
+
 // **************************************************************************
 // RetrofitGenerator
 // **************************************************************************
@@ -288,3 +290,5 @@ class _WorkflowsExecutionsApi implements WorkflowsExecutionsApi {
     return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
 }
+
+// dart format on

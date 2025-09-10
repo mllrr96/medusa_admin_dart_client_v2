@@ -2,6 +2,8 @@
 
 part of 'fulfillment_providers_api.dart';
 
+// dart format off
+
 // **************************************************************************
 // RetrofitGenerator
 // **************************************************************************
@@ -105,3 +107,5 @@ class _FulfillmentProvidersApi implements FulfillmentProvidersApi {
     return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
 }
+
+// dart format on

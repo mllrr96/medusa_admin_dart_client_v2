@@ -15,15 +15,15 @@ abstract class CollectionsApi {
   });
 
   @GET('/admin/collections/{id}')
-  Future<ProductCollection> retrieve(@Path('id') String id);
+  Future<ProductCollectionRes> retrieve(@Path('id') String id);
 
   @POST('/admin/collections')
-  Future<ProductCollection> create(
+  Future<ProductCollectionRes> create(
     @Body() CreateCollectionReq body,
   );
 
   @POST('/admin/collections/{id}')
-  Future<ProductCollection> update(
+  Future<ProductCollectionRes> update(
     @Path('id') String id,
     @Body() UpdateCollectionReq body,
   );
@@ -32,13 +32,13 @@ abstract class CollectionsApi {
   Future<void> delete(@Path('id') String id);
 
   @POST('/admin/collections/{id}/products')
-  Future<ProductCollection> addProducts(
+  Future<ProductCollectionRes> addProducts(
     @Path('id') String id,
     @Body() Map<String, dynamic> body,
   );
 
   @POST('/admin/collections/{id}/products')
-  Future<ProductCollection> removeProducts(
+  Future<ProductCollectionRes> removeProducts(
     @Path('id') String id,
     @Body() Map<String, dynamic> body,
   );

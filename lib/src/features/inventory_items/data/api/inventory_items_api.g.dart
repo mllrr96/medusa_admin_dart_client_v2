@@ -2,6 +2,8 @@
 
 part of 'inventory_items_api.dart';
 
+// dart format off
+
 // **************************************************************************
 // RetrofitGenerator
 // **************************************************************************
@@ -383,3 +385,5 @@ class _InventoryItemsApi implements InventoryItemsApi {
     return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
 }
+
+// dart format on

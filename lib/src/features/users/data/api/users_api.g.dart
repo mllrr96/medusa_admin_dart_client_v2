@@ -2,6 +2,8 @@
 
 part of 'users_api.dart';
 
+// dart format off
+
 // **************************************************************************
 // RetrofitGenerator
 // **************************************************************************
@@ -182,3 +184,5 @@ class _UsersApi implements UsersApi {
     return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
 }
+
+// dart format on

@@ -2,6 +2,8 @@
 
 part of 'api_keys_api.dart';
 
+// dart format off
+
 // **************************************************************************
 // RetrofitGenerator
 // **************************************************************************
@@ -230,3 +232,5 @@ class _ApiKeysApi implements ApiKeysApi {
     return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
 }
+
+// dart format on

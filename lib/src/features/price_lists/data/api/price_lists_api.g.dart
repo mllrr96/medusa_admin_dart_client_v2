@@ -2,6 +2,8 @@
 
 part of 'price_lists_api.dart';
 
+// dart format off
+
 // **************************************************************************
 // RetrofitGenerator
 // **************************************************************************
@@ -246,3 +248,5 @@ class _PriceListsApi implements PriceListsApi {
     return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
 }
+
+// dart format on

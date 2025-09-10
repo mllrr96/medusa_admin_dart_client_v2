@@ -2,6 +2,8 @@
 
 part of 'regions_api.dart';
 
+// dart format off
+
 // **************************************************************************
 // RetrofitGenerator
 // **************************************************************************
@@ -174,3 +176,5 @@ class _RegionsApi implements RegionsApi {
     return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
 }
+
+// dart format on

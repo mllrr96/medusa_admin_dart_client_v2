@@ -2,6 +2,8 @@
 
 part of 'shipping_options_api.dart';
 
+// dart format off
+
 // **************************************************************************
 // RetrofitGenerator
 // **************************************************************************
@@ -237,3 +239,5 @@ class _ShippingOptionsApi implements ShippingOptionsApi {
     return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
 }
+
+// dart format on

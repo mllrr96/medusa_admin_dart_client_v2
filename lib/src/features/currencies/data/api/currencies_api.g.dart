@@ -2,6 +2,8 @@
 
 part of 'currencies_api.dart';
 
+// dart format off
+
 // **************************************************************************
 // RetrofitGenerator
 // **************************************************************************
@@ -100,3 +102,5 @@ class _CurrenciesApi implements CurrenciesApi {
     return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
 }
+
+// dart format on

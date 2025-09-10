@@ -2,6 +2,8 @@
 
 part of 'tax_regions_api.dart';
 
+// dart format off
+
 // **************************************************************************
 // RetrofitGenerator
 // **************************************************************************
@@ -194,3 +196,5 @@ class _TaxRegionsApi implements TaxRegionsApi {
     return Uri.parse(dioBaseUrl).resolveUri(url).toString();
   }
 }
+
+// dart format on
