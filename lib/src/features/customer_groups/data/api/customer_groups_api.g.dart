@@ -162,12 +162,13 @@ class _CustomerGroupsApi implements CustomerGroupsApi {
   @override
   Future<CustomerGroupsRes> addCustomers(
     String id,
-    AddCustomersToGroupReq body,
+    Map<String, List<String>> body,
   ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = body;
+    final _data = <String, dynamic>{};
+    _data.addAll(body);
     final _options = _setStreamType<CustomerGroupsRes>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
@@ -192,14 +193,15 @@ class _CustomerGroupsApi implements CustomerGroupsApi {
   @override
   Future<CustomerGroupsRes> removeCustomers(
     String id,
-    RemoveCustomersToGroupReq body,
+    Map<String, List<String>> body,
   ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = body;
+    final _data = <String, dynamic>{};
+    _data.addAll(body);
     final _options = _setStreamType<CustomerGroupsRes>(
-      Options(method: 'DELETE', headers: _headers, extra: _extra)
+      Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
             '/admin/customer-groups/${id}/customers',

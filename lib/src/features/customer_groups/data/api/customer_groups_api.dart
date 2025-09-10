@@ -31,12 +31,12 @@ abstract class CustomerGroupsApi {
   @POST('/admin/customer-groups/{id}/customers')
   Future<CustomerGroupsRes> addCustomers(
     @Path('id') String id,
-    @Body() AddCustomersToGroupReq body,
+    @Body() Map<String,List<String>> body,
   );
 
-  @DELETE('/admin/customer-groups/{id}/customers')
+  @POST('/admin/customer-groups/{id}/customers')
   Future<CustomerGroupsRes> removeCustomers(
     @Path('id') String id,
-    @Body() RemoveCustomersToGroupReq body,
+    @Body() Map<String,List<String>> body,
   );
 }

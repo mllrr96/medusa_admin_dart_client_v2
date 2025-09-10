@@ -55,9 +55,9 @@ class CustomerGroupsRepository {
   /// Returns the updated [CustomerGroup].
   Future<CustomerGroup> addCustomers(
     String id,
-    AddCustomersToGroupReq payload,
+    List<String> payload,
   ) async {
-    final response = await _customerGroupsApi.addCustomers(id, payload);
+    final response = await _customerGroupsApi.addCustomers(id, {'add': payload});
     return response.customerGroup;
   }
 
@@ -66,8 +66,8 @@ class CustomerGroupsRepository {
   /// Returns the updated [CustomerGroup].
   Future<CustomerGroupsRes> removeCustomers(
     String id,
-    RemoveCustomersToGroupReq payload,
+    List<String> payload,
   ) async {
-    return await _customerGroupsApi.removeCustomers(id, payload);
+    return await _customerGroupsApi.removeCustomers(id, {'remove': payload});
   }
 }
