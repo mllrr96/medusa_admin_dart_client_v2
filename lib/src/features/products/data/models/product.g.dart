@@ -12,7 +12,7 @@ _Product _$ProductFromJson(Map<String, dynamic> json) => _Product(
   subtitle: json['subtitle'] as String?,
   description: json['description'] as String?,
   handle: json['handle'] as String,
-  isGiftcard: json['is_giftcard'] as bool,
+  isGiftcard: json['is_giftcard'] as bool?,
   status: $enumDecode(_$ProductStatusEnumMap, json['status']),
   images: (json['images'] as List<dynamic>?)
       ?.map((e) => ProductImage.fromJson(e as Map<String, dynamic>))
@@ -43,7 +43,7 @@ _Product _$ProductFromJson(Map<String, dynamic> json) => _Product(
   tags: (json['tags'] as List<dynamic>?)
       ?.map((e) => ProductTag.fromJson(e as Map<String, dynamic>))
       .toList(),
-  discountable: json['discountable'] as bool,
+  discountable: json['discountable'] as bool?,
   externalId: json['external_id'] as String?,
   salesChannels: (json['sales_channels'] as List<dynamic>?)
       ?.map((e) => SalesChannel.fromJson(e as Map<String, dynamic>))

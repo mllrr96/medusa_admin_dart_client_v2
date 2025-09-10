@@ -11,9 +11,6 @@ _ProductCollection _$ProductCollectionFromJson(Map<String, dynamic> json) =>
       id: json['id'] as String,
       title: json['title'] as String,
       handle: json['handle'] as String?,
-      products: (json['products'] as List<dynamic>?)
-          ?.map((e) => Product.fromJson(e as Map<String, dynamic>))
-          .toList(),
       metadata: json['metadata'] as Map<String, dynamic>?,
       createdAt: json['created_at'] == null
           ? null
@@ -31,7 +28,6 @@ Map<String, dynamic> _$ProductCollectionToJson(_ProductCollection instance) =>
       'id': instance.id,
       'title': instance.title,
       'handle': instance.handle,
-      'products': instance.products,
       'metadata': instance.metadata,
       'created_at': instance.createdAt?.toIso8601String(),
       'updated_at': instance.updatedAt?.toIso8601String(),

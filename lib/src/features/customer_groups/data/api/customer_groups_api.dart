@@ -28,13 +28,13 @@ abstract class CustomerGroupsApi {
   @DELETE('/admin/customer-groups/{id}')
   Future<CustomerGroupsDeleteRes> delete(@Path('id') String id);
 
-  @POST('/admin/customer-groups/{id}/customers/batch')
+  @POST('/admin/customer-groups/{id}/customers')
   Future<CustomerGroupsRes> addCustomers(
     @Path('id') String id,
     @Body() AddCustomersToGroupReq body,
   );
 
-  @DELETE('/admin/customer-groups/{id}/customers/batch')
+  @DELETE('/admin/customer-groups/{id}/customers')
   Future<CustomerGroupsRes> removeCustomers(
     @Path('id') String id,
     @Body() AddCustomersToGroupReq body,

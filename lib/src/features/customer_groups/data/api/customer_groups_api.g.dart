@@ -172,7 +172,7 @@ class _CustomerGroupsApi implements CustomerGroupsApi {
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/admin/customer-groups/${id}/customers/batch',
+            '/admin/customer-groups/${id}/customers',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -202,7 +202,7 @@ class _CustomerGroupsApi implements CustomerGroupsApi {
       Options(method: 'DELETE', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            '/admin/customer-groups/${id}/customers/batch',
+            '/admin/customer-groups/${id}/customers',
             queryParameters: queryParameters,
             data: _data,
           )
