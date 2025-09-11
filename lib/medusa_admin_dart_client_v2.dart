@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:medusa_admin_dart_client/src/features/auth/data/repository/auth_repository.dart';
 import 'package:medusa_admin_dart_client/src/core/di/di.dart';
+import 'package:medusa_admin_dart_client/src/features/campaigns/data/repository/campaigns_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/exchanges/data/repository/exchanges_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/fulfillments/data/repository/fulfillments_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/order_edits/data/repository/order_edits_repository.dart';
@@ -142,8 +143,7 @@ class MedusaAdminV2 {
 
   ProductsRepository get products => getIt<ProductsRepository>();
 
-  ProductCategoriesRepository get categories =>
-      getIt<ProductCategoriesRepository>();
+  ProductCategoriesRepository get categories => getIt<ProductCategoriesRepository>();
 
   OrdersRepository get orders => getIt<OrdersRepository>();
 
@@ -161,11 +161,9 @@ class MedusaAdminV2 {
 
   PriceListsRepository get priceLists => getIt<PriceListsRepository>();
 
-  ShippingOptionsRepository get shippingOptions =>
-      getIt<ShippingOptionsRepository>();
+  ShippingOptionsRepository get shippingOptions => getIt<ShippingOptionsRepository>();
 
-  ShippingProfilesRepository get shippingProfiles =>
-      getIt<ShippingProfilesRepository>();
+  ShippingProfilesRepository get shippingProfiles => getIt<ShippingProfilesRepository>();
 
   PromotionsRepository get promotions => getIt<PromotionsRepository>();
 
@@ -183,8 +181,9 @@ class MedusaAdminV2 {
 
   DraftOrdersRepository get draftOrders => getIt<DraftOrdersRepository>();
 
-  CustomerGroupsRepository get customerGroups =>
-      getIt<CustomerGroupsRepository>();
+  CustomerGroupsRepository get customerGroups => getIt<CustomerGroupsRepository>();
+
+  CampaignsRepository get campaigns => getIt<CampaignsRepository>();
 
   PaymentsRepository get payments => getIt<PaymentsRepository>();
 
@@ -204,8 +203,7 @@ class MedusaAdminV2 {
 
   ProductTypesRepository get productTypes => getIt<ProductTypesRepository>();
 
-  ProductVariantsRepository get productVariants =>
-      getIt<ProductVariantsRepository>();
+  ProductVariantsRepository get productVariants => getIt<ProductVariantsRepository>();
 
   ExchangesRepository get exchanges => getIt<ExchangesRepository>();
 }

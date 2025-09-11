@@ -9,21 +9,21 @@ part of 'region.dart';
 _Region _$RegionFromJson(Map<String, dynamic> json) => _Region(
   id: json['id'] as String,
   name: json['name'] as String,
-  currencyCode: json['currency_code'] as String,
-  countries: (json['countries'] as List<dynamic>)
-      .map((e) => Country.fromJson(e as Map<String, dynamic>))
+  currencyCode: json['currency_code'] as String?,
+  countries: (json['countries'] as List<dynamic>?)
+      ?.map((e) => Country.fromJson(e as Map<String, dynamic>))
       .toList(),
-  paymentProviders: (json['payment_providers'] as List<dynamic>)
-      .map((e) => PaymentProvider.fromJson(e as Map<String, dynamic>))
+  paymentProviders: (json['payment_providers'] as List<dynamic>?)
+      ?.map((e) => PaymentProvider.fromJson(e as Map<String, dynamic>))
       .toList(),
-  fulfillmentProviders: (json['fulfillment_providers'] as List<dynamic>)
-      .map((e) => FulfillmentProvider.fromJson(e as Map<String, dynamic>))
+  fulfillmentProviders: (json['fulfillment_providers'] as List<dynamic>?)
+      ?.map((e) => FulfillmentProvider.fromJson(e as Map<String, dynamic>))
       .toList(),
-  taxRate: (json['tax_rate'] as num).toInt(),
-  taxCode: json['tax_code'] as String,
-  automaticTaxes: json['automatic_taxes'] as bool,
-  giftCardsTaxable: json['gift_cards_taxable'] as String,
-  productsTaxable: json['products_taxable'] as String,
+  taxRate: (json['tax_rate'] as num?)?.toInt(),
+  taxCode: json['tax_code'] as String?,
+  automaticTaxes: json['automatic_taxes'] as bool?,
+  giftCardsTaxable: json['gift_cards_taxable'] as String?,
+  productsTaxable: json['products_taxable'] as String?,
   createdAt: json['created_at'] == null
       ? null
       : DateTime.parse(json['created_at'] as String),

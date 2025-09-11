@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Region {
 
- String get id; String get name;@JsonKey(name: 'currency_code') String get currencyCode; List<Country> get countries;@JsonKey(name: 'payment_providers') List<PaymentProvider> get paymentProviders;@JsonKey(name: 'fulfillment_providers') List<FulfillmentProvider> get fulfillmentProviders;@JsonKey(name: 'tax_rate') int get taxRate;@JsonKey(name: 'tax_code') String get taxCode;@JsonKey(name: 'automatic_taxes') bool get automaticTaxes;@JsonKey(name: 'gift_cards_taxable') String get giftCardsTaxable;@JsonKey(name: 'products_taxable') String get productsTaxable;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt; Map<String, dynamic>? get metadata;
+ String get id; String get name;@JsonKey(name: 'currency_code') String? get currencyCode; List<Country>? get countries;@JsonKey(name: 'payment_providers') List<PaymentProvider>? get paymentProviders;@JsonKey(name: 'fulfillment_providers') List<FulfillmentProvider>? get fulfillmentProviders;@JsonKey(name: 'tax_rate') int? get taxRate;@JsonKey(name: 'tax_code') String? get taxCode;@JsonKey(name: 'automatic_taxes') bool? get automaticTaxes;@JsonKey(name: 'gift_cards_taxable') String? get giftCardsTaxable;@JsonKey(name: 'products_taxable') String? get productsTaxable;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt; Map<String, dynamic>? get metadata;
 /// Create a copy of Region
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $RegionCopyWith<$Res>  {
   factory $RegionCopyWith(Region value, $Res Function(Region) _then) = _$RegionCopyWithImpl;
 @useResult
 $Res call({
- String id, String name,@JsonKey(name: 'currency_code') String currencyCode, List<Country> countries,@JsonKey(name: 'payment_providers') List<PaymentProvider> paymentProviders,@JsonKey(name: 'fulfillment_providers') List<FulfillmentProvider> fulfillmentProviders,@JsonKey(name: 'tax_rate') int taxRate,@JsonKey(name: 'tax_code') String taxCode,@JsonKey(name: 'automatic_taxes') bool automaticTaxes,@JsonKey(name: 'gift_cards_taxable') String giftCardsTaxable,@JsonKey(name: 'products_taxable') String productsTaxable,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
+ String id, String name,@JsonKey(name: 'currency_code') String? currencyCode, List<Country>? countries,@JsonKey(name: 'payment_providers') List<PaymentProvider>? paymentProviders,@JsonKey(name: 'fulfillment_providers') List<FulfillmentProvider>? fulfillmentProviders,@JsonKey(name: 'tax_rate') int? taxRate,@JsonKey(name: 'tax_code') String? taxCode,@JsonKey(name: 'automatic_taxes') bool? automaticTaxes,@JsonKey(name: 'gift_cards_taxable') String? giftCardsTaxable,@JsonKey(name: 'products_taxable') String? productsTaxable,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
 });
 
 
@@ -65,20 +65,20 @@ class _$RegionCopyWithImpl<$Res>
 
 /// Create a copy of Region
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? currencyCode = null,Object? countries = null,Object? paymentProviders = null,Object? fulfillmentProviders = null,Object? taxRate = null,Object? taxCode = null,Object? automaticTaxes = null,Object? giftCardsTaxable = null,Object? productsTaxable = null,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,Object? metadata = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? currencyCode = freezed,Object? countries = freezed,Object? paymentProviders = freezed,Object? fulfillmentProviders = freezed,Object? taxRate = freezed,Object? taxCode = freezed,Object? automaticTaxes = freezed,Object? giftCardsTaxable = freezed,Object? productsTaxable = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,Object? metadata = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,currencyCode: null == currencyCode ? _self.currencyCode : currencyCode // ignore: cast_nullable_to_non_nullable
-as String,countries: null == countries ? _self.countries : countries // ignore: cast_nullable_to_non_nullable
-as List<Country>,paymentProviders: null == paymentProviders ? _self.paymentProviders : paymentProviders // ignore: cast_nullable_to_non_nullable
-as List<PaymentProvider>,fulfillmentProviders: null == fulfillmentProviders ? _self.fulfillmentProviders : fulfillmentProviders // ignore: cast_nullable_to_non_nullable
-as List<FulfillmentProvider>,taxRate: null == taxRate ? _self.taxRate : taxRate // ignore: cast_nullable_to_non_nullable
-as int,taxCode: null == taxCode ? _self.taxCode : taxCode // ignore: cast_nullable_to_non_nullable
-as String,automaticTaxes: null == automaticTaxes ? _self.automaticTaxes : automaticTaxes // ignore: cast_nullable_to_non_nullable
-as bool,giftCardsTaxable: null == giftCardsTaxable ? _self.giftCardsTaxable : giftCardsTaxable // ignore: cast_nullable_to_non_nullable
-as String,productsTaxable: null == productsTaxable ? _self.productsTaxable : productsTaxable // ignore: cast_nullable_to_non_nullable
-as String,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as String,currencyCode: freezed == currencyCode ? _self.currencyCode : currencyCode // ignore: cast_nullable_to_non_nullable
+as String?,countries: freezed == countries ? _self.countries : countries // ignore: cast_nullable_to_non_nullable
+as List<Country>?,paymentProviders: freezed == paymentProviders ? _self.paymentProviders : paymentProviders // ignore: cast_nullable_to_non_nullable
+as List<PaymentProvider>?,fulfillmentProviders: freezed == fulfillmentProviders ? _self.fulfillmentProviders : fulfillmentProviders // ignore: cast_nullable_to_non_nullable
+as List<FulfillmentProvider>?,taxRate: freezed == taxRate ? _self.taxRate : taxRate // ignore: cast_nullable_to_non_nullable
+as int?,taxCode: freezed == taxCode ? _self.taxCode : taxCode // ignore: cast_nullable_to_non_nullable
+as String?,automaticTaxes: freezed == automaticTaxes ? _self.automaticTaxes : automaticTaxes // ignore: cast_nullable_to_non_nullable
+as bool?,giftCardsTaxable: freezed == giftCardsTaxable ? _self.giftCardsTaxable : giftCardsTaxable // ignore: cast_nullable_to_non_nullable
+as String?,productsTaxable: freezed == productsTaxable ? _self.productsTaxable : productsTaxable // ignore: cast_nullable_to_non_nullable
+as String?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,metadata: freezed == metadata ? _self.metadata : metadata // ignore: cast_nullable_to_non_nullable
@@ -167,7 +167,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(name: 'currency_code')  String currencyCode,  List<Country> countries, @JsonKey(name: 'payment_providers')  List<PaymentProvider> paymentProviders, @JsonKey(name: 'fulfillment_providers')  List<FulfillmentProvider> fulfillmentProviders, @JsonKey(name: 'tax_rate')  int taxRate, @JsonKey(name: 'tax_code')  String taxCode, @JsonKey(name: 'automatic_taxes')  bool automaticTaxes, @JsonKey(name: 'gift_cards_taxable')  String giftCardsTaxable, @JsonKey(name: 'products_taxable')  String productsTaxable, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(name: 'currency_code')  String? currencyCode,  List<Country>? countries, @JsonKey(name: 'payment_providers')  List<PaymentProvider>? paymentProviders, @JsonKey(name: 'fulfillment_providers')  List<FulfillmentProvider>? fulfillmentProviders, @JsonKey(name: 'tax_rate')  int? taxRate, @JsonKey(name: 'tax_code')  String? taxCode, @JsonKey(name: 'automatic_taxes')  bool? automaticTaxes, @JsonKey(name: 'gift_cards_taxable')  String? giftCardsTaxable, @JsonKey(name: 'products_taxable')  String? productsTaxable, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Region() when $default != null:
 return $default(_that.id,_that.name,_that.currencyCode,_that.countries,_that.paymentProviders,_that.fulfillmentProviders,_that.taxRate,_that.taxCode,_that.automaticTaxes,_that.giftCardsTaxable,_that.productsTaxable,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -188,7 +188,7 @@ return $default(_that.id,_that.name,_that.currencyCode,_that.countries,_that.pay
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(name: 'currency_code')  String currencyCode,  List<Country> countries, @JsonKey(name: 'payment_providers')  List<PaymentProvider> paymentProviders, @JsonKey(name: 'fulfillment_providers')  List<FulfillmentProvider> fulfillmentProviders, @JsonKey(name: 'tax_rate')  int taxRate, @JsonKey(name: 'tax_code')  String taxCode, @JsonKey(name: 'automatic_taxes')  bool automaticTaxes, @JsonKey(name: 'gift_cards_taxable')  String giftCardsTaxable, @JsonKey(name: 'products_taxable')  String productsTaxable, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(name: 'currency_code')  String? currencyCode,  List<Country>? countries, @JsonKey(name: 'payment_providers')  List<PaymentProvider>? paymentProviders, @JsonKey(name: 'fulfillment_providers')  List<FulfillmentProvider>? fulfillmentProviders, @JsonKey(name: 'tax_rate')  int? taxRate, @JsonKey(name: 'tax_code')  String? taxCode, @JsonKey(name: 'automatic_taxes')  bool? automaticTaxes, @JsonKey(name: 'gift_cards_taxable')  String? giftCardsTaxable, @JsonKey(name: 'products_taxable')  String? productsTaxable, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
 switch (_that) {
 case _Region():
 return $default(_that.id,_that.name,_that.currencyCode,_that.countries,_that.paymentProviders,_that.fulfillmentProviders,_that.taxRate,_that.taxCode,_that.automaticTaxes,_that.giftCardsTaxable,_that.productsTaxable,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -208,7 +208,7 @@ return $default(_that.id,_that.name,_that.currencyCode,_that.countries,_that.pay
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name, @JsonKey(name: 'currency_code')  String currencyCode,  List<Country> countries, @JsonKey(name: 'payment_providers')  List<PaymentProvider> paymentProviders, @JsonKey(name: 'fulfillment_providers')  List<FulfillmentProvider> fulfillmentProviders, @JsonKey(name: 'tax_rate')  int taxRate, @JsonKey(name: 'tax_code')  String taxCode, @JsonKey(name: 'automatic_taxes')  bool automaticTaxes, @JsonKey(name: 'gift_cards_taxable')  String giftCardsTaxable, @JsonKey(name: 'products_taxable')  String productsTaxable, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name, @JsonKey(name: 'currency_code')  String? currencyCode,  List<Country>? countries, @JsonKey(name: 'payment_providers')  List<PaymentProvider>? paymentProviders, @JsonKey(name: 'fulfillment_providers')  List<FulfillmentProvider>? fulfillmentProviders, @JsonKey(name: 'tax_rate')  int? taxRate, @JsonKey(name: 'tax_code')  String? taxCode, @JsonKey(name: 'automatic_taxes')  bool? automaticTaxes, @JsonKey(name: 'gift_cards_taxable')  String? giftCardsTaxable, @JsonKey(name: 'products_taxable')  String? productsTaxable, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
 switch (_that) {
 case _Region() when $default != null:
 return $default(_that.id,_that.name,_that.currencyCode,_that.countries,_that.paymentProviders,_that.fulfillmentProviders,_that.taxRate,_that.taxCode,_that.automaticTaxes,_that.giftCardsTaxable,_that.productsTaxable,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.metadata);case _:
@@ -223,38 +223,44 @@ return $default(_that.id,_that.name,_that.currencyCode,_that.countries,_that.pay
 @JsonSerializable()
 
 class _Region implements Region {
-  const _Region({required this.id, required this.name, @JsonKey(name: 'currency_code') required this.currencyCode, required final  List<Country> countries, @JsonKey(name: 'payment_providers') required final  List<PaymentProvider> paymentProviders, @JsonKey(name: 'fulfillment_providers') required final  List<FulfillmentProvider> fulfillmentProviders, @JsonKey(name: 'tax_rate') required this.taxRate, @JsonKey(name: 'tax_code') required this.taxCode, @JsonKey(name: 'automatic_taxes') required this.automaticTaxes, @JsonKey(name: 'gift_cards_taxable') required this.giftCardsTaxable, @JsonKey(name: 'products_taxable') required this.productsTaxable, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt, final  Map<String, dynamic>? metadata}): _countries = countries,_paymentProviders = paymentProviders,_fulfillmentProviders = fulfillmentProviders,_metadata = metadata;
+  const _Region({required this.id, required this.name, @JsonKey(name: 'currency_code') this.currencyCode, final  List<Country>? countries, @JsonKey(name: 'payment_providers') final  List<PaymentProvider>? paymentProviders, @JsonKey(name: 'fulfillment_providers') final  List<FulfillmentProvider>? fulfillmentProviders, @JsonKey(name: 'tax_rate') this.taxRate, @JsonKey(name: 'tax_code') this.taxCode, @JsonKey(name: 'automatic_taxes') this.automaticTaxes, @JsonKey(name: 'gift_cards_taxable') this.giftCardsTaxable, @JsonKey(name: 'products_taxable') this.productsTaxable, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt, final  Map<String, dynamic>? metadata}): _countries = countries,_paymentProviders = paymentProviders,_fulfillmentProviders = fulfillmentProviders,_metadata = metadata;
   factory _Region.fromJson(Map<String, dynamic> json) => _$RegionFromJson(json);
 
 @override final  String id;
 @override final  String name;
-@override@JsonKey(name: 'currency_code') final  String currencyCode;
- final  List<Country> _countries;
-@override List<Country> get countries {
+@override@JsonKey(name: 'currency_code') final  String? currencyCode;
+ final  List<Country>? _countries;
+@override List<Country>? get countries {
+  final value = _countries;
+  if (value == null) return null;
   if (_countries is EqualUnmodifiableListView) return _countries;
   // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_countries);
+  return EqualUnmodifiableListView(value);
 }
 
- final  List<PaymentProvider> _paymentProviders;
-@override@JsonKey(name: 'payment_providers') List<PaymentProvider> get paymentProviders {
+ final  List<PaymentProvider>? _paymentProviders;
+@override@JsonKey(name: 'payment_providers') List<PaymentProvider>? get paymentProviders {
+  final value = _paymentProviders;
+  if (value == null) return null;
   if (_paymentProviders is EqualUnmodifiableListView) return _paymentProviders;
   // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_paymentProviders);
+  return EqualUnmodifiableListView(value);
 }
 
- final  List<FulfillmentProvider> _fulfillmentProviders;
-@override@JsonKey(name: 'fulfillment_providers') List<FulfillmentProvider> get fulfillmentProviders {
+ final  List<FulfillmentProvider>? _fulfillmentProviders;
+@override@JsonKey(name: 'fulfillment_providers') List<FulfillmentProvider>? get fulfillmentProviders {
+  final value = _fulfillmentProviders;
+  if (value == null) return null;
   if (_fulfillmentProviders is EqualUnmodifiableListView) return _fulfillmentProviders;
   // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_fulfillmentProviders);
+  return EqualUnmodifiableListView(value);
 }
 
-@override@JsonKey(name: 'tax_rate') final  int taxRate;
-@override@JsonKey(name: 'tax_code') final  String taxCode;
-@override@JsonKey(name: 'automatic_taxes') final  bool automaticTaxes;
-@override@JsonKey(name: 'gift_cards_taxable') final  String giftCardsTaxable;
-@override@JsonKey(name: 'products_taxable') final  String productsTaxable;
+@override@JsonKey(name: 'tax_rate') final  int? taxRate;
+@override@JsonKey(name: 'tax_code') final  String? taxCode;
+@override@JsonKey(name: 'automatic_taxes') final  bool? automaticTaxes;
+@override@JsonKey(name: 'gift_cards_taxable') final  String? giftCardsTaxable;
+@override@JsonKey(name: 'products_taxable') final  String? productsTaxable;
 @override@JsonKey(name: 'created_at') final  DateTime? createdAt;
 @override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
 @override@JsonKey(name: 'deleted_at') final  DateTime? deletedAt;
@@ -301,7 +307,7 @@ abstract mixin class _$RegionCopyWith<$Res> implements $RegionCopyWith<$Res> {
   factory _$RegionCopyWith(_Region value, $Res Function(_Region) _then) = __$RegionCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String name,@JsonKey(name: 'currency_code') String currencyCode, List<Country> countries,@JsonKey(name: 'payment_providers') List<PaymentProvider> paymentProviders,@JsonKey(name: 'fulfillment_providers') List<FulfillmentProvider> fulfillmentProviders,@JsonKey(name: 'tax_rate') int taxRate,@JsonKey(name: 'tax_code') String taxCode,@JsonKey(name: 'automatic_taxes') bool automaticTaxes,@JsonKey(name: 'gift_cards_taxable') String giftCardsTaxable,@JsonKey(name: 'products_taxable') String productsTaxable,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
+ String id, String name,@JsonKey(name: 'currency_code') String? currencyCode, List<Country>? countries,@JsonKey(name: 'payment_providers') List<PaymentProvider>? paymentProviders,@JsonKey(name: 'fulfillment_providers') List<FulfillmentProvider>? fulfillmentProviders,@JsonKey(name: 'tax_rate') int? taxRate,@JsonKey(name: 'tax_code') String? taxCode,@JsonKey(name: 'automatic_taxes') bool? automaticTaxes,@JsonKey(name: 'gift_cards_taxable') String? giftCardsTaxable,@JsonKey(name: 'products_taxable') String? productsTaxable,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt, Map<String, dynamic>? metadata
 });
 
 
@@ -318,20 +324,20 @@ class __$RegionCopyWithImpl<$Res>
 
 /// Create a copy of Region
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? currencyCode = null,Object? countries = null,Object? paymentProviders = null,Object? fulfillmentProviders = null,Object? taxRate = null,Object? taxCode = null,Object? automaticTaxes = null,Object? giftCardsTaxable = null,Object? productsTaxable = null,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,Object? metadata = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? currencyCode = freezed,Object? countries = freezed,Object? paymentProviders = freezed,Object? fulfillmentProviders = freezed,Object? taxRate = freezed,Object? taxCode = freezed,Object? automaticTaxes = freezed,Object? giftCardsTaxable = freezed,Object? productsTaxable = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,Object? metadata = freezed,}) {
   return _then(_Region(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
-as String,currencyCode: null == currencyCode ? _self.currencyCode : currencyCode // ignore: cast_nullable_to_non_nullable
-as String,countries: null == countries ? _self._countries : countries // ignore: cast_nullable_to_non_nullable
-as List<Country>,paymentProviders: null == paymentProviders ? _self._paymentProviders : paymentProviders // ignore: cast_nullable_to_non_nullable
-as List<PaymentProvider>,fulfillmentProviders: null == fulfillmentProviders ? _self._fulfillmentProviders : fulfillmentProviders // ignore: cast_nullable_to_non_nullable
-as List<FulfillmentProvider>,taxRate: null == taxRate ? _self.taxRate : taxRate // ignore: cast_nullable_to_non_nullable
-as int,taxCode: null == taxCode ? _self.taxCode : taxCode // ignore: cast_nullable_to_non_nullable
-as String,automaticTaxes: null == automaticTaxes ? _self.automaticTaxes : automaticTaxes // ignore: cast_nullable_to_non_nullable
-as bool,giftCardsTaxable: null == giftCardsTaxable ? _self.giftCardsTaxable : giftCardsTaxable // ignore: cast_nullable_to_non_nullable
-as String,productsTaxable: null == productsTaxable ? _self.productsTaxable : productsTaxable // ignore: cast_nullable_to_non_nullable
-as String,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as String,currencyCode: freezed == currencyCode ? _self.currencyCode : currencyCode // ignore: cast_nullable_to_non_nullable
+as String?,countries: freezed == countries ? _self._countries : countries // ignore: cast_nullable_to_non_nullable
+as List<Country>?,paymentProviders: freezed == paymentProviders ? _self._paymentProviders : paymentProviders // ignore: cast_nullable_to_non_nullable
+as List<PaymentProvider>?,fulfillmentProviders: freezed == fulfillmentProviders ? _self._fulfillmentProviders : fulfillmentProviders // ignore: cast_nullable_to_non_nullable
+as List<FulfillmentProvider>?,taxRate: freezed == taxRate ? _self.taxRate : taxRate // ignore: cast_nullable_to_non_nullable
+as int?,taxCode: freezed == taxCode ? _self.taxCode : taxCode // ignore: cast_nullable_to_non_nullable
+as String?,automaticTaxes: freezed == automaticTaxes ? _self.automaticTaxes : automaticTaxes // ignore: cast_nullable_to_non_nullable
+as bool?,giftCardsTaxable: freezed == giftCardsTaxable ? _self.giftCardsTaxable : giftCardsTaxable // ignore: cast_nullable_to_non_nullable
+as String?,productsTaxable: freezed == productsTaxable ? _self.productsTaxable : productsTaxable // ignore: cast_nullable_to_non_nullable
+as String?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,metadata: freezed == metadata ? _self._metadata : metadata // ignore: cast_nullable_to_non_nullable

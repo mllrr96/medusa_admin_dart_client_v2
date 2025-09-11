@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$CampaignBudget {
 
- String get type; int get limit; int get used;
+ String get id; String? get type;@JsonKey(name: 'raw_used') RawUsed? get rawUsed;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'currency_code') String? get currencyCode;@JsonKey(name: 'raw_limit') dynamic get rawLimit;@JsonKey(name: 'deleted_at') DateTime? get deletedAt; int? get limit; int get used;
 /// Create a copy of CampaignBudget
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $CampaignBudgetCopyWith<CampaignBudget> get copyWith => _$CampaignBudgetCopyWith
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is CampaignBudget&&(identical(other.type, type) || other.type == type)&&(identical(other.limit, limit) || other.limit == limit)&&(identical(other.used, used) || other.used == used));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is CampaignBudget&&(identical(other.id, id) || other.id == id)&&(identical(other.type, type) || other.type == type)&&(identical(other.rawUsed, rawUsed) || other.rawUsed == rawUsed)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.currencyCode, currencyCode) || other.currencyCode == currencyCode)&&const DeepCollectionEquality().equals(other.rawLimit, rawLimit)&&(identical(other.deletedAt, deletedAt) || other.deletedAt == deletedAt)&&(identical(other.limit, limit) || other.limit == limit)&&(identical(other.used, used) || other.used == used));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,type,limit,used);
+int get hashCode => Object.hash(runtimeType,id,type,rawUsed,createdAt,updatedAt,currencyCode,const DeepCollectionEquality().hash(rawLimit),deletedAt,limit,used);
 
 @override
 String toString() {
-  return 'CampaignBudget(type: $type, limit: $limit, used: $used)';
+  return 'CampaignBudget(id: $id, type: $type, rawUsed: $rawUsed, createdAt: $createdAt, updatedAt: $updatedAt, currencyCode: $currencyCode, rawLimit: $rawLimit, deletedAt: $deletedAt, limit: $limit, used: $used)';
 }
 
 
@@ -48,11 +48,11 @@ abstract mixin class $CampaignBudgetCopyWith<$Res>  {
   factory $CampaignBudgetCopyWith(CampaignBudget value, $Res Function(CampaignBudget) _then) = _$CampaignBudgetCopyWithImpl;
 @useResult
 $Res call({
- String type, int limit, int used
+ String id, String? type,@JsonKey(name: 'raw_used') RawUsed? rawUsed,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'currency_code') String? currencyCode,@JsonKey(name: 'raw_limit') dynamic rawLimit,@JsonKey(name: 'deleted_at') DateTime? deletedAt, int? limit, int used
 });
 
 
-
+$RawUsedCopyWith<$Res>? get rawUsed;
 
 }
 /// @nodoc
@@ -65,15 +65,34 @@ class _$CampaignBudgetCopyWithImpl<$Res>
 
 /// Create a copy of CampaignBudget
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? type = null,Object? limit = null,Object? used = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? type = freezed,Object? rawUsed = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? currencyCode = freezed,Object? rawLimit = freezed,Object? deletedAt = freezed,Object? limit = freezed,Object? used = null,}) {
   return _then(_self.copyWith(
-type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
-as String,limit: null == limit ? _self.limit : limit // ignore: cast_nullable_to_non_nullable
-as int,used: null == used ? _self.used : used // ignore: cast_nullable_to_non_nullable
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,type: freezed == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
+as String?,rawUsed: freezed == rawUsed ? _self.rawUsed : rawUsed // ignore: cast_nullable_to_non_nullable
+as RawUsed?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,currencyCode: freezed == currencyCode ? _self.currencyCode : currencyCode // ignore: cast_nullable_to_non_nullable
+as String?,rawLimit: freezed == rawLimit ? _self.rawLimit : rawLimit // ignore: cast_nullable_to_non_nullable
+as dynamic,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,limit: freezed == limit ? _self.limit : limit // ignore: cast_nullable_to_non_nullable
+as int?,used: null == used ? _self.used : used // ignore: cast_nullable_to_non_nullable
 as int,
   ));
 }
+/// Create a copy of CampaignBudget
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RawUsedCopyWith<$Res>? get rawUsed {
+    if (_self.rawUsed == null) {
+    return null;
+  }
 
+  return $RawUsedCopyWith<$Res>(_self.rawUsed!, (value) {
+    return _then(_self.copyWith(rawUsed: value));
+  });
+}
 }
 
 
@@ -155,10 +174,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String type,  int limit,  int used)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String? type, @JsonKey(name: 'raw_used')  RawUsed? rawUsed, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'currency_code')  String? currencyCode, @JsonKey(name: 'raw_limit')  dynamic rawLimit, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  int? limit,  int used)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _CampaignBudget() when $default != null:
-return $default(_that.type,_that.limit,_that.used);case _:
+return $default(_that.id,_that.type,_that.rawUsed,_that.createdAt,_that.updatedAt,_that.currencyCode,_that.rawLimit,_that.deletedAt,_that.limit,_that.used);case _:
   return orElse();
 
 }
@@ -176,10 +195,10 @@ return $default(_that.type,_that.limit,_that.used);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String type,  int limit,  int used)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String? type, @JsonKey(name: 'raw_used')  RawUsed? rawUsed, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'currency_code')  String? currencyCode, @JsonKey(name: 'raw_limit')  dynamic rawLimit, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  int? limit,  int used)  $default,) {final _that = this;
 switch (_that) {
 case _CampaignBudget():
-return $default(_that.type,_that.limit,_that.used);case _:
+return $default(_that.id,_that.type,_that.rawUsed,_that.createdAt,_that.updatedAt,_that.currencyCode,_that.rawLimit,_that.deletedAt,_that.limit,_that.used);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -196,10 +215,10 @@ return $default(_that.type,_that.limit,_that.used);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String type,  int limit,  int used)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String? type, @JsonKey(name: 'raw_used')  RawUsed? rawUsed, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'currency_code')  String? currencyCode, @JsonKey(name: 'raw_limit')  dynamic rawLimit, @JsonKey(name: 'deleted_at')  DateTime? deletedAt,  int? limit,  int used)?  $default,) {final _that = this;
 switch (_that) {
 case _CampaignBudget() when $default != null:
-return $default(_that.type,_that.limit,_that.used);case _:
+return $default(_that.id,_that.type,_that.rawUsed,_that.createdAt,_that.updatedAt,_that.currencyCode,_that.rawLimit,_that.deletedAt,_that.limit,_that.used);case _:
   return null;
 
 }
@@ -211,11 +230,18 @@ return $default(_that.type,_that.limit,_that.used);case _:
 @JsonSerializable()
 
 class _CampaignBudget implements CampaignBudget {
-  const _CampaignBudget({required this.type, required this.limit, required this.used});
+  const _CampaignBudget({required this.id, this.type, @JsonKey(name: 'raw_used') this.rawUsed, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'currency_code') this.currencyCode, @JsonKey(name: 'raw_limit') this.rawLimit, @JsonKey(name: 'deleted_at') this.deletedAt, this.limit, required this.used});
   factory _CampaignBudget.fromJson(Map<String, dynamic> json) => _$CampaignBudgetFromJson(json);
 
-@override final  String type;
-@override final  int limit;
+@override final  String id;
+@override final  String? type;
+@override@JsonKey(name: 'raw_used') final  RawUsed? rawUsed;
+@override@JsonKey(name: 'created_at') final  DateTime? createdAt;
+@override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
+@override@JsonKey(name: 'currency_code') final  String? currencyCode;
+@override@JsonKey(name: 'raw_limit') final  dynamic rawLimit;
+@override@JsonKey(name: 'deleted_at') final  DateTime? deletedAt;
+@override final  int? limit;
 @override final  int used;
 
 /// Create a copy of CampaignBudget
@@ -231,16 +257,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CampaignBudget&&(identical(other.type, type) || other.type == type)&&(identical(other.limit, limit) || other.limit == limit)&&(identical(other.used, used) || other.used == used));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CampaignBudget&&(identical(other.id, id) || other.id == id)&&(identical(other.type, type) || other.type == type)&&(identical(other.rawUsed, rawUsed) || other.rawUsed == rawUsed)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.currencyCode, currencyCode) || other.currencyCode == currencyCode)&&const DeepCollectionEquality().equals(other.rawLimit, rawLimit)&&(identical(other.deletedAt, deletedAt) || other.deletedAt == deletedAt)&&(identical(other.limit, limit) || other.limit == limit)&&(identical(other.used, used) || other.used == used));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,type,limit,used);
+int get hashCode => Object.hash(runtimeType,id,type,rawUsed,createdAt,updatedAt,currencyCode,const DeepCollectionEquality().hash(rawLimit),deletedAt,limit,used);
 
 @override
 String toString() {
-  return 'CampaignBudget(type: $type, limit: $limit, used: $used)';
+  return 'CampaignBudget(id: $id, type: $type, rawUsed: $rawUsed, createdAt: $createdAt, updatedAt: $updatedAt, currencyCode: $currencyCode, rawLimit: $rawLimit, deletedAt: $deletedAt, limit: $limit, used: $used)';
 }
 
 
@@ -251,11 +277,11 @@ abstract mixin class _$CampaignBudgetCopyWith<$Res> implements $CampaignBudgetCo
   factory _$CampaignBudgetCopyWith(_CampaignBudget value, $Res Function(_CampaignBudget) _then) = __$CampaignBudgetCopyWithImpl;
 @override @useResult
 $Res call({
- String type, int limit, int used
+ String id, String? type,@JsonKey(name: 'raw_used') RawUsed? rawUsed,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'currency_code') String? currencyCode,@JsonKey(name: 'raw_limit') dynamic rawLimit,@JsonKey(name: 'deleted_at') DateTime? deletedAt, int? limit, int used
 });
 
 
-
+@override $RawUsedCopyWith<$Res>? get rawUsed;
 
 }
 /// @nodoc
@@ -268,16 +294,35 @@ class __$CampaignBudgetCopyWithImpl<$Res>
 
 /// Create a copy of CampaignBudget
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? type = null,Object? limit = null,Object? used = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? type = freezed,Object? rawUsed = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? currencyCode = freezed,Object? rawLimit = freezed,Object? deletedAt = freezed,Object? limit = freezed,Object? used = null,}) {
   return _then(_CampaignBudget(
-type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
-as String,limit: null == limit ? _self.limit : limit // ignore: cast_nullable_to_non_nullable
-as int,used: null == used ? _self.used : used // ignore: cast_nullable_to_non_nullable
+id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String,type: freezed == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
+as String?,rawUsed: freezed == rawUsed ? _self.rawUsed : rawUsed // ignore: cast_nullable_to_non_nullable
+as RawUsed?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,currencyCode: freezed == currencyCode ? _self.currencyCode : currencyCode // ignore: cast_nullable_to_non_nullable
+as String?,rawLimit: freezed == rawLimit ? _self.rawLimit : rawLimit // ignore: cast_nullable_to_non_nullable
+as dynamic,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,limit: freezed == limit ? _self.limit : limit // ignore: cast_nullable_to_non_nullable
+as int?,used: null == used ? _self.used : used // ignore: cast_nullable_to_non_nullable
 as int,
   ));
 }
 
+/// Create a copy of CampaignBudget
+/// with the given fields replaced by the non-null parameter values.
+@override
+@pragma('vm:prefer-inline')
+$RawUsedCopyWith<$Res>? get rawUsed {
+    if (_self.rawUsed == null) {
+    return null;
+  }
 
+  return $RawUsedCopyWith<$Res>(_self.rawUsed!, (value) {
+    return _then(_self.copyWith(rawUsed: value));
+  });
+}
 }
 
 // dart format on

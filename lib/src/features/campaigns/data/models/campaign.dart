@@ -14,8 +14,7 @@ abstract class Campaign with _$Campaign {
     @JsonKey(name: 'starts_at') DateTime? startsAt,
     @JsonKey(name: 'ends_at') DateTime? endsAt,
     CampaignBudget? budget,
-    required List<dynamic> promotions,
-    @JsonKey(name: 'created_at') DateTime? createdAt,
+    @JsonKey(name: 'created_at')  DateTime? createdAt,
     @JsonKey(name: 'updated_at') DateTime? updatedAt,
     @JsonKey(name: 'deleted_at') DateTime? deletedAt,
   }) = _Campaign;

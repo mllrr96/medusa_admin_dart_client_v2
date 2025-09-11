@@ -20,7 +20,6 @@ _Campaign _$CampaignFromJson(Map<String, dynamic> json) => _Campaign(
   budget: json['budget'] == null
       ? null
       : CampaignBudget.fromJson(json['budget'] as Map<String, dynamic>),
-  promotions: json['promotions'] as List<dynamic>,
   createdAt: json['created_at'] == null
       ? null
       : DateTime.parse(json['created_at'] as String),
@@ -40,7 +39,6 @@ Map<String, dynamic> _$CampaignToJson(_Campaign instance) => <String, dynamic>{
   'starts_at': instance.startsAt?.toIso8601String(),
   'ends_at': instance.endsAt?.toIso8601String(),
   'budget': instance.budget,
-  'promotions': instance.promotions,
   'created_at': instance.createdAt?.toIso8601String(),
   'updated_at': instance.updatedAt?.toIso8601String(),
   'deleted_at': instance.deletedAt?.toIso8601String(),

@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:medusa_admin_dart_client/src/features/products/data/models/product.dart';
 
 part 'product_collection.freezed.dart';
 part 'product_collection.g.dart';
