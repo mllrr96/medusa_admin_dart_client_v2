@@ -1,4 +1,0 @@
-enum GiftCardStatus {
-  pending,
-  redeemed,
-}

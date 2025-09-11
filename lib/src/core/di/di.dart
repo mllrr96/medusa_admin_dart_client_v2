@@ -18,7 +18,6 @@ import 'package:medusa_admin_dart_client/src/features/fulfillment_providers/data
 import 'package:medusa_admin_dart_client/src/features/fulfillment_sets/data/api/fulfillment_sets_api.dart';
 import 'package:medusa_admin_dart_client/src/features/fulfillment_sets/data/repository/fulfillment_sets_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/fulfillments/data/api/fulfillments_api.dart';
-import 'package:medusa_admin_dart_client/src/features/gift_cards/data/api/gift_cards_api.dart';
 import 'package:medusa_admin_dart_client/src/features/inventory_items/data/api/inventory_items_api.dart';
 import 'package:medusa_admin_dart_client/src/features/invites/data/api/invites_api.dart';
 import 'package:medusa_admin_dart_client/src/features/notifications/data/api/notifications_api.dart';
@@ -107,12 +106,6 @@ void configureDependencies({String? baseUrl, List<Interceptor>? interceptors}) {
   );
   getIt.registerLazySingleton<CollectionsRepository>(
     () => CollectionsRepository(getIt<CollectionsApi>()),
-  );
-
-  // Gift Cards
-  getIt.registerLazySingleton<GiftCardsApi>(() => GiftCardsApi(getIt<Dio>()));
-  getIt.registerLazySingleton<GiftCardsRepository>(
-    () => GiftCardsRepository(getIt<GiftCardsApi>()),
   );
 
   // Price Lists
