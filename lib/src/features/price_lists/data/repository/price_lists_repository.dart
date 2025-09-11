@@ -43,8 +43,8 @@ class PriceListsRepository {
 
   Future<PriceListsRes> removeProducts(
     String id,
-    PriceListRemoveProductsReq body,
+    List<String> ids,
   ) async {
-    return _priceListsApi.removeProducts(id, body);
+    return _priceListsApi.removeProducts(id, {'remove': ids});
   }
 }

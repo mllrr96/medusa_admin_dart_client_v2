@@ -43,6 +43,6 @@ abstract class PriceListsApi {
   @POST('/admin/price-lists/{id}/products')
   Future<PriceListsRes> removeProducts(
     @Path('id') String id,
-    @Body() PriceListRemoveProductsReq body,
+    @Body() Map<String, List<String>> body,
   );
 }

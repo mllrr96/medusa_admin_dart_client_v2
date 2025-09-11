@@ -10,7 +10,7 @@ _PriceList _$PriceListFromJson(Map<String, dynamic> json) => _PriceList(
   id: json['id'] as String,
   title: json['title'] as String,
   description: json['description'] as String,
-  rules: json['rules'] as Map<String, dynamic>,
+  rules: json['rules'] as Map<String, dynamic>?,
   startsAt: json['starts_at'] == null
       ? null
       : DateTime.parse(json['starts_at'] as String),

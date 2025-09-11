@@ -194,12 +194,13 @@ class _PriceListsApi implements PriceListsApi {
   @override
   Future<PriceListsRes> removeProducts(
     String id,
-    PriceListRemoveProductsReq body,
+    Map<String, List<String>> body,
   ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = body;
+    final _data = <String, dynamic>{};
+    _data.addAll(body);
     final _options = _setStreamType<PriceListsRes>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(

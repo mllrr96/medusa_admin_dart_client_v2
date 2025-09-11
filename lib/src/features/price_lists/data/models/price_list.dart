@@ -12,7 +12,7 @@ abstract class PriceList with _$PriceList {
     required String id,
     required String title,
     required String description,
-    required Map<String, dynamic> rules,
+    Map<String, dynamic>? rules,
     @JsonKey(name: 'starts_at') DateTime? startsAt,
     @JsonKey(name: 'ends_at') DateTime? endsAt,
     required PriceListStatus status,

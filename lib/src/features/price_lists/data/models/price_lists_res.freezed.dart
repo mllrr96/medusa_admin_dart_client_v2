@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$PriceListsRes {
 
- PriceList get priceList;
+@JsonKey(name: 'price_list') PriceList get priceList;
 /// Create a copy of PriceListsRes
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $PriceListsResCopyWith<$Res>  {
   factory $PriceListsResCopyWith(PriceListsRes value, $Res Function(PriceListsRes) _then) = _$PriceListsResCopyWithImpl;
 @useResult
 $Res call({
- PriceList priceList
+@JsonKey(name: 'price_list') PriceList priceList
 });
 
 
@@ -162,7 +162,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( PriceList priceList)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'price_list')  PriceList priceList)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _PriceListsRes() when $default != null:
 return $default(_that.priceList);case _:
@@ -183,7 +183,7 @@ return $default(_that.priceList);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( PriceList priceList)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'price_list')  PriceList priceList)  $default,) {final _that = this;
 switch (_that) {
 case _PriceListsRes():
 return $default(_that.priceList);case _:
@@ -203,7 +203,7 @@ return $default(_that.priceList);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( PriceList priceList)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'price_list')  PriceList priceList)?  $default,) {final _that = this;
 switch (_that) {
 case _PriceListsRes() when $default != null:
 return $default(_that.priceList);case _:
@@ -218,10 +218,10 @@ return $default(_that.priceList);case _:
 @JsonSerializable()
 
 class _PriceListsRes implements PriceListsRes {
-  const _PriceListsRes({required this.priceList});
+  const _PriceListsRes({@JsonKey(name: 'price_list') required this.priceList});
   factory _PriceListsRes.fromJson(Map<String, dynamic> json) => _$PriceListsResFromJson(json);
 
-@override final  PriceList priceList;
+@override@JsonKey(name: 'price_list') final  PriceList priceList;
 
 /// Create a copy of PriceListsRes
 /// with the given fields replaced by the non-null parameter values.
@@ -256,7 +256,7 @@ abstract mixin class _$PriceListsResCopyWith<$Res> implements $PriceListsResCopy
   factory _$PriceListsResCopyWith(_PriceListsRes value, $Res Function(_PriceListsRes) _then) = __$PriceListsResCopyWithImpl;
 @override @useResult
 $Res call({
- PriceList priceList
+@JsonKey(name: 'price_list') PriceList priceList
 });
 
 

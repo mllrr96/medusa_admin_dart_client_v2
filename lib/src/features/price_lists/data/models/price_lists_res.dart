@@ -8,6 +8,7 @@ part 'price_lists_res.g.dart';
 @freezed
 abstract class PriceListsRes with _$PriceListsRes {
   const factory PriceListsRes({
+    @JsonKey(name: 'price_list')
     required PriceList priceList,
   }) = _PriceListsRes;
 
