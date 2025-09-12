@@ -16,8 +16,8 @@ _UpdateReturnReason _$UpdateReturnReasonFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$UpdateReturnReasonToJson(_UpdateReturnReason instance) =>
     <String, dynamic>{
-      'label': instance.label,
-      'value': instance.value,
-      'description': instance.description,
-      'metadata': instance.metadata,
+      'label': ?instance.label,
+      'value': ?instance.value,
+      'description': ?instance.description,
+      'metadata': ?instance.metadata,
     };

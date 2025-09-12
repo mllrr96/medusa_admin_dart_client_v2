@@ -5,6 +5,7 @@ part 'create_return_reason.g.dart';
 
 @freezed
 abstract class CreateReturnReason with _$CreateReturnReason {
+  @JsonSerializable(includeIfNull: false)
   const factory CreateReturnReason({
     required String value,
     required String label,

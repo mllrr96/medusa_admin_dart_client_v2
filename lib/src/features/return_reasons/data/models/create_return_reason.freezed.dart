@@ -210,8 +210,8 @@ return $default(_that.value,_that.label,_that.description,_that.parentReturnReas
 }
 
 /// @nodoc
-@JsonSerializable()
 
+@JsonSerializable(includeIfNull: false)
 class _CreateReturnReason implements CreateReturnReason {
   const _CreateReturnReason({required this.value, required this.label, this.description, this.parentReturnReasonId, final  Map<String, dynamic>? metadata}): _metadata = metadata;
   factory _CreateReturnReason.fromJson(Map<String, dynamic> json) => _$CreateReturnReasonFromJson(json);

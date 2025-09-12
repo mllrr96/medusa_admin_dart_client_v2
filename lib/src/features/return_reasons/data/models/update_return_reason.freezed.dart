@@ -209,8 +209,8 @@ return $default(_that.label,_that.value,_that.description,_that.metadata);case _
 }
 
 /// @nodoc
-@JsonSerializable()
 
+@JsonSerializable(includeIfNull: false)
 class _UpdateReturnReason implements UpdateReturnReason {
   const _UpdateReturnReason({this.label, this.value, this.description, final  Map<String, dynamic>? metadata}): _metadata = metadata;
   factory _UpdateReturnReason.fromJson(Map<String, dynamic> json) => _$UpdateReturnReasonFromJson(json);

@@ -19,7 +19,7 @@ Map<String, dynamic> _$CreateReturnReasonToJson(_CreateReturnReason instance) =>
     <String, dynamic>{
       'value': instance.value,
       'label': instance.label,
-      'description': instance.description,
-      'parentReturnReasonId': instance.parentReturnReasonId,
-      'metadata': instance.metadata,
+      'description': ?instance.description,
+      'parentReturnReasonId': ?instance.parentReturnReasonId,
+      'metadata': ?instance.metadata,
     };

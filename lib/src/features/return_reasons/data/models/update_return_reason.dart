@@ -5,6 +5,7 @@ part 'update_return_reason.g.dart';
 
 @freezed
 abstract class UpdateReturnReason with _$UpdateReturnReason {
+  @JsonSerializable(includeIfNull: false)
   const factory UpdateReturnReason({
     String? label,
     String? value,
