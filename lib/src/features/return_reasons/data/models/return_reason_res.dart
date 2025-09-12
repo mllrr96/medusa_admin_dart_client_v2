@@ -6,6 +6,7 @@ part 'return_reason_res.g.dart';
 @freezed
 abstract class ReturnReasonRes with _$ReturnReasonRes {
   const factory ReturnReasonRes({
+    @JsonKey(name: 'return_reason')
     required ReturnReason returnReason,
   }) = _ReturnReasonRes;
 

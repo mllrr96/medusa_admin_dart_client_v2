@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ReturnReasonRes {
 
- ReturnReason get returnReason;
+@JsonKey(name: 'return_reason') ReturnReason get returnReason;
 /// Create a copy of ReturnReasonRes
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $ReturnReasonResCopyWith<$Res>  {
   factory $ReturnReasonResCopyWith(ReturnReasonRes value, $Res Function(ReturnReasonRes) _then) = _$ReturnReasonResCopyWithImpl;
 @useResult
 $Res call({
- ReturnReason returnReason
+@JsonKey(name: 'return_reason') ReturnReason returnReason
 });
 
 
@@ -162,7 +162,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( ReturnReason returnReason)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'return_reason')  ReturnReason returnReason)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ReturnReasonRes() when $default != null:
 return $default(_that.returnReason);case _:
@@ -183,7 +183,7 @@ return $default(_that.returnReason);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( ReturnReason returnReason)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'return_reason')  ReturnReason returnReason)  $default,) {final _that = this;
 switch (_that) {
 case _ReturnReasonRes():
 return $default(_that.returnReason);case _:
@@ -203,7 +203,7 @@ return $default(_that.returnReason);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( ReturnReason returnReason)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'return_reason')  ReturnReason returnReason)?  $default,) {final _that = this;
 switch (_that) {
 case _ReturnReasonRes() when $default != null:
 return $default(_that.returnReason);case _:
@@ -218,10 +218,10 @@ return $default(_that.returnReason);case _:
 @JsonSerializable()
 
 class _ReturnReasonRes implements ReturnReasonRes {
-  const _ReturnReasonRes({required this.returnReason});
+  const _ReturnReasonRes({@JsonKey(name: 'return_reason') required this.returnReason});
   factory _ReturnReasonRes.fromJson(Map<String, dynamic> json) => _$ReturnReasonResFromJson(json);
 
-@override final  ReturnReason returnReason;
+@override@JsonKey(name: 'return_reason') final  ReturnReason returnReason;
 
 /// Create a copy of ReturnReasonRes
 /// with the given fields replaced by the non-null parameter values.
@@ -256,7 +256,7 @@ abstract mixin class _$ReturnReasonResCopyWith<$Res> implements $ReturnReasonRes
   factory _$ReturnReasonResCopyWith(_ReturnReasonRes value, $Res Function(_ReturnReasonRes) _then) = __$ReturnReasonResCopyWithImpl;
 @override @useResult
 $Res call({
- ReturnReason returnReason
+@JsonKey(name: 'return_reason') ReturnReason returnReason
 });
 
 
