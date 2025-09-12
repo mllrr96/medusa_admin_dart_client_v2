@@ -20,10 +20,10 @@ _UpdateStoreReq _$UpdateStoreReqFromJson(Map<String, dynamic> json) =>
 
 Map<String, dynamic> _$UpdateStoreReqToJson(_UpdateStoreReq instance) =>
     <String, dynamic>{
-      'name': instance.name,
-      'supported_currencies': instance.supportedCurrencies,
-      'default_sales_channel_id': instance.defaultSalesChannelId,
-      'default_region_id': instance.defaultRegionId,
-      'default_location_id': instance.defaultLocationId,
-      'metadata': instance.metadata,
+      'name': ?instance.name,
+      'supported_currencies': ?instance.supportedCurrencies,
+      'default_sales_channel_id': ?instance.defaultSalesChannelId,
+      'default_region_id': ?instance.defaultRegionId,
+      'default_location_id': ?instance.defaultLocationId,
+      'metadata': ?instance.metadata,
     };

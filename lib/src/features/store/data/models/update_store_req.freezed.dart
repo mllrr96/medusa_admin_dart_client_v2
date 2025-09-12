@@ -211,10 +211,10 @@ return $default(_that.name,_that.supportedCurrencies,_that.defaultSalesChannelId
 }
 
 /// @nodoc
-@JsonSerializable()
 
+@JsonSerializable(includeIfNull: false)
 class _UpdateStoreReq implements UpdateStoreReq {
-  const _UpdateStoreReq({this.name, @JsonKey(name: 'supported_currencies') final  List<StoreCurrency>? supportedCurrencies, @JsonKey(name: 'default_sales_channel_id') this.defaultSalesChannelId, @JsonKey(name: 'default_region_id') this.defaultRegionId, @JsonKey(name: 'default_location_id') this.defaultLocationId, final  Map<String, dynamic>? metadata}): _supportedCurrencies = supportedCurrencies,_metadata = metadata;
+   _UpdateStoreReq({this.name, @JsonKey(name: 'supported_currencies') final  List<StoreCurrency>? supportedCurrencies, @JsonKey(name: 'default_sales_channel_id') this.defaultSalesChannelId, @JsonKey(name: 'default_region_id') this.defaultRegionId, @JsonKey(name: 'default_location_id') this.defaultLocationId, final  Map<String, dynamic>? metadata}): _supportedCurrencies = supportedCurrencies,_metadata = metadata;
   factory _UpdateStoreReq.fromJson(Map<String, dynamic> json) => _$UpdateStoreReqFromJson(json);
 
 @override final  String? name;

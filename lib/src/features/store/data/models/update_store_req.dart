@@ -6,7 +6,8 @@ part 'update_store_req.g.dart';
 
 @freezed
 abstract class UpdateStoreReq with _$UpdateStoreReq {
-  const factory UpdateStoreReq({
+  @JsonSerializable(includeIfNull: false)
+  factory UpdateStoreReq({
     String? name,
     @JsonKey(name: 'supported_currencies')
     List<StoreCurrency>? supportedCurrencies,

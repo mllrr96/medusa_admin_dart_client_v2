@@ -62,7 +62,14 @@ final getIt = GetIt.instance;
 void configureDependencies({String? baseUrl, List<Interceptor>? interceptors}) {
   // Dio
   getIt.registerLazySingleton<Dio>(() {
-    final dio = Dio(BaseOptions(baseUrl: baseUrl ?? ''));
+    final dio = Dio(
+      BaseOptions(
+        baseUrl: baseUrl ?? '',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      ),
+    );
     if (interceptors != null) {
       dio.interceptors.addAll(interceptors);
     }
