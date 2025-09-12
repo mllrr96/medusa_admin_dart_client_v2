@@ -26,7 +26,6 @@ import 'package:medusa_admin_dart_client/src/features/orders/data/repository/ord
 import 'package:medusa_admin_dart_client/src/features/products/data/repository/products_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/return_reasons/data/repository/return_reasons_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/api_keys/data/repository/api_keys_repository.dart';
-import 'package:medusa_admin_dart_client/src/features/tax_providers/data/repository/tax_providers_repository.dart';
 import 'src/features/invites/data/repository/invites_repository.dart';
 import 'src/features/product_tags/data/repository/product_tags_repository.dart';
 import 'src/features/product_types/data/repository/product_types_repository.dart';
@@ -72,7 +71,6 @@ export 'package:medusa_admin_dart_client/src/features/price_lists/data/models/mo
 export 'package:medusa_admin_dart_client/src/features/product_tags/data/models/product_tags_models.dart';
 export 'package:medusa_admin_dart_client/src/features/product_types/data/models/product_types_models.dart';
 export 'package:medusa_admin_dart_client/src/features/store/data/models/models.dart';
-export 'package:medusa_admin_dart_client/src/features/tax_providers/data/models/models.dart';
 export 'package:medusa_admin_dart_client/src/features/transaction_groups/data/models/models.dart';
 export 'package:medusa_admin_dart_client/src/features/uploads/data/models/models.dart';
 export 'package:medusa_admin_dart_client/src/features/users/data/models/models.dart';
@@ -91,7 +89,6 @@ export 'package:medusa_admin_dart_client/src/features/auth/data/repository/auth_
 export 'package:medusa_admin_dart_client/src/features/price_lists/data/repository/price_lists_repository.dart';
 export 'package:medusa_admin_dart_client/src/features/uploads/data/repository/uploads_repository.dart';
 export 'package:medusa_admin_dart_client/src/features/transaction_groups/data/repository/transaction_groups_repository.dart';
-export 'package:medusa_admin_dart_client/src/features/tax_providers/data/repository/tax_providers_repository.dart';
 export 'package:medusa_admin_dart_client/src/features/store/data/repository/store_repository.dart';
 export 'package:medusa_admin_dart_client/src/features/plugins/data/repository/plugins_repository.dart';
 export 'package:medusa_admin_dart_client/src/features/orders/data/repository/orders_repository.dart';
@@ -188,8 +185,6 @@ class MedusaAdminV2 {
   ReturnsRepository get returns => getIt<ReturnsRepository>();
 
   SalesChannelsRepository get salesChannels => getIt<SalesChannelsRepository>();
-
-  TaxProvidersRepository get taxProviders => getIt<TaxProvidersRepository>();
 
   ApiKeysRepository get apiKeys => getIt<ApiKeysRepository>();
 
