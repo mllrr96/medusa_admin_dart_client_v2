@@ -15,7 +15,6 @@ import 'package:medusa_admin_dart_client/src/features/notifications/data/reposit
 import 'package:medusa_admin_dart_client/src/features/order_edits/data/repository/order_edits_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/orders/data/repository/orders_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/payments/data/repository/payments_repository.dart';
-import 'package:medusa_admin_dart_client/src/features/price_lists/data/repository/price_lists_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/product_categories/data/repository/product_categories_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/product_tags/data/repository/product_tags_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/product_types/data/repository/product_types_repository.dart';
@@ -23,6 +22,7 @@ import 'package:medusa_admin_dart_client/src/features/product_variants/data/repo
 import 'package:medusa_admin_dart_client/src/features/products/data/repository/products_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/promotions/data/repository/promotions_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/regions/data/repository/regions_repository.dart';
+import 'package:medusa_admin_dart_client/src/features/reservations/data/repository/reservations_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/return_reasons/data/repository/return_reasons_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/returns/data/repository/returns_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/sales_channels/data/repository/sales_channels_repository.dart';
@@ -33,6 +33,8 @@ import 'package:medusa_admin_dart_client/src/features/tax_rates/data/repository/
 import 'package:medusa_admin_dart_client/src/features/tax_regions/data/repository/tax_regions_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/uploads/data/repository/uploads_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/users/data/repository/users_repository.dart';
+import 'package:medusa_admin_dart_client/src/features/price_lists/data/repository/price_lists_repository.dart';
+import 'package:medusa_admin_dart_client/src/features/inventory_items/data/repository/inventory_items_repository.dart';
 
 class MedusaAdminV2 {
   MedusaAdminV2._({String? baseUrl, List<Interceptor>? interceptors}) {
@@ -54,8 +56,7 @@ class MedusaAdminV2 {
 
   ProductsRepository get products => getIt<ProductsRepository>();
 
-  ProductCategoriesRepository get categories =>
-      getIt<ProductCategoriesRepository>();
+  ProductCategoriesRepository get categories => getIt<ProductCategoriesRepository>();
 
   OrdersRepository get orders => getIt<OrdersRepository>();
 
@@ -73,15 +74,17 @@ class MedusaAdminV2 {
 
   PriceListsRepository get priceLists => getIt<PriceListsRepository>();
 
-  ShippingOptionsRepository get shippingOptions =>
-      getIt<ShippingOptionsRepository>();
+  ShippingOptionsRepository get shippingOptions => getIt<ShippingOptionsRepository>();
 
-  ShippingProfilesRepository get shippingProfiles =>
-      getIt<ShippingProfilesRepository>();
+  ShippingProfilesRepository get shippingProfiles => getIt<ShippingProfilesRepository>();
 
   PromotionsRepository get promotions => getIt<PromotionsRepository>();
 
   InvitesRepository get invites => getIt<InvitesRepository>();
+
+  InventoryItemsRepository get inventoryItems => getIt<InventoryItemsRepository>();
+
+  ReservationsRepository get reservations => getIt<ReservationsRepository>();
 
   UsersRepository get users => getIt<UsersRepository>();
 
@@ -115,8 +118,7 @@ class MedusaAdminV2 {
 
   ProductTypesRepository get productTypes => getIt<ProductTypesRepository>();
 
-  ProductVariantsRepository get productVariants =>
-      getIt<ProductVariantsRepository>();
+  ProductVariantsRepository get productVariants => getIt<ProductVariantsRepository>();
 
   ExchangesRepository get exchanges => getIt<ExchangesRepository>();
 }

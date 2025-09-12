@@ -81,3 +81,5 @@ export 'src/features/tax_rates/data/models/tax_rate_res.dart';
 export 'src/features/tax_rates/data/models/tax_rate_rule.dart';
 export 'src/features/inventory_items/data/models/inventory_req.dart';
 export 'src/features/inventory_items/data/models/inventory_res.dart';
+export 'src/features/reservations/data/models/models.dart';
+export 'src/features/reservations/data/repository/reservations_repository.dart';
