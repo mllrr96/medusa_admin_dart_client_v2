@@ -104,11 +104,12 @@ class _UsersApi implements UsersApi {
   }
 
   @override
-  Future<UserResponse> update(String id, UserUpdateReq body) async {
+  Future<UserResponse> update(String id, Map<String, dynamic> body) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
-    final _data = body;
+    final _data = <String, dynamic>{};
+    _data.addAll(body);
     final _options = _setStreamType<UserResponse>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(

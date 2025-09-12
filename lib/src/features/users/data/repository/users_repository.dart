@@ -26,7 +26,11 @@ class UsersRepository {
   }
 
   Future<UserResponse> update(String id, UserUpdateReq body) {
-    return _usersApi.update(id, body);
+    return _usersApi.update(id, {
+      'first_name': body.firstName,
+      'last_name': body.lastName,
+      'metadata': body.metadata,
+    });
   }
 
   Future<UserDeleteResponse> delete(String id) {

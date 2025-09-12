@@ -14,6 +14,7 @@ import 'package:medusa_admin_dart_client/src/features/draft_orders/data/reposito
 import 'package:medusa_admin_dart_client/src/features/currencies/data/repository/currencies_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/tax_rates/data/repository/tax_rates_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/store/data/repository/store_repository.dart';
+import 'package:medusa_admin_dart_client/src/features/tax_regions/data/repository/tax_regions_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/uploads/data/repository/uploads_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/users/data/repository/users_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/shipping_profiles/data/repository/shipping_profiles_repository.dart';
@@ -141,6 +142,8 @@ class MedusaAdminV2 {
 
   OrdersRepository get orders => getIt<OrdersRepository>();
 
+  TaxRegionsRepository get taxRegions => getIt<TaxRegionsRepository>();
+
   OrderEditsRepository get orderEdits => getIt<OrderEditsRepository>();
 
   FulfillmentsRepository get fulfillments => getIt<FulfillmentsRepository>();
@@ -150,7 +153,6 @@ class MedusaAdminV2 {
   RegionsRepository get regions => getIt<RegionsRepository>();
 
   CollectionsRepository get collections => getIt<CollectionsRepository>();
-
 
   PriceListsRepository get priceLists => getIt<PriceListsRepository>();
 

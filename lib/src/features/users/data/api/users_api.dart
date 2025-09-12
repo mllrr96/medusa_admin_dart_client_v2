@@ -3,7 +3,7 @@ import 'package:medusa_admin_dart_client/src/features/users/data/models/user_del
 import 'package:medusa_admin_dart_client/src/features/users/data/models/user_res.dart';
 import 'package:medusa_admin_dart_client/src/features/users/data/models/users_list_res.dart';
 import 'package:retrofit/retrofit.dart';
-import 'package:medusa_admin_dart_client/src/features/users/data/models/user_update_req.dart';
+
 part 'users_api.g.dart';
 
 @RestApi()
@@ -16,11 +16,9 @@ abstract class UsersApi {
   });
 
   @GET('/admin/users/me')
-  Future<UserResponse> retrieveMe(
-  {
+  Future<UserResponse> retrieveMe({
     @Query('fields') String? fields,
-  }
-  );
+  });
 
   @GET('/admin/users/{id}')
   Future<UserResponse> retrieve(@Path('id') String id);
@@ -28,7 +26,7 @@ abstract class UsersApi {
   @POST('/admin/users/{id}')
   Future<UserResponse> update(
     @Path('id') String id,
-    @Body() UserUpdateReq body,
+    @Body() Map<String, dynamic> body,
   );
 
   @DELETE('/admin/users/{id}')

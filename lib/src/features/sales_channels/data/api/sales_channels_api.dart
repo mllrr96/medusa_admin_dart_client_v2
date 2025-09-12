@@ -31,6 +31,6 @@ abstract class SalesChannelsApi {
   @POST('/admin/sales-channels/{id}/products')
   Future<SalesChannelRes> manageProducts(
     @Path('id') String id,
-    @Body() ManageProductsReq body,
+    @Body() Map<String, List<String>> body,
   );
 }

@@ -12,14 +12,20 @@ class SalesChannelsRepository {
 
   Future<SalesChannelRes> retrieve(String id) => _salesChannelsApi.retrieve(id);
 
-  Future<SalesChannelRes> create(CreateSalesChannel body) =>
-      _salesChannelsApi.create(body);
+  Future<SalesChannelRes> create(CreateSalesChannel body) => _salesChannelsApi.create(body);
 
   Future<SalesChannelRes> update(String id, UpdateSalesChannel body) =>
       _salesChannelsApi.update(id, body);
 
   Future<void> delete(String id) => _salesChannelsApi.delete(id);
 
-  Future<SalesChannelRes> manageProducts(String id, ManageProductsReq body) =>
-      _salesChannelsApi.manageProducts(id, body);
+  Future<SalesChannelRes> addProducts(String id, ManageProductsReq body) =>
+      _salesChannelsApi.manageProducts(id, {
+        'add': body.add ?? [],
+      });
+
+  Future<SalesChannelRes> removeProducts(String id, ManageProductsReq body) =>
+      _salesChannelsApi.manageProducts(id, {
+        'remove': body.remove ?? [],
+      });
 }
