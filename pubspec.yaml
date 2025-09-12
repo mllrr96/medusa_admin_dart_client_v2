@@ -1,6 +1,6 @@
 name: medusa_admin_dart_client
 description: A new Flutter package project.
-version: 0.1.2
+version: 0.2.0
 homepage:
 
 environment:
@@ -23,5 +23,3 @@ dev_dependencies:
   freezed: ^3.2.0
   retrofit_generator: ^10.0.2
   json_serializable: ^6.11.0
-
-flutter:
