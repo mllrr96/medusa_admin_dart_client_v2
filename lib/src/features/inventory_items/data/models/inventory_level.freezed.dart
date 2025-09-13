@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$InventoryLevel {
 
- String get id;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt;@JsonKey(name: 'inventory_item_id') String get inventoryItemId;@JsonKey(name: 'location_id') String get locationId;@JsonKey(name: 'stocked_quantity') int get stockedQuantity;@JsonKey(name: 'reserved_quantity') int get reservedQuantity;@JsonKey(name: 'incoming_quantity') int get incomingQuantity; Map<String, dynamic> get metadata;@JsonKey(name: 'inventory_item') Map<String, dynamic>? get inventoryItem;@JsonKey(name: 'available_quantity') int get availableQuantity;
+ String get id;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt;@JsonKey(name: 'inventory_item_id') String? get inventoryItemId;@JsonKey(name: 'location_id') String? get locationId;@JsonKey(name: 'stocked_quantity') int? get stockedQuantity;@JsonKey(name: 'reserved_quantity') int? get reservedQuantity;@JsonKey(name: 'incoming_quantity') int? get incomingQuantity; Map<String, dynamic>? get metadata;@JsonKey(name: 'inventory_item') Map<String, dynamic>? get inventoryItem;@JsonKey(name: 'available_quantity') int? get availableQuantity;
 /// Create a copy of InventoryLevel
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $InventoryLevelCopyWith<$Res>  {
   factory $InventoryLevelCopyWith(InventoryLevel value, $Res Function(InventoryLevel) _then) = _$InventoryLevelCopyWithImpl;
 @useResult
 $Res call({
- String id,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt,@JsonKey(name: 'inventory_item_id') String inventoryItemId,@JsonKey(name: 'location_id') String locationId,@JsonKey(name: 'stocked_quantity') int stockedQuantity,@JsonKey(name: 'reserved_quantity') int reservedQuantity,@JsonKey(name: 'incoming_quantity') int incomingQuantity, Map<String, dynamic> metadata,@JsonKey(name: 'inventory_item') Map<String, dynamic>? inventoryItem,@JsonKey(name: 'available_quantity') int availableQuantity
+ String id,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt,@JsonKey(name: 'inventory_item_id') String? inventoryItemId,@JsonKey(name: 'location_id') String? locationId,@JsonKey(name: 'stocked_quantity') int? stockedQuantity,@JsonKey(name: 'reserved_quantity') int? reservedQuantity,@JsonKey(name: 'incoming_quantity') int? incomingQuantity, Map<String, dynamic>? metadata,@JsonKey(name: 'inventory_item') Map<String, dynamic>? inventoryItem,@JsonKey(name: 'available_quantity') int? availableQuantity
 });
 
 
@@ -65,21 +65,21 @@ class _$InventoryLevelCopyWithImpl<$Res>
 
 /// Create a copy of InventoryLevel
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,Object? inventoryItemId = null,Object? locationId = null,Object? stockedQuantity = null,Object? reservedQuantity = null,Object? incomingQuantity = null,Object? metadata = null,Object? inventoryItem = freezed,Object? availableQuantity = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,Object? inventoryItemId = freezed,Object? locationId = freezed,Object? stockedQuantity = freezed,Object? reservedQuantity = freezed,Object? incomingQuantity = freezed,Object? metadata = freezed,Object? inventoryItem = freezed,Object? availableQuantity = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
-as DateTime?,inventoryItemId: null == inventoryItemId ? _self.inventoryItemId : inventoryItemId // ignore: cast_nullable_to_non_nullable
-as String,locationId: null == locationId ? _self.locationId : locationId // ignore: cast_nullable_to_non_nullable
-as String,stockedQuantity: null == stockedQuantity ? _self.stockedQuantity : stockedQuantity // ignore: cast_nullable_to_non_nullable
-as int,reservedQuantity: null == reservedQuantity ? _self.reservedQuantity : reservedQuantity // ignore: cast_nullable_to_non_nullable
-as int,incomingQuantity: null == incomingQuantity ? _self.incomingQuantity : incomingQuantity // ignore: cast_nullable_to_non_nullable
-as int,metadata: null == metadata ? _self.metadata : metadata // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>,inventoryItem: freezed == inventoryItem ? _self.inventoryItem : inventoryItem // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,availableQuantity: null == availableQuantity ? _self.availableQuantity : availableQuantity // ignore: cast_nullable_to_non_nullable
-as int,
+as DateTime?,inventoryItemId: freezed == inventoryItemId ? _self.inventoryItemId : inventoryItemId // ignore: cast_nullable_to_non_nullable
+as String?,locationId: freezed == locationId ? _self.locationId : locationId // ignore: cast_nullable_to_non_nullable
+as String?,stockedQuantity: freezed == stockedQuantity ? _self.stockedQuantity : stockedQuantity // ignore: cast_nullable_to_non_nullable
+as int?,reservedQuantity: freezed == reservedQuantity ? _self.reservedQuantity : reservedQuantity // ignore: cast_nullable_to_non_nullable
+as int?,incomingQuantity: freezed == incomingQuantity ? _self.incomingQuantity : incomingQuantity // ignore: cast_nullable_to_non_nullable
+as int?,metadata: freezed == metadata ? _self.metadata : metadata // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>?,inventoryItem: freezed == inventoryItem ? _self.inventoryItem : inventoryItem // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>?,availableQuantity: freezed == availableQuantity ? _self.availableQuantity : availableQuantity // ignore: cast_nullable_to_non_nullable
+as int?,
   ));
 }
 
@@ -164,7 +164,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt, @JsonKey(name: 'inventory_item_id')  String inventoryItemId, @JsonKey(name: 'location_id')  String locationId, @JsonKey(name: 'stocked_quantity')  int stockedQuantity, @JsonKey(name: 'reserved_quantity')  int reservedQuantity, @JsonKey(name: 'incoming_quantity')  int incomingQuantity,  Map<String, dynamic> metadata, @JsonKey(name: 'inventory_item')  Map<String, dynamic>? inventoryItem, @JsonKey(name: 'available_quantity')  int availableQuantity)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt, @JsonKey(name: 'inventory_item_id')  String? inventoryItemId, @JsonKey(name: 'location_id')  String? locationId, @JsonKey(name: 'stocked_quantity')  int? stockedQuantity, @JsonKey(name: 'reserved_quantity')  int? reservedQuantity, @JsonKey(name: 'incoming_quantity')  int? incomingQuantity,  Map<String, dynamic>? metadata, @JsonKey(name: 'inventory_item')  Map<String, dynamic>? inventoryItem, @JsonKey(name: 'available_quantity')  int? availableQuantity)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _InventoryLevel() when $default != null:
 return $default(_that.id,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.inventoryItemId,_that.locationId,_that.stockedQuantity,_that.reservedQuantity,_that.incomingQuantity,_that.metadata,_that.inventoryItem,_that.availableQuantity);case _:
@@ -185,7 +185,7 @@ return $default(_that.id,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.i
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt, @JsonKey(name: 'inventory_item_id')  String inventoryItemId, @JsonKey(name: 'location_id')  String locationId, @JsonKey(name: 'stocked_quantity')  int stockedQuantity, @JsonKey(name: 'reserved_quantity')  int reservedQuantity, @JsonKey(name: 'incoming_quantity')  int incomingQuantity,  Map<String, dynamic> metadata, @JsonKey(name: 'inventory_item')  Map<String, dynamic>? inventoryItem, @JsonKey(name: 'available_quantity')  int availableQuantity)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt, @JsonKey(name: 'inventory_item_id')  String? inventoryItemId, @JsonKey(name: 'location_id')  String? locationId, @JsonKey(name: 'stocked_quantity')  int? stockedQuantity, @JsonKey(name: 'reserved_quantity')  int? reservedQuantity, @JsonKey(name: 'incoming_quantity')  int? incomingQuantity,  Map<String, dynamic>? metadata, @JsonKey(name: 'inventory_item')  Map<String, dynamic>? inventoryItem, @JsonKey(name: 'available_quantity')  int? availableQuantity)  $default,) {final _that = this;
 switch (_that) {
 case _InventoryLevel():
 return $default(_that.id,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.inventoryItemId,_that.locationId,_that.stockedQuantity,_that.reservedQuantity,_that.incomingQuantity,_that.metadata,_that.inventoryItem,_that.availableQuantity);case _:
@@ -205,7 +205,7 @@ return $default(_that.id,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.i
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt, @JsonKey(name: 'inventory_item_id')  String inventoryItemId, @JsonKey(name: 'location_id')  String locationId, @JsonKey(name: 'stocked_quantity')  int stockedQuantity, @JsonKey(name: 'reserved_quantity')  int reservedQuantity, @JsonKey(name: 'incoming_quantity')  int incomingQuantity,  Map<String, dynamic> metadata, @JsonKey(name: 'inventory_item')  Map<String, dynamic>? inventoryItem, @JsonKey(name: 'available_quantity')  int availableQuantity)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt, @JsonKey(name: 'inventory_item_id')  String? inventoryItemId, @JsonKey(name: 'location_id')  String? locationId, @JsonKey(name: 'stocked_quantity')  int? stockedQuantity, @JsonKey(name: 'reserved_quantity')  int? reservedQuantity, @JsonKey(name: 'incoming_quantity')  int? incomingQuantity,  Map<String, dynamic>? metadata, @JsonKey(name: 'inventory_item')  Map<String, dynamic>? inventoryItem, @JsonKey(name: 'available_quantity')  int? availableQuantity)?  $default,) {final _that = this;
 switch (_that) {
 case _InventoryLevel() when $default != null:
 return $default(_that.id,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.inventoryItemId,_that.locationId,_that.stockedQuantity,_that.reservedQuantity,_that.incomingQuantity,_that.metadata,_that.inventoryItem,_that.availableQuantity);case _:
@@ -220,23 +220,25 @@ return $default(_that.id,_that.createdAt,_that.updatedAt,_that.deletedAt,_that.i
 @JsonSerializable()
 
 class _InventoryLevel implements InventoryLevel {
-  const _InventoryLevel({required this.id, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt, @JsonKey(name: 'inventory_item_id') required this.inventoryItemId, @JsonKey(name: 'location_id') required this.locationId, @JsonKey(name: 'stocked_quantity') required this.stockedQuantity, @JsonKey(name: 'reserved_quantity') required this.reservedQuantity, @JsonKey(name: 'incoming_quantity') required this.incomingQuantity, required final  Map<String, dynamic> metadata, @JsonKey(name: 'inventory_item') final  Map<String, dynamic>? inventoryItem, @JsonKey(name: 'available_quantity') required this.availableQuantity}): _metadata = metadata,_inventoryItem = inventoryItem;
+  const _InventoryLevel({required this.id, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt, @JsonKey(name: 'inventory_item_id') this.inventoryItemId, @JsonKey(name: 'location_id') this.locationId, @JsonKey(name: 'stocked_quantity') this.stockedQuantity, @JsonKey(name: 'reserved_quantity') this.reservedQuantity, @JsonKey(name: 'incoming_quantity') this.incomingQuantity, final  Map<String, dynamic>? metadata, @JsonKey(name: 'inventory_item') final  Map<String, dynamic>? inventoryItem, @JsonKey(name: 'available_quantity') this.availableQuantity}): _metadata = metadata,_inventoryItem = inventoryItem;
   factory _InventoryLevel.fromJson(Map<String, dynamic> json) => _$InventoryLevelFromJson(json);
 
 @override final  String id;
 @override@JsonKey(name: 'created_at') final  DateTime? createdAt;
 @override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
 @override@JsonKey(name: 'deleted_at') final  DateTime? deletedAt;
-@override@JsonKey(name: 'inventory_item_id') final  String inventoryItemId;
-@override@JsonKey(name: 'location_id') final  String locationId;
-@override@JsonKey(name: 'stocked_quantity') final  int stockedQuantity;
-@override@JsonKey(name: 'reserved_quantity') final  int reservedQuantity;
-@override@JsonKey(name: 'incoming_quantity') final  int incomingQuantity;
- final  Map<String, dynamic> _metadata;
-@override Map<String, dynamic> get metadata {
+@override@JsonKey(name: 'inventory_item_id') final  String? inventoryItemId;
+@override@JsonKey(name: 'location_id') final  String? locationId;
+@override@JsonKey(name: 'stocked_quantity') final  int? stockedQuantity;
+@override@JsonKey(name: 'reserved_quantity') final  int? reservedQuantity;
+@override@JsonKey(name: 'incoming_quantity') final  int? incomingQuantity;
+ final  Map<String, dynamic>? _metadata;
+@override Map<String, dynamic>? get metadata {
+  final value = _metadata;
+  if (value == null) return null;
   if (_metadata is EqualUnmodifiableMapView) return _metadata;
   // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(_metadata);
+  return EqualUnmodifiableMapView(value);
 }
 
  final  Map<String, dynamic>? _inventoryItem;
@@ -248,7 +250,7 @@ class _InventoryLevel implements InventoryLevel {
   return EqualUnmodifiableMapView(value);
 }
 
-@override@JsonKey(name: 'available_quantity') final  int availableQuantity;
+@override@JsonKey(name: 'available_quantity') final  int? availableQuantity;
 
 /// Create a copy of InventoryLevel
 /// with the given fields replaced by the non-null parameter values.
@@ -283,7 +285,7 @@ abstract mixin class _$InventoryLevelCopyWith<$Res> implements $InventoryLevelCo
   factory _$InventoryLevelCopyWith(_InventoryLevel value, $Res Function(_InventoryLevel) _then) = __$InventoryLevelCopyWithImpl;
 @override @useResult
 $Res call({
- String id,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt,@JsonKey(name: 'inventory_item_id') String inventoryItemId,@JsonKey(name: 'location_id') String locationId,@JsonKey(name: 'stocked_quantity') int stockedQuantity,@JsonKey(name: 'reserved_quantity') int reservedQuantity,@JsonKey(name: 'incoming_quantity') int incomingQuantity, Map<String, dynamic> metadata,@JsonKey(name: 'inventory_item') Map<String, dynamic>? inventoryItem,@JsonKey(name: 'available_quantity') int availableQuantity
+ String id,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt,@JsonKey(name: 'inventory_item_id') String? inventoryItemId,@JsonKey(name: 'location_id') String? locationId,@JsonKey(name: 'stocked_quantity') int? stockedQuantity,@JsonKey(name: 'reserved_quantity') int? reservedQuantity,@JsonKey(name: 'incoming_quantity') int? incomingQuantity, Map<String, dynamic>? metadata,@JsonKey(name: 'inventory_item') Map<String, dynamic>? inventoryItem,@JsonKey(name: 'available_quantity') int? availableQuantity
 });
 
 
@@ -300,21 +302,21 @@ class __$InventoryLevelCopyWithImpl<$Res>
 
 /// Create a copy of InventoryLevel
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,Object? inventoryItemId = null,Object? locationId = null,Object? stockedQuantity = null,Object? reservedQuantity = null,Object? incomingQuantity = null,Object? metadata = null,Object? inventoryItem = freezed,Object? availableQuantity = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,Object? inventoryItemId = freezed,Object? locationId = freezed,Object? stockedQuantity = freezed,Object? reservedQuantity = freezed,Object? incomingQuantity = freezed,Object? metadata = freezed,Object? inventoryItem = freezed,Object? availableQuantity = freezed,}) {
   return _then(_InventoryLevel(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
-as DateTime?,inventoryItemId: null == inventoryItemId ? _self.inventoryItemId : inventoryItemId // ignore: cast_nullable_to_non_nullable
-as String,locationId: null == locationId ? _self.locationId : locationId // ignore: cast_nullable_to_non_nullable
-as String,stockedQuantity: null == stockedQuantity ? _self.stockedQuantity : stockedQuantity // ignore: cast_nullable_to_non_nullable
-as int,reservedQuantity: null == reservedQuantity ? _self.reservedQuantity : reservedQuantity // ignore: cast_nullable_to_non_nullable
-as int,incomingQuantity: null == incomingQuantity ? _self.incomingQuantity : incomingQuantity // ignore: cast_nullable_to_non_nullable
-as int,metadata: null == metadata ? _self._metadata : metadata // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>,inventoryItem: freezed == inventoryItem ? _self._inventoryItem : inventoryItem // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,availableQuantity: null == availableQuantity ? _self.availableQuantity : availableQuantity // ignore: cast_nullable_to_non_nullable
-as int,
+as DateTime?,inventoryItemId: freezed == inventoryItemId ? _self.inventoryItemId : inventoryItemId // ignore: cast_nullable_to_non_nullable
+as String?,locationId: freezed == locationId ? _self.locationId : locationId // ignore: cast_nullable_to_non_nullable
+as String?,stockedQuantity: freezed == stockedQuantity ? _self.stockedQuantity : stockedQuantity // ignore: cast_nullable_to_non_nullable
+as int?,reservedQuantity: freezed == reservedQuantity ? _self.reservedQuantity : reservedQuantity // ignore: cast_nullable_to_non_nullable
+as int?,incomingQuantity: freezed == incomingQuantity ? _self.incomingQuantity : incomingQuantity // ignore: cast_nullable_to_non_nullable
+as int?,metadata: freezed == metadata ? _self._metadata : metadata // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>?,inventoryItem: freezed == inventoryItem ? _self._inventoryItem : inventoryItem // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>?,availableQuantity: freezed == availableQuantity ? _self.availableQuantity : availableQuantity // ignore: cast_nullable_to_non_nullable
+as int?,
   ));
 }
 

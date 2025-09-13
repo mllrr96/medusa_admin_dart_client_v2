@@ -18,14 +18,14 @@ _InventoryLevel _$InventoryLevelFromJson(Map<String, dynamic> json) =>
       deletedAt: json['deleted_at'] == null
           ? null
           : DateTime.parse(json['deleted_at'] as String),
-      inventoryItemId: json['inventory_item_id'] as String,
-      locationId: json['location_id'] as String,
-      stockedQuantity: (json['stocked_quantity'] as num).toInt(),
-      reservedQuantity: (json['reserved_quantity'] as num).toInt(),
-      incomingQuantity: (json['incoming_quantity'] as num).toInt(),
-      metadata: json['metadata'] as Map<String, dynamic>,
+      inventoryItemId: json['inventory_item_id'] as String?,
+      locationId: json['location_id'] as String?,
+      stockedQuantity: (json['stocked_quantity'] as num?)?.toInt(),
+      reservedQuantity: (json['reserved_quantity'] as num?)?.toInt(),
+      incomingQuantity: (json['incoming_quantity'] as num?)?.toInt(),
+      metadata: json['metadata'] as Map<String, dynamic>?,
       inventoryItem: json['inventory_item'] as Map<String, dynamic>?,
-      availableQuantity: (json['available_quantity'] as num).toInt(),
+      availableQuantity: (json['available_quantity'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$InventoryLevelToJson(_InventoryLevel instance) =>

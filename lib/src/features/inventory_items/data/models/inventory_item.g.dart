@@ -27,16 +27,15 @@ _InventoryItem _$InventoryItemFromJson(Map<String, dynamic> json) =>
       locationLevels: (json['location_levels'] as List<dynamic>?)
           ?.map((e) => InventoryLevel.fromJson(e as Map<String, dynamic>))
           .toList(),
-      variants: json['variants'] as List<dynamic>,
-      createdAt: json['createdAt'] == null
+      createdAt: json['create_at'] == null
           ? null
-          : DateTime.parse(json['createdAt'] as String),
-      updatedAt: json['updatedAt'] == null
+          : DateTime.parse(json['create_at'] as String),
+      updatedAt: json['updated_at'] == null
           ? null
-          : DateTime.parse(json['updatedAt'] as String),
-      deletedAt: json['deletedAt'] == null
+          : DateTime.parse(json['updated_at'] as String),
+      deletedAt: json['deleted_at'] == null
           ? null
-          : DateTime.parse(json['deletedAt'] as String),
+          : DateTime.parse(json['deleted_at'] as String),
       metadata: json['metadata'] as Map<String, dynamic>?,
     );
 
@@ -59,9 +58,8 @@ Map<String, dynamic> _$InventoryItemToJson(_InventoryItem instance) =>
       'stocked_quantity': instance.stockedQuantity,
       'reserved_quantity': instance.reservedQuantity,
       'location_levels': instance.locationLevels,
-      'variants': instance.variants,
-      'createdAt': instance.createdAt?.toIso8601String(),
-      'updatedAt': instance.updatedAt?.toIso8601String(),
-      'deletedAt': instance.deletedAt?.toIso8601String(),
+      'create_at': instance.createdAt?.toIso8601String(),
+      'updated_at': instance.updatedAt?.toIso8601String(),
+      'deleted_at': instance.deletedAt?.toIso8601String(),
       'metadata': instance.metadata,
     };

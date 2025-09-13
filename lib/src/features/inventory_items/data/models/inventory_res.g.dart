@@ -19,7 +19,7 @@ Map<String, dynamic> _$InventoryItemResToJson(_InventoryItemRes instance) =>
 _InventoryItemsListRes _$InventoryItemsListResFromJson(
   Map<String, dynamic> json,
 ) => _InventoryItemsListRes(
-  inventoryItems: (json['inventory_item'] as List<dynamic>)
+  inventoryItems: (json['inventory_items'] as List<dynamic>)
       .map((e) => InventoryItem.fromJson(e as Map<String, dynamic>))
       .toList(),
   limit: (json['limit'] as num).toInt(),
@@ -30,7 +30,7 @@ _InventoryItemsListRes _$InventoryItemsListResFromJson(
 Map<String, dynamic> _$InventoryItemsListResToJson(
   _InventoryItemsListRes instance,
 ) => <String, dynamic>{
-  'inventory_item': instance.inventoryItems,
+  'inventory_items': instance.inventoryItems,
   'limit': instance.limit,
   'offset': instance.offset,
   'count': instance.count,

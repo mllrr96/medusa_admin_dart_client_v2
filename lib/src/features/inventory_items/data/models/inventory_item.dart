@@ -2,6 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'inventory_level.dart';
 
 part 'inventory_item.freezed.dart';
+
 part 'inventory_item.g.dart';
 
 @freezed
@@ -24,13 +25,11 @@ abstract class InventoryItem with _$InventoryItem {
     @JsonKey(name: 'stocked_quantity') required int stockedQuantity,
     @JsonKey(name: 'reserved_quantity') required int reservedQuantity,
     @JsonKey(name: 'location_levels') List<InventoryLevel>? locationLevels,
-    required List<dynamic> variants,
-    DateTime? createdAt,
-    DateTime? updatedAt,
-    DateTime? deletedAt,
+    @JsonKey(name: 'create_at') DateTime? createdAt,
+    @JsonKey(name: 'updated_at') DateTime? updatedAt,
+    @JsonKey(name: 'deleted_at') DateTime? deletedAt,
     Map<String, dynamic>? metadata,
   }) = _InventoryItem;
 
-  factory InventoryItem.fromJson(Map<String, dynamic> json) =>
-      _$InventoryItemFromJson(json);
+  factory InventoryItem.fromJson(Map<String, dynamic> json) => _$InventoryItemFromJson(json);
 }

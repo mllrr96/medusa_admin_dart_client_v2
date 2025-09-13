@@ -19,7 +19,7 @@ abstract class InventoryItemRes with _$InventoryItemRes {
 @freezed
 abstract class InventoryItemsListRes with _$InventoryItemsListRes {
   const factory InventoryItemsListRes({
-    @JsonKey(name: 'inventory_item')
+    @JsonKey(name: 'inventory_items')
     required List<InventoryItem> inventoryItems,
     required int limit,
     required int offset,
