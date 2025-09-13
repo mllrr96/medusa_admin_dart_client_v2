@@ -46,7 +46,7 @@ import 'package:medusa_admin_dart_client/src/features/returns/data/api/returns_a
 import 'package:medusa_admin_dart_client/src/features/sales_channels/data/api/sales_channels_api.dart';
 import 'package:medusa_admin_dart_client/src/features/shipping_options/data/api/shipping_options_api.dart';
 import 'package:medusa_admin_dart_client/src/features/shipping_profiles/data/api/shipping_profiles_api.dart';
-import 'package:medusa_admin_dart_client/src/features/store/data/api/store_api.dart';
+import 'package:medusa_admin_dart_client/src/features/stores/data/api/store_api.dart';
 import 'package:medusa_admin_dart_client/src/features/store_credit_accounts/data/api/store_credit_accounts_api.dart';
 import 'package:medusa_admin_dart_client/src/features/store_credit_accounts/data/repository/store_credit_accounts_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/tax_rates/data/api/tax_rates_api.dart';

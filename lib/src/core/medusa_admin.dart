@@ -28,12 +28,13 @@ import 'package:medusa_admin_dart_client/src/features/returns/data/repository/re
 import 'package:medusa_admin_dart_client/src/features/sales_channels/data/repository/sales_channels_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/shipping_options/data/repository/shipping_options_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/shipping_profiles/data/repository/shipping_profiles_repository.dart';
-import 'package:medusa_admin_dart_client/src/features/store/data/repository/store_repository.dart';
+import 'package:medusa_admin_dart_client/src/features/stores/data/repository/store_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/tax_rates/data/repository/tax_rates_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/tax_regions/data/repository/tax_regions_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/uploads/data/repository/uploads_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/users/data/repository/users_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/price_lists/data/repository/price_lists_repository.dart';
+import 'package:medusa_admin_dart_client/src/features/price_preferences/data/repository/price_preferences_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/inventory_items/data/repository/inventory_items_repository.dart';
 
 class MedusaAdminV2 {
@@ -121,4 +122,6 @@ class MedusaAdminV2 {
   ProductVariantsRepository get productVariants => getIt<ProductVariantsRepository>();
 
   ExchangesRepository get exchanges => getIt<ExchangesRepository>();
+
+  PricePreferencesRepository get pricePreferences => getIt<PricePreferencesRepository>();
 }

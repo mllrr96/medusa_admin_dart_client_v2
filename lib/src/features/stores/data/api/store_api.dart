@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
-import 'package:medusa_admin_dart_client/src/features/store/data/models/store_list_res.dart';
-import 'package:medusa_admin_dart_client/src/features/store/data/models/store_res.dart';
-import 'package:medusa_admin_dart_client/src/features/store/data/models/update_store_req.dart';
+import 'package:medusa_admin_dart_client/src/features/stores/data/models/store_list_res.dart';
+import 'package:medusa_admin_dart_client/src/features/stores/data/models/store_res.dart';
+import 'package:medusa_admin_dart_client/src/features/stores/data/models/update_store_req.dart';
 import 'package:retrofit/retrofit.dart';
 
 part 'store_api.g.dart';
