@@ -7,7 +7,6 @@ part 'create_invite_req.g.dart';
 abstract class CreateInviteReq with _$CreateInviteReq {
   const factory CreateInviteReq({
     required String email,
-    Map<String, dynamic>? metadata,
   }) = _CreateInviteReq;
 
   factory CreateInviteReq.fromJson(Map<String, dynamic> json) =>

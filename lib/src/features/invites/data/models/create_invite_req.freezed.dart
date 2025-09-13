@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$CreateInviteReq {
 
- String get email; Map<String, dynamic>? get metadata;
+ String get email;
 /// Create a copy of CreateInviteReq
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $CreateInviteReqCopyWith<CreateInviteReq> get copyWith => _$CreateInviteReqCopyW
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is CreateInviteReq&&(identical(other.email, email) || other.email == email)&&const DeepCollectionEquality().equals(other.metadata, metadata));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is CreateInviteReq&&(identical(other.email, email) || other.email == email));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,email,const DeepCollectionEquality().hash(metadata));
+int get hashCode => Object.hash(runtimeType,email);
 
 @override
 String toString() {
-  return 'CreateInviteReq(email: $email, metadata: $metadata)';
+  return 'CreateInviteReq(email: $email)';
 }
 
 
@@ -48,7 +48,7 @@ abstract mixin class $CreateInviteReqCopyWith<$Res>  {
   factory $CreateInviteReqCopyWith(CreateInviteReq value, $Res Function(CreateInviteReq) _then) = _$CreateInviteReqCopyWithImpl;
 @useResult
 $Res call({
- String email, Map<String, dynamic>? metadata
+ String email
 });
 
 
@@ -65,11 +65,10 @@ class _$CreateInviteReqCopyWithImpl<$Res>
 
 /// Create a copy of CreateInviteReq
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? email = null,Object? metadata = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? email = null,}) {
   return _then(_self.copyWith(
 email: null == email ? _self.email : email // ignore: cast_nullable_to_non_nullable
-as String,metadata: freezed == metadata ? _self.metadata : metadata // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
+as String,
   ));
 }
 
@@ -154,10 +153,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String email,  Map<String, dynamic>? metadata)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String email)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _CreateInviteReq() when $default != null:
-return $default(_that.email,_that.metadata);case _:
+return $default(_that.email);case _:
   return orElse();
 
 }
@@ -175,10 +174,10 @@ return $default(_that.email,_that.metadata);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String email,  Map<String, dynamic>? metadata)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String email)  $default,) {final _that = this;
 switch (_that) {
 case _CreateInviteReq():
-return $default(_that.email,_that.metadata);case _:
+return $default(_that.email);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -195,10 +194,10 @@ return $default(_that.email,_that.metadata);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String email,  Map<String, dynamic>? metadata)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String email)?  $default,) {final _that = this;
 switch (_that) {
 case _CreateInviteReq() when $default != null:
-return $default(_that.email,_that.metadata);case _:
+return $default(_that.email);case _:
   return null;
 
 }
@@ -210,19 +209,10 @@ return $default(_that.email,_that.metadata);case _:
 @JsonSerializable()
 
 class _CreateInviteReq implements CreateInviteReq {
-  const _CreateInviteReq({required this.email, final  Map<String, dynamic>? metadata}): _metadata = metadata;
+  const _CreateInviteReq({required this.email});
   factory _CreateInviteReq.fromJson(Map<String, dynamic> json) => _$CreateInviteReqFromJson(json);
 
 @override final  String email;
- final  Map<String, dynamic>? _metadata;
-@override Map<String, dynamic>? get metadata {
-  final value = _metadata;
-  if (value == null) return null;
-  if (_metadata is EqualUnmodifiableMapView) return _metadata;
-  // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(value);
-}
-
 
 /// Create a copy of CreateInviteReq
 /// with the given fields replaced by the non-null parameter values.
@@ -237,16 +227,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CreateInviteReq&&(identical(other.email, email) || other.email == email)&&const DeepCollectionEquality().equals(other._metadata, _metadata));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CreateInviteReq&&(identical(other.email, email) || other.email == email));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,email,const DeepCollectionEquality().hash(_metadata));
+int get hashCode => Object.hash(runtimeType,email);
 
 @override
 String toString() {
-  return 'CreateInviteReq(email: $email, metadata: $metadata)';
+  return 'CreateInviteReq(email: $email)';
 }
 
 
@@ -257,7 +247,7 @@ abstract mixin class _$CreateInviteReqCopyWith<$Res> implements $CreateInviteReq
   factory _$CreateInviteReqCopyWith(_CreateInviteReq value, $Res Function(_CreateInviteReq) _then) = __$CreateInviteReqCopyWithImpl;
 @override @useResult
 $Res call({
- String email, Map<String, dynamic>? metadata
+ String email
 });
 
 
@@ -274,11 +264,10 @@ class __$CreateInviteReqCopyWithImpl<$Res>
 
 /// Create a copy of CreateInviteReq
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? email = null,Object? metadata = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? email = null,}) {
   return _then(_CreateInviteReq(
 email: null == email ? _self.email : email // ignore: cast_nullable_to_non_nullable
-as String,metadata: freezed == metadata ? _self._metadata : metadata // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>?,
+as String,
   ));
 }
 
