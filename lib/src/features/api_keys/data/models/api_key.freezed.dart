@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ApiKey {
 
- String get id; String get token; String get redacted; String get title; String get type;@JsonKey(name: 'last_used_at') DateTime? get lastUsedAt;@JsonKey(name: 'created_by') String get createdBy;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'revoked_by') String? get revokedBy;@JsonKey(name: 'revoked_at') DateTime? get revokedAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt;
+ String get id; String get token; String get redacted; String get title; ApiKeyType get type;@JsonKey(name: 'last_used_at') DateTime? get lastUsedAt;@JsonKey(name: 'created_by') String get createdBy;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'revoked_by') String? get revokedBy;@JsonKey(name: 'revoked_at') DateTime? get revokedAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt;
 /// Create a copy of ApiKey
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $ApiKeyCopyWith<$Res>  {
   factory $ApiKeyCopyWith(ApiKey value, $Res Function(ApiKey) _then) = _$ApiKeyCopyWithImpl;
 @useResult
 $Res call({
- String id, String token, String redacted, String title, String type,@JsonKey(name: 'last_used_at') DateTime? lastUsedAt,@JsonKey(name: 'created_by') String createdBy,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'revoked_by') String? revokedBy,@JsonKey(name: 'revoked_at') DateTime? revokedAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
+ String id, String token, String redacted, String title, ApiKeyType type,@JsonKey(name: 'last_used_at') DateTime? lastUsedAt,@JsonKey(name: 'created_by') String createdBy,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'revoked_by') String? revokedBy,@JsonKey(name: 'revoked_at') DateTime? revokedAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
 });
 
 
@@ -72,7 +72,7 @@ as String,token: null == token ? _self.token : token // ignore: cast_nullable_to
 as String,redacted: null == redacted ? _self.redacted : redacted // ignore: cast_nullable_to_non_nullable
 as String,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
 as String,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
-as String,lastUsedAt: freezed == lastUsedAt ? _self.lastUsedAt : lastUsedAt // ignore: cast_nullable_to_non_nullable
+as ApiKeyType,lastUsedAt: freezed == lastUsedAt ? _self.lastUsedAt : lastUsedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,createdBy: null == createdBy ? _self.createdBy : createdBy // ignore: cast_nullable_to_non_nullable
 as String,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,revokedBy: freezed == revokedBy ? _self.revokedBy : revokedBy // ignore: cast_nullable_to_non_nullable
@@ -164,7 +164,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String token,  String redacted,  String title,  String type, @JsonKey(name: 'last_used_at')  DateTime? lastUsedAt, @JsonKey(name: 'created_by')  String createdBy, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'revoked_by')  String? revokedBy, @JsonKey(name: 'revoked_at')  DateTime? revokedAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String token,  String redacted,  String title,  ApiKeyType type, @JsonKey(name: 'last_used_at')  DateTime? lastUsedAt, @JsonKey(name: 'created_by')  String createdBy, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'revoked_by')  String? revokedBy, @JsonKey(name: 'revoked_at')  DateTime? revokedAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ApiKey() when $default != null:
 return $default(_that.id,_that.token,_that.redacted,_that.title,_that.type,_that.lastUsedAt,_that.createdBy,_that.createdAt,_that.revokedBy,_that.revokedAt,_that.updatedAt,_that.deletedAt);case _:
@@ -185,7 +185,7 @@ return $default(_that.id,_that.token,_that.redacted,_that.title,_that.type,_that
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String token,  String redacted,  String title,  String type, @JsonKey(name: 'last_used_at')  DateTime? lastUsedAt, @JsonKey(name: 'created_by')  String createdBy, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'revoked_by')  String? revokedBy, @JsonKey(name: 'revoked_at')  DateTime? revokedAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String token,  String redacted,  String title,  ApiKeyType type, @JsonKey(name: 'last_used_at')  DateTime? lastUsedAt, @JsonKey(name: 'created_by')  String createdBy, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'revoked_by')  String? revokedBy, @JsonKey(name: 'revoked_at')  DateTime? revokedAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)  $default,) {final _that = this;
 switch (_that) {
 case _ApiKey():
 return $default(_that.id,_that.token,_that.redacted,_that.title,_that.type,_that.lastUsedAt,_that.createdBy,_that.createdAt,_that.revokedBy,_that.revokedAt,_that.updatedAt,_that.deletedAt);case _:
@@ -205,7 +205,7 @@ return $default(_that.id,_that.token,_that.redacted,_that.title,_that.type,_that
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String token,  String redacted,  String title,  String type, @JsonKey(name: 'last_used_at')  DateTime? lastUsedAt, @JsonKey(name: 'created_by')  String createdBy, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'revoked_by')  String? revokedBy, @JsonKey(name: 'revoked_at')  DateTime? revokedAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String token,  String redacted,  String title,  ApiKeyType type, @JsonKey(name: 'last_used_at')  DateTime? lastUsedAt, @JsonKey(name: 'created_by')  String createdBy, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'revoked_by')  String? revokedBy, @JsonKey(name: 'revoked_at')  DateTime? revokedAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _ApiKey() when $default != null:
 return $default(_that.id,_that.token,_that.redacted,_that.title,_that.type,_that.lastUsedAt,_that.createdBy,_that.createdAt,_that.revokedBy,_that.revokedAt,_that.updatedAt,_that.deletedAt);case _:
@@ -227,7 +227,7 @@ class _ApiKey implements ApiKey {
 @override final  String token;
 @override final  String redacted;
 @override final  String title;
-@override final  String type;
+@override final  ApiKeyType type;
 @override@JsonKey(name: 'last_used_at') final  DateTime? lastUsedAt;
 @override@JsonKey(name: 'created_by') final  String createdBy;
 @override@JsonKey(name: 'created_at') final  DateTime? createdAt;
@@ -269,7 +269,7 @@ abstract mixin class _$ApiKeyCopyWith<$Res> implements $ApiKeyCopyWith<$Res> {
   factory _$ApiKeyCopyWith(_ApiKey value, $Res Function(_ApiKey) _then) = __$ApiKeyCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String token, String redacted, String title, String type,@JsonKey(name: 'last_used_at') DateTime? lastUsedAt,@JsonKey(name: 'created_by') String createdBy,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'revoked_by') String? revokedBy,@JsonKey(name: 'revoked_at') DateTime? revokedAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
+ String id, String token, String redacted, String title, ApiKeyType type,@JsonKey(name: 'last_used_at') DateTime? lastUsedAt,@JsonKey(name: 'created_by') String createdBy,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'revoked_by') String? revokedBy,@JsonKey(name: 'revoked_at') DateTime? revokedAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
 });
 
 
@@ -293,7 +293,7 @@ as String,token: null == token ? _self.token : token // ignore: cast_nullable_to
 as String,redacted: null == redacted ? _self.redacted : redacted // ignore: cast_nullable_to_non_nullable
 as String,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
 as String,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
-as String,lastUsedAt: freezed == lastUsedAt ? _self.lastUsedAt : lastUsedAt // ignore: cast_nullable_to_non_nullable
+as ApiKeyType,lastUsedAt: freezed == lastUsedAt ? _self.lastUsedAt : lastUsedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,createdBy: null == createdBy ? _self.createdBy : createdBy // ignore: cast_nullable_to_non_nullable
 as String,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,revokedBy: freezed == revokedBy ? _self.revokedBy : revokedBy // ignore: cast_nullable_to_non_nullable

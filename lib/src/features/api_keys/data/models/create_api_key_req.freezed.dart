@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$CreateApiKeyReq {
 
- String get title; String get type;
+ String get title; ApiKeyType get type;
 /// Create a copy of CreateApiKeyReq
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $CreateApiKeyReqCopyWith<$Res>  {
   factory $CreateApiKeyReqCopyWith(CreateApiKeyReq value, $Res Function(CreateApiKeyReq) _then) = _$CreateApiKeyReqCopyWithImpl;
 @useResult
 $Res call({
- String title, String type
+ String title, ApiKeyType type
 });
 
 
@@ -69,7 +69,7 @@ class _$CreateApiKeyReqCopyWithImpl<$Res>
   return _then(_self.copyWith(
 title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
 as String,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
-as String,
+as ApiKeyType,
   ));
 }
 
@@ -154,7 +154,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String title,  String type)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String title,  ApiKeyType type)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _CreateApiKeyReq() when $default != null:
 return $default(_that.title,_that.type);case _:
@@ -175,7 +175,7 @@ return $default(_that.title,_that.type);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String title,  String type)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String title,  ApiKeyType type)  $default,) {final _that = this;
 switch (_that) {
 case _CreateApiKeyReq():
 return $default(_that.title,_that.type);case _:
@@ -195,7 +195,7 @@ return $default(_that.title,_that.type);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String title,  String type)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String title,  ApiKeyType type)?  $default,) {final _that = this;
 switch (_that) {
 case _CreateApiKeyReq() when $default != null:
 return $default(_that.title,_that.type);case _:
@@ -214,7 +214,7 @@ class _CreateApiKeyReq implements CreateApiKeyReq {
   factory _CreateApiKeyReq.fromJson(Map<String, dynamic> json) => _$CreateApiKeyReqFromJson(json);
 
 @override final  String title;
-@override final  String type;
+@override final  ApiKeyType type;
 
 /// Create a copy of CreateApiKeyReq
 /// with the given fields replaced by the non-null parameter values.
@@ -249,7 +249,7 @@ abstract mixin class _$CreateApiKeyReqCopyWith<$Res> implements $CreateApiKeyReq
   factory _$CreateApiKeyReqCopyWith(_CreateApiKeyReq value, $Res Function(_CreateApiKeyReq) _then) = __$CreateApiKeyReqCopyWithImpl;
 @override @useResult
 $Res call({
- String title, String type
+ String title, ApiKeyType type
 });
 
 
@@ -270,7 +270,7 @@ class __$CreateApiKeyReqCopyWithImpl<$Res>
   return _then(_CreateApiKeyReq(
 title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
 as String,type: null == type ? _self.type : type // ignore: cast_nullable_to_non_nullable
-as String,
+as ApiKeyType,
   ));
 }
 

@@ -56,7 +56,7 @@ export 'src/features/auth/data/repository/auth_repository.dart';
 export 'src/features/price_lists/data/repository/price_lists_repository.dart';
 export 'src/features/uploads/data/repository/uploads_repository.dart';
 export 'src/features/transaction_groups/data/repository/transaction_groups_repository.dart';
-export 'src/features/stores/data/repository/store_repository.dart';
+export 'src/features/stores/data/repository/stores_repository.dart';
 export 'src/features/plugins/data/repository/plugins_repository.dart';
 export 'src/features/orders/data/repository/orders_repository.dart';
 export 'src/features/notifications/data/repository/notifications_repository.dart';

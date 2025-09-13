@@ -4,11 +4,11 @@ import 'package:medusa_admin_dart_client/src/features/stores/data/models/store_r
 import 'package:medusa_admin_dart_client/src/features/stores/data/models/update_store_req.dart';
 import 'package:retrofit/retrofit.dart';
 
-part 'store_api.g.dart';
+part 'stores_api.g.dart';
 
 @RestApi()
-abstract class StoreApi {
-  factory StoreApi(Dio dio, {String baseUrl}) = _StoreApi;
+abstract class StoresApi {
+  factory StoresApi(Dio dio, {String baseUrl}) = _StoresApi;
 
   @GET('/admin/stores')
   Future<StoreListRes> list({

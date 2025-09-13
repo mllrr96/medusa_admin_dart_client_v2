@@ -29,7 +29,6 @@ import 'package:medusa_admin_dart_client/src/features/payments/data/api/payments
 import 'package:medusa_admin_dart_client/src/features/plugins/data/api/plugins_api.dart';
 import 'package:medusa_admin_dart_client/src/features/price_lists/data/api/price_lists_api.dart';
 import 'package:medusa_admin_dart_client/src/features/price_preferences/data/api/price_preferences_api.dart';
-import 'package:medusa_admin_dart_client/src/features/price_preferences/data/repository/price_preferences_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/product_categories/data/api/product_categories_api.dart';
 import 'package:medusa_admin_dart_client/src/features/product_tags/data/api/product_tags_api.dart';
 import 'package:medusa_admin_dart_client/src/features/product_types/data/api/product_types_api.dart';
@@ -40,13 +39,12 @@ import 'package:medusa_admin_dart_client/src/features/refund_reasons/data/api/re
 import 'package:medusa_admin_dart_client/src/features/refund_reasons/data/repository/refund_reasons_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/regions/data/api/regions_api.dart';
 import 'package:medusa_admin_dart_client/src/features/reservations/data/api/reservations_api.dart';
-import 'package:medusa_admin_dart_client/src/features/reservations/data/repository/reservations_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/return_reasons/data/api/return_reasons_api.dart';
 import 'package:medusa_admin_dart_client/src/features/returns/data/api/returns_api.dart';
 import 'package:medusa_admin_dart_client/src/features/sales_channels/data/api/sales_channels_api.dart';
 import 'package:medusa_admin_dart_client/src/features/shipping_options/data/api/shipping_options_api.dart';
 import 'package:medusa_admin_dart_client/src/features/shipping_profiles/data/api/shipping_profiles_api.dart';
-import 'package:medusa_admin_dart_client/src/features/stores/data/api/store_api.dart';
+import 'package:medusa_admin_dart_client/src/features/stores/data/api/stores_api.dart';
 import 'package:medusa_admin_dart_client/src/features/store_credit_accounts/data/api/store_credit_accounts_api.dart';
 import 'package:medusa_admin_dart_client/src/features/store_credit_accounts/data/repository/store_credit_accounts_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/tax_rates/data/api/tax_rates_api.dart';
@@ -149,9 +147,9 @@ void configureDependencies({String? baseUrl, List<Interceptor>? interceptors}) {
   );
 
   // Store
-  getIt.registerLazySingleton<StoreApi>(() => StoreApi(getIt<Dio>()));
-  getIt.registerLazySingleton<StoreRepository>(
-    () => StoreRepository(getIt<StoreApi>()),
+  getIt.registerLazySingleton<StoresApi>(() => StoresApi(getIt<Dio>()));
+  getIt.registerLazySingleton<StoresRepository>(
+    () => StoresRepository(getIt<StoresApi>()),
   );
 
   // Tax Rates

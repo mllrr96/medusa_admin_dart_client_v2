@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:medusa_admin_dart_client/src/features/api_keys/data/models/api_key_type.dart';
 
 part 'api_key.freezed.dart';
 part 'api_key.g.dart';
@@ -10,7 +11,7 @@ abstract class ApiKey with _$ApiKey {
     required String token,
     required String redacted,
     required String title,
-    required String type,
+    required ApiKeyType type,
     @JsonKey(name: 'last_used_at') DateTime? lastUsedAt,
     @JsonKey(name: 'created_by') required String createdBy,
     @JsonKey(name: 'created_at') DateTime? createdAt,

@@ -11,7 +11,7 @@ _ApiKey _$ApiKeyFromJson(Map<String, dynamic> json) => _ApiKey(
   token: json['token'] as String,
   redacted: json['redacted'] as String,
   title: json['title'] as String,
-  type: json['type'] as String,
+  type: $enumDecode(_$ApiKeyTypeEnumMap, json['type']),
   lastUsedAt: json['last_used_at'] == null
       ? null
       : DateTime.parse(json['last_used_at'] as String),
@@ -36,7 +36,7 @@ Map<String, dynamic> _$ApiKeyToJson(_ApiKey instance) => <String, dynamic>{
   'token': instance.token,
   'redacted': instance.redacted,
   'title': instance.title,
-  'type': instance.type,
+  'type': _$ApiKeyTypeEnumMap[instance.type]!,
   'last_used_at': instance.lastUsedAt?.toIso8601String(),
   'created_by': instance.createdBy,
   'created_at': instance.createdAt?.toIso8601String(),
@@ -44,4 +44,9 @@ Map<String, dynamic> _$ApiKeyToJson(_ApiKey instance) => <String, dynamic>{
   'revoked_at': instance.revokedAt?.toIso8601String(),
   'updated_at': instance.updatedAt?.toIso8601String(),
   'deleted_at': instance.deletedAt?.toIso8601String(),
+};
+
+const _$ApiKeyTypeEnumMap = {
+  ApiKeyType.publishable: 'publishable',
+  ApiKeyType.secret: 'secret',
 };

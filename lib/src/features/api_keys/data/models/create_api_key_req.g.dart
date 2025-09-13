@@ -9,8 +9,16 @@ part of 'create_api_key_req.dart';
 _CreateApiKeyReq _$CreateApiKeyReqFromJson(Map<String, dynamic> json) =>
     _CreateApiKeyReq(
       title: json['title'] as String,
-      type: json['type'] as String,
+      type: $enumDecode(_$ApiKeyTypeEnumMap, json['type']),
     );
 
 Map<String, dynamic> _$CreateApiKeyReqToJson(_CreateApiKeyReq instance) =>
-    <String, dynamic>{'title': instance.title, 'type': instance.type};
+    <String, dynamic>{
+      'title': instance.title,
+      'type': _$ApiKeyTypeEnumMap[instance.type]!,
+    };
+
+const _$ApiKeyTypeEnumMap = {
+  ApiKeyType.publishable: 'publishable',
+  ApiKeyType.secret: 'secret',
+};

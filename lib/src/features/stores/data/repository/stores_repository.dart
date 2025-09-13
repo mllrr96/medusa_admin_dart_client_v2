@@ -1,12 +1,12 @@
-import 'package:medusa_admin_dart_client/src/features/stores/data/api/store_api.dart';
+import 'package:medusa_admin_dart_client/src/features/stores/data/api/stores_api.dart';
 import 'package:medusa_admin_dart_client/src/features/stores/data/models/store_list_res.dart';
 import 'package:medusa_admin_dart_client/src/features/stores/data/models/store_res.dart';
 import 'package:medusa_admin_dart_client/src/features/stores/data/models/update_store_req.dart';
 
-class StoreRepository {
-  final StoreApi _api;
+class StoresRepository {
+  final StoresApi _api;
 
-  StoreRepository(this._api);
+  StoresRepository(this._api);
 
   Future<StoreListRes> list({
     Map<String, dynamic>? query,
