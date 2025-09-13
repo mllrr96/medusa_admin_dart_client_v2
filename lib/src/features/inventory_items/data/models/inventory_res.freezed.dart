@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$InventoryItemRes {
 
- InventoryItem get inventoryItem;
+@JsonKey(name: 'inventory_item') InventoryItem get inventoryItem;
 /// Create a copy of InventoryItemRes
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $InventoryItemResCopyWith<$Res>  {
   factory $InventoryItemResCopyWith(InventoryItemRes value, $Res Function(InventoryItemRes) _then) = _$InventoryItemResCopyWithImpl;
 @useResult
 $Res call({
- InventoryItem inventoryItem
+@JsonKey(name: 'inventory_item') InventoryItem inventoryItem
 });
 
 
@@ -162,7 +162,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( InventoryItem inventoryItem)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'inventory_item')  InventoryItem inventoryItem)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _InventoryItemRes() when $default != null:
 return $default(_that.inventoryItem);case _:
@@ -183,7 +183,7 @@ return $default(_that.inventoryItem);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( InventoryItem inventoryItem)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'inventory_item')  InventoryItem inventoryItem)  $default,) {final _that = this;
 switch (_that) {
 case _InventoryItemRes():
 return $default(_that.inventoryItem);case _:
@@ -203,7 +203,7 @@ return $default(_that.inventoryItem);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( InventoryItem inventoryItem)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'inventory_item')  InventoryItem inventoryItem)?  $default,) {final _that = this;
 switch (_that) {
 case _InventoryItemRes() when $default != null:
 return $default(_that.inventoryItem);case _:
@@ -218,10 +218,10 @@ return $default(_that.inventoryItem);case _:
 @JsonSerializable()
 
 class _InventoryItemRes implements InventoryItemRes {
-  const _InventoryItemRes({required this.inventoryItem});
+  const _InventoryItemRes({@JsonKey(name: 'inventory_item') required this.inventoryItem});
   factory _InventoryItemRes.fromJson(Map<String, dynamic> json) => _$InventoryItemResFromJson(json);
 
-@override final  InventoryItem inventoryItem;
+@override@JsonKey(name: 'inventory_item') final  InventoryItem inventoryItem;
 
 /// Create a copy of InventoryItemRes
 /// with the given fields replaced by the non-null parameter values.
@@ -256,7 +256,7 @@ abstract mixin class _$InventoryItemResCopyWith<$Res> implements $InventoryItemR
   factory _$InventoryItemResCopyWith(_InventoryItemRes value, $Res Function(_InventoryItemRes) _then) = __$InventoryItemResCopyWithImpl;
 @override @useResult
 $Res call({
- InventoryItem inventoryItem
+@JsonKey(name: 'inventory_item') InventoryItem inventoryItem
 });
 
 
@@ -296,7 +296,7 @@ $InventoryItemCopyWith<$Res> get inventoryItem {
 /// @nodoc
 mixin _$InventoryItemsListRes {
 
- List<InventoryItem> get inventoryItems; int get limit; int get offset; int get count;
+@JsonKey(name: 'inventory_item') List<InventoryItem> get inventoryItems; int get limit; int get offset; int get count;
 /// Create a copy of InventoryItemsListRes
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -329,7 +329,7 @@ abstract mixin class $InventoryItemsListResCopyWith<$Res>  {
   factory $InventoryItemsListResCopyWith(InventoryItemsListRes value, $Res Function(InventoryItemsListRes) _then) = _$InventoryItemsListResCopyWithImpl;
 @useResult
 $Res call({
- List<InventoryItem> inventoryItems, int limit, int offset, int count
+@JsonKey(name: 'inventory_item') List<InventoryItem> inventoryItems, int limit, int offset, int count
 });
 
 
@@ -437,7 +437,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<InventoryItem> inventoryItems,  int limit,  int offset,  int count)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'inventory_item')  List<InventoryItem> inventoryItems,  int limit,  int offset,  int count)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _InventoryItemsListRes() when $default != null:
 return $default(_that.inventoryItems,_that.limit,_that.offset,_that.count);case _:
@@ -458,7 +458,7 @@ return $default(_that.inventoryItems,_that.limit,_that.offset,_that.count);case 
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<InventoryItem> inventoryItems,  int limit,  int offset,  int count)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'inventory_item')  List<InventoryItem> inventoryItems,  int limit,  int offset,  int count)  $default,) {final _that = this;
 switch (_that) {
 case _InventoryItemsListRes():
 return $default(_that.inventoryItems,_that.limit,_that.offset,_that.count);case _:
@@ -478,7 +478,7 @@ return $default(_that.inventoryItems,_that.limit,_that.offset,_that.count);case 
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<InventoryItem> inventoryItems,  int limit,  int offset,  int count)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'inventory_item')  List<InventoryItem> inventoryItems,  int limit,  int offset,  int count)?  $default,) {final _that = this;
 switch (_that) {
 case _InventoryItemsListRes() when $default != null:
 return $default(_that.inventoryItems,_that.limit,_that.offset,_that.count);case _:
@@ -493,11 +493,11 @@ return $default(_that.inventoryItems,_that.limit,_that.offset,_that.count);case 
 @JsonSerializable()
 
 class _InventoryItemsListRes implements InventoryItemsListRes {
-  const _InventoryItemsListRes({required final  List<InventoryItem> inventoryItems, required this.limit, required this.offset, required this.count}): _inventoryItems = inventoryItems;
+  const _InventoryItemsListRes({@JsonKey(name: 'inventory_item') required final  List<InventoryItem> inventoryItems, required this.limit, required this.offset, required this.count}): _inventoryItems = inventoryItems;
   factory _InventoryItemsListRes.fromJson(Map<String, dynamic> json) => _$InventoryItemsListResFromJson(json);
 
  final  List<InventoryItem> _inventoryItems;
-@override List<InventoryItem> get inventoryItems {
+@override@JsonKey(name: 'inventory_item') List<InventoryItem> get inventoryItems {
   if (_inventoryItems is EqualUnmodifiableListView) return _inventoryItems;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_inventoryItems);
@@ -540,7 +540,7 @@ abstract mixin class _$InventoryItemsListResCopyWith<$Res> implements $Inventory
   factory _$InventoryItemsListResCopyWith(_InventoryItemsListRes value, $Res Function(_InventoryItemsListRes) _then) = __$InventoryItemsListResCopyWithImpl;
 @override @useResult
 $Res call({
- List<InventoryItem> inventoryItems, int limit, int offset, int count
+@JsonKey(name: 'inventory_item') List<InventoryItem> inventoryItems, int limit, int offset, int count
 });
 
 

@@ -9,17 +9,17 @@ part of 'inventory_res.dart';
 _InventoryItemRes _$InventoryItemResFromJson(Map<String, dynamic> json) =>
     _InventoryItemRes(
       inventoryItem: InventoryItem.fromJson(
-        json['inventoryItem'] as Map<String, dynamic>,
+        json['inventory_item'] as Map<String, dynamic>,
       ),
     );
 
 Map<String, dynamic> _$InventoryItemResToJson(_InventoryItemRes instance) =>
-    <String, dynamic>{'inventoryItem': instance.inventoryItem};
+    <String, dynamic>{'inventory_item': instance.inventoryItem};
 
 _InventoryItemsListRes _$InventoryItemsListResFromJson(
   Map<String, dynamic> json,
 ) => _InventoryItemsListRes(
-  inventoryItems: (json['inventoryItems'] as List<dynamic>)
+  inventoryItems: (json['inventory_item'] as List<dynamic>)
       .map((e) => InventoryItem.fromJson(e as Map<String, dynamic>))
       .toList(),
   limit: (json['limit'] as num).toInt(),
@@ -30,7 +30,7 @@ _InventoryItemsListRes _$InventoryItemsListResFromJson(
 Map<String, dynamic> _$InventoryItemsListResToJson(
   _InventoryItemsListRes instance,
 ) => <String, dynamic>{
-  'inventoryItems': instance.inventoryItems,
+  'inventory_item': instance.inventoryItems,
   'limit': instance.limit,
   'offset': instance.offset,
   'count': instance.count,

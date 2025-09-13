@@ -8,6 +8,7 @@ part 'inventory_res.g.dart';
 @freezed
 abstract class InventoryItemRes with _$InventoryItemRes {
   const factory InventoryItemRes({
+    @JsonKey(name: 'inventory_item')
     required InventoryItem inventoryItem,
   }) = _InventoryItemRes;
 
@@ -18,6 +19,7 @@ abstract class InventoryItemRes with _$InventoryItemRes {
 @freezed
 abstract class InventoryItemsListRes with _$InventoryItemsListRes {
   const factory InventoryItemsListRes({
+    @JsonKey(name: 'inventory_item')
     required List<InventoryItem> inventoryItems,
     required int limit,
     required int offset,
