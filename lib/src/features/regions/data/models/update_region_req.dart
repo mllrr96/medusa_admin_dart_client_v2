@@ -5,6 +5,7 @@ part 'update_region_req.g.dart';
 
 @freezed
 abstract class UpdateRegionReq with _$UpdateRegionReq {
+  @JsonSerializable(includeIfNull: false)
   const factory UpdateRegionReq({
     String? name,
     @JsonKey(name: 'currency_code') String? currencyCode,

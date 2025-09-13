@@ -212,8 +212,8 @@ return $default(_that.name,_that.currencyCode,_that.countries,_that.automaticTax
 }
 
 /// @nodoc
-@JsonSerializable()
 
+@JsonSerializable(includeIfNull: false)
 class _UpdateRegionReq implements UpdateRegionReq {
   const _UpdateRegionReq({this.name, @JsonKey(name: 'currency_code') this.currencyCode, final  List<String>? countries, @JsonKey(name: 'automatic_taxes') this.automaticTaxes, @JsonKey(name: 'payment_providers') final  List<String>? paymentProviders, final  Map<String, dynamic>? metadata, @JsonKey(name: 'is_tax_inclusive') this.isTaxInclusive}): _countries = countries,_paymentProviders = paymentProviders,_metadata = metadata;
   factory _UpdateRegionReq.fromJson(Map<String, dynamic> json) => _$UpdateRegionReqFromJson(json);
