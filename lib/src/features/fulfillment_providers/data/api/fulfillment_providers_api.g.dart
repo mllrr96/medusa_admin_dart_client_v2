@@ -49,14 +49,9 @@ class _FulfillmentProvidersApi implements FulfillmentProvidersApi {
   }
 
   @override
-  Future<FulfillmentProviderOptionListRes> listOptions(
-    String id, {
-    Map<String, dynamic>? query,
-  }) async {
+  Future<FulfillmentProviderOptionListRes> listOptions(String id) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    queryParameters.addAll(query ?? <String, dynamic>{});
-    queryParameters.removeWhere((k, v) => v == null);
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
     final _options = _setStreamType<FulfillmentProviderOptionListRes>(

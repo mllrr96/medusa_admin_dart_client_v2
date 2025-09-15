@@ -71,14 +71,14 @@ Map<String, dynamic> _$FulfillmentToJson(_Fulfillment instance) =>
 
 _FulfillmentItem _$FulfillmentItemFromJson(Map<String, dynamic> json) =>
     _FulfillmentItem(
-      id: json['id'] as String,
-      title: json['title'] as String,
-      quantity: (json['quantity'] as num).toInt(),
-      sku: json['sku'] as String,
-      barcode: json['barcode'] as String,
-      lineItemId: json['line_item_id'] as String,
-      inventoryItemId: json['inventory_item_id'] as String,
-      fulfillmentId: json['fulfillment_id'] as String,
+      id: json['id'] as String?,
+      title: json['title'] as String?,
+      quantity: (json['quantity'] as num?)?.toInt(),
+      sku: json['sku'] as String?,
+      barcode: json['barcode'] as String?,
+      lineItemId: json['line_item_id'] as String?,
+      inventoryItemId: json['inventory_item_id'] as String?,
+      fulfillmentId: json['fulfillment_id'] as String?,
       createdAt: json['created_at'] == null
           ? null
           : DateTime.parse(json['created_at'] as String),

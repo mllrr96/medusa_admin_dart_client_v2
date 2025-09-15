@@ -3,6 +3,7 @@ import 'package:medusa_admin_dart_client/medusa_admin_dart_client_v2.dart';
 import 'package:medusa_admin_dart_client/src/features/fulfillment_providers/data/models/fulfillment_provider.dart';
 
 part 'fulfillment.freezed.dart';
+
 part 'fulfillment.g.dart';
 
 @freezed
@@ -34,14 +35,14 @@ abstract class Fulfillment with _$Fulfillment {
 @freezed
 abstract class FulfillmentItem with _$FulfillmentItem {
   const factory FulfillmentItem({
-    required String id,
-    required String title,
-    required int quantity,
-    required String sku,
-    required String barcode,
-    @JsonKey(name: 'line_item_id') required String lineItemId,
-    @JsonKey(name: 'inventory_item_id') required String inventoryItemId,
-    @JsonKey(name: 'fulfillment_id') required String fulfillmentId,
+    String? id,
+    String? title,
+    int? quantity,
+    String? sku,
+    String? barcode,
+    @JsonKey(name: 'line_item_id') String? lineItemId,
+    @JsonKey(name: 'inventory_item_id') String? inventoryItemId,
+    @JsonKey(name: 'fulfillment_id') String? fulfillmentId,
     @JsonKey(name: 'created_at') DateTime? createdAt,
     @JsonKey(name: 'updated_at') DateTime? updatedAt,
     @JsonKey(name: 'deleted_at') DateTime? deletedAt,

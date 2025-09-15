@@ -21,7 +21,7 @@ class _FulfillmentsApi implements FulfillmentsApi {
 
   @override
   Future<FulfillmentRes> create(
-    CreateFulfillmentReq body, {
+    PostFulfillmentsReq body, {
     Map<String, dynamic>? query,
   }) async {
     final _extra = <String, dynamic>{};

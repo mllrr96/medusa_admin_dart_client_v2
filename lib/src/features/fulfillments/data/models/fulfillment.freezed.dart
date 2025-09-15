@@ -386,7 +386,7 @@ $AddressCopyWith<$Res> get deliveryAddress {
 /// @nodoc
 mixin _$FulfillmentItem {
 
- String get id; String get title; int get quantity; String get sku; String get barcode;@JsonKey(name: 'line_item_id') String get lineItemId;@JsonKey(name: 'inventory_item_id') String get inventoryItemId;@JsonKey(name: 'fulfillment_id') String get fulfillmentId;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt;
+ String? get id; String? get title; int? get quantity; String? get sku; String? get barcode;@JsonKey(name: 'line_item_id') String? get lineItemId;@JsonKey(name: 'inventory_item_id') String? get inventoryItemId;@JsonKey(name: 'fulfillment_id') String? get fulfillmentId;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt;
 /// Create a copy of FulfillmentItem
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -419,7 +419,7 @@ abstract mixin class $FulfillmentItemCopyWith<$Res>  {
   factory $FulfillmentItemCopyWith(FulfillmentItem value, $Res Function(FulfillmentItem) _then) = _$FulfillmentItemCopyWithImpl;
 @useResult
 $Res call({
- String id, String title, int quantity, String sku, String barcode,@JsonKey(name: 'line_item_id') String lineItemId,@JsonKey(name: 'inventory_item_id') String inventoryItemId,@JsonKey(name: 'fulfillment_id') String fulfillmentId,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
+ String? id, String? title, int? quantity, String? sku, String? barcode,@JsonKey(name: 'line_item_id') String? lineItemId,@JsonKey(name: 'inventory_item_id') String? inventoryItemId,@JsonKey(name: 'fulfillment_id') String? fulfillmentId,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
 });
 
 
@@ -436,17 +436,17 @@ class _$FulfillmentItemCopyWithImpl<$Res>
 
 /// Create a copy of FulfillmentItem
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? title = null,Object? quantity = null,Object? sku = null,Object? barcode = null,Object? lineItemId = null,Object? inventoryItemId = null,Object? fulfillmentId = null,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? title = freezed,Object? quantity = freezed,Object? sku = freezed,Object? barcode = freezed,Object? lineItemId = freezed,Object? inventoryItemId = freezed,Object? fulfillmentId = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
   return _then(_self.copyWith(
-id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
-as String,quantity: null == quantity ? _self.quantity : quantity // ignore: cast_nullable_to_non_nullable
-as int,sku: null == sku ? _self.sku : sku // ignore: cast_nullable_to_non_nullable
-as String,barcode: null == barcode ? _self.barcode : barcode // ignore: cast_nullable_to_non_nullable
-as String,lineItemId: null == lineItemId ? _self.lineItemId : lineItemId // ignore: cast_nullable_to_non_nullable
-as String,inventoryItemId: null == inventoryItemId ? _self.inventoryItemId : inventoryItemId // ignore: cast_nullable_to_non_nullable
-as String,fulfillmentId: null == fulfillmentId ? _self.fulfillmentId : fulfillmentId // ignore: cast_nullable_to_non_nullable
-as String,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,title: freezed == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
+as String?,quantity: freezed == quantity ? _self.quantity : quantity // ignore: cast_nullable_to_non_nullable
+as int?,sku: freezed == sku ? _self.sku : sku // ignore: cast_nullable_to_non_nullable
+as String?,barcode: freezed == barcode ? _self.barcode : barcode // ignore: cast_nullable_to_non_nullable
+as String?,lineItemId: freezed == lineItemId ? _self.lineItemId : lineItemId // ignore: cast_nullable_to_non_nullable
+as String?,inventoryItemId: freezed == inventoryItemId ? _self.inventoryItemId : inventoryItemId // ignore: cast_nullable_to_non_nullable
+as String?,fulfillmentId: freezed == fulfillmentId ? _self.fulfillmentId : fulfillmentId // ignore: cast_nullable_to_non_nullable
+as String?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,
@@ -534,7 +534,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String title,  int quantity,  String sku,  String barcode, @JsonKey(name: 'line_item_id')  String lineItemId, @JsonKey(name: 'inventory_item_id')  String inventoryItemId, @JsonKey(name: 'fulfillment_id')  String fulfillmentId, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id,  String? title,  int? quantity,  String? sku,  String? barcode, @JsonKey(name: 'line_item_id')  String? lineItemId, @JsonKey(name: 'inventory_item_id')  String? inventoryItemId, @JsonKey(name: 'fulfillment_id')  String? fulfillmentId, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _FulfillmentItem() when $default != null:
 return $default(_that.id,_that.title,_that.quantity,_that.sku,_that.barcode,_that.lineItemId,_that.inventoryItemId,_that.fulfillmentId,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -555,7 +555,7 @@ return $default(_that.id,_that.title,_that.quantity,_that.sku,_that.barcode,_tha
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String title,  int quantity,  String sku,  String barcode, @JsonKey(name: 'line_item_id')  String lineItemId, @JsonKey(name: 'inventory_item_id')  String inventoryItemId, @JsonKey(name: 'fulfillment_id')  String fulfillmentId, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id,  String? title,  int? quantity,  String? sku,  String? barcode, @JsonKey(name: 'line_item_id')  String? lineItemId, @JsonKey(name: 'inventory_item_id')  String? inventoryItemId, @JsonKey(name: 'fulfillment_id')  String? fulfillmentId, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)  $default,) {final _that = this;
 switch (_that) {
 case _FulfillmentItem():
 return $default(_that.id,_that.title,_that.quantity,_that.sku,_that.barcode,_that.lineItemId,_that.inventoryItemId,_that.fulfillmentId,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -575,7 +575,7 @@ return $default(_that.id,_that.title,_that.quantity,_that.sku,_that.barcode,_tha
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String title,  int quantity,  String sku,  String barcode, @JsonKey(name: 'line_item_id')  String lineItemId, @JsonKey(name: 'inventory_item_id')  String inventoryItemId, @JsonKey(name: 'fulfillment_id')  String fulfillmentId, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id,  String? title,  int? quantity,  String? sku,  String? barcode, @JsonKey(name: 'line_item_id')  String? lineItemId, @JsonKey(name: 'inventory_item_id')  String? inventoryItemId, @JsonKey(name: 'fulfillment_id')  String? fulfillmentId, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _FulfillmentItem() when $default != null:
 return $default(_that.id,_that.title,_that.quantity,_that.sku,_that.barcode,_that.lineItemId,_that.inventoryItemId,_that.fulfillmentId,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -590,17 +590,17 @@ return $default(_that.id,_that.title,_that.quantity,_that.sku,_that.barcode,_tha
 @JsonSerializable()
 
 class _FulfillmentItem implements FulfillmentItem {
-  const _FulfillmentItem({required this.id, required this.title, required this.quantity, required this.sku, required this.barcode, @JsonKey(name: 'line_item_id') required this.lineItemId, @JsonKey(name: 'inventory_item_id') required this.inventoryItemId, @JsonKey(name: 'fulfillment_id') required this.fulfillmentId, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt});
+  const _FulfillmentItem({this.id, this.title, this.quantity, this.sku, this.barcode, @JsonKey(name: 'line_item_id') this.lineItemId, @JsonKey(name: 'inventory_item_id') this.inventoryItemId, @JsonKey(name: 'fulfillment_id') this.fulfillmentId, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt});
   factory _FulfillmentItem.fromJson(Map<String, dynamic> json) => _$FulfillmentItemFromJson(json);
 
-@override final  String id;
-@override final  String title;
-@override final  int quantity;
-@override final  String sku;
-@override final  String barcode;
-@override@JsonKey(name: 'line_item_id') final  String lineItemId;
-@override@JsonKey(name: 'inventory_item_id') final  String inventoryItemId;
-@override@JsonKey(name: 'fulfillment_id') final  String fulfillmentId;
+@override final  String? id;
+@override final  String? title;
+@override final  int? quantity;
+@override final  String? sku;
+@override final  String? barcode;
+@override@JsonKey(name: 'line_item_id') final  String? lineItemId;
+@override@JsonKey(name: 'inventory_item_id') final  String? inventoryItemId;
+@override@JsonKey(name: 'fulfillment_id') final  String? fulfillmentId;
 @override@JsonKey(name: 'created_at') final  DateTime? createdAt;
 @override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
 @override@JsonKey(name: 'deleted_at') final  DateTime? deletedAt;
@@ -638,7 +638,7 @@ abstract mixin class _$FulfillmentItemCopyWith<$Res> implements $FulfillmentItem
   factory _$FulfillmentItemCopyWith(_FulfillmentItem value, $Res Function(_FulfillmentItem) _then) = __$FulfillmentItemCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String title, int quantity, String sku, String barcode,@JsonKey(name: 'line_item_id') String lineItemId,@JsonKey(name: 'inventory_item_id') String inventoryItemId,@JsonKey(name: 'fulfillment_id') String fulfillmentId,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
+ String? id, String? title, int? quantity, String? sku, String? barcode,@JsonKey(name: 'line_item_id') String? lineItemId,@JsonKey(name: 'inventory_item_id') String? inventoryItemId,@JsonKey(name: 'fulfillment_id') String? fulfillmentId,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
 });
 
 
@@ -655,17 +655,17 @@ class __$FulfillmentItemCopyWithImpl<$Res>
 
 /// Create a copy of FulfillmentItem
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? title = null,Object? quantity = null,Object? sku = null,Object? barcode = null,Object? lineItemId = null,Object? inventoryItemId = null,Object? fulfillmentId = null,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? title = freezed,Object? quantity = freezed,Object? sku = freezed,Object? barcode = freezed,Object? lineItemId = freezed,Object? inventoryItemId = freezed,Object? fulfillmentId = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
   return _then(_FulfillmentItem(
-id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,title: null == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
-as String,quantity: null == quantity ? _self.quantity : quantity // ignore: cast_nullable_to_non_nullable
-as int,sku: null == sku ? _self.sku : sku // ignore: cast_nullable_to_non_nullable
-as String,barcode: null == barcode ? _self.barcode : barcode // ignore: cast_nullable_to_non_nullable
-as String,lineItemId: null == lineItemId ? _self.lineItemId : lineItemId // ignore: cast_nullable_to_non_nullable
-as String,inventoryItemId: null == inventoryItemId ? _self.inventoryItemId : inventoryItemId // ignore: cast_nullable_to_non_nullable
-as String,fulfillmentId: null == fulfillmentId ? _self.fulfillmentId : fulfillmentId // ignore: cast_nullable_to_non_nullable
-as String,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,title: freezed == title ? _self.title : title // ignore: cast_nullable_to_non_nullable
+as String?,quantity: freezed == quantity ? _self.quantity : quantity // ignore: cast_nullable_to_non_nullable
+as int?,sku: freezed == sku ? _self.sku : sku // ignore: cast_nullable_to_non_nullable
+as String?,barcode: freezed == barcode ? _self.barcode : barcode // ignore: cast_nullable_to_non_nullable
+as String?,lineItemId: freezed == lineItemId ? _self.lineItemId : lineItemId // ignore: cast_nullable_to_non_nullable
+as String?,inventoryItemId: freezed == inventoryItemId ? _self.inventoryItemId : inventoryItemId // ignore: cast_nullable_to_non_nullable
+as String?,fulfillmentId: freezed == fulfillmentId ? _self.fulfillmentId : fulfillmentId // ignore: cast_nullable_to_non_nullable
+as String?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,

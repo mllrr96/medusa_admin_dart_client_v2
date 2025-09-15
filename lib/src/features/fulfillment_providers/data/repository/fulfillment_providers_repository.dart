@@ -14,9 +14,8 @@ class FulfillmentProvidersRepository {
   }
 
   Future<FulfillmentProviderOptionListRes> listOptions(
-    String id, {
-    Map<String, dynamic>? query,
-  }) async {
-    return _api.listOptions(id, query: query);
+    String id,
+  ) async {
+    return _api.listOptions(id);
   }
 }

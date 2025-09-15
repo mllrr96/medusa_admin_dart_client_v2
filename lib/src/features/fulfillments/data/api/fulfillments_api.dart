@@ -10,7 +10,7 @@ abstract class FulfillmentsApi {
 
   @POST('/admin/fulfillments')
   Future<FulfillmentRes> create(
-    @Body() CreateFulfillmentReq body, {
+    @Body() PostFulfillmentsReq body, {
     @Queries() Map<String, dynamic>? query,
   });
 

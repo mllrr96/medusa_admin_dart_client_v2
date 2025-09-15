@@ -7,7 +7,7 @@ class FulfillmentsRepository {
   FulfillmentsRepository(this._api);
 
   Future<FulfillmentRes> create(
-    CreateFulfillmentReq body, {
+    PostFulfillmentsReq body, {
     Map<String, dynamic>? query,
   }) async => _api.create(body, query: query);
 

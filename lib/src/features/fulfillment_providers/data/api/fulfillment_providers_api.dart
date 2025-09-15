@@ -17,7 +17,6 @@ abstract class FulfillmentProvidersApi {
 
   @GET('/admin/fulfillment-providers/{id}/options')
   Future<FulfillmentProviderOptionListRes> listOptions(
-    @Path('id') String id, {
-    @Queries() Map<String, dynamic>? query,
-  });
+    @Path('id') String id,
+  );
 }

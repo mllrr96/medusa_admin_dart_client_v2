@@ -1,12 +1,12 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:medusa_admin_dart_client/medusa_admin_dart_client_v2.dart';
 
-part 'create_fulfillment_req.freezed.dart';
-part 'create_fulfillment_req.g.dart';
+part 'post_fulfillments_req.freezed.dart';
+part 'post_fulfillments_req.g.dart';
 
 @freezed
-abstract class CreateFulfillmentReq with _$CreateFulfillmentReq {
-  const factory CreateFulfillmentReq({
+abstract class PostFulfillmentsReq with _$PostFulfillmentsReq {
+  const factory PostFulfillmentsReq({
     @JsonKey(name: 'location_id') required String locationId,
     @JsonKey(name: 'provider_id') required String providerId,
     @JsonKey(name: 'delivery_address') required Address deliveryAddress,
@@ -20,8 +20,8 @@ abstract class CreateFulfillmentReq with _$CreateFulfillmentReq {
     @JsonKey(name: 'delivered_at') DateTime? deliveredAt,
     @JsonKey(name: 'canceled_at') DateTime? canceledAt,
     required Map<String, dynamic> metadata,
-  }) = _CreateFulfillmentReq;
+  }) = _PostFulfillmentsReq;
 
-  factory CreateFulfillmentReq.fromJson(Map<String, dynamic> json) =>
-      _$CreateFulfillmentReqFromJson(json);
+  factory PostFulfillmentsReq.fromJson(Map<String, dynamic> json) =>
+      _$PostFulfillmentsReqFromJson(json);
 }

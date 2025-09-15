@@ -3,7 +3,7 @@
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
-part of 'create_fulfillment_req.dart';
+part of 'post_fulfillments_req.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -13,22 +13,22 @@ part of 'create_fulfillment_req.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-mixin _$CreateFulfillmentReq {
+mixin _$PostFulfillmentsReq {
 
 @JsonKey(name: 'location_id') String get locationId;@JsonKey(name: 'provider_id') String get providerId;@JsonKey(name: 'delivery_address') Address get deliveryAddress; List<FulfillmentItem> get items; List<FulfillmentLabel> get labels;@JsonKey(name: 'order_id') String get orderId;@JsonKey(name: 'shipping_option_id') String? get shippingOptionId; Map<String, dynamic> get data;@JsonKey(name: 'packed_at') DateTime? get packedAt;@JsonKey(name: 'shipped_at') DateTime? get shippedAt;@JsonKey(name: 'delivered_at') DateTime? get deliveredAt;@JsonKey(name: 'canceled_at') DateTime? get canceledAt; Map<String, dynamic> get metadata;
-/// Create a copy of CreateFulfillmentReq
+/// Create a copy of PostFulfillmentsReq
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-$CreateFulfillmentReqCopyWith<CreateFulfillmentReq> get copyWith => _$CreateFulfillmentReqCopyWithImpl<CreateFulfillmentReq>(this as CreateFulfillmentReq, _$identity);
+$PostFulfillmentsReqCopyWith<PostFulfillmentsReq> get copyWith => _$PostFulfillmentsReqCopyWithImpl<PostFulfillmentsReq>(this as PostFulfillmentsReq, _$identity);
 
-  /// Serializes this CreateFulfillmentReq to a JSON map.
+  /// Serializes this PostFulfillmentsReq to a JSON map.
   Map<String, dynamic> toJson();
 
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is CreateFulfillmentReq&&(identical(other.locationId, locationId) || other.locationId == locationId)&&(identical(other.providerId, providerId) || other.providerId == providerId)&&(identical(other.deliveryAddress, deliveryAddress) || other.deliveryAddress == deliveryAddress)&&const DeepCollectionEquality().equals(other.items, items)&&const DeepCollectionEquality().equals(other.labels, labels)&&(identical(other.orderId, orderId) || other.orderId == orderId)&&(identical(other.shippingOptionId, shippingOptionId) || other.shippingOptionId == shippingOptionId)&&const DeepCollectionEquality().equals(other.data, data)&&(identical(other.packedAt, packedAt) || other.packedAt == packedAt)&&(identical(other.shippedAt, shippedAt) || other.shippedAt == shippedAt)&&(identical(other.deliveredAt, deliveredAt) || other.deliveredAt == deliveredAt)&&(identical(other.canceledAt, canceledAt) || other.canceledAt == canceledAt)&&const DeepCollectionEquality().equals(other.metadata, metadata));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is PostFulfillmentsReq&&(identical(other.locationId, locationId) || other.locationId == locationId)&&(identical(other.providerId, providerId) || other.providerId == providerId)&&(identical(other.deliveryAddress, deliveryAddress) || other.deliveryAddress == deliveryAddress)&&const DeepCollectionEquality().equals(other.items, items)&&const DeepCollectionEquality().equals(other.labels, labels)&&(identical(other.orderId, orderId) || other.orderId == orderId)&&(identical(other.shippingOptionId, shippingOptionId) || other.shippingOptionId == shippingOptionId)&&const DeepCollectionEquality().equals(other.data, data)&&(identical(other.packedAt, packedAt) || other.packedAt == packedAt)&&(identical(other.shippedAt, shippedAt) || other.shippedAt == shippedAt)&&(identical(other.deliveredAt, deliveredAt) || other.deliveredAt == deliveredAt)&&(identical(other.canceledAt, canceledAt) || other.canceledAt == canceledAt)&&const DeepCollectionEquality().equals(other.metadata, metadata));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -37,15 +37,15 @@ int get hashCode => Object.hash(runtimeType,locationId,providerId,deliveryAddres
 
 @override
 String toString() {
-  return 'CreateFulfillmentReq(locationId: $locationId, providerId: $providerId, deliveryAddress: $deliveryAddress, items: $items, labels: $labels, orderId: $orderId, shippingOptionId: $shippingOptionId, data: $data, packedAt: $packedAt, shippedAt: $shippedAt, deliveredAt: $deliveredAt, canceledAt: $canceledAt, metadata: $metadata)';
+  return 'PostFulfillmentsReq(locationId: $locationId, providerId: $providerId, deliveryAddress: $deliveryAddress, items: $items, labels: $labels, orderId: $orderId, shippingOptionId: $shippingOptionId, data: $data, packedAt: $packedAt, shippedAt: $shippedAt, deliveredAt: $deliveredAt, canceledAt: $canceledAt, metadata: $metadata)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class $CreateFulfillmentReqCopyWith<$Res>  {
-  factory $CreateFulfillmentReqCopyWith(CreateFulfillmentReq value, $Res Function(CreateFulfillmentReq) _then) = _$CreateFulfillmentReqCopyWithImpl;
+abstract mixin class $PostFulfillmentsReqCopyWith<$Res>  {
+  factory $PostFulfillmentsReqCopyWith(PostFulfillmentsReq value, $Res Function(PostFulfillmentsReq) _then) = _$PostFulfillmentsReqCopyWithImpl;
 @useResult
 $Res call({
 @JsonKey(name: 'location_id') String locationId,@JsonKey(name: 'provider_id') String providerId,@JsonKey(name: 'delivery_address') Address deliveryAddress, List<FulfillmentItem> items, List<FulfillmentLabel> labels,@JsonKey(name: 'order_id') String orderId,@JsonKey(name: 'shipping_option_id') String? shippingOptionId, Map<String, dynamic> data,@JsonKey(name: 'packed_at') DateTime? packedAt,@JsonKey(name: 'shipped_at') DateTime? shippedAt,@JsonKey(name: 'delivered_at') DateTime? deliveredAt,@JsonKey(name: 'canceled_at') DateTime? canceledAt, Map<String, dynamic> metadata
@@ -56,14 +56,14 @@ $AddressCopyWith<$Res> get deliveryAddress;
 
 }
 /// @nodoc
-class _$CreateFulfillmentReqCopyWithImpl<$Res>
-    implements $CreateFulfillmentReqCopyWith<$Res> {
-  _$CreateFulfillmentReqCopyWithImpl(this._self, this._then);
+class _$PostFulfillmentsReqCopyWithImpl<$Res>
+    implements $PostFulfillmentsReqCopyWith<$Res> {
+  _$PostFulfillmentsReqCopyWithImpl(this._self, this._then);
 
-  final CreateFulfillmentReq _self;
-  final $Res Function(CreateFulfillmentReq) _then;
+  final PostFulfillmentsReq _self;
+  final $Res Function(PostFulfillmentsReq) _then;
 
-/// Create a copy of CreateFulfillmentReq
+/// Create a copy of PostFulfillmentsReq
 /// with the given fields replaced by the non-null parameter values.
 @pragma('vm:prefer-inline') @override $Res call({Object? locationId = null,Object? providerId = null,Object? deliveryAddress = null,Object? items = null,Object? labels = null,Object? orderId = null,Object? shippingOptionId = freezed,Object? data = null,Object? packedAt = freezed,Object? shippedAt = freezed,Object? deliveredAt = freezed,Object? canceledAt = freezed,Object? metadata = null,}) {
   return _then(_self.copyWith(
@@ -83,7 +83,7 @@ as DateTime?,metadata: null == metadata ? _self.metadata : metadata // ignore: c
 as Map<String, dynamic>,
   ));
 }
-/// Create a copy of CreateFulfillmentReq
+/// Create a copy of PostFulfillmentsReq
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
@@ -96,8 +96,8 @@ $AddressCopyWith<$Res> get deliveryAddress {
 }
 
 
-/// Adds pattern-matching-related methods to [CreateFulfillmentReq].
-extension CreateFulfillmentReqPatterns on CreateFulfillmentReq {
+/// Adds pattern-matching-related methods to [PostFulfillmentsReq].
+extension PostFulfillmentsReqPatterns on PostFulfillmentsReq {
 /// A variant of `map` that fallback to returning `orElse`.
 ///
 /// It is equivalent to doing:
@@ -110,10 +110,10 @@ extension CreateFulfillmentReqPatterns on CreateFulfillmentReq {
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _CreateFulfillmentReq value)?  $default,{required TResult orElse(),}){
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _PostFulfillmentsReq value)?  $default,{required TResult orElse(),}){
 final _that = this;
 switch (_that) {
-case _CreateFulfillmentReq() when $default != null:
+case _PostFulfillmentsReq() when $default != null:
 return $default(_that);case _:
   return orElse();
 
@@ -132,10 +132,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _CreateFulfillmentReq value)  $default,){
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _PostFulfillmentsReq value)  $default,){
 final _that = this;
 switch (_that) {
-case _CreateFulfillmentReq():
+case _PostFulfillmentsReq():
 return $default(_that);case _:
   throw StateError('Unexpected subclass');
 
@@ -153,10 +153,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _CreateFulfillmentReq value)?  $default,){
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _PostFulfillmentsReq value)?  $default,){
 final _that = this;
 switch (_that) {
-case _CreateFulfillmentReq() when $default != null:
+case _PostFulfillmentsReq() when $default != null:
 return $default(_that);case _:
   return null;
 
@@ -176,7 +176,7 @@ return $default(_that);case _:
 
 @optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'location_id')  String locationId, @JsonKey(name: 'provider_id')  String providerId, @JsonKey(name: 'delivery_address')  Address deliveryAddress,  List<FulfillmentItem> items,  List<FulfillmentLabel> labels, @JsonKey(name: 'order_id')  String orderId, @JsonKey(name: 'shipping_option_id')  String? shippingOptionId,  Map<String, dynamic> data, @JsonKey(name: 'packed_at')  DateTime? packedAt, @JsonKey(name: 'shipped_at')  DateTime? shippedAt, @JsonKey(name: 'delivered_at')  DateTime? deliveredAt, @JsonKey(name: 'canceled_at')  DateTime? canceledAt,  Map<String, dynamic> metadata)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
-case _CreateFulfillmentReq() when $default != null:
+case _PostFulfillmentsReq() when $default != null:
 return $default(_that.locationId,_that.providerId,_that.deliveryAddress,_that.items,_that.labels,_that.orderId,_that.shippingOptionId,_that.data,_that.packedAt,_that.shippedAt,_that.deliveredAt,_that.canceledAt,_that.metadata);case _:
   return orElse();
 
@@ -197,7 +197,7 @@ return $default(_that.locationId,_that.providerId,_that.deliveryAddress,_that.it
 
 @optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'location_id')  String locationId, @JsonKey(name: 'provider_id')  String providerId, @JsonKey(name: 'delivery_address')  Address deliveryAddress,  List<FulfillmentItem> items,  List<FulfillmentLabel> labels, @JsonKey(name: 'order_id')  String orderId, @JsonKey(name: 'shipping_option_id')  String? shippingOptionId,  Map<String, dynamic> data, @JsonKey(name: 'packed_at')  DateTime? packedAt, @JsonKey(name: 'shipped_at')  DateTime? shippedAt, @JsonKey(name: 'delivered_at')  DateTime? deliveredAt, @JsonKey(name: 'canceled_at')  DateTime? canceledAt,  Map<String, dynamic> metadata)  $default,) {final _that = this;
 switch (_that) {
-case _CreateFulfillmentReq():
+case _PostFulfillmentsReq():
 return $default(_that.locationId,_that.providerId,_that.deliveryAddress,_that.items,_that.labels,_that.orderId,_that.shippingOptionId,_that.data,_that.packedAt,_that.shippedAt,_that.deliveredAt,_that.canceledAt,_that.metadata);case _:
   throw StateError('Unexpected subclass');
 
@@ -217,7 +217,7 @@ return $default(_that.locationId,_that.providerId,_that.deliveryAddress,_that.it
 
 @optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'location_id')  String locationId, @JsonKey(name: 'provider_id')  String providerId, @JsonKey(name: 'delivery_address')  Address deliveryAddress,  List<FulfillmentItem> items,  List<FulfillmentLabel> labels, @JsonKey(name: 'order_id')  String orderId, @JsonKey(name: 'shipping_option_id')  String? shippingOptionId,  Map<String, dynamic> data, @JsonKey(name: 'packed_at')  DateTime? packedAt, @JsonKey(name: 'shipped_at')  DateTime? shippedAt, @JsonKey(name: 'delivered_at')  DateTime? deliveredAt, @JsonKey(name: 'canceled_at')  DateTime? canceledAt,  Map<String, dynamic> metadata)?  $default,) {final _that = this;
 switch (_that) {
-case _CreateFulfillmentReq() when $default != null:
+case _PostFulfillmentsReq() when $default != null:
 return $default(_that.locationId,_that.providerId,_that.deliveryAddress,_that.items,_that.labels,_that.orderId,_that.shippingOptionId,_that.data,_that.packedAt,_that.shippedAt,_that.deliveredAt,_that.canceledAt,_that.metadata);case _:
   return null;
 
@@ -229,9 +229,9 @@ return $default(_that.locationId,_that.providerId,_that.deliveryAddress,_that.it
 /// @nodoc
 @JsonSerializable()
 
-class _CreateFulfillmentReq implements CreateFulfillmentReq {
-  const _CreateFulfillmentReq({@JsonKey(name: 'location_id') required this.locationId, @JsonKey(name: 'provider_id') required this.providerId, @JsonKey(name: 'delivery_address') required this.deliveryAddress, required final  List<FulfillmentItem> items, required final  List<FulfillmentLabel> labels, @JsonKey(name: 'order_id') required this.orderId, @JsonKey(name: 'shipping_option_id') this.shippingOptionId, required final  Map<String, dynamic> data, @JsonKey(name: 'packed_at') this.packedAt, @JsonKey(name: 'shipped_at') this.shippedAt, @JsonKey(name: 'delivered_at') this.deliveredAt, @JsonKey(name: 'canceled_at') this.canceledAt, required final  Map<String, dynamic> metadata}): _items = items,_labels = labels,_data = data,_metadata = metadata;
-  factory _CreateFulfillmentReq.fromJson(Map<String, dynamic> json) => _$CreateFulfillmentReqFromJson(json);
+class _PostFulfillmentsReq implements PostFulfillmentsReq {
+  const _PostFulfillmentsReq({@JsonKey(name: 'location_id') required this.locationId, @JsonKey(name: 'provider_id') required this.providerId, @JsonKey(name: 'delivery_address') required this.deliveryAddress, required final  List<FulfillmentItem> items, required final  List<FulfillmentLabel> labels, @JsonKey(name: 'order_id') required this.orderId, @JsonKey(name: 'shipping_option_id') this.shippingOptionId, required final  Map<String, dynamic> data, @JsonKey(name: 'packed_at') this.packedAt, @JsonKey(name: 'shipped_at') this.shippedAt, @JsonKey(name: 'delivered_at') this.deliveredAt, @JsonKey(name: 'canceled_at') this.canceledAt, required final  Map<String, dynamic> metadata}): _items = items,_labels = labels,_data = data,_metadata = metadata;
+  factory _PostFulfillmentsReq.fromJson(Map<String, dynamic> json) => _$PostFulfillmentsReqFromJson(json);
 
 @override@JsonKey(name: 'location_id') final  String locationId;
 @override@JsonKey(name: 'provider_id') final  String providerId;
@@ -271,20 +271,20 @@ class _CreateFulfillmentReq implements CreateFulfillmentReq {
 }
 
 
-/// Create a copy of CreateFulfillmentReq
+/// Create a copy of PostFulfillmentsReq
 /// with the given fields replaced by the non-null parameter values.
 @override @JsonKey(includeFromJson: false, includeToJson: false)
 @pragma('vm:prefer-inline')
-_$CreateFulfillmentReqCopyWith<_CreateFulfillmentReq> get copyWith => __$CreateFulfillmentReqCopyWithImpl<_CreateFulfillmentReq>(this, _$identity);
+_$PostFulfillmentsReqCopyWith<_PostFulfillmentsReq> get copyWith => __$PostFulfillmentsReqCopyWithImpl<_PostFulfillmentsReq>(this, _$identity);
 
 @override
 Map<String, dynamic> toJson() {
-  return _$CreateFulfillmentReqToJson(this, );
+  return _$PostFulfillmentsReqToJson(this, );
 }
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _CreateFulfillmentReq&&(identical(other.locationId, locationId) || other.locationId == locationId)&&(identical(other.providerId, providerId) || other.providerId == providerId)&&(identical(other.deliveryAddress, deliveryAddress) || other.deliveryAddress == deliveryAddress)&&const DeepCollectionEquality().equals(other._items, _items)&&const DeepCollectionEquality().equals(other._labels, _labels)&&(identical(other.orderId, orderId) || other.orderId == orderId)&&(identical(other.shippingOptionId, shippingOptionId) || other.shippingOptionId == shippingOptionId)&&const DeepCollectionEquality().equals(other._data, _data)&&(identical(other.packedAt, packedAt) || other.packedAt == packedAt)&&(identical(other.shippedAt, shippedAt) || other.shippedAt == shippedAt)&&(identical(other.deliveredAt, deliveredAt) || other.deliveredAt == deliveredAt)&&(identical(other.canceledAt, canceledAt) || other.canceledAt == canceledAt)&&const DeepCollectionEquality().equals(other._metadata, _metadata));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _PostFulfillmentsReq&&(identical(other.locationId, locationId) || other.locationId == locationId)&&(identical(other.providerId, providerId) || other.providerId == providerId)&&(identical(other.deliveryAddress, deliveryAddress) || other.deliveryAddress == deliveryAddress)&&const DeepCollectionEquality().equals(other._items, _items)&&const DeepCollectionEquality().equals(other._labels, _labels)&&(identical(other.orderId, orderId) || other.orderId == orderId)&&(identical(other.shippingOptionId, shippingOptionId) || other.shippingOptionId == shippingOptionId)&&const DeepCollectionEquality().equals(other._data, _data)&&(identical(other.packedAt, packedAt) || other.packedAt == packedAt)&&(identical(other.shippedAt, shippedAt) || other.shippedAt == shippedAt)&&(identical(other.deliveredAt, deliveredAt) || other.deliveredAt == deliveredAt)&&(identical(other.canceledAt, canceledAt) || other.canceledAt == canceledAt)&&const DeepCollectionEquality().equals(other._metadata, _metadata));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -293,15 +293,15 @@ int get hashCode => Object.hash(runtimeType,locationId,providerId,deliveryAddres
 
 @override
 String toString() {
-  return 'CreateFulfillmentReq(locationId: $locationId, providerId: $providerId, deliveryAddress: $deliveryAddress, items: $items, labels: $labels, orderId: $orderId, shippingOptionId: $shippingOptionId, data: $data, packedAt: $packedAt, shippedAt: $shippedAt, deliveredAt: $deliveredAt, canceledAt: $canceledAt, metadata: $metadata)';
+  return 'PostFulfillmentsReq(locationId: $locationId, providerId: $providerId, deliveryAddress: $deliveryAddress, items: $items, labels: $labels, orderId: $orderId, shippingOptionId: $shippingOptionId, data: $data, packedAt: $packedAt, shippedAt: $shippedAt, deliveredAt: $deliveredAt, canceledAt: $canceledAt, metadata: $metadata)';
 }
 
 
 }
 
 /// @nodoc
-abstract mixin class _$CreateFulfillmentReqCopyWith<$Res> implements $CreateFulfillmentReqCopyWith<$Res> {
-  factory _$CreateFulfillmentReqCopyWith(_CreateFulfillmentReq value, $Res Function(_CreateFulfillmentReq) _then) = __$CreateFulfillmentReqCopyWithImpl;
+abstract mixin class _$PostFulfillmentsReqCopyWith<$Res> implements $PostFulfillmentsReqCopyWith<$Res> {
+  factory _$PostFulfillmentsReqCopyWith(_PostFulfillmentsReq value, $Res Function(_PostFulfillmentsReq) _then) = __$PostFulfillmentsReqCopyWithImpl;
 @override @useResult
 $Res call({
 @JsonKey(name: 'location_id') String locationId,@JsonKey(name: 'provider_id') String providerId,@JsonKey(name: 'delivery_address') Address deliveryAddress, List<FulfillmentItem> items, List<FulfillmentLabel> labels,@JsonKey(name: 'order_id') String orderId,@JsonKey(name: 'shipping_option_id') String? shippingOptionId, Map<String, dynamic> data,@JsonKey(name: 'packed_at') DateTime? packedAt,@JsonKey(name: 'shipped_at') DateTime? shippedAt,@JsonKey(name: 'delivered_at') DateTime? deliveredAt,@JsonKey(name: 'canceled_at') DateTime? canceledAt, Map<String, dynamic> metadata
@@ -312,17 +312,17 @@ $Res call({
 
 }
 /// @nodoc
-class __$CreateFulfillmentReqCopyWithImpl<$Res>
-    implements _$CreateFulfillmentReqCopyWith<$Res> {
-  __$CreateFulfillmentReqCopyWithImpl(this._self, this._then);
+class __$PostFulfillmentsReqCopyWithImpl<$Res>
+    implements _$PostFulfillmentsReqCopyWith<$Res> {
+  __$PostFulfillmentsReqCopyWithImpl(this._self, this._then);
 
-  final _CreateFulfillmentReq _self;
-  final $Res Function(_CreateFulfillmentReq) _then;
+  final _PostFulfillmentsReq _self;
+  final $Res Function(_PostFulfillmentsReq) _then;
 
-/// Create a copy of CreateFulfillmentReq
+/// Create a copy of PostFulfillmentsReq
 /// with the given fields replaced by the non-null parameter values.
 @override @pragma('vm:prefer-inline') $Res call({Object? locationId = null,Object? providerId = null,Object? deliveryAddress = null,Object? items = null,Object? labels = null,Object? orderId = null,Object? shippingOptionId = freezed,Object? data = null,Object? packedAt = freezed,Object? shippedAt = freezed,Object? deliveredAt = freezed,Object? canceledAt = freezed,Object? metadata = null,}) {
-  return _then(_CreateFulfillmentReq(
+  return _then(_PostFulfillmentsReq(
 locationId: null == locationId ? _self.locationId : locationId // ignore: cast_nullable_to_non_nullable
 as String,providerId: null == providerId ? _self.providerId : providerId // ignore: cast_nullable_to_non_nullable
 as String,deliveryAddress: null == deliveryAddress ? _self.deliveryAddress : deliveryAddress // ignore: cast_nullable_to_non_nullable
@@ -340,7 +340,7 @@ as Map<String, dynamic>,
   ));
 }
 
-/// Create a copy of CreateFulfillmentReq
+/// Create a copy of PostFulfillmentsReq
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')

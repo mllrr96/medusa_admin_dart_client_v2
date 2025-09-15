@@ -1,4 +1,4 @@
-export 'create_fulfillment_req.dart';
+export 'post_fulfillments_req.dart';
 export 'create_fulfillment_set_service_zones.dart';
 export 'create_shipment_req.dart';
 export 'fulfillment_res.dart';
