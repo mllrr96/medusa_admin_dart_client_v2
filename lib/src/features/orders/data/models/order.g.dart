@@ -107,12 +107,12 @@ const _$PaymentStatusEnumMap = {
 
 const _$FulfillmentStatusEnumMap = {
   FulfillmentStatus.canceled: 'canceled',
-  FulfillmentStatus.notFulfilled: 'notFulfilled',
-  FulfillmentStatus.partiallyFulfilled: 'partiallyFulfilled',
+  FulfillmentStatus.notFulfilled: 'not_fulfilled',
+  FulfillmentStatus.partiallyFulfilled: 'partially_fulfilled',
   FulfillmentStatus.fulfilled: 'fulfilled',
-  FulfillmentStatus.partiallyShipped: 'partiallyShipped',
+  FulfillmentStatus.partiallyShipped: 'partially_shipped',
   FulfillmentStatus.shipped: 'shipped',
-  FulfillmentStatus.partiallyDelivered: 'partiallyDelivered',
+  FulfillmentStatus.partiallyDelivered: 'partially_delivered',
   FulfillmentStatus.delivered: 'delivered',
 };
 
