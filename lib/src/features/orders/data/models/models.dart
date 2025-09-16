@@ -14,3 +14,4 @@ export 'create_order_shipment_req.dart';
 export 'order_line_items_list_res.dart';
 export 'order_shipping_options_list_res.dart';
 export 'transfer_order_req.dart';
+export 'raw_amount.dart';

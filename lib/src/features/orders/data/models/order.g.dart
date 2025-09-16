@@ -9,18 +9,7 @@ part of 'order.dart';
 _Order _$OrderFromJson(Map<String, dynamic> json) => _Order(
   id: json['id'] as String,
   version: (json['version'] as num).toInt(),
-  regionId: json['region_id'] as String?,
-  customerId: json['customer_id'] as String?,
-  salesChannelId: json['sales_channel_id'] as String?,
-  email: json['email'] as String,
-  currencyCode: json['currency_code'] as String?,
   displayId: (json['display_id'] as num?)?.toInt(),
-  items: (json['items'] as List<dynamic>?)
-      ?.map((e) => OrderLineItem.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  shippingMethods: (json['shipping_methods'] as List<dynamic>?)
-      ?.map((e) => OrderShippingMethod.fromJson(e as Map<String, dynamic>))
-      .toList(),
   paymentStatus: $enumDecodeNullable(
     _$PaymentStatusEnumMap,
     json['payment_status'],
@@ -29,12 +18,13 @@ _Order _$OrderFromJson(Map<String, dynamic> json) => _Order(
     _$FulfillmentStatusEnumMap,
     json['fulfillment_status'],
   ),
-  transactions: (json['transactions'] as List<dynamic>?)
-      ?.map((e) => Transaction.fromJson(e as Map<String, dynamic>))
+  items: (json['items'] as List<dynamic>?)
+      ?.map((e) => OrderLineItem.fromJson(e as Map<String, dynamic>))
       .toList(),
   summary: json['summary'] == null
       ? null
       : BaseOrderSummary.fromJson(json['summary'] as Map<String, dynamic>),
+  status: $enumDecodeNullable(_$OrderStatusEnumMap, json['status']),
   metadata: json['metadata'] as Map<String, dynamic>?,
   createdAt: json['created_at'] == null
       ? null
@@ -64,49 +54,17 @@ _Order _$OrderFromJson(Map<String, dynamic> json) => _Order(
   originalShippingTotal: json['original_shipping_total'] as num?,
   originalShippingSubtotal: json['original_shipping_subtotal'] as num?,
   originalShippingTaxTotal: json['original_shipping_tax_total'] as num?,
-  status: $enumDecode(_$OrderStatusEnumMap, json['status']),
-  region: json['region'] == null
-      ? null
-      : Region.fromJson(json['region'] as Map<String, dynamic>),
-  creditLines: (json['credit_lines'] as List<dynamic>?)
-      ?.map((e) => OrderCreditLine.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  creditLineTotal: json['credit_line_total'] as num?,
-  paymentCollections: (json['payment_collections'] as List<dynamic>?)
-      ?.map((e) => PaymentCollection.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  fulfillments: (json['fulfillments'] as List<dynamic>?)
-      ?.map((e) => OrderFulfillment.fromJson(e as Map<String, dynamic>))
-      .toList(),
-  salesChannel: json['sales_channel'] == null
-      ? null
-      : SalesChannel.fromJson(json['sales_channel'] as Map<String, dynamic>),
-  customer: json['customer'] == null
-      ? null
-      : Customer.fromJson(json['customer'] as Map<String, dynamic>),
-  shippingAddress: json['shipping_address'] == null
-      ? null
-      : Address.fromJson(json['shipping_address'] as Map<String, dynamic>),
-  billingAddress: json['billing_address'] == null
-      ? null
-      : Address.fromJson(json['billing_address'] as Map<String, dynamic>),
 );
 
 Map<String, dynamic> _$OrderToJson(_Order instance) => <String, dynamic>{
   'id': instance.id,
   'version': instance.version,
-  'region_id': instance.regionId,
-  'customer_id': instance.customerId,
-  'sales_channel_id': instance.salesChannelId,
-  'email': instance.email,
-  'currency_code': instance.currencyCode,
   'display_id': instance.displayId,
-  'items': instance.items,
-  'shipping_methods': instance.shippingMethods,
   'payment_status': _$PaymentStatusEnumMap[instance.paymentStatus],
   'fulfillment_status': _$FulfillmentStatusEnumMap[instance.fulfillmentStatus],
-  'transactions': instance.transactions,
+  'items': instance.items,
   'summary': instance.summary,
+  'status': _$OrderStatusEnumMap[instance.status],
   'metadata': instance.metadata,
   'created_at': instance.createdAt?.toIso8601String(),
   'updated_at': instance.updatedAt?.toIso8601String(),
@@ -132,16 +90,6 @@ Map<String, dynamic> _$OrderToJson(_Order instance) => <String, dynamic>{
   'original_shipping_total': instance.originalShippingTotal,
   'original_shipping_subtotal': instance.originalShippingSubtotal,
   'original_shipping_tax_total': instance.originalShippingTaxTotal,
-  'status': _$OrderStatusEnumMap[instance.status]!,
-  'region': instance.region,
-  'credit_lines': instance.creditLines,
-  'credit_line_total': instance.creditLineTotal,
-  'payment_collections': instance.paymentCollections,
-  'fulfillments': instance.fulfillments,
-  'sales_channel': instance.salesChannel,
-  'customer': instance.customer,
-  'shipping_address': instance.shippingAddress,
-  'billing_address': instance.billingAddress,
 };
 
 const _$PaymentStatusEnumMap = {

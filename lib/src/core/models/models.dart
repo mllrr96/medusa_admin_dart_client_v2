@@ -19,6 +19,7 @@ export 'payment_collection.dart';
 export 'payment_status.dart';
 export 'price.dart';
 export 'product_type.dart';
+
 export 'requirement.dart';
 export 'return_reason.dart';
 export 'return.dart';
