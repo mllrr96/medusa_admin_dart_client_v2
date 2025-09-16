@@ -30,7 +30,7 @@ _OrderLineItem _$OrderLineItemFromJson(Map<String, dynamic> json) =>
       variantBarcode: json['variant_barcode'] as String?,
       variantTitle: json['variant_title'] as String?,
       variantOptionValues:
-          json['variant_option_values'] as Map<String, dynamic>,
+          json['variant_option_values'] as Map<String, dynamic>?,
       requiresShipping: json['requires_shipping'] as bool?,
       isDiscountable: json['is_discountable'] as bool?,
       isTaxInclusive: json['is_tax_inclusive'] as bool?,

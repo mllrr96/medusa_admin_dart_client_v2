@@ -8,6 +8,7 @@ part 'order_line_item.g.dart';
 
 @freezed
 abstract class OrderLineItem with _$OrderLineItem {
+  // TODO: revisit this
   const factory OrderLineItem({
     String? id,
     String? title,
@@ -26,7 +27,7 @@ abstract class OrderLineItem with _$OrderLineItem {
     @JsonKey(name: 'variant_sku') String? variantSku,
     @JsonKey(name: 'variant_barcode') String? variantBarcode,
     @JsonKey(name: 'variant_title') String? variantTitle,
-    @JsonKey(name: 'variant_option_values') required Map<String, dynamic> variantOptionValues,
+    @JsonKey(name: 'variant_option_values') Map<String, dynamic>? variantOptionValues,
     @JsonKey(name: 'requires_shipping') bool? requiresShipping,
     @JsonKey(name: 'is_discountable') bool? isDiscountable,
     @JsonKey(name: 'is_tax_inclusive') bool? isTaxInclusive,
