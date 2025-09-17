@@ -31,6 +31,6 @@ abstract class ApiKeysApi {
   @POST('/admin/api-keys/{id}/sales-channels')
   Future<ApiKeyRes> salesChannels(
     @Path('id') String id,
-    @Body() ApiKeySalesChannelsReq body,
+    @Body() Map<String,dynamic> body,
   );
 }

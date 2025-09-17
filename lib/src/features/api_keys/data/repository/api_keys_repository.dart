@@ -30,7 +30,15 @@ class ApiKeysRepository {
     return _apiKeysApi.revoke(id);
   }
 
-  Future<ApiKeyRes> salesChannels(String id, ApiKeySalesChannelsReq body) {
-    return _apiKeysApi.salesChannels(id, body);
+  Future<ApiKeyRes> addSalesChannels(String id, ApiKeySalesChannelsReq body) {
+    return _apiKeysApi.salesChannels(id, {
+      'add': body.add,
+    });
+  }
+
+  Future<ApiKeyRes> removeSalesChannels(String id, ApiKeySalesChannelsReq body) {
+    return _apiKeysApi.salesChannels(id, {
+      'remove': body.remove,
+    });
   }
 }
