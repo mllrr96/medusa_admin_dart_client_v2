@@ -7,6 +7,7 @@ part 'api_key_res.g.dart';
 @freezed
 abstract class ApiKeyRes with _$ApiKeyRes {
   const factory ApiKeyRes({
+    @JsonKey(name: 'api_key')
     required ApiKey apiKey,
   }) = _ApiKeyRes;
 

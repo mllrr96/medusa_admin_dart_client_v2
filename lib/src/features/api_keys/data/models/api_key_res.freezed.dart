@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ApiKeyRes {
 
- ApiKey get apiKey;
+@JsonKey(name: 'api_key') ApiKey get apiKey;
 /// Create a copy of ApiKeyRes
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $ApiKeyResCopyWith<$Res>  {
   factory $ApiKeyResCopyWith(ApiKeyRes value, $Res Function(ApiKeyRes) _then) = _$ApiKeyResCopyWithImpl;
 @useResult
 $Res call({
- ApiKey apiKey
+@JsonKey(name: 'api_key') ApiKey apiKey
 });
 
 
@@ -162,7 +162,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( ApiKey apiKey)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'api_key')  ApiKey apiKey)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ApiKeyRes() when $default != null:
 return $default(_that.apiKey);case _:
@@ -183,7 +183,7 @@ return $default(_that.apiKey);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( ApiKey apiKey)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'api_key')  ApiKey apiKey)  $default,) {final _that = this;
 switch (_that) {
 case _ApiKeyRes():
 return $default(_that.apiKey);case _:
@@ -203,7 +203,7 @@ return $default(_that.apiKey);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( ApiKey apiKey)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'api_key')  ApiKey apiKey)?  $default,) {final _that = this;
 switch (_that) {
 case _ApiKeyRes() when $default != null:
 return $default(_that.apiKey);case _:
@@ -218,10 +218,10 @@ return $default(_that.apiKey);case _:
 @JsonSerializable()
 
 class _ApiKeyRes implements ApiKeyRes {
-  const _ApiKeyRes({required this.apiKey});
+  const _ApiKeyRes({@JsonKey(name: 'api_key') required this.apiKey});
   factory _ApiKeyRes.fromJson(Map<String, dynamic> json) => _$ApiKeyResFromJson(json);
 
-@override final  ApiKey apiKey;
+@override@JsonKey(name: 'api_key') final  ApiKey apiKey;
 
 /// Create a copy of ApiKeyRes
 /// with the given fields replaced by the non-null parameter values.
@@ -256,7 +256,7 @@ abstract mixin class _$ApiKeyResCopyWith<$Res> implements $ApiKeyResCopyWith<$Re
   factory _$ApiKeyResCopyWith(_ApiKeyRes value, $Res Function(_ApiKeyRes) _then) = __$ApiKeyResCopyWithImpl;
 @override @useResult
 $Res call({
- ApiKey apiKey
+@JsonKey(name: 'api_key') ApiKey apiKey
 });
 
 
