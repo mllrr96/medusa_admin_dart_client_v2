@@ -26,6 +26,7 @@ import 'package:medusa_admin_dart_client/src/features/reservations/data/reposito
 import 'package:medusa_admin_dart_client/src/features/return_reasons/data/repository/return_reasons_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/returns/data/repository/returns_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/sales_channels/data/repository/sales_channels_repository.dart';
+import 'package:medusa_admin_dart_client/src/features/shipping_option_types/data/repositories/shipping_option_types_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/shipping_options/data/repository/shipping_options_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/shipping_profiles/data/repository/shipping_profiles_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/stores/data/repository/stores_repository.dart';
@@ -76,6 +77,8 @@ class MedusaAdminV2 {
   PriceListsRepository get priceLists => getIt<PriceListsRepository>();
 
   ShippingOptionsRepository get shippingOptions => getIt<ShippingOptionsRepository>();
+
+  ShippingOptionTypesRepository get shippingOptionTypes => getIt<ShippingOptionTypesRepository>();
 
   ShippingProfilesRepository get shippingProfiles => getIt<ShippingProfilesRepository>();
 

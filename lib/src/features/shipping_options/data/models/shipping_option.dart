@@ -1,10 +1,10 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:medusa_admin_dart_client/src/features/fulfillment_providers/data/models/fulfillment_provider.dart';
+import 'package:medusa_admin_dart_client/src/features/shipping_option_types/data/models/shipping_option_type.dart';
 import 'package:medusa_admin_dart_client/src/features/shipping_profiles/data/models/shipping_profile.dart';
 
 import 'shipping_option_price.dart';
 import 'shipping_option_rule.dart';
-import 'shipping_option_type.dart';
 
 part 'shipping_option.freezed.dart';
 

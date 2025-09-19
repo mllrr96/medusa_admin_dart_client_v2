@@ -7,7 +7,6 @@ export 'update_shipping_option_req.dart';
 export 'batch_update_shipping_option_rules_req.dart';
 export 'batch_update_shipping_option_rules_res.dart';
 export 'create_shipping_option_rule.dart';
-export 'shipping_option_type.dart';
 export 'shipping_option_rule.dart';
 export 'shipping_option_price.dart';
 export 'shipping_option_price_rule.dart';

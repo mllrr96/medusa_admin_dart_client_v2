@@ -11,9 +11,8 @@ abstract class ShippingOptionType with _$ShippingOptionType {
     @JsonKey(name: 'updated_at') DateTime? updatedAt,
     @JsonKey(name: 'deleted_at') DateTime? deletedAt,
     required String label,
-    required String description,
+    String? description,
     required String code,
-    @JsonKey(name: 'shipping_option_id') required String shippingOptionId,
   }) = _ShippingOptionType;
 
   factory ShippingOptionType.fromJson(Map<String, dynamic> json) =>

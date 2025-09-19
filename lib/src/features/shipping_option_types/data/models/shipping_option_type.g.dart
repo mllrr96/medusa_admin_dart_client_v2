@@ -19,9 +19,8 @@ _ShippingOptionType _$ShippingOptionTypeFromJson(Map<String, dynamic> json) =>
           ? null
           : DateTime.parse(json['deleted_at'] as String),
       label: json['label'] as String,
-      description: json['description'] as String,
+      description: json['description'] as String?,
       code: json['code'] as String,
-      shippingOptionId: json['shipping_option_id'] as String,
     );
 
 Map<String, dynamic> _$ShippingOptionTypeToJson(_ShippingOptionType instance) =>
@@ -33,5 +32,4 @@ Map<String, dynamic> _$ShippingOptionTypeToJson(_ShippingOptionType instance) =>
       'label': instance.label,
       'description': instance.description,
       'code': instance.code,
-      'shipping_option_id': instance.shippingOptionId,
     };

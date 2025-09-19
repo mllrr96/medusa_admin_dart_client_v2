@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:medusa_admin_dart_client/src/features/shipping_option_types/data/models/shipping_option_type.dart';
 
 import 'create_shipping_option_rule.dart';
-import 'shipping_option_type.dart';
 
 part 'create_shipping_option_req.freezed.dart';
 part 'create_shipping_option_req.g.dart';
