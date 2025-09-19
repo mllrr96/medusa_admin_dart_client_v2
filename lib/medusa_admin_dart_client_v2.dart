@@ -85,3 +85,4 @@ export 'src/features/reservations/data/models/models.dart';
 export 'src/features/reservations/data/repository/reservations_repository.dart';
 export 'src/features/price_preferences/data/models/models.dart';
 export 'src/features/price_preferences/data/repository/price_preferences_repository.dart';
+export 'src/features/shipping_option_types/data/models/models.dart';
