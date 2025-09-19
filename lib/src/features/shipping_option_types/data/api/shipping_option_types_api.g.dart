@@ -117,7 +117,7 @@ class _ShippingOptionTypesApi implements ShippingOptionTypesApi {
   @override
   Future<ShippingOptionTypeResponse> update(
     String id,
-    InvalidType body, {
+    UpdateShippingOptionTypeReq body, {
     Map<String, dynamic>? query,
   }) async {
     final _extra = <String, dynamic>{};
