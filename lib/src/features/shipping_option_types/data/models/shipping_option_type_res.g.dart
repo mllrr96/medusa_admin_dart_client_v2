@@ -10,10 +10,10 @@ _ShippingOptionTypeResponse _$ShippingOptionTypeResponseFromJson(
   Map<String, dynamic> json,
 ) => _ShippingOptionTypeResponse(
   shippingOptionType: ShippingOptionType.fromJson(
-    json['shippingOptionType'] as Map<String, dynamic>,
+    json['shipping_option_type'] as Map<String, dynamic>,
   ),
 );
 
 Map<String, dynamic> _$ShippingOptionTypeResponseToJson(
   _ShippingOptionTypeResponse instance,
-) => <String, dynamic>{'shippingOptionType': instance.shippingOptionType};
+) => <String, dynamic>{'shipping_option_type': instance.shippingOptionType};

@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$ShippingOptionTypeResponse {
 
- ShippingOptionType get shippingOptionType;
+@JsonKey(name: 'shipping_option_type') ShippingOptionType get shippingOptionType;
 /// Create a copy of ShippingOptionTypeResponse
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $ShippingOptionTypeResponseCopyWith<$Res>  {
   factory $ShippingOptionTypeResponseCopyWith(ShippingOptionTypeResponse value, $Res Function(ShippingOptionTypeResponse) _then) = _$ShippingOptionTypeResponseCopyWithImpl;
 @useResult
 $Res call({
- ShippingOptionType shippingOptionType
+@JsonKey(name: 'shipping_option_type') ShippingOptionType shippingOptionType
 });
 
 
@@ -162,7 +162,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( ShippingOptionType shippingOptionType)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'shipping_option_type')  ShippingOptionType shippingOptionType)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _ShippingOptionTypeResponse() when $default != null:
 return $default(_that.shippingOptionType);case _:
@@ -183,7 +183,7 @@ return $default(_that.shippingOptionType);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( ShippingOptionType shippingOptionType)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'shipping_option_type')  ShippingOptionType shippingOptionType)  $default,) {final _that = this;
 switch (_that) {
 case _ShippingOptionTypeResponse():
 return $default(_that.shippingOptionType);case _:
@@ -203,7 +203,7 @@ return $default(_that.shippingOptionType);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( ShippingOptionType shippingOptionType)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'shipping_option_type')  ShippingOptionType shippingOptionType)?  $default,) {final _that = this;
 switch (_that) {
 case _ShippingOptionTypeResponse() when $default != null:
 return $default(_that.shippingOptionType);case _:
@@ -218,10 +218,10 @@ return $default(_that.shippingOptionType);case _:
 @JsonSerializable()
 
 class _ShippingOptionTypeResponse implements ShippingOptionTypeResponse {
-  const _ShippingOptionTypeResponse({required this.shippingOptionType});
+  const _ShippingOptionTypeResponse({@JsonKey(name: 'shipping_option_type') required this.shippingOptionType});
   factory _ShippingOptionTypeResponse.fromJson(Map<String, dynamic> json) => _$ShippingOptionTypeResponseFromJson(json);
 
-@override final  ShippingOptionType shippingOptionType;
+@override@JsonKey(name: 'shipping_option_type') final  ShippingOptionType shippingOptionType;
 
 /// Create a copy of ShippingOptionTypeResponse
 /// with the given fields replaced by the non-null parameter values.
@@ -256,7 +256,7 @@ abstract mixin class _$ShippingOptionTypeResponseCopyWith<$Res> implements $Ship
   factory _$ShippingOptionTypeResponseCopyWith(_ShippingOptionTypeResponse value, $Res Function(_ShippingOptionTypeResponse) _then) = __$ShippingOptionTypeResponseCopyWithImpl;
 @override @useResult
 $Res call({
- ShippingOptionType shippingOptionType
+@JsonKey(name: 'shipping_option_type') ShippingOptionType shippingOptionType
 });
 
 
