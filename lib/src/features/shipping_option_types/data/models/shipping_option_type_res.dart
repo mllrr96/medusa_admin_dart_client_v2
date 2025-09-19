@@ -8,6 +8,7 @@ part 'shipping_option_type_res.g.dart';
 @freezed
 abstract class ShippingOptionTypeResponse with _$ShippingOptionTypeResponse {
   const factory ShippingOptionTypeResponse({
+    @JsonKey(name: 'shipping_option_type')
     required ShippingOptionType shippingOptionType,
   }) = _ShippingOptionTypeResponse;
 
