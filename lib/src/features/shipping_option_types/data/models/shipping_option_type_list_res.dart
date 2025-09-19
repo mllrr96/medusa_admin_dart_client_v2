@@ -7,6 +7,7 @@ part 'shipping_option_type_list_res.g.dart';
 @freezed
 abstract class ShippingOptionTypeListResponse with _$ShippingOptionTypeListResponse {
   const factory ShippingOptionTypeListResponse({
+    @JsonKey(name: 'shipping_option_types')
     required List<ShippingOptionType> shippingOptionTypes,
     required int count,
     required int limit,
