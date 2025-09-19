@@ -45,6 +45,7 @@ import 'package:medusa_admin_dart_client/src/features/sales_channels/data/api/sa
 import 'package:medusa_admin_dart_client/src/features/shipping_option_types/data/api/shipping_option_types_api.dart';
 import 'package:medusa_admin_dart_client/src/features/shipping_options/data/api/shipping_options_api.dart';
 import 'package:medusa_admin_dart_client/src/features/shipping_profiles/data/api/shipping_profiles_api.dart';
+import 'package:medusa_admin_dart_client/src/features/stock_locations/data/api/stock_locations_api.dart';
 import 'package:medusa_admin_dart_client/src/features/stores/data/api/stores_api.dart';
 import 'package:medusa_admin_dart_client/src/features/store_credit_accounts/data/api/store_credit_accounts_api.dart';
 import 'package:medusa_admin_dart_client/src/features/store_credit_accounts/data/repository/store_credit_accounts_repository.dart';
@@ -410,5 +411,13 @@ void configureDependencies({String? baseUrl, List<Interceptor>? interceptors}) {
   );
   getIt.registerLazySingleton<PluginsRepository>(
     () => PluginsRepository(getIt<PluginsApi>()),
+  );
+
+  // Stock Locations
+  getIt.registerLazySingleton<StockLocationsApi>(
+    () => StockLocationsApi(getIt<Dio>()),
+  );
+  getIt.registerLazySingleton<StockLocationsRepository>(
+    () => StockLocationsRepository(getIt<StockLocationsApi>()),
   );
 }

@@ -1,8 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:medusa_admin_dart_client/src/features/fulfillment_providers/data/models/fulfillment_provider.dart';
-
-import '../../features/sales_channels/data/models/sales_channel.dart';
+import 'package:medusa_admin_dart_client/src/features/sales_channels/data/models/sales_channel.dart';
 import 'stock_location_address.dart';
+
 part 'stock_location.freezed.dart';
 part 'stock_location.g.dart';
 
@@ -11,7 +11,7 @@ abstract class StockLocation with _$StockLocation {
   const factory StockLocation({
     required String id,
     required String name,
-    @JsonKey(name: 'address_id') required String addressId,
+    @JsonKey(name: 'address_id') String? addressId,
     StockLocationAddress? address,
     @JsonKey(name: 'sales_channels') List<SalesChannel>? salesChannels,
     @JsonKey(name: 'fulfillment_providers')

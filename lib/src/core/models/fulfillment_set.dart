@@ -1,7 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:medusa_admin_dart_client/src/features/stock_locations/data/models/stock_location.dart';
 
 import 'service_zone.dart';
-import 'stock_location.dart';
 part 'fulfillment_set.freezed.dart';
 part 'fulfillment_set.g.dart';
 

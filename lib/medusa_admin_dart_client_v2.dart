@@ -87,3 +87,5 @@ export 'src/features/price_preferences/data/models/models.dart';
 export 'src/features/price_preferences/data/repository/price_preferences_repository.dart';
 export 'src/features/shipping_option_types/data/models/models.dart';
 export 'src/features/shipping_option_types/data/repositories/shipping_option_types_repository.dart';
+export 'src/features/stock_locations/data/models/models.dart';
+export 'src/features/stock_locations/data/repositories/stock_locations_repository.dart';

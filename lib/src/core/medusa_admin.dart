@@ -37,6 +37,7 @@ import 'package:medusa_admin_dart_client/src/features/users/data/repository/user
 import 'package:medusa_admin_dart_client/src/features/price_lists/data/repository/price_lists_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/price_preferences/data/repository/price_preferences_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/inventory_items/data/repository/inventory_items_repository.dart';
+import 'package:medusa_admin_dart_client/src/features/stock_locations/data/repositories/stock_locations_repository.dart';
 
 class MedusaAdminV2 {
   MedusaAdminV2._({String? baseUrl, List<Interceptor>? interceptors}) {
@@ -127,4 +128,6 @@ class MedusaAdminV2 {
   ExchangesRepository get exchanges => getIt<ExchangesRepository>();
 
   PricePreferencesRepository get pricePreferences => getIt<PricePreferencesRepository>();
+
+  StockLocationsRepository get stockLocations => getIt<StockLocationsRepository>();
 }

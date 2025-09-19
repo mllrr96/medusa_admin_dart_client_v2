@@ -10,7 +10,7 @@ _StockLocation _$StockLocationFromJson(Map<String, dynamic> json) =>
     _StockLocation(
       id: json['id'] as String,
       name: json['name'] as String,
-      addressId: json['address_id'] as String,
+      addressId: json['address_id'] as String?,
       address: json['address'] == null
           ? null
           : StockLocationAddress.fromJson(

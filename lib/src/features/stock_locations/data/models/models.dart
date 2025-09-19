@@ -1,0 +1,10 @@
+export 'stock_location.dart';
+export 'stock_location_address.dart';
+export 'stock_location_create.dart';
+export 'stock_location_update.dart';
+export 'stock_location_list_res.dart';
+export 'stock_location_res.dart';
+export 'stock_location_delete_res.dart';
+export 'stock_location_manage_fulfillment_providers_req.dart';
+export 'stock_location_create_fulfillment_set_req.dart';
+export 'stock_location_manage_sales_channels_req.dart';
