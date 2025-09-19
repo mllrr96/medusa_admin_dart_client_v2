@@ -12,15 +12,15 @@ class ShippingProfilesRepository {
     return _shippingProfilesApi.retrieveAll(query: queryParameters);
   }
 
-  Future<ShippingProfile> retrieve(String id) {
+  Future<ShippingProfileRes> retrieve(String id) {
     return _shippingProfilesApi.retrieve(id);
   }
 
-  Future<ShippingProfile> create(CreateShippingProfileReq body) {
+  Future<ShippingProfileRes> create(CreateShippingProfileReq body) {
     return _shippingProfilesApi.create(body);
   }
 
-  Future<ShippingProfile> update(String id, UpdateShippingProfileReq body) {
+  Future<ShippingProfileRes> update(String id, UpdateShippingProfileReq body) {
     return _shippingProfilesApi.update(id, body);
   }
 

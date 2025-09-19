@@ -51,12 +51,12 @@ class _ShippingProfilesApi implements ShippingProfilesApi {
   }
 
   @override
-  Future<ShippingProfile> retrieve(String id) async {
+  Future<ShippingProfileRes> retrieve(String id) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<ShippingProfile>(
+    final _options = _setStreamType<ShippingProfileRes>(
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -67,9 +67,9 @@ class _ShippingProfilesApi implements ShippingProfilesApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late ShippingProfile _value;
+    late ShippingProfileRes _value;
     try {
-      _value = ShippingProfile.fromJson(_result.data!);
+      _value = ShippingProfileRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -78,12 +78,12 @@ class _ShippingProfilesApi implements ShippingProfilesApi {
   }
 
   @override
-  Future<ShippingProfile> create(CreateShippingProfileReq body) async {
+  Future<ShippingProfileRes> create(CreateShippingProfileReq body) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = body;
-    final _options = _setStreamType<ShippingProfile>(
+    final _options = _setStreamType<ShippingProfileRes>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -94,9 +94,9 @@ class _ShippingProfilesApi implements ShippingProfilesApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late ShippingProfile _value;
+    late ShippingProfileRes _value;
     try {
-      _value = ShippingProfile.fromJson(_result.data!);
+      _value = ShippingProfileRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -105,7 +105,7 @@ class _ShippingProfilesApi implements ShippingProfilesApi {
   }
 
   @override
-  Future<ShippingProfile> update(
+  Future<ShippingProfileRes> update(
     String id,
     UpdateShippingProfileReq body,
   ) async {
@@ -113,7 +113,7 @@ class _ShippingProfilesApi implements ShippingProfilesApi {
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
     final _data = body;
-    final _options = _setStreamType<ShippingProfile>(
+    final _options = _setStreamType<ShippingProfileRes>(
       Options(method: 'POST', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
@@ -124,9 +124,9 @@ class _ShippingProfilesApi implements ShippingProfilesApi {
           .copyWith(baseUrl: _combineBaseUrls(_dio.options.baseUrl, baseUrl)),
     );
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late ShippingProfile _value;
+    late ShippingProfileRes _value;
     try {
-      _value = ShippingProfile.fromJson(_result.data!);
+      _value = ShippingProfileRes.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

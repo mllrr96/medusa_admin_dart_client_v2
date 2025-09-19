@@ -14,13 +14,13 @@ abstract class ShippingProfilesApi {
   });
 
   @GET('/admin/shipping-profiles/{id}')
-  Future<ShippingProfile> retrieve(@Path('id') String id);
+  Future<ShippingProfileRes> retrieve(@Path('id') String id);
 
   @POST('/admin/shipping-profiles')
-  Future<ShippingProfile> create(@Body() CreateShippingProfileReq body);
+  Future<ShippingProfileRes> create(@Body() CreateShippingProfileReq body);
 
   @POST('/admin/shipping-profiles/{id}')
-  Future<ShippingProfile> update(
+  Future<ShippingProfileRes> update(
     @Path('id') String id,
     @Body() UpdateShippingProfileReq body,
   );
