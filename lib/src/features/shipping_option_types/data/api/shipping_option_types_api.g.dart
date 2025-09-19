@@ -52,7 +52,7 @@ class _ShippingOptionTypesApi implements ShippingOptionTypesApi {
 
   @override
   Future<ShippingOptionTypeResponse> create(
-    CreateShippingOptionType body, {
+    CreateShippingOptionTypeReq body, {
     Map<String, dynamic>? query,
   }) async {
     final _extra = <String, dynamic>{};
@@ -117,7 +117,7 @@ class _ShippingOptionTypesApi implements ShippingOptionTypesApi {
   @override
   Future<ShippingOptionTypeResponse> update(
     String id,
-    UpdateShippingOptionType body, {
+    InvalidType body, {
     Map<String, dynamic>? query,
   }) async {
     final _extra = <String, dynamic>{};

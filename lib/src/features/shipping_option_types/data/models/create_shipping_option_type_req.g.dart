@@ -1,23 +1,23 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'shipping_option_type_create.dart';
+part of 'create_shipping_option_type_req.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_CreateShippingOptionType _$CreateShippingOptionTypeFromJson(
+_CreateShippingOptionTypeReq _$CreateShippingOptionTypeReqFromJson(
   Map<String, dynamic> json,
-) => _CreateShippingOptionType(
+) => _CreateShippingOptionTypeReq(
   label: json['label'] as String,
   code: json['code'] as String,
   description: json['description'] as String?,
 );
 
-Map<String, dynamic> _$CreateShippingOptionTypeToJson(
-  _CreateShippingOptionType instance,
+Map<String, dynamic> _$CreateShippingOptionTypeReqToJson(
+  _CreateShippingOptionTypeReq instance,
 ) => <String, dynamic>{
   'label': instance.label,
   'code': instance.code,
-  'description': instance.description,
+  'description': ?instance.description,
 };

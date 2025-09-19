@@ -13,7 +13,7 @@ class ShippingOptionTypesRepository {
   }
 
   Future<ShippingOptionTypeResponse> create(
-    CreateShippingOptionType body, {
+    CreateShippingOptionTypeReq body, {
     Map<String, dynamic>? query,
   }) async {
     return shippingOptionTypesApi.create(body, query: query);
@@ -28,7 +28,7 @@ class ShippingOptionTypesRepository {
 
   Future<ShippingOptionTypeResponse> update(
     String id,
-    UpdateShippingOptionType body, {
+    UpdateShippingOptionTypeReq body, {
     Map<String, dynamic>? query,
   }) async {
     return shippingOptionTypesApi.update(id, body, query: query);

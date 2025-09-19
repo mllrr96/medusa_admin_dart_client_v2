@@ -16,7 +16,7 @@ abstract class ShippingOptionTypesApi {
 
   @POST('/admin/shipping-option-types')
   Future<ShippingOptionTypeResponse> create(
-    @Body() CreateShippingOptionType body, {
+    @Body() CreateShippingOptionTypeReq body, {
     @Queries() Map<String, dynamic>? query,
   });
 
@@ -29,7 +29,7 @@ abstract class ShippingOptionTypesApi {
   @POST('/admin/shipping-option-types/{id}')
   Future<ShippingOptionTypeResponse> update(
     @Path('id') String id,
-    @Body() UpdateShippingOptionType body, {
+    @Body() UpdateShippingOptionTypeReq body, {
     @Queries() Map<String, dynamic>? query,
   });
 
