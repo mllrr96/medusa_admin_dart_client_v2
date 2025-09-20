@@ -1,4 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:medusa_admin_dart_client/src/core/models/service_zone.dart';
 import 'package:medusa_admin_dart_client/src/features/fulfillment_providers/data/models/fulfillment_provider.dart';
 import 'package:medusa_admin_dart_client/src/features/shipping_option_types/data/models/shipping_option_type.dart';
 import 'package:medusa_admin_dart_client/src/features/shipping_profiles/data/models/shipping_profile.dart';
@@ -13,22 +14,23 @@ part 'shipping_option.g.dart';
 @freezed
 abstract class ShippingOption with _$ShippingOption {
   const factory ShippingOption({
-    required String id,
-    required String name,
-    @JsonKey(name: 'price_type') required String priceType,
-    @JsonKey(name: 'service_zone_id') required String serviceZoneId,
-    required Map<String, dynamic> serviceZone,
-    @JsonKey(name: 'provider_id') required String providerId,
-    required FulfillmentProvider provider,
+    String? id,
+    String? name,
+    @JsonKey(name: 'price_type') String? priceType,
+    @JsonKey(name: 'service_zone_id') String? serviceZoneId,
+    @JsonKey(name: 'service_zone')
+    ServiceZone? serviceZone,
+    @JsonKey(name: 'provider_id') String? providerId,
+    FulfillmentProvider? provider,
     @JsonKey(name: 'shipping_option_type_id')
-    required String shippingOptionTypeId,
-    required ShippingOptionType type,
-    @JsonKey(name: 'shipping_profile_id') required String shippingProfileId,
-    required ShippingProfile shippingProfile,
-    required List<ShippingOptionRule> rules,
-    required List<ShippingOptionPrice> prices,
-    required Map<String, dynamic> data,
-    required Map<String, dynamic> metadata,
+    String? shippingOptionTypeId,
+    ShippingOptionType? type,
+    @JsonKey(name: 'shipping_profile_id') String? shippingProfileId,
+    ShippingProfile? shippingProfile,
+    List<ShippingOptionRule>? rules,
+    List<ShippingOptionPrice>? prices,
+    Map<String, dynamic>? data,
+    Map<String, dynamic>? metadata,
     @JsonKey(name: 'created_at') DateTime? createdAt,
     @JsonKey(name: 'updated_at') DateTime? updatedAt,
     @JsonKey(name: 'deleted_at') DateTime? deletedAt,

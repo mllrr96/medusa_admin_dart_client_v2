@@ -7,21 +7,21 @@ part of 'fulfillment.dart';
 // **************************************************************************
 
 _Fulfillment _$FulfillmentFromJson(Map<String, dynamic> json) => _Fulfillment(
-  id: json['id'] as String,
-  locationId: json['location_id'] as String,
-  providerId: json['provider_id'] as String,
+  id: json['id'] as String?,
+  locationId: json['location_id'] as String?,
+  providerId: json['provider_id'] as String?,
   shippingOptionId: json['shipping_option_id'] as String?,
-  provider: FulfillmentProvider.fromJson(
-    json['provider'] as Map<String, dynamic>,
-  ),
-  deliveryAddress: Address.fromJson(
-    json['delivery_address'] as Map<String, dynamic>,
-  ),
-  items: (json['items'] as List<dynamic>)
-      .map((e) => FulfillmentItem.fromJson(e as Map<String, dynamic>))
+  provider: json['provider'] == null
+      ? null
+      : FulfillmentProvider.fromJson(json['provider'] as Map<String, dynamic>),
+  deliveryAddress: json['delivery_address'] == null
+      ? null
+      : Address.fromJson(json['delivery_address'] as Map<String, dynamic>),
+  items: (json['items'] as List<dynamic>?)
+      ?.map((e) => FulfillmentItem.fromJson(e as Map<String, dynamic>))
       .toList(),
-  labels: (json['labels'] as List<dynamic>)
-      .map((e) => FulfillmentLabel.fromJson(e as Map<String, dynamic>))
+  labels: (json['labels'] as List<dynamic>?)
+      ?.map((e) => FulfillmentLabel.fromJson(e as Map<String, dynamic>))
       .toList(),
   packedAt: json['packed_at'] == null
       ? null
@@ -35,8 +35,8 @@ _Fulfillment _$FulfillmentFromJson(Map<String, dynamic> json) => _Fulfillment(
   canceledAt: json['canceled_at'] == null
       ? null
       : DateTime.parse(json['canceled_at'] as String),
-  data: json['data'] as Map<String, dynamic>,
-  metadata: json['metadata'] as Map<String, dynamic>,
+  data: json['data'] as Map<String, dynamic>?,
+  metadata: json['metadata'] as Map<String, dynamic>?,
   createdAt: json['created_at'] == null
       ? null
       : DateTime.parse(json['created_at'] as String),
@@ -108,10 +108,10 @@ Map<String, dynamic> _$FulfillmentItemToJson(_FulfillmentItem instance) =>
 _FulfillmentLabel _$FulfillmentLabelFromJson(Map<String, dynamic> json) =>
     _FulfillmentLabel(
       id: json['id'] as String,
-      trackingNumber: json['tracking_number'] as String,
-      trackingUrl: json['tracking_url'] as String,
-      labelUrl: json['label_url'] as String,
-      fulfillmentId: json['fulfillment_id'] as String,
+      trackingNumber: json['tracking_number'] as String?,
+      trackingUrl: json['tracking_url'] as String?,
+      labelUrl: json['label_url'] as String?,
+      fulfillmentId: json['fulfillment_id'] as String?,
       createdAt: json['created_at'] == null
           ? null
           : DateTime.parse(json['created_at'] as String),

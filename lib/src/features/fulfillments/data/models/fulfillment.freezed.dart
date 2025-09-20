@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$Fulfillment {
 
- String get id;@JsonKey(name: 'location_id') String get locationId;@JsonKey(name: 'provider_id') String get providerId;@JsonKey(name: 'shipping_option_id') String? get shippingOptionId; FulfillmentProvider get provider;@JsonKey(name: 'delivery_address') Address get deliveryAddress; List<FulfillmentItem> get items; List<FulfillmentLabel> get labels;@JsonKey(name: 'packed_at') DateTime? get packedAt;@JsonKey(name: 'shipped_at') DateTime? get shippedAt;@JsonKey(name: 'delivered_at') DateTime? get deliveredAt;@JsonKey(name: 'canceled_at') DateTime? get canceledAt; Map<String, dynamic> get data; Map<String, dynamic> get metadata;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt;
+ String? get id;@JsonKey(name: 'location_id') String? get locationId;@JsonKey(name: 'provider_id') String? get providerId;@JsonKey(name: 'shipping_option_id') String? get shippingOptionId; FulfillmentProvider? get provider;@JsonKey(name: 'delivery_address') Address? get deliveryAddress; List<FulfillmentItem>? get items; List<FulfillmentLabel>? get labels;@JsonKey(name: 'packed_at') DateTime? get packedAt;@JsonKey(name: 'shipped_at') DateTime? get shippedAt;@JsonKey(name: 'delivered_at') DateTime? get deliveredAt;@JsonKey(name: 'canceled_at') DateTime? get canceledAt; Map<String, dynamic>? get data; Map<String, dynamic>? get metadata;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt;
 /// Create a copy of Fulfillment
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,11 +48,11 @@ abstract mixin class $FulfillmentCopyWith<$Res>  {
   factory $FulfillmentCopyWith(Fulfillment value, $Res Function(Fulfillment) _then) = _$FulfillmentCopyWithImpl;
 @useResult
 $Res call({
- String id,@JsonKey(name: 'location_id') String locationId,@JsonKey(name: 'provider_id') String providerId,@JsonKey(name: 'shipping_option_id') String? shippingOptionId, FulfillmentProvider provider,@JsonKey(name: 'delivery_address') Address deliveryAddress, List<FulfillmentItem> items, List<FulfillmentLabel> labels,@JsonKey(name: 'packed_at') DateTime? packedAt,@JsonKey(name: 'shipped_at') DateTime? shippedAt,@JsonKey(name: 'delivered_at') DateTime? deliveredAt,@JsonKey(name: 'canceled_at') DateTime? canceledAt, Map<String, dynamic> data, Map<String, dynamic> metadata,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
+ String? id,@JsonKey(name: 'location_id') String? locationId,@JsonKey(name: 'provider_id') String? providerId,@JsonKey(name: 'shipping_option_id') String? shippingOptionId, FulfillmentProvider? provider,@JsonKey(name: 'delivery_address') Address? deliveryAddress, List<FulfillmentItem>? items, List<FulfillmentLabel>? labels,@JsonKey(name: 'packed_at') DateTime? packedAt,@JsonKey(name: 'shipped_at') DateTime? shippedAt,@JsonKey(name: 'delivered_at') DateTime? deliveredAt,@JsonKey(name: 'canceled_at') DateTime? canceledAt, Map<String, dynamic>? data, Map<String, dynamic>? metadata,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
 });
 
 
-$FulfillmentProviderCopyWith<$Res> get provider;$AddressCopyWith<$Res> get deliveryAddress;
+$FulfillmentProviderCopyWith<$Res>? get provider;$AddressCopyWith<$Res>? get deliveryAddress;
 
 }
 /// @nodoc
@@ -65,23 +65,23 @@ class _$FulfillmentCopyWithImpl<$Res>
 
 /// Create a copy of Fulfillment
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? locationId = null,Object? providerId = null,Object? shippingOptionId = freezed,Object? provider = null,Object? deliveryAddress = null,Object? items = null,Object? labels = null,Object? packedAt = freezed,Object? shippedAt = freezed,Object? deliveredAt = freezed,Object? canceledAt = freezed,Object? data = null,Object? metadata = null,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? locationId = freezed,Object? providerId = freezed,Object? shippingOptionId = freezed,Object? provider = freezed,Object? deliveryAddress = freezed,Object? items = freezed,Object? labels = freezed,Object? packedAt = freezed,Object? shippedAt = freezed,Object? deliveredAt = freezed,Object? canceledAt = freezed,Object? data = freezed,Object? metadata = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
   return _then(_self.copyWith(
-id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,locationId: null == locationId ? _self.locationId : locationId // ignore: cast_nullable_to_non_nullable
-as String,providerId: null == providerId ? _self.providerId : providerId // ignore: cast_nullable_to_non_nullable
-as String,shippingOptionId: freezed == shippingOptionId ? _self.shippingOptionId : shippingOptionId // ignore: cast_nullable_to_non_nullable
-as String?,provider: null == provider ? _self.provider : provider // ignore: cast_nullable_to_non_nullable
-as FulfillmentProvider,deliveryAddress: null == deliveryAddress ? _self.deliveryAddress : deliveryAddress // ignore: cast_nullable_to_non_nullable
-as Address,items: null == items ? _self.items : items // ignore: cast_nullable_to_non_nullable
-as List<FulfillmentItem>,labels: null == labels ? _self.labels : labels // ignore: cast_nullable_to_non_nullable
-as List<FulfillmentLabel>,packedAt: freezed == packedAt ? _self.packedAt : packedAt // ignore: cast_nullable_to_non_nullable
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,locationId: freezed == locationId ? _self.locationId : locationId // ignore: cast_nullable_to_non_nullable
+as String?,providerId: freezed == providerId ? _self.providerId : providerId // ignore: cast_nullable_to_non_nullable
+as String?,shippingOptionId: freezed == shippingOptionId ? _self.shippingOptionId : shippingOptionId // ignore: cast_nullable_to_non_nullable
+as String?,provider: freezed == provider ? _self.provider : provider // ignore: cast_nullable_to_non_nullable
+as FulfillmentProvider?,deliveryAddress: freezed == deliveryAddress ? _self.deliveryAddress : deliveryAddress // ignore: cast_nullable_to_non_nullable
+as Address?,items: freezed == items ? _self.items : items // ignore: cast_nullable_to_non_nullable
+as List<FulfillmentItem>?,labels: freezed == labels ? _self.labels : labels // ignore: cast_nullable_to_non_nullable
+as List<FulfillmentLabel>?,packedAt: freezed == packedAt ? _self.packedAt : packedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,shippedAt: freezed == shippedAt ? _self.shippedAt : shippedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,deliveredAt: freezed == deliveredAt ? _self.deliveredAt : deliveredAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,canceledAt: freezed == canceledAt ? _self.canceledAt : canceledAt // ignore: cast_nullable_to_non_nullable
-as DateTime?,data: null == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>,metadata: null == metadata ? _self.metadata : metadata // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,data: freezed == data ? _self.data : data // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>?,metadata: freezed == metadata ? _self.metadata : metadata // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,
@@ -91,18 +91,24 @@ as DateTime?,
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$FulfillmentProviderCopyWith<$Res> get provider {
-  
-  return $FulfillmentProviderCopyWith<$Res>(_self.provider, (value) {
+$FulfillmentProviderCopyWith<$Res>? get provider {
+    if (_self.provider == null) {
+    return null;
+  }
+
+  return $FulfillmentProviderCopyWith<$Res>(_self.provider!, (value) {
     return _then(_self.copyWith(provider: value));
   });
 }/// Create a copy of Fulfillment
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$AddressCopyWith<$Res> get deliveryAddress {
-  
-  return $AddressCopyWith<$Res>(_self.deliveryAddress, (value) {
+$AddressCopyWith<$Res>? get deliveryAddress {
+    if (_self.deliveryAddress == null) {
+    return null;
+  }
+
+  return $AddressCopyWith<$Res>(_self.deliveryAddress!, (value) {
     return _then(_self.copyWith(deliveryAddress: value));
   });
 }
@@ -187,7 +193,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'location_id')  String locationId, @JsonKey(name: 'provider_id')  String providerId, @JsonKey(name: 'shipping_option_id')  String? shippingOptionId,  FulfillmentProvider provider, @JsonKey(name: 'delivery_address')  Address deliveryAddress,  List<FulfillmentItem> items,  List<FulfillmentLabel> labels, @JsonKey(name: 'packed_at')  DateTime? packedAt, @JsonKey(name: 'shipped_at')  DateTime? shippedAt, @JsonKey(name: 'delivered_at')  DateTime? deliveredAt, @JsonKey(name: 'canceled_at')  DateTime? canceledAt,  Map<String, dynamic> data,  Map<String, dynamic> metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id, @JsonKey(name: 'location_id')  String? locationId, @JsonKey(name: 'provider_id')  String? providerId, @JsonKey(name: 'shipping_option_id')  String? shippingOptionId,  FulfillmentProvider? provider, @JsonKey(name: 'delivery_address')  Address? deliveryAddress,  List<FulfillmentItem>? items,  List<FulfillmentLabel>? labels, @JsonKey(name: 'packed_at')  DateTime? packedAt, @JsonKey(name: 'shipped_at')  DateTime? shippedAt, @JsonKey(name: 'delivered_at')  DateTime? deliveredAt, @JsonKey(name: 'canceled_at')  DateTime? canceledAt,  Map<String, dynamic>? data,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _Fulfillment() when $default != null:
 return $default(_that.id,_that.locationId,_that.providerId,_that.shippingOptionId,_that.provider,_that.deliveryAddress,_that.items,_that.labels,_that.packedAt,_that.shippedAt,_that.deliveredAt,_that.canceledAt,_that.data,_that.metadata,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -208,7 +214,7 @@ return $default(_that.id,_that.locationId,_that.providerId,_that.shippingOptionI
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'location_id')  String locationId, @JsonKey(name: 'provider_id')  String providerId, @JsonKey(name: 'shipping_option_id')  String? shippingOptionId,  FulfillmentProvider provider, @JsonKey(name: 'delivery_address')  Address deliveryAddress,  List<FulfillmentItem> items,  List<FulfillmentLabel> labels, @JsonKey(name: 'packed_at')  DateTime? packedAt, @JsonKey(name: 'shipped_at')  DateTime? shippedAt, @JsonKey(name: 'delivered_at')  DateTime? deliveredAt, @JsonKey(name: 'canceled_at')  DateTime? canceledAt,  Map<String, dynamic> data,  Map<String, dynamic> metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id, @JsonKey(name: 'location_id')  String? locationId, @JsonKey(name: 'provider_id')  String? providerId, @JsonKey(name: 'shipping_option_id')  String? shippingOptionId,  FulfillmentProvider? provider, @JsonKey(name: 'delivery_address')  Address? deliveryAddress,  List<FulfillmentItem>? items,  List<FulfillmentLabel>? labels, @JsonKey(name: 'packed_at')  DateTime? packedAt, @JsonKey(name: 'shipped_at')  DateTime? shippedAt, @JsonKey(name: 'delivered_at')  DateTime? deliveredAt, @JsonKey(name: 'canceled_at')  DateTime? canceledAt,  Map<String, dynamic>? data,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)  $default,) {final _that = this;
 switch (_that) {
 case _Fulfillment():
 return $default(_that.id,_that.locationId,_that.providerId,_that.shippingOptionId,_that.provider,_that.deliveryAddress,_that.items,_that.labels,_that.packedAt,_that.shippedAt,_that.deliveredAt,_that.canceledAt,_that.data,_that.metadata,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -228,7 +234,7 @@ return $default(_that.id,_that.locationId,_that.providerId,_that.shippingOptionI
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'location_id')  String locationId, @JsonKey(name: 'provider_id')  String providerId, @JsonKey(name: 'shipping_option_id')  String? shippingOptionId,  FulfillmentProvider provider, @JsonKey(name: 'delivery_address')  Address deliveryAddress,  List<FulfillmentItem> items,  List<FulfillmentLabel> labels, @JsonKey(name: 'packed_at')  DateTime? packedAt, @JsonKey(name: 'shipped_at')  DateTime? shippedAt, @JsonKey(name: 'delivered_at')  DateTime? deliveredAt, @JsonKey(name: 'canceled_at')  DateTime? canceledAt,  Map<String, dynamic> data,  Map<String, dynamic> metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id, @JsonKey(name: 'location_id')  String? locationId, @JsonKey(name: 'provider_id')  String? providerId, @JsonKey(name: 'shipping_option_id')  String? shippingOptionId,  FulfillmentProvider? provider, @JsonKey(name: 'delivery_address')  Address? deliveryAddress,  List<FulfillmentItem>? items,  List<FulfillmentLabel>? labels, @JsonKey(name: 'packed_at')  DateTime? packedAt, @JsonKey(name: 'shipped_at')  DateTime? shippedAt, @JsonKey(name: 'delivered_at')  DateTime? deliveredAt, @JsonKey(name: 'canceled_at')  DateTime? canceledAt,  Map<String, dynamic>? data,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _Fulfillment() when $default != null:
 return $default(_that.id,_that.locationId,_that.providerId,_that.shippingOptionId,_that.provider,_that.deliveryAddress,_that.items,_that.labels,_that.packedAt,_that.shippedAt,_that.deliveredAt,_that.canceledAt,_that.data,_that.metadata,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -243,45 +249,53 @@ return $default(_that.id,_that.locationId,_that.providerId,_that.shippingOptionI
 @JsonSerializable()
 
 class _Fulfillment implements Fulfillment {
-  const _Fulfillment({required this.id, @JsonKey(name: 'location_id') required this.locationId, @JsonKey(name: 'provider_id') required this.providerId, @JsonKey(name: 'shipping_option_id') this.shippingOptionId, required this.provider, @JsonKey(name: 'delivery_address') required this.deliveryAddress, required final  List<FulfillmentItem> items, required final  List<FulfillmentLabel> labels, @JsonKey(name: 'packed_at') this.packedAt, @JsonKey(name: 'shipped_at') this.shippedAt, @JsonKey(name: 'delivered_at') this.deliveredAt, @JsonKey(name: 'canceled_at') this.canceledAt, required final  Map<String, dynamic> data, required final  Map<String, dynamic> metadata, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt}): _items = items,_labels = labels,_data = data,_metadata = metadata;
+  const _Fulfillment({this.id, @JsonKey(name: 'location_id') this.locationId, @JsonKey(name: 'provider_id') this.providerId, @JsonKey(name: 'shipping_option_id') this.shippingOptionId, this.provider, @JsonKey(name: 'delivery_address') this.deliveryAddress, final  List<FulfillmentItem>? items, final  List<FulfillmentLabel>? labels, @JsonKey(name: 'packed_at') this.packedAt, @JsonKey(name: 'shipped_at') this.shippedAt, @JsonKey(name: 'delivered_at') this.deliveredAt, @JsonKey(name: 'canceled_at') this.canceledAt, final  Map<String, dynamic>? data, final  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt}): _items = items,_labels = labels,_data = data,_metadata = metadata;
   factory _Fulfillment.fromJson(Map<String, dynamic> json) => _$FulfillmentFromJson(json);
 
-@override final  String id;
-@override@JsonKey(name: 'location_id') final  String locationId;
-@override@JsonKey(name: 'provider_id') final  String providerId;
+@override final  String? id;
+@override@JsonKey(name: 'location_id') final  String? locationId;
+@override@JsonKey(name: 'provider_id') final  String? providerId;
 @override@JsonKey(name: 'shipping_option_id') final  String? shippingOptionId;
-@override final  FulfillmentProvider provider;
-@override@JsonKey(name: 'delivery_address') final  Address deliveryAddress;
- final  List<FulfillmentItem> _items;
-@override List<FulfillmentItem> get items {
+@override final  FulfillmentProvider? provider;
+@override@JsonKey(name: 'delivery_address') final  Address? deliveryAddress;
+ final  List<FulfillmentItem>? _items;
+@override List<FulfillmentItem>? get items {
+  final value = _items;
+  if (value == null) return null;
   if (_items is EqualUnmodifiableListView) return _items;
   // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_items);
+  return EqualUnmodifiableListView(value);
 }
 
- final  List<FulfillmentLabel> _labels;
-@override List<FulfillmentLabel> get labels {
+ final  List<FulfillmentLabel>? _labels;
+@override List<FulfillmentLabel>? get labels {
+  final value = _labels;
+  if (value == null) return null;
   if (_labels is EqualUnmodifiableListView) return _labels;
   // ignore: implicit_dynamic_type
-  return EqualUnmodifiableListView(_labels);
+  return EqualUnmodifiableListView(value);
 }
 
 @override@JsonKey(name: 'packed_at') final  DateTime? packedAt;
 @override@JsonKey(name: 'shipped_at') final  DateTime? shippedAt;
 @override@JsonKey(name: 'delivered_at') final  DateTime? deliveredAt;
 @override@JsonKey(name: 'canceled_at') final  DateTime? canceledAt;
- final  Map<String, dynamic> _data;
-@override Map<String, dynamic> get data {
+ final  Map<String, dynamic>? _data;
+@override Map<String, dynamic>? get data {
+  final value = _data;
+  if (value == null) return null;
   if (_data is EqualUnmodifiableMapView) return _data;
   // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(_data);
+  return EqualUnmodifiableMapView(value);
 }
 
- final  Map<String, dynamic> _metadata;
-@override Map<String, dynamic> get metadata {
+ final  Map<String, dynamic>? _metadata;
+@override Map<String, dynamic>? get metadata {
+  final value = _metadata;
+  if (value == null) return null;
   if (_metadata is EqualUnmodifiableMapView) return _metadata;
   // ignore: implicit_dynamic_type
-  return EqualUnmodifiableMapView(_metadata);
+  return EqualUnmodifiableMapView(value);
 }
 
 @override@JsonKey(name: 'created_at') final  DateTime? createdAt;
@@ -321,11 +335,11 @@ abstract mixin class _$FulfillmentCopyWith<$Res> implements $FulfillmentCopyWith
   factory _$FulfillmentCopyWith(_Fulfillment value, $Res Function(_Fulfillment) _then) = __$FulfillmentCopyWithImpl;
 @override @useResult
 $Res call({
- String id,@JsonKey(name: 'location_id') String locationId,@JsonKey(name: 'provider_id') String providerId,@JsonKey(name: 'shipping_option_id') String? shippingOptionId, FulfillmentProvider provider,@JsonKey(name: 'delivery_address') Address deliveryAddress, List<FulfillmentItem> items, List<FulfillmentLabel> labels,@JsonKey(name: 'packed_at') DateTime? packedAt,@JsonKey(name: 'shipped_at') DateTime? shippedAt,@JsonKey(name: 'delivered_at') DateTime? deliveredAt,@JsonKey(name: 'canceled_at') DateTime? canceledAt, Map<String, dynamic> data, Map<String, dynamic> metadata,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
+ String? id,@JsonKey(name: 'location_id') String? locationId,@JsonKey(name: 'provider_id') String? providerId,@JsonKey(name: 'shipping_option_id') String? shippingOptionId, FulfillmentProvider? provider,@JsonKey(name: 'delivery_address') Address? deliveryAddress, List<FulfillmentItem>? items, List<FulfillmentLabel>? labels,@JsonKey(name: 'packed_at') DateTime? packedAt,@JsonKey(name: 'shipped_at') DateTime? shippedAt,@JsonKey(name: 'delivered_at') DateTime? deliveredAt,@JsonKey(name: 'canceled_at') DateTime? canceledAt, Map<String, dynamic>? data, Map<String, dynamic>? metadata,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
 });
 
 
-@override $FulfillmentProviderCopyWith<$Res> get provider;@override $AddressCopyWith<$Res> get deliveryAddress;
+@override $FulfillmentProviderCopyWith<$Res>? get provider;@override $AddressCopyWith<$Res>? get deliveryAddress;
 
 }
 /// @nodoc
@@ -338,23 +352,23 @@ class __$FulfillmentCopyWithImpl<$Res>
 
 /// Create a copy of Fulfillment
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? locationId = null,Object? providerId = null,Object? shippingOptionId = freezed,Object? provider = null,Object? deliveryAddress = null,Object? items = null,Object? labels = null,Object? packedAt = freezed,Object? shippedAt = freezed,Object? deliveredAt = freezed,Object? canceledAt = freezed,Object? data = null,Object? metadata = null,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? locationId = freezed,Object? providerId = freezed,Object? shippingOptionId = freezed,Object? provider = freezed,Object? deliveryAddress = freezed,Object? items = freezed,Object? labels = freezed,Object? packedAt = freezed,Object? shippedAt = freezed,Object? deliveredAt = freezed,Object? canceledAt = freezed,Object? data = freezed,Object? metadata = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
   return _then(_Fulfillment(
-id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,locationId: null == locationId ? _self.locationId : locationId // ignore: cast_nullable_to_non_nullable
-as String,providerId: null == providerId ? _self.providerId : providerId // ignore: cast_nullable_to_non_nullable
-as String,shippingOptionId: freezed == shippingOptionId ? _self.shippingOptionId : shippingOptionId // ignore: cast_nullable_to_non_nullable
-as String?,provider: null == provider ? _self.provider : provider // ignore: cast_nullable_to_non_nullable
-as FulfillmentProvider,deliveryAddress: null == deliveryAddress ? _self.deliveryAddress : deliveryAddress // ignore: cast_nullable_to_non_nullable
-as Address,items: null == items ? _self._items : items // ignore: cast_nullable_to_non_nullable
-as List<FulfillmentItem>,labels: null == labels ? _self._labels : labels // ignore: cast_nullable_to_non_nullable
-as List<FulfillmentLabel>,packedAt: freezed == packedAt ? _self.packedAt : packedAt // ignore: cast_nullable_to_non_nullable
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,locationId: freezed == locationId ? _self.locationId : locationId // ignore: cast_nullable_to_non_nullable
+as String?,providerId: freezed == providerId ? _self.providerId : providerId // ignore: cast_nullable_to_non_nullable
+as String?,shippingOptionId: freezed == shippingOptionId ? _self.shippingOptionId : shippingOptionId // ignore: cast_nullable_to_non_nullable
+as String?,provider: freezed == provider ? _self.provider : provider // ignore: cast_nullable_to_non_nullable
+as FulfillmentProvider?,deliveryAddress: freezed == deliveryAddress ? _self.deliveryAddress : deliveryAddress // ignore: cast_nullable_to_non_nullable
+as Address?,items: freezed == items ? _self._items : items // ignore: cast_nullable_to_non_nullable
+as List<FulfillmentItem>?,labels: freezed == labels ? _self._labels : labels // ignore: cast_nullable_to_non_nullable
+as List<FulfillmentLabel>?,packedAt: freezed == packedAt ? _self.packedAt : packedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,shippedAt: freezed == shippedAt ? _self.shippedAt : shippedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,deliveredAt: freezed == deliveredAt ? _self.deliveredAt : deliveredAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,canceledAt: freezed == canceledAt ? _self.canceledAt : canceledAt // ignore: cast_nullable_to_non_nullable
-as DateTime?,data: null == data ? _self._data : data // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>,metadata: null == metadata ? _self._metadata : metadata // ignore: cast_nullable_to_non_nullable
-as Map<String, dynamic>,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as DateTime?,data: freezed == data ? _self._data : data // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>?,metadata: freezed == metadata ? _self._metadata : metadata // ignore: cast_nullable_to_non_nullable
+as Map<String, dynamic>?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,
@@ -365,18 +379,24 @@ as DateTime?,
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$FulfillmentProviderCopyWith<$Res> get provider {
-  
-  return $FulfillmentProviderCopyWith<$Res>(_self.provider, (value) {
+$FulfillmentProviderCopyWith<$Res>? get provider {
+    if (_self.provider == null) {
+    return null;
+  }
+
+  return $FulfillmentProviderCopyWith<$Res>(_self.provider!, (value) {
     return _then(_self.copyWith(provider: value));
   });
 }/// Create a copy of Fulfillment
 /// with the given fields replaced by the non-null parameter values.
 @override
 @pragma('vm:prefer-inline')
-$AddressCopyWith<$Res> get deliveryAddress {
-  
-  return $AddressCopyWith<$Res>(_self.deliveryAddress, (value) {
+$AddressCopyWith<$Res>? get deliveryAddress {
+    if (_self.deliveryAddress == null) {
+    return null;
+  }
+
+  return $AddressCopyWith<$Res>(_self.deliveryAddress!, (value) {
     return _then(_self.copyWith(deliveryAddress: value));
   });
 }
@@ -679,7 +699,7 @@ as DateTime?,
 /// @nodoc
 mixin _$FulfillmentLabel {
 
- String get id;@JsonKey(name: 'tracking_number') String get trackingNumber;@JsonKey(name: 'tracking_url') String get trackingUrl;@JsonKey(name: 'label_url') String get labelUrl;@JsonKey(name: 'fulfillment_id') String get fulfillmentId;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt;
+ String get id;@JsonKey(name: 'tracking_number') String? get trackingNumber;@JsonKey(name: 'tracking_url') String? get trackingUrl;@JsonKey(name: 'label_url') String? get labelUrl;@JsonKey(name: 'fulfillment_id') String? get fulfillmentId;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt;
 /// Create a copy of FulfillmentLabel
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -712,7 +732,7 @@ abstract mixin class $FulfillmentLabelCopyWith<$Res>  {
   factory $FulfillmentLabelCopyWith(FulfillmentLabel value, $Res Function(FulfillmentLabel) _then) = _$FulfillmentLabelCopyWithImpl;
 @useResult
 $Res call({
- String id,@JsonKey(name: 'tracking_number') String trackingNumber,@JsonKey(name: 'tracking_url') String trackingUrl,@JsonKey(name: 'label_url') String labelUrl,@JsonKey(name: 'fulfillment_id') String fulfillmentId,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
+ String id,@JsonKey(name: 'tracking_number') String? trackingNumber,@JsonKey(name: 'tracking_url') String? trackingUrl,@JsonKey(name: 'label_url') String? labelUrl,@JsonKey(name: 'fulfillment_id') String? fulfillmentId,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
 });
 
 
@@ -729,14 +749,14 @@ class _$FulfillmentLabelCopyWithImpl<$Res>
 
 /// Create a copy of FulfillmentLabel
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? trackingNumber = null,Object? trackingUrl = null,Object? labelUrl = null,Object? fulfillmentId = null,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? trackingNumber = freezed,Object? trackingUrl = freezed,Object? labelUrl = freezed,Object? fulfillmentId = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,trackingNumber: null == trackingNumber ? _self.trackingNumber : trackingNumber // ignore: cast_nullable_to_non_nullable
-as String,trackingUrl: null == trackingUrl ? _self.trackingUrl : trackingUrl // ignore: cast_nullable_to_non_nullable
-as String,labelUrl: null == labelUrl ? _self.labelUrl : labelUrl // ignore: cast_nullable_to_non_nullable
-as String,fulfillmentId: null == fulfillmentId ? _self.fulfillmentId : fulfillmentId // ignore: cast_nullable_to_non_nullable
-as String,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as String,trackingNumber: freezed == trackingNumber ? _self.trackingNumber : trackingNumber // ignore: cast_nullable_to_non_nullable
+as String?,trackingUrl: freezed == trackingUrl ? _self.trackingUrl : trackingUrl // ignore: cast_nullable_to_non_nullable
+as String?,labelUrl: freezed == labelUrl ? _self.labelUrl : labelUrl // ignore: cast_nullable_to_non_nullable
+as String?,fulfillmentId: freezed == fulfillmentId ? _self.fulfillmentId : fulfillmentId // ignore: cast_nullable_to_non_nullable
+as String?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,
@@ -824,7 +844,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'tracking_number')  String trackingNumber, @JsonKey(name: 'tracking_url')  String trackingUrl, @JsonKey(name: 'label_url')  String labelUrl, @JsonKey(name: 'fulfillment_id')  String fulfillmentId, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'tracking_number')  String? trackingNumber, @JsonKey(name: 'tracking_url')  String? trackingUrl, @JsonKey(name: 'label_url')  String? labelUrl, @JsonKey(name: 'fulfillment_id')  String? fulfillmentId, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _FulfillmentLabel() when $default != null:
 return $default(_that.id,_that.trackingNumber,_that.trackingUrl,_that.labelUrl,_that.fulfillmentId,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -845,7 +865,7 @@ return $default(_that.id,_that.trackingNumber,_that.trackingUrl,_that.labelUrl,_
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'tracking_number')  String trackingNumber, @JsonKey(name: 'tracking_url')  String trackingUrl, @JsonKey(name: 'label_url')  String labelUrl, @JsonKey(name: 'fulfillment_id')  String fulfillmentId, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'tracking_number')  String? trackingNumber, @JsonKey(name: 'tracking_url')  String? trackingUrl, @JsonKey(name: 'label_url')  String? labelUrl, @JsonKey(name: 'fulfillment_id')  String? fulfillmentId, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)  $default,) {final _that = this;
 switch (_that) {
 case _FulfillmentLabel():
 return $default(_that.id,_that.trackingNumber,_that.trackingUrl,_that.labelUrl,_that.fulfillmentId,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -865,7 +885,7 @@ return $default(_that.id,_that.trackingNumber,_that.trackingUrl,_that.labelUrl,_
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'tracking_number')  String trackingNumber, @JsonKey(name: 'tracking_url')  String trackingUrl, @JsonKey(name: 'label_url')  String labelUrl, @JsonKey(name: 'fulfillment_id')  String fulfillmentId, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'tracking_number')  String? trackingNumber, @JsonKey(name: 'tracking_url')  String? trackingUrl, @JsonKey(name: 'label_url')  String? labelUrl, @JsonKey(name: 'fulfillment_id')  String? fulfillmentId, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _FulfillmentLabel() when $default != null:
 return $default(_that.id,_that.trackingNumber,_that.trackingUrl,_that.labelUrl,_that.fulfillmentId,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -880,14 +900,14 @@ return $default(_that.id,_that.trackingNumber,_that.trackingUrl,_that.labelUrl,_
 @JsonSerializable()
 
 class _FulfillmentLabel implements FulfillmentLabel {
-  const _FulfillmentLabel({required this.id, @JsonKey(name: 'tracking_number') required this.trackingNumber, @JsonKey(name: 'tracking_url') required this.trackingUrl, @JsonKey(name: 'label_url') required this.labelUrl, @JsonKey(name: 'fulfillment_id') required this.fulfillmentId, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt});
+  const _FulfillmentLabel({required this.id, @JsonKey(name: 'tracking_number') this.trackingNumber, @JsonKey(name: 'tracking_url') this.trackingUrl, @JsonKey(name: 'label_url') this.labelUrl, @JsonKey(name: 'fulfillment_id') this.fulfillmentId, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt});
   factory _FulfillmentLabel.fromJson(Map<String, dynamic> json) => _$FulfillmentLabelFromJson(json);
 
 @override final  String id;
-@override@JsonKey(name: 'tracking_number') final  String trackingNumber;
-@override@JsonKey(name: 'tracking_url') final  String trackingUrl;
-@override@JsonKey(name: 'label_url') final  String labelUrl;
-@override@JsonKey(name: 'fulfillment_id') final  String fulfillmentId;
+@override@JsonKey(name: 'tracking_number') final  String? trackingNumber;
+@override@JsonKey(name: 'tracking_url') final  String? trackingUrl;
+@override@JsonKey(name: 'label_url') final  String? labelUrl;
+@override@JsonKey(name: 'fulfillment_id') final  String? fulfillmentId;
 @override@JsonKey(name: 'created_at') final  DateTime? createdAt;
 @override@JsonKey(name: 'updated_at') final  DateTime? updatedAt;
 @override@JsonKey(name: 'deleted_at') final  DateTime? deletedAt;
@@ -925,7 +945,7 @@ abstract mixin class _$FulfillmentLabelCopyWith<$Res> implements $FulfillmentLab
   factory _$FulfillmentLabelCopyWith(_FulfillmentLabel value, $Res Function(_FulfillmentLabel) _then) = __$FulfillmentLabelCopyWithImpl;
 @override @useResult
 $Res call({
- String id,@JsonKey(name: 'tracking_number') String trackingNumber,@JsonKey(name: 'tracking_url') String trackingUrl,@JsonKey(name: 'label_url') String labelUrl,@JsonKey(name: 'fulfillment_id') String fulfillmentId,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
+ String id,@JsonKey(name: 'tracking_number') String? trackingNumber,@JsonKey(name: 'tracking_url') String? trackingUrl,@JsonKey(name: 'label_url') String? labelUrl,@JsonKey(name: 'fulfillment_id') String? fulfillmentId,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
 });
 
 
@@ -942,14 +962,14 @@ class __$FulfillmentLabelCopyWithImpl<$Res>
 
 /// Create a copy of FulfillmentLabel
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? trackingNumber = null,Object? trackingUrl = null,Object? labelUrl = null,Object? fulfillmentId = null,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? trackingNumber = freezed,Object? trackingUrl = freezed,Object? labelUrl = freezed,Object? fulfillmentId = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
   return _then(_FulfillmentLabel(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,trackingNumber: null == trackingNumber ? _self.trackingNumber : trackingNumber // ignore: cast_nullable_to_non_nullable
-as String,trackingUrl: null == trackingUrl ? _self.trackingUrl : trackingUrl // ignore: cast_nullable_to_non_nullable
-as String,labelUrl: null == labelUrl ? _self.labelUrl : labelUrl // ignore: cast_nullable_to_non_nullable
-as String,fulfillmentId: null == fulfillmentId ? _self.fulfillmentId : fulfillmentId // ignore: cast_nullable_to_non_nullable
-as String,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
+as String,trackingNumber: freezed == trackingNumber ? _self.trackingNumber : trackingNumber // ignore: cast_nullable_to_non_nullable
+as String?,trackingUrl: freezed == trackingUrl ? _self.trackingUrl : trackingUrl // ignore: cast_nullable_to_non_nullable
+as String?,labelUrl: freezed == labelUrl ? _self.labelUrl : labelUrl // ignore: cast_nullable_to_non_nullable
+as String?,fulfillmentId: freezed == fulfillmentId ? _self.fulfillmentId : fulfillmentId // ignore: cast_nullable_to_non_nullable
+as String?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,

@@ -14,7 +14,6 @@ import 'package:medusa_admin_dart_client/src/features/draft_orders/data/api/draf
 import 'package:medusa_admin_dart_client/src/features/exchanges/data/api/exchanges_api.dart';
 import 'package:medusa_admin_dart_client/src/features/exchanges/data/repository/exchanges_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/fulfillment_providers/data/api/fulfillment_providers_api.dart';
-import 'package:medusa_admin_dart_client/src/features/fulfillment_providers/data/repository/fulfillment_providers_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/fulfillment_sets/data/api/fulfillment_sets_api.dart';
 import 'package:medusa_admin_dart_client/src/features/fulfillment_sets/data/repository/fulfillment_sets_repository.dart';
 import 'package:medusa_admin_dart_client/src/features/fulfillments/data/api/fulfillments_api.dart';
