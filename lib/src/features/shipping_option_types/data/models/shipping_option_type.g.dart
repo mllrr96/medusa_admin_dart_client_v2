@@ -8,7 +8,7 @@ part of 'shipping_option_type.dart';
 
 _ShippingOptionType _$ShippingOptionTypeFromJson(Map<String, dynamic> json) =>
     _ShippingOptionType(
-      id: json['id'] as String,
+      id: json['id'] as String?,
       createdAt: json['created_at'] == null
           ? null
           : DateTime.parse(json['created_at'] as String),
@@ -18,9 +18,9 @@ _ShippingOptionType _$ShippingOptionTypeFromJson(Map<String, dynamic> json) =>
       deletedAt: json['deleted_at'] == null
           ? null
           : DateTime.parse(json['deleted_at'] as String),
-      label: json['label'] as String,
+      label: json['label'] as String?,
       description: json['description'] as String?,
-      code: json['code'] as String,
+      code: json['code'] as String?,
     );
 
 Map<String, dynamic> _$ShippingOptionTypeToJson(_ShippingOptionType instance) =>

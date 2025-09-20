@@ -6,13 +6,13 @@ part 'shipping_option_type.g.dart';
 @freezed
 abstract class ShippingOptionType with _$ShippingOptionType {
   const factory ShippingOptionType({
-    required String id,
+    String? id,
     @JsonKey(name: 'created_at') DateTime? createdAt,
     @JsonKey(name: 'updated_at') DateTime? updatedAt,
     @JsonKey(name: 'deleted_at') DateTime? deletedAt,
-    required String label,
+    String? label,
     String? description,
-    required String code,
+    String? code,
   }) = _ShippingOptionType;
 
   factory ShippingOptionType.fromJson(Map<String, dynamic> json) =>
