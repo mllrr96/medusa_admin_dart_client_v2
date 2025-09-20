@@ -8,14 +8,14 @@ part of 'fulfillment_set.dart';
 
 _FulfillmentSet _$FulfillmentSetFromJson(Map<String, dynamic> json) =>
     _FulfillmentSet(
-      id: json['id'] as String,
-      name: json['name'] as String,
-      type: json['type'] as String,
-      location: StockLocation.fromJson(
-        json['location'] as Map<String, dynamic>,
-      ),
-      serviceZones: (json['service_zones'] as List<dynamic>)
-          .map((e) => ServiceZone.fromJson(e as Map<String, dynamic>))
+      id: json['id'] as String?,
+      name: json['name'] as String?,
+      type: json['type'] as String?,
+      location: json['location'] == null
+          ? null
+          : StockLocation.fromJson(json['location'] as Map<String, dynamic>),
+      serviceZones: (json['service_zones'] as List<dynamic>?)
+          ?.map((e) => ServiceZone.fromJson(e as Map<String, dynamic>))
           .toList(),
       createdAt: json['created_at'] == null
           ? null

@@ -22,6 +22,12 @@ _StockLocation _$StockLocationFromJson(Map<String, dynamic> json) =>
       fulfillmentProviders: (json['fulfillment_providers'] as List<dynamic>?)
           ?.map((e) => FulfillmentProvider.fromJson(e as Map<String, dynamic>))
           .toList(),
+      fulfillmentSets: (json['fulfillment_sets'] as List<dynamic>?)
+          ?.map((e) => FulfillmentSet.fromJson(e as Map<String, dynamic>))
+          .toList(),
+      serviceZones: (json['service_zones'] as List<dynamic>?)
+          ?.map((e) => ServiceZone.fromJson(e as Map<String, dynamic>))
+          .toList(),
       metadata: json['metadata'] as Map<String, dynamic>?,
       createdAt: json['created_at'] == null
           ? null
@@ -42,6 +48,8 @@ Map<String, dynamic> _$StockLocationToJson(_StockLocation instance) =>
       'address': instance.address,
       'sales_channels': instance.salesChannels,
       'fulfillment_providers': instance.fulfillmentProviders,
+      'fulfillment_sets': instance.fulfillmentSets,
+      'service_zones': instance.serviceZones,
       'metadata': instance.metadata,
       'created_at': instance.createdAt?.toIso8601String(),
       'updated_at': instance.updatedAt?.toIso8601String(),

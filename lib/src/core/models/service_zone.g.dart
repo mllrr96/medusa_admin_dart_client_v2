@@ -7,17 +7,19 @@ part of 'service_zone.dart';
 // **************************************************************************
 
 _ServiceZone _$ServiceZoneFromJson(Map<String, dynamic> json) => _ServiceZone(
-  id: json['id'] as String,
-  name: json['name'] as String,
-  fulfillmentSetId: json['fulfillment_set_id'] as String,
-  fulfillmentSet: FulfillmentSet.fromJson(
-    json['fulfillment_set'] as Map<String, dynamic>,
-  ),
-  geoZones: (json['geo_zones'] as List<dynamic>)
-      .map((e) => GeoZone.fromJson(e as Map<String, dynamic>))
+  id: json['id'] as String?,
+  name: json['name'] as String?,
+  fulfillmentSetId: json['fulfillment_set_id'] as String?,
+  fulfillmentSet: json['fulfillment_set'] == null
+      ? null
+      : FulfillmentSet.fromJson(
+          json['fulfillment_set'] as Map<String, dynamic>,
+        ),
+  geoZones: (json['geo_zones'] as List<dynamic>?)
+      ?.map((e) => GeoZone.fromJson(e as Map<String, dynamic>))
       .toList(),
-  shippingOptions: (json['shipping_options'] as List<dynamic>)
-      .map((e) => ShippingOption.fromJson(e as Map<String, dynamic>))
+  shippingOptions: (json['shipping_options'] as List<dynamic>?)
+      ?.map((e) => ShippingOption.fromJson(e as Map<String, dynamic>))
       .toList(),
   createdAt: json['created_at'] == null
       ? null

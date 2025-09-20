@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$UpdateFulfillmentSetServiceZones {
 
- String? get name; List<Map<String, dynamic>>? get geoZones;
+ String? get name;@JsonKey(name: 'geo_zones') List<Map<String, dynamic>>? get geoZones;
 /// Create a copy of UpdateFulfillmentSetServiceZones
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $UpdateFulfillmentSetServiceZonesCopyWith<$Res>  {
   factory $UpdateFulfillmentSetServiceZonesCopyWith(UpdateFulfillmentSetServiceZones value, $Res Function(UpdateFulfillmentSetServiceZones) _then) = _$UpdateFulfillmentSetServiceZonesCopyWithImpl;
 @useResult
 $Res call({
- String? name, List<Map<String, dynamic>>? geoZones
+ String? name,@JsonKey(name: 'geo_zones') List<Map<String, dynamic>>? geoZones
 });
 
 
@@ -154,7 +154,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? name,  List<Map<String, dynamic>>? geoZones)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? name, @JsonKey(name: 'geo_zones')  List<Map<String, dynamic>>? geoZones)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _UpdateFulfillmentSetServiceZones() when $default != null:
 return $default(_that.name,_that.geoZones);case _:
@@ -175,7 +175,7 @@ return $default(_that.name,_that.geoZones);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? name,  List<Map<String, dynamic>>? geoZones)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? name, @JsonKey(name: 'geo_zones')  List<Map<String, dynamic>>? geoZones)  $default,) {final _that = this;
 switch (_that) {
 case _UpdateFulfillmentSetServiceZones():
 return $default(_that.name,_that.geoZones);case _:
@@ -195,7 +195,7 @@ return $default(_that.name,_that.geoZones);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? name,  List<Map<String, dynamic>>? geoZones)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? name, @JsonKey(name: 'geo_zones')  List<Map<String, dynamic>>? geoZones)?  $default,) {final _that = this;
 switch (_that) {
 case _UpdateFulfillmentSetServiceZones() when $default != null:
 return $default(_that.name,_that.geoZones);case _:
@@ -207,15 +207,15 @@ return $default(_that.name,_that.geoZones);case _:
 }
 
 /// @nodoc
-@JsonSerializable()
 
+@JsonSerializable(includeIfNull: false)
 class _UpdateFulfillmentSetServiceZones implements UpdateFulfillmentSetServiceZones {
-  const _UpdateFulfillmentSetServiceZones({this.name, final  List<Map<String, dynamic>>? geoZones}): _geoZones = geoZones;
+  const _UpdateFulfillmentSetServiceZones({this.name, @JsonKey(name: 'geo_zones') final  List<Map<String, dynamic>>? geoZones}): _geoZones = geoZones;
   factory _UpdateFulfillmentSetServiceZones.fromJson(Map<String, dynamic> json) => _$UpdateFulfillmentSetServiceZonesFromJson(json);
 
 @override final  String? name;
  final  List<Map<String, dynamic>>? _geoZones;
-@override List<Map<String, dynamic>>? get geoZones {
+@override@JsonKey(name: 'geo_zones') List<Map<String, dynamic>>? get geoZones {
   final value = _geoZones;
   if (value == null) return null;
   if (_geoZones is EqualUnmodifiableListView) return _geoZones;
@@ -257,7 +257,7 @@ abstract mixin class _$UpdateFulfillmentSetServiceZonesCopyWith<$Res> implements
   factory _$UpdateFulfillmentSetServiceZonesCopyWith(_UpdateFulfillmentSetServiceZones value, $Res Function(_UpdateFulfillmentSetServiceZones) _then) = __$UpdateFulfillmentSetServiceZonesCopyWithImpl;
 @override @useResult
 $Res call({
- String? name, List<Map<String, dynamic>>? geoZones
+ String? name,@JsonKey(name: 'geo_zones') List<Map<String, dynamic>>? geoZones
 });
 
 

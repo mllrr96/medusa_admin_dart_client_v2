@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$StockLocation {
 
- String get id; String get name;@JsonKey(name: 'address_id') String? get addressId; StockLocationAddress? get address;@JsonKey(name: 'sales_channels') List<SalesChannel>? get salesChannels;@JsonKey(name: 'fulfillment_providers') List<FulfillmentProvider>? get fulfillmentProviders; Map<String, dynamic>? get metadata;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt;
+ String get id; String get name;@JsonKey(name: 'address_id') String? get addressId; StockLocationAddress? get address;@JsonKey(name: 'sales_channels') List<SalesChannel>? get salesChannels;@JsonKey(name: 'fulfillment_providers') List<FulfillmentProvider>? get fulfillmentProviders;@JsonKey(name: 'fulfillment_sets') List<FulfillmentSet>? get fulfillmentSets;@JsonKey(name: 'service_zones') List<ServiceZone>? get serviceZones; Map<String, dynamic>? get metadata;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt;
 /// Create a copy of StockLocation
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -28,16 +28,16 @@ $StockLocationCopyWith<StockLocation> get copyWith => _$StockLocationCopyWithImp
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is StockLocation&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.addressId, addressId) || other.addressId == addressId)&&(identical(other.address, address) || other.address == address)&&const DeepCollectionEquality().equals(other.salesChannels, salesChannels)&&const DeepCollectionEquality().equals(other.fulfillmentProviders, fulfillmentProviders)&&const DeepCollectionEquality().equals(other.metadata, metadata)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.deletedAt, deletedAt) || other.deletedAt == deletedAt));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is StockLocation&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.addressId, addressId) || other.addressId == addressId)&&(identical(other.address, address) || other.address == address)&&const DeepCollectionEquality().equals(other.salesChannels, salesChannels)&&const DeepCollectionEquality().equals(other.fulfillmentProviders, fulfillmentProviders)&&const DeepCollectionEquality().equals(other.fulfillmentSets, fulfillmentSets)&&const DeepCollectionEquality().equals(other.serviceZones, serviceZones)&&const DeepCollectionEquality().equals(other.metadata, metadata)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.deletedAt, deletedAt) || other.deletedAt == deletedAt));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,addressId,address,const DeepCollectionEquality().hash(salesChannels),const DeepCollectionEquality().hash(fulfillmentProviders),const DeepCollectionEquality().hash(metadata),createdAt,updatedAt,deletedAt);
+int get hashCode => Object.hash(runtimeType,id,name,addressId,address,const DeepCollectionEquality().hash(salesChannels),const DeepCollectionEquality().hash(fulfillmentProviders),const DeepCollectionEquality().hash(fulfillmentSets),const DeepCollectionEquality().hash(serviceZones),const DeepCollectionEquality().hash(metadata),createdAt,updatedAt,deletedAt);
 
 @override
 String toString() {
-  return 'StockLocation(id: $id, name: $name, addressId: $addressId, address: $address, salesChannels: $salesChannels, fulfillmentProviders: $fulfillmentProviders, metadata: $metadata, createdAt: $createdAt, updatedAt: $updatedAt, deletedAt: $deletedAt)';
+  return 'StockLocation(id: $id, name: $name, addressId: $addressId, address: $address, salesChannels: $salesChannels, fulfillmentProviders: $fulfillmentProviders, fulfillmentSets: $fulfillmentSets, serviceZones: $serviceZones, metadata: $metadata, createdAt: $createdAt, updatedAt: $updatedAt, deletedAt: $deletedAt)';
 }
 
 
@@ -48,7 +48,7 @@ abstract mixin class $StockLocationCopyWith<$Res>  {
   factory $StockLocationCopyWith(StockLocation value, $Res Function(StockLocation) _then) = _$StockLocationCopyWithImpl;
 @useResult
 $Res call({
- String id, String name,@JsonKey(name: 'address_id') String? addressId, StockLocationAddress? address,@JsonKey(name: 'sales_channels') List<SalesChannel>? salesChannels,@JsonKey(name: 'fulfillment_providers') List<FulfillmentProvider>? fulfillmentProviders, Map<String, dynamic>? metadata,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
+ String id, String name,@JsonKey(name: 'address_id') String? addressId, StockLocationAddress? address,@JsonKey(name: 'sales_channels') List<SalesChannel>? salesChannels,@JsonKey(name: 'fulfillment_providers') List<FulfillmentProvider>? fulfillmentProviders,@JsonKey(name: 'fulfillment_sets') List<FulfillmentSet>? fulfillmentSets,@JsonKey(name: 'service_zones') List<ServiceZone>? serviceZones, Map<String, dynamic>? metadata,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
 });
 
 
@@ -65,7 +65,7 @@ class _$StockLocationCopyWithImpl<$Res>
 
 /// Create a copy of StockLocation
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? addressId = freezed,Object? address = freezed,Object? salesChannels = freezed,Object? fulfillmentProviders = freezed,Object? metadata = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? name = null,Object? addressId = freezed,Object? address = freezed,Object? salesChannels = freezed,Object? fulfillmentProviders = freezed,Object? fulfillmentSets = freezed,Object? serviceZones = freezed,Object? metadata = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
   return _then(_self.copyWith(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -73,7 +73,9 @@ as String,addressId: freezed == addressId ? _self.addressId : addressId // ignor
 as String?,address: freezed == address ? _self.address : address // ignore: cast_nullable_to_non_nullable
 as StockLocationAddress?,salesChannels: freezed == salesChannels ? _self.salesChannels : salesChannels // ignore: cast_nullable_to_non_nullable
 as List<SalesChannel>?,fulfillmentProviders: freezed == fulfillmentProviders ? _self.fulfillmentProviders : fulfillmentProviders // ignore: cast_nullable_to_non_nullable
-as List<FulfillmentProvider>?,metadata: freezed == metadata ? _self.metadata : metadata // ignore: cast_nullable_to_non_nullable
+as List<FulfillmentProvider>?,fulfillmentSets: freezed == fulfillmentSets ? _self.fulfillmentSets : fulfillmentSets // ignore: cast_nullable_to_non_nullable
+as List<FulfillmentSet>?,serviceZones: freezed == serviceZones ? _self.serviceZones : serviceZones // ignore: cast_nullable_to_non_nullable
+as List<ServiceZone>?,metadata: freezed == metadata ? _self.metadata : metadata // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable
@@ -174,10 +176,10 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(name: 'address_id')  String? addressId,  StockLocationAddress? address, @JsonKey(name: 'sales_channels')  List<SalesChannel>? salesChannels, @JsonKey(name: 'fulfillment_providers')  List<FulfillmentProvider>? fulfillmentProviders,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(name: 'address_id')  String? addressId,  StockLocationAddress? address, @JsonKey(name: 'sales_channels')  List<SalesChannel>? salesChannels, @JsonKey(name: 'fulfillment_providers')  List<FulfillmentProvider>? fulfillmentProviders, @JsonKey(name: 'fulfillment_sets')  List<FulfillmentSet>? fulfillmentSets, @JsonKey(name: 'service_zones')  List<ServiceZone>? serviceZones,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _StockLocation() when $default != null:
-return $default(_that.id,_that.name,_that.addressId,_that.address,_that.salesChannels,_that.fulfillmentProviders,_that.metadata,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
+return $default(_that.id,_that.name,_that.addressId,_that.address,_that.salesChannels,_that.fulfillmentProviders,_that.fulfillmentSets,_that.serviceZones,_that.metadata,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
   return orElse();
 
 }
@@ -195,10 +197,10 @@ return $default(_that.id,_that.name,_that.addressId,_that.address,_that.salesCha
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(name: 'address_id')  String? addressId,  StockLocationAddress? address, @JsonKey(name: 'sales_channels')  List<SalesChannel>? salesChannels, @JsonKey(name: 'fulfillment_providers')  List<FulfillmentProvider>? fulfillmentProviders,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id,  String name, @JsonKey(name: 'address_id')  String? addressId,  StockLocationAddress? address, @JsonKey(name: 'sales_channels')  List<SalesChannel>? salesChannels, @JsonKey(name: 'fulfillment_providers')  List<FulfillmentProvider>? fulfillmentProviders, @JsonKey(name: 'fulfillment_sets')  List<FulfillmentSet>? fulfillmentSets, @JsonKey(name: 'service_zones')  List<ServiceZone>? serviceZones,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)  $default,) {final _that = this;
 switch (_that) {
 case _StockLocation():
-return $default(_that.id,_that.name,_that.addressId,_that.address,_that.salesChannels,_that.fulfillmentProviders,_that.metadata,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
+return $default(_that.id,_that.name,_that.addressId,_that.address,_that.salesChannels,_that.fulfillmentProviders,_that.fulfillmentSets,_that.serviceZones,_that.metadata,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
   throw StateError('Unexpected subclass');
 
 }
@@ -215,10 +217,10 @@ return $default(_that.id,_that.name,_that.addressId,_that.address,_that.salesCha
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name, @JsonKey(name: 'address_id')  String? addressId,  StockLocationAddress? address, @JsonKey(name: 'sales_channels')  List<SalesChannel>? salesChannels, @JsonKey(name: 'fulfillment_providers')  List<FulfillmentProvider>? fulfillmentProviders,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id,  String name, @JsonKey(name: 'address_id')  String? addressId,  StockLocationAddress? address, @JsonKey(name: 'sales_channels')  List<SalesChannel>? salesChannels, @JsonKey(name: 'fulfillment_providers')  List<FulfillmentProvider>? fulfillmentProviders, @JsonKey(name: 'fulfillment_sets')  List<FulfillmentSet>? fulfillmentSets, @JsonKey(name: 'service_zones')  List<ServiceZone>? serviceZones,  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _StockLocation() when $default != null:
-return $default(_that.id,_that.name,_that.addressId,_that.address,_that.salesChannels,_that.fulfillmentProviders,_that.metadata,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
+return $default(_that.id,_that.name,_that.addressId,_that.address,_that.salesChannels,_that.fulfillmentProviders,_that.fulfillmentSets,_that.serviceZones,_that.metadata,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
   return null;
 
 }
@@ -230,7 +232,7 @@ return $default(_that.id,_that.name,_that.addressId,_that.address,_that.salesCha
 @JsonSerializable()
 
 class _StockLocation implements StockLocation {
-  const _StockLocation({required this.id, required this.name, @JsonKey(name: 'address_id') this.addressId, this.address, @JsonKey(name: 'sales_channels') final  List<SalesChannel>? salesChannels, @JsonKey(name: 'fulfillment_providers') final  List<FulfillmentProvider>? fulfillmentProviders, final  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt}): _salesChannels = salesChannels,_fulfillmentProviders = fulfillmentProviders,_metadata = metadata;
+  const _StockLocation({required this.id, required this.name, @JsonKey(name: 'address_id') this.addressId, this.address, @JsonKey(name: 'sales_channels') final  List<SalesChannel>? salesChannels, @JsonKey(name: 'fulfillment_providers') final  List<FulfillmentProvider>? fulfillmentProviders, @JsonKey(name: 'fulfillment_sets') final  List<FulfillmentSet>? fulfillmentSets, @JsonKey(name: 'service_zones') final  List<ServiceZone>? serviceZones, final  Map<String, dynamic>? metadata, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt}): _salesChannels = salesChannels,_fulfillmentProviders = fulfillmentProviders,_fulfillmentSets = fulfillmentSets,_serviceZones = serviceZones,_metadata = metadata;
   factory _StockLocation.fromJson(Map<String, dynamic> json) => _$StockLocationFromJson(json);
 
 @override final  String id;
@@ -251,6 +253,24 @@ class _StockLocation implements StockLocation {
   final value = _fulfillmentProviders;
   if (value == null) return null;
   if (_fulfillmentProviders is EqualUnmodifiableListView) return _fulfillmentProviders;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(value);
+}
+
+ final  List<FulfillmentSet>? _fulfillmentSets;
+@override@JsonKey(name: 'fulfillment_sets') List<FulfillmentSet>? get fulfillmentSets {
+  final value = _fulfillmentSets;
+  if (value == null) return null;
+  if (_fulfillmentSets is EqualUnmodifiableListView) return _fulfillmentSets;
+  // ignore: implicit_dynamic_type
+  return EqualUnmodifiableListView(value);
+}
+
+ final  List<ServiceZone>? _serviceZones;
+@override@JsonKey(name: 'service_zones') List<ServiceZone>? get serviceZones {
+  final value = _serviceZones;
+  if (value == null) return null;
+  if (_serviceZones is EqualUnmodifiableListView) return _serviceZones;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(value);
 }
@@ -281,16 +301,16 @@ Map<String, dynamic> toJson() {
 
 @override
 bool operator ==(Object other) {
-  return identical(this, other) || (other.runtimeType == runtimeType&&other is _StockLocation&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.addressId, addressId) || other.addressId == addressId)&&(identical(other.address, address) || other.address == address)&&const DeepCollectionEquality().equals(other._salesChannels, _salesChannels)&&const DeepCollectionEquality().equals(other._fulfillmentProviders, _fulfillmentProviders)&&const DeepCollectionEquality().equals(other._metadata, _metadata)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.deletedAt, deletedAt) || other.deletedAt == deletedAt));
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _StockLocation&&(identical(other.id, id) || other.id == id)&&(identical(other.name, name) || other.name == name)&&(identical(other.addressId, addressId) || other.addressId == addressId)&&(identical(other.address, address) || other.address == address)&&const DeepCollectionEquality().equals(other._salesChannels, _salesChannels)&&const DeepCollectionEquality().equals(other._fulfillmentProviders, _fulfillmentProviders)&&const DeepCollectionEquality().equals(other._fulfillmentSets, _fulfillmentSets)&&const DeepCollectionEquality().equals(other._serviceZones, _serviceZones)&&const DeepCollectionEquality().equals(other._metadata, _metadata)&&(identical(other.createdAt, createdAt) || other.createdAt == createdAt)&&(identical(other.updatedAt, updatedAt) || other.updatedAt == updatedAt)&&(identical(other.deletedAt, deletedAt) || other.deletedAt == deletedAt));
 }
 
 @JsonKey(includeFromJson: false, includeToJson: false)
 @override
-int get hashCode => Object.hash(runtimeType,id,name,addressId,address,const DeepCollectionEquality().hash(_salesChannels),const DeepCollectionEquality().hash(_fulfillmentProviders),const DeepCollectionEquality().hash(_metadata),createdAt,updatedAt,deletedAt);
+int get hashCode => Object.hash(runtimeType,id,name,addressId,address,const DeepCollectionEquality().hash(_salesChannels),const DeepCollectionEquality().hash(_fulfillmentProviders),const DeepCollectionEquality().hash(_fulfillmentSets),const DeepCollectionEquality().hash(_serviceZones),const DeepCollectionEquality().hash(_metadata),createdAt,updatedAt,deletedAt);
 
 @override
 String toString() {
-  return 'StockLocation(id: $id, name: $name, addressId: $addressId, address: $address, salesChannels: $salesChannels, fulfillmentProviders: $fulfillmentProviders, metadata: $metadata, createdAt: $createdAt, updatedAt: $updatedAt, deletedAt: $deletedAt)';
+  return 'StockLocation(id: $id, name: $name, addressId: $addressId, address: $address, salesChannels: $salesChannels, fulfillmentProviders: $fulfillmentProviders, fulfillmentSets: $fulfillmentSets, serviceZones: $serviceZones, metadata: $metadata, createdAt: $createdAt, updatedAt: $updatedAt, deletedAt: $deletedAt)';
 }
 
 
@@ -301,7 +321,7 @@ abstract mixin class _$StockLocationCopyWith<$Res> implements $StockLocationCopy
   factory _$StockLocationCopyWith(_StockLocation value, $Res Function(_StockLocation) _then) = __$StockLocationCopyWithImpl;
 @override @useResult
 $Res call({
- String id, String name,@JsonKey(name: 'address_id') String? addressId, StockLocationAddress? address,@JsonKey(name: 'sales_channels') List<SalesChannel>? salesChannels,@JsonKey(name: 'fulfillment_providers') List<FulfillmentProvider>? fulfillmentProviders, Map<String, dynamic>? metadata,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
+ String id, String name,@JsonKey(name: 'address_id') String? addressId, StockLocationAddress? address,@JsonKey(name: 'sales_channels') List<SalesChannel>? salesChannels,@JsonKey(name: 'fulfillment_providers') List<FulfillmentProvider>? fulfillmentProviders,@JsonKey(name: 'fulfillment_sets') List<FulfillmentSet>? fulfillmentSets,@JsonKey(name: 'service_zones') List<ServiceZone>? serviceZones, Map<String, dynamic>? metadata,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
 });
 
 
@@ -318,7 +338,7 @@ class __$StockLocationCopyWithImpl<$Res>
 
 /// Create a copy of StockLocation
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? addressId = freezed,Object? address = freezed,Object? salesChannels = freezed,Object? fulfillmentProviders = freezed,Object? metadata = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? name = null,Object? addressId = freezed,Object? address = freezed,Object? salesChannels = freezed,Object? fulfillmentProviders = freezed,Object? fulfillmentSets = freezed,Object? serviceZones = freezed,Object? metadata = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
   return _then(_StockLocation(
 id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
 as String,name: null == name ? _self.name : name // ignore: cast_nullable_to_non_nullable
@@ -326,7 +346,9 @@ as String,addressId: freezed == addressId ? _self.addressId : addressId // ignor
 as String?,address: freezed == address ? _self.address : address // ignore: cast_nullable_to_non_nullable
 as StockLocationAddress?,salesChannels: freezed == salesChannels ? _self._salesChannels : salesChannels // ignore: cast_nullable_to_non_nullable
 as List<SalesChannel>?,fulfillmentProviders: freezed == fulfillmentProviders ? _self._fulfillmentProviders : fulfillmentProviders // ignore: cast_nullable_to_non_nullable
-as List<FulfillmentProvider>?,metadata: freezed == metadata ? _self._metadata : metadata // ignore: cast_nullable_to_non_nullable
+as List<FulfillmentProvider>?,fulfillmentSets: freezed == fulfillmentSets ? _self._fulfillmentSets : fulfillmentSets // ignore: cast_nullable_to_non_nullable
+as List<FulfillmentSet>?,serviceZones: freezed == serviceZones ? _self._serviceZones : serviceZones // ignore: cast_nullable_to_non_nullable
+as List<ServiceZone>?,metadata: freezed == metadata ? _self._metadata : metadata // ignore: cast_nullable_to_non_nullable
 as Map<String, dynamic>?,createdAt: freezed == createdAt ? _self.createdAt : createdAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,updatedAt: freezed == updatedAt ? _self.updatedAt : updatedAt // ignore: cast_nullable_to_non_nullable
 as DateTime?,deletedAt: freezed == deletedAt ? _self.deletedAt : deletedAt // ignore: cast_nullable_to_non_nullable

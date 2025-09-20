@@ -6,8 +6,10 @@ part 'update_fulfillment_set_service_zones.g.dart';
 @freezed
 abstract class UpdateFulfillmentSetServiceZones
     with _$UpdateFulfillmentSetServiceZones {
+  @JsonSerializable(includeIfNull: false)
   const factory UpdateFulfillmentSetServiceZones({
     String? name,
+    @JsonKey(name: 'geo_zones')
     List<Map<String, dynamic>>? geoZones,
   }) = _UpdateFulfillmentSetServiceZones;
 

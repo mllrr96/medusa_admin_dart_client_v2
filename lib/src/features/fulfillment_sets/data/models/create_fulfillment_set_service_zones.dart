@@ -1,13 +1,15 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'create_fulfillment_set_service_zones.freezed.dart';
+
 part 'create_fulfillment_set_service_zones.g.dart';
 
 @freezed
-abstract class CreateFulfillmentSetServiceZones
-    with _$CreateFulfillmentSetServiceZones {
+abstract class CreateFulfillmentSetServiceZones with _$CreateFulfillmentSetServiceZones {
+  @JsonSerializable(includeIfNull: false)
   const factory CreateFulfillmentSetServiceZones({
     required String name,
+    @JsonKey(name: 'geo_zones')
     List<Map<String, dynamic>>? geoZones,
   }) = _CreateFulfillmentSetServiceZones;
 
