@@ -10,10 +10,10 @@ _StockLocationResponse _$StockLocationResponseFromJson(
   Map<String, dynamic> json,
 ) => _StockLocationResponse(
   stockLocation: StockLocation.fromJson(
-    json['stockLocation'] as Map<String, dynamic>,
+    json['stock_location'] as Map<String, dynamic>,
   ),
 );
 
 Map<String, dynamic> _$StockLocationResponseToJson(
   _StockLocationResponse instance,
-) => <String, dynamic>{'stockLocation': instance.stockLocation};
+) => <String, dynamic>{'stock_location': instance.stockLocation};

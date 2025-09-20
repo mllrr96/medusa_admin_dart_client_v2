@@ -9,7 +9,7 @@ part of 'stock_location_list_res.dart';
 _StockLocationListResponse _$StockLocationListResponseFromJson(
   Map<String, dynamic> json,
 ) => _StockLocationListResponse(
-  stockLocations: (json['stockLocations'] as List<dynamic>)
+  stockLocations: (json['stock_locations'] as List<dynamic>)
       .map((e) => StockLocation.fromJson(e as Map<String, dynamic>))
       .toList(),
   count: (json['count'] as num).toInt(),
@@ -20,7 +20,7 @@ _StockLocationListResponse _$StockLocationListResponseFromJson(
 Map<String, dynamic> _$StockLocationListResponseToJson(
   _StockLocationListResponse instance,
 ) => <String, dynamic>{
-  'stockLocations': instance.stockLocations,
+  'stock_locations': instance.stockLocations,
   'count': instance.count,
   'limit': instance.limit,
   'offset': instance.offset,

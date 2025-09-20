@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$StockLocationListResponse {
 
- List<StockLocation> get stockLocations; int get count; int get limit; int get offset;
+@JsonKey(name: 'stock_locations') List<StockLocation> get stockLocations; int get count; int get limit; int get offset;
 /// Create a copy of StockLocationListResponse
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $StockLocationListResponseCopyWith<$Res>  {
   factory $StockLocationListResponseCopyWith(StockLocationListResponse value, $Res Function(StockLocationListResponse) _then) = _$StockLocationListResponseCopyWithImpl;
 @useResult
 $Res call({
- List<StockLocation> stockLocations, int count, int limit, int offset
+@JsonKey(name: 'stock_locations') List<StockLocation> stockLocations, int count, int limit, int offset
 });
 
 
@@ -156,7 +156,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( List<StockLocation> stockLocations,  int count,  int limit,  int offset)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'stock_locations')  List<StockLocation> stockLocations,  int count,  int limit,  int offset)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _StockLocationListResponse() when $default != null:
 return $default(_that.stockLocations,_that.count,_that.limit,_that.offset);case _:
@@ -177,7 +177,7 @@ return $default(_that.stockLocations,_that.count,_that.limit,_that.offset);case 
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( List<StockLocation> stockLocations,  int count,  int limit,  int offset)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'stock_locations')  List<StockLocation> stockLocations,  int count,  int limit,  int offset)  $default,) {final _that = this;
 switch (_that) {
 case _StockLocationListResponse():
 return $default(_that.stockLocations,_that.count,_that.limit,_that.offset);case _:
@@ -197,7 +197,7 @@ return $default(_that.stockLocations,_that.count,_that.limit,_that.offset);case 
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( List<StockLocation> stockLocations,  int count,  int limit,  int offset)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'stock_locations')  List<StockLocation> stockLocations,  int count,  int limit,  int offset)?  $default,) {final _that = this;
 switch (_that) {
 case _StockLocationListResponse() when $default != null:
 return $default(_that.stockLocations,_that.count,_that.limit,_that.offset);case _:
@@ -212,11 +212,11 @@ return $default(_that.stockLocations,_that.count,_that.limit,_that.offset);case 
 @JsonSerializable()
 
 class _StockLocationListResponse implements StockLocationListResponse {
-  const _StockLocationListResponse({required final  List<StockLocation> stockLocations, required this.count, required this.limit, required this.offset}): _stockLocations = stockLocations;
+  const _StockLocationListResponse({@JsonKey(name: 'stock_locations') required final  List<StockLocation> stockLocations, required this.count, required this.limit, required this.offset}): _stockLocations = stockLocations;
   factory _StockLocationListResponse.fromJson(Map<String, dynamic> json) => _$StockLocationListResponseFromJson(json);
 
  final  List<StockLocation> _stockLocations;
-@override List<StockLocation> get stockLocations {
+@override@JsonKey(name: 'stock_locations') List<StockLocation> get stockLocations {
   if (_stockLocations is EqualUnmodifiableListView) return _stockLocations;
   // ignore: implicit_dynamic_type
   return EqualUnmodifiableListView(_stockLocations);
@@ -259,7 +259,7 @@ abstract mixin class _$StockLocationListResponseCopyWith<$Res> implements $Stock
   factory _$StockLocationListResponseCopyWith(_StockLocationListResponse value, $Res Function(_StockLocationListResponse) _then) = __$StockLocationListResponseCopyWithImpl;
 @override @useResult
 $Res call({
- List<StockLocation> stockLocations, int count, int limit, int offset
+@JsonKey(name: 'stock_locations') List<StockLocation> stockLocations, int count, int limit, int offset
 });
 
 

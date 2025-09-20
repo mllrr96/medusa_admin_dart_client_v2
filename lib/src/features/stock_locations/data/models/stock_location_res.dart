@@ -8,6 +8,7 @@ part 'stock_location_res.g.dart';
 @freezed
 abstract class StockLocationResponse with _$StockLocationResponse {
   const factory StockLocationResponse({
+    @JsonKey(name: 'stock_location')
     required StockLocation stockLocation,
   }) = _StockLocationResponse;
 

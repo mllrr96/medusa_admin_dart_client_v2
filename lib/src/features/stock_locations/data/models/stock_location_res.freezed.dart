@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$StockLocationResponse {
 
- StockLocation get stockLocation;
+@JsonKey(name: 'stock_location') StockLocation get stockLocation;
 /// Create a copy of StockLocationResponse
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $StockLocationResponseCopyWith<$Res>  {
   factory $StockLocationResponseCopyWith(StockLocationResponse value, $Res Function(StockLocationResponse) _then) = _$StockLocationResponseCopyWithImpl;
 @useResult
 $Res call({
- StockLocation stockLocation
+@JsonKey(name: 'stock_location') StockLocation stockLocation
 });
 
 
@@ -162,7 +162,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( StockLocation stockLocation)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function(@JsonKey(name: 'stock_location')  StockLocation stockLocation)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _StockLocationResponse() when $default != null:
 return $default(_that.stockLocation);case _:
@@ -183,7 +183,7 @@ return $default(_that.stockLocation);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( StockLocation stockLocation)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function(@JsonKey(name: 'stock_location')  StockLocation stockLocation)  $default,) {final _that = this;
 switch (_that) {
 case _StockLocationResponse():
 return $default(_that.stockLocation);case _:
@@ -203,7 +203,7 @@ return $default(_that.stockLocation);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( StockLocation stockLocation)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function(@JsonKey(name: 'stock_location')  StockLocation stockLocation)?  $default,) {final _that = this;
 switch (_that) {
 case _StockLocationResponse() when $default != null:
 return $default(_that.stockLocation);case _:
@@ -218,10 +218,10 @@ return $default(_that.stockLocation);case _:
 @JsonSerializable()
 
 class _StockLocationResponse implements StockLocationResponse {
-  const _StockLocationResponse({required this.stockLocation});
+  const _StockLocationResponse({@JsonKey(name: 'stock_location') required this.stockLocation});
   factory _StockLocationResponse.fromJson(Map<String, dynamic> json) => _$StockLocationResponseFromJson(json);
 
-@override final  StockLocation stockLocation;
+@override@JsonKey(name: 'stock_location') final  StockLocation stockLocation;
 
 /// Create a copy of StockLocationResponse
 /// with the given fields replaced by the non-null parameter values.
@@ -256,7 +256,7 @@ abstract mixin class _$StockLocationResponseCopyWith<$Res> implements $StockLoca
   factory _$StockLocationResponseCopyWith(_StockLocationResponse value, $Res Function(_StockLocationResponse) _then) = __$StockLocationResponseCopyWithImpl;
 @override @useResult
 $Res call({
- StockLocation stockLocation
+@JsonKey(name: 'stock_location') StockLocation stockLocation
 });
 
 

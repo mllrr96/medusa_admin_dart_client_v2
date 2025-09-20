@@ -8,6 +8,7 @@ part 'stock_location_list_res.g.dart';
 @freezed
 abstract class StockLocationListResponse with _$StockLocationListResponse {
   const factory StockLocationListResponse({
+    @JsonKey(name: 'stock_locations')
     required List<StockLocation> stockLocations,
     required int count,
     required int limit,
