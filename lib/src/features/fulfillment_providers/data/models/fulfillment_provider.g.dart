@@ -8,8 +8,8 @@ part of 'fulfillment_provider.dart';
 
 _FulfillmentProvider _$FulfillmentProviderFromJson(Map<String, dynamic> json) =>
     _FulfillmentProvider(
-      id: json['id'] as String,
-      isEnabled: json['is_enabled'] as bool,
+      id: json['id'] as String?,
+      isEnabled: json['is_enabled'] as bool?,
     );
 
 Map<String, dynamic> _$FulfillmentProviderToJson(

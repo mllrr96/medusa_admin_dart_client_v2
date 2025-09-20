@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$FulfillmentProvider {
 
- String get id;@JsonKey(name: 'is_enabled') bool get isEnabled;
+ String? get id;@JsonKey(name: 'is_enabled') bool? get isEnabled;
 /// Create a copy of FulfillmentProvider
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $FulfillmentProviderCopyWith<$Res>  {
   factory $FulfillmentProviderCopyWith(FulfillmentProvider value, $Res Function(FulfillmentProvider) _then) = _$FulfillmentProviderCopyWithImpl;
 @useResult
 $Res call({
- String id,@JsonKey(name: 'is_enabled') bool isEnabled
+ String? id,@JsonKey(name: 'is_enabled') bool? isEnabled
 });
 
 
@@ -65,11 +65,11 @@ class _$FulfillmentProviderCopyWithImpl<$Res>
 
 /// Create a copy of FulfillmentProvider
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? isEnabled = null,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? isEnabled = freezed,}) {
   return _then(_self.copyWith(
-id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,isEnabled: null == isEnabled ? _self.isEnabled : isEnabled // ignore: cast_nullable_to_non_nullable
-as bool,
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,isEnabled: freezed == isEnabled ? _self.isEnabled : isEnabled // ignore: cast_nullable_to_non_nullable
+as bool?,
   ));
 }
 
@@ -154,7 +154,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'is_enabled')  bool isEnabled)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id, @JsonKey(name: 'is_enabled')  bool? isEnabled)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _FulfillmentProvider() when $default != null:
 return $default(_that.id,_that.isEnabled);case _:
@@ -175,7 +175,7 @@ return $default(_that.id,_that.isEnabled);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'is_enabled')  bool isEnabled)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id, @JsonKey(name: 'is_enabled')  bool? isEnabled)  $default,) {final _that = this;
 switch (_that) {
 case _FulfillmentProvider():
 return $default(_that.id,_that.isEnabled);case _:
@@ -195,7 +195,7 @@ return $default(_that.id,_that.isEnabled);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'is_enabled')  bool isEnabled)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id, @JsonKey(name: 'is_enabled')  bool? isEnabled)?  $default,) {final _that = this;
 switch (_that) {
 case _FulfillmentProvider() when $default != null:
 return $default(_that.id,_that.isEnabled);case _:
@@ -210,11 +210,11 @@ return $default(_that.id,_that.isEnabled);case _:
 @JsonSerializable()
 
 class _FulfillmentProvider implements FulfillmentProvider {
-  const _FulfillmentProvider({required this.id, @JsonKey(name: 'is_enabled') required this.isEnabled});
+  const _FulfillmentProvider({this.id, @JsonKey(name: 'is_enabled') this.isEnabled});
   factory _FulfillmentProvider.fromJson(Map<String, dynamic> json) => _$FulfillmentProviderFromJson(json);
 
-@override final  String id;
-@override@JsonKey(name: 'is_enabled') final  bool isEnabled;
+@override final  String? id;
+@override@JsonKey(name: 'is_enabled') final  bool? isEnabled;
 
 /// Create a copy of FulfillmentProvider
 /// with the given fields replaced by the non-null parameter values.
@@ -249,7 +249,7 @@ abstract mixin class _$FulfillmentProviderCopyWith<$Res> implements $Fulfillment
   factory _$FulfillmentProviderCopyWith(_FulfillmentProvider value, $Res Function(_FulfillmentProvider) _then) = __$FulfillmentProviderCopyWithImpl;
 @override @useResult
 $Res call({
- String id,@JsonKey(name: 'is_enabled') bool isEnabled
+ String? id,@JsonKey(name: 'is_enabled') bool? isEnabled
 });
 
 
@@ -266,11 +266,11 @@ class __$FulfillmentProviderCopyWithImpl<$Res>
 
 /// Create a copy of FulfillmentProvider
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? isEnabled = null,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? isEnabled = freezed,}) {
   return _then(_FulfillmentProvider(
-id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,isEnabled: null == isEnabled ? _self.isEnabled : isEnabled // ignore: cast_nullable_to_non_nullable
-as bool,
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,isEnabled: freezed == isEnabled ? _self.isEnabled : isEnabled // ignore: cast_nullable_to_non_nullable
+as bool?,
   ));
 }
 
