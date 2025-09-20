@@ -89,3 +89,5 @@ export 'src/features/shipping_option_types/data/models/models.dart';
 export 'src/features/shipping_option_types/data/repositories/shipping_option_types_repository.dart';
 export 'src/features/stock_locations/data/models/models.dart';
 export 'src/features/stock_locations/data/repositories/stock_locations_repository.dart';
+export 'src/features/fulfillment_providers/data/models/models.dart';
+export 'src/features/fulfillment_providers/data/repository/fulfillment_providers_repository.dart';
