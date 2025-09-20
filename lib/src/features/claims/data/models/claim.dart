@@ -1,6 +1,8 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:medusa_admin_dart_client/medusa_admin_dart_client_v2.dart';
 import 'package:medusa_admin_dart_client/src/core/models/transaction.dart';
+import 'package:medusa_admin_dart_client/src/core/models/return.dart';
+import 'package:medusa_admin_dart_client/src/core/models/shipping_method.dart';
+import 'package:medusa_admin_dart_client/src/features/orders/data/models/order.dart';
 
 import 'claim_item.dart';
 

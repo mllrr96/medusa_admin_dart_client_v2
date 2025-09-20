@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:medusa_admin_dart_client/src/features/returns/data/models/return.dart';
+import 'package:medusa_admin_dart_client/src/core/models/return.dart';
 
 part 'post_cancel_return_res.freezed.dart';
 part 'post_cancel_return_res.g.dart';

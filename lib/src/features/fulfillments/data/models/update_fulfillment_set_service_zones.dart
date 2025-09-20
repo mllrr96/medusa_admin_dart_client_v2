@@ -1,4 +1,4 @@
-import 'create_fulfillment_set_service_zones.dart';
+import 'package:medusa_admin_dart_client/src/core/models/geo_zone.dart';
 
 class UpdateFulfillmentSetServiceZones {
   final String? name;

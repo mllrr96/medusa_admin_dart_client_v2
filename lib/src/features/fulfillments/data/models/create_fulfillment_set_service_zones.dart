@@ -1,51 +1,16 @@
-class CreateFulfillmentSetServiceZones {
-  final String? name;
-  final List<GeoZone>? geoZones;
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:medusa_admin_dart_client/src/core/models/geo_zone.dart';
 
-  CreateFulfillmentSetServiceZones({
-    this.name,
-    this.geoZones,
-  });
+part 'create_fulfillment_set_service_zones.freezed.dart';
+part 'create_fulfillment_set_service_zones.g.dart';
 
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    if (name != null) {
-      data['name'] = name;
-    }
-    if (geoZones != null) {
-      data['geo_zones'] = geoZones!.map((v) => v.toJson()).toList();
-    }
-    return data;
-  }
-}
+@freezed
+abstract class CreateFulfillmentSetServiceZones with _$CreateFulfillmentSetServiceZones {
+  const factory CreateFulfillmentSetServiceZones({
+    String? name,
+    @JsonKey(name: 'geo_zones') List<GeoZone>? geoZones,
+  }) = _CreateFulfillmentSetServiceZones;
 
-class GeoZone {
-  final String? countryCode;
-  final String? provinceCode;
-  final String? city;
-  final String? postalExpression;
-
-  GeoZone({
-    this.countryCode,
-    this.provinceCode,
-    this.city,
-    this.postalExpression,
-  });
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    if (countryCode != null) {
-      data['country_code'] = countryCode;
-    }
-    if (provinceCode != null) {
-      data['province_code'] = provinceCode;
-    }
-    if (city != null) {
-      data['city'] = city;
-    }
-    if (postalExpression != null) {
-      data['postal_expression'] = postalExpression;
-    }
-    return data;
-  }
+  factory CreateFulfillmentSetServiceZones.fromJson(Map<String, dynamic> json) =>
+      _$CreateFulfillmentSetServiceZonesFromJson(json);
 }
