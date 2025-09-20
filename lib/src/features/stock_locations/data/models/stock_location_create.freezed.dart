@@ -221,8 +221,8 @@ return $default(_that.name,_that.addressId,_that.metadata,_that.address);case _:
 }
 
 /// @nodoc
-@JsonSerializable()
 
+@JsonSerializable(includeIfNull: false)
 class _CreateStockLocation implements CreateStockLocation {
   const _CreateStockLocation({required this.name, @JsonKey(name: 'address_id') this.addressId, final  Map<String, dynamic>? metadata, this.address}): _metadata = metadata;
   factory _CreateStockLocation.fromJson(Map<String, dynamic> json) => _$CreateStockLocationFromJson(json);

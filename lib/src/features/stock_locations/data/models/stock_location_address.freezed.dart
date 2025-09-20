@@ -15,7 +15,7 @@ T _$identity<T>(T value) => value;
 /// @nodoc
 mixin _$StockLocationAddress {
 
- String get id;@JsonKey(name: 'address_1') String get address1;@JsonKey(name: 'address_2') String? get address2; String? get company;@JsonKey(name: 'country_code') String get countryCode; String? get city; String? get phone;@JsonKey(name: 'postal_code') String? get postalCode; String? get province;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt;
+ String? get id;@JsonKey(name: 'address_1') String? get address1;@JsonKey(name: 'address_2') String? get address2; String? get company;@JsonKey(name: 'country_code') String? get countryCode; String? get city; String? get phone;@JsonKey(name: 'postal_code') String? get postalCode; String? get province;@JsonKey(name: 'created_at') DateTime? get createdAt;@JsonKey(name: 'updated_at') DateTime? get updatedAt;@JsonKey(name: 'deleted_at') DateTime? get deletedAt;
 /// Create a copy of StockLocationAddress
 /// with the given fields replaced by the non-null parameter values.
 @JsonKey(includeFromJson: false, includeToJson: false)
@@ -48,7 +48,7 @@ abstract mixin class $StockLocationAddressCopyWith<$Res>  {
   factory $StockLocationAddressCopyWith(StockLocationAddress value, $Res Function(StockLocationAddress) _then) = _$StockLocationAddressCopyWithImpl;
 @useResult
 $Res call({
- String id,@JsonKey(name: 'address_1') String address1,@JsonKey(name: 'address_2') String? address2, String? company,@JsonKey(name: 'country_code') String countryCode, String? city, String? phone,@JsonKey(name: 'postal_code') String? postalCode, String? province,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
+ String? id,@JsonKey(name: 'address_1') String? address1,@JsonKey(name: 'address_2') String? address2, String? company,@JsonKey(name: 'country_code') String? countryCode, String? city, String? phone,@JsonKey(name: 'postal_code') String? postalCode, String? province,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
 });
 
 
@@ -65,14 +65,14 @@ class _$StockLocationAddressCopyWithImpl<$Res>
 
 /// Create a copy of StockLocationAddress
 /// with the given fields replaced by the non-null parameter values.
-@pragma('vm:prefer-inline') @override $Res call({Object? id = null,Object? address1 = null,Object? address2 = freezed,Object? company = freezed,Object? countryCode = null,Object? city = freezed,Object? phone = freezed,Object? postalCode = freezed,Object? province = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
+@pragma('vm:prefer-inline') @override $Res call({Object? id = freezed,Object? address1 = freezed,Object? address2 = freezed,Object? company = freezed,Object? countryCode = freezed,Object? city = freezed,Object? phone = freezed,Object? postalCode = freezed,Object? province = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
   return _then(_self.copyWith(
-id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,address1: null == address1 ? _self.address1 : address1 // ignore: cast_nullable_to_non_nullable
-as String,address2: freezed == address2 ? _self.address2 : address2 // ignore: cast_nullable_to_non_nullable
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,address1: freezed == address1 ? _self.address1 : address1 // ignore: cast_nullable_to_non_nullable
+as String?,address2: freezed == address2 ? _self.address2 : address2 // ignore: cast_nullable_to_non_nullable
 as String?,company: freezed == company ? _self.company : company // ignore: cast_nullable_to_non_nullable
-as String?,countryCode: null == countryCode ? _self.countryCode : countryCode // ignore: cast_nullable_to_non_nullable
-as String,city: freezed == city ? _self.city : city // ignore: cast_nullable_to_non_nullable
+as String?,countryCode: freezed == countryCode ? _self.countryCode : countryCode // ignore: cast_nullable_to_non_nullable
+as String?,city: freezed == city ? _self.city : city // ignore: cast_nullable_to_non_nullable
 as String?,phone: freezed == phone ? _self.phone : phone // ignore: cast_nullable_to_non_nullable
 as String?,postalCode: freezed == postalCode ? _self.postalCode : postalCode // ignore: cast_nullable_to_non_nullable
 as String?,province: freezed == province ? _self.province : province // ignore: cast_nullable_to_non_nullable
@@ -164,7 +164,7 @@ return $default(_that);case _:
 /// }
 /// ```
 
-@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'address_1')  String address1, @JsonKey(name: 'address_2')  String? address2,  String? company, @JsonKey(name: 'country_code')  String countryCode,  String? city,  String? phone, @JsonKey(name: 'postal_code')  String? postalCode,  String? province, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? id, @JsonKey(name: 'address_1')  String? address1, @JsonKey(name: 'address_2')  String? address2,  String? company, @JsonKey(name: 'country_code')  String? countryCode,  String? city,  String? phone, @JsonKey(name: 'postal_code')  String? postalCode,  String? province, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,{required TResult orElse(),}) {final _that = this;
 switch (_that) {
 case _StockLocationAddress() when $default != null:
 return $default(_that.id,_that.address1,_that.address2,_that.company,_that.countryCode,_that.city,_that.phone,_that.postalCode,_that.province,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -185,7 +185,7 @@ return $default(_that.id,_that.address1,_that.address2,_that.company,_that.count
 /// }
 /// ```
 
-@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String id, @JsonKey(name: 'address_1')  String address1, @JsonKey(name: 'address_2')  String? address2,  String? company, @JsonKey(name: 'country_code')  String countryCode,  String? city,  String? phone, @JsonKey(name: 'postal_code')  String? postalCode,  String? province, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)  $default,) {final _that = this;
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? id, @JsonKey(name: 'address_1')  String? address1, @JsonKey(name: 'address_2')  String? address2,  String? company, @JsonKey(name: 'country_code')  String? countryCode,  String? city,  String? phone, @JsonKey(name: 'postal_code')  String? postalCode,  String? province, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)  $default,) {final _that = this;
 switch (_that) {
 case _StockLocationAddress():
 return $default(_that.id,_that.address1,_that.address2,_that.company,_that.countryCode,_that.city,_that.phone,_that.postalCode,_that.province,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -205,7 +205,7 @@ return $default(_that.id,_that.address1,_that.address2,_that.company,_that.count
 /// }
 /// ```
 
-@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String id, @JsonKey(name: 'address_1')  String address1, @JsonKey(name: 'address_2')  String? address2,  String? company, @JsonKey(name: 'country_code')  String countryCode,  String? city,  String? phone, @JsonKey(name: 'postal_code')  String? postalCode,  String? province, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,) {final _that = this;
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? id, @JsonKey(name: 'address_1')  String? address1, @JsonKey(name: 'address_2')  String? address2,  String? company, @JsonKey(name: 'country_code')  String? countryCode,  String? city,  String? phone, @JsonKey(name: 'postal_code')  String? postalCode,  String? province, @JsonKey(name: 'created_at')  DateTime? createdAt, @JsonKey(name: 'updated_at')  DateTime? updatedAt, @JsonKey(name: 'deleted_at')  DateTime? deletedAt)?  $default,) {final _that = this;
 switch (_that) {
 case _StockLocationAddress() when $default != null:
 return $default(_that.id,_that.address1,_that.address2,_that.company,_that.countryCode,_that.city,_that.phone,_that.postalCode,_that.province,_that.createdAt,_that.updatedAt,_that.deletedAt);case _:
@@ -217,17 +217,17 @@ return $default(_that.id,_that.address1,_that.address2,_that.company,_that.count
 }
 
 /// @nodoc
-@JsonSerializable()
 
+@JsonSerializable(includeIfNull: false)
 class _StockLocationAddress implements StockLocationAddress {
-  const _StockLocationAddress({required this.id, @JsonKey(name: 'address_1') required this.address1, @JsonKey(name: 'address_2') this.address2, this.company, @JsonKey(name: 'country_code') required this.countryCode, this.city, this.phone, @JsonKey(name: 'postal_code') this.postalCode, this.province, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt});
+  const _StockLocationAddress({this.id, @JsonKey(name: 'address_1') this.address1, @JsonKey(name: 'address_2') this.address2, this.company, @JsonKey(name: 'country_code') this.countryCode, this.city, this.phone, @JsonKey(name: 'postal_code') this.postalCode, this.province, @JsonKey(name: 'created_at') this.createdAt, @JsonKey(name: 'updated_at') this.updatedAt, @JsonKey(name: 'deleted_at') this.deletedAt});
   factory _StockLocationAddress.fromJson(Map<String, dynamic> json) => _$StockLocationAddressFromJson(json);
 
-@override final  String id;
-@override@JsonKey(name: 'address_1') final  String address1;
+@override final  String? id;
+@override@JsonKey(name: 'address_1') final  String? address1;
 @override@JsonKey(name: 'address_2') final  String? address2;
 @override final  String? company;
-@override@JsonKey(name: 'country_code') final  String countryCode;
+@override@JsonKey(name: 'country_code') final  String? countryCode;
 @override final  String? city;
 @override final  String? phone;
 @override@JsonKey(name: 'postal_code') final  String? postalCode;
@@ -269,7 +269,7 @@ abstract mixin class _$StockLocationAddressCopyWith<$Res> implements $StockLocat
   factory _$StockLocationAddressCopyWith(_StockLocationAddress value, $Res Function(_StockLocationAddress) _then) = __$StockLocationAddressCopyWithImpl;
 @override @useResult
 $Res call({
- String id,@JsonKey(name: 'address_1') String address1,@JsonKey(name: 'address_2') String? address2, String? company,@JsonKey(name: 'country_code') String countryCode, String? city, String? phone,@JsonKey(name: 'postal_code') String? postalCode, String? province,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
+ String? id,@JsonKey(name: 'address_1') String? address1,@JsonKey(name: 'address_2') String? address2, String? company,@JsonKey(name: 'country_code') String? countryCode, String? city, String? phone,@JsonKey(name: 'postal_code') String? postalCode, String? province,@JsonKey(name: 'created_at') DateTime? createdAt,@JsonKey(name: 'updated_at') DateTime? updatedAt,@JsonKey(name: 'deleted_at') DateTime? deletedAt
 });
 
 
@@ -286,14 +286,14 @@ class __$StockLocationAddressCopyWithImpl<$Res>
 
 /// Create a copy of StockLocationAddress
 /// with the given fields replaced by the non-null parameter values.
-@override @pragma('vm:prefer-inline') $Res call({Object? id = null,Object? address1 = null,Object? address2 = freezed,Object? company = freezed,Object? countryCode = null,Object? city = freezed,Object? phone = freezed,Object? postalCode = freezed,Object? province = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
+@override @pragma('vm:prefer-inline') $Res call({Object? id = freezed,Object? address1 = freezed,Object? address2 = freezed,Object? company = freezed,Object? countryCode = freezed,Object? city = freezed,Object? phone = freezed,Object? postalCode = freezed,Object? province = freezed,Object? createdAt = freezed,Object? updatedAt = freezed,Object? deletedAt = freezed,}) {
   return _then(_StockLocationAddress(
-id: null == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
-as String,address1: null == address1 ? _self.address1 : address1 // ignore: cast_nullable_to_non_nullable
-as String,address2: freezed == address2 ? _self.address2 : address2 // ignore: cast_nullable_to_non_nullable
+id: freezed == id ? _self.id : id // ignore: cast_nullable_to_non_nullable
+as String?,address1: freezed == address1 ? _self.address1 : address1 // ignore: cast_nullable_to_non_nullable
+as String?,address2: freezed == address2 ? _self.address2 : address2 // ignore: cast_nullable_to_non_nullable
 as String?,company: freezed == company ? _self.company : company // ignore: cast_nullable_to_non_nullable
-as String?,countryCode: null == countryCode ? _self.countryCode : countryCode // ignore: cast_nullable_to_non_nullable
-as String,city: freezed == city ? _self.city : city // ignore: cast_nullable_to_non_nullable
+as String?,countryCode: freezed == countryCode ? _self.countryCode : countryCode // ignore: cast_nullable_to_non_nullable
+as String?,city: freezed == city ? _self.city : city // ignore: cast_nullable_to_non_nullable
 as String?,phone: freezed == phone ? _self.phone : phone // ignore: cast_nullable_to_non_nullable
 as String?,postalCode: freezed == postalCode ? _self.postalCode : postalCode // ignore: cast_nullable_to_non_nullable
 as String?,province: freezed == province ? _self.province : province // ignore: cast_nullable_to_non_nullable

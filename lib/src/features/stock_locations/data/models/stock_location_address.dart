@@ -1,16 +1,18 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'stock_location_address.freezed.dart';
+
 part 'stock_location_address.g.dart';
 
 @freezed
 abstract class StockLocationAddress with _$StockLocationAddress {
+  @JsonSerializable(includeIfNull: false)
   const factory StockLocationAddress({
-    required String id,
-    @JsonKey(name: 'address_1') required String address1,
+    String? id,
+    @JsonKey(name: 'address_1') String? address1,
     @JsonKey(name: 'address_2') String? address2,
     String? company,
-    @JsonKey(name: 'country_code') required String countryCode,
+    @JsonKey(name: 'country_code') String? countryCode,
     String? city,
     String? phone,
     @JsonKey(name: 'postal_code') String? postalCode,

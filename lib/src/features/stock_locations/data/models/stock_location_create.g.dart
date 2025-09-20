@@ -22,7 +22,7 @@ Map<String, dynamic> _$CreateStockLocationToJson(
   _CreateStockLocation instance,
 ) => <String, dynamic>{
   'name': instance.name,
-  'address_id': instance.addressId,
-  'metadata': instance.metadata,
-  'address': instance.address,
+  'address_id': ?instance.addressId,
+  'metadata': ?instance.metadata,
+  'address': ?instance.address,
 };
